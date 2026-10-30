@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #frozen-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+  </style>
+  <div id="root" data-composition-id="frozen" data-width="1080" data-height="1920">
+    <img id="frozen-photo" class="clip" data-layout-allow-overflow src="assets/img/02-arjuna-frozen.png" alt="" data-start="0" data-duration="7.6" data-track-index="0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#frozen-photo", { x: 0, y: 0, scale: 1.0, transformOrigin: "0 0" }, { x: -97, y: -120, scale: 1.18, duration: 7.6, ease: "sine.inOut" }, 0);
+    window.__timelines["frozen"] = tl;
+  </script>
+</template>

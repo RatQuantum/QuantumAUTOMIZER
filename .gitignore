@@ -30,3 +30,4 @@ reels/*/.hyperframes/artifacts/
 reels/*/.hyperframes/render-outputs.json
 reels/*/.media/
 reels/*/.media/
+reels/*/tools/*.log

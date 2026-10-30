@@ -3,14 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script src="assets/gsap.min.js"></script>
     <style>
-      /* Placeholders: replace all three with the film's own palette and display face. */
-      :root {
-        --ground: #000;
-        --ink: #ffffff;
-        --font-display: sans-serif;
-      }
+      /* Day 2 · Gita 2.47 · "Krishna's answer to overthinking", 38.5s. Brand: saffron, gold, deep blue. */
       * {
         margin: 0;
         padding: 0;
@@ -22,21 +17,11 @@
         width: 1080px;
         height: 1920px;
         overflow: hidden;
-        background: var(--ground);
+        background: #05070f;
       }
       #root {
         width: 100%;
         height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-display);
-      }
-      #title {
-        color: var(--ink);
-        font-size: 72px;
-        font-weight: 600;
-        letter-spacing: -0.03em;
       }
     </style>
   </head>
@@ -45,17 +30,47 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="10"
+      data-duration="38.5"
       data-width="1080"
       data-height="1920"
     >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
+      <!-- Picture scenes; the cuts sit under the fx layer -->
+      <div id="hook" data-composition-id="hook" data-composition-src="compositions/hook.html" data-start="0.0" data-duration="4.0" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="frozen" data-composition-id="frozen" data-composition-src="compositions/frozen.html" data-start="4.0" data-duration="7.6" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="krishna" data-composition-id="krishna" data-composition-src="compositions/krishna.html" data-start="11.6" data-duration="5.4" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="verse" data-composition-id="verse" data-composition-src="compositions/verse.html" data-start="17.0" data-duration="6.9" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="rises" data-composition-id="rises" data-composition-src="compositions/rises.html" data-start="23.9" data-duration="4.4" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="lotus" data-composition-id="lotus" data-composition-src="compositions/lotus.html" data-start="28.3" data-duration="3.6" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="cta" data-composition-id="cta" data-composition-src="compositions/cta.html" data-start="31.9" data-duration="6.6" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <!-- Light leaks and the verse flash -->
+      <div id="fx" data-composition-id="fx" data-composition-src="compositions/fx.html" data-start="0" data-duration="38.5" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <!-- Every subtitle group -->
+      <div id="subs" data-composition-id="subs" data-composition-src="compositions/subs.html" data-start="0" data-duration="38.5" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920"></div>
+
+      <!-- Voiceover: Kokoro-82M (Apache-2.0), voice af_heart -->
+      <audio id="vo-l1" class="clip" src="assets/vo/l1-hook.wav" data-start="0.6" data-duration="2.33" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l2" class="clip" src="assets/vo/l2-battlefield.wav" data-start="4.4" data-duration="6.57" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l3" class="clip" src="assets/vo/l3-krishna.wav" data-start="11.9" data-duration="4.42" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l5" class="clip" src="assets/vo/l5-meaning.wav" data-start="19.6" data-duration="3.33" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l6" class="clip" src="assets/vo/l6-peace.wav" data-start="24.1" data-duration="3.84" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l7" class="clip" src="assets/vo/l7-surrender.wav" data-start="28.5" data-duration="2.73" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l8" class="clip" src="assets/vo/l8-cta.wav" data-start="32.2" data-duration="4.14" data-volume="1" data-track-index="6"></audio>
+
+      <!-- Sound effects: page turn and temple bell made with ElevenLabs; the rest bundled with media-use (Pixabay licence) -->
+      <audio id="sfx-page-open" class="clip" src="assets/sfx/page-turn.mp3" data-start="0.1" data-duration="2.0" data-volume="0.45" data-track-index="7" data-fade-out="0.4"></audio>
+      <audio id="sfx-bell-krishna" class="clip" src="assets/sfx/temple-bell.mp3" data-start="11.5" data-duration="2.0" data-volume="0.5" data-track-index="8" data-fade-out="0.4"></audio>
+      <audio id="sfx-page-verse" class="clip" src="assets/sfx/page-turn.mp3" data-start="16.8" data-duration="2.0" data-volume="0.4" data-track-index="7" data-fade-out="0.4"></audio>
+      <audio id="sfx-sparkle-verse" class="clip" src="assets/sfx/sparkle.mp3" data-start="17.4" data-duration="1.4" data-volume="0.25" data-track-index="9" data-fade-out="0.4"></audio>
+      <audio id="sfx-whoosh-rise" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="23.65" data-duration="0.55" data-volume="0.3" data-track-index="8" data-fade-out="0.4"></audio>
+      <audio id="sfx-sparkle-lotus" class="clip" src="assets/sfx/sparkle.mp3" data-start="28.0" data-duration="1.4" data-volume="0.25" data-track-index="9" data-fade-out="0.4"></audio>
+      <audio id="sfx-bell-cta" class="clip" src="assets/sfx/temple-bell.mp3" data-start="31.8" data-duration="2.0" data-volume="0.5" data-track-index="8" data-fade-out="0.4"></audio>
+      <audio id="sfx-chime-mantra" class="clip" src="assets/sfx/chime.mp3" data-start="32.5" data-media-start="0.4" data-duration="2.1" data-volume="0.35" data-track-index="7" data-fade-out="0.4"></audio>
     </div>
     <script>
-      const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0);
-      window.__timelines["main"] = tl;
-      tl.seek(0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
     </script>
   </body>
 </html>
