@@ -194,8 +194,8 @@ CTA_CSS = '''    #cta-scrim {
       left: 0;
       top: 0;
       width: 1080px;
-      height: 1000px;
-      background: linear-gradient(to bottom, rgba(14, 31, 77, 0.88), rgba(14, 31, 77, 0.55) 65%, rgba(14, 31, 77, 0));
+      height: 1150px;
+      background: linear-gradient(to bottom, rgba(14, 31, 77, 0.92), rgba(14, 31, 77, 0.85) 62%, rgba(14, 31, 77, 0));
     }
     #cta-block {
       position: absolute;
