@@ -26,7 +26,7 @@
     }
     #shrine-scrim-top {
       top: 0;
-      height: 620px;
+      height: 760px;
       background: linear-gradient(to bottom, rgba(5, 7, 15, 0.82), rgba(5, 7, 15, 0));
     }
     #shrine-scrim-low {
@@ -43,14 +43,14 @@
       position: absolute;
       left: 90px;
       width: 900px;
-      top: 210px;
+      top: 330px;
       text-align: center;
     }
     #shrine-hook-text {
       font-family: "Playfair Display", serif;
       font-weight: 700;
-      font-size: 96px;
-      line-height: 1.08;
+      font-size: 112px;
+      line-height: 1.06;
       color: #ffffff;
       text-wrap: balance;
     }
@@ -68,20 +68,18 @@
       top: 1060px;
       text-align: center;
     }
-    .shrine-cap-kicker {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 700;
-      font-size: 32px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #e9b949;
+    .shrine-cap-rule {
+      width: 120px;
+      height: 5px;
+      margin: 0 auto 26px;
+      background: linear-gradient(to right, #f28c28, #e9b949);
+      border-radius: 3px;
     }
     .shrine-cap-text {
-      margin-top: 18px;
       font-family: "Playfair Display", serif;
       font-weight: 700;
-      font-size: 68px;
-      line-height: 1.12;
+      font-size: 64px;
+      line-height: 1.14;
       color: #ffffff;
       text-wrap: balance;
     }
@@ -97,7 +95,7 @@
       data-duration="12"
       data-track-index="0"
     />
-    <div id="shrine-dip" class="clip" data-start="0" data-duration="1.6" data-track-index="1"></div>
+    <div id="shrine-dip" class="clip" data-start="0" data-duration="2.6" data-track-index="1"></div>
 
     <div id="shrine-scrim-top" class="clip shrine-scrim" data-start="0" data-duration="3.4" data-track-index="2" data-layout-ignore></div>
     <div id="shrine-scrim-low" class="clip shrine-scrim" data-start="3.2" data-duration="8.6" data-track-index="2" data-layout-ignore></div>
@@ -111,14 +109,14 @@
     <!-- 3–12s value: two shringar captions -->
     <div id="shrine-cap1" class="clip shrine-cap" data-start="3.4" data-duration="3.2" data-track-index="3">
       <div id="shrine-cap1-inner">
-        <div class="shrine-cap-kicker">Tonight's shringar</div>
-        <div class="shrine-cap-text">Every arch is made of flowers</div>
+        <div class="shrine-cap-rule"></div>
+        <div class="shrine-cap-text">Fresh flower garlands are offered every evening</div>
       </div>
     </div>
     <div id="shrine-cap2" class="clip shrine-cap" data-start="7" data-duration="4.6" data-track-index="3">
       <div id="shrine-cap2-inner">
-        <div class="shrine-cap-kicker">Look closer</div>
-        <div class="shrine-cap-text">Marigold garlands frame his face</div>
+        <div class="shrine-cap-rule"></div>
+        <div class="shrine-cap-text">Each shringar is done by hand by our priests</div>
       </div>
     </div>
   </div>
@@ -126,25 +124,27 @@
     const tl = gsap.timeline({ paused: true });
     const cam = "#shrine-photo";
     // Camera: x/y place the photo's top-left corner, scale grows from it. Every hold keeps the frame covered.
-    tl.fromTo(cam, { x: -180, y: 0, scale: 1, transformOrigin: "0 0" }, { x: -108, y: -120, scale: 1.08, duration: 2.8, ease: "sine.inOut" }, 0);
-    tl.to(cam, { x: -220, y: 0, scale: 1.9, duration: 0.8, ease: "power3.inOut" }, 2.8);
-    tl.to(cam, { x: -1300, y: 0, scale: 1.9, duration: 2.6, ease: "sine.inOut" }, 3.6);
+    tl.fromTo(cam, { x: -180, y: 0, scale: 1, transformOrigin: "0 0" }, { x: -126, y: -96, scale: 1.1, duration: 3.0, ease: "sine.inOut" }, 0);
+    tl.to(cam, { x: -220, y: 0, scale: 1.9, duration: 0.8, ease: "power3.inOut" }, 3.0);
+    tl.to(cam, { x: -1300, y: 0, scale: 1.9, duration: 2.4, ease: "sine.inOut" }, 3.8);
     tl.to(cam, { x: -855, y: -1436, scale: 2.2, duration: 0.8, ease: "power3.inOut" }, 6.2);
     tl.to(cam, { x: -982, y: -1635, scale: 2.4, duration: 2.4, ease: "sine.inOut" }, 7.0);
     tl.to(cam, { x: -620, y: -390, scale: 1.5, duration: 0.8, ease: "power3.inOut" }, 9.4);
     tl.to(cam, { x: -180, y: 0, scale: 1, duration: 1.8, ease: "sine.out" }, 10.2);
 
-    // Fade up from dark; the hook is already on screen at frame 0
-    tl.fromTo("#shrine-dip", { opacity: 0.72 }, { opacity: 0, duration: 1.4, ease: "sine.out" }, 0);
+    // Start dark and fade up; the hook is already on screen at frame 0 so it reads as the thumbnail
+    tl.fromTo("#shrine-dip", { opacity: 0.96 }, { opacity: 0, duration: 2.4, ease: "sine.inOut" }, 0.1);
     tl.fromTo("#shrine-hook-text", { opacity: 1, y: 0 }, { opacity: 1, y: -6, duration: 3, ease: "none" }, 0);
     tl.fromTo("#shrine-hook-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 0.3);
-    tl.to("#shrine-hook", { opacity: 0, duration: 0.3, ease: "power1.in" }, 2.85);
+    tl.to("#shrine-hook", { opacity: 0, duration: 0.25, ease: "power1.in" }, 2.9);
     tl.to("#shrine-scrim-top", { opacity: 0, duration: 0.3 }, 3.0);
 
     tl.fromTo("#shrine-scrim-low", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 3.2);
     tl.fromTo("#shrine-cap1-inner", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 3.4);
+    tl.fromTo("#shrine-cap1 .shrine-cap-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 3.5);
     tl.to("#shrine-cap1-inner", { opacity: 0, y: -12, duration: 0.3, ease: "power1.in" }, 6.25);
     tl.fromTo("#shrine-cap2-inner", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 7.0);
+    tl.fromTo("#shrine-cap2 .shrine-cap-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 7.1);
     tl.to("#shrine-cap2-inner", { opacity: 0, y: -12, duration: 0.3, ease: "power1.in" }, 11.25);
     tl.to("#shrine-scrim-low", { opacity: 0, duration: 0.3 }, 11.45);
 

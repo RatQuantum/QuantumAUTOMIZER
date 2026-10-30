@@ -28,3 +28,4 @@ dist-ssr
 reels/*/*.mp4
 reels/*/.hyperframes/artifacts/
 reels/*/.hyperframes/render-outputs.json
+reels/*/.media/

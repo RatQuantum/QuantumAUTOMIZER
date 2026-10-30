@@ -17,19 +17,10 @@
       position: absolute;
       left: 90px;
       width: 900px;
-      top: 200px;
+      top: 320px;
       text-align: center;
     }
-    #temple-cap-kicker {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 700;
-      font-size: 32px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #9a4a06;
-    }
     #temple-cap-text {
-      margin-top: 16px;
       font-family: "Playfair Display", serif;
       font-weight: 700;
       font-size: 92px;
@@ -50,7 +41,6 @@
     />
     <div id="temple-cap" class="clip" data-start="0" data-duration="2" data-track-index="1">
       <div id="temple-cap-inner">
-        <div id="temple-cap-kicker">On the hilltop</div>
         <div id="temple-cap-text">Lord Sri Krishna Temple</div>
       </div>
     </div>
@@ -59,8 +49,8 @@
     const tl = gsap.timeline({ paused: true });
     tl.fromTo(
       "#temple-photo",
-      { x: -280, y: 0, scale: 1, transformOrigin: "0 0" },
-      { x: -400, y: -40, scale: 1.06, duration: 2, ease: "sine.inOut" },
+      { x: -470, y: 0, scale: 1.15, transformOrigin: "0 0" },
+      { x: -560, y: -20, scale: 1.2, duration: 2, ease: "sine.inOut" },
       0,
     );
     tl.fromTo("#temple-cap-inner", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.1);
