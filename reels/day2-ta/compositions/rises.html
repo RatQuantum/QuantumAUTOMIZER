@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #rises-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+  </style>
+  <div id="root" data-composition-id="rises" data-width="1080" data-height="1920">
+    <img id="rises-photo" class="clip" data-layout-allow-overflow src="assets/img/04-arjuna-rises.png" alt="" data-start="0" data-duration="5.2" data-track-index="0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#rises-photo", { x: -54, y: -192, scale: 1.1, transformOrigin: "0 0" }, { x: -108, y: -60, scale: 1.2, duration: 5.2, ease: "sine.inOut" }, 0);
+    window.__timelines["rises"] = tl;
+  </script>
+</template>

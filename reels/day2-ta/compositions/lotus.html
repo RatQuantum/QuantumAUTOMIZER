@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #lotus-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+  </style>
+  <div id="root" data-composition-id="lotus" data-width="1080" data-height="1920">
+    <img id="lotus-photo" class="clip" data-layout-allow-overflow src="assets/img/05-lotus.png" alt="" data-start="0" data-duration="7.1" data-track-index="0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#lotus-photo", { x: 0, y: 0, scale: 1.0, transformOrigin: "0 0" }, { x: -108, y: -288, scale: 1.2, duration: 7.1, ease: "sine.inOut" }, 0);
+    window.__timelines["lotus"] = tl;
+  </script>
+</template>

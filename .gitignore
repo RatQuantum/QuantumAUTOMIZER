@@ -32,3 +32,4 @@ reels/*/.media/
 reels/*/.media/
 reels/*/tools/*.log
 reels/*/tools/__pycache__/
+reels/*/*.m4a
