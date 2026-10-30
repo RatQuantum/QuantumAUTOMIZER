@@ -31,3 +31,4 @@ reels/*/.hyperframes/render-outputs.json
 reels/*/.media/
 reels/*/.media/
 reels/*/tools/*.log
+reels/*/tools/__pycache__/
