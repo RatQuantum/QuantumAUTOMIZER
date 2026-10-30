@@ -9,5 +9,22 @@
   "media": {
     "autoProxy": true
   },
-  "authoringSkill": "hyperframes"
+  "authoringSkill": "hyperframes",
+  "registryItems": [
+    {
+      "name": "organic-light-leak-overlay",
+      "type": "hyperframes:block",
+      "target": "compositions/organic-light-leak-overlay.html"
+    },
+    {
+      "name": "instagram-follow",
+      "type": "hyperframes:block",
+      "target": "compositions/instagram-follow.html"
+    },
+    {
+      "name": "editorial-flash-overlay",
+      "type": "hyperframes:block",
+      "target": "compositions/editorial-flash-overlay.html"
+    }
+  ]
 }

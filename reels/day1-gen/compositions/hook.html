@@ -1,0 +1,71 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #hook-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    #hook-dip {
+      position: absolute;
+      inset: 0;
+      background: #05070f;
+    }
+    #hook-scrim {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 820px;
+      background: linear-gradient(to bottom, rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.5) 55%, rgba(5, 7, 15, 0));
+    }
+    #hook-title {
+      position: absolute;
+      left: 90px;
+      width: 900px;
+      top: 330px;
+      text-align: center;
+    }
+    #hook-text {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 112px;
+      line-height: 1.06;
+      color: #ffffff;
+      text-wrap: balance;
+      text-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+    }
+    #hook-rule {
+      width: 160px;
+      height: 6px;
+      margin: 36px auto 0;
+      background: linear-gradient(to right, #f28c28, #e9b949);
+      border-radius: 3px;
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <img id="hook-photo" class="clip" data-layout-allow-overflow src="assets/img/01-hook.png" alt="Krishna's face lit by a single diya" data-start="0" data-duration="3.3" data-track-index="0" />
+    <div id="hook-dip" class="clip" data-start="0" data-duration="2.6" data-track-index="1" data-layout-ignore></div>
+    <div id="hook-scrim" class="clip" data-start="0" data-duration="3.3" data-track-index="2" data-layout-ignore></div>
+    <div id="hook-title" class="clip" data-start="0" data-duration="3.3" data-track-index="3">
+      <div id="hook-text">You've never seen him like this.</div>
+      <div id="hook-rule"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Slow push in on his face; starts in near darkness so the diya does the reveal
+    tl.fromTo("#hook-photo", { x: 0, y: 0, scale: 1, transformOrigin: "0 0" }, { x: -90, y: -60, scale: 1.12, duration: 3.3, ease: "sine.inOut" }, 0);
+    tl.fromTo("#hook-dip", { opacity: 0.97 }, { opacity: 0, duration: 2.3, ease: "sine.inOut" }, 0.1);
+    tl.fromTo("#hook-text", { opacity: 1, y: 0 }, { opacity: 1, y: -8, duration: 3.2, ease: "none" }, 0);
+    tl.fromTo("#hook-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 0.4);
+    window.__timelines["hook"] = tl;
+  </script>
+</template>

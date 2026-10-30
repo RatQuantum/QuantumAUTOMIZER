@@ -1,0 +1,123 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .sub-group {
+      position: absolute;
+      left: 108px;
+      width: 864px;
+      top: 1120px;
+      text-align: center;
+    }
+    .sub-line {
+      display: inline-block;
+      max-width: 864px;
+      padding: 14px 28px 18px;
+      border-radius: 28px;
+      background: rgba(14, 31, 77, 0.62);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 62px;
+      line-height: 1.2;
+      color: #ffffff;
+      text-wrap: balance;
+      text-shadow: 0 3px 0 rgba(14, 31, 77, 0.9), 0 0 24px rgba(5, 7, 15, 0.85);
+    }
+    .sub-word {
+      display: inline-block;
+      margin: 0 0.12em;
+    }
+  </style>
+  <div id="root" data-composition-id="subs" data-width="1080" data-height="1920">
+    <div id="s1" class="clip sub-group" data-start="3.6" data-duration="3.85" data-track-index="0">
+      <div id="s1-line" class="sub-line"><span id="s1-w0" class="sub-word">In</span> <span id="s1-w1" class="sub-word">shringar,</span> <span id="s1-w2" class="sub-word">every</span> <span id="s1-w3" class="sub-word">garland</span> <span id="s1-w4" class="sub-word">is</span> <span id="s1-w5" class="sub-word">an</span> <span id="s1-w6" class="sub-word">offering.</span></div>
+    </div>
+    <div id="s2" class="clip sub-group" data-start="7.9" data-duration="2.85" data-track-index="1">
+      <div id="s2-line" class="sub-line"><span id="s2-w0" class="sub-word">Every</span> <span id="s2-w1" class="sub-word">jewel,</span> <span id="s2-w2" class="sub-word">a</span> <span id="s2-w3" class="sub-word">prayer.</span></div>
+    </div>
+    <div id="s3" class="clip sub-group" data-start="11.05" data-duration="1.65" data-track-index="0">
+      <div id="s3-line" class="sub-line"><span id="s3-w0" class="sub-word">And</span> <span id="s3-w1" class="sub-word">the</span> <span id="s3-w2" class="sub-word">peacock</span> <span id="s3-w3" class="sub-word">feather?</span></div>
+    </div>
+    <div id="s4" class="clip sub-group" data-start="12.7" data-duration="1.75" data-track-index="1">
+      <div id="s4-line" class="sub-line"><span id="s4-w0" class="sub-word">A</span> <span id="s4-w1" class="sub-word">reminder</span> <span id="s4-w2" class="sub-word">that</span> <span id="s4-w3" class="sub-word">he</span> <span id="s4-w4" class="sub-word">lives</span> <span id="s4-w5" class="sub-word">in</span> <span id="s4-w6" class="sub-word">beauty.</span></div>
+    </div>
+    <div id="s5" class="clip sub-group" data-start="15.75" data-duration="4.20" data-track-index="0">
+      <div id="s5-line" class="sub-line"><span id="s5-w0" class="sub-word">Follow</span> <span id="s5-w1" class="sub-word">Lord</span> <span id="s5-w2" class="sub-word">Sri</span> <span id="s5-w3" class="sub-word">Krishna</span> <span id="s5-w4" class="sub-word">Temple</span> <span id="s5-w5" class="sub-word">for</span> <span id="s5-w6" class="sub-word">daily</span> <span id="s5-w7" class="sub-word">darshan</span> <span id="s5-w8" class="sub-word">🙏</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Each word pops in gold as it is said, then settles to white
+    tl.fromTo("#s1-w0", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 3.7);
+    tl.to("#s1-w0", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 4.02);
+    tl.fromTo("#s1-w1", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 3.95);
+    tl.to("#s1-w1", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 4.27);
+    tl.fromTo("#s1-w2", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 5.03);
+    tl.to("#s1-w2", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 5.35);
+    tl.fromTo("#s1-w3", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 5.43);
+    tl.to("#s1-w3", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 5.75);
+    tl.fromTo("#s1-w4", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 6.0);
+    tl.to("#s1-w4", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 6.32);
+    tl.fromTo("#s1-w5", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 6.16);
+    tl.to("#s1-w5", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 6.48);
+    tl.fromTo("#s1-w6", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 6.32);
+    tl.to("#s1-w6", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 6.64);
+    tl.to("#s1-line", { opacity: 0, duration: 0.2, ease: "power1.in" }, 7.23);
+    tl.fromTo("#s2-w0", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 7.95);
+    tl.to("#s2-w0", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 8.27);
+    tl.fromTo("#s2-w1", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 8.2);
+    tl.to("#s2-w1", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 8.52);
+    tl.fromTo("#s2-w2", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 8.6);
+    tl.to("#s2-w2", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 8.92);
+    tl.fromTo("#s2-w3", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 8.75);
+    tl.to("#s2-w3", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 9.07);
+    tl.to("#s2-line", { opacity: 0, duration: 0.2, ease: "power1.in" }, 10.53);
+    tl.fromTo("#s3-w0", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 11.1);
+    tl.to("#s3-w0", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 11.42);
+    tl.fromTo("#s3-w1", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 11.3);
+    tl.to("#s3-w1", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 11.62);
+    tl.fromTo("#s3-w2", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 11.5);
+    tl.to("#s3-w2", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 11.82);
+    tl.fromTo("#s3-w3", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 11.85);
+    tl.to("#s3-w3", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 12.17);
+    tl.to("#s3-line", { opacity: 0, duration: 0.2, ease: "power1.in" }, 12.48);
+    tl.fromTo("#s4-w0", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 12.75);
+    tl.to("#s4-w0", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 13.07);
+    tl.fromTo("#s4-w1", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 12.9);
+    tl.to("#s4-w1", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 13.22);
+    tl.fromTo("#s4-w2", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 13.25);
+    tl.to("#s4-w2", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 13.57);
+    tl.fromTo("#s4-w3", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 13.45);
+    tl.to("#s4-w3", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 13.77);
+    tl.fromTo("#s4-w4", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 13.6);
+    tl.to("#s4-w4", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 13.92);
+    tl.fromTo("#s4-w5", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 13.85);
+    tl.to("#s4-w5", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 14.17);
+    tl.fromTo("#s4-w6", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 14.0);
+    tl.to("#s4-w6", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 14.32);
+    tl.to("#s4-line", { opacity: 0, duration: 0.2, ease: "power1.in" }, 14.23);
+    tl.fromTo("#s5-w0", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 15.8);
+    tl.to("#s5-w0", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 16.12);
+    tl.fromTo("#s5-w1", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 16.24);
+    tl.to("#s5-w1", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 16.56);
+    tl.fromTo("#s5-w2", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 16.53);
+    tl.to("#s5-w2", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 16.85);
+    tl.fromTo("#s5-w3", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 16.75);
+    tl.to("#s5-w3", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 17.07);
+    tl.fromTo("#s5-w4", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 17.26);
+    tl.to("#s5-w4", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 17.58);
+    tl.fromTo("#s5-w5", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 17.69);
+    tl.to("#s5-w5", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 18.01);
+    tl.fromTo("#s5-w6", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 17.91);
+    tl.to("#s5-w6", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 18.23);
+    tl.fromTo("#s5-w7", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 18.27);
+    tl.to("#s5-w7", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 18.59);
+    tl.fromTo("#s5-w8", { opacity: 0, y: 18, scale: 0.86, color: "#E9B949" }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 18.6);
+    tl.to("#s5-w8", { color: "#FFFFFF", duration: 0.25, ease: "sine.out" }, 18.92);
+    tl.to("#s5-line", { opacity: 0, duration: 0.2, ease: "power1.in" }, 19.73);
+    window.__timelines["subs"] = tl;
+  </script>
+</template>

@@ -1,0 +1,37 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #reveal-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    #reveal-scrim {
+      position: absolute;
+      left: 0;
+      top: 980px;
+      width: 1080px;
+      height: 520px;
+      background: linear-gradient(to bottom, rgba(14, 31, 77, 0), rgba(14, 31, 77, 0.75) 45%, rgba(14, 31, 77, 0));
+    }
+  </style>
+  <div id="root" data-composition-id="reveal" data-width="1080" data-height="1920">
+    <img id="reveal-photo" class="clip" data-layout-allow-overflow src="assets/img/05-full.png" alt="Krishna in full shringar" data-start="0" data-duration="5.4" data-track-index="0" />
+    <div id="reveal-scrim" class="clip" data-start="0" data-duration="5.4" data-track-index="1" data-layout-ignore></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Pull out from his face to the full shringar, then keep breathing
+    tl.fromTo("#reveal-photo", { x: -415, y: 0, scale: 1.7, transformOrigin: "0 0" }, { x: 0, y: 0, scale: 1, duration: 1.8, ease: "power2.out" }, 0);
+    tl.to("#reveal-photo", { x: -27, y: -48, scale: 1.05, duration: 3.6, ease: "sine.inOut" }, 1.8);
+    tl.fromTo("#reveal-scrim", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, 1.0);
+    window.__timelines["reveal"] = tl;
+  </script>
+</template>
