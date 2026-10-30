@@ -1,0 +1,69 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #temple-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1440px;
+      height: 1920px;
+    }
+    #temple-cap {
+      position: absolute;
+      left: 90px;
+      width: 900px;
+      top: 200px;
+      text-align: center;
+    }
+    #temple-cap-kicker {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #9a4a06;
+    }
+    #temple-cap-text {
+      margin-top: 16px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 92px;
+      line-height: 1.05;
+      color: #0e1f4d;
+    }
+  </style>
+  <div id="root" data-composition-id="temple" data-width="1080" data-height="1920">
+    <img
+      id="temple-photo"
+      data-layout-allow-overflow
+      class="clip"
+      src="assets/hilltop-temple.jpg"
+      alt="The hilltop temple by day"
+      data-start="0"
+      data-duration="2"
+      data-track-index="0"
+    />
+    <div id="temple-cap" class="clip" data-start="0" data-duration="2" data-track-index="1">
+      <div id="temple-cap-inner">
+        <div id="temple-cap-kicker">On the hilltop</div>
+        <div id="temple-cap-text">Lord Sri Krishna Temple</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo(
+      "#temple-photo",
+      { x: -280, y: 0, scale: 1, transformOrigin: "0 0" },
+      { x: -400, y: -40, scale: 1.06, duration: 2, ease: "sine.inOut" },
+      0,
+    );
+    tl.fromTo("#temple-cap-inner", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.1);
+    window.__timelines["temple"] = tl;
+  </script>
+</template>

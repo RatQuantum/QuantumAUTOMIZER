@@ -1,0 +1,101 @@
+<!doctype html>
+<html
+  lang="en"
+  data-resolution="portrait"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      /* Day 1 · Shringar · 20s. Brand: saffron, gold, deep blue (content/instagram-30-day-plan.md). */
+      :root {
+        --saffron: #f28c28;
+        --gold: #e9b949;
+        --blue: #0e1f4d;
+        --ground: #05070f;
+        --ink: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="20"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- 0–12s: hook + shringar details on the night shrine -->
+      <div
+        id="shrine"
+        data-composition-id="shrine"
+        data-composition-src="compositions/shrine.html"
+        data-start="0"
+        data-duration="12"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <!-- 12–14s: Garuda at the gate -->
+      <div
+        id="garuda"
+        data-composition-id="garuda"
+        data-composition-src="compositions/garuda.html"
+        data-start="12"
+        data-duration="2"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <!-- 14–16s: the hilltop temple -->
+      <div
+        id="temple"
+        data-composition-id="temple"
+        data-composition-src="compositions/temple.html"
+        data-start="14"
+        data-duration="2"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <!-- 16–20s: CTA (F) -->
+      <div
+        id="cta"
+        data-composition-id="cta"
+        data-composition-src="compositions/cta.html"
+        data-start="16"
+        data-duration="4"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

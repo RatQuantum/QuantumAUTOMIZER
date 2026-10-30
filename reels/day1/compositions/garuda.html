@@ -1,0 +1,68 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #garuda-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2560px;
+      height: 1920px;
+    }
+    #garuda-scrim {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 640px;
+      background: linear-gradient(to bottom, rgba(14, 31, 77, 0.9), rgba(14, 31, 77, 0.55) 60%, rgba(14, 31, 77, 0));
+    }
+    #garuda-cap {
+      position: absolute;
+      left: 90px;
+      width: 900px;
+      top: 230px;
+      text-align: center;
+    }
+    #garuda-cap-text {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 1.1;
+      color: #ffffff;
+      text-wrap: balance;
+    }
+  </style>
+  <div id="root" data-composition-id="garuda" data-width="1080" data-height="1920">
+    <img
+      id="garuda-photo"
+      data-layout-allow-overflow
+      class="clip"
+      src="assets/garuda-gate.jpg"
+      alt="Garuda statue at the sanctum gate"
+      data-start="0"
+      data-duration="2"
+      data-track-index="0"
+    />
+    <div id="garuda-scrim" class="clip" data-start="0" data-duration="2" data-track-index="1" data-layout-ignore></div>
+    <div id="garuda-cap" class="clip" data-start="0" data-duration="2" data-track-index="2">
+      <div id="garuda-cap-text">Garuda guards Krishna's door 🙏</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Scaled past cover so the statue sits inside the safe band, above the caption/handle zone
+    tl.fromTo(
+      "#garuda-photo",
+      { x: -1172, y: -480, scale: 1.25, transformOrigin: "0 0" },
+      { x: -1310, y: -672, scale: 1.35, duration: 2, ease: "sine.inOut" },
+      0,
+    );
+    tl.fromTo("#garuda-cap-text", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.1);
+    window.__timelines["garuda"] = tl;
+  </script>
+</template>

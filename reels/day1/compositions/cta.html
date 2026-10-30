@@ -1,0 +1,89 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #0e1f4d;
+    }
+    #cta-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1440px;
+      height: 1920px;
+    }
+    #cta-wash {
+      position: absolute;
+      inset: 0;
+      background: #0e1f4d;
+    }
+    #cta-block {
+      position: absolute;
+      left: 90px;
+      width: 900px;
+      top: 520px;
+      text-align: center;
+    }
+    #cta-kicker {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #e9b949;
+    }
+    #cta-handle {
+      margin-top: 28px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 58px;
+      color: #ffffff;
+    }
+    #cta-rule {
+      width: 200px;
+      height: 6px;
+      margin: 44px auto;
+      background: linear-gradient(to right, #f28c28, #e9b949);
+      border-radius: 3px;
+    }
+    #cta-line {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 1.1;
+      color: #ffffff;
+      text-wrap: balance;
+    }
+  </style>
+  <div id="root" data-composition-id="cta" data-width="1080" data-height="1920">
+    <img
+      id="cta-photo"
+      data-layout-allow-overflow
+      class="clip"
+      src="assets/hilltop-temple.jpg"
+      alt=""
+      data-start="0"
+      data-duration="4"
+      data-track-index="0"
+    />
+    <div id="cta-wash" class="clip" data-start="0" data-duration="4" data-track-index="1" data-layout-ignore></div>
+    <div id="cta-block" class="clip" data-start="0" data-duration="4" data-track-index="2">
+      <div id="cta-kicker">Follow</div>
+      <div id="cta-handle">@lordsrikrishnatemple</div>
+      <div id="cta-rule"></div>
+      <div id="cta-line">for daily darshan 🙏</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Picks up where the temple shot ended, then washes to deep blue
+    tl.fromTo("#cta-photo", { x: -400, y: -40, scale: 1.06, transformOrigin: "0 0" }, { x: -440, y: -60, scale: 1.1, duration: 4, ease: "none" }, 0);
+    tl.fromTo("#cta-wash", { opacity: 0 }, { opacity: 0.86, duration: 0.6, ease: "sine.inOut" }, 0);
+    tl.fromTo("#cta-kicker", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.4);
+    tl.fromTo("#cta-handle", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.55);
+    tl.fromTo("#cta-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 0.8);
+    tl.fromTo("#cta-line", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.9);
+    window.__timelines["cta"] = tl;
+  </script>
+</template>

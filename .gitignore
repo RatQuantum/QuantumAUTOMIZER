@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# HyperFrames renders and scratch artifacts
+reels/*/*.mp4
+reels/*/.hyperframes/artifacts/
+reels/*/.hyperframes/render-outputs.json
