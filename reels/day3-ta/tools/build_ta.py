@@ -24,7 +24,7 @@ bc.SCENES = [
 ]
 bc.VO = [("ta-full", VO_START)]
 bc.SFX = [("bell-open", "temple-bell.mp3", 0.0, 2.0, 0.3, 7), ("bell-once", "temple-bell.mp3", 7.2, 2.0, 0.55, 8),
-          ("sparkle-alankaram", "sparkle.mp3", 15.9, 1.4, 0.22, 9), ("whoosh-doors", "whoosh-short.mp3", 21.55, 0.55, 0.28, 8),
+          ("sparkle-alankaram", "sparkle.mp3", 16.0, 1.4, 0.1, 9), ("whoosh-doors", "whoosh-short.mp3", 21.55, 0.55, 0.28, 8),
           ("chime-doors", "chime.mp3", 21.75, 2.1, 0.3, 7), ("bell-cta", "temple-bell.mp3", 27.6, 2.0, 0.4, 8)]
 bc.LEAKS = [("leak1", 3.05), ("leak2", 12.5), ("leak3", 15.5), ("leak4", 21.2), ("leak5", 27.1)]  # peak = start + 0.6 = the cut
 bc.FLASH = ("flash1", 18.95)  # peak = start + 0.3 = the first deeparadhanai
