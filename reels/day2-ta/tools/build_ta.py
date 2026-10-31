@@ -13,7 +13,7 @@ import build_composition as bc  # noqa: E402
 
 bc.SCENES = [
     ("hook", "01-gita.png", 0.0, 5.2, (0, 0, 1.0), (-81, -200, 1.15)),
-    ("frozen", "02-arjuna-frozen.png", 5.2, 13.6, (0, 0, 1.0), (-130, -200, 1.24)),
+    ("frozen", "02-arjuna-frozen.png", 5.2, 13.6, (-270, -60, 1.25), (-250, -260, 1.34)),  # starts right of a small background figure
     ("krishna", "03-krishna-teaching.png", 18.8, 8.2, (-108, -60, 1.2), (0, 0, 1.0)),
     ("verse", "01-gita.png", 27.0, 8.0, (-162, -500, 1.3), (-210, -560, 1.35)),
     ("rises", "04-arjuna-rises.png", 35.0, 5.2, (-54, -192, 1.1), (-108, -60, 1.2)),

@@ -9,7 +9,7 @@ import subprocess
 # id, image, start, duration, camera from, camera to (x/y/scale of the image's top-left corner on a 1080x1920 frame)
 SCENES = [
     ("hook", "01-gita.png", 0.0, 4.0, (0, 0, 1.0), (-81, -200, 1.15)),
-    ("frozen", "02-arjuna-frozen.png", 4.0, 7.6, (0, 0, 1.0), (-97, -120, 1.18)),
+    ("frozen", "02-arjuna-frozen.png", 4.0, 7.6, (-270, -60, 1.25), (-250, -220, 1.32)),  # starts right of a small background figure
     ("krishna", "03-krishna-teaching.png", 11.6, 5.4, (-108, -60, 1.2), (0, 0, 1.0)),
     ("verse", "01-gita.png", 17.0, 6.9, (-162, -500, 1.3), (-200, -540, 1.34)),
     ("rises", "04-arjuna-rises.png", 23.9, 4.4, (-54, -192, 1.1), (-108, -60, 1.2)),
