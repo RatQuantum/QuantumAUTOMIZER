@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #town-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+  </style>
+  <div id="root" data-composition-id="town" data-width="1080" data-height="1920">
+    <img id="town-photo" class="clip" data-layout-allow-overflow src="assets/img/01-night-temple.png" alt="" data-start="0" data-duration="3.55" data-track-index="0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#town-photo", { x: -54, y: 0, scale: 1.1, transformOrigin: "0 0" }, { x: -81, y: -288, scale: 1.15, duration: 3.55, ease: "sine.inOut" }, 0);
+    window.__timelines["town"] = tl;
+  </script>
+</template>

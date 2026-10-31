@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #aarti-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+  </style>
+  <div id="root" data-composition-id="aarti" data-width="1080" data-height="1920">
+    <img id="aarti-photo" class="clip" data-layout-allow-overflow src="assets/img/06-aarti.png" alt="" data-start="0" data-duration="2.55" data-track-index="0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#aarti-photo", { x: -54, y: -96, scale: 1.1, transformOrigin: "0 0" }, { x: -120, y: -180, scale: 1.18, duration: 2.55, ease: "sine.inOut" }, 0);
+    window.__timelines["aarti"] = tl;
+  </script>
+</template>

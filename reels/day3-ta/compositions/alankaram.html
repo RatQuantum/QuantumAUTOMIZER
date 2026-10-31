@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #alankaram-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+  </style>
+  <div id="root" data-composition-id="alankaram" data-width="1080" data-height="1920">
+    <img id="alankaram-photo" class="clip" data-layout-allow-overflow src="assets/img/05-alankaram.png" alt="" data-start="0" data-duration="3.15" data-track-index="0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#alankaram-photo", { x: -108, y: -150, scale: 1.12, transformOrigin: "0 0" }, { x: -36, y: -48, scale: 1.04, duration: 3.15, ease: "sine.inOut" }, 0);
+    window.__timelines["alankaram"] = tl;
+  </script>
+</template>

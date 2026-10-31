@@ -5,6 +5,17 @@ below must be rebuilt; everything else is in this repo.
 
 ## Status (31 Oct 2026)
 
+**Direction change (31 Oct): Tamil only from now on.** The temple is in Tamil Nadu, so each reel is made
+in Tamil only (no English version). Voice: a high-quality Tamil ElevenLabs library voice picked per video
+to suit its mood (male preferred; Day 3 uses "Aarumugam – Expressive Engaging Narrator", voice_id
+yrFqUM5ku2rYJCdiBKFU, model eleven_v4, `[softly]` and `[pause]` tags), not the user's own cloned voice.
+Write one continuous take with `[pause]` between lines and time the scene cuts to its pauses; get word
+timings with ElevenLabs Scribe for the subtitles. Image nodes on ElevenLabs default to 16:9: always set
+aspect_ratio 9:16 and resolution 2K before running them.
+
+- Day 3 Tamil (`reels/day3-ta`): voiced, timed and checked; `python3 tools/build_ta.py`. Script in
+  `content/day3/script-ta.txt` (the user should check the Tamil wording).
+
 - Day 1 (`reels/day1-gen`) and Day 2 English (`reels/day2`): done. Day 2 Arjuna stills fixed (male warrior).
 - Day 2 Tamil (`reels/day2-ta`): built, but the Parler-TTS voice sounded robotic. Re-voice it with IndicF5
   and the temple's own recorded voice, then `python3 tools/build_ta.py` and render.
