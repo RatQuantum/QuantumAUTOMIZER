@@ -72,9 +72,9 @@
     }
   </style>
   <div id="root" data-composition-id="cta" data-width="1080" data-height="1920">
-    <img id="cta-photo" class="clip" data-layout-allow-overflow src="assets/img/06-mala.png" alt="" data-start="0" data-duration="10.2" data-track-index="0" />
-    <div id="cta-scrim" class="clip" data-start="0" data-duration="10.2" data-track-index="1" data-layout-ignore></div>
-    <div id="cta-block" class="clip" data-start="0.2" data-duration="10.0" data-track-index="2">
+    <img id="cta-photo" class="clip" data-layout-allow-overflow src="assets/img/06-mala.png" alt="" data-start="0" data-duration="9.08" data-track-index="0" />
+    <div id="cta-scrim" class="clip" data-start="0" data-duration="9.08" data-track-index="1" data-layout-ignore></div>
+    <div id="cta-block" class="clip" data-start="0.2" data-duration="8.88" data-track-index="2">
       <div id="cta-head">கமெண்ட் செய்யுங்கள்</div>
       <div id="cta-word">MANTRA 👇</div>
       <div id="cta-sub">இலவச கிருஷ்ண மந்திரப் புத்தகம் உங்கள் DM-க்கு</div>
@@ -83,7 +83,7 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#cta-photo", { x: 0, y: 0, scale: 1.0, transformOrigin: "0 0" }, { x: -81, y: -144, scale: 1.15, duration: 10.2, ease: "sine.inOut" }, 0);
+    tl.fromTo("#cta-photo", { x: 0, y: 0, scale: 1.0, transformOrigin: "0 0" }, { x: -81, y: -144, scale: 1.15, duration: 9.08, ease: "sine.inOut" }, 0);
     tl.fromTo("#cta-head", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.3);
     tl.fromTo("#cta-word", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.6);
     // A few gentle pulses on MANTRA (finite, so every frame stays seekable)

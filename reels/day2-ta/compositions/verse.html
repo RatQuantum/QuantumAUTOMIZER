@@ -76,9 +76,9 @@
     }
   </style>
   <div id="root" data-composition-id="verse" data-width="1080" data-height="1920">
-    <img id="verse-photo" class="clip" data-layout-allow-overflow src="assets/img/01-gita.png" alt="" data-start="0" data-duration="8.0" data-track-index="0" />
-    <div id="verse-wash" class="clip" data-start="0" data-duration="8.0" data-track-index="1" data-layout-ignore></div>
-    <div id="verse-card" class="clip" data-start="0" data-duration="8.0" data-track-index="2">
+    <img id="verse-photo" class="clip" data-layout-allow-overflow src="assets/img/01-gita.png" alt="" data-start="0" data-duration="7.63" data-track-index="0" />
+    <div id="verse-wash" class="clip" data-start="0" data-duration="7.63" data-track-index="1" data-layout-ignore></div>
+    <div id="verse-card" class="clip" data-start="0" data-duration="7.63" data-track-index="2">
       <div id="verse-ref">பகவத் கீதை 2.47</div>
       <div id="verse-deva-1" class="verse-deva">कर्मण्येवाधिकारस्ते</div>
       <div id="verse-deva-2" class="verse-deva">मा फलेषु कदाचन</div>
@@ -89,7 +89,7 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#verse-photo", { x: -162, y: -500, scale: 1.3, transformOrigin: "0 0" }, { x: -210, y: -560, scale: 1.35, duration: 8.0, ease: "sine.inOut" }, 0);
+    tl.fromTo("#verse-photo", { x: -162, y: -500, scale: 1.3, transformOrigin: "0 0" }, { x: -210, y: -560, scale: 1.35, duration: 7.63, ease: "sine.inOut" }, 0);
     tl.fromTo("#verse-wash", { opacity: 0.4 }, { opacity: 1, duration: 0.8, ease: "sine.out" }, 0);
     tl.fromTo("#verse-ref", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.3);
     tl.fromTo("#verse-deva-1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.6);

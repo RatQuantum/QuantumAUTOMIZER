@@ -13,12 +13,15 @@ Write one continuous take with `[pause]` between lines and time the scene cuts t
 timings with ElevenLabs Scribe for the subtitles. Image nodes on ElevenLabs default to 16:9: always set
 aspect_ratio 9:16 and resolution 2K before running them.
 
-- Day 3 Tamil (`reels/day3-ta`): voiced, timed and checked; `python3 tools/build_ta.py`. Script in
-  `content/day3/script-ta.txt` (the user should check the Tamil wording).
+- Day 3 Tamil (`reels/day3-ta`): done and approved by the user; `python3 tools/build_ta.py`. Script in
+  `content/day3/script-ta.txt`.
 
 - Day 1 (`reels/day1-gen`) and Day 2 English (`reels/day2`): done. Day 2 Arjuna stills fixed (male warrior).
-- Day 2 Tamil (`reels/day2-ta`): built, but the Parler-TTS voice sounded robotic. Re-voice it with IndicF5
-  and the temple's own recorded voice, then `python3 tools/build_ta.py` and render.
+- Day 2 Tamil (`reels/day2-ta`): re-voiced on 31 Oct with ElevenLabs "Ramaa - Expert Tamil Book Narrator"
+  (voice_id jsxww9ngE2fwXHlkWgkm), one take cut into its seven lines at the pauses, +4.5 dB to match Day 3
+  loudness (-17 LUFS), Scribe word timings for the subtitles. Done; `python3 tools/build_ta.py` rebuilds it.
+- Viral research (/ig-viral): blocked here. youtube.com is denied by this environment's network policy and
+  Instagram needs the user's own logged-in browser (Claude desktop app). Never install scrapers for it.
 - Day 3 English (`reels/day3`): composition built and checked (30 s, 9 scenes, Kokoro `af_heart` voice like
   Day 2, PocketSphinx word timings). Kanha wakes at **4 AM**; morning services (confirmed by the temple):
   Suprabhatam, abhishekam, alankaram, then the first aarti.

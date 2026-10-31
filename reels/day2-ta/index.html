@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="assets/gsap.min.js"></script>
     <style>
-      /* Day 2 (Tamil) · Gita 2.47, 57.5s. Brand: saffron, gold, deep blue. */
+      /* Day 2 (Tamil) · Gita 2.47, 55.08s. Brand: saffron, gold, deep blue. */
       * {
         margin: 0;
         padding: 0;
@@ -30,43 +30,43 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="57.5"
+      data-duration="55.08"
       data-width="1080"
       data-height="1920"
     >
       <!-- Picture scenes; the cuts sit under the fx layer -->
-      <div id="hook" data-composition-id="hook" data-composition-src="compositions/hook.html" data-start="0.0" data-duration="5.2" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
-      <div id="frozen" data-composition-id="frozen" data-composition-src="compositions/frozen.html" data-start="5.2" data-duration="13.6" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
-      <div id="krishna" data-composition-id="krishna" data-composition-src="compositions/krishna.html" data-start="18.8" data-duration="8.2" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
-      <div id="verse" data-composition-id="verse" data-composition-src="compositions/verse.html" data-start="27.0" data-duration="8.0" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
-      <div id="rises" data-composition-id="rises" data-composition-src="compositions/rises.html" data-start="35.0" data-duration="5.2" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
-      <div id="lotus" data-composition-id="lotus" data-composition-src="compositions/lotus.html" data-start="40.2" data-duration="7.1" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
-      <div id="cta" data-composition-id="cta" data-composition-src="compositions/cta.html" data-start="47.3" data-duration="10.2" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="hook" data-composition-id="hook" data-composition-src="compositions/hook.html" data-start="0.0" data-duration="5.04" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="frozen" data-composition-id="frozen" data-composition-src="compositions/frozen.html" data-start="5.04" data-duration="11.76" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="krishna" data-composition-id="krishna" data-composition-src="compositions/krishna.html" data-start="16.8" data-duration="7.97" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="verse" data-composition-id="verse" data-composition-src="compositions/verse.html" data-start="24.77" data-duration="7.63" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="rises" data-composition-id="rises" data-composition-src="compositions/rises.html" data-start="32.4" data-duration="6.26" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="lotus" data-composition-id="lotus" data-composition-src="compositions/lotus.html" data-start="38.66" data-duration="7.34" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="cta" data-composition-id="cta" data-composition-src="compositions/cta.html" data-start="46.0" data-duration="9.08" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
 
       <!-- Light leaks and the verse flash -->
-      <div id="fx" data-composition-id="fx" data-composition-src="compositions/fx.html" data-start="0" data-duration="57.5" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="fx" data-composition-id="fx" data-composition-src="compositions/fx.html" data-start="0" data-duration="55.08" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
 
       <!-- Every subtitle group -->
-      <div id="subs" data-composition-id="subs" data-composition-src="compositions/subs.html" data-start="0" data-duration="57.5" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920"></div>
+      <div id="subs" data-composition-id="subs" data-composition-src="compositions/subs.html" data-start="0" data-duration="55.08" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920"></div>
 
-      <!-- Voiceover: AI4Bharat Indic Parler-TTS (Apache-2.0), deep male Tamil voice -->
-      <audio id="vo-l1" class="clip" src="assets/vo/l1-hook.wav" data-start="0.7" data-duration="4.04" data-volume="1" data-track-index="6"></audio>
-      <audio id="vo-l2" class="clip" src="assets/vo/l2-battlefield.wav" data-start="5.5" data-duration="12.92" data-volume="1" data-track-index="6"></audio>
-      <audio id="vo-l3" class="clip" src="assets/vo/l3-krishna.wav" data-start="19.1" data-duration="7.68" data-volume="1" data-track-index="6"></audio>
-      <audio id="vo-l5" class="clip" src="assets/vo/l5-meaning.wav" data-start="28.0" data-duration="6.80" data-volume="1" data-track-index="6"></audio>
-      <audio id="vo-l6" class="clip" src="assets/vo/l6-peace.wav" data-start="35.3" data-duration="4.63" data-volume="1" data-track-index="6"></audio>
-      <audio id="vo-l7" class="clip" src="assets/vo/l7-surrender.wav" data-start="40.4" data-duration="6.70" data-volume="1" data-track-index="6"></audio>
-      <audio id="vo-l8" class="clip" src="assets/vo/l8-cta.wav" data-start="47.8" data-duration="8.58" data-volume="1" data-track-index="6"></audio>
+      <!-- Voiceover: ElevenLabs eleven_v4, Tamil voice "Ramaa - Expert Tamil Book Narrator", one take cut at its pauses -->
+      <audio id="vo-l1" class="clip" src="assets/vo/l1-hook.wav" data-start="0.7" data-duration="3.94" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l2" class="clip" src="assets/vo/l2-battlefield.wav" data-start="5.34" data-duration="11.06" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l3" class="clip" src="assets/vo/l3-krishna.wav" data-start="17.1" data-duration="7.27" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l5" class="clip" src="assets/vo/l5-meaning.wav" data-start="25.77" data-duration="6.23" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l6" class="clip" src="assets/vo/l6-peace.wav" data-start="32.7" data-duration="5.56" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l7" class="clip" src="assets/vo/l7-surrender.wav" data-start="38.86" data-duration="6.74" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l8" class="clip" src="assets/vo/l8-cta.wav" data-start="46.5" data-duration="7.04" data-volume="1" data-track-index="6"></audio>
 
       <!-- Sound effects: page turn and temple bell made with ElevenLabs; the rest bundled with media-use (Pixabay licence) -->
       <audio id="sfx-page-open" class="clip" src="assets/sfx/page-turn.mp3" data-start="0.1" data-duration="2.0" data-volume="0.45" data-track-index="7" data-fade-out="0.4"></audio>
-      <audio id="sfx-bell-krishna" class="clip" src="assets/sfx/temple-bell.mp3" data-start="18.7" data-duration="2.0" data-volume="0.5" data-track-index="8" data-fade-out="0.4"></audio>
-      <audio id="sfx-page-verse" class="clip" src="assets/sfx/page-turn.mp3" data-start="26.8" data-duration="2.0" data-volume="0.4" data-track-index="7" data-fade-out="0.4"></audio>
-      <audio id="sfx-sparkle-verse" class="clip" src="assets/sfx/sparkle.mp3" data-start="27.4" data-duration="1.4" data-volume="0.25" data-track-index="9" data-fade-out="0.4"></audio>
-      <audio id="sfx-whoosh-rise" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="34.75" data-duration="0.55" data-volume="0.3" data-track-index="8" data-fade-out="0.4"></audio>
-      <audio id="sfx-sparkle-lotus" class="clip" src="assets/sfx/sparkle.mp3" data-start="39.9" data-duration="1.4" data-volume="0.25" data-track-index="9" data-fade-out="0.4"></audio>
-      <audio id="sfx-bell-cta" class="clip" src="assets/sfx/temple-bell.mp3" data-start="47.2" data-duration="2.0" data-volume="0.5" data-track-index="8" data-fade-out="0.4"></audio>
-      <audio id="sfx-chime-mantra" class="clip" src="assets/sfx/chime.mp3" data-start="47.9" data-media-start="0.4" data-duration="2.1" data-volume="0.35" data-track-index="7" data-fade-out="0.4"></audio>
+      <audio id="sfx-bell-krishna" class="clip" src="assets/sfx/temple-bell.mp3" data-start="16.7" data-duration="2.0" data-volume="0.5" data-track-index="8" data-fade-out="0.4"></audio>
+      <audio id="sfx-page-verse" class="clip" src="assets/sfx/page-turn.mp3" data-start="24.57" data-duration="2.0" data-volume="0.4" data-track-index="7" data-fade-out="0.4"></audio>
+      <audio id="sfx-sparkle-verse" class="clip" src="assets/sfx/sparkle.mp3" data-start="25.17" data-duration="1.4" data-volume="0.25" data-track-index="9" data-fade-out="0.4"></audio>
+      <audio id="sfx-whoosh-rise" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="32.15" data-duration="0.55" data-volume="0.3" data-track-index="8" data-fade-out="0.4"></audio>
+      <audio id="sfx-sparkle-lotus" class="clip" src="assets/sfx/sparkle.mp3" data-start="38.36" data-duration="1.4" data-volume="0.25" data-track-index="9" data-fade-out="0.4"></audio>
+      <audio id="sfx-bell-cta" class="clip" src="assets/sfx/temple-bell.mp3" data-start="45.9" data-duration="2.0" data-volume="0.5" data-track-index="8" data-fade-out="0.4"></audio>
+      <audio id="sfx-chime-mantra" class="clip" src="assets/sfx/chime.mp3" data-start="46.6" data-media-start="0.4" data-duration="2.1" data-volume="0.35" data-track-index="7" data-fade-out="0.4"></audio>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
