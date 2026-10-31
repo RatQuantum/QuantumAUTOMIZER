@@ -9,7 +9,7 @@ below must be rebuilt; everything else is in this repo.
 - Day 2 Tamil (`reels/day2-ta`): built, but the Parler-TTS voice sounded robotic. Re-voice it with IndicF5
   and the temple's own recorded voice, then `python3 tools/build_ta.py` and render.
 - Day 3 (`content/day3`): hook and script drafted with /ig-reel. Kanha wakes at **4 AM** (confirmed).
-  Still needed from the temple: the order of the morning services (fills the three `{{service}}` lines).
+  Morning services (confirmed by the temple): Suprabhatam, abhishekam, alankaram, then the first aarti.
 - Voice recording: received and checked (12.6 s, clean, every word of `content/day3/voice-reference.txt`,
   male, median 136 Hz). It is NOT in git because this repo is public: ask the user to upload it again
   in the new session (`Claude_Voice_Clone.m4a`), then convert with
