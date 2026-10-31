@@ -20,11 +20,11 @@ below must be rebuilt; everything else is in this repo.
 - Voice recording: received again on 31 Oct and checked (12.6 s, clean, male). It is NOT in git because this
   repo is public: ask the user to upload it again in each new session (`Claude_Voice_Clone.m4a`), then convert
   with `ffmpeg -i <upload> -ac 1 -ar 24000 /home/user/voice-ref/ref-full.wav`.
-- **Blocked: the cloned voice (IndicF5).** `ai4bharat/IndicF5` is gated and the `RatGodG` Hugging Face account
+- **Cloned voice (IndicF5): ready for the next session.** `ai4bharat/IndicF5` is gated; the `RatGodG` account's
   access was granted on 31 Oct and the token was replaced, but the new `HF_TOKEN` only reaches a NEW session:
   start one, check `curl -H "Authorization: Bearer $HF_TOKEN" https://huggingface.co/api/whoami-v2`, then
-  download the official model. Ungated mirrors exist but were deliberately not used. Once access works: Day 2 Tamil re-voice, and a Tamil Day 3 if wanted (needs a
-  Tamil script).
+  download the official model. Ungated mirrors exist but were deliberately not used.
+  Then: Day 2 Tamil re-voice, and a Tamil Day 3 if wanted (needs a Tamil script).
 
 ## Rebuild the tools (about 15 minutes)
 
