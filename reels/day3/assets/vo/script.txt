@@ -1,0 +1,9 @@
+l1-hook|Nobody tells you Kanha wakes before you.
+l2-town|Four AM. The whole town is asleep.
+l3-bell|The bell rings once.
+l4-suprabhatam|Suprabhatam, the song that wakes him.
+l5-abhishekam|Abhishekam, his morning bath.
+l6-alankaram|Alankaram, fresh flowers and silk.
+l7-aarti|The first aarti is lit.
+l8-doors|The doors open. He's been up since four, waiting to see you.
+l9-cta|Follow for daily darshan with Kanha.

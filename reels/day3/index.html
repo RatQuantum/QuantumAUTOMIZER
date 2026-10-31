@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      /* Day 3 · Kanha's morning · "Nobody tells you Kanha wakes before you", 30.0s. Brand: saffron, gold, deep blue. */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #05070f;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="30.0"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Picture scenes; the cuts sit under the fx layer -->
+      <div id="hook" data-composition-id="hook" data-composition-src="compositions/hook.html" data-start="0.0" data-duration="3.6" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="town" data-composition-id="town" data-composition-src="compositions/town.html" data-start="3.6" data-duration="3.4" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="bell" data-composition-id="bell" data-composition-src="compositions/bell.html" data-start="7.0" data-duration="2.0" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="suprabhatam" data-composition-id="suprabhatam" data-composition-src="compositions/suprabhatam.html" data-start="9.0" data-duration="3.0" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="abhishekam" data-composition-id="abhishekam" data-composition-src="compositions/abhishekam.html" data-start="12.0" data-duration="2.8" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="alankaram" data-composition-id="alankaram" data-composition-src="compositions/alankaram.html" data-start="14.8" data-duration="3.0" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="aarti" data-composition-id="aarti" data-composition-src="compositions/aarti.html" data-start="17.8" data-duration="2.2" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="doors" data-composition-id="doors" data-composition-src="compositions/doors.html" data-start="20.0" data-duration="4.4" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="cta" data-composition-id="cta" data-composition-src="compositions/cta.html" data-start="24.4" data-duration="5.6" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <!-- Light leaks and the aarti flash -->
+      <div id="fx" data-composition-id="fx" data-composition-src="compositions/fx.html" data-start="0" data-duration="30.0" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <!-- Every subtitle group -->
+      <div id="subs" data-composition-id="subs" data-composition-src="compositions/subs.html" data-start="0" data-duration="30.0" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920"></div>
+
+      <!-- Voiceover: Kokoro-82M (Apache-2.0), voice af_heart -->
+      <audio id="vo-l1" class="clip" src="assets/vo/l1-hook.wav" data-start="0.6" data-duration="2.30" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l2" class="clip" src="assets/vo/l2-town.wav" data-start="3.9" data-duration="2.43" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l3" class="clip" src="assets/vo/l3-bell.wav" data-start="7.2" data-duration="1.26" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l4" class="clip" src="assets/vo/l4-suprabhatam.wav" data-start="9.3" data-duration="2.18" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l5" class="clip" src="assets/vo/l5-abhishekam.wav" data-start="12.3" data-duration="2.09" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l6" class="clip" src="assets/vo/l6-alankaram.wav" data-start="15.1" data-duration="2.39" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l7" class="clip" src="assets/vo/l7-aarti.wav" data-start="18.1" data-duration="1.56" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l8" class="clip" src="assets/vo/l8-doors.wav" data-start="20.3" data-duration="3.50" data-volume="1" data-track-index="6"></audio>
+      <audio id="vo-l9" class="clip" src="assets/vo/l9-cta.wav" data-start="24.8" data-duration="2.26" data-volume="1" data-track-index="6"></audio>
+
+      <!-- Sound effects: temple bell made with ElevenLabs (from Day 2); the rest bundled with media-use (Pixabay licence) -->
+      <audio id="sfx-bell-open" class="clip" src="assets/sfx/temple-bell.mp3" data-start="0.0" data-duration="2.0" data-volume="0.35" data-track-index="7" data-fade-out="0.4"></audio>
+      <audio id="sfx-bell-once" class="clip" src="assets/sfx/temple-bell.mp3" data-start="7.0" data-duration="2.0" data-volume="0.6" data-track-index="8" data-fade-out="0.4"></audio>
+      <audio id="sfx-sparkle-alankaram" class="clip" src="assets/sfx/sparkle.mp3" data-start="14.6" data-duration="1.4" data-volume="0.25" data-track-index="9" data-fade-out="0.4"></audio>
+      <audio id="sfx-whoosh-doors" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="19.75" data-duration="0.55" data-volume="0.3" data-track-index="8" data-fade-out="0.4"></audio>
+      <audio id="sfx-chime-doors" class="clip" src="assets/sfx/chime.mp3" data-start="20.2" data-media-start="0.4" data-duration="2.1" data-volume="0.35" data-track-index="7" data-fade-out="0.4"></audio>
+      <audio id="sfx-bell-cta" class="clip" src="assets/sfx/temple-bell.mp3" data-start="24.3" data-duration="2.0" data-volume="0.45" data-track-index="8" data-fade-out="0.4"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

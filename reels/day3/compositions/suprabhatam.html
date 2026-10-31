@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #suprabhatam-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+  </style>
+  <div id="root" data-composition-id="suprabhatam" data-width="1080" data-height="1920">
+    <img id="suprabhatam-photo" class="clip" data-layout-allow-overflow src="assets/img/03-suprabhatam.png" alt="" data-start="0" data-duration="3.0" data-track-index="0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#suprabhatam-photo", { x: -27, y: -48, scale: 1.05, transformOrigin: "0 0" }, { x: -260, y: -260, scale: 1.25, duration: 3.0, ease: "sine.inOut" }, 0);
+    window.__timelines["suprabhatam"] = tl;
+  </script>
+</template>

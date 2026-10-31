@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #bell-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+  </style>
+  <div id="root" data-composition-id="bell" data-width="1080" data-height="1920">
+    <img id="bell-photo" class="clip" data-layout-allow-overflow src="assets/img/02-bell.png" alt="" data-start="0" data-duration="2.0" data-track-index="0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#bell-photo", { x: -108, y: -150, scale: 1.2, transformOrigin: "0 0" }, { x: -54, y: -96, scale: 1.1, duration: 2.0, ease: "sine.inOut" }, 0);
+    window.__timelines["bell"] = tl;
+  </script>
+</template>
