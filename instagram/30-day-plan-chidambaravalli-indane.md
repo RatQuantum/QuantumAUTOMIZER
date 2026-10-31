@@ -4,41 +4,75 @@
 **Format:** 1 Reel per day (Reels get the most reach to non-followers), plus Stories daily.
 **Window:** Nov 1 – Nov 30, 2026 (includes Diwali on Nov 8).
 
-> Note: this plan was written without viewing the live profile (Instagram was blocked in the work environment). Before Day 1, check the current bio, picture and best-performing old posts against Section 1.
+> Note: Instagram shows the profile only to logged-in users, so the live bio, grid and highlights were not visible when this plan was written (re-checked Oct 31, 2026). Section 1 has the `/ig-profile` score sheet. Send screenshots of the profile to get the full score.
 > Verify every phone number / process step against the latest IOCL/Indane circulars before posting. Follow IOCL brand guidelines for logo use.
 
 ---
 
 ## 1. Profile setup (do this before Day 1)
 
-### Profile picture
-- **Best option:** a clean, close photo of the **owner or delivery staff in Indane uniform, smiling, holding a cylinder**. Faces beat logos for a local service business because people trust people.
-- Background: plain, bright (shop wall or sky). Face fills ~60% of the circle. Check that it reads clearly at thumbnail size.
-- Alternative: the Indane logo (per brand guidelines) with the agency name, but only if you want a "corporate" look. The face version usually gets more profile taps.
+### `/ig-profile` score (checked Oct 31, 2026)
 
-### Name field (30 characters, searchable)
-Pick one. This is the bold line Instagram search matches, so it must contain the words people type.
-- `Chidambaravalli Indane Gas LPG` (30)
-- `Indane Gas | LPG Delivery` (25)
-- `Indane Gas Chidambaravalli` (26)
+**Live check:** `www.instagram.com/chidambaravalliindanegasservice/` now loads, but Instagram redirects logged-out visitors to the login page, so the bio, grid, highlights and pinned posts could not be read. A web search found no public copy of the profile either. Nobody logged in to the account to do this audit.
 
-### Bio (rewritten with the `/ig-profile` rubric: line 1 = who it's for + what changes, then proof, then one door)
+**Verified score: 2 / 6 on the one item visible without logging in. 94 points still need a screenshot.**
+Nothing below is a guessed score. Send screenshots of (a) the top of the profile, (b) the first two grid rows and (c) the highlights row to get the full score out of 100. Until then, score yourself honestly with the "full marks" column.
+
+| # | Item | Pts | Score | Full marks looks like | Fix |
+|---|---|---|---|---|---|
+| 1 | Name field | 12 | ? | Name + searched words, e.g. `Chidambaravalli Indane Gas LPG` | Fix 1 |
+| 2 | Bio first line | 12 | ? | Who it's for + what changes ("full cylinder at your door, 30-sec booking") | Fix 2 |
+| 3 | Bio body | 8 | ? | One proof ("Indane since [YEAR]") + one door (WhatsApp) | Fix 2 |
+| 4 | Pinned three | 10 | ? | Booking how-to, best safety reel, meet the team | Fix 3 |
+| 5 | Link | 8 | ? | ONE `wa.me/91XXXXXXXXXX` link, no link tree | Fix 5 |
+| 6 | Highlights | 8 | ? | 4-6 named for customer questions | Fix 4 |
+| 7 | Grid legibility | 8 | ? | First 9 covers readable at thumbnail size, 3-5 words each | Fix 6 |
+| 8 | Photo | 6 | ? | Face in Indane uniform filling ~60% of the circle | Fix 7 |
+| 9 | Handle | 6 | **2** | Short, sayable, same on every platform | See note below |
+| 10 | Category + contact | 6 | ? | Business account, Call/WhatsApp/Directions buttons work | Fix 8 |
+| 11 | Recent activity | 10 | ? | Posted in last 7 days, comments answered | Day 1 of this plan |
+| 12 | Story presence | 6 | ? | A story ring most days | Section 9 |
+
+**Handle (2/6):** `chidambaravalliindanegasservice` is 31 characters. That is over Instagram's 30-character username limit, so the real handle is probably spelled slightly differently. Check it letter by letter and use the exact spelling on WhatsApp Status, bills and the shop board. It is also hard to say in a Reel and hard to spell after hearing it once. Keep it if customers already know it. If you rename it, try `@chidambaravalli.indane` (23 characters).
+
+### Fixes, in order of points at stake (each one is a field you edit yourself)
+
+**Fix 1: Name field (12 pts, 30 characters max, the bold line under the photo).** This is the field Instagram search matches, so put the words people type in it. Pick one:
 ```
-Gas refill at your door in Chidambaravalli, booked in 30 seconds.
-Authorised Indane LPG distributor since [YEAR]. Daily safety tips.
-New connection? WhatsApp us 👇
+Chidambaravalli Indane Gas LPG
 ```
-Replace `[YEAR]` with your real year (or `Serving [N] families`). Never post a number that isn't true.
+```
+Chidambaravalli Indane | LPG
+```
+```
+Indane Gas | LPG Delivery
+```
+(30, 28 and 25 characters.)
 
-**Link:** ONE destination: your WhatsApp click-to-chat link (`wa.me/91XXXXXXXXXX`). One door converts better than a menu of five links.
+**Fix 2: Bio (20 pts, 150 characters max).** Line one says what changes for the customer, line two gives proof, line three is the one door. Checked with `/ig-human` (0 slop words, 0 em dashes, no invisible characters; 137 characters):
+```
+Gas finished? We bring a full cylinder to your door in Chidambaravalli, and booking takes 30 seconds.
+Indane since [YEAR].
+WhatsApp 👇
+```
+Put your real start year in `[YEAR]`, or use `Serving [N] families.` instead. Never post a number that isn't true.
 
-**Handle note:** `@chidambaravalliindanegasservice` is 31 characters and hard to say out loud. Keep it if customers already know it; if you ever change it, something like `@chidambaravalli.indane` is easier to say in a Reel.
+**Fix 3: Pinned three (10 pts, four taps, the biggest fix for the least work).** Pin these as soon as they exist: (1) Day 3 "book in 30 seconds" reel = what you offer, (2) Day 2 gas leak safety reel = proof you know your job, (3) Day 1 team reel = who you are. Until then, pin your 3 best existing posts on those same themes. An unpinned grid just shows whatever was posted last.
 
-### Account setup
-- Switch to a **Business account**, category "Gas Station / Energy company / Local business".
-- Add **Contact buttons** (Call, WhatsApp, Directions) and the shop address.
-- **Story Highlights** (with simple matching covers): `Book Refill` · `New Connection` · `Safety` · `Offers` · `Reviews` · `Our Team` · `Office Hours`.
-- Pin 3 posts after Week 1: (1) How to book a refill, (2) Your best safety reel, (3) Meet the team.
+**Fix 4: Highlights (8 pts).** Six at most, named for customer questions, with matching covers. Delete anything else:
+`Book Refill` · `New Connection` · `Safety` · `Prices & Offers` · `Reviews` · `Our Team`
+(Office hours belong in the bio or the contact buttons, not a highlight.)
+
+**Fix 5: Link (8 pts).** One link only: WhatsApp click-to-chat `wa.me/91XXXXXXXXXX`, because the bio promises "WhatsApp". No link tree. Two links already make a menu, and a menu gets fewer taps than one door.
+
+**Fix 6: Grid covers (8 pts).** For every reel from Day 1 on, choose the cover yourself: a clean frame plus 3-5 big words (`DON'T TOUCH THE SWITCH`, `BOOK IN 30 SECONDS`). After 9 posts the grid reads like a menu at thumbnail size.
+
+**Fix 7: Profile photo (6 pts).** Use a close, bright photo of the owner or delivery staff in Indane uniform, smiling, with a cylinder. Plain background, face filling ~60% of the circle. Check it at thumbnail size. The Indane logo (per IOCL brand guidelines) is the fallback, but faces get more profile taps for a local service.
+
+**Fix 8: Account setup (6 pts).** Use a Business account with category "Gas Station" / "Local business", Call + WhatsApp + Directions buttons, and the shop address. Tap each button once from a friend's phone to check it works.
+
+### Honest target
+Doing Fixes 1, 2, 4, 5, 7 and 8 today can bring the profile into the **high 60s / low 70s**. The rest of the points (pinned three, grid, recent activity, stories, about 34 points) aren't something you can write. They come from posting this plan's Week 1 reels, pinning them, and putting up a story most days. Expect **~85 by the end of Week 1** if the plan is followed, not 100. Re-run `/ig-profile` with fresh screenshots on Day 8 to check.
 
 ---
 
@@ -232,7 +266,7 @@ In this repo (Claude Code), the 13 skills from `instagram-agent-skill` are insta
 - `/ig-reel Day 10 yellow flame`: full script + on-screen cards + timed beat sheet
 - `/ig-caption`: caption linted for the 125-character feed cut (max 5 hashtags, one ask)
 - `/ig-story`: that day's story frames and stickers
-- `/ig-profile`: paste a screenshot of your profile for a score out of 100
+- `/ig-profile`: paste screenshots of your profile (top + first two grid rows + highlights) for the full score out of 100
 - `/ig-viral`: once Instagram browsing is allowed, builds a swipe file of what's working in your niche
 - `/ig-audit`: after Week 1, paste your Insights to see which reels to repeat
 
