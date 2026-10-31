@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/leejet/stable-diffusion.cpp /home/user/stable-diffusion.cpp)",
+      "Bash(cmake -S /home/user/stable-diffusion.cpp -B /home/user/stable-diffusion.cpp/build:*)",
+      "Bash(cmake --build /home/user/stable-diffusion.cpp/build:*)",
+      "Bash(curl -sSfLO https://huggingface.co/Comfy-Org/Z-Image-Turbo/resolve/main/split_files/vae/ae.safetensors)",
+      "Bash(curl -sSfL -o qwen3-4b-q4km.gguf https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF/resolve/main/Qwen3-4B-Instruct-2507-Q4_K_M.gguf)",
+      "Bash(curl -sSfLO https://huggingface.co/leejet/Z-Image-Turbo-GGUF/resolve/main/z_image_turbo-Q4_K.gguf)"
+    ]
+  }
+}

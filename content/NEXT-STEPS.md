@@ -26,6 +26,12 @@ below must be rebuilt; everything else is in this repo.
   download the official model. Ungated mirrors exist but were deliberately not used.
   Then: Day 2 Tamil re-voice, and a Tamil Day 3 if wanted (needs a Tamil script).
 
+- ElevenLabs: the user is upgrading to a paid plan (31 Oct). If they create an Instant Voice Clone of their
+  own voice in the ElevenLabs app, it appears in `creative_list_voices` and can voice the English and Tamil
+  lines (`creative_generate_speech`). Generations spend their credits: confirm before long or video jobs.
+- `.claude/settings.json` pre-approves the exact stable-diffusion.cpp clone, build and model download
+  commands below, so the local picture generator can be rebuilt without being blocked.
+
 ## Rebuild the tools (about 15 minutes)
 
 ```bash
