@@ -33,3 +33,7 @@ reels/*/.media/
 reels/*/tools/*.log
 reels/*/tools/__pycache__/
 reels/*/*.m4a
+# Voice recordings of real people: never commit (this repo is public)
+voice-ref/
+*voice-ref*.wav
+*Voice_Clone*
