@@ -1,0 +1,44 @@
+# Next steps (handover for the next Claude session)
+
+Read this first in a new session. The cloud container is wiped between sessions, so the tools
+below must be rebuilt; everything else is in this repo.
+
+## Status (31 Oct 2026)
+
+- Day 1 (`reels/day1-gen`) and Day 2 English (`reels/day2`): done. Day 2 Arjuna stills fixed (male warrior).
+- Day 2 Tamil (`reels/day2-ta`): built, but the Parler-TTS voice sounded robotic. Re-voice it with IndicF5
+  and the temple's own recorded voice, then `python3 tools/build_ta.py` and render.
+- Day 3 (`content/day3`): hook and script drafted with /ig-reel. Kanha wakes at **4 AM** (confirmed).
+  Still needed from the temple: the order of the morning services (fills the three `{{service}}` lines).
+- Waiting on: the 10-15 s male Tamil voice recording (reference text in `content/day3/voice-reference.txt`).
+- `HF_TOKEN` was added to the environment; it is visible from the next session on.
+
+## Rebuild the tools (about 15 minutes)
+
+```bash
+# Instagram voice profile for the ig-* skills
+mkdir -p ~/.claude/instagram && cp content/instagram-voice.md ~/.claude/instagram/voice.md
+
+# Local image generator (stable-diffusion.cpp + Z-Image-Turbo, Apache-2.0)
+git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/leejet/stable-diffusion.cpp /home/user/stable-diffusion.cpp
+cmake -S /home/user/stable-diffusion.cpp -B /home/user/stable-diffusion.cpp/build -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=ON
+cmake --build /home/user/stable-diffusion.cpp/build -j4
+mkdir -p /home/user/sd-models && cd /home/user/sd-models
+curl -sSfLO https://huggingface.co/Comfy-Org/Z-Image-Turbo/resolve/main/split_files/vae/ae.safetensors
+curl -sSfL -o qwen3-4b-q4km.gguf https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF/resolve/main/Qwen3-4B-Instruct-2507-Q4_K_M.gguf
+curl -sSfLO https://huggingface.co/leejet/Z-Image-Turbo-GGUF/resolve/main/z_image_turbo-Q4_K.gguf
+
+# Voice tools (Kokoro for English, PocketSphinx for English word timing)
+pip install kokoro-onnx soundfile pocketsphinx
+```
+
+With `HF_TOKEN` set, prefer the fast GPU route for pictures (Hugging Face ZeroGPU Spaces such as
+`mcp-tools/Z-Image-Turbo` via `gradio_client`, ~30 s each) over the 12-minute local CPU route, and use
+the official gated `ai4bharat/IndicF5` for the Tamil voice.
+
+## Rules learned the hard way
+
+- Check every generated picture for how each figure is dressed and depicted before using it
+  (Arjuna came out in a saree-like drape once).
+- Never invent temple facts; leave `{{placeholders}}` and ask.
+- AI art is labelled "devotional art created digitally" in captions.
