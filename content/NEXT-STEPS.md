@@ -21,9 +21,9 @@ below must be rebuilt; everything else is in this repo.
   repo is public: ask the user to upload it again in each new session (`Claude_Voice_Clone.m4a`), then convert
   with `ffmpeg -i <upload> -ac 1 -ar 24000 /home/user/voice-ref/ref-full.wav`.
 - **Blocked: the cloned voice (IndicF5).** `ai4bharat/IndicF5` is gated and the `RatGodG` Hugging Face account
-  has not been granted access yet; `HF_TOKEN` is also rejected as invalid. The user needs to click "Agree and
-  access" on https://huggingface.co/ai4bharat/IndicF5 and replace the token. Ungated mirrors exist but were
-  deliberately not used. Once access works: Day 2 Tamil re-voice, and a Tamil Day 3 if wanted (needs a
+  access was granted on 31 Oct and the token was replaced, but the new `HF_TOKEN` only reaches a NEW session:
+  start one, check `curl -H "Authorization: Bearer $HF_TOKEN" https://huggingface.co/api/whoami-v2`, then
+  download the official model. Ungated mirrors exist but were deliberately not used. Once access works: Day 2 Tamil re-voice, and a Tamil Day 3 if wanted (needs a
   Tamil script).
 
 ## Rebuild the tools (about 15 minutes)
@@ -51,6 +51,16 @@ curl -sSfLO https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-
 With `HF_TOKEN` set, prefer the fast GPU route for pictures (Hugging Face ZeroGPU Spaces such as
 `mcp-tools/Z-Image-Turbo` via `gradio_client`, ~30 s each) over the 12-minute local CPU route, and use
 the official gated `ai4bharat/IndicF5` for the Tamil voice.
+
+## Optional: Open Generative AI (user asked for it on 31 Oct)
+
+```bash
+git clone --depth 1 https://github.com/anil-matcha/open-generative-ai /home/user/open-generative-ai
+cd /home/user/open-generative-ai && npm run setup && npx next dev -p 3000
+```
+
+The web version needs a MuAPI key (paid service) for every model. Its free local engine is the same
+stable-diffusion.cpp + Z-Image as above, but only inside its desktop (Electron) app.
 
 ## Rules learned the hard way
 
