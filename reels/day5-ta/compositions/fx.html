@@ -1,0 +1,126 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 42%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.7));
+    }
+    #burst {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, #fff8e1, #ffd27a 35%, rgba(255, 170, 60, 0) 75%);
+      opacity: 0;
+    }
+    #rays {
+      position: absolute;
+      left: -420px;
+      top: -1150px;
+      width: 1920px;
+      height: 1920px;
+      background: repeating-conic-gradient(from 0deg, rgba(255, 220, 150, 0.2) 0deg 5deg, rgba(255, 220, 150, 0) 5deg 15deg);
+      mix-blend-mode: screen;
+      -webkit-mask-image: radial-gradient(circle, #000 12%, transparent 62%);
+      mask-image: radial-gradient(circle, #000 12%, transparent 62%);
+      opacity: 0;
+    }
+    .ember {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ffb347;
+      box-shadow: 0 0 10px 3px rgba(255, 140, 40, 0.8);
+    }
+  </style>
+  <div id="root" data-composition-id="fx" data-width="1080" data-height="1920">
+    <div id="vignette" class="clip" data-start="0" data-duration="20.0" data-track-index="0" data-layout-ignore></div>
+    <div id="rays" class="clip" data-start="9.0" data-duration="11.0" data-track-index="1" data-layout-ignore></div>
+    <div id="burst" class="clip" data-start="8.9" data-duration="1.4" data-track-index="2" data-layout-ignore></div>
+    <div id="embers" class="clip" data-start="0" data-duration="20.0" data-track-index="3" data-layout-ignore>
+      <div id="e0" class="ember" style="left: 844px; top: 0; transform: scale(1.2);"></div>
+      <div id="e1" class="ember" style="left: 190px; top: 0; transform: scale(0.92);"></div>
+      <div id="e2" class="ember" style="left: 617px; top: 0; transform: scale(1.16);"></div>
+      <div id="e3" class="ember" style="left: 918px; top: 0; transform: scale(1.19);"></div>
+      <div id="e4" class="ember" style="left: 485px; top: 0; transform: scale(0.5);"></div>
+      <div id="e5" class="ember" style="left: 250px; top: 0; transform: scale(0.76);"></div>
+      <div id="e6" class="ember" style="left: 724px; top: 0; transform: scale(1.35);"></div>
+      <div id="e7" class="ember" style="left: 945px; top: 0; transform: scale(0.52);"></div>
+      <div id="e8" class="ember" style="left: 300px; top: 0; transform: scale(0.77);"></div>
+      <div id="e9" class="ember" style="left: 724px; top: 0; transform: scale(0.78);"></div>
+      <div id="e10" class="ember" style="left: 353px; top: 0; transform: scale(0.93);"></div>
+      <div id="e11" class="ember" style="left: 991px; top: 0; transform: scale(1.26);"></div>
+      <div id="e12" class="ember" style="left: 404px; top: 0; transform: scale(0.91);"></div>
+      <div id="e13" class="ember" style="left: 1007px; top: 0; transform: scale(1.18);"></div>
+      <div id="e14" class="ember" style="left: 382px; top: 0; transform: scale(0.73);"></div>
+      <div id="e15" class="ember" style="left: 829px; top: 0; transform: scale(0.53);"></div>
+      <div id="e16" class="ember" style="left: 378px; top: 0; transform: scale(0.81);"></div>
+      <div id="e17" class="ember" style="left: 349px; top: 0; transform: scale(0.66);"></div>
+      <div id="e18" class="ember" style="left: 735px; top: 0; transform: scale(0.65);"></div>
+      <div id="e19" class="ember" style="left: 576px; top: 0; transform: scale(0.71);"></div>
+      <div id="e20" class="ember" style="left: 496px; top: 0; transform: scale(0.55);"></div>
+      <div id="e21" class="ember" style="left: 535px; top: 0; transform: scale(0.62);"></div>
+      <div id="e22" class="ember" style="left: 675px; top: 0; transform: scale(0.65);"></div>
+      <div id="e23" class="ember" style="left: 460px; top: 0; transform: scale(0.91);"></div>
+      <div id="e24" class="ember" style="left: 1029px; top: 0; transform: scale(1.12);"></div>
+      <div id="e25" class="ember" style="left: 511px; top: 0; transform: scale(0.6);"></div>
+      <div id="e26" class="ember" style="left: 213px; top: 0; transform: scale(0.66);"></div>
+      <div id="e27" class="ember" style="left: 591px; top: 0; transform: scale(1.21);"></div>
+      <div id="e28" class="ember" style="left: 709px; top: 0; transform: scale(0.83);"></div>
+      <div id="e29" class="ember" style="left: 527px; top: 0; transform: scale(1.36);"></div>
+      <div id="e30" class="ember" style="left: 902px; top: 0; transform: scale(0.99);"></div>
+      <div id="e31" class="ember" style="left: 504px; top: 0; transform: scale(1.08);"></div>
+      <div id="e32" class="ember" style="left: 689px; top: 0; transform: scale(0.82);"></div>
+      <div id="e33" class="ember" style="left: 734px; top: 0; transform: scale(1.36);"></div>
+      <div id="e34" class="ember" style="left: 200px; top: 0; transform: scale(1.34);"></div>
+      <div id="e35" class="ember" style="left: 766px; top: 0; transform: scale(1.06);"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#rays", { opacity: 0, rotation: 0 }, { opacity: 1, rotation: 25, duration: 11.0, ease: "power1.out" }, 9.0);
+    tl.fromTo("#burst", { opacity: 0 }, { opacity: 0.95, duration: 0.12, ease: "power2.in" }, 8.9);
+    tl.to("#burst", { opacity: 0, duration: 1.1, ease: "power2.out" }, 9.05);
+    tl.fromTo("#e0", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -159, opacity: 0.2, duration: 5.73, ease: "none" }, 10.33);
+    tl.fromTo("#e1", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -135, opacity: 0.2, duration: 3.66, ease: "none" }, 1.73);
+    tl.fromTo("#e2", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -43, opacity: 0.2, duration: 5.13, ease: "none" }, 1.67);
+    tl.fromTo("#e3", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 80, opacity: 0.2, duration: 4.05, ease: "none" }, 5.39);
+    tl.fromTo("#e4", { y: 1057, x: 0, opacity: 0.9 }, { y: -120, x: -73, opacity: 0.2, duration: 3.0, ease: "none" }, 0);
+    tl.fromTo("#e5", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -82, opacity: 0.2, duration: 4.13, ease: "none" }, 16.04);
+    tl.fromTo("#e6", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -86, opacity: 0.2, duration: 5.12, ease: "none" }, 18.11);
+    tl.fromTo("#e7", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 116, opacity: 0.2, duration: 6.4, ease: "none" }, 11.88);
+    tl.fromTo("#e8", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -124, opacity: 0.2, duration: 6.31, ease: "none" }, 5.54);
+    tl.fromTo("#e9", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 56, opacity: 0.2, duration: 3.51, ease: "none" }, 9.87);
+    tl.fromTo("#e10", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -163, opacity: 0.2, duration: 4.94, ease: "none" }, 14.83);
+    tl.fromTo("#e11", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -131, opacity: 0.2, duration: 4.27, ease: "none" }, 0.05);
+    tl.fromTo("#e12", { y: 697, x: 0, opacity: 0.9 }, { y: -120, x: 42, opacity: 0.2, duration: 2.28, ease: "none" }, 0);
+    tl.fromTo("#e13", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -70, opacity: 0.2, duration: 5.37, ease: "none" }, 12.28);
+    tl.fromTo("#e14", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 174, opacity: 0.2, duration: 6.33, ease: "none" }, 17.38);
+    tl.fromTo("#e15", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 115, opacity: 0.2, duration: 5.27, ease: "none" }, 6.65);
+    tl.fromTo("#e16", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 77, opacity: 0.2, duration: 3.77, ease: "none" }, 17.75);
+    tl.fromTo("#e17", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 118, opacity: 0.2, duration: 5.14, ease: "none" }, 17.26);
+    tl.fromTo("#e18", { y: 810, x: 0, opacity: 0.9 }, { y: -120, x: 163, opacity: 0.2, duration: 1.75, ease: "none" }, 0);
+    tl.fromTo("#e19", { y: 1043, x: 0, opacity: 0.9 }, { y: -120, x: 48, opacity: 0.2, duration: 3.58, ease: "none" }, 0);
+    tl.fromTo("#e20", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 77, opacity: 0.2, duration: 5.98, ease: "none" }, 9.66);
+    tl.fromTo("#e21", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 93, opacity: 0.2, duration: 3.6, ease: "none" }, 17.07);
+    tl.fromTo("#e22", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 67, opacity: 0.2, duration: 6.35, ease: "none" }, 12.83);
+    tl.fromTo("#e23", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 76, opacity: 0.2, duration: 3.68, ease: "none" }, 4.58);
+    tl.fromTo("#e24", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 164, opacity: 0.2, duration: 6.06, ease: "none" }, 18.98);
+    tl.fromTo("#e25", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 77, opacity: 0.2, duration: 4.32, ease: "none" }, 3.31);
+    tl.fromTo("#e26", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 126, opacity: 0.2, duration: 5.1, ease: "none" }, 14.91);
+    tl.fromTo("#e27", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 56, opacity: 0.2, duration: 5.05, ease: "none" }, 7.31);
+    tl.fromTo("#e28", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -118, opacity: 0.2, duration: 5.58, ease: "none" }, 13.82);
+    tl.fromTo("#e29", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 115, opacity: 0.2, duration: 4.34, ease: "none" }, 12.2);
+    tl.fromTo("#e30", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -161, opacity: 0.2, duration: 4.04, ease: "none" }, 3.82);
+    tl.fromTo("#e31", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 168, opacity: 0.2, duration: 5.51, ease: "none" }, 1.77);
+    tl.fromTo("#e32", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 144, opacity: 0.2, duration: 4.54, ease: "none" }, 14.35);
+    tl.fromTo("#e33", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 133, opacity: 0.2, duration: 6.11, ease: "none" }, 15.39);
+    tl.fromTo("#e34", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: -132, opacity: 0.2, duration: 5.09, ease: "none" }, 7.92);
+    tl.fromTo("#e35", { y: 1980, x: 0, opacity: 0.9 }, { y: -120, x: 83, opacity: 0.2, duration: 5.57, ease: "none" }, 6.98);
+    window.__timelines["fx"] = tl;
+  </script>
+</template>

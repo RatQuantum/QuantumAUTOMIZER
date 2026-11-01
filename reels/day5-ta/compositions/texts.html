@@ -1,0 +1,65 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    @font-face {
+      font-family: "Noto Sans Tamil";
+      src: url("assets/fonts/NotoSansTamil.ttf");
+    }
+    @font-face {
+      font-family: "Noto Color Emoji";
+      src: url("assets/fonts/NotoColorEmoji.ttf");
+    }
+    .line {
+      position: absolute;
+      left: 70px;
+      width: 940px;
+      top: 1240px;
+      text-align: center;
+      font-family: "Noto Sans Tamil", "Noto Color Emoji", sans-serif;
+      font-weight: 700;
+      font-size: 62px;
+      line-height: 1.4;
+      color: #ffffff;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 0, 0, 0.8);
+    }
+    .line b {
+      color: #ffd34d;
+    }
+    #handle {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      top: 1470px;
+      text-align: center;
+      font-family: "Noto Sans Tamil", sans-serif;
+      font-size: 34px;
+      color: #ffe7b0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+    }
+  </style>
+  <div id="root" data-composition-id="texts" data-width="1080" data-height="1920">
+    <div id="t0" class="clip line" data-start="0.0" data-duration="5.10" data-track-index="0">ஒரு நாள்…<br>எல்லோரும் உன்னைக் <b>கைவிடுவார்கள்</b>.</div>
+    <div id="t1" class="clip line" data-start="5.7" data-duration="3.10" data-track-index="1">நீ நம்பியவர்கள் <b>கூட</b>.</div>
+    <div id="t2" class="clip line" data-start="9.5" data-duration="4.20" data-track-index="0">அன்று… உன் தேரை<br><b>நான்</b> ஓட்டுவேன்.</div>
+    <div id="t3" class="clip line" data-start="14.6" data-duration="3.30" data-track-index="1">நீ தனியாக இல்லை.<br><b>கவலைப்படாதே.</b></div>
+    <div id="t4" class="clip line" data-start="18.1" data-duration="1.90" data-track-index="0">கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏</div>
+    <div id="handle" class="clip" data-start="18.4" data-duration="1.6" data-track-index="2">@lordsrikrishnatemple</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.to("#t0", { opacity: 0, duration: 0.3, ease: "power1.in" }, 4.80);
+    tl.fromTo("#t1", { opacity: 0, y: 24, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, 5.7);
+    tl.to("#t1", { opacity: 0, duration: 0.3, ease: "power1.in" }, 8.50);
+    tl.fromTo("#t2", { opacity: 0, y: 24, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, 9.5);
+    tl.to("#t2", { opacity: 0, duration: 0.3, ease: "power1.in" }, 13.40);
+    tl.fromTo("#t3", { opacity: 0, y: 24, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, 14.6);
+    tl.to("#t3", { opacity: 0, duration: 0.3, ease: "power1.in" }, 17.60);
+    tl.fromTo("#t4", { opacity: 0, y: 24, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, 18.1);
+    tl.fromTo("#handle", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 18.4);
+    window.__timelines["texts"] = tl;
+  </script>
+</template>

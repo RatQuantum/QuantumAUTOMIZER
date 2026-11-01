@@ -5,6 +5,18 @@ below must be rebuilt; everything else is in this repo.
 
 ## Status (31 Oct 2026)
 
+**Day 5 format (1 Nov, the user's reference reel): cinematic, narrated, real-looking faces.** The user rejected
+the fast slideshow and sent a reference: a moody Kurukshetra scene, deep Tamil narration, one Tamil line on
+screen at a time with one word in gold, few cuts, emotional score. `reels/day5-ta` follows it: 4 shots (stills
+from ElevenLabs gpt-image-2.5, 9:16 2K), two voices (Bharadwaj narrator + Ramaa as Krishna), a score that turns
+at 9 s, wind, impact, chariot. The user chose the FREE route over Kling video (~14,930 credits for 4 clips):
+wide shots move with tools/parallax.py (Depth Anything V2 small, ONNX). LivePortrait (cloned to
+/home/user/LivePortrait, weights downloaded, venv /home/user/lp-venv) would animate the two faces, but running
+it was blocked by the permission check; the user must allow it (see .claude/settings.json) before it can run:
+  /home/user/lp-venv/bin/python inference.py -s <face.png> -d assets/examples/driving/d18.mp4 -o <dir> --flag-force-cpu
+  (d18 = calm breathing/blink for Arjuna, d9 = gentle closed-mouth smile for Krishna)
+Trending audio can only be added in the Instagram app: post day5-tamil-no-music.mp4 and add the sound there.
+
 **Style change (1 Nov): fast cut, music first.** The user's grid showed the narrated AI-art reels at
 117-1,206 views while their own real-footage text reels did 33.2K and 10.7K. The old reels opened on a fade
 from black (frame-0 brightness 13-15 of 255), held shots 3-6 s and had no music. New rules, built into

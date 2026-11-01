@@ -1,0 +1,32 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .shot {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: cover;
+      transform-origin: 50% 45%;
+    }
+  </style>
+  <div id="root" data-composition-id="shots" data-width="1080" data-height="1920">
+    <video id="v0" class="clip shot" src="assets/video/v1-arjuna-alone.mp4" muted playsinline data-start="0.0" data-duration="5.3" data-track-index="0"></video>
+    <video id="v1" class="clip shot" src="assets/video/v2-arjuna-face.mp4" muted playsinline data-start="5.3" data-duration="3.7" data-track-index="1"></video>
+    <video id="v2" class="clip shot" src="assets/video/v3-krishna-chariot.mp4" muted playsinline data-start="9.0" data-duration="4.8" data-track-index="0"></video>
+    <video id="v3" class="clip shot" src="assets/video/v4-krishna-face.mp4" muted playsinline data-start="13.8" data-duration="6.2" data-track-index="1"></video>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#v0", { scale: 1.0 }, { scale: 1.03, duration: 5.3, ease: "none" }, 0.0);
+    tl.fromTo("#v1", { scale: 1.0 }, { scale: 1.06, duration: 3.7, ease: "none" }, 5.3);
+    tl.fromTo("#v2", { scale: 1.0 }, { scale: 1.03, duration: 4.8, ease: "none" }, 9.0);
+    tl.fromTo("#v3", { scale: 1.0 }, { scale: 1.06, duration: 6.2, ease: "none" }, 13.8);
+    window.__timelines["shots"] = tl;
+  </script>
+</template>
