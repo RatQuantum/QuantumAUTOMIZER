@@ -1,0 +1,120 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .fx-leak {
+      position: absolute;
+      inset: 0;
+    }
+    .fx-leak-inner {
+      position: absolute;
+      inset: -16%;
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    .fx-layer {
+      position: absolute;
+      inset: -20%;
+    }
+    .fx-amber {
+      background:
+        radial-gradient(ellipse 60% 52% at 22% 40%, rgb(255 241 197 / 92%), transparent 45%),
+        radial-gradient(ellipse 80% 64% at 30% 46%, rgb(242 140 40 / 80%), transparent 66%);
+      filter: blur(30px);
+    }
+    .fx-rose {
+      background: radial-gradient(ellipse 66% 52% at 76% 62%, rgb(255 110 60 / 70%), rgb(233 185 73 / 28%) 48%, transparent 76%);
+      filter: blur(42px);
+    }
+    .fx-gold {
+      background: linear-gradient(160deg, transparent 24%, rgb(242 140 40 / 30%) 40%, rgb(255 247 205 / 75%) 51%, rgb(233 185 73 / 24%) 62%, transparent 78%);
+      filter: blur(22px);
+    }
+    .fx-flash {
+      position: absolute;
+      inset: 0;
+    }
+    .fx-flash-inner {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background: radial-gradient(circle at 50% 40%, #fff8e6 0%, #ffe3a3 45%, #f2a64a 100%);
+    }
+  </style>
+  <div id="root" data-composition-id="fx" data-width="1080" data-height="1920">
+    <div id="leak1" class="clip fx-leak" data-start="4.45" data-duration="1.2" data-track-index="0" data-layout-ignore>
+      <div id="leak1-inner" class="fx-leak-inner">
+        <div id="leak1-amber" class="fx-layer fx-amber"></div>
+        <div id="leak1-rose" class="fx-layer fx-rose"></div>
+        <div id="leak1-gold" class="fx-layer fx-gold"></div>
+      </div>
+    </div>
+    <div id="leak2" class="clip fx-leak" data-start="11.08" data-duration="1.2" data-track-index="0" data-layout-ignore>
+      <div id="leak2-inner" class="fx-leak-inner">
+        <div id="leak2-amber" class="fx-layer fx-amber"></div>
+        <div id="leak2-rose" class="fx-layer fx-rose"></div>
+        <div id="leak2-gold" class="fx-layer fx-gold"></div>
+      </div>
+    </div>
+    <div id="leak3" class="clip fx-leak" data-start="19.5" data-duration="1.2" data-track-index="0" data-layout-ignore>
+      <div id="leak3-inner" class="fx-leak-inner">
+        <div id="leak3-amber" class="fx-layer fx-amber"></div>
+        <div id="leak3-rose" class="fx-layer fx-rose"></div>
+        <div id="leak3-gold" class="fx-layer fx-gold"></div>
+      </div>
+    </div>
+    <div id="leak4" class="clip fx-leak" data-start="22.5" data-duration="1.2" data-track-index="0" data-layout-ignore>
+      <div id="leak4-inner" class="fx-leak-inner">
+        <div id="leak4-amber" class="fx-layer fx-amber"></div>
+        <div id="leak4-rose" class="fx-layer fx-rose"></div>
+        <div id="leak4-gold" class="fx-layer fx-gold"></div>
+      </div>
+    </div>
+    <div id="leak5" class="clip fx-leak" data-start="27.85" data-duration="1.2" data-track-index="0" data-layout-ignore>
+      <div id="leak5-inner" class="fx-leak-inner">
+        <div id="leak5-amber" class="fx-layer fx-amber"></div>
+        <div id="leak5-rose" class="fx-layer fx-rose"></div>
+        <div id="leak5-gold" class="fx-layer fx-gold"></div>
+      </div>
+    </div>
+    <div id="flash1" class="clip fx-flash" data-start="16.7" data-duration="0.6" data-track-index="1" data-layout-ignore>
+      <div id="flash1-inner" class="fx-flash-inner"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Light leaks peak on the cuts at 5.05, 11.68, 20.1, 23.1 and 28.45s; the flash opens the question at 17.0s
+    tl.fromTo("#leak1-inner", { opacity: 0 }, { opacity: 0.95, duration: 0.55, ease: "sine.out" }, 4.45);
+    tl.to("#leak1-inner", { opacity: 0, duration: 0.6, ease: "sine.in" }, 5.03);
+    tl.fromTo("#leak1-amber", { xPercent: -22, scale: 0.92, rotation: -4 }, { xPercent: 18, scale: 1.1, rotation: 2, duration: 1.2, ease: "sine.inOut" }, 4.45);
+    tl.fromTo("#leak1-rose", { xPercent: 20, yPercent: -8, scale: 1.08 }, { xPercent: -16, yPercent: 8, scale: 0.94, duration: 1.2, ease: "sine.inOut" }, 4.45);
+    tl.fromTo("#leak1-gold", { xPercent: -28, rotation: -6 }, { xPercent: 24, rotation: 4, duration: 1.2, ease: "sine.inOut" }, 4.45);
+    tl.fromTo("#leak2-inner", { opacity: 0 }, { opacity: 0.95, duration: 0.55, ease: "sine.out" }, 11.08);
+    tl.to("#leak2-inner", { opacity: 0, duration: 0.6, ease: "sine.in" }, 11.66);
+    tl.fromTo("#leak2-amber", { xPercent: -22, scale: 0.92, rotation: -4 }, { xPercent: 18, scale: 1.1, rotation: 2, duration: 1.2, ease: "sine.inOut" }, 11.08);
+    tl.fromTo("#leak2-rose", { xPercent: 20, yPercent: -8, scale: 1.08 }, { xPercent: -16, yPercent: 8, scale: 0.94, duration: 1.2, ease: "sine.inOut" }, 11.08);
+    tl.fromTo("#leak2-gold", { xPercent: -28, rotation: -6 }, { xPercent: 24, rotation: 4, duration: 1.2, ease: "sine.inOut" }, 11.08);
+    tl.fromTo("#leak3-inner", { opacity: 0 }, { opacity: 0.95, duration: 0.55, ease: "sine.out" }, 19.5);
+    tl.to("#leak3-inner", { opacity: 0, duration: 0.6, ease: "sine.in" }, 20.08);
+    tl.fromTo("#leak3-amber", { xPercent: -22, scale: 0.92, rotation: -4 }, { xPercent: 18, scale: 1.1, rotation: 2, duration: 1.2, ease: "sine.inOut" }, 19.5);
+    tl.fromTo("#leak3-rose", { xPercent: 20, yPercent: -8, scale: 1.08 }, { xPercent: -16, yPercent: 8, scale: 0.94, duration: 1.2, ease: "sine.inOut" }, 19.5);
+    tl.fromTo("#leak3-gold", { xPercent: -28, rotation: -6 }, { xPercent: 24, rotation: 4, duration: 1.2, ease: "sine.inOut" }, 19.5);
+    tl.fromTo("#leak4-inner", { opacity: 0 }, { opacity: 0.95, duration: 0.55, ease: "sine.out" }, 22.5);
+    tl.to("#leak4-inner", { opacity: 0, duration: 0.6, ease: "sine.in" }, 23.08);
+    tl.fromTo("#leak4-amber", { xPercent: -22, scale: 0.92, rotation: -4 }, { xPercent: 18, scale: 1.1, rotation: 2, duration: 1.2, ease: "sine.inOut" }, 22.5);
+    tl.fromTo("#leak4-rose", { xPercent: 20, yPercent: -8, scale: 1.08 }, { xPercent: -16, yPercent: 8, scale: 0.94, duration: 1.2, ease: "sine.inOut" }, 22.5);
+    tl.fromTo("#leak4-gold", { xPercent: -28, rotation: -6 }, { xPercent: 24, rotation: 4, duration: 1.2, ease: "sine.inOut" }, 22.5);
+    tl.fromTo("#leak5-inner", { opacity: 0 }, { opacity: 0.95, duration: 0.55, ease: "sine.out" }, 27.85);
+    tl.to("#leak5-inner", { opacity: 0, duration: 0.6, ease: "sine.in" }, 28.43);
+    tl.fromTo("#leak5-amber", { xPercent: -22, scale: 0.92, rotation: -4 }, { xPercent: 18, scale: 1.1, rotation: 2, duration: 1.2, ease: "sine.inOut" }, 27.85);
+    tl.fromTo("#leak5-rose", { xPercent: 20, yPercent: -8, scale: 1.08 }, { xPercent: -16, yPercent: 8, scale: 0.94, duration: 1.2, ease: "sine.inOut" }, 27.85);
+    tl.fromTo("#leak5-gold", { xPercent: -28, rotation: -6 }, { xPercent: 24, rotation: 4, duration: 1.2, ease: "sine.inOut" }, 27.85);
+    tl.fromTo("#flash1-inner", { opacity: 0 }, { opacity: 0.92, duration: 0.28, ease: "power2.in" }, 16.7);
+    tl.to("#flash1-inner", { opacity: 0, duration: 0.3, ease: "power2.out" }, 16.99);
+    window.__timelines["fx"] = tl;
+  </script>
+</template>

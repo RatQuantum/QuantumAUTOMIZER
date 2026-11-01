@@ -13,6 +13,8 @@ Write one continuous take with `[pause]` between lines and time the scene cuts t
 timings with ElevenLabs Scribe for the subtitles. Image nodes on ElevenLabs default to 16:9: always set
 aspect_ratio 9:16 and resolution 2K before running them.
 
+- Day 4 Tamil (`reels/day4-ta`): done 1 Nov, "why Kanha stole butter" (36.3 s, Aarumugam, 6 ElevenLabs stills).
+  Caption in content/captions/day4-ta.txt. Next: Day 5 per content/plan-week-nov2.md.
 - Day 3 Tamil (`reels/day3-ta`): done and approved by the user; `python3 tools/build_ta.py`. Script in
   `content/day3/script-ta.txt`.
 

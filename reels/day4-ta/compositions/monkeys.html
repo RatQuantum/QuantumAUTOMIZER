@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #monkeys-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+  </style>
+  <div id="root" data-composition-id="monkeys" data-width="1080" data-height="1920">
+    <img id="monkeys-photo" class="clip" data-layout-allow-overflow src="assets/img/03-monkeys.png" alt="" data-start="0" data-duration="5.32" data-track-index="0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#monkeys-photo", { x: -108, y: -192, scale: 1.2, transformOrigin: "0 0" }, { x: -27, y: -48, scale: 1.05, duration: 5.32, ease: "sine.inOut" }, 0);
+    window.__timelines["monkeys"] = tl;
+  </script>
+</template>

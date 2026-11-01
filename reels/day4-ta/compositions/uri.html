@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070f;
+    }
+    #uri-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+  </style>
+  <div id="root" data-composition-id="uri" data-width="1080" data-height="1920">
+    <img id="uri-photo" class="clip" data-layout-allow-overflow src="assets/img/02-uri.png" alt="" data-start="0" data-duration="6.63" data-track-index="0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#uri-photo", { x: -54, y: -400, scale: 1.25, transformOrigin: "0 0" }, { x: -108, y: -96, scale: 1.1, duration: 6.63, ease: "sine.inOut" }, 0);
+    window.__timelines["uri"] = tl;
+  </script>
+</template>
