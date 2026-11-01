@@ -16,6 +16,12 @@ it was blocked by the permission check; the user must allow it (see .claude/sett
   /home/user/lp-venv/bin/python inference.py -s <face.png> -d assets/examples/driving/d18.mp4 -o <dir> --flag-force-cpu
   (d18 = calm breathing/blink for Arjuna, d9 = gentle closed-mouth smile for Krishna)
 Trending audio can only be added in the Instagram app: post day5-tamil-no-music.mp4 and add the sound there.
+LivePortrait now runs (permission rule in .claude/settings.json). Lessons: most driving templates TALK, so use
+--animation-region eyes (blinks, gaze) and, for a head tilt, a second pass with the first output as the
+source and --animation-region pose. Trim drivers to the shot length (2K on CPU: ~6 s per frame). Stretch
+with ffmpeg setpts + minterpolate for slow motion. Real CC0 effects: /home/user/sonic-pi/etc/samples
+(git sparse clone of sonic-pi-net/sonic-pi), credits in reels/day5-ta/assets/sfx/CREDITS.md. Openverse and
+the HF datasets server are blocked here. After rendering, loudnorm the mp4 to -15 LUFS (video copied).
 
 **Style change (1 Nov): fast cut, music first.** The user's grid showed the narrated AI-art reels at
 117-1,206 views while their own real-footage text reels did 33.2K and 10.7K. The old reels opened on a fade
