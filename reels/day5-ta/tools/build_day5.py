@@ -25,13 +25,41 @@ LINES = [
     ("நீ தனியாக இல்லை.<br><b>கவலைப்படாதே.</b>", 14.6, 17.9),
     ('கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏', 18.1, TOTAL),
 ]
-AUDIO = [  # file, start, volume, track
-    ("assets/audio/score.wav", 0.0, 0.42, 6),
-    ("assets/audio/vo-narrator.wav", 0.4, 1.0, 7),
-    ("assets/audio/vo-krishna.wav", 9.6, 1.0, 7),
-    ("assets/audio/wind.wav", 0.0, 0.3, 8),
-    ("assets/audio/impact.wav", TURN - 1.27, 0.55, 9),   # its boom peaks 1.27 s in
-    ("assets/audio/chariot.wav", TURN + 0.2, 0.3, 10),
+# The music dips while anyone speaks and swells into the turn (points are seconds, volume 0..1)
+SCORE_LANE = [(0, 0.55), (0.35, 0.3), (7.4, 0.3), (8.2, 0.55), (8.9, 0.75), (9.5, 0.75), (9.75, 0.32),
+              (17.6, 0.32), (18.1, 0.65), (TOTAL, 0.65)]
+HEARTBEAT = [5.6, 6.5, 7.3, 7.9, 8.4]  # lub at each time, dub 0.26 s later, speeding up toward the turn
+SFX = "assets/sfx/"  # real CC0 recordings from freesound.org via Sonic Pi, see assets/sfx/CREDITS.md
+# file, start, volume, track, options: media (offset into the file), dur, fin/fout (fades), lane
+AUDIO = [
+    ("assets/audio/score.wav", 0.0, 1.0, 6, {"lane": SCORE_LANE}),
+    ("assets/audio/vo-narrator.wav", 0.4, 1.0, 7, {}),
+    ("assets/audio/vo-krishna.wav", 9.6, 1.0, 7, {}),
+    # despair: a boom on frame 0, wind, a dark hum, crows near then far
+    (SFX + "misc_cineboom.wav", 0.0, 0.55, 8, {"media": 1.4, "dur": 4.0, "fout": 1.5}),   # boom lands at 0.27 s
+    ("assets/audio/wind.wav", 0.0, 0.22, 9, {"fin": 0.4}),
+    (SFX + "ambi_haunted_hum.wav", 0.0, 0.4, 10, {"dur": 9.0, "fin": 0.5, "fout": 0.8}),
+    (SFX + "misc_crow.wav", 1.75, 0.35, 11, {}),
+    (SFX + "misc_crow.wav", 4.7, 0.18, 11, {}),
+    # cut to Arjuna's face: a swoosh peaking on the cut, then his heartbeat speeding up
+    (SFX + "ambi_swoosh.wav", 5.3 - 0.89, 0.4, 12, {}),
+    *[(SFX + "bd_boom.wav", t, 0.32, 13, {"dur": 0.5, "fout": 0.2}) for t in HEARTBEAT],
+    *[(SFX + "bd_boom.wav", t + 0.26, 0.2, 14, {"dur": 0.45, "fout": 0.2}) for t in HEARTBEAT],
+    # the build: a drum roll and a dark woosh that peaks exactly on the turn
+    (SFX + "drum_roll.wav", 7.0, 0.3, 15, {"dur": 2.0, "fin": 1.2, "fout": 0.1}),
+    (SFX + "ambi_dark_woosh.wav", TURN - 1.27, 0.5, 16, {}),
+    # the turn: boom, temple bell, real choir, the chariot arriving
+    ("assets/audio/impact.wav", TURN - 1.27, 0.45, 17, {}),  # its boom peaks 1.27 s in
+    (SFX + "bd_boom.wav", TURN, 0.7, 18, {}),
+    (SFX + "perc_bell.wav", TURN + 0.05, 0.9, 19, {"dur": 5.0, "fout": 1.5}),
+    (SFX + "ambi_choir.wav", TURN + 0.1, 0.55, 20, {}),
+    ("assets/audio/chariot.wav", TURN + 0.2, 0.25, 21, {}),
+    # Krishna's face: a swoosh on the cut, a soft choir, a soft bell on "you are not alone"
+    (SFX + "perc_swoosh.wav", 13.8 - 0.14, 0.35, 12, {}),
+    (SFX + "ambi_choir.wav", 13.85, 0.35, 20, {}),
+    (SFX + "perc_bell2.wav", 14.55, 0.55, 22, {"dur": 3.2, "fout": 1.0}),
+    # the ask: the temple bell
+    (SFX + "perc_bell.wav", 18.05, 0.8, 19, {"fout": 0.8}),
 ]
 HANDLE = "@lordsrikrishnatemple"
 # NO_MUSIC=1 builds the version without the score, to put a trending Instagram sound under it in the app
@@ -186,12 +214,19 @@ def index():
         f'      <div id="{c}" data-composition-id="{c}" data-composition-src="compositions/{c}.html" data-start="0" data-duration="{TOTAL}" data-track-index="{n}" data-track-kind="{k}" data-width="1080" data-height="1920"></div>'
         for n, (c, k) in enumerate([("shots", "graphics"), ("fx", "graphics"), ("texts", "captions")], start=1))
     audio = ""
-    for i, (f, st, vol, tr) in enumerate(AUDIO):
-        import subprocess
+    import json
+    import subprocess
+    for i, (f, st, vol, tr, o) in enumerate(AUDIO):
         du = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f],
-                                  capture_output=True, text=True, check=True).stdout)
-        du = min(du, TOTAL - st)
-        audio += f'      <audio id="a{i}" class="clip" src="{f}" data-start="{st:.2f}" data-duration="{du:.2f}" data-volume="{vol}" data-track-index="{tr}"></audio>\n'
+                                  capture_output=True, text=True, check=True).stdout) - o.get("media", 0)
+        du = min(du, o.get("dur", du), TOTAL - st)
+        extra = f' data-media-start="{o["media"]}"' if "media" in o else ""
+        extra += f' data-fade-in="{o["fin"]}"' if "fin" in o else ""
+        extra += f' data-fade-out="{o["fout"]}"' if "fout" in o else ""
+        if "lane" in o:
+            lane = {"version": 1, "lanes": [{"target": "volume", "points": [{"t": round(t - st, 2), "v": v} for t, v in o["lane"]]}]}
+            extra += ' data-automation="' + json.dumps(lane, separators=(",", ":")).replace('"', "&quot;") + '"'
+        audio += f'      <audio id="a{i}" class="clip" src="{f}" data-start="{st:.2f}" data-duration="{du:.2f}" data-volume="{vol}" data-track-index="{tr}"{extra}></audio>\n'
     return f'''<!doctype html>
 <html lang="ta" data-resolution="portrait">
   <head>
