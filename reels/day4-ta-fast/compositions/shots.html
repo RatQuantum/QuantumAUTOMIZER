@@ -1,0 +1,66 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .shot {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: cover;
+      transform-origin: 50% 50%;
+    }
+  </style>
+  <div id="root" data-composition-id="shots" data-width="1080" data-height="1920">
+    <img id="shot0" class="clip shot" data-layout-allow-overflow src="assets/img/kanha2.jpg" alt="" data-start="0.0" data-duration="2.873" data-track-index="0" />
+    <img id="shot1" class="clip shot" data-layout-allow-overflow src="assets/img/yashoda4.jpg" alt="" data-start="2.873" data-duration="0.937" data-track-index="1" />
+    <img id="shot2" class="clip shot" data-layout-allow-overflow src="assets/img/yashoda2.jpg" alt="" data-start="3.81" data-duration="0.937" data-track-index="0" />
+    <img id="shot3" class="clip shot" data-layout-allow-overflow src="assets/img/uri3.jpg" alt="" data-start="4.747" data-duration="0.938" data-track-index="1" />
+    <img id="shot4" class="clip shot" data-layout-allow-overflow src="assets/img/uri1.jpg" alt="" data-start="5.685" data-duration="0.937" data-track-index="0" />
+    <img id="shot5" class="clip shot" data-layout-allow-overflow src="assets/img/monkeys3.jpg" alt="" data-start="6.622" data-duration="0.938" data-track-index="1" />
+    <img id="shot6" class="clip shot" data-layout-allow-overflow src="assets/img/monkeys2.jpg" alt="" data-start="7.56" data-duration="0.938" data-track-index="0" />
+    <img id="shot7" class="clip shot" data-layout-allow-overflow src="assets/img/churn2.jpg" alt="" data-start="8.498" data-duration="1.875" data-track-index="1" />
+    <img id="shot8" class="clip shot" data-layout-allow-overflow src="assets/img/churn3.jpg" alt="" data-start="10.373" data-duration="0.937" data-track-index="0" />
+    <img id="shot9" class="clip shot" data-layout-allow-overflow src="assets/img/offering3.jpg" alt="" data-start="11.31" data-duration="0.938" data-track-index="1" />
+    <img id="shot10" class="clip shot" data-layout-allow-overflow src="assets/img/offering1.jpg" alt="" data-start="12.248" data-duration="0.937" data-track-index="0" />
+    <img id="shot11" class="clip shot" data-layout-allow-overflow src="assets/img/kanha4.jpg" alt="" data-start="13.185" data-duration="0.938" data-track-index="1" />
+    <img id="shot12" class="clip shot" data-layout-allow-overflow src="assets/img/kanha1.jpg" alt="" data-start="14.123" data-duration="0.937" data-track-index="0" />
+    <img id="shot13" class="clip shot" data-layout-allow-overflow src="assets/img/kanha2.jpg" alt="" data-start="15.06" data-duration="3.750" data-track-index="1" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#shot0", { scale: 1.792, x: 61, y: 356 }, { scale: 1.6, duration: 0.28, ease: "power3.out" }, 0.0);
+    tl.to("#shot0", { scale: 1.68, x: 50, y: 330, duration: 2.593, ease: "none" }, 0.280);
+    tl.fromTo("#shot1", { scale: 1.210, x: 0, y: 0 }, { scale: 1.08, duration: 0.28, ease: "power3.out" }, 2.873);
+    tl.to("#shot1", { scale: 1.14, x: -20, y: 30, duration: 0.657, ease: "none" }, 3.153);
+    tl.fromTo("#shot2", { scale: 1.232, x: -20, y: -30 }, { scale: 1.1, duration: 0.28, ease: "power3.out" }, 3.81);
+    tl.to("#shot2", { scale: 1.04, x: 0, y: 0, duration: 0.657, ease: "none" }, 4.090);
+    tl.fromTo("#shot3", { scale: 1.254, x: 0, y: 60 }, { scale: 1.12, duration: 0.28, ease: "power3.out" }, 4.747);
+    tl.to("#shot3", { scale: 1.05, x: 0, y: -20, duration: 0.658, ease: "none" }, 5.027);
+    tl.fromTo("#shot4", { scale: 1.176, x: 0, y: -30 }, { scale: 1.05, duration: 0.28, ease: "power3.out" }, 5.685);
+    tl.to("#shot4", { scale: 1.12, x: 20, y: 40, duration: 0.657, ease: "none" }, 5.965);
+    tl.fromTo("#shot5", { scale: 1.232, x: 20, y: 0 }, { scale: 1.1, duration: 0.28, ease: "power3.out" }, 6.622);
+    tl.to("#shot5", { scale: 1.04, x: -10, y: 20, duration: 0.658, ease: "none" }, 6.902);
+    tl.fromTo("#shot6", { scale: 1.165, x: -10, y: 20 }, { scale: 1.04, duration: 0.28, ease: "power3.out" }, 7.56);
+    tl.to("#shot6", { scale: 1.1, x: 20, y: -30, duration: 0.658, ease: "none" }, 7.840);
+    tl.fromTo("#shot7", { scale: 1.176, x: 0, y: 0 }, { scale: 1.05, duration: 0.28, ease: "power3.out" }, 8.498);
+    tl.to("#shot7", { scale: 1.18, x: -30, y: -60, duration: 1.595, ease: "none" }, 8.778);
+    tl.fromTo("#shot8", { scale: 1.254, x: 0, y: 40 }, { scale: 1.12, duration: 0.28, ease: "power3.out" }, 10.373);
+    tl.to("#shot8", { scale: 1.05, x: 0, y: 0, duration: 0.657, ease: "none" }, 10.653);
+    tl.fromTo("#shot9", { scale: 1.165, x: 0, y: 0 }, { scale: 1.04, duration: 0.28, ease: "power3.out" }, 11.31);
+    tl.to("#shot9", { scale: 1.12, x: 0, y: -50, duration: 0.658, ease: "none" }, 11.590);
+    tl.fromTo("#shot10", { scale: 1.254, x: 0, y: -40 }, { scale: 1.12, duration: 0.28, ease: "power3.out" }, 12.248);
+    tl.to("#shot10", { scale: 1.05, x: 0, y: 0, duration: 0.657, ease: "none" }, 12.528);
+    tl.fromTo("#shot11", { scale: 1.512, x: 0, y: 160 }, { scale: 1.35, duration: 0.28, ease: "power3.out" }, 13.185);
+    tl.to("#shot11", { scale: 1.42, x: 0, y: 150, duration: 0.658, ease: "none" }, 13.465);
+    tl.fromTo("#shot12", { scale: 1.590, x: 0, y: 150 }, { scale: 1.42, duration: 0.28, ease: "power3.out" }, 14.123);
+    tl.to("#shot12", { scale: 1.35, x: 0, y: 160, duration: 0.657, ease: "none" }, 14.403);
+    tl.fromTo("#shot13", { scale: 1.254, x: 0, y: -110 }, { scale: 1.12, duration: 0.28, ease: "power3.out" }, 15.06);
+    tl.to("#shot13", { scale: 1.16, x: 0, y: -140, duration: 3.470, ease: "none" }, 15.340);
+    window.__timelines["shots"] = tl;
+  </script>
+</template>

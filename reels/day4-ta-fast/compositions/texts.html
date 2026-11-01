@@ -1,0 +1,170 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    @font-face {
+      font-family: "Noto Serif Tamil";
+      src: url("assets/fonts/NotoSerifTamil.ttf");
+    }
+    @font-face {
+      font-family: "Noto Sans Tamil";
+      src: url("assets/fonts/NotoSansTamil.ttf");
+    }
+    @font-face {
+      font-family: "Noto Color Emoji";
+      src: url("assets/fonts/NotoColorEmoji.ttf");
+    }
+    .beat {
+      position: absolute;
+      left: 60px;
+      width: 960px;
+      text-align: center;
+    }
+    .beat.top {
+      top: 300px;
+    }
+    .beat.mid {
+      top: 1170px;
+    }
+    .line {
+      display: inline-block;
+      padding: 18px 34px 24px;
+      border-radius: 30px;
+      font-family: "Noto Serif Tamil", serif;
+      font-weight: 700;
+      color: #ffffff;
+      text-wrap: balance;
+      text-shadow: 0 4px 0 rgba(10, 14, 40, 0.9), 0 0 28px rgba(5, 7, 15, 0.9);
+    }
+    .top .line {
+      font-size: 84px;
+      line-height: 1.3;
+      background: rgba(10, 14, 40, 0.5);
+    }
+    .mid .line {
+      font-size: 64px;
+      line-height: 1.32;
+      background: rgba(10, 14, 40, 0.66);
+      border: 3px solid rgba(233, 185, 73, 0.9);
+    }
+    .hl {
+      color: #ffc94d;
+    }
+    .emoji {
+      font-family: "Noto Color Emoji", sans-serif;
+    }
+    #cta {
+      position: absolute;
+      left: 60px;
+      width: 960px;
+      top: 1040px;
+      text-align: center;
+    }
+    #cta-ask {
+      display: inline-block;
+      padding: 16px 34px 22px;
+      border-radius: 30px;
+      background: rgba(10, 14, 40, 0.72);
+      font-family: "Noto Serif Tamil", serif;
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 1.3;
+      color: #ffffff;
+    }
+    #cta-btn {
+      display: inline-block;
+      margin-top: 26px;
+      padding: 10px 46px 14px;
+      border-radius: 22px;
+      background: #c4600f;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 84px;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+    }
+    #cta-sub {
+      margin-top: 22px;
+      font-family: "Noto Sans Tamil", sans-serif;
+      font-weight: 700;
+      font-size: 40px;
+      color: #ffe3a3;
+      text-shadow: 0 2px 10px rgba(5, 7, 15, 0.9);
+    }
+    #cta-handle {
+      margin-top: 10px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 32px;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(5, 7, 15, 0.9);
+    }
+  </style>
+  <div id="root" data-composition-id="texts" data-width="1080" data-height="1920">
+    <div id="b0" class="clip beat top" data-start="0.0" data-duration="2.873" data-track-index="0">
+      <div id="b0-line" class="line">கண்ணன் ஏன் வெண்ணெய்<br><span class="hl">திருடினான்?</span> <span class="emoji">🤔</span></div>
+    </div>
+    <div id="b1" class="clip beat mid" data-start="2.873" data-duration="1.874" data-track-index="1">
+      <div id="b1-line" class="line">யசோதா திரும்பிப் பார்த்தாள்…<br><span class="hl">பானை காலி!</span> <span class="emoji">😄</span></div>
+    </div>
+    <div id="b2" class="clip beat mid" data-start="4.747" data-duration="1.875" data-track-index="0">
+      <div id="b2-line" class="line">நண்பர்கள் தோளில் ஏறி…<br><span class="hl">உறியில் கை!</span> <span class="emoji">🙌</span></div>
+    </div>
+    <div id="b3" class="clip beat mid" data-start="6.622" data-duration="1.876" data-track-index="1">
+      <div id="b3-line" class="line">குரங்குகளுக்கும்<br><span class="hl">ஒரு பங்கு!</span> <span class="emoji">🐒</span></div>
+    </div>
+    <div id="b4" class="clip beat mid" data-start="8.498" data-duration="1.875" data-track-index="0">
+      <div id="b4-line" class="line">ஆனால்… <span class="hl">ரகசியம்</span><br>தெரியுமா? <span class="emoji">✨</span></div>
+    </div>
+    <div id="b5" class="clip beat mid" data-start="10.373" data-duration="0.937" data-track-index="1">
+      <div id="b5-line" class="line">தயிரைக் கடைந்தால்தான்<br><span class="hl">வெண்ணெய்</span></div>
+    </div>
+    <div id="b6" class="clip beat mid" data-start="11.31" data-duration="1.875" data-track-index="0">
+      <div id="b6-line" class="line">பக்தியால் கடைந்த<br><span class="hl">மனதின் அன்பு</span> <span class="emoji">❤️</span></div>
+    </div>
+    <div id="b7" class="clip beat mid" data-start="13.185" data-duration="1.875" data-track-index="1">
+      <div id="b7-line" class="line">அதைத்தான் கண்ணன்<br><span class="hl">திருடுகிறான்</span> <span class="emoji">🦚</span></div>
+    </div>
+    <div id="cta" class="clip" data-start="15.06" data-duration="3.750" data-track-index="2">
+      <div id="cta-ask">கமெண்ட்டில் <span class="hl">"கண்ணா"</span> 🙏</div>
+      <div><div id="cta-btn">FOLLOW</div></div>
+      <div id="cta-sub">தினமும் கண்ணனின் கதைகள்</div>
+      <div id="cta-handle">@lordsrikrishnatemple</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#b0-line", { scale: 1.06 }, 0.0);
+    tl.to("#b0-line", { scale: 1, duration: 0.3, ease: "power2.out" }, 0.0);
+    tl.set("#b0-line", { scale: 1.06 }, 0.998);
+    tl.to("#b0-line", { scale: 1, duration: 0.3, ease: "power2.out" }, 0.998);
+    tl.set("#b0-line", { scale: 1.06 }, 1.935);
+    tl.to("#b0-line", { scale: 1, duration: 0.3, ease: "power2.out" }, 1.935);
+    tl.to("#b0-line", { opacity: 0, scale: 1.08, duration: 0.12, ease: "power1.in" }, 2.753);
+    tl.fromTo("#b1-line", { opacity: 0, scale: 0.6, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.26, ease: "back.out(2.6)" }, 2.873);
+    tl.to("#b1-line", { opacity: 0, scale: 1.08, duration: 0.12, ease: "power1.in" }, 4.627);
+    tl.fromTo("#b2-line", { opacity: 0, scale: 0.6, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.26, ease: "back.out(2.6)" }, 4.747);
+    tl.to("#b2-line", { opacity: 0, scale: 1.08, duration: 0.12, ease: "power1.in" }, 6.502);
+    tl.fromTo("#b3-line", { opacity: 0, scale: 0.6, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.26, ease: "back.out(2.6)" }, 6.622);
+    tl.to("#b3-line", { opacity: 0, scale: 1.08, duration: 0.12, ease: "power1.in" }, 8.378);
+    tl.fromTo("#b4-line", { opacity: 0, scale: 0.6, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.26, ease: "back.out(2.6)" }, 8.498);
+    tl.to("#b4-line", { opacity: 0, scale: 1.08, duration: 0.12, ease: "power1.in" }, 10.253);
+    tl.fromTo("#b5-line", { opacity: 0, scale: 0.6, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.26, ease: "back.out(2.6)" }, 10.373);
+    tl.to("#b5-line", { opacity: 0, scale: 1.08, duration: 0.12, ease: "power1.in" }, 11.190);
+    tl.fromTo("#b6-line", { opacity: 0, scale: 0.6, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.26, ease: "back.out(2.6)" }, 11.31);
+    tl.to("#b6-line", { opacity: 0, scale: 1.08, duration: 0.12, ease: "power1.in" }, 13.065);
+    tl.fromTo("#b7-line", { opacity: 0, scale: 0.6, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.26, ease: "back.out(2.6)" }, 13.185);
+    tl.to("#b7-line", { opacity: 0, scale: 1.08, duration: 0.12, ease: "power1.in" }, 14.940);
+    tl.fromTo("#cta-ask", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.26, ease: "back.out(2.6)" }, 15.06);
+    tl.fromTo("#cta-btn", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(3)" }, 15.529);
+    tl.fromTo("#cta-sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 15.998);
+    tl.fromTo("#cta-handle", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 15.998);
+    tl.set("#cta-btn", { scale: 1.1 }, 16.466);
+    tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "power2.out" }, 16.466);
+    tl.set("#cta-btn", { scale: 1.1 }, 17.404);
+    tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "power2.out" }, 17.404);
+    window.__timelines["texts"] = tl;
+  </script>
+</template>

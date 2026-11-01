@@ -1,0 +1,148 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .petal {
+      position: absolute;
+      top: -60px;
+      width: 30px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffd27a, #f28c28 55%, #c4600f);
+    }
+    #glow {
+      position: absolute;
+      left: -200px;
+      top: -300px;
+      width: 1480px;
+      height: 1480px;
+      background: radial-gradient(circle, rgba(255, 214, 120, 0.55), rgba(255, 170, 60, 0.18) 40%, rgba(255, 170, 60, 0) 70%);
+      mix-blend-mode: screen;
+    }
+    #rays {
+      position: absolute;
+      left: -420px;
+      top: -1000px;
+      width: 1920px;
+      height: 1920px;
+      background: repeating-conic-gradient(from 0deg, rgba(255, 220, 140, 0.16) 0deg 6deg, rgba(255, 220, 140, 0) 6deg 18deg);
+      mix-blend-mode: screen;
+      -webkit-mask-image: radial-gradient(circle, #000 15%, transparent 65%);
+      mask-image: radial-gradient(circle, #000 15%, transparent 65%);
+    }
+    .flash {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, #fff6d8, #ffd27a 60%, #f2a23a);
+    }
+    #vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0) 55%, rgba(5, 7, 15, 0.55));
+    }
+  </style>
+  <div id="root" data-composition-id="fx" data-width="1080" data-height="1920">
+    <div id="vignette" class="clip" data-start="0" data-duration="18.9" data-track-index="0" data-layout-ignore></div>
+    <div id="rays" class="clip" data-start="8.498" data-duration="10.402" data-track-index="1" data-layout-ignore></div>
+    <div id="glow" class="clip" data-start="8.498" data-duration="10.402" data-track-index="2" data-layout-ignore></div>
+    <div id="flash0" class="clip flash" data-start="8.438" data-duration="0.42" data-track-index="3" data-layout-ignore></div>
+    <div id="flash1" class="clip flash" data-start="13.125" data-duration="0.42" data-track-index="3" data-layout-ignore></div>
+    <div id="flash2" class="clip flash" data-start="15.000" data-duration="0.42" data-track-index="3" data-layout-ignore></div>
+    <div id="petals" class="clip" data-start="0" data-duration="18.9" data-track-index="4" data-layout-ignore>
+      <div id="p0" class="petal" style="left: 686px; transform: scale(1.11);"></div>
+      <div id="p1" class="petal" style="left: 108px; transform: scale(0.76);"></div>
+      <div id="p2" class="petal" style="left: 146px; transform: scale(1.11);"></div>
+      <div id="p3" class="petal" style="left: 590px; transform: scale(1.08);"></div>
+      <div id="p4" class="petal" style="left: 718px; transform: scale(0.77);"></div>
+      <div id="p5" class="petal" style="left: 653px; transform: scale(1.03);"></div>
+      <div id="p6" class="petal" style="left: 274px; transform: scale(1.1);"></div>
+      <div id="p7" class="petal" style="left: 766px; transform: scale(1.06);"></div>
+      <div id="p8" class="petal" style="left: 975px; transform: scale(0.75);"></div>
+      <div id="p9" class="petal" style="left: 857px; transform: scale(1.05);"></div>
+      <div id="p10" class="petal" style="left: 115px; transform: scale(1.21);"></div>
+      <div id="p11" class="petal" style="left: 717px; transform: scale(0.94);"></div>
+      <div id="p12" class="petal" style="left: 645px; transform: scale(1.24);"></div>
+      <div id="p13" class="petal" style="left: 420px; transform: scale(0.98);"></div>
+      <div id="p14" class="petal" style="left: 460px; transform: scale(1.18);"></div>
+      <div id="p15" class="petal" style="left: 104px; transform: scale(0.86);"></div>
+      <div id="p16" class="petal" style="left: 289px; transform: scale(1.07);"></div>
+      <div id="p17" class="petal" style="left: 148px; transform: scale(0.98);"></div>
+      <div id="p18" class="petal" style="left: 83px; transform: scale(0.81);"></div>
+      <div id="p19" class="petal" style="left: 20px; transform: scale(1.13);"></div>
+      <div id="p20" class="petal" style="left: 405px; transform: scale(1.12);"></div>
+      <div id="p21" class="petal" style="left: 519px; transform: scale(0.76);"></div>
+      <div id="p22" class="petal" style="left: 291px; transform: scale(0.72);"></div>
+      <div id="p23" class="petal" style="left: 170px; transform: scale(1.3);"></div>
+      <div id="p24" class="petal" style="left: 395px; transform: scale(1.08);"></div>
+      <div id="p25" class="petal" style="left: 647px; transform: scale(0.84);"></div>
+      <div id="p26" class="petal" style="left: 1033px; transform: scale(0.84);"></div>
+      <div id="p27" class="petal" style="left: 847px; transform: scale(0.77);"></div>
+      <div id="p28" class="petal" style="left: 514px; transform: scale(0.76);"></div>
+      <div id="p29" class="petal" style="left: 821px; transform: scale(1.25);"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#glow", { opacity: 0.35 }, 0);
+    tl.fromTo("#rays", { rotation: 0, opacity: 0 }, { rotation: 40, opacity: 1, duration: 10.402, ease: "none" }, 8.498);
+    tl.set("#glow", { opacity: 0.9 }, 8.498);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 8.498);
+    tl.set("#glow", { opacity: 0.9 }, 9.435);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 9.435);
+    tl.set("#glow", { opacity: 0.9 }, 10.373);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 10.373);
+    tl.set("#glow", { opacity: 0.9 }, 11.31);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 11.31);
+    tl.set("#glow", { opacity: 0.9 }, 12.248);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 12.248);
+    tl.set("#glow", { opacity: 0.9 }, 13.185);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 13.185);
+    tl.set("#glow", { opacity: 0.9 }, 14.123);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 14.123);
+    tl.set("#glow", { opacity: 0.9 }, 15.06);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 15.06);
+    tl.set("#glow", { opacity: 0.9 }, 15.998);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 15.998);
+    tl.set("#glow", { opacity: 0.9 }, 16.935);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 16.935);
+    tl.set("#glow", { opacity: 0.9 }, 17.872);
+    tl.to("#glow", { opacity: 0.35, duration: 0.887, ease: "power2.out" }, 17.872);
+    tl.fromTo("#flash0", { opacity: 0.85 }, { opacity: 0, duration: 0.36, ease: "power2.out" }, 8.438);
+    tl.fromTo("#flash1", { opacity: 0.85 }, { opacity: 0, duration: 0.36, ease: "power2.out" }, 13.125);
+    tl.fromTo("#flash2", { opacity: 0.85 }, { opacity: 0, duration: 0.36, ease: "power2.out" }, 15.000);
+    tl.fromTo("#p0", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -69, rotation: -367, duration: 3.88, ease: "none" }, 3.77);
+    tl.fromTo("#p1", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: 113, rotation: -303, duration: 4.04, ease: "none" }, 16.01);
+    tl.fromTo("#p2", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -140, rotation: -475, duration: 5.57, ease: "none" }, 5.87);
+    tl.fromTo("#p3", { y: 927, x: 0, rotation: 0 }, { y: 1980, x: -97, rotation: 253, duration: 2.09, ease: "none" }, 0);
+    tl.fromTo("#p4", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -73, rotation: -370, duration: 4.9, ease: "none" }, 8.93);
+    tl.fromTo("#p5", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -123, rotation: 340, duration: 4.91, ease: "none" }, 11.88);
+    tl.fromTo("#p6", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -149, rotation: -221, duration: 4.4, ease: "none" }, 16.3);
+    tl.fromTo("#p7", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: 96, rotation: -240, duration: 5.69, ease: "none" }, 7.98);
+    tl.fromTo("#p8", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: 113, rotation: -522, duration: 4.36, ease: "none" }, 0.45);
+    tl.fromTo("#p9", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: 103, rotation: 484, duration: 5.47, ease: "none" }, 8.66);
+    tl.fromTo("#p10", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: 120, rotation: -211, duration: 3.67, ease: "none" }, 13.66);
+    tl.fromTo("#p11", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: 96, rotation: 522, duration: 4.94, ease: "none" }, 3.47);
+    tl.fromTo("#p12", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -123, rotation: -291, duration: 4.39, ease: "none" }, 16.66);
+    tl.fromTo("#p13", { y: 88, x: 0, rotation: 0 }, { y: 1980, x: 70, rotation: -409, duration: 3.82, ease: "none" }, 0);
+    tl.fromTo("#p14", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: 150, rotation: 363, duration: 3.84, ease: "none" }, 2.81);
+    tl.fromTo("#p15", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -79, rotation: -517, duration: 4.08, ease: "none" }, 4.95);
+    tl.fromTo("#p16", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: 60, rotation: -394, duration: 4.97, ease: "none" }, 7.14);
+    tl.fromTo("#p17", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -118, rotation: 383, duration: 4.3, ease: "none" }, 9.75);
+    tl.fromTo("#p18", { y: 276, x: 0, rotation: 0 }, { y: 1980, x: -68, rotation: -405, duration: 4.25, ease: "none" }, 0);
+    tl.fromTo("#p19", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -128, rotation: -366, duration: 3.63, ease: "none" }, 4.11);
+    tl.fromTo("#p20", { y: 716, x: 0, rotation: 0 }, { y: 1980, x: -141, rotation: 357, duration: 2.49, ease: "none" }, 0);
+    tl.fromTo("#p21", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: 121, rotation: 339, duration: 3.79, ease: "none" }, 6.91);
+    tl.fromTo("#p22", { y: 342, x: 0, rotation: 0 }, { y: 1980, x: 148, rotation: -444, duration: 3.5, ease: "none" }, 0);
+    tl.fromTo("#p23", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -157, rotation: 509, duration: 4.82, ease: "none" }, 16.88);
+    tl.fromTo("#p24", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -105, rotation: -452, duration: 4.15, ease: "none" }, 11.55);
+    tl.fromTo("#p25", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -90, rotation: 296, duration: 5.09, ease: "none" }, 7.51);
+    tl.fromTo("#p26", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -95, rotation: 312, duration: 5.33, ease: "none" }, 7.3);
+    tl.fromTo("#p27", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: 106, rotation: -292, duration: 4.36, ease: "none" }, 9.65);
+    tl.fromTo("#p28", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -121, rotation: 509, duration: 4.34, ease: "none" }, 6.82);
+    tl.fromTo("#p29", { y: -60, x: 0, rotation: 0 }, { y: 1980, x: -121, rotation: -402, duration: 5.77, ease: "none" }, 10.81);
+    window.__timelines["fx"] = tl;
+  </script>
+</template>

@@ -5,6 +5,17 @@ below must be rebuilt; everything else is in this repo.
 
 ## Status (31 Oct 2026)
 
+**Style change (1 Nov): fast cut, music first.** The user's grid showed the narrated AI-art reels at
+117-1,206 views while their own real-footage text reels did 33.2K and 10.7K. The old reels opened on a fade
+from black (frame-0 brightness 13-15 of 255), held shots 3-6 s and had no music. New rules, built into
+`reels/day4-ta-fast/tools/build_fast.py` (copy that folder for every new reel and edit only its CONFIG):
+- frame 0 bright and already moving, hook text on screen at frame 0 (it is the thumbnail); no fade-in
+- 15-20 s, cuts on the beat every ~1 s (two beats at 128 BPM), zoom punch on every cut
+- ElevenLabs Music v2.5 bed: fast mridangam/nadaswaram with the Hare Krishna mahamantra; conch at 0 s
+- big Tamil text beats instead of a long narration; petals, golden rays and gold flashes on big moments
+- end with a comment ask ("கமெண்ட்டில் கண்ணா") + FOLLOW
+- Real temple footage beats AI art by 10-30x on this account: ask the temple for clips every week.
+
 **Direction change (31 Oct): Tamil only from now on.** The temple is in Tamil Nadu, so each reel is made
 in Tamil only (no English version). Voice: a high-quality Tamil ElevenLabs library voice picked per video
 to suit its mood (male preferred; Day 3 uses "Aarumugam – Expressive Engaging Narrator", voice_id
