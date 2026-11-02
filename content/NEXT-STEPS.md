@@ -5,6 +5,22 @@ below must be rebuilt; everything else is in this repo.
 
 ## Status (31 Oct 2026)
 
+**Video model chosen (2 Nov): MiniMax H3** (the user compared it against Veo 3.1 Lite and preferred MiniMax).
+Use it for real AI video clips from our stills: ElevenLabs model `minimax-h3`, `resolution: 768p`,
+`duration_secs` 5-6, and NO `aspect_ratio` (it follows the 9:16 still). About 1,818 credits per 5 s clip.
+Price check (2 Nov, one ~5 s clip): Veo 3.1 Lite 1,091 · LTX 2 Fast 1,454 · MiniMax H3 1,818 ·
+Kling 2.5 Turbo 2,121 · MiniMax H3 Max 2,424 · Wan 2.6 3,030 · Kling 3.0 Pro 3,393 · Seedance 2 Fast 7,332.
+**Blocker:** finished videos download from `elevenlabsusercontent.com`, which this environment blocks. The user
+must add it under Network access -> Allowed domains (and `*.hf.space` for free Hugging Face Spaces); a new
+session picks it up. Day 5 MiniMax clips already generated on ElevenLabs flow NHhr5sLty3TT2iJmcwTD; download
+them with `creative_get_generations` (full_res_url) and drop them into reels/day5-ta/assets/video:
+- v1 Arjuna alone (6 s): generation of node gLZPIYMTm1OHh9qvYVFi (session v2tn9X6uLaIxUS1j4rUq)
+- v2 Arjuna face (5 s): node BtYcNQyImAiIUgLm0p2q (session SpCOhQFX7tGoVDfwHWw3)
+- v3 Krishna chariot (5 s): node Pkzg5WGpG540eSfgQHJw (session LvJS0l7rT1cWsXm5hIGm)
+- v4 Krishna face (5.2 s, slow it to 6.2 s): generation jcgyaOzRdiibBs5EEBgU (node moWHbZtKH0hzccmmGTeH)
+Then trim to the shot lengths in tools/build_day5.py (5.3 / 3.7 / 4.8 / 6.2 s), scale to 1080x1920, rebuild,
+render both versions, loudnorm to -15 LUFS.
+
 **Day 5 format (1 Nov, the user's reference reel): cinematic, narrated, real-looking faces.** The user rejected
 the fast slideshow and sent a reference: a moody Kurukshetra scene, deep Tamil narration, one Tamil line on
 screen at a time with one word in gold, few cuts, emotional score. `reels/day5-ta` follows it: 4 shots (stills
