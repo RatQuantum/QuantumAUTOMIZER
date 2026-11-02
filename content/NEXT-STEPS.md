@@ -14,9 +14,9 @@ Kling 2.5 Turbo 2,121 · MiniMax H3 Max 2,424 · Wan 2.6 3,030 · Kling 3.0 Pro 
 must add it under Network access -> Allowed domains (and `*.hf.space` for free Hugging Face Spaces); a new
 session picks it up. Day 5 MiniMax clips already generated on ElevenLabs flow NHhr5sLty3TT2iJmcwTD; download
 them with `creative_get_generations` (full_res_url) and drop them into reels/day5-ta/assets/video:
-- v1 Arjuna alone (6 s): generation of node gLZPIYMTm1OHh9qvYVFi (session v2tn9X6uLaIxUS1j4rUq)
-- v2 Arjuna face (5 s): node BtYcNQyImAiIUgLm0p2q (session SpCOhQFX7tGoVDfwHWw3)
-- v3 Krishna chariot (5 s): node Pkzg5WGpG540eSfgQHJw (session LvJS0l7rT1cWsXm5hIGm)
+- v1 Arjuna alone (6.6 s): generation SeYDkahriM9Hv23eJUJq (node gLZPIYMTm1OHh9qvYVFi)
+- v2 Arjuna face (5.2 s): generation bYemJYR80uyQtbjbbsd7 (node BtYcNQyImAiIUgLm0p2q)
+- v3 Krishna chariot (5.2 s): generation LE4ElOcBUodbpszekrdz (node Pkzg5WGpG540eSfgQHJw)
 - v4 Krishna face (5.2 s, slow it to 6.2 s): generation jcgyaOzRdiibBs5EEBgU (node moWHbZtKH0hzccmmGTeH)
 Then trim to the shot lengths in tools/build_day5.py (5.3 / 3.7 / 4.8 / 6.2 s), scale to 1080x1920, rebuild,
 render both versions, loudnorm to -15 LUFS.
