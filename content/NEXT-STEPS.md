@@ -5,6 +5,12 @@ below must be rebuilt; everything else is in this repo.
 
 ## CONTINUE HERE: Day 6 (Kuchela at Dwarka), free pipeline
 
+**3 Nov, later: free MiniMax H3 works** (Space `hugging-apps/minimax-h3-flashgen-4step`, anonymous, no token,
+~2 clips per day of free quota). v1 and v2 are done and `reels/day6-ta/tools/build_day6.py` builds the reel with
+the drop at 3.0 s; shots 3 and 4 are still placeholders. Next: on a fresh quota day make the s3 embrace still
+(Qwen-Image-Edit-2511 with s2-1 + s1-1) and v3, then s4 and v4, swap them into SHOTS, re-render, loudnorm, Whisper.
+Full details at the end of content/day6/script-ta.txt. The Wan 2.2 notes below are superseded.
+
 Read content/day6/script-ta.txt first. Stills are in reels/day6-ta/assets/img (s1-2 hook, s2-1/s2-2 Krishna runs),
 free Edge TTS narration in reels/day6-ta/assets/audio (vo-n1, vo-n2 narrator Valluvar; vo-k1 Krishna Anbu).
 ElevenLabs is AUDIO ONLY. Video: Wan 2.2 Space `zerogpu-aoti/wan2-2-fp8da-aoti-faster` through gradio_client

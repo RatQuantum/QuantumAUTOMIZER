@@ -34,3 +34,22 @@ dynamic_space tool. Blocked: the connector has invoke disabled (gradio=none), an
 Update: *.hf.space now reachable. Wan 2.2 Space API works (gradio_client, scratchpad tools/wan.py), but every
 job ends at once with an empty error: ZeroGPU needs a valid HF login. HF_TOKEN in the environment is rejected
 ("Invalid username or password"), and the HF MCP connector still has invoke off (gradio=none).
+
+Update (3 Nov, later): FREE MiniMax H3 found on Hugging Face. Space hugging-apps/minimax-h3-flashgen-4step works
+anonymously through gradio_client (no token): api_name="/generate", args prompt, image_path=handle_file(still),
+last_image_path=None, canvas "544x960 · 9:16 fast" (it renders 544x960 even when "full" is asked), duration 4,
+seed 42, enhance_prompt False. About 60 s of GPU per 4 s clip; the free anonymous quota is about 2 clips a day
+(then "exceeded your free ZeroGPU quota ... try again in 23 h").
+  v1 (s1-2 doors, light breaks through the gap) and v2 (s2-1 Krishna runs, laughing) DONE:
+  raw in assets/video/raw, upscaled 1080x1920 30 fps (lanczos + unsharp) in assets/video.
+  Still to make: s3 embrace and s4 Krishna eats the aval stills, then v3 and v4. For the stills use
+  prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast (api "/edit_image", images as a JSON list of base64 data URLs,
+  so s2-1 Krishna + s1-1 Sudama go in together and both faces stay; reels/day6-ta/tools/qedit.py, clips with tools/h3.py; run both with a venv that has gradio_client + pillow). It needs 120 s of
+  quota per picture, so do it on a fresh quota day (1 picture + 1 clip a day), or with a valid HF_TOKEN.
+Build: reels/day6-ta/tools/build_day6.py (17.0 s). Shot 1 is pulled off to the right in 0.42 s, ending exactly on
+the drop at 3.0 s, with a flash, boom, bell and choir; petals and rays after. The narrator pauses were tightened
+(vo-n1-tight 2.56 s, vo-n2-tight 1.75 s) so line 1 ends at 2.76 s, before the drop. Shots 3 and 4 are still
+placeholders (s2-2 and a close crop of s2-1 with a slow push); swap in v3/v4 by editing SHOTS.
+Draft render: day6-tamil-no-music-draft.mp4 (not in git), -15.1 LUFS, peak -1.4 dBFS; Whisper (medium) hears
+"கொடுக்க உன்னிடம் ஒன்றும் இல்லையா / அவன்... ஓடி வருவான் / நீ வந்ததே / எனக்கு போதும் நண்பா" = the script.
+No score yet (ElevenLabs credits are out): the no-music version is the one to post with the phonk track, drop at 0:03.
