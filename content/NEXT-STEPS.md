@@ -3,6 +3,17 @@
 Read this first in a new session. The cloud container is wiped between sessions, so the tools
 below must be rebuilt; everything else is in this repo.
 
+## Free Tamil voice (3 Nov 2026): Edge TTS via MoneyPrinterTurbo
+
+The user allowed `speech.platform.bing.com`. MoneyPrinterTurbo (github.com/harry0703/MoneyPrinterTurbo) is cloned
+to /home/user/MoneyPrinterTurbo with a venv at /home/user/mpt-venv (`pip install -r requirements.txt`). Its
+stock footage (Pexels) has no Krishna or temple content, so only its free edge-tts voice is used. edge-tts ignores
+the proxy env, so run:
+  SSL_CERT_FILE=/root/.ccr/ca-bundle.crt /home/user/mpt-venv/bin/edge-tts --proxy "$HTTPS_PROXY" \
+    --voice ta-IN-ValluvarNeural --rate=-15% --pitch=-8Hz --text "..." --write-media out.mp3
+Male Tamil voices: ta-IN-ValluvarNeural, ta-LK-KumarNeural, ta-MY-SuryaNeural, ta-SG-AnbuNeural (all transcribe
+cleanly with Whisper). No emotion tags, so it is flatter than ElevenLabs eleven_v4 but costs nothing.
+
 ## Best reel on the page (3 Nov 2026): real temple footage, curtain reveal on the beat
 
 33.3K views, 5,420 likes (about 16% of views), 15 comments, 25 reposts. The user filmed it and edited it:
