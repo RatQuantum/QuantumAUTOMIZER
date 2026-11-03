@@ -3,6 +3,21 @@
 Read this first in a new session. The cloud container is wiped between sessions, so the tools
 below must be rebuilt; everything else is in this repo.
 
+## Best reel on the page (3 Nov 2026): real temple footage, curtain reveal on the beat
+
+33.3K views, 5,420 likes (about 16% of views), 15 comments, 25 reposts. The user filmed it and edited it:
+- **Real footage** from the temple sanctum. Nothing AI-made.
+- **The hook is a closed white curtain (thirai).** The viewer waits to see what is behind it.
+- **The curtain is pulled to the right exactly on the music drop**, revealing Sri Krishna in full alankaram,
+  the aarti flame, and the priests mid-aarti. The payoff lands on the beat.
+- **One hopeful line on screen** in English capitals: "BELIEVE ME HE CAN FLIP THE SCRIPT OVERNIGHT"
+  (the second half in gold). Audio was original (the user's own sound with music).
+Lesson: real darshan footage with a built-in reveal beats AI art. Ask the temple for more reveal moments
+(curtain opening before darshan, alankaram, abhishekam, lamp lighting, deepa aradhanai). Use AI video only for
+stories (Kurukshetra and so on) that cannot be filmed. When editing the user's footage, put the reveal on a
+known beat time and tell the user where the drop must land when they pick the in-app track segment.
+Note: this text was English. Tamil-only is the narration rule; test English vs Tamil on-screen text.
+
 ## What works (3 Nov 2026): Day 5 is the template
 
 Day 5 (Kurukshetra, "அன்று… உன் தேரை நான் ஓட்டுவேன்") reached 2.6K views, 203 likes, 5 comments,
