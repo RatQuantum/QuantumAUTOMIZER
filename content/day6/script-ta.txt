@@ -31,3 +31,6 @@ Voices (3 Nov, free Edge TTS, the user's rule: ElevenLabs only for audio, never 
   Krishna  ta-SG-AnbuNeural (rate -22%, pitch -8 Hz): vo-k1 4.04 s
 Visuals: free Wan 2.2 image-to-video on Hugging Face (zerogpu-aoti/wan2-2-fp8da-aoti-faster) via the HF MCP
 dynamic_space tool. Blocked: the connector has invoke disabled (gradio=none), and *.hf.space is not allowed.
+Update: *.hf.space now reachable. Wan 2.2 Space API works (gradio_client, scratchpad tools/wan.py), but every
+job ends at once with an empty error: ZeroGPU needs a valid HF login. HF_TOKEN in the environment is rejected
+("Invalid username or password"), and the HF MCP connector still has invoke off (gradio=none).
