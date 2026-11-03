@@ -3,6 +3,8 @@
 Read this first in a new session. The cloud container is wiped between sessions, so the tools
 below must be rebuilt; everything else is in this repo.
 
+**RULE (3 Nov): ElevenLabs is for AUDIO ONLY (voice, music, SFX). Never use it for images or video.**
+
 ## Free Tamil voice (3 Nov 2026): Edge TTS via MoneyPrinterTurbo
 
 The user allowed `speech.platform.bing.com`. MoneyPrinterTurbo (github.com/harry0703/MoneyPrinterTurbo) is cloned
