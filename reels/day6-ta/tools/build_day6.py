@@ -22,8 +22,10 @@ PULL = 0.42  # how long the pull takes; it ends exactly on the drop so the frame
 SHOTS = [
     ("assets/video/v1-doors.mp4", 0.0, DROP + PULL, 1.0, 1.04, "50% 55%"),
     ("assets/video/v2-krishna-runs.mp4", DROP - 0.1, 4.1, 1.0, 1.05, "50% 35%"),
-    ("assets/img/s2-2.png", 7.0, 3.5, 1.04, 1.12, "50% 30%"),  # placeholder: s3 embrace clip (v3)
-    ("assets/img/s2-1.png", 10.5, TOTAL - 10.5, 1.35, 1.48, "50% 18%"),  # placeholder: s4 Krishna eats the aval (v4)
+    # Google Flow (Veo 3.1, 720x1280): the friend offers the bundle, Krishna eats the aval, then looks into the lens.
+    # 0-5.93 s at normal speed, the last 2 s slowed 2.16x (minterpolate) so the smile holds under Krishna's line.
+    # The embrace clip (v3) was rejected: Krishna had Shaiva tripundra lines instead of the Vaishnava namam.
+    ("assets/video/v4-krishna-aval.mp4", 7.0, TOTAL - 7.0, 1.0, 1.04, "50% 30%"),
 ]
 # Tamil line, start, end; <b> marks the gold word. The first line is the thumbnail (on screen at frame 0).
 LINES = [
@@ -54,7 +56,6 @@ AUDIO = [
     # the embrace and the aval: soft swooshes on the cuts, a soft choir, a soft bell under Krishna's line
     (SFX + "perc_swoosh.wav", 7.0 - 0.14, 0.3, 12, {}),
     (SFX + "ambi_choir.wav", 7.05, 0.3, 20, {}),
-    (SFX + "perc_swoosh.wav", 10.5 - 0.14, 0.3, 12, {}),
     (SFX + "perc_bell2.wav", 10.6, 0.5, 22, {"dur": 3.2, "fout": 1.0}),
     # the ask
     (SFX + "perc_bell.wav", 15.0, 0.75, 19, {"fout": 0.8}),

@@ -3,7 +3,14 @@
 Read this first in a new session. The cloud container is wiped between sessions, so the tools
 below must be rebuilt; everything else is in this repo.
 
-## CONTINUE HERE: Day 6 (Kuchela at Dwarka), free pipeline
+## Day 6 DONE (3 Nov): Kuchela at Dwarka. Next: Day 7
+
+Shots 1-2 free MiniMax H3 on Hugging Face, shot 3 Google Flow (Veo 3.1 via the user's Google AI Pro; the user makes
+the clip and uploads it). Flow rules: no deity or character names in the prompt and no tight face crops (they trigger
+"interests of third-party content providers"); describe the look instead. Always check Krishna's tilak is the
+Vaishnava namam (white U with a red centre line), never Shaiva horizontal lines.
+
+## (old) Day 6 notes, free pipeline
 
 **3 Nov, later: free MiniMax H3 works** (Space `hugging-apps/minimax-h3-flashgen-4step`, anonymous, no token,
 ~2 clips per day of free quota). v1 and v2 are done and `reels/day6-ta/tools/build_day6.py` builds the reel with

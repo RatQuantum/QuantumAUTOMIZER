@@ -19,15 +19,13 @@
   </style>
   <div id="root" data-composition-id="shots" data-width="1080" data-height="1920">
     <video id="v1" class="clip shot" src="assets/video/v2-krishna-runs.mp4" muted playsinline style="transform-origin: 50% 35%;" data-start="2.9" data-duration="4.10" data-track-index="1"></video>
-    <img id="v2" class="clip shot" src="assets/img/s2-2.png" alt="" style="transform-origin: 50% 30%;" data-start="7.0" data-duration="3.50" data-track-index="0">
-    <img id="v3" class="clip shot" src="assets/img/s2-1.png" alt="" style="transform-origin: 50% 18%;" data-start="10.5" data-duration="6.50" data-track-index="1">
+    <video id="v2" class="clip shot" src="assets/video/v4-krishna-aval.mp4" muted playsinline style="transform-origin: 50% 30%;" data-start="7.0" data-duration="10.00" data-track-index="0"></video>
     <video id="v0" class="clip shot" src="assets/video/v1-doors.mp4" muted playsinline style="transform-origin: 50% 55%;" data-start="0.0" data-duration="3.42" data-track-index="0"></video>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
     tl.fromTo("#v1", { scale: 1.0 }, { scale: 1.05, duration: 4.10, ease: "none" }, 2.9);
-    tl.fromTo("#v2", { scale: 1.04 }, { scale: 1.12, duration: 3.50, ease: "none" }, 7.0);
-    tl.fromTo("#v3", { scale: 1.35 }, { scale: 1.48, duration: 6.50, ease: "none" }, 10.5);
+    tl.fromTo("#v2", { scale: 1.0 }, { scale: 1.04, duration: 10.00, ease: "none" }, 7.0);
     tl.fromTo("#v0", { scale: 1.0 }, { scale: 1.04, duration: 3.42, ease: "none" }, 0.0);
     tl.fromTo("#v0", { x: 0 }, { x: 1180, duration: 0.42, ease: "power2.in" }, 2.58);
     window.__timelines["shots"] = tl;

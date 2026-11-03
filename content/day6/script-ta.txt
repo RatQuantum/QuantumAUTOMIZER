@@ -53,3 +53,11 @@ placeholders (s2-2 and a close crop of s2-1 with a slow push); swap in v3/v4 by 
 Draft render: day6-tamil-no-music-draft.mp4 (not in git), -15.1 LUFS, peak -1.4 dBFS; Whisper (medium) hears
 "கொடுக்க உன்னிடம் ஒன்றும் இல்லையா / அவன்... ஓடி வருவான் / நீ வந்ததே / எனக்கு போதும் நண்பா" = the script.
 No score yet (ElevenLabs credits are out): the no-music version is the one to post with the phonk track, drop at 0:03.
+
+DONE (3 Nov, evening): v4 from Google Flow (the user's Google AI Pro, Veo 3.1, Ingredients to Video with s2-1 + s1-1,
+NO names in the prompt: "Lord Krishna"/"Sudama" and tight face crops set off Flow's "third-party content" filter).
+v4 (friend offers the bundle, Krishna eats the aval, looks into the lens) covers 7.0-17.0 s: 0-5.93 s normal speed,
+last 2 s slowed 2.16x. The Flow embrace clip was REJECTED and kept only in assets/video/raw: Krishna had Shaiva
+tripundra lines (three horizontal stripes) on the forehead and arms instead of the Vaishnava namam, and a different face.
+Final: reels/day6-ta/day6-tamil-no-music.mp4 (not in git), -15.3 LUFS, peak -1.3 dBFS, Whisper = script.
+Caption: content/captions/day6-ta.txt. Post with a phonk/slowed track whose drop lands at 0:03.
