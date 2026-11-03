@@ -1,0 +1,20 @@
+Day 6 (Tamil) · Kuchela (Sudama) at Dwarka · "நீ வந்ததே எனக்குப் போதும்"
+Format built on the top reel (33.3K views): a closed door in frame 0, the frame is pulled to the RIGHT exactly
+on the music drop at 3.0 s and reveals Krishna, then one emotional line. ~16.5 s. Export a no-music version too;
+when adding the phonk/slowed track in Instagram, set its drop to land at 0:03.
+
+Story (Bhagavata Purana, book 10): Sudama/Kuchela, Krishna's poor childhood friend, walks to Dwarka with only a
+handful of aval (flattened rice) knotted in his cloth. Krishna runs out, embraces him, and eats the aval with joy.
+
+Shots (MiniMax H3 clips from 9:16 stills, ~1,818 credits each):
+  0.0-3.0   s1  Kuchela, barefoot and poor, before the huge closed golden doors, clutching his bundle.
+                Text: கொடுக்க உன்னிடம் <b>ஒன்றுமில்லையா?</b>
+  3.0       DROP: s1 is pulled off to the right (curtain move), flash + boom, reveal:
+  3.0-7.0   s2  Krishna runs out through the open doors, arms wide.      Text: அவன் <b>ஓடி வருவான்.</b>
+  7.0-10.5  s3  Krishna embraces Kuchela, tears.                         Text: ஒரு பிடி அவல் தான்…
+  10.5-16.5 s4  Krishna eats the aval and smiles into the camera.
+                Krishna's voice (Ramaa jsxww9ngE2fwXHlkWgkm): [warmly] நீ வந்ததே… எனக்குப் போதும், நண்பா.
+                Text: நீ வந்ததே <b>எனக்குப் போதும்.</b>
+  14.6-16.5 CTA: உன் உண்மையான <b>நண்பனுக்கு</b> அனுப்பு 🙏   (friendship story -> asks for shares)
+Narrator (Bharadwaj msoKpYddp2Iy2G7DJ3dc): [deep voice] கொடுக்க உன்னிடம் ஒன்றுமில்லையா? [pause] அவன் ஓடி வருவான்.
+Label: devotional art created digitally.
