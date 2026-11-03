@@ -3,6 +3,20 @@
 Read this first in a new session. The cloud container is wiped between sessions, so the tools
 below must be rebuilt; everything else is in this repo.
 
+## CONTINUE HERE: Day 6 (Kuchela at Dwarka), free pipeline
+
+Read content/day6/script-ta.txt first. Stills are in reels/day6-ta/assets/img (s1-2 hook, s2-1/s2-2 Krishna runs),
+free Edge TTS narration in reels/day6-ta/assets/audio (vo-n1, vo-n2 narrator Valluvar; vo-k1 Krishna Anbu).
+ElevenLabs is AUDIO ONLY. Video: Wan 2.2 Space `zerogpu-aoti/wan2-2-fp8da-aoti-faster` through gradio_client
+(pip install gradio_client into a venv; pass `token=os.environ["HF_TOKEN"]` to Client; api_name="/generate_video";
+args: image, prompt, steps 8, negative prompt, seconds, 1, 1, seed, False). First check the token:
+  curl -s -H "Authorization: Bearer $HF_TOKEN" https://huggingface.co/api/whoami-v2   (must show RatGodG)
+Free ZeroGPU quota is a few minutes a day. Clips: v1 Kuchela at closed doors (s1-2), v2 Krishna runs (s2-1),
+v3 embrace and v4 Krishna eating aval (make stills with the free HF image Spaces, e.g. FLUX.1-Kontext-Dev
+editing s2-1 so Krishna's face stays the same). Then build like reels/day5-ta (tools/build_day5.py): shot 1
+pulled off to the RIGHT at 3.0 s on the drop, flash and boom, text lines from the script, CTA to send to a friend,
+render with and without music, loudnorm -15 LUFS, Whisper check.
+
 **RULE (3 Nov): ElevenLabs is for AUDIO ONLY (voice, music, SFX). Never use it for images or video.**
 
 ## Free Tamil voice (3 Nov 2026): Edge TTS via MoneyPrinterTurbo
