@@ -25,3 +25,9 @@ Progress (3 Nov): stills on flow NHhr5sLty3TT2iJmcwTD in reels/day6-ta/assets/im
   Krishna stills use the Day 5 face (asset node diEUIjdNA2ETcd5YeNcy) as reference: same face.
   Still to make: s3 embrace, s4 Krishna eating the aval (use the picked s1 as the Sudama reference), 4 clips.
   BLOCKED: ElevenLabs credits ran out (237 left). Need about 1,100 for s3/s4 and about 7,300 for 4 MiniMax clips.
+
+Voices (3 Nov, free Edge TTS, the user's rule: ElevenLabs only for audio, never for images or video):
+  narrator ta-IN-ValluvarNeural (rate -18%/-12%, pitch -10/-8 Hz): vo-n1 3.37 s, vo-n2 2.39 s
+  Krishna  ta-SG-AnbuNeural (rate -22%, pitch -8 Hz): vo-k1 4.04 s
+Visuals: free Wan 2.2 image-to-video on Hugging Face (zerogpu-aoti/wan2-2-fp8da-aoti-faster) via the HF MCP
+dynamic_space tool. Blocked: the connector has invoke disabled (gradio=none), and *.hf.space is not allowed.
