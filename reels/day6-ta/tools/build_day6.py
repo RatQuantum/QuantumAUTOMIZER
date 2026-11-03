@@ -30,18 +30,18 @@ SHOTS = [
 # Tamil line, start, end; <b> marks the gold word. The first line is the thumbnail (on screen at frame 0).
 LINES = [
     ("கொடுக்க உன்னிடம்<br><b>ஒன்றுமில்லையா?</b>", 0.0, DROP - 0.08),
-    ("அவன் <b>ஓடி வருவான்.</b>", 3.35, 6.85),
+    ("அவன் <b>ஓடி வருவான்.</b>", 3.3, 6.85),
     ("ஒரு பிடி <b>அவல்</b> தான்…", 7.2, 10.3),
-    ("நீ வந்ததே…<br><b>எனக்குப் போதும்.</b>", 10.8, 14.85),
+    ("நீ வந்ததே…<br><b>எனக்குப் போதும்.</b>", 10.9, 14.85),
     ("உன் உண்மையான <b>நண்பனுக்கு</b><br>அனுப்பு 🙏", 15.0, TOTAL),
 ]
 SFX = "assets/sfx/"  # real CC0 recordings from freesound.org via Sonic Pi, see assets/sfx/CREDITS.md
 # file, start, volume, track, options: media (offset into the file), dur, fin/fout (fades), lane
 AUDIO = [
-    # free Edge TTS: narrator ta-IN-ValluvarNeural (pauses tightened), Krishna ta-SG-AnbuNeural
-    ("assets/audio/vo-n1-tight.wav", 0.2, 1.0, 7, {}),        # ends 2.76 s, before the drop
-    ("assets/audio/vo-n2-tight.wav", 3.45, 1.0, 7, {}),       # "அவன் ஓடி வருவான்"
-    ("assets/audio/vo-k1.wav", 10.85, 1.0, 7, {}),            # "நீ வந்ததே… எனக்குப் போதும், நண்பா."
+    # ElevenLabs eleven_v4, the Day 5 voices: narrator "Bharadwaj" (one take cut at its [pause]), Krishna "Ramaa"
+    ("assets/audio/el-n1.wav", 0.4, 1.0, 7, {}),        # speech 0.45-2.6 s, before the drop
+    ("assets/audio/el-n2.wav", 3.4, 1.0, 7, {}),        # "அவன் ஓடி வருவான்"
+    ("assets/audio/el-k1.wav", 11.0, 1.0, 7, {}),       # "நீ வந்ததே… எனக்குப் போதும், நண்பா." ends 14.3 s on the close-up
     # before the drop: wind at the doors, a low hum, a build that peaks on the beat
     ("assets/audio/wind.wav", 0.0, 0.25, 9, {"dur": DROP + 0.3, "fin": 0.3, "fout": 0.4}),
     (SFX + "ambi_haunted_hum.wav", 0.0, 0.25, 10, {"dur": DROP, "fin": 0.4, "fout": 0.3}),
@@ -268,7 +268,7 @@ def index():
     <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="1080" data-height="1920">
 {layers}
 
-      <!-- Voices: free Edge TTS, ta-IN-ValluvarNeural (narrator) and ta-SG-AnbuNeural (Krishna). Effects: CC0 (assets/sfx/CREDITS.md). -->
+      <!-- Voices: ElevenLabs eleven_v4, "Bharadwaj" (narrator) and "Ramaa" (Krishna). Effects: CC0 (assets/sfx/CREDITS.md). -->
 {audio}    </div>
     <script>
       window.__timelines = window.__timelines || {{}};

@@ -34,6 +34,9 @@ render with and without music, loudnorm -15 LUFS, Whisper check.
 
 ## Free Tamil voice (3 Nov 2026): Edge TTS via MoneyPrinterTurbo
 
+**The user rejected the Edge TTS voice on Day 6 (flat next to Day 5). Use ElevenLabs eleven_v4 voices (Bharadwaj
+narrator, Ramaa Krishna) for every reel; short reels cost only ~100-150 credits of voice. Edge TTS is a last resort.**
+
 The user allowed `speech.platform.bing.com`. MoneyPrinterTurbo (github.com/harry0703/MoneyPrinterTurbo) is cloned
 to /home/user/MoneyPrinterTurbo with a venv at /home/user/mpt-venv (`pip install -r requirements.txt`). Its
 stock footage (Pexels) has no Krishna or temple content, so only its free edge-tts voice is used. edge-tts ignores
