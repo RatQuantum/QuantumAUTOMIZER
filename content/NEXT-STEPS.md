@@ -3,6 +3,18 @@
 Read this first in a new session. The cloud container is wiped between sessions, so the tools
 below must be rebuilt; everything else is in this repo.
 
+## What works (3 Nov 2026): Day 5 is the template
+
+Day 5 (Kurukshetra, "அன்று… உன் தேரை நான் ஓட்டுவேன்") reached 2.6K views, 203 likes, 5 comments,
+10 reposts and 15 shares. Earlier slideshow reels were skipped. The user credits two things:
+1. **Real-looking AI video with faces** (MiniMax H3 from 9:16 stills), not parallax or animated stills.
+2. **A phonk track added in the Instagram app**: "FUNK POWER (Ultra Slowed)" by yatashi and LLOYDS PH, over the
+   no-music export with the Tamil narration on top.
+Keep for Day 6 onwards: one emotional "Krishna speaks to you" line arc, a dark-to-light turn mid-reel, 4 MiniMax
+clips (~7,300 credits), Tamil narration plus CC0 SFX, a bright first frame, and always export a no-music version
+so the user can lay a trending phonk or slowed track in the app. Repeat what drew reposts and shares: a
+promise from Krishna the viewer can send to someone.
+
 ## Status (31 Oct 2026)
 
 **Video model chosen (2 Nov): MiniMax H3** (the user compared it against Veo 3.1 Lite and preferred MiniMax).
