@@ -1,5 +1,8 @@
 # Next steps (handover for the next Claude session)
 
+**READ content/reel-rules.md FIRST and check every reel against it** (Day 6 flopped at 160 views next to
+Day 5's 7,422: no face, no pain, a bright calm frame 0, a door reveal copied from real footage).
+
 Read this first in a new session. The cloud container is wiped between sessions, so the tools
 below must be rebuilt; everything else is in this repo.
 

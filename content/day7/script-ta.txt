@@ -1,0 +1,27 @@
+Day 7 (Tamil) · Draupadi in the court · "நீ அழைத்தாய்… நான் வந்தேன்"
+Built on Day 5 (7,422 views), checked against content/reel-rules.md:
+  frame 0 = a woman's tearful FACE in a dark torch-lit court; first line = a pain the viewer has felt (humiliated,
+  nobody spoke up); hard turn to gold on a boom; Krishna's promise in his own voice; CTA comment "கிருஷ்ணா".
+~18 s. Export a no-music version; when adding the phonk/slowed track in Instagram, set its drop at 0:08.5 (the turn).
+
+Story (Mahabharata, Sabha Parva; the endless saree as told in Tamil tradition, Villiputhurar Bharatham):
+Draupadi is dragged into the Kaurava court. The elders and kings look down and stay silent. She folds her hands
+and calls to Krishna, and the cloth wrapped around her becomes endless. Depict with dignity: she is always fully
+clothed in her saree; no one is shown pulling at her; the miracle is golden silk flowing and multiplying.
+
+Shots (real-looking AI video with faces):
+  0.0-4.5   s1  Close-up: her face, tears running, loose long black hair, red kumkum, torchlight, dark court.
+                Text: நீ அவமானப்பட்ட நாளில்…<br>எல்லோரும் <b>மௌனமாக</b> இருந்தார்கள்.
+  4.5-8.5   s2  Wide: she stands alone in the middle of a dark stone court, kings on thrones look away;
+                she folds her hands high above her head, eyes closed, calling.
+                Text: உனக்காக <b>ஒருவரும்</b> பேசவில்லை.
+  8.5       TURN: boom + flash + bell, golden light from above.
+  8.5-12.5  s3  Endless golden-yellow silk pours and swirls around her in the light; she looks up in awe.
+                Text: அன்று… <b>அவன்</b> வந்தான்.
+  12.5-18   s4  Krishna close-up (Day 6 face, reference reels/day6-ta/assets/img/s2-1.png), warm and tender,
+                looking into the lens.
+                Krishna (Ramaa): [warmly] நீ அழைத்தாய்… நான் வந்தேன். [pause] இனியும் வருவேன்.
+                Text: நீ அழைத்தால்…<br>நான் <b>வருவேன்.</b>
+  16.3-18   CTA: கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏
+Narrator (Bharadwaj): [deep voice] நீ அவமானப்பட்ட நாளில்… எல்லோரும் மௌனமாக இருந்தார்கள். [pause] உனக்காக ஒருவரும் பேசவில்லை.
+Label: devotional art created digitally.
