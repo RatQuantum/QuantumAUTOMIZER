@@ -35,6 +35,16 @@ render with and without music, loudnorm -15 LUFS, Whisper check.
 
 **RULE (3 Nov): ElevenLabs is for AUDIO ONLY (voice, music, SFX). Never use it for images or video.**
 
+## Toolbox (installed 4 Nov 2026 at the user's request)
+
+Skills in the repo (load automatically): remotion-* (13, from remotion-dev/skills), impeccable (pbakaus/impeccable),
+hyperframes, media-use, ig-*. MCP servers in .mcp.json: chrome-devtools (headless Chromium) and blender
+(MCP for Blender). Everything else is rebuilt with `bash tools/setup-tools.sh` (~20-30 min): yt-dlp, faster-whisper,
+GSAP, three.js, Remotion, Blender 4.0.2 (apt; download.blender.org is blocked), ComfyUI (CPU), Chatterbox.
+Blender MCP needs Blender running on a virtual screen: `xvfb-run -a blender --python tools/blender_mcp_headless.py &`
+(tested: it answers on localhost:9876). Chatterbox has NO Tamil (23 languages incl. Hindi): Tamil stays on ElevenLabs.
+youtube.com is blocked here, so yt-dlp works only for other sites.
+
 ## Free Tamil voice (3 Nov 2026): Edge TTS via MoneyPrinterTurbo
 
 **The user rejected the Edge TTS voice on Day 6 (flat next to Day 5). Use ElevenLabs eleven_v4 voices (Bharadwaj
