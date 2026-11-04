@@ -27,3 +27,9 @@ Shots (real-looking AI video with faces):
   16.3-18   CTA: கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏
 Narrator (Bharadwaj): [deep voice] நீ அவமானப்பட்ட நாளில்… எல்லோரும் மௌனமாக இருந்தார்கள். [pause] உனக்காக ஒருவரும் பேசவில்லை.
 Label: devotional art created digitally.
+
+DONE (4 Nov): 4 clips from the user's Google Flow (Veo 3.1, Frames to Video from Nano Banana 2.1 stills; Krishna is
+the user's own face). The visible "Veo" mark (bottom right) is cropped off: crop=1010:1796:8:62 then 1080x1920 30 fps.
+Cuts: v1 0-4.9 s, v2 4.6-7.25 s, v3 0.3-3.4 s, v4 2.6-7.85 s. Final reels/day7-ta/day7-tamil-no-music.mp4 (not in
+git): 15.5 s, -15.2 LUFS, peak -1.3 dBFS, Whisper = script. Caption content/captions/day7-ta.txt.
+Post when Day 5's views line is flat; in Instagram set the phonk/slowed drop at 0:07.3.
