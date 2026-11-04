@@ -24,6 +24,12 @@ Every reel is checked against all of these. If one fails, fix it before renderin
     but on Day 5 it began at 9.6 s, so about half the viewers left before it. Close up narrator pauses
     (~0.15-0.3 s between lines), turn by ~7.5 s, promise at ~10 s.
 
+7c. **Never resolve the tension early.** Day 6 insights: skip rate 54.8% (BETTER than typical), but average watch
+    5 s of 17 s: viewers left right after the reveal at 3 s, never reached the share CTA, and the reel stopped
+    at 165 views within hours. Keep the pain/question open until ~7 s; turn at ~7-7.5 s; promise at ~10 s.
+7d. Do not post a new reel while the previous one is still climbing (Day 6 went up on 3 Nov while Day 5 was
+    still rising; possible overlap, not proven). Check the views-over-time line has flattened first.
+
 ## What NOT to copy
 8. The curtain/door reveal only works with REAL darshan footage (the 33.4K reel). With AI art there is nothing
    the viewer is waiting to see. Do not use reveal-of-a-place hooks with AI.
