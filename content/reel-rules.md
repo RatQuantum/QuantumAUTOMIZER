@@ -18,7 +18,11 @@ Every reel is checked against all of these. If one fails, fix it before renderin
    voice ("நான் இருக்கிறேன்", "நான் வருவேன்", "கவலைப்படாதே").
 5. The promise is one the viewer can send to someone (that is what drove Day 5's reposts and shares).
 6. CTA that worked: கமெண்ட்டில் "கிருஷ்ணா" 🙏. Keep it.
-7. 16 to 20 s. One Tamil line on screen at a time, one gold word.
+7. 15 to 16 s. One Tamil line on screen at a time, one gold word.
+7b. **Krishna's promise starts by ~10 s.** Day 5 insights (4 Nov): 7,535 views (typical reel ~1.2K), average
+    watch 10 s of 20 s, 115 saves, 50 shares, 28 reposts, 33 follows. The promise is what people save and send,
+    but on Day 5 it began at 9.6 s, so about half the viewers left before it. Close up narrator pauses
+    (~0.15-0.3 s between lines), turn by ~7.5 s, promise at ~10 s.
 
 ## What NOT to copy
 8. The curtain/door reveal only works with REAL darshan footage (the 33.4K reel). With AI art there is nothing

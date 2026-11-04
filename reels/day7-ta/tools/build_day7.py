@@ -1,9 +1,9 @@
 """Day 7 (Tamil): Draupadi in the court, "நீ தனியாக இல்லை". The Day 5 arc (7,422 views), checked against
 content/reel-rules.md: frame 0 is a tearful FACE in a dark torch-lit court with a pain line, a hard turn to gold on a
-boom at 8.5 s, then Krishna's promise in his own voice and the "கிருஷ்ணா" comment ask.
+boom at 7.3 s, then Krishna's promise in his own voice and the "கிருஷ்ணா" comment ask.
 
 Run from reels/day7-ta:  NO_MUSIC=1 python3 tools/build_day7.py && npm run check && npm run render
-When the phonk/slowed track is added in the Instagram app, its drop must land at 0:08.5 (the turn).
+When the phonk/slowed track is added in the Instagram app, its drop must land at 0:07.3 (the turn).
 
 Clips come from Google Flow (Veo 3.1, the user's Google AI Pro). Until a clip exists its shot falls back to a still
 with a slow push (the source in FALLBACK), so the reel can be checked at any stage.
@@ -13,40 +13,43 @@ import os
 import random
 import subprocess
 
-TOTAL = 18.0
-TURN = 8.5  # despair -> gold: boom, flash, bell
+TOTAL = 15.5
+TURN = 7.3  # despair -> gold: boom, flash, bell
 DROP = TURN  # the fx layer (flash, rays, petals) keys off DROP
 # video, fallback still, start, duration, scale from, scale to, transform origin
 SHOTS_PLAN = [
-    ("assets/video/v1-face.mp4", "assets/img/s1-face.png", 0.0, 4.6, 1.0, 1.05, "50% 30%"),
-    ("assets/video/v2-court.mp4", "assets/img/s1-face.png", 4.5, 4.05, 1.08, 1.0, "50% 40%"),
-    ("assets/video/v3-golden-silk.mp4", "assets/img/s1-face.png", TURN, 4.05, 1.0, 1.06, "50% 35%"),
-    ("assets/video/v4-krishna.mp4", "assets/img/krishna-ref.png", 12.5, TOTAL - 12.5, 1.0, 1.05, "50% 25%"),
+    ("assets/video/v1-face.mp4", "assets/img/s1-face.png", 0.0, 4.85, 1.0, 1.05, "50% 30%"),
+    ("assets/video/v2-court.mp4", "assets/img/s1-face.png", 4.8, TURN - 4.8 + 0.05, 1.08, 1.0, "50% 40%"),
+    ("assets/video/v3-golden-silk.mp4", "assets/img/s1-face.png", TURN, 3.05, 1.0, 1.06, "50% 35%"),
+    ("assets/video/v4-krishna.mp4", "assets/img/krishna-ref.png", 10.3, TOTAL - 10.3, 1.0, 1.05, "50% 25%"),
 ]
 SHOTS = [(v if os.path.exists(v) else f, st, du, s0, s1, o) for v, f, st, du, s0, s1, o in SHOTS_PLAN]
 # Tamil line, start, end; <b> marks the gold word. The first line is the thumbnail (on screen at frame 0).
 LINES = [
-    ("நீ அவமானப்பட்ட நாளில்…<br>எல்லோரும் <b>மௌனமாக</b> இருந்தார்கள்.", 0.0, 5.6),
-    ("உனக்காக <b>ஒருவரும்</b> பேசவில்லை.", 5.85, 8.4),
-    ("அன்று… <b>அவன்</b> வந்தான்.", 8.75, 12.3),
-    ("நீ தனியாக <b>இல்லை.</b>", 12.8, 14.55),
-    ("<b>கவலைப்படாதே.</b>", 14.65, 16.3),
-    ('கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏', 16.4, TOTAL),
+    ("நீ அவமானப்பட்ட நாளில்…<br>எல்லோரும் <b>மௌனமாக</b> இருந்தார்கள்.", 0.0, 4.75),
+    ("உனக்காக <b>ஒருவரும்</b> பேசவில்லை.", 4.9, 7.2),
+    ("அன்று… <b>அவன்</b> வந்தான்.", 7.5, 10.15),
+    ("நீ தனியாக <b>இல்லை.</b>", 10.55, 12.15),
+    ("<b>கவலைப்படாதே.</b>", 12.25, 13.75),
+    ('கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏', 13.85, TOTAL),
 ]
 SFX = "assets/sfx/"  # real CC0 recordings from freesound.org via Sonic Pi, see assets/sfx/CREDITS.md
 # file, start, volume, track, options: media (offset into the file), dur, fin/fout (fades), lane
 AUDIO = [
     # ElevenLabs eleven_v4, the Day 5 voices: narrator "Bharadwaj" (speech 0.2-8.0 s), Krishna "Ramaa"
-    ("assets/audio/el-narrator.wav", 0.15, 1.0, 7, {}),
+    # the take cut at its pauses and closed up (Day 5 insights: average watch 10 s, so Krishna must come by ~10 s)
+    ("assets/audio/el-n1.wav", 0.15, 1.0, 7, {}),   # நீ அவமானப்பட்ட நாளில்…
+    ("assets/audio/el-n2.wav", 2.35, 1.0, 7, {}),   # எல்லோரும் மௌனமாக இருந்தார்கள்.
+    ("assets/audio/el-n3.wav", 4.85, 1.0, 7, {}),   # உனக்காக ஒருவரும் பேசவில்லை. (ends ~7.1 s)
     # Krishna: "நீ தனியாக இல்லை… கவலைப்படாதே", cut from the Day 5 Ramaa take (5.18 s to the end, no new credits)
-    ("assets/audio/el-krishna.wav", 12.9, 1.0, 7, {}),
+    ("assets/audio/el-krishna.wav", 10.6, 1.0, 7, {}),
     # despair: a boom on frame 0, wind, a dark hum, a heartbeat that speeds up toward the turn
     (SFX + "misc_cineboom.wav", 0.0, 0.45, 8, {"media": 1.4, "dur": 4.0, "fout": 1.5}),
     ("assets/audio/wind.wav", 0.0, 0.2, 9, {"dur": TURN, "fin": 0.4, "fout": 0.5}),
     (SFX + "ambi_haunted_hum.wav", 0.0, 0.35, 10, {"dur": TURN, "fin": 0.5, "fout": 0.5}),
-    (SFX + "ambi_swoosh.wav", 4.5 - 0.89, 0.35, 12, {}),
-    *[(SFX + "bd_boom.wav", t, 0.3, 13, {"dur": 0.5, "fout": 0.2}) for t in (5.9, 6.7, 7.35, 7.85, 8.2)],
-    (SFX + "drum_roll.wav", TURN - 2.0, 0.3, 15, {"dur": 2.0, "fin": 1.2, "fout": 0.05}),
+    (SFX + "ambi_swoosh.wav", 4.8 - 0.89, 0.35, 12, {}),
+    *[(SFX + "bd_boom.wav", t, 0.3, 13, {"dur": 0.5, "fout": 0.2}) for t in (5.0, 5.7, 6.3, 6.75, 7.05)],
+    (SFX + "drum_roll.wav", TURN - 1.8, 0.3, 15, {"dur": 1.8, "fin": 1.2, "fout": 0.05}),
     (SFX + "ambi_dark_woosh.wav", TURN - 1.27, 0.45, 16, {}),
     # the turn: boom, temple bell, choir
     ("assets/audio/impact.wav", TURN - 1.27, 0.5, 17, {}),
@@ -54,17 +57,17 @@ AUDIO = [
     (SFX + "perc_bell.wav", TURN + 0.05, 0.9, 19, {"dur": 4.0, "fout": 1.5}),
     (SFX + "ambi_choir.wav", TURN + 0.1, 0.55, 20, {}),
     # Krishna's face: a swoosh on the cut, a soft choir, a soft bell under "இனியும் வருவேன்"
-    (SFX + "perc_swoosh.wav", 12.5 - 0.14, 0.3, 12, {}),
-    (SFX + "ambi_choir.wav", 12.55, 0.3, 20, {}),
-    (SFX + "perc_bell2.wav", 14.75, 0.5, 22, {"dur": 3.0, "fout": 1.0}),
+    (SFX + "perc_swoosh.wav", 10.3 - 0.14, 0.3, 12, {}),
+    (SFX + "ambi_choir.wav", 10.35, 0.3, 20, {}),
+    (SFX + "perc_bell2.wav", 12.4, 0.5, 22, {"dur": 3.0, "fout": 1.0}),
     # the ask
-    (SFX + "perc_bell.wav", 16.4, 0.75, 19, {"fout": 0.8}),
+    (SFX + "perc_bell.wav", 13.85, 0.75, 19, {"fout": 0.8}),
 ]
 AUDIO = [a for a in AUDIO if os.path.exists(a[0])]  # the Krishna line joins once it is recorded
 SCORE = "assets/audio/score.wav"  # optional; leave it out of the folder (or NO_MUSIC=1) for the no-music version
 if os.path.exists(SCORE) and not os.environ.get("NO_MUSIC"):
     AUDIO.insert(0, (SCORE, 0.0, 1.0, 6, {"lane": [(0, 0.4), (TURN - 0.05, 0.4), (TURN, 0.8), (9.0, 0.35),
-                                                    (16.2, 0.35), (16.5, 0.6), (TOTAL, 0.6)]}))
+                                                    (13.6, 0.35), (13.9, 0.6), (TOTAL, 0.6)]}))
 HANDLE = "@lordsrikrishnatemple"
 
 
@@ -210,7 +213,7 @@ def texts():
             js += f'    tl.fromTo("#t{i}", {{ opacity: 0, y: 24, filter: "blur(6px)" }}, {{ opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "power2.out" }}, {a});\n'
         if b < TOTAL:
             js += f'    tl.to("#t{i}", {{ opacity: 0, duration: 0.25, ease: "power1.in" }}, {b - 0.25:.2f});\n'
-    hs = 16.7
+    hs = 14.1
     html += f'    <div id="handle" class="clip" data-start="{hs}" data-duration="{TOTAL - hs:.1f}" data-track-index="2">{HANDLE}</div>\n'
     js += f'    tl.fromTo("#handle", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {hs});\n'
     return wrap("texts", css, html, js)

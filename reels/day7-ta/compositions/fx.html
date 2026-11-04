@@ -38,10 +38,10 @@
     }
   </style>
   <div id="root" data-composition-id="fx" data-width="1080" data-height="1920">
-    <div id="vignette" class="clip" data-start="0" data-duration="18.0" data-track-index="0" data-layout-ignore></div>
-    <div id="rays" class="clip" data-start="8.5" data-duration="9.5" data-track-index="1" data-layout-ignore></div>
-    <div id="flash" class="clip" data-start="8.44" data-duration="0.9" data-track-index="2" data-layout-ignore></div>
-    <div id="petals" class="clip" data-start="8.5" data-duration="9.5" data-track-index="3" data-layout-ignore>
+    <div id="vignette" class="clip" data-start="0" data-duration="15.5" data-track-index="0" data-layout-ignore></div>
+    <div id="rays" class="clip" data-start="7.3" data-duration="8.2" data-track-index="1" data-layout-ignore></div>
+    <div id="flash" class="clip" data-start="7.24" data-duration="0.9" data-track-index="2" data-layout-ignore></div>
+    <div id="petals" class="clip" data-start="7.3" data-duration="8.2" data-track-index="3" data-layout-ignore>
       <div id="p0" class="petal" style="left: 1013px; top: 0; background: #fb8500; transform: scale(0.83);"></div>
       <div id="p1" class="petal" style="left: 674px; top: 0; background: #fb8500; transform: scale(1.42);"></div>
       <div id="p2" class="petal" style="left: 212px; top: 0; background: #ff8fab; transform: scale(1.33);"></div>
@@ -74,37 +74,37 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#rays", { opacity: 0, rotation: 0 }, { opacity: 1, rotation: 20, duration: 9.5, ease: "power1.out" }, 8.5);
-    tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.9, duration: 0.06, ease: "power2.in" }, 8.44);
-    tl.to("#flash", { opacity: 0, duration: 0.7, ease: "power2.out" }, 8.52);
-    tl.fromTo("#p0", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 69, rotation: 180, duration: 3.95, ease: "none" }, 14.05);
-    tl.fromTo("#p1", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -129, rotation: 430, duration: 2.74, ease: "none" }, 15.26);
-    tl.fromTo("#p2", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -204, rotation: 463, duration: 3.13, ease: "none" }, 14.87);
-    tl.fromTo("#p3", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 145, rotation: 227, duration: 4.86, ease: "none" }, 13.14);
-    tl.fromTo("#p4", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -134, rotation: 229, duration: 3.87, ease: "none" }, 14.13);
-    tl.fromTo("#p5", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -191, rotation: 474, duration: 3.7, ease: "none" }, 14.3);
-    tl.fromTo("#p6", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 151, rotation: 481, duration: 4.11, ease: "none" }, 12.93);
-    tl.fromTo("#p7", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -157, rotation: 427, duration: 5.16, ease: "none" }, 9.32);
-    tl.fromTo("#p8", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -103, rotation: 188, duration: 3.66, ease: "none" }, 14.34);
-    tl.fromTo("#p9", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -185, rotation: 207, duration: 4.82, ease: "none" }, 11.12);
-    tl.fromTo("#p10", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 174, rotation: 374, duration: 4.6, ease: "none" }, 9.17);
-    tl.fromTo("#p11", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -109, rotation: 528, duration: 5.26, ease: "none" }, 11.8);
-    tl.fromTo("#p12", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -197, rotation: 243, duration: 4.44, ease: "none" }, 13.56);
-    tl.fromTo("#p13", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 165, rotation: 395, duration: 4.76, ease: "none" }, 9.81);
-    tl.fromTo("#p14", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -156, rotation: 434, duration: 5.14, ease: "none" }, 12.72);
-    tl.fromTo("#p15", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 141, rotation: 510, duration: 5.15, ease: "none" }, 10.76);
-    tl.fromTo("#p16", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -219, rotation: 410, duration: 3.9, ease: "none" }, 13.61);
-    tl.fromTo("#p17", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 152, rotation: 434, duration: 5.43, ease: "none" }, 8.71);
-    tl.fromTo("#p18", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -168, rotation: 448, duration: 3.07, ease: "none" }, 14.93);
-    tl.fromTo("#p19", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -215, rotation: 342, duration: 4.43, ease: "none" }, 10.12);
-    tl.fromTo("#p20", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 77, rotation: 502, duration: 3.61, ease: "none" }, 13.5);
-    tl.fromTo("#p21", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 175, rotation: 435, duration: 5.18, ease: "none" }, 12.82);
-    tl.fromTo("#p22", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 172, rotation: 408, duration: 3.77, ease: "none" }, 14.23);
-    tl.fromTo("#p23", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 133, rotation: 364, duration: 3.66, ease: "none" }, 13.49);
-    tl.fromTo("#p24", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 170, rotation: 407, duration: 4.19, ease: "none" }, 12.02);
-    tl.fromTo("#p25", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -104, rotation: 352, duration: 4.12, ease: "none" }, 13.5);
-    tl.fromTo("#p26", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 147, rotation: 219, duration: 2.84, ease: "none" }, 15.16);
-    tl.fromTo("#p27", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -92, rotation: 217, duration: 3.84, ease: "none" }, 11.3);
+    tl.fromTo("#rays", { opacity: 0, rotation: 0 }, { opacity: 1, rotation: 20, duration: 8.2, ease: "power1.out" }, 7.3);
+    tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.9, duration: 0.06, ease: "power2.in" }, 7.24);
+    tl.to("#flash", { opacity: 0, duration: 0.7, ease: "power2.out" }, 7.319999999999999);
+    tl.fromTo("#p0", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 69, rotation: 180, duration: 3.68, ease: "none" }, 11.82);
+    tl.fromTo("#p1", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -129, rotation: 430, duration: 2.7, ease: "none" }, 12.8);
+    tl.fromTo("#p2", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -204, rotation: 463, duration: 3.01, ease: "none" }, 12.49);
+    tl.fromTo("#p3", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 145, rotation: 227, duration: 4.42, ease: "none" }, 11.08);
+    tl.fromTo("#p4", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -134, rotation: 229, duration: 3.61, ease: "none" }, 11.89);
+    tl.fromTo("#p5", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -191, rotation: 474, duration: 3.48, ease: "none" }, 12.02);
+    tl.fromTo("#p6", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 151, rotation: 481, duration: 4.11, ease: "none" }, 10.91);
+    tl.fromTo("#p7", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -157, rotation: 427, duration: 5.16, ease: "none" }, 7.97);
+    tl.fromTo("#p8", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -103, rotation: 188, duration: 3.45, ease: "none" }, 12.05);
+    tl.fromTo("#p9", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -185, rotation: 207, duration: 4.82, ease: "none" }, 9.44);
+    tl.fromTo("#p10", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 174, rotation: 374, duration: 4.6, ease: "none" }, 7.85);
+    tl.fromTo("#p11", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -109, rotation: 528, duration: 5.26, ease: "none" }, 9.98);
+    tl.fromTo("#p12", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -197, rotation: 243, duration: 4.08, ease: "none" }, 11.42);
+    tl.fromTo("#p13", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 165, rotation: 395, duration: 4.76, ease: "none" }, 8.37);
+    tl.fromTo("#p14", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -156, rotation: 434, duration: 4.77, ease: "none" }, 10.73);
+    tl.fromTo("#p15", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 141, rotation: 510, duration: 5.15, ease: "none" }, 9.14);
+    tl.fromTo("#p16", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -219, rotation: 410, duration: 3.9, ease: "none" }, 11.46);
+    tl.fromTo("#p17", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 152, rotation: 434, duration: 5.43, ease: "none" }, 7.47);
+    tl.fromTo("#p18", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -168, rotation: 448, duration: 2.96, ease: "none" }, 12.54);
+    tl.fromTo("#p19", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -215, rotation: 342, duration: 4.43, ease: "none" }, 8.62);
+    tl.fromTo("#p20", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 77, rotation: 502, duration: 3.61, ease: "none" }, 11.37);
+    tl.fromTo("#p21", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 175, rotation: 435, duration: 4.69, ease: "none" }, 10.81);
+    tl.fromTo("#p22", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 172, rotation: 408, duration: 3.54, ease: "none" }, 11.96);
+    tl.fromTo("#p23", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 133, rotation: 364, duration: 3.66, ease: "none" }, 11.36);
+    tl.fromTo("#p24", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 170, rotation: 407, duration: 4.19, ease: "none" }, 10.16);
+    tl.fromTo("#p25", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -104, rotation: 352, duration: 4.12, ease: "none" }, 11.37);
+    tl.fromTo("#p26", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: 147, rotation: 219, duration: 2.77, ease: "none" }, 12.73);
+    tl.fromTo("#p27", { y: -40, x: 0, rotation: 0 }, { y: 1980, x: -92, rotation: 217, duration: 3.84, ease: "none" }, 9.58);
     window.__timelines["fx"] = tl;
   </script>
 </template>
