@@ -1,28 +1,26 @@
-# Day 7 · Google Flow prompts (Veo 3.1, 9:16 portrait, 8 s)
+# Day 7 · Google Flow prompts (Veo 3.1, Frames to Video, 9:16, 8 s)
 
-Rules (content/reel-rules.md): no names of gods or characters in the prompt, no tight face crops as ingredients.
-Make 2 versions of each and pick the one with the steadiest face. Download each clip and send it back.
+Use **Frames to Video** with the matching Nano Banana picture (content/day7/nano-banana-prompts.md) as the
+START frame. The picture already fixes the face, clothes and light, so these prompts describe only the motion.
+No names of gods or characters. Make 2 versions of each, pick the steadiest face, download and send them back.
+Timing in the reel: clip 1 0-4.8 s, clip 2 4.8-7.3 s, clip 3 7.3-10.3 s (the turn), clip 4 10.3-15.5 s.
 
-Pictures:
-- Queen: https://raw.githubusercontent.com/RatQuantum/QuantumAUTOMIZER/claude/quirky-euler-qhw92g/reels/day7-ta/assets/img/s1-face.png
-- Krishna: https://raw.githubusercontent.com/RatQuantum/QuantumAUTOMIZER/claude/quirky-euler-qhw92g/reels/day6-ta/assets/img/s2-1.png
-
-## Clip 1 · the hook (Frames to Video, START frame = queen picture)
+## Clip 1 · start frame = picture 1 (the hook)
 ```
-Photorealistic cinematic film shot, vertical 9:16, 85mm lens, shallow depth of field, film grain. Keep the woman exactly as in the start frame: the same face, the same deep crimson silk saree with a gold border draped over her head, the same red forehead dot, red line in the hair parting, gold nose ring and gold earrings. She stands in a dark ancient stone royal court at night, lit only by burning wall torches. A fresh tear slowly rolls down her cheek, her lips tremble, she breathes in sharply, then slowly lifts her wet eyes upward as if calling to someone above. The torch flames flicker and the warm orange light moves gently across her face. The camera stays close on her face with a very slow push-in. Dark, heavy, sorrowful mood. Sound: crackling torches, a low murmur of a crowd far away. No music, no speech. No text, no captions, no watermark. Her face must not change in any frame.
+Photorealistic cinematic shot, vertical 9:16. Keep the woman exactly as in the start frame in every frame: the same face, crimson saree over her head, jewellery and loose hair. From the very first frame a tear is already rolling down her cheek; her lips tremble, she breathes in sharply and slowly lifts her wet eyes upward as if calling to someone above. The torch flames flicker and the warm orange light moves gently over her face. The camera stays close with a very slow push-in. Sound: crackling torches, a low distant murmur. No music, no speech. No text, no captions. Her face must not change.
 ```
 
-## Clip 2 · alone in the court (Ingredients to Video, ingredient = queen picture)
+## Clip 2 · start frame = picture 2 (alone in the court)
 ```
-Photorealistic cinematic film shot, vertical 9:16, wide shot, film grain. The woman from the reference image (the same face, the same deep crimson silk saree with a gold border draped over her head, gold jewellery) stands alone in the centre of a huge dark ancient stone royal court at night, lit by burning torches on tall pillars. Around her, in deep shadow, kings and old men in rich robes and gold crowns sit on raised thrones; every one of them looks down or turns his face away in silence; no one moves to help her. She slowly raises both hands high above her head with her palms joined in prayer, closes her eyes and lifts her face upward, calling out with her whole heart. She stays fully and modestly dressed in her saree the whole time and no one touches her. The camera slowly pushes in toward her from the far end of the court. Sorrowful, tense, cold blue shadows with warm orange torchlight. Sound: crackling torches, a heavy silence, a deep low drone. No music, no speech. No text, no captions, no watermark.
-```
-
-## Clip 3 · the turn (Ingredients to Video, ingredient = queen picture)
-```
-Photorealistic cinematic film shot, vertical 9:16, film grain. The woman from the reference image (the same face, the same deep crimson silk saree with a gold border draped over her head) stands in a dark stone royal court with her palms joined above her head and her eyes closed. Suddenly a brilliant beam of warm golden divine light pours down on her from above, and an endless river of shimmering golden-yellow silk cloth begins to flow down out of the light, rippling and spiralling around her in huge graceful waves, more and more without end, piling up on the stone floor and filling the court with gold. Golden light sparkles in the air and flower petals drift down. She opens her eyes and looks up into the light in awe, her tears turning into a trembling, grateful smile. She stays fully dressed in her crimson saree and no one touches her. The dark court around her glows warm gold. Slow upward tilt and slow push-in. Sound: a deep boom, a temple bell ringing, the soft whoosh of flowing silk. No music, no speech. No text, no captions, no watermark. Her face must not change.
+Photorealistic cinematic shot, vertical 9:16. Keep everything exactly as in the start frame. The woman in the centre keeps her palms joined high above her head and her eyes closed, her lips moving silently in prayer, her loose hair and the end of her saree stirring slightly. The seated kings around her stay still with their faces turned away and down; one old king slowly lowers his head further in shame. Torch flames flicker, smoke drifts. The camera slowly pushes in toward her from the far end of the court. She stays fully dressed and no one comes near her. Sound: a heavy silence, crackling torches, a deep low drone. No music, no speech. No text, no captions.
 ```
 
-## Clip 4 · the promise (Ingredients to Video, ingredient = Krishna picture)
+## Clip 3 · start frame = picture 3 (the turn)
 ```
-Photorealistic cinematic film shot, vertical 9:16, 85mm lens, shallow depth of field, warm golden light, film grain. The young man from the reference image, kept exactly the same in every frame: about 22, a soft oval clean-shaven face with a faint pale blue-grey skin tint, large dark brown almond eyes, thick dark eyebrows, on his forehead a white U-shaped mark from the bridge of the nose up with one red-orange vertical line in its centre (no horizontal lines anywhere on his forehead or arms), long dark brown curly hair past his shoulders, a tall ornate gold crown with a deep-blue centre gem and one peacock feather on his right side, long gold drop earrings with pearls, a white jasmine and red rose garland, gold necklaces, a bright yellow silk shawl. He stands in soft golden divine light, glowing golden particles and a few rose petals drifting in the air behind him. He looks straight into the camera with deep compassion; his eyes are gentle and a little moist; slowly a warm, tender, reassuring smile spreads across his face and he gives one small slow nod, as if saying "I am here". Close-up of his face and shoulders, the face sharp and well lit in the upper half of the frame, a very slow push-in. Sound: a soft breeze and a faint temple bell far away. No music, no speech. No text, no captions, no watermark. No beard, no moustache. His face must not change, age or morph.
+Photorealistic cinematic shot, vertical 9:16. Keep the woman exactly as in the start frame: the same face and crimson saree, fully draped the whole time. The golden light from above suddenly grows brighter, and the endless golden-yellow silk keeps pouring down out of the light and spiralling around her in huge graceful waves, more and more without end, piling up on the stone floor. Golden dust and petals swirl in the air. Her eyes fill with wonder and her trembling lips turn into a grateful smile as tears shine on her cheeks. Slow upward tilt with a gentle push-in. Sound: a deep boom, a temple bell ringing, the soft rushing whoosh of silk. No music, no speech. No text, no captions. Her face must not change.
+```
+
+## Clip 4 · start frame = picture 4 (the promise)
+```
+Photorealistic cinematic shot, vertical 9:16. Keep the young man exactly as in the start frame in every frame: the same face, pale blue-grey skin tint, the white U-shaped forehead mark with the red centre line and no horizontal lines, the crown with the peacock feather, the curly hair, the garland and yellow silk. He keeps looking straight into the camera with deep compassion; his eyes soften, a warm, tender, reassuring smile slowly spreads across his face, and he gives one small slow nod, as if saying "you are not alone, don't worry". The golden particles and petals drift slowly behind him, a soft breeze lifts a few curls of his hair. Very slow push-in on his face. Sound: a soft breeze and a faint temple bell far away. No music, no speech. No text, no captions. No beard, no moustache. His face must not change, age or morph.
 ```
