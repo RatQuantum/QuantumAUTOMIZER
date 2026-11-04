@@ -1,4 +1,4 @@
-Day 7 (Tamil) · Draupadi in the court · "நீ அழைத்தாய்… நான் வந்தேன்"
+Day 7 (Tamil) · Draupadi in the court · "நீ தனியாக இல்லை"
 Built on Day 5 (7,422 views), checked against content/reel-rules.md:
   frame 0 = a woman's tearful FACE in a dark torch-lit court; first line = a pain the viewer has felt (humiliated,
   nobody spoke up); hard turn to gold on a boom; Krishna's promise in his own voice; CTA comment "கிருஷ்ணா".
@@ -20,8 +20,10 @@ Shots (real-looking AI video with faces):
                 Text: அன்று… <b>அவன்</b> வந்தான்.
   12.5-18   s4  Krishna close-up (Day 6 face, reference reels/day6-ta/assets/img/s2-1.png), warm and tender,
                 looking into the lens.
-                Krishna (Ramaa): [warmly] நீ அழைத்தாய்… நான் வந்தேன். [pause] இனியும் வருவேன்.
-                Text: நீ அழைத்தால்…<br>நான் <b>வருவேன்.</b>
+                Krishna (Ramaa): நீ தனியாக இல்லை… கவலைப்படாதே.  (4 Nov: ElevenLabs credits are out and the user
+                cannot top up, so this is cut from the Day 5 Ramaa take, 5.18 s to the end. It fits: everyone in
+                the court left her alone.)
+                Text: நீ தனியாக <b>இல்லை.</b>  then  <b>கவலைப்படாதே.</b>
   16.3-18   CTA: கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏
 Narrator (Bharadwaj): [deep voice] நீ அவமானப்பட்ட நாளில்… எல்லோரும் மௌனமாக இருந்தார்கள். [pause] உனக்காக ஒருவரும் பேசவில்லை.
 Label: devotional art created digitally.

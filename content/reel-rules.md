@@ -28,7 +28,9 @@ Every reel is checked against all of these. If one fails, fix it before renderin
 
 ## Quality
 10. Voices: ElevenLabs eleven_v4, Bharadwaj (narrator) and Ramaa (Krishna). Never the free Edge TTS voice
-    (the user rejected it on Day 6).
+    (the user rejected it on Day 6). The user cannot top up ElevenLabs: when credits run out, write the line from
+    words already recorded in earlier takes (reels/day5-ta, day6-ta audio) and cut them out with Whisper word
+    timings, as Day 7 did with "நீ தனியாக இல்லை… கவலைப்படாதே".
 11. Real-looking AI video with faces (MiniMax H3 / Veo), never stills with zoom.
 12. Check every figure: Krishna wears the Vaishnava namam (white U with a red centre line), never Shaiva
     horizontal lines; correct dress for every character; no extra fingers; same Krishna face as earlier reels

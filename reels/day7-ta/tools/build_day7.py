@@ -1,4 +1,4 @@
-"""Day 7 (Tamil): Draupadi in the court, "நீ அழைத்தாய்… நான் வந்தேன்". The Day 5 arc (7,422 views), checked against
+"""Day 7 (Tamil): Draupadi in the court, "நீ தனியாக இல்லை". The Day 5 arc (7,422 views), checked against
 content/reel-rules.md: frame 0 is a tearful FACE in a dark torch-lit court with a pain line, a hard turn to gold on a
 boom at 8.5 s, then Krishna's promise in his own voice and the "கிருஷ்ணா" comment ask.
 
@@ -29,8 +29,8 @@ LINES = [
     ("நீ அவமானப்பட்ட நாளில்…<br>எல்லோரும் <b>மௌனமாக</b> இருந்தார்கள்.", 0.0, 5.6),
     ("உனக்காக <b>ஒருவரும்</b> பேசவில்லை.", 5.85, 8.4),
     ("அன்று… <b>அவன்</b> வந்தான்.", 8.75, 12.3),
-    ("நீ அழைத்தாய்…<br>நான் <b>வந்தேன்.</b>", 12.7, 14.9),
-    ("இனியும் <b>வருவேன்.</b>", 15.0, 16.3),
+    ("நீ தனியாக <b>இல்லை.</b>", 12.8, 14.55),
+    ("<b>கவலைப்படாதே.</b>", 14.65, 16.3),
     ('கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏', 16.4, TOTAL),
 ]
 SFX = "assets/sfx/"  # real CC0 recordings from freesound.org via Sonic Pi, see assets/sfx/CREDITS.md
@@ -38,7 +38,8 @@ SFX = "assets/sfx/"  # real CC0 recordings from freesound.org via Sonic Pi, see 
 AUDIO = [
     # ElevenLabs eleven_v4, the Day 5 voices: narrator "Bharadwaj" (speech 0.2-8.0 s), Krishna "Ramaa"
     ("assets/audio/el-narrator.wav", 0.15, 1.0, 7, {}),
-    ("assets/audio/el-krishna.wav", 12.75, 1.0, 7, {}),
+    # Krishna: "நீ தனியாக இல்லை… கவலைப்படாதே", cut from the Day 5 Ramaa take (5.18 s to the end, no new credits)
+    ("assets/audio/el-krishna.wav", 12.9, 1.0, 7, {}),
     # despair: a boom on frame 0, wind, a dark hum, a heartbeat that speeds up toward the turn
     (SFX + "misc_cineboom.wav", 0.0, 0.45, 8, {"media": 1.4, "dur": 4.0, "fout": 1.5}),
     ("assets/audio/wind.wav", 0.0, 0.2, 9, {"dur": TURN, "fin": 0.4, "fout": 0.5}),
@@ -55,7 +56,7 @@ AUDIO = [
     # Krishna's face: a swoosh on the cut, a soft choir, a soft bell under "இனியும் வருவேன்"
     (SFX + "perc_swoosh.wav", 12.5 - 0.14, 0.3, 12, {}),
     (SFX + "ambi_choir.wav", 12.55, 0.3, 20, {}),
-    (SFX + "perc_bell2.wav", 15.0, 0.5, 22, {"dur": 3.0, "fout": 1.0}),
+    (SFX + "perc_bell2.wav", 14.75, 0.5, 22, {"dur": 3.0, "fout": 1.0}),
     # the ask
     (SFX + "perc_bell.wav", 16.4, 0.75, 19, {"fout": 0.8}),
 ]
