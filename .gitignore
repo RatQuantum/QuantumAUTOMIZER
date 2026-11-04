@@ -37,3 +37,7 @@ reels/*/*.m4a
 voice-ref/
 *voice-ref*.wav
 *Voice_Clone*
+
+# The user's own face (Krishna from Day 7 on): never in this public repo
+reels/day7-ta/assets/video/*krishna*.mp4
+reels/day7-ta/assets/video/raw/*krishna*.mp4
