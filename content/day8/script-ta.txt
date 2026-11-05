@@ -26,3 +26,10 @@ is the user's own face, shown youthful.)
   13.4-14.8 CTA: கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏
 Label: devotional art created digitally.
 ElevenLabs: 10 credits left after this reel. Next reels must reuse recorded words or wait for the monthly reset.
+
+DONE (5 Nov): 4 clips from the user's Flow (Veo 3.1 from Nano Banana stills). Fixes: the "Veo" text mark is cropped
+(crop=1010:1796:8:62) and the Gemini sparkle (source x~890-960, y~1730-1815) is covered with a soft-edged patch cloned
+from just left of it (delogo left a visible smear). The hill clip is MIRRORED so the hill rests on his LEFT hand (it is
+on the index finger, not the little finger; too small to notice). The close-up: only the hands-down part (5.3-7.85 s,
+slowed 2.05x) because he joins his palms in the middle; its U mark is gold-outlined instead of white (small slip).
+Final reels/day8-ta/day8-tamil-no-music.mp4 (not in git): 14.8 s, -15.8 LUFS, Whisper hears both spoken lines.
