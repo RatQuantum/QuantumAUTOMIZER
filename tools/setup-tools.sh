@@ -33,5 +33,11 @@ python3 -m venv /home/user/comfy-venv
 python3 -m venv /home/user/tts-venv
 /home/user/tts-venv/bin/pip -q install chatterbox-tts
 
+# Open Generative AI (anil-matcha/open-generative-ai): web studio on port 3000. Every model in the web version runs
+# through MuAPI (a paid API key); its free local engines (sd.cpp, Wan2GP) exist only in the Electron desktop app.
+[ -d /home/user/open-generative-ai ] || git clone -q --depth 1 https://github.com/anil-matcha/open-generative-ai /home/user/open-generative-ai
+(cd /home/user/open-generative-ai && npm run setup)
+#   start it:  cd /home/user/open-generative-ai && npx next dev -p 3000   (opens at /studio)
+
 # FFmpeg is preinstalled (/usr/bin/ffmpeg). HyperFrames runs through npx (pinned in each reel's package.json).
 echo ALLDONE
