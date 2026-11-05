@@ -41,3 +41,8 @@ voice-ref/
 # The user's own face (Krishna from Day 7 on): never in this public repo
 reels/day7-ta/assets/video/*krishna*.mp4
 reels/day7-ta/assets/video/raw/*krishna*.mp4
+
+# Day 8: the Krishna clip shows the user's face
+reels/day8-ta/assets/video/*krishna*.mp4
+reels/day8-ta/assets/video/*hill*.mp4
+reels/day8-ta/assets/video/raw/*

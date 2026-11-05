@@ -1,0 +1,28 @@
+Day 8 (Tamil) · Govardhan · "உன் புயலுக்கு நான் குடை"
+Checked against content/reel-rules.md (corrected 5 Nov): frame 0 is an EPIC WIDE SHOT (a colossal black storm with
+lightning over a tiny village, fiery orange lamp-light, one small lone figure), the first line is SHORT and warns
+the viewer about their own future, the turn is at 6.6 s, Krishna's promise on screen at 9.9 s. 14.8 s.
+Phonk/slowed drop in Instagram at 0:06.6.
+
+Story (Bhagavata Purana 10.25): the rain god sends a terrible storm on the cowherd village for seven days. The
+young Krishna lifts Govardhan hill on the little finger of his left hand and holds it like an umbrella; all the
+people and cows shelter under it until the storm ends. (In the text he is a boy of about seven; our page's Krishna
+is the user's own face, shown youthful.)
+
+  0.0-3.6   s1  EPIC WIDE: a tiny village of thatched huts in a vast plain under a colossal black storm, many
+                lightning bolts, a wall of rain coming, a last band of fiery red-orange sunset at the horizon,
+                warm orange lamps in the huts; ONE small lone figure on a mound holding a clay lamp, facing the storm.
+                Narrator (Bharadwaj): ஒரு நாள்… புயல் வரும்.  (ஒரு நாள் from the Day 5 take + புயல் வரும் new, 12 credits)
+                Text: ஒரு நாள்… <b>புயல்</b> வரும்.
+  3.6-6.6   s2  Villagers, children and cows huddled in pouring rain and wind, lightning, terror.
+                Text only: ஒதுங்க <b>இடமே</b> இருக்காது.
+  6.6       TURN: thunder boom + flash, then golden light.
+  6.6-9.8   s3  EPIC WIDE: the youthful divine cowherd holds a whole green hill high on the little finger of his left
+                hand; warm golden light underneath where everyone shelters; rain and lightning outside.
+                Text only: அன்று… அவன் <b>மலையையே</b> தூக்கினான்.
+  9.8-14.8  s4  Krishna close-up (the user's face, from the Day 7 Nano Banana picture), soft golden light, rain behind.
+                Text: உன் புயலுக்கு…<br><b>நான்</b> குடை.  (9.9-11.9)
+                Krishna (Ramaa, from the Day 5 take): கவலைப்படாதே.  (12.1)   Text: <b>கவலைப்படாதே.</b>
+  13.4-14.8 CTA: கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏
+Label: devotional art created digitally.
+ElevenLabs: 10 credits left after this reel. Next reels must reuse recorded words or wait for the monthly reset.
