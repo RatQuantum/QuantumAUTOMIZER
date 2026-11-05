@@ -1,0 +1,25 @@
+Day 9 (Tamil) · Kurukshetra, the cosmic form · "அப்போது… அவன் எழுவான்"
+Checked against content/reel-rules.md: frame 0 is an EPIC WIDE dawn battlefield (two endless armies, a blood-red sun,
+ONE small chariot in the middle), the first line is SHORT and warns the viewer about their own future, the turn at 6.6 s,
+Krishna's promise in his own voice at 10.2 s. 14.8 s.
+NO NARRATOR (ElevenLabs has 10 credits left): on-screen text + the phonk track + effects, like the user's 33.4K reel
+(text and music only). Krishna's voice is the Day 5 Ramaa take "நீ தனியாக இல்லை… கவலைப்படாதே" (now his signature line).
+Phonk/slowed drop in Instagram at 0:06.6.
+
+Story (Bhagavad Gita 1.47, 2.1-3, 11.9-13): at Kurukshetra Arjuna sinks down in the chariot, drops his bow and weeps,
+unable to fight. Krishna speaks to him and later shows him his cosmic form, brighter than a thousand suns.
+
+  0.0-3.6   s1  EPIC WIDE: dawn over Kurukshetra, two endless armies facing each other to the horizon, banners, dust,
+                a huge blood-red sun; in the empty middle ONE small chariot with four white horses.
+                Text: ஒரு நாள்… நீ <b>உடைந்து</b> போவாய்.
+  3.6-6.6   s2  In the chariot the warrior (male, armour, dhoti) sinks down, his great bow slips from his hand, head
+                bowed, tears.   Text: எல்லாம் <b>முடிந்தது</b> என்று நினைப்பாய்.
+  6.6       TURN: boom + flash + bell.
+  6.6-9.8   s3  EPIC WIDE: the cosmic form rises into the sky behind the chariot, towering over both armies, radiant
+                gold, many arms, suns and galaxies within his body; the armies tiny below.
+                Text: அப்போது… அவன் <b>எழுவான்.</b>
+  9.8-14.8  s4  Krishna close-up on the chariot at dawn (the user's face), reins in hand, a gentle smile into the lens.
+                Krishna (Ramaa, Day 5 take): நீ தனியாக இல்லை… கவலைப்படாதே.  (10.2 s)
+                Text: நீ தனியாக <b>இல்லை.</b> (10.2-11.7)  then  <b>கவலைப்படாதே.</b> (11.8-13.3)
+  13.4-14.8 CTA: கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏
+Label: devotional art created digitally.
