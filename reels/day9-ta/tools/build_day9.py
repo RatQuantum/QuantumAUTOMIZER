@@ -61,12 +61,12 @@ AUDIO = [
     (SFX + "misc_cineboom.wav", 0.0, 0.4, 8, {"media": 1.4, "dur": 3.0, "fout": 1.2}),
     (SFX + "ambi_dark_woosh.wav", TURN - 1.27, 0.45, 16, {}),
     ("assets/audio/impact.wav", TURN - 1.27, 0.5, 17, {}),
-    (SFX + "bd_boom.wav", TURN, 0.75, 18, {}),
-    (SFX + "perc_bell.wav", TURN + 0.02, 0.85, 19, {"dur": 3.0, "fout": 1.2}),
+    (SFX + "perc_impact1.wav", TURN, 0.8, 18, {}),
+    (SFX + "ambi_lunar_land.wav", TURN + 0.02, 0.5, 19, {"dur": 3.4, "fout": 1.0}),
     (SFX + "ambi_choir.wav", TURN + 0.05, 0.5, 20, {}),
     (SFX + "perc_swoosh.wav", B(12) - 0.14, 0.3, 12, {}),
-    (SFX + "perc_bell2.wav", B(12) + 1.95, 0.45, 22, {"dur": 2.5, "fout": 1.0}),
-    (SFX + "perc_bell.wav", B(16), 0.7, 19, {"fout": 0.8}),
+    (SFX + "guit_harmonics.wav", B(12) + 1.95, 0.4, 22, {"dur": 2.5, "fout": 1.0}),
+    (SFX + "tabla_ghe3.wav", B(16), 0.75, 21, {"fout": 0.6}),
 ]
 AUDIO = [a for a in AUDIO if os.path.exists(a[0])]
 SCORE = "assets/audio/score.wav"

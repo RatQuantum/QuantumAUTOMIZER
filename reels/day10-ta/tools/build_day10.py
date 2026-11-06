@@ -58,15 +58,15 @@ AUDIO = [
     ("assets/audio/none-v3.wav", B(8), 0.35, 9, {"dur": B(4), "fout": 0.3}),
     ("assets/audio/none-v4.wav", B(12), 0.25, 9, {"dur": TOTAL - B(12), "fout": 0.8}),
     ("assets/audio/wind.wav", 0.0, 0.2, 10, {"dur": TURN, "fin": 0.2, "fout": 0.3}),
-    (SFX + "misc_cineboom.wav", 0.0, 0.4, 8, {"media": 1.4, "dur": 3.0, "fout": 1.2}),
+    (SFX + "ambi_drone.wav", 0.0, 0.35, 8, {"dur": 4.4, "fin": 0.3, "fout": 1.2}),
     (SFX + "ambi_dark_woosh.wav", TURN - 1.27, 0.45, 16, {}),
     ("assets/audio/impact.wav", TURN - 1.27, 0.5, 17, {}),
-    (SFX + "bd_boom.wav", TURN, 0.75, 18, {}),
-    (SFX + "perc_bell.wav", TURN + 0.02, 0.85, 19, {"dur": 3.0, "fout": 1.2}),
-    (SFX + "ambi_choir.wav", TURN + 0.05, 0.5, 20, {}),
+    (SFX + "perc_impact2.wav", TURN, 0.55, 18, {}),
+    (SFX + "ambi_glass_rub.wav", TURN + 0.02, 0.65, 19, {"fout": 1.0}),
+    (SFX + "ambi_glass_hum.wav", TURN + 0.05, 0.3, 20, {"dur": 5.0, "fin": 0.4, "fout": 1.5}),
     (SFX + "perc_swoosh.wav", B(12) - 0.14, 0.3, 12, {}),
-    (SFX + "perc_bell2.wav", B(12) + 1.95, 0.45, 22, {"dur": 2.5, "fout": 1.0}),
-    (SFX + "perc_bell.wav", B(16), 0.7, 19, {"fout": 0.8}),
+    (SFX + "ambi_piano.wav", B(12) + 1.95, 0.45, 22, {"fout": 1.0}),
+    (SFX + "tabla_na.wav", B(16), 0.75, 21, {}),
 ]
 AUDIO = [a for a in AUDIO if os.path.exists(a[0])]
 SCORE = "assets/audio/score.wav"

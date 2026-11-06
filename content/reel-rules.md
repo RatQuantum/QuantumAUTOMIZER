@@ -40,6 +40,13 @@ Every reel is checked against all of these. If one fails, fix it before renderin
     song in Instagram so its drop lands on beat 8. Day 9 track: "ZAKHELO (Slowed)" by Rushex, 71 BPM, drop 0:15
     -> start the song at 0:08.2, drop at 0:06.8 in the reel.
 
+7f. **Sound effects vary** (the user, 6 Nov: "the bell repeating is annoying… all the time bell is saturating").
+    No temple bell by default; no single effect more than twice in a reel, and not the same set in consecutive reels.
+    Palette (CC0, Sonic Pi samples, already in each reel's assets/sfx): tabla strokes (tabla_ghe*, tabla_na*, tabla_te*,
+    tabla_dhec, tabla_tas*, loop_tabla), glass shimmers (ambi_glass_rub, ambi_glass_hum), guit_harmonics, ambi_piano,
+    ambi_drone, ambi_lunar_land (huge rising rumble), perc_impact1/2, perc_snap/snap2, perc_swash, perc_swoosh,
+    elec_chime (sparingly), ambi_choir (sparingly), misc_cineboom.
+
 ## What NOT to copy
 8. The curtain/door reveal only works with REAL darshan footage (the 33.4K reel). With AI art there is nothing
    the viewer is waiting to see. Do not use reveal-of-a-place hooks with AI.

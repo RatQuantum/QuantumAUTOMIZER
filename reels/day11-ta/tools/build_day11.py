@@ -44,12 +44,13 @@ FEATHER = ('<svg viewBox="0 0 90 220" width="{w}" height="{h}"><path d="M45 218 
 SFX = "assets/sfx/"
 AUDIO = [
     ("assets/audio/impact.wav", B(8) - 1.27, 0.45, 17, {}),           # its boom peaks on the drop
-    (SFX + "misc_cineboom.wav", 0.0, 0.35, 8, {"media": 1.4, "dur": 3.0, "fout": 1.2}),
-    *[(SFX + "perc_swoosh.wav", t - 0.12, 0.35, 12, {}) for t, _, _ in SWAPS],
-    *[(SFX + "perc_bell2.wav", B(n), 0.35, 13 + k * 10, {"dur": 0.7, "fout": 0.4}) for k, n in enumerate((6, 6.5, 7))],
-    *[(SFX + "perc_bell.wav", t + 0.35, 0.8, 19, {"dur": 3.0, "fout": 1.2}) for t in REVEAL],
+    (SFX + "ambi_drone.wav", 0.0, 0.3, 8, {"dur": 4.4, "fin": 0.2, "fout": 1.2}),
+    *[(SFX + snd, t, 0.55, 12 + 10 * k, {}) for k, ((t, _, _), snd) in enumerate(zip(SWAPS, ["perc_snap.wav", "tabla_te1.wav", "perc_snap2.wav", "tabla_te2.wav"]))],
+    *[(SFX + snd, B(n), 0.7, 13 + k * 10, {}) for k, (n, snd) in enumerate([(6, "tabla_dhec.wav"), (6.5, "tabla_na_s.wav"), (7, "tabla_ghe1.wav")])],
+    *[(SFX + swish, t + 0.3, 0.5, 18 + 10 * k, {}) for k, (t, swish) in enumerate(zip(REVEAL, ["perc_swash.wav", "perc_swoosh.wav", "perc_swash.wav"]))],
+    *[(SFX + snd, t + 0.55, vol, 19 + 10 * k, {"dur": 3.0, "fout": 1.2}) for k, (t, snd, vol) in enumerate(zip(REVEAL, ["ambi_glass_rub.wav", "guit_harmonics.wav", "elec_chime.wav"], [0.6, 0.5, 0.35]))],
     (SFX + "ambi_choir.wav", B(8) + 0.4, 0.45, 20, {}),
-    (SFX + "perc_bell.wav", CTA, 0.6, 19, {"fout": 0.8}),
+    (SFX + "tabla_ghe3.wav", CTA, 0.7, 49, {"fout": 0.6}),
 ]
 
 
