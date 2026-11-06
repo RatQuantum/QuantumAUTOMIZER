@@ -33,8 +33,9 @@ Every reel is checked against all of these. If one fails, fix it before renderin
 
 7e. **Edit to the beat of the track the user will add** (the user, 6 Nov: "edit the clips to the beats"). Get the
     track's BPM (Beatport / Shazam) and the drop time from the user. Build on a beat grid: B(n) = n * 60/BPM. The
-    reel starts on a beat, the drop is beat 8, every cut, text change and punch-in lands on a beat (soft pulses
-    before the drop, a big punch + flash on the drop, a hit on every beat after it). Effects with their own rhythm
+    reel starts on a beat, the drop is beat 8, every CUT and text change lands on a beat.
+    **NO punch-in zooms, shakes, pulsing or flashes on every beat** (the user, 6 Nov, on Days 9 and 10: "looks
+    frantic", 0/10). Between cuts the picture moves slowly and smoothly; at most ONE accent (a flash) on the drop. Effects with their own rhythm
     (heartbeats, drum rolls) are left out so they cannot fight the track. Tell the user exactly where to start the
     song in Instagram so its drop lands on beat 8. Day 9 track: "ZAKHELO (Slowed)" by Rushex, 71 BPM, drop 0:15
     -> start the song at 0:08.2, drop at 0:06.8 in the reel.

@@ -124,8 +124,8 @@ def shots():
     js += '    tl.set("#stage", { scale: 1 }, 0);\n'
     # punch on the beat: a quick zoom-in that settles before the next beat. Soft pulses build to the drop,
     # a big hit on the drop, a hit on every beat after it, softer pulses under Krishna's line.
-    for n, amt in [*((k, 0.012) for k in range(1, 6)), (6, 0.02), (7, 0.03), (8, 0.09), (9, 0.045), (10, 0.045),
-                   (11, 0.05), (12, 0.06), (14, 0.02), (16, 0.03)]:
+    # NO punch-ins (the user, 6 Nov: the beat shakes looked frantic, 0/10). Only the cuts sit on the beats.
+    for n, amt in []:
         js += f'    tl.fromTo("#stage", {{ scale: {1 + amt:.3f} }}, {{ scale: 1, duration: {min(0.5, BEAT * 0.7):.2f}, ease: "power3.out", immediateRender: false }}, {B(n)});\n'
     return wrap("shots", css, html, js)
 
@@ -171,7 +171,7 @@ def fx():
     js += f'    tl.fromTo("#flash", {{ opacity: 0 }}, {{ opacity: 0.9, duration: 0.06, ease: "power2.in" }}, {DROP - 0.06});\n'
     js += f'    tl.to("#flash", {{ opacity: 0, duration: 0.7, ease: "power2.out" }}, {DROP + 0.02});\n'
     # white flashes on the beats after the drop, and on the cut to Krishna
-    for n in (9, 10, 11, 12):
+    for n in ():
         t = B(n) - 0.02
         html += f'    <div id="bf{n}" class="clip beatflash" data-start="{t:.3f}" data-duration="0.3" data-track-index="4" data-layout-ignore></div>\n'
         js += f'    tl.fromTo("#bf{n}", {{ opacity: {0.35 if n < 12 else 0.6} }}, {{ opacity: 0, duration: 0.28, ease: "power2.out" }}, {t:.3f});\n'
@@ -287,8 +287,8 @@ def cosmic():
         html += (f'    <div id="ring{r}" class="clip ring" style="left: {x}px; top: {y}px; width: {size}px; height: {size}px;" '
                  f'data-start="{on:.3f}" data-duration="{du:.3f}" data-track-index="3" data-layout-ignore></div>\n')
         js += f'    tl.fromTo("#ring{r}", {{ opacity: 0, scale: 0.2 }}, {{ opacity: 0.9, scale: 1, duration: 0.5, ease: "power3.out" }}, {on + 0.05 * r:.3f});\n'
-        # a pulse on each beat after the drop, one ring per beat
-        js += f'    tl.fromTo("#ring{r}", {{ scale: 1.12, opacity: 1 }}, {{ scale: 1, opacity: 0.7, duration: 0.45, ease: "power2.out", immediateRender: false }}, {B(n):.3f});\n'
+        # a slow, steady breathing instead of a pulse on every beat
+        js += f'    tl.to("#ring{r}", {{ scale: 1.06, duration: {du - 0.6:.3f}, ease: "sine.inOut" }}, {on + 0.55:.3f});\n'
     html += (f'    <img id="skyface" class="clip" src="assets/img/krishna-face-sky.png" alt="" '
              f'data-start="{on:.3f}" data-duration="{du:.3f}" data-track-index="4" data-layout-ignore>\n')
     js += f'    tl.fromTo("#skyface", {{ opacity: 0, scale: 0.75, y: 140 }}, {{ opacity: 1, scale: 1, y: 0, duration: 0.9, ease: "power3.out" }}, {on + 0.1:.3f});\n'
