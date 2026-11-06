@@ -1,5 +1,13 @@
 # Next steps (handover for the next Claude session)
 
+**6-10 Nov: the user is away. A daily scheduled task ("Day 9 daily autopilot", 13:37 IST) continues Day 9 alone with
+free Hugging Face GPU (tools/hf_zimage.py, tools/hf_h3.py; python venv: python3 -m venv /home/user/gc-venv &&
+/home/user/gc-venv/bin/pip install gradio_client pillow faster-whisper). The HF network secret was re-entered on 6 Nov
+but huggingface.co still answered "Invalid username or password" (the user should create a fresh Read token).
+Anonymous quota: about one picture or one to two clips a day. The laptop (CHECM10ELT652) is in the Remote Control
+list but not offered to cloud sessions (Claude desktop app on Windows likely needs an update). Shot 4 of Day 9 uses
+the user's face clip, which exists only locally (never committed); if the container was recycled, ask the user.**
+
 **READ content/reel-rules.md FIRST and check every reel against it** (Day 6 flopped at 160 views next to
 Day 5's 7,422: no face, no pain, a bright calm frame 0, a door reveal copied from real footage).
 
