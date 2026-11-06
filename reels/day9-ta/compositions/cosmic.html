@@ -1,0 +1,242 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #mandala {
+      position: absolute;
+      left: -360px;
+      top: -260px;
+      width: 1800px;
+      height: 1800px;
+      border-radius: 50%;
+      background: repeating-conic-gradient(from 0deg, rgba(255, 214, 120, 0.55) 0deg 3deg, rgba(255, 170, 60, 0) 3deg 10deg);
+      -webkit-mask-image: radial-gradient(circle, #000 18%, rgba(0, 0, 0, 0.6) 38%, transparent 62%);
+      mask-image: radial-gradient(circle, #000 18%, rgba(0, 0, 0, 0.6) 38%, transparent 62%);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    #halo {
+      position: absolute;
+      left: 40px;
+      top: 140px;
+      width: 1000px;
+      height: 1000px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 200, 110, 0) 30%, rgba(255, 214, 130, 0.75) 44%, rgba(255, 150, 50, 0.3) 58%, rgba(255, 120, 30, 0) 70%);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 220, 140, 0.85);
+      box-shadow: 0 0 40px 8px rgba(255, 190, 80, 0.6), inset 0 0 40px 8px rgba(255, 190, 80, 0.45);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    #skyface {
+      position: absolute;
+      left: 120px;
+      top: 150px;
+      width: 840px;
+      height: 966px;
+      object-fit: cover;
+      -webkit-mask-image: radial-gradient(ellipse 46% 48% at 50% 46%, #000 58%, transparent 100%);
+      mask-image: radial-gradient(ellipse 46% 48% at 50% 46%, #000 58%, transparent 100%);
+      opacity: 0;
+    }
+    .star {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fffbe8;
+      box-shadow: 0 0 12px 4px rgba(255, 230, 160, 0.9);
+      opacity: 0;
+    }
+    .dust {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #ffb35a;
+      box-shadow: 0 0 8px 2px rgba(255, 140, 40, 0.7);
+    }
+  </style>
+  <div id="root" data-composition-id="cosmic" data-width="1080" data-height="1920">
+    <div id="dustlayer" class="clip" data-start="0" data-duration="6.761" data-track-index="0" data-layout-ignore>
+      <div id="d0" class="dust" style="left: 868px; top: 1464px; transform: scale(0.69);"></div>
+      <div id="d1" class="dust" style="left: -67px; top: 1392px; transform: scale(1.4);"></div>
+      <div id="d2" class="dust" style="left: 85px; top: 1384px; transform: scale(0.88);"></div>
+      <div id="d3" class="dust" style="left: 845px; top: 1565px; transform: scale(0.74);"></div>
+      <div id="d4" class="dust" style="left: 147px; top: 971px; transform: scale(0.56);"></div>
+      <div id="d5" class="dust" style="left: 705px; top: 908px; transform: scale(1.17);"></div>
+      <div id="d6" class="dust" style="left: 783px; top: 879px; transform: scale(0.9);"></div>
+      <div id="d7" class="dust" style="left: 619px; top: 788px; transform: scale(1.39);"></div>
+      <div id="d8" class="dust" style="left: 762px; top: 812px; transform: scale(0.64);"></div>
+      <div id="d9" class="dust" style="left: 404px; top: 1569px; transform: scale(0.5);"></div>
+      <div id="d10" class="dust" style="left: 324px; top: 1115px; transform: scale(1.39);"></div>
+      <div id="d11" class="dust" style="left: 192px; top: 1805px; transform: scale(0.58);"></div>
+      <div id="d12" class="dust" style="left: 937px; top: 1800px; transform: scale(0.57);"></div>
+      <div id="d13" class="dust" style="left: 313px; top: 891px; transform: scale(1.44);"></div>
+      <div id="d14" class="dust" style="left: 4px; top: 810px; transform: scale(1.18);"></div>
+      <div id="d15" class="dust" style="left: 225px; top: 1249px; transform: scale(1.37);"></div>
+      <div id="d16" class="dust" style="left: 744px; top: 1184px; transform: scale(1.0);"></div>
+      <div id="d17" class="dust" style="left: 669px; top: 1769px; transform: scale(0.61);"></div>
+      <div id="d18" class="dust" style="left: 668px; top: 1624px; transform: scale(0.7);"></div>
+      <div id="d19" class="dust" style="left: -43px; top: 1476px; transform: scale(0.93);"></div>
+      <div id="d20" class="dust" style="left: 357px; top: 1154px; transform: scale(0.82);"></div>
+      <div id="d21" class="dust" style="left: 101px; top: 1329px; transform: scale(1.02);"></div>
+      <div id="d22" class="dust" style="left: 32px; top: 752px; transform: scale(1.06);"></div>
+      <div id="d23" class="dust" style="left: 797px; top: 1718px; transform: scale(1.28);"></div>
+      <div id="d24" class="dust" style="left: 55px; top: 1570px; transform: scale(1.46);"></div>
+      <div id="d25" class="dust" style="left: 741px; top: 1744px; transform: scale(0.87);"></div>
+      <div id="d26" class="dust" style="left: 514px; top: 1050px; transform: scale(0.55);"></div>
+      <div id="d27" class="dust" style="left: 273px; top: 1238px; transform: scale(1.11);"></div>
+      <div id="d28" class="dust" style="left: -56px; top: 799px; transform: scale(0.71);"></div>
+      <div id="d29" class="dust" style="left: 716px; top: 1302px; transform: scale(0.79);"></div>
+      <div id="d30" class="dust" style="left: 904px; top: 1850px; transform: scale(1.46);"></div>
+      <div id="d31" class="dust" style="left: 526px; top: 941px; transform: scale(0.95);"></div>
+      <div id="d32" class="dust" style="left: 704px; top: 1046px; transform: scale(1.1);"></div>
+      <div id="d33" class="dust" style="left: 932px; top: 1414px; transform: scale(0.78);"></div>
+    </div>
+    <div id="halo" class="clip" data-start="6.761" data-duration="3.380" data-track-index="1" data-layout-ignore></div>
+    <div id="mandala" class="clip" data-start="6.761" data-duration="3.380" data-track-index="2" data-layout-ignore></div>
+    <div id="ring0" class="clip ring" style="left: 260px; top: 360px; width: 560px; height: 560px;" data-start="6.761" data-duration="3.380" data-track-index="3" data-layout-ignore></div>
+    <div id="ring1" class="clip ring" style="left: 130px; top: 230px; width: 820px; height: 820px;" data-start="6.761" data-duration="3.380" data-track-index="3" data-layout-ignore></div>
+    <div id="ring2" class="clip ring" style="left: 0px; top: 100px; width: 1080px; height: 1080px;" data-start="6.761" data-duration="3.380" data-track-index="3" data-layout-ignore></div>
+    <img id="skyface" class="clip" src="assets/img/krishna-face-sky.png" alt="" data-start="6.761" data-duration="3.380" data-track-index="4" data-layout-ignore>
+    <div id="st0" class="clip star" style="left: 910px; top: 1065px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st1" class="clip star" style="left: 818px; top: 1138px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st2" class="clip star" style="left: 656px; top: 1059px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st3" class="clip star" style="left: 314px; top: 567px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st4" class="clip star" style="left: 281px; top: 451px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st5" class="clip star" style="left: 281px; top: 242px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st6" class="clip star" style="left: 236px; top: 782px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st7" class="clip star" style="left: 203px; top: 183px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st8" class="clip star" style="left: 2px; top: 343px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st9" class="clip star" style="left: 581px; top: 919px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st10" class="clip star" style="left: 314px; top: 652px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st11" class="clip star" style="left: 471px; top: 111px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st12" class="clip star" style="left: 555px; top: 1071px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st13" class="clip star" style="left: 968px; top: 526px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st14" class="clip star" style="left: 560px; top: 1147px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st15" class="clip star" style="left: 896px; top: 758px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st16" class="clip star" style="left: 727px; top: 754px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st17" class="clip star" style="left: 723px; top: 758px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st18" class="clip star" style="left: 157px; top: 512px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st19" class="clip star" style="left: 749px; top: 758px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st20" class="clip star" style="left: 161px; top: 736px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st21" class="clip star" style="left: 237px; top: 929px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st22" class="clip star" style="left: 916px; top: 308px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st23" class="clip star" style="left: 957px; top: 1124px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st24" class="clip star" style="left: 758px; top: 722px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st25" class="clip star" style="left: 751px; top: 772px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st26" class="clip star" style="left: 340px; top: 416px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st27" class="clip star" style="left: 716px; top: 748px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st28" class="clip star" style="left: 455px; top: 432px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st29" class="clip star" style="left: 76px; top: 214px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st30" class="clip star" style="left: 38px; top: 956px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st31" class="clip star" style="left: 314px; top: 1212px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st32" class="clip star" style="left: 432px; top: 384px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st33" class="clip star" style="left: 675px; top: 993px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st34" class="clip star" style="left: 373px; top: 767px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st35" class="clip star" style="left: 357px; top: 1223px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st36" class="clip star" style="left: 191px; top: 793px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st37" class="clip star" style="left: 14px; top: 396px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st38" class="clip star" style="left: 329px; top: 749px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+    <div id="st39" class="clip star" style="left: -35px; top: 774px;" data-start="6.761" data-duration="3.380" data-track-index="5" data-layout-ignore></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#d0", { x: 0, y: 0, opacity: 0.85 }, { x: 276, y: -95, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d1", { x: 0, y: 0, opacity: 0.85 }, { x: 397, y: -178, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d2", { x: 0, y: 0, opacity: 0.85 }, { x: 160, y: -246, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d3", { x: 0, y: 0, opacity: 0.85 }, { x: 220, y: -103, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d4", { x: 0, y: 0, opacity: 0.85 }, { x: 399, y: -211, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d5", { x: 0, y: 0, opacity: 0.85 }, { x: 289, y: -112, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d6", { x: 0, y: 0, opacity: 0.85 }, { x: 276, y: -113, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d7", { x: 0, y: 0, opacity: 0.85 }, { x: 242, y: -241, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d8", { x: 0, y: 0, opacity: 0.85 }, { x: 333, y: -185, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d9", { x: 0, y: 0, opacity: 0.85 }, { x: 197, y: -212, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d10", { x: 0, y: 0, opacity: 0.85 }, { x: 309, y: -62, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d11", { x: 0, y: 0, opacity: 0.85 }, { x: 148, y: -188, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d12", { x: 0, y: 0, opacity: 0.85 }, { x: 241, y: -167, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d13", { x: 0, y: 0, opacity: 0.85 }, { x: 214, y: -104, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d14", { x: 0, y: 0, opacity: 0.85 }, { x: 278, y: -202, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d15", { x: 0, y: 0, opacity: 0.85 }, { x: 157, y: -91, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d16", { x: 0, y: 0, opacity: 0.85 }, { x: 222, y: -216, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d17", { x: 0, y: 0, opacity: 0.85 }, { x: 184, y: -148, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d18", { x: 0, y: 0, opacity: 0.85 }, { x: 247, y: -162, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d19", { x: 0, y: 0, opacity: 0.85 }, { x: 308, y: -60, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d20", { x: 0, y: 0, opacity: 0.85 }, { x: 367, y: -129, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d21", { x: 0, y: 0, opacity: 0.85 }, { x: 285, y: -86, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d22", { x: 0, y: 0, opacity: 0.85 }, { x: 335, y: -259, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d23", { x: 0, y: 0, opacity: 0.85 }, { x: 317, y: -241, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d24", { x: 0, y: 0, opacity: 0.85 }, { x: 258, y: -84, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d25", { x: 0, y: 0, opacity: 0.85 }, { x: 330, y: -203, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d26", { x: 0, y: 0, opacity: 0.85 }, { x: 272, y: -67, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d27", { x: 0, y: 0, opacity: 0.85 }, { x: 224, y: -90, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d28", { x: 0, y: 0, opacity: 0.85 }, { x: 171, y: -175, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d29", { x: 0, y: 0, opacity: 0.85 }, { x: 147, y: -150, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d30", { x: 0, y: 0, opacity: 0.85 }, { x: 282, y: -95, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d31", { x: 0, y: 0, opacity: 0.85 }, { x: 173, y: -167, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d32", { x: 0, y: 0, opacity: 0.85 }, { x: 280, y: -257, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#d33", { x: 0, y: 0, opacity: 0.85 }, { x: 190, y: -72, opacity: 0.15, duration: 6.761, ease: "none" }, 0);
+    tl.fromTo("#halo", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.55, ease: "power3.out" }, 6.761);
+    tl.fromTo("#mandala", { opacity: 0, rotation: -30, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, 6.761);
+    tl.to("#mandala", { rotation: 40, duration: 3.380, ease: "none" }, 6.761);
+    tl.fromTo("#ring0", { opacity: 0, scale: 0.2 }, { opacity: 0.9, scale: 1, duration: 0.5, ease: "power3.out" }, 6.761);
+    tl.fromTo("#ring0", { scale: 1.12, opacity: 1 }, { scale: 1, opacity: 0.7, duration: 0.45, ease: "power2.out", immediateRender: false }, 7.606);
+    tl.fromTo("#ring1", { opacity: 0, scale: 0.2 }, { opacity: 0.9, scale: 1, duration: 0.5, ease: "power3.out" }, 6.811);
+    tl.fromTo("#ring1", { scale: 1.12, opacity: 1 }, { scale: 1, opacity: 0.7, duration: 0.45, ease: "power2.out", immediateRender: false }, 8.451);
+    tl.fromTo("#ring2", { opacity: 0, scale: 0.2 }, { opacity: 0.9, scale: 1, duration: 0.5, ease: "power3.out" }, 6.861);
+    tl.fromTo("#ring2", { scale: 1.12, opacity: 1 }, { scale: 1, opacity: 0.7, duration: 0.45, ease: "power2.out", immediateRender: false }, 9.296);
+    tl.fromTo("#skyface", { opacity: 0, scale: 0.75, y: 140 }, { opacity: 1, scale: 1, y: 0, duration: 0.9, ease: "power3.out" }, 6.861);
+    tl.to("#skyface", { scale: 1.08, duration: 2.380, ease: "none" }, 7.761);
+    tl.fromTo("#st0", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 9.06);
+    tl.fromTo("#st1", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 9.163);
+    tl.fromTo("#st2", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.446);
+    tl.fromTo("#st3", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.331);
+    tl.fromTo("#st4", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.039);
+    tl.fromTo("#st5", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.43);
+    tl.fromTo("#st6", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.273);
+    tl.fromTo("#st7", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 9.212);
+    tl.fromTo("#st8", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.033);
+    tl.fromTo("#st9", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.128);
+    tl.fromTo("#st10", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 9.243);
+    tl.fromTo("#st11", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 6.939);
+    tl.fromTo("#st12", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.856);
+    tl.fromTo("#st13", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.19);
+    tl.fromTo("#st14", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.088);
+    tl.fromTo("#st15", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.438);
+    tl.fromTo("#st16", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.878);
+    tl.fromTo("#st17", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.535);
+    tl.fromTo("#st18", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.746);
+    tl.fromTo("#st19", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.723);
+    tl.fromTo("#st20", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.259);
+    tl.fromTo("#st21", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.231);
+    tl.fromTo("#st22", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.071);
+    tl.fromTo("#st23", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.153);
+    tl.fromTo("#st24", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.59);
+    tl.fromTo("#st25", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 6.924);
+    tl.fromTo("#st26", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 9.204);
+    tl.fromTo("#st27", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.907);
+    tl.fromTo("#st28", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.54);
+    tl.fromTo("#st29", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.253);
+    tl.fromTo("#st30", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.136);
+    tl.fromTo("#st31", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.573);
+    tl.fromTo("#st32", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 6.965);
+    tl.fromTo("#st33", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 9.492);
+    tl.fromTo("#st34", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 9.48);
+    tl.fromTo("#st35", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 6.94);
+    tl.fromTo("#st36", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.723);
+    tl.fromTo("#st37", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 9.253);
+    tl.fromTo("#st38", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.667);
+    tl.fromTo("#st39", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.083);
+    window.__timelines["cosmic"] = tl;
+  </script>
+</template>

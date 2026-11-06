@@ -28,3 +28,10 @@ BEAT GRID (6 Nov): music "ZAKHELO (Slowed)" by Rushex (YouTube upload by PHANT X
 Beat = 0.845 s. Cuts: 0 / 3.38 (beat 4) / 6.76 (beat 8 = the drop) / 10.14 (beat 12, Krishna); CTA on beat 16 (13.52);
 end on beat 18 (15.21). Punch-ins on every beat (soft before the drop, big on it, hits after), white flashes on beats 9-12.
 Instagram: start the song at 0:08.2 so the drop lands at 0:06.8. Krishna's line at 10.44 s.
+
+DONE (6 Nov), HyperFrames-only version (the user: "use HyperFrames to generate video, any style"): shots 1-3 are the
+free Z-Image battlefield still animated in CSS/GSAP (push-in with drifting embers; a tight dark crop on the lone chariot;
+the cosmic form as a motion graphic: rotating golden sunburst, rings that hit on each beat, stars, and the user's Krishna
+face rising huge in the sky from a Day 7 frame). Shot 4 is the Day 7 golden Krishna clip. Face image and clip are local
+only (gitignored). Final reels/day9-ta/day9-tamil-no-music.mp4 (not in git): 15.25 s, -15.8 LUFS, Whisper hears Krishna's
+line. Instagram: "ZAKHELO (Slowed)" from 0:08.2, drop at 0:06.8.

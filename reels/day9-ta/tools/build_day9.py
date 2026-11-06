@@ -26,13 +26,20 @@ def B(n):
 TOTAL = B(18)   # 15.21 s
 TURN = B(8)     # 6.76 s, the drop
 DROP = TURN  # the fx layer (flash, rays, petals) keys off DROP
+# HyperFrames-only version (6 Nov, the user's ask: "use HyperFrames to generate video, any style"): shots 1-3 are the
+# battlefield still animated in CSS/GSAP (push-ins, a tight dark crop on the lone chariot, the cosmic-form motion graphic
+# on top at the drop); shot 4 is the user's golden Krishna clip from Day 7 (local only, never committed).
+BF = "assets/img/s1-battlefield-1080.png"
 SHOTS_PLAN = [
-    ("assets/video/v1-battlefield.mp4", "assets/img/s1-battlefield.png", 0.0, B(4) + 0.03, 1.0, 1.06, "50% 55%"),
-    ("assets/video/v2-warrior.mp4", "assets/img/placeholder-dark.png", B(4), B(8) - B(4) + 0.03, 1.04, 1.0, "50% 45%"),
-    ("assets/video/v3-cosmic.mp4", "assets/img/placeholder-krishna.png", B(8), B(12) - B(8) + 0.03, 1.0, 1.04, "50% 40%"),
+    (BF, BF, 0.0, B(4) + 0.03, 1.0, 1.10, "50% 52%"),
+    (BF, BF, B(4), B(8) - B(4) + 0.03, 2.1, 2.45, "50% 51%"),
+    (BF, BF, B(8), B(12) - B(8) + 0.03, 1.15, 1.0, "50% 60%"),
     ("assets/video/v4-krishna.mp4", "assets/img/placeholder-krishna.png", B(12), TOTAL - B(12), 1.0, 1.05, "50% 25%"),
 ]
 SHOTS = [(v if os.path.exists(v) else f, st, du, s0, s1, o) for v, f, st, du, s0, s1, o in SHOTS_PLAN]
+# per-shot look: shot 2 is the lone chariot, dark and drained (despair); shot 3 is the battlefield in shadow under the
+# blazing cosmic form
+SHOT_FILTER = {1: "saturate(0.45) brightness(0.62) contrast(1.15)", 2: "brightness(0.5) saturate(0.8) contrast(1.1)"}
 LINES = [
     ("ஒரு நாள்… நீ <b>உடைந்து</b> போவாய்.", 0.0, B(4) - 0.1),
     ("எல்லாம் <b>முடிந்தது</b><br>என்று நினைப்பாய்.", B(4) + 0.1, B(8) - 0.1),
@@ -110,15 +117,16 @@ def shots():
         tag = "img" if src.endswith(".png") else "video"
         attrs = 'alt=""' if tag == "img" else "muted playsinline"
         end = "" if tag == "img" else "</video>"
-        html += (f'    <{tag} id="v{i}" class="clip shot" src="{src}" {attrs} style="transform-origin: {origin};" '
+        html += (f'    <{tag} id="v{i}" class="clip shot" src="{src}" {attrs} style="transform-origin: {origin};{(' filter: ' + SHOT_FILTER[i] + ';') if i in SHOT_FILTER else ''}" '
                  f'data-start="{st}" data-duration="{du:.2f}" data-track-index="{i % 2}">{end}\n')
         js += f'    tl.fromTo("#v{i}", {{ scale: {s0} }}, {{ scale: {s1}, duration: {du:.2f}, ease: "none" }}, {st});\n'
     html += '    </div>\n'
+    js += '    tl.set("#stage", { scale: 1 }, 0);\n'
     # punch on the beat: a quick zoom-in that settles before the next beat. Soft pulses build to the drop,
     # a big hit on the drop, a hit on every beat after it, softer pulses under Krishna's line.
     for n, amt in [*((k, 0.012) for k in range(1, 6)), (6, 0.02), (7, 0.03), (8, 0.09), (9, 0.045), (10, 0.045),
                    (11, 0.05), (12, 0.06), (14, 0.02), (16, 0.03)]:
-        js += f'    tl.fromTo("#stage", {{ scale: {1 + amt:.3f} }}, {{ scale: 1, duration: {min(0.5, BEAT * 0.7):.2f}, ease: "power3.out" }}, {B(n)});\n'
+        js += f'    tl.fromTo("#stage", {{ scale: {1 + amt:.3f} }}, {{ scale: 1, duration: {min(0.5, BEAT * 0.7):.2f}, ease: "power3.out", immediateRender: false }}, {B(n)});\n'
     return wrap("shots", css, html, js)
 
 
@@ -192,6 +200,111 @@ def fx():
     return wrap("fx", css, html, js)
 
 
+def cosmic():
+    rnd = random.Random(9)
+    cx, cy = 540, 640          # centre of the cosmic form in the sky
+    css = '''    #mandala {
+      position: absolute;
+      left: -360px;
+      top: -260px;
+      width: 1800px;
+      height: 1800px;
+      border-radius: 50%;
+      background: repeating-conic-gradient(from 0deg, rgba(255, 214, 120, 0.55) 0deg 3deg, rgba(255, 170, 60, 0) 3deg 10deg);
+      -webkit-mask-image: radial-gradient(circle, #000 18%, rgba(0, 0, 0, 0.6) 38%, transparent 62%);
+      mask-image: radial-gradient(circle, #000 18%, rgba(0, 0, 0, 0.6) 38%, transparent 62%);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    #halo {
+      position: absolute;
+      left: 40px;
+      top: 140px;
+      width: 1000px;
+      height: 1000px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 200, 110, 0) 30%, rgba(255, 214, 130, 0.75) 44%, rgba(255, 150, 50, 0.3) 58%, rgba(255, 120, 30, 0) 70%);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 220, 140, 0.85);
+      box-shadow: 0 0 40px 8px rgba(255, 190, 80, 0.6), inset 0 0 40px 8px rgba(255, 190, 80, 0.45);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    #skyface {
+      position: absolute;
+      left: 120px;
+      top: 150px;
+      width: 840px;
+      height: 966px;
+      object-fit: cover;
+      -webkit-mask-image: radial-gradient(ellipse 46% 48% at 50% 46%, #000 58%, transparent 100%);
+      mask-image: radial-gradient(ellipse 46% 48% at 50% 46%, #000 58%, transparent 100%);
+      opacity: 0;
+    }
+    .star {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fffbe8;
+      box-shadow: 0 0 12px 4px rgba(255, 230, 160, 0.9);
+      opacity: 0;
+    }
+    .dust {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #ffb35a;
+      box-shadow: 0 0 8px 2px rgba(255, 140, 40, 0.7);
+    }
+'''
+    on, off = B(8), B(12)
+    du = off - on
+    html = js = ""
+    # embers and dust drifting across the battlefield before the drop
+    html += f'    <div id="dustlayer" class="clip" data-start="0" data-duration="{on:.3f}" data-track-index="0" data-layout-ignore>\n'
+    for k in range(34):
+        x0, y0 = rnd.randint(-80, 1000), rnd.randint(700, 1900)
+        dx, dy = rnd.randint(140, 420), -rnd.randint(60, 260)
+        sc = round(rnd.uniform(0.5, 1.5), 2)
+        html += f'      <div id="d{k}" class="dust" style="left: {x0}px; top: {y0}px; transform: scale({sc});"></div>\n'
+        js += f'    tl.fromTo("#d{k}", {{ x: 0, y: 0, opacity: 0.85 }}, {{ x: {dx}, y: {dy}, opacity: 0.15, duration: {on:.3f}, ease: "none" }}, 0);\n'
+    html += '    </div>\n'
+    # the cosmic form: halo, rotating sunburst of rays, rings that hit on each beat, the face in the sky, stars
+    html += f'    <div id="halo" class="clip" data-start="{on:.3f}" data-duration="{du:.3f}" data-track-index="1" data-layout-ignore></div>\n'
+    html += f'    <div id="mandala" class="clip" data-start="{on:.3f}" data-duration="{du:.3f}" data-track-index="2" data-layout-ignore></div>\n'
+    js += f'    tl.fromTo("#halo", {{ opacity: 0, scale: 0.3 }}, {{ opacity: 1, scale: 1, duration: 0.55, ease: "power3.out" }}, {on:.3f});\n'
+    js += f'    tl.fromTo("#mandala", {{ opacity: 0, rotation: -30, scale: 0.4 }}, {{ opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }}, {on:.3f});\n'
+    js += f'    tl.to("#mandala", {{ rotation: 40, duration: {du:.3f}, ease: "none" }}, {on:.3f});\n'
+    for r, (size, n) in enumerate([(560, 9), (820, 10), (1080, 11)]):
+        x, y = cx - size // 2, cy - size // 2
+        html += (f'    <div id="ring{r}" class="clip ring" style="left: {x}px; top: {y}px; width: {size}px; height: {size}px;" '
+                 f'data-start="{on:.3f}" data-duration="{du:.3f}" data-track-index="3" data-layout-ignore></div>\n')
+        js += f'    tl.fromTo("#ring{r}", {{ opacity: 0, scale: 0.2 }}, {{ opacity: 0.9, scale: 1, duration: 0.5, ease: "power3.out" }}, {on + 0.05 * r:.3f});\n'
+        # a pulse on each beat after the drop, one ring per beat
+        js += f'    tl.fromTo("#ring{r}", {{ scale: 1.12, opacity: 1 }}, {{ scale: 1, opacity: 0.7, duration: 0.45, ease: "power2.out", immediateRender: false }}, {B(n):.3f});\n'
+    html += (f'    <img id="skyface" class="clip" src="assets/img/krishna-face-sky.png" alt="" '
+             f'data-start="{on:.3f}" data-duration="{du:.3f}" data-track-index="4" data-layout-ignore>\n')
+    js += f'    tl.fromTo("#skyface", {{ opacity: 0, scale: 0.75, y: 140 }}, {{ opacity: 1, scale: 1, y: 0, duration: 0.9, ease: "power3.out" }}, {on + 0.1:.3f});\n'
+    js += f'    tl.to("#skyface", {{ scale: 1.08, duration: {du - 1.0:.3f}, ease: "none" }}, {on + 1.0:.3f});\n'
+    for k in range(40):
+        ang = rnd.uniform(0, 6.283)
+        rad = rnd.uniform(200, 620)
+        import math
+        x, y = int(cx + rad * math.cos(ang)), int(cy + rad * math.sin(ang) * 1.1)
+        at = round(on + rnd.uniform(0.1, du - 0.6), 3)
+        html += (f'    <div id="st{k}" class="clip star" style="left: {x}px; top: {y}px;" data-start="{on:.3f}" '
+                 f'data-duration="{du:.3f}" data-track-index="5" data-layout-ignore></div>\n')
+        js += f'    tl.fromTo("#st{k}", {{ opacity: 0, scale: 0.3 }}, {{ opacity: 1, scale: 1.3, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }}, {at});\n'
+    return wrap("cosmic", css, html, js)
+
+
 def texts():
     css = '''    @font-face {
       font-family: "Noto Sans Tamil";
@@ -245,7 +358,7 @@ def texts():
 def index():
     layers = "\n".join(
         f'      <div id="{c}" data-composition-id="{c}" data-composition-src="compositions/{c}.html" data-start="0" data-duration="{TOTAL}" data-track-index="{n}" data-track-kind="{k}" data-width="1080" data-height="1920"></div>'
-        for n, (c, k) in enumerate([("shots", "graphics"), ("fx", "graphics"), ("texts", "captions")], start=1))
+        for n, (c, k) in enumerate([("shots", "graphics"), ("cosmic", "graphics"), ("fx", "graphics"), ("texts", "captions")], start=1))
     audio = ""
     for i, (f, st, vol, tr, o) in enumerate(AUDIO):
         du = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f],
@@ -301,7 +414,7 @@ def index():
 
 
 if __name__ == "__main__":
-    for name, fn in (("shots", shots), ("fx", fx), ("texts", texts)):
+    for name, fn in (("shots", shots), ("cosmic", cosmic), ("fx", fx), ("texts", texts)):
         open(f"compositions/{name}.html", "w", encoding="utf-8").write(fn())
     open("index.html", "w", encoding="utf-8").write(index())
     print("built", TOTAL, "s")

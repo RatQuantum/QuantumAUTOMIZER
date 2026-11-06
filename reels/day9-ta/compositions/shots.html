@@ -21,32 +21,33 @@
   </style>
   <div id="root" data-composition-id="shots" data-width="1080" data-height="1920">
     <div id="stage">
-    <img id="v0" class="clip shot" src="assets/img/s1-battlefield.png" alt="" style="transform-origin: 50% 55%;" data-start="0.0" data-duration="3.41" data-track-index="0">
-    <img id="v1" class="clip shot" src="assets/img/placeholder-dark.png" alt="" style="transform-origin: 50% 45%;" data-start="3.38" data-duration="3.41" data-track-index="1">
-    <img id="v2" class="clip shot" src="assets/img/placeholder-krishna.png" alt="" style="transform-origin: 50% 40%;" data-start="6.761" data-duration="3.41" data-track-index="0">
-    <img id="v3" class="clip shot" src="assets/img/placeholder-krishna.png" alt="" style="transform-origin: 50% 25%;" data-start="10.141" data-duration="5.07" data-track-index="1">
+    <img id="v0" class="clip shot" src="assets/img/s1-battlefield-1080.png" alt="" style="transform-origin: 50% 52%;" data-start="0.0" data-duration="3.41" data-track-index="0">
+    <img id="v1" class="clip shot" src="assets/img/s1-battlefield-1080.png" alt="" style="transform-origin: 50% 51%; filter: saturate(0.45) brightness(0.62) contrast(1.15);" data-start="3.38" data-duration="3.41" data-track-index="1">
+    <img id="v2" class="clip shot" src="assets/img/s1-battlefield-1080.png" alt="" style="transform-origin: 50% 60%; filter: brightness(0.5) saturate(0.8) contrast(1.1);" data-start="6.761" data-duration="3.41" data-track-index="0">
+    <video id="v3" class="clip shot" src="assets/video/v4-krishna.mp4" muted playsinline style="transform-origin: 50% 25%;" data-start="10.141" data-duration="5.07" data-track-index="1"></video>
     </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#v0", { scale: 1.0 }, { scale: 1.06, duration: 3.41, ease: "none" }, 0.0);
-    tl.fromTo("#v1", { scale: 1.04 }, { scale: 1.0, duration: 3.41, ease: "none" }, 3.38);
-    tl.fromTo("#v2", { scale: 1.0 }, { scale: 1.04, duration: 3.41, ease: "none" }, 6.761);
+    tl.fromTo("#v0", { scale: 1.0 }, { scale: 1.1, duration: 3.41, ease: "none" }, 0.0);
+    tl.fromTo("#v1", { scale: 2.1 }, { scale: 2.45, duration: 3.41, ease: "none" }, 3.38);
+    tl.fromTo("#v2", { scale: 1.15 }, { scale: 1.0, duration: 3.41, ease: "none" }, 6.761);
     tl.fromTo("#v3", { scale: 1.0 }, { scale: 1.05, duration: 5.07, ease: "none" }, 10.141);
-    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 0.845);
-    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 1.69);
-    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 2.535);
-    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 3.38);
-    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 4.225);
-    tl.fromTo("#stage", { scale: 1.020 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 5.07);
-    tl.fromTo("#stage", { scale: 1.030 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 5.915);
-    tl.fromTo("#stage", { scale: 1.090 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 6.761);
-    tl.fromTo("#stage", { scale: 1.045 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 7.606);
-    tl.fromTo("#stage", { scale: 1.045 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 8.451);
-    tl.fromTo("#stage", { scale: 1.050 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 9.296);
-    tl.fromTo("#stage", { scale: 1.060 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 10.141);
-    tl.fromTo("#stage", { scale: 1.020 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 11.831);
-    tl.fromTo("#stage", { scale: 1.030 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 13.521);
+    tl.set("#stage", { scale: 1 }, 0);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 0.845);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 1.69);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 2.535);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 3.38);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 4.225);
+    tl.fromTo("#stage", { scale: 1.020 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 5.07);
+    tl.fromTo("#stage", { scale: 1.030 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 5.915);
+    tl.fromTo("#stage", { scale: 1.090 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 6.761);
+    tl.fromTo("#stage", { scale: 1.045 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 7.606);
+    tl.fromTo("#stage", { scale: 1.045 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 8.451);
+    tl.fromTo("#stage", { scale: 1.050 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 9.296);
+    tl.fromTo("#stage", { scale: 1.060 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 10.141);
+    tl.fromTo("#stage", { scale: 1.020 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 11.831);
+    tl.fromTo("#stage", { scale: 1.030 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 13.521);
     window.__timelines["shots"] = tl;
   </script>
 </template>
