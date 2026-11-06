@@ -1,0 +1,11 @@
+Day 10 (Tamil) · Krishna's flute under the full moon · "அப்போது… அவன் அழைப்பான்"
+Made entirely in HyperFrames from ONE free Z-Image picture (gold-on-black silhouette art, no faces; the user: "You don't
+need my face. Use any art style necessary"). Beat grid of "ZAKHELO (Slowed)" (71 BPM): start the song at 0:08.2 in
+Instagram so the drop lands at 0:06.8.
+  beat 0   the full moonlit river, fireflies    ஒரு நாள்… யாரும் உன்னை அழைக்க மாட்டார்கள்.
+  beat 4   cold blue close-up of the silhouette  நீ மறக்கப்பட்டதாக உணர்வாய்.
+  beat 8   DROP: golden sound rings from the flute on each beat, rising notes, the moon glows and pulses,
+           peacock feathers fall               அப்போது… அவன் அழைப்பான்.
+  beat 12  wide, Krishna's voice (Ramaa, Day 5 take): நீ தனியாக இல்லை… கவலைப்படாதே.
+  beat 16  கமெண்ட்டில் "கிருஷ்ணா" 🙏      end on beat 18 (15.21 s)
+Final reels/day10-ta/day10-tamil-no-music.mp4 (not in git), -15.8 LUFS. Caption content/captions/day10-ta.txt.

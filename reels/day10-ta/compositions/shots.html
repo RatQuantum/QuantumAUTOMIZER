@@ -1,0 +1,53 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .shot {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: cover;
+    }
+    #stage {
+      position: absolute;
+      inset: 0;
+      transform-origin: 50% 45%;
+    }
+  </style>
+  <div id="root" data-composition-id="shots" data-width="1080" data-height="1920">
+    <div id="stage">
+    <img id="v0" class="clip shot" src="assets/img/s1-moon-1080.png" alt="" style="transform-origin: 50% 40%;" data-start="0.0" data-duration="3.41" data-track-index="0">
+    <img id="v1" class="clip shot" src="assets/img/s1-moon-1080.png" alt="" style="transform-origin: 52% 78%; filter: saturate(0.25) brightness(0.55) contrast(1.15) hue-rotate(185deg);" data-start="3.38" data-duration="3.41" data-track-index="1">
+    <img id="v2" class="clip shot" src="assets/img/s1-moon-1080.png" alt="" style="transform-origin: 55% 72%; filter: brightness(1.15) saturate(1.2);" data-start="6.761" data-duration="3.41" data-track-index="0">
+    <img id="v3" class="clip shot" src="assets/img/s1-moon-1080.png" alt="" style="transform-origin: 50% 45%;" data-start="10.141" data-duration="5.07" data-track-index="1">
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#v0", { scale: 1.0 }, { scale: 1.08, duration: 3.41, ease: "none" }, 0.0);
+    tl.fromTo("#v1", { scale: 1.9 }, { scale: 2.15, duration: 3.41, ease: "none" }, 3.38);
+    tl.fromTo("#v2", { scale: 1.25 }, { scale: 1.12, duration: 3.41, ease: "none" }, 6.761);
+    tl.fromTo("#v3", { scale: 1.08 }, { scale: 1.0, duration: 5.07, ease: "none" }, 10.141);
+    tl.set("#stage", { scale: 1 }, 0);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 0.845);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 1.69);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 2.535);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 3.38);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 4.225);
+    tl.fromTo("#stage", { scale: 1.020 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 5.07);
+    tl.fromTo("#stage", { scale: 1.030 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 5.915);
+    tl.fromTo("#stage", { scale: 1.090 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 6.761);
+    tl.fromTo("#stage", { scale: 1.045 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 7.606);
+    tl.fromTo("#stage", { scale: 1.045 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 8.451);
+    tl.fromTo("#stage", { scale: 1.050 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 9.296);
+    tl.fromTo("#stage", { scale: 1.060 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 10.141);
+    tl.fromTo("#stage", { scale: 1.020 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 11.831);
+    tl.fromTo("#stage", { scale: 1.030 }, { scale: 1, duration: 0.50, ease: "power3.out", immediateRender: false }, 13.521);
+    window.__timelines["shots"] = tl;
+  </script>
+</template>

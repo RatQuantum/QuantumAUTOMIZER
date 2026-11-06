@@ -1,0 +1,201 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .wave {
+      position: absolute;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 214, 120, 0.95);
+      box-shadow: 0 0 30px 8px rgba(255, 180, 60, 0.7), inset 0 0 24px 6px rgba(255, 180, 60, 0.5);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    #moonglow {
+      position: absolute;
+      left: -60px;
+      top: 0px;
+      width: 1200px;
+      height: 1200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 236, 170, 0.0) 32%, rgba(255, 214, 120, 0.55) 42%, rgba(255, 170, 60, 0.15) 58%, rgba(255, 150, 40, 0) 70%);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    .note {
+      position: absolute;
+      font-family: "Noto Sans Tamil", sans-serif;
+      font-size: 54px;
+      color: #ffe39a;
+      text-shadow: 0 0 18px rgba(255, 190, 70, 0.95);
+      opacity: 0;
+    }
+    .feather {
+      position: absolute;
+      width: 90px;
+      height: 220px;
+      opacity: 0;
+    }
+    .mote {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #ffe7a8;
+      box-shadow: 0 0 8px 3px rgba(255, 210, 120, 0.8);
+    }
+  </style>
+  <div id="root" data-composition-id="cosmic" data-width="1080" data-height="1920">
+    <div id="motes" class="clip" data-start="0" data-duration="6.761" data-track-index="0" data-layout-ignore>
+      <div id="m0" class="mote" style="left: 66px; top: 1339px;"></div>
+      <div id="m1" class="mote" style="left: 30px; top: 1111px;"></div>
+      <div id="m2" class="mote" style="left: 1006px; top: 1743px;"></div>
+      <div id="m3" class="mote" style="left: 328px; top: 935px;"></div>
+      <div id="m4" class="mote" style="left: 671px; top: 977px;"></div>
+      <div id="m5" class="mote" style="left: 739px; top: 945px;"></div>
+      <div id="m6" class="mote" style="left: 284px; top: 1517px;"></div>
+      <div id="m7" class="mote" style="left: 862px; top: 1190px;"></div>
+      <div id="m8" class="mote" style="left: 537px; top: 1367px;"></div>
+      <div id="m9" class="mote" style="left: 620px; top: 1577px;"></div>
+      <div id="m10" class="mote" style="left: 935px; top: 1686px;"></div>
+      <div id="m11" class="mote" style="left: 900px; top: 1528px;"></div>
+      <div id="m12" class="mote" style="left: 8px; top: 1141px;"></div>
+      <div id="m13" class="mote" style="left: 620px; top: 1449px;"></div>
+      <div id="m14" class="mote" style="left: 491px; top: 1221px;"></div>
+      <div id="m15" class="mote" style="left: 922px; top: 1346px;"></div>
+      <div id="m16" class="mote" style="left: 664px; top: 1764px;"></div>
+      <div id="m17" class="mote" style="left: 459px; top: 1322px;"></div>
+      <div id="m18" class="mote" style="left: 65px; top: 1408px;"></div>
+      <div id="m19" class="mote" style="left: 147px; top: 1446px;"></div>
+      <div id="m20" class="mote" style="left: 165px; top: 1053px;"></div>
+      <div id="m21" class="mote" style="left: 766px; top: 1834px;"></div>
+      <div id="m22" class="mote" style="left: 231px; top: 1694px;"></div>
+      <div id="m23" class="mote" style="left: 904px; top: 1070px;"></div>
+      <div id="m24" class="mote" style="left: 714px; top: 1343px;"></div>
+      <div id="m25" class="mote" style="left: 502px; top: 1597px;"></div>
+      <div id="m26" class="mote" style="left: 365px; top: 1785px;"></div>
+      <div id="m27" class="mote" style="left: 933px; top: 1209px;"></div>
+      <div id="m28" class="mote" style="left: 356px; top: 1696px;"></div>
+      <div id="m29" class="mote" style="left: 711px; top: 1235px;"></div>
+    </div>
+    <div id="moonglow" class="clip" data-start="6.761" data-duration="8.450" data-track-index="1" data-layout-ignore></div>
+    <div id="w00" class="clip wave" style="left: 540px; top: 1440px; width: 120px; height: 120px;" data-start="6.761" data-duration="1.4" data-track-index="2" data-layout-ignore></div>
+    <div id="w01" class="clip wave" style="left: 540px; top: 1440px; width: 120px; height: 120px;" data-start="6.941" data-duration="1.4" data-track-index="2" data-layout-ignore></div>
+    <div id="w10" class="clip wave" style="left: 540px; top: 1440px; width: 120px; height: 120px;" data-start="7.606" data-duration="1.4" data-track-index="2" data-layout-ignore></div>
+    <div id="w11" class="clip wave" style="left: 540px; top: 1440px; width: 120px; height: 120px;" data-start="7.786" data-duration="1.4" data-track-index="2" data-layout-ignore></div>
+    <div id="w20" class="clip wave" style="left: 540px; top: 1440px; width: 120px; height: 120px;" data-start="8.451" data-duration="1.4" data-track-index="2" data-layout-ignore></div>
+    <div id="w21" class="clip wave" style="left: 540px; top: 1440px; width: 120px; height: 120px;" data-start="8.631" data-duration="1.4" data-track-index="2" data-layout-ignore></div>
+    <div id="w30" class="clip wave" style="left: 540px; top: 1440px; width: 120px; height: 120px;" data-start="9.296" data-duration="1.4" data-track-index="2" data-layout-ignore></div>
+    <div id="w31" class="clip wave" style="left: 540px; top: 1440px; width: 120px; height: 120px;" data-start="9.476" data-duration="1.4" data-track-index="2" data-layout-ignore></div>
+    <div id="n0" class="clip note" style="left: 662px; top: 1460px;" data-start="6.776" data-duration="1.8" data-track-index="3" data-layout-ignore>♩</div>
+    <div id="n1" class="clip note" style="left: 547px; top: 1460px;" data-start="7.484" data-duration="1.8" data-track-index="3" data-layout-ignore>♫</div>
+    <div id="n2" class="clip note" style="left: 702px; top: 1460px;" data-start="7.925" data-duration="1.8" data-track-index="3" data-layout-ignore>♫</div>
+    <div id="n3" class="clip note" style="left: 713px; top: 1460px;" data-start="8.955" data-duration="1.8" data-track-index="3" data-layout-ignore>♬</div>
+    <div id="n4" class="clip note" style="left: 496px; top: 1460px;" data-start="8.555" data-duration="1.8" data-track-index="3" data-layout-ignore>♬</div>
+    <div id="n5" class="clip note" style="left: 514px; top: 1460px;" data-start="9.437" data-duration="1.8" data-track-index="3" data-layout-ignore>♩</div>
+    <div id="n6" class="clip note" style="left: 605px; top: 1460px;" data-start="8.366" data-duration="1.8" data-track-index="3" data-layout-ignore>♬</div>
+    <div id="n7" class="clip note" style="left: 586px; top: 1460px;" data-start="7.055" data-duration="1.8" data-track-index="3" data-layout-ignore>♬</div>
+    <div id="n8" class="clip note" style="left: 492px; top: 1460px;" data-start="8.357" data-duration="1.8" data-track-index="3" data-layout-ignore>♫</div>
+    <div id="n9" class="clip note" style="left: 596px; top: 1460px;" data-start="7.085" data-duration="1.8" data-track-index="3" data-layout-ignore>♬</div>
+    <div id="n10" class="clip note" style="left: 678px; top: 1460px;" data-start="9.33" data-duration="1.8" data-track-index="3" data-layout-ignore>♩</div>
+    <div id="n11" class="clip note" style="left: 709px; top: 1460px;" data-start="8.925" data-duration="1.8" data-track-index="3" data-layout-ignore>♩</div>
+    <div id="n12" class="clip note" style="left: 712px; top: 1460px;" data-start="8.697" data-duration="1.8" data-track-index="3" data-layout-ignore>♫</div>
+    <div id="n13" class="clip note" style="left: 488px; top: 1460px;" data-start="7.724" data-duration="1.8" data-track-index="3" data-layout-ignore>♬</div>
+    <div id="f0" class="clip feather" style="left: 159px; top: -240px;" data-start="6.971" data-duration="5.5" data-track-index="4" data-layout-ignore><svg viewBox="0 0 90 220" width="90" height="220"><path d="M45 218 L45 40" stroke="#c9a14a" stroke-width="2"/><path d="M45 20 C10 50 8 120 45 200 C82 120 80 50 45 20 Z" fill="#1f6b4f" opacity="0.85"/><ellipse cx="45" cy="62" rx="24" ry="30" fill="#2e8b57"/><ellipse cx="45" cy="64" rx="16" ry="21" fill="#d4a017"/><ellipse cx="45" cy="66" rx="10" ry="14" fill="#1e5aa8"/><ellipse cx="45" cy="68" rx="5" ry="7" fill="#0b1f4d"/></svg></div>
+    <div id="f1" class="clip feather" style="left: 131px; top: -240px;" data-start="8.148" data-duration="5.5" data-track-index="4" data-layout-ignore><svg viewBox="0 0 90 220" width="90" height="220"><path d="M45 218 L45 40" stroke="#c9a14a" stroke-width="2"/><path d="M45 20 C10 50 8 120 45 200 C82 120 80 50 45 20 Z" fill="#1f6b4f" opacity="0.85"/><ellipse cx="45" cy="62" rx="24" ry="30" fill="#2e8b57"/><ellipse cx="45" cy="64" rx="16" ry="21" fill="#d4a017"/><ellipse cx="45" cy="66" rx="10" ry="14" fill="#1e5aa8"/><ellipse cx="45" cy="68" rx="5" ry="7" fill="#0b1f4d"/></svg></div>
+    <div id="f2" class="clip feather" style="left: 148px; top: -240px;" data-start="9.068" data-duration="5.5" data-track-index="4" data-layout-ignore><svg viewBox="0 0 90 220" width="90" height="220"><path d="M45 218 L45 40" stroke="#c9a14a" stroke-width="2"/><path d="M45 20 C10 50 8 120 45 200 C82 120 80 50 45 20 Z" fill="#1f6b4f" opacity="0.85"/><ellipse cx="45" cy="62" rx="24" ry="30" fill="#2e8b57"/><ellipse cx="45" cy="64" rx="16" ry="21" fill="#d4a017"/><ellipse cx="45" cy="66" rx="10" ry="14" fill="#1e5aa8"/><ellipse cx="45" cy="68" rx="5" ry="7" fill="#0b1f4d"/></svg></div>
+    <div id="f3" class="clip feather" style="left: 409px; top: -240px;" data-start="9.852" data-duration="5.359" data-track-index="4" data-layout-ignore><svg viewBox="0 0 90 220" width="90" height="220"><path d="M45 218 L45 40" stroke="#c9a14a" stroke-width="2"/><path d="M45 20 C10 50 8 120 45 200 C82 120 80 50 45 20 Z" fill="#1f6b4f" opacity="0.85"/><ellipse cx="45" cy="62" rx="24" ry="30" fill="#2e8b57"/><ellipse cx="45" cy="64" rx="16" ry="21" fill="#d4a017"/><ellipse cx="45" cy="66" rx="10" ry="14" fill="#1e5aa8"/><ellipse cx="45" cy="68" rx="5" ry="7" fill="#0b1f4d"/></svg></div>
+    <div id="f4" class="clip feather" style="left: 226px; top: -240px;" data-start="10.955" data-duration="4.256" data-track-index="4" data-layout-ignore><svg viewBox="0 0 90 220" width="90" height="220"><path d="M45 218 L45 40" stroke="#c9a14a" stroke-width="2"/><path d="M45 20 C10 50 8 120 45 200 C82 120 80 50 45 20 Z" fill="#1f6b4f" opacity="0.85"/><ellipse cx="45" cy="62" rx="24" ry="30" fill="#2e8b57"/><ellipse cx="45" cy="64" rx="16" ry="21" fill="#d4a017"/><ellipse cx="45" cy="66" rx="10" ry="14" fill="#1e5aa8"/><ellipse cx="45" cy="68" rx="5" ry="7" fill="#0b1f4d"/></svg></div>
+    <div id="f5" class="clip feather" style="left: 138px; top: -240px;" data-start="11.632" data-duration="3.579" data-track-index="4" data-layout-ignore><svg viewBox="0 0 90 220" width="90" height="220"><path d="M45 218 L45 40" stroke="#c9a14a" stroke-width="2"/><path d="M45 20 C10 50 8 120 45 200 C82 120 80 50 45 20 Z" fill="#1f6b4f" opacity="0.85"/><ellipse cx="45" cy="62" rx="24" ry="30" fill="#2e8b57"/><ellipse cx="45" cy="64" rx="16" ry="21" fill="#d4a017"/><ellipse cx="45" cy="66" rx="10" ry="14" fill="#1e5aa8"/><ellipse cx="45" cy="68" rx="5" ry="7" fill="#0b1f4d"/></svg></div>
+    <div id="f6" class="clip feather" style="left: 779px; top: -240px;" data-start="12.692" data-duration="2.519" data-track-index="4" data-layout-ignore><svg viewBox="0 0 90 220" width="90" height="220"><path d="M45 218 L45 40" stroke="#c9a14a" stroke-width="2"/><path d="M45 20 C10 50 8 120 45 200 C82 120 80 50 45 20 Z" fill="#1f6b4f" opacity="0.85"/><ellipse cx="45" cy="62" rx="24" ry="30" fill="#2e8b57"/><ellipse cx="45" cy="64" rx="16" ry="21" fill="#d4a017"/><ellipse cx="45" cy="66" rx="10" ry="14" fill="#1e5aa8"/><ellipse cx="45" cy="68" rx="5" ry="7" fill="#0b1f4d"/></svg></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#m0", { x: 0, y: 0, opacity: 0.9 }, { x: 3, y: -227, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m1", { x: 0, y: 0, opacity: 0.9 }, { x: -2, y: -288, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m2", { x: 0, y: 0, opacity: 0.9 }, { x: -49, y: -247, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m3", { x: 0, y: 0, opacity: 0.9 }, { x: 13, y: -205, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m4", { x: 0, y: 0, opacity: 0.9 }, { x: -57, y: -270, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m5", { x: 0, y: 0, opacity: 0.9 }, { x: -13, y: -300, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m6", { x: 0, y: 0, opacity: 0.9 }, { x: -30, y: -177, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m7", { x: 0, y: 0, opacity: 0.9 }, { x: 91, y: -252, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m8", { x: 0, y: 0, opacity: 0.9 }, { x: -76, y: -255, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m9", { x: 0, y: 0, opacity: 0.9 }, { x: -28, y: -114, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m10", { x: 0, y: 0, opacity: 0.9 }, { x: 100, y: -141, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m11", { x: 0, y: 0, opacity: 0.9 }, { x: -24, y: -91, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m12", { x: 0, y: 0, opacity: 0.9 }, { x: -86, y: -129, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m13", { x: 0, y: 0, opacity: 0.9 }, { x: -27, y: -277, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m14", { x: 0, y: 0, opacity: 0.9 }, { x: 50, y: -220, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m15", { x: 0, y: 0, opacity: 0.9 }, { x: 0, y: -96, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m16", { x: 0, y: 0, opacity: 0.9 }, { x: 8, y: -120, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m17", { x: 0, y: 0, opacity: 0.9 }, { x: -59, y: -89, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m18", { x: 0, y: 0, opacity: 0.9 }, { x: -43, y: -289, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m19", { x: 0, y: 0, opacity: 0.9 }, { x: 116, y: -298, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m20", { x: 0, y: 0, opacity: 0.9 }, { x: -22, y: -225, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m21", { x: 0, y: 0, opacity: 0.9 }, { x: 33, y: -118, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m22", { x: 0, y: 0, opacity: 0.9 }, { x: 77, y: -104, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m23", { x: 0, y: 0, opacity: 0.9 }, { x: 86, y: -128, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m24", { x: 0, y: 0, opacity: 0.9 }, { x: -14, y: -194, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m25", { x: 0, y: 0, opacity: 0.9 }, { x: -50, y: -116, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m26", { x: 0, y: 0, opacity: 0.9 }, { x: -90, y: -148, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m27", { x: 0, y: 0, opacity: 0.9 }, { x: -78, y: -249, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m28", { x: 0, y: 0, opacity: 0.9 }, { x: -75, y: -202, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#m29", { x: 0, y: 0, opacity: 0.9 }, { x: -9, y: -137, opacity: 0.1, duration: 6.761, ease: "sine.inOut" }, 0);
+    tl.fromTo("#moonglow", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, 6.761);
+    tl.fromTo("#moonglow", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power2.out", immediateRender: false }, 7.606);
+    tl.fromTo("#moonglow", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power2.out", immediateRender: false }, 8.451);
+    tl.fromTo("#moonglow", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power2.out", immediateRender: false }, 9.296);
+    tl.fromTo("#moonglow", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power2.out", immediateRender: false }, 10.141);
+    tl.fromTo("#moonglow", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power2.out", immediateRender: false }, 10.986);
+    tl.fromTo("#moonglow", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power2.out", immediateRender: false }, 11.831);
+    tl.fromTo("#moonglow", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power2.out", immediateRender: false }, 12.676);
+    tl.fromTo("#moonglow", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power2.out", immediateRender: false }, 13.521);
+    tl.fromTo("#moonglow", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power2.out", immediateRender: false }, 14.366);
+    tl.fromTo("#w00", { opacity: 1, scale: 0.3 }, { opacity: 0, scale: 11, duration: 1.4, ease: "power2.out" }, 6.761);
+    tl.fromTo("#w01", { opacity: 1, scale: 0.3 }, { opacity: 0, scale: 11, duration: 1.4, ease: "power2.out" }, 6.941);
+    tl.fromTo("#w10", { opacity: 1, scale: 0.3 }, { opacity: 0, scale: 11, duration: 1.4, ease: "power2.out" }, 7.606);
+    tl.fromTo("#w11", { opacity: 1, scale: 0.3 }, { opacity: 0, scale: 11, duration: 1.4, ease: "power2.out" }, 7.786);
+    tl.fromTo("#w20", { opacity: 1, scale: 0.3 }, { opacity: 0, scale: 11, duration: 1.4, ease: "power2.out" }, 8.451);
+    tl.fromTo("#w21", { opacity: 1, scale: 0.3 }, { opacity: 0, scale: 11, duration: 1.4, ease: "power2.out" }, 8.631);
+    tl.fromTo("#w30", { opacity: 1, scale: 0.3 }, { opacity: 0, scale: 11, duration: 1.4, ease: "power2.out" }, 9.296);
+    tl.fromTo("#w31", { opacity: 1, scale: 0.3 }, { opacity: 0, scale: 11, duration: 1.4, ease: "power2.out" }, 9.476);
+    tl.fromTo("#n0", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: -72, y: -223, scale: 1, duration: 0.5, ease: "power2.out" }, 6.776);
+    tl.to("#n0", { opacity: 0, x: -216, y: -669, scale: 1.3, duration: 1.3, ease: "sine.in" }, 7.276);
+    tl.fromTo("#n1", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: 66, y: -236, scale: 1, duration: 0.5, ease: "power2.out" }, 7.484);
+    tl.to("#n1", { opacity: 0, x: 198, y: -707, scale: 1.3, duration: 1.3, ease: "sine.in" }, 7.984);
+    tl.fromTo("#n2", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: 82, y: -282, scale: 1, duration: 0.5, ease: "power2.out" }, 7.925);
+    tl.to("#n2", { opacity: 0, x: 247, y: -844, scale: 1.3, duration: 1.3, ease: "sine.in" }, 8.425);
+    tl.fromTo("#n3", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: 6, y: -256, scale: 1, duration: 0.5, ease: "power2.out" }, 8.955);
+    tl.to("#n3", { opacity: 0, x: 18, y: -766, scale: 1.3, duration: 1.3, ease: "sine.in" }, 9.455);
+    tl.fromTo("#n4", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: -30, y: -250, scale: 1, duration: 0.5, ease: "power2.out" }, 8.555);
+    tl.to("#n4", { opacity: 0, x: -90, y: -750, scale: 1.3, duration: 1.3, ease: "sine.in" }, 9.055);
+    tl.fromTo("#n5", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: 56, y: -259, scale: 1, duration: 0.5, ease: "power2.out" }, 9.437);
+    tl.to("#n5", { opacity: 0, x: 170, y: -777, scale: 1.3, duration: 1.3, ease: "sine.in" }, 9.937);
+    tl.fromTo("#n6", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: -31, y: -262, scale: 1, duration: 0.5, ease: "power2.out" }, 8.366);
+    tl.to("#n6", { opacity: 0, x: -91, y: -786, scale: 1.3, duration: 1.3, ease: "sine.in" }, 8.866);
+    tl.fromTo("#n7", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: -75, y: -167, scale: 1, duration: 0.5, ease: "power2.out" }, 7.055);
+    tl.to("#n7", { opacity: 0, x: -224, y: -501, scale: 1.3, duration: 1.3, ease: "sine.in" }, 7.555);
+    tl.fromTo("#n8", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: 32, y: -183, scale: 1, duration: 0.5, ease: "power2.out" }, 8.357);
+    tl.to("#n8", { opacity: 0, x: 98, y: -547, scale: 1.3, duration: 1.3, ease: "sine.in" }, 8.857);
+    tl.fromTo("#n9", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: 78, y: -191, scale: 1, duration: 0.5, ease: "power2.out" }, 7.085);
+    tl.to("#n9", { opacity: 0, x: 236, y: -571, scale: 1.3, duration: 1.3, ease: "sine.in" }, 7.585);
+    tl.fromTo("#n10", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: 84, y: -243, scale: 1, duration: 0.5, ease: "power2.out" }, 9.33);
+    tl.to("#n10", { opacity: 0, x: 253, y: -728, scale: 1.3, duration: 1.3, ease: "sine.in" }, 9.830);
+    tl.fromTo("#n11", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: 69, y: -239, scale: 1, duration: 0.5, ease: "power2.out" }, 8.925);
+    tl.to("#n11", { opacity: 0, x: 209, y: -716, scale: 1.3, duration: 1.3, ease: "sine.in" }, 9.425);
+    tl.fromTo("#n12", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: -35, y: -293, scale: 1, duration: 0.5, ease: "power2.out" }, 8.697);
+    tl.to("#n12", { opacity: 0, x: -103, y: -878, scale: 1.3, duration: 1.3, ease: "sine.in" }, 9.197);
+    tl.fromTo("#n13", { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, x: -20, y: -277, scale: 1, duration: 0.5, ease: "power2.out" }, 7.724);
+    tl.to("#n13", { opacity: 0, x: -60, y: -829, scale: 1.3, duration: 1.3, ease: "sine.in" }, 8.224);
+    tl.fromTo("#f0", { opacity: 0.95, y: 0, x: 0, rotation: -3 }, { opacity: 0.95, y: 1500, x: -54, rotation: 22, duration: 5.5, ease: "none" }, 6.971);
+    tl.fromTo("#f1", { opacity: 0.95, y: 0, x: 0, rotation: -35 }, { opacity: 0.95, y: 1500, x: 101, rotation: 105, duration: 5.5, ease: "none" }, 8.148);
+    tl.fromTo("#f2", { opacity: 0.95, y: 0, x: 0, rotation: -4 }, { opacity: 0.95, y: 1500, x: 163, rotation: -117, duration: 5.5, ease: "none" }, 9.068);
+    tl.fromTo("#f3", { opacity: 0.95, y: 0, x: 0, rotation: 36 }, { opacity: 0.95, y: 1500, x: -82, rotation: 5, duration: 5.359, ease: "none" }, 9.852);
+    tl.fromTo("#f4", { opacity: 0.95, y: 0, x: 0, rotation: -30 }, { opacity: 0.95, y: 1500, x: -81, rotation: 102, duration: 4.256, ease: "none" }, 10.955);
+    tl.fromTo("#f5", { opacity: 0.95, y: 0, x: 0, rotation: -1 }, { opacity: 0.95, y: 1500, x: 175, rotation: 37, duration: 3.579, ease: "none" }, 11.632);
+    tl.fromTo("#f6", { opacity: 0.95, y: 0, x: 0, rotation: 14 }, { opacity: 0.95, y: 1500, x: 160, rotation: 29, duration: 2.519, ease: "none" }, 12.692);
+    window.__timelines["cosmic"] = tl;
+  </script>
+</template>

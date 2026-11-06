@@ -58,6 +58,6 @@ Every reel is checked against all of these. If one fails, fix it before renderin
     "third-party content" block). Describe the look instead.
 14. Export a no-music version, loudness -15 LUFS, Whisper check that the Tamil matches the script.
 15. Label: "devotional art created digitally" in the caption.
-16. **The user's own face is the page's Krishna from Day 7 on** (4 Nov): Nano Banana 2.1 in Gemini, the user's
-    straight-on photos + the Day 6 Krishna picture for the costume, clean-shaven, Vaishnava namam. The user's
-    photos are NEVER saved or committed (this repo is public); they are attached in Gemini on the phone only.
+16. **No face needed** (the user, 6 Nov: "You don't need my face. Use any art style necessary"). Krishna can be any art
+    style: silhouette, painting, gold line art, Tanjore style, AI art. The user's own face is optional, and their photos and
+    face clips are NEVER committed (this repo is public).
