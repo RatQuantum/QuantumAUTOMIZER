@@ -13,19 +13,40 @@
       height: 1920px;
       object-fit: cover;
     }
+    #stage {
+      position: absolute;
+      inset: 0;
+      transform-origin: 50% 45%;
+    }
   </style>
   <div id="root" data-composition-id="shots" data-width="1080" data-height="1920">
-    <img id="v0" class="clip shot" src="assets/img/placeholder-dark.png" alt="" style="transform-origin: 50% 60%;" data-start="0.0" data-duration="3.65" data-track-index="0">
-    <img id="v1" class="clip shot" src="assets/img/placeholder-dark.png" alt="" style="transform-origin: 50% 45%;" data-start="3.6" data-duration="3.05" data-track-index="1">
-    <img id="v2" class="clip shot" src="assets/img/placeholder-krishna.png" alt="" style="transform-origin: 50% 40%;" data-start="6.6" data-duration="3.25" data-track-index="0">
-    <img id="v3" class="clip shot" src="assets/img/placeholder-krishna.png" alt="" style="transform-origin: 50% 25%;" data-start="9.8" data-duration="5.00" data-track-index="1">
+    <div id="stage">
+    <img id="v0" class="clip shot" src="assets/img/s1-battlefield.png" alt="" style="transform-origin: 50% 55%;" data-start="0.0" data-duration="3.41" data-track-index="0">
+    <img id="v1" class="clip shot" src="assets/img/placeholder-dark.png" alt="" style="transform-origin: 50% 45%;" data-start="3.38" data-duration="3.41" data-track-index="1">
+    <img id="v2" class="clip shot" src="assets/img/placeholder-krishna.png" alt="" style="transform-origin: 50% 40%;" data-start="6.761" data-duration="3.41" data-track-index="0">
+    <img id="v3" class="clip shot" src="assets/img/placeholder-krishna.png" alt="" style="transform-origin: 50% 25%;" data-start="10.141" data-duration="5.07" data-track-index="1">
+    </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#v0", { scale: 1.0 }, { scale: 1.06, duration: 3.65, ease: "none" }, 0.0);
-    tl.fromTo("#v1", { scale: 1.04 }, { scale: 1.0, duration: 3.05, ease: "none" }, 3.6);
-    tl.fromTo("#v2", { scale: 1.0 }, { scale: 1.05, duration: 3.25, ease: "none" }, 6.6);
-    tl.fromTo("#v3", { scale: 1.0 }, { scale: 1.05, duration: 5.00, ease: "none" }, 9.8);
+    tl.fromTo("#v0", { scale: 1.0 }, { scale: 1.06, duration: 3.41, ease: "none" }, 0.0);
+    tl.fromTo("#v1", { scale: 1.04 }, { scale: 1.0, duration: 3.41, ease: "none" }, 3.38);
+    tl.fromTo("#v2", { scale: 1.0 }, { scale: 1.04, duration: 3.41, ease: "none" }, 6.761);
+    tl.fromTo("#v3", { scale: 1.0 }, { scale: 1.05, duration: 5.07, ease: "none" }, 10.141);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 0.845);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 1.69);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 2.535);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 3.38);
+    tl.fromTo("#stage", { scale: 1.012 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 4.225);
+    tl.fromTo("#stage", { scale: 1.020 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 5.07);
+    tl.fromTo("#stage", { scale: 1.030 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 5.915);
+    tl.fromTo("#stage", { scale: 1.090 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 6.761);
+    tl.fromTo("#stage", { scale: 1.045 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 7.606);
+    tl.fromTo("#stage", { scale: 1.045 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 8.451);
+    tl.fromTo("#stage", { scale: 1.050 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 9.296);
+    tl.fromTo("#stage", { scale: 1.060 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 10.141);
+    tl.fromTo("#stage", { scale: 1.020 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 11.831);
+    tl.fromTo("#stage", { scale: 1.030 }, { scale: 1, duration: 0.50, ease: "power3.out" }, 13.521);
     window.__timelines["shots"] = tl;
   </script>
 </template>

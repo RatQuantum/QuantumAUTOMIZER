@@ -12,48 +12,54 @@ import os
 import random
 import subprocess
 
-TOTAL = 14.8
-TURN = 6.6
+# BEAT GRID (6 Nov, the user's ask: "edit the clips to the beats"). Track: "ZAKHELO (Slowed)" by Rushex (on YouTube as
+# PHANT X), 71 BPM (Beatport; Shazam says 70), drop at 0:15 in the track. One beat = 60/71 s. The reel starts on a beat;
+# the drop is beat 8. In Instagram, start the song at 0:08.2 so its drop lands at 0:06.8 (= TURN).
+BPM = 71
+BEAT = 60 / BPM
+
+
+def B(n):
+    return round(n * BEAT, 3)
+
+
+TOTAL = B(18)   # 15.21 s
+TURN = B(8)     # 6.76 s, the drop
 DROP = TURN  # the fx layer (flash, rays, petals) keys off DROP
 SHOTS_PLAN = [
-    ("assets/video/v1-battlefield.mp4", "assets/img/placeholder-dark.png", 0.0, 3.65, 1.0, 1.06, "50% 60%"),
-    ("assets/video/v2-warrior.mp4", "assets/img/placeholder-dark.png", 3.6, TURN - 3.6 + 0.05, 1.04, 1.0, "50% 45%"),
-    ("assets/video/v3-cosmic.mp4", "assets/img/placeholder-krishna.png", TURN, 3.25, 1.0, 1.05, "50% 40%"),
-    ("assets/video/v4-krishna.mp4", "assets/img/placeholder-krishna.png", 9.8, TOTAL - 9.8, 1.0, 1.05, "50% 25%"),
+    ("assets/video/v1-battlefield.mp4", "assets/img/s1-battlefield.png", 0.0, B(4) + 0.03, 1.0, 1.06, "50% 55%"),
+    ("assets/video/v2-warrior.mp4", "assets/img/placeholder-dark.png", B(4), B(8) - B(4) + 0.03, 1.04, 1.0, "50% 45%"),
+    ("assets/video/v3-cosmic.mp4", "assets/img/placeholder-krishna.png", B(8), B(12) - B(8) + 0.03, 1.0, 1.04, "50% 40%"),
+    ("assets/video/v4-krishna.mp4", "assets/img/placeholder-krishna.png", B(12), TOTAL - B(12), 1.0, 1.05, "50% 25%"),
 ]
 SHOTS = [(v if os.path.exists(v) else f, st, du, s0, s1, o) for v, f, st, du, s0, s1, o in SHOTS_PLAN]
 LINES = [
-    ("ஒரு நாள்… நீ <b>உடைந்து</b> போவாய்.", 0.0, 3.5),
-    ("எல்லாம் <b>முடிந்தது</b><br>என்று நினைப்பாய்.", 3.75, 6.45),
-    ("அப்போது… அவன் <b>எழுவான்.</b>", 6.85, 9.65),
-    ("நீ தனியாக <b>இல்லை.</b>", 10.15, 11.7),
-    ("<b>கவலைப்படாதே.</b>", 11.8, 13.3),
-    ('கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏', 13.4, TOTAL),
+    ("ஒரு நாள்… நீ <b>உடைந்து</b> போவாய்.", 0.0, B(4) - 0.1),
+    ("எல்லாம் <b>முடிந்தது</b><br>என்று நினைப்பாய்.", B(4) + 0.1, B(8) - 0.1),
+    ("அப்போது… அவன் <b>எழுவான்.</b>", B(8) + 0.15, B(12) - 0.15),
+    ("நீ தனியாக <b>இல்லை.</b>", B(12) + 0.3, B(12) + 1.85),
+    ("<b>கவலைப்படாதே.</b>", B(12) + 1.95, B(16) - 0.1),
+    ('கமெண்ட்டில் <b>"கிருஷ்ணா"</b> 🙏', B(16), TOTAL),
 ]
 SFX = "assets/sfx/"
 AUDIO = [
-    # no narrator; Krishna (Ramaa, Day 5 take): "நீ தனியாக இல்லை… கவலைப்படாதே"
-    ("assets/audio/el-krishna.wav", 10.1, 1.0, 7, {}),
-    # the clips' own storm sound, low under the voice
-    ("assets/audio/ambience-v1.wav", 0.0, 0.45, 9, {"dur": 3.65, "fout": 0.2}),
-    ("assets/audio/ambience-v2.wav", 3.6, 0.5, 9, {"dur": TURN - 3.6, "fout": 0.15}),
-    ("assets/audio/ambience-v3.wav", TURN, 0.35, 9, {"dur": 3.2, "fout": 0.4}),
-    ("assets/audio/ambience-v4.wav", 9.8, 0.25, 9, {"dur": TOTAL - 9.8, "fout": 0.8}),
-    ("assets/audio/wind.wav", 0.0, 0.2, 10, {"dur": TURN, "fin": 0.2, "fout": 0.4}),
-    (SFX + "misc_cineboom.wav", 0.0, 0.45, 8, {"media": 1.4, "dur": 3.0, "fout": 1.2}),
-    *[(SFX + "bd_boom.wav", t, 0.3, 13, {"dur": 0.5, "fout": 0.2}) for t in (4.6, 5.3, 5.85, 6.25)],
-    (SFX + "drum_roll.wav", TURN - 1.6, 0.3, 15, {"dur": 1.6, "fin": 1.0, "fout": 0.05}),
+    # no narrator; Krishna (Ramaa, Day 5 take): "நீ தனியாக இல்லை… கவலைப்படாதே", 0.3 s after the cut on beat 12
+    ("assets/audio/el-krishna.wav", B(12) + 0.3, 1.0, 7, {}),
+    # the clips' own sound, low; effects only where they cannot fight the track's beat (build, drop, bells)
+    ("assets/audio/ambience-v1.wav", 0.0, 0.45, 9, {"dur": B(4), "fout": 0.15}),
+    ("assets/audio/ambience-v2.wav", B(4), 0.5, 9, {"dur": B(8) - B(4), "fout": 0.1}),
+    ("assets/audio/ambience-v3.wav", B(8), 0.35, 9, {"dur": B(4), "fout": 0.3}),
+    ("assets/audio/ambience-v4.wav", B(12), 0.25, 9, {"dur": TOTAL - B(12), "fout": 0.8}),
+    ("assets/audio/wind.wav", 0.0, 0.2, 10, {"dur": TURN, "fin": 0.2, "fout": 0.3}),
+    (SFX + "misc_cineboom.wav", 0.0, 0.4, 8, {"media": 1.4, "dur": 3.0, "fout": 1.2}),
     (SFX + "ambi_dark_woosh.wav", TURN - 1.27, 0.45, 16, {}),
-    # the turn
     ("assets/audio/impact.wav", TURN - 1.27, 0.5, 17, {}),
     (SFX + "bd_boom.wav", TURN, 0.75, 18, {}),
-    (SFX + "perc_bell.wav", TURN + 0.05, 0.9, 19, {"dur": 3.5, "fout": 1.5}),
-    (SFX + "ambi_choir.wav", TURN + 0.1, 0.55, 20, {}),
-    # Krishna
-    (SFX + "perc_swoosh.wav", 9.8 - 0.14, 0.3, 12, {}),
-    (SFX + "ambi_choir.wav", 9.85, 0.3, 20, {}),
-    (SFX + "perc_bell2.wav", 11.75, 0.5, 22, {"dur": 2.8, "fout": 1.0}),
-    (SFX + "perc_bell.wav", 13.4, 0.75, 19, {"fout": 0.8}),
+    (SFX + "perc_bell.wav", TURN + 0.02, 0.85, 19, {"dur": 3.0, "fout": 1.2}),
+    (SFX + "ambi_choir.wav", TURN + 0.05, 0.5, 20, {}),
+    (SFX + "perc_swoosh.wav", B(12) - 0.14, 0.3, 12, {}),
+    (SFX + "perc_bell2.wav", B(12) + 1.95, 0.45, 22, {"dur": 2.5, "fout": 1.0}),
+    (SFX + "perc_bell.wav", B(16), 0.7, 19, {"fout": 0.8}),
 ]
 AUDIO = [a for a in AUDIO if os.path.exists(a[0])]
 SCORE = "assets/audio/score.wav"
@@ -92,7 +98,14 @@ def shots():
       object-fit: cover;
     }
 '''
-    html = js = ""
+    css += '''    #stage {
+      position: absolute;
+      inset: 0;
+      transform-origin: 50% 45%;
+    }
+'''
+    html = '    <div id="stage">\n'
+    js = ""
     for i, (src, st, du, s0, s1, origin) in enumerate(SHOTS):
         tag = "img" if src.endswith(".png") else "video"
         attrs = 'alt=""' if tag == "img" else "muted playsinline"
@@ -100,6 +113,12 @@ def shots():
         html += (f'    <{tag} id="v{i}" class="clip shot" src="{src}" {attrs} style="transform-origin: {origin};" '
                  f'data-start="{st}" data-duration="{du:.2f}" data-track-index="{i % 2}">{end}\n')
         js += f'    tl.fromTo("#v{i}", {{ scale: {s0} }}, {{ scale: {s1}, duration: {du:.2f}, ease: "none" }}, {st});\n'
+    html += '    </div>\n'
+    # punch on the beat: a quick zoom-in that settles before the next beat. Soft pulses build to the drop,
+    # a big hit on the drop, a hit on every beat after it, softer pulses under Krishna's line.
+    for n, amt in [*((k, 0.012) for k in range(1, 6)), (6, 0.02), (7, 0.03), (8, 0.09), (9, 0.045), (10, 0.045),
+                   (11, 0.05), (12, 0.06), (14, 0.02), (16, 0.03)]:
+        js += f'    tl.fromTo("#stage", {{ scale: {1 + amt:.3f} }}, {{ scale: 1, duration: {min(0.5, BEAT * 0.7):.2f}, ease: "power3.out" }}, {B(n)});\n'
     return wrap("shots", css, html, js)
 
 
@@ -143,6 +162,18 @@ def fx():
     js = f'    tl.fromTo("#rays", {{ opacity: 0, rotation: 0 }}, {{ opacity: 1, rotation: 20, duration: {TOTAL - DROP}, ease: "power1.out" }}, {DROP});\n'
     js += f'    tl.fromTo("#flash", {{ opacity: 0 }}, {{ opacity: 0.9, duration: 0.06, ease: "power2.in" }}, {DROP - 0.06});\n'
     js += f'    tl.to("#flash", {{ opacity: 0, duration: 0.7, ease: "power2.out" }}, {DROP + 0.02});\n'
+    # white flashes on the beats after the drop, and on the cut to Krishna
+    for n in (9, 10, 11, 12):
+        t = B(n) - 0.02
+        html += f'    <div id="bf{n}" class="clip beatflash" data-start="{t:.3f}" data-duration="0.3" data-track-index="4" data-layout-ignore></div>\n'
+        js += f'    tl.fromTo("#bf{n}", {{ opacity: {0.35 if n < 12 else 0.6} }}, {{ opacity: 0, duration: 0.28, ease: "power2.out" }}, {t:.3f});\n'
+    css += '''    .beatflash {
+      position: absolute;
+      inset: 0;
+      background: #fff6dc;
+      opacity: 0;
+    }
+'''
     # petals fall after the reveal
     html += f'    <div id="petals" class="clip" data-start="{DROP}" data-duration="{TOTAL - DROP}" data-track-index="3" data-layout-ignore>\n'
     for i in range(28):
@@ -205,7 +236,7 @@ def texts():
             js += f'    tl.fromTo("#t{i}", {{ opacity: 0, y: 24, filter: "blur(6px)" }}, {{ opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "power2.out" }}, {a});\n'
         if b < TOTAL:
             js += f'    tl.to("#t{i}", {{ opacity: 0, duration: 0.25, ease: "power1.in" }}, {b - 0.25:.2f});\n'
-    hs = 13.6
+    hs = B(16) + 0.3
     html += f'    <div id="handle" class="clip" data-start="{hs}" data-duration="{TOTAL - hs:.1f}" data-track-index="2">{HANDLE}</div>\n'
     js += f'    tl.fromTo("#handle", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {hs});\n'
     return wrap("texts", css, html, js)
@@ -234,7 +265,7 @@ def index():
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="assets/gsap.min.js"></script>
     <style>
-      /* Day 9 (Tamil) · Kurukshetra, the cosmic form, {TOTAL}s. A blood-red dawn, then divine gold at {TURN}s. */
+      /* Day 9 (Tamil) · Kurukshetra, the cosmic form, {TOTAL:.2f}s on a 71 BPM beat grid. A blood-red dawn, then divine gold at {TURN}s. */
       * {{
         margin: 0;
         padding: 0;
