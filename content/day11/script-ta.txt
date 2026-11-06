@@ -1,0 +1,10 @@
+Day 11 (Tamil) · Pick a card (format B in content/formats.md) · no pictures, no voice, all HyperFrames
+Three maroon-and-gold cards with a peacock-feather emblem are shuffled on the beats (2-5), a 3-2-1 countdown (beats 6-7),
+then on the drop (beat 8) card 1 rises and flips in 3D to a Gita promise; card 2 on beat 12, card 3 on beat 16; on beat 20
+all three face-up and the ask: "உனக்கு எந்த அட்டை? கமெண்ட்டில் 1, 2 அல்லது 3".
+  card 1: உன் கடமையைச் செய். பலனைப் பற்றிக் கவலைப்படாதே.            Bhagavad Gita 2.47
+  card 2: என்னையே நினைப்பவரின் தேவைகளை நானே சுமக்கிறேன்.          Bhagavad Gita 9.22
+  card 3: என்னைச் சரணடை. நான் உன்னை விடுவிப்பேன். கவலைப்படாதே.     Bhagavad Gita 18.66
+18.6 s, 71 BPM grid of "ZAKHELO (Slowed)" (start it at 0:08.2 in Instagram), or any track: the user can send a new one.
+Final reels/day11-ta/day11-tamil-no-music.mp4 (not in git). Caption content/captions/day11-ta.txt (no AI-art label:
+nothing in it is AI-made).

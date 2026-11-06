@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ta" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      /* Day 11 (Tamil) · Pick a card: three Gita promises, 18.59s on a 71 BPM beat grid. Maroon and gold. */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0d0205;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="18.592" data-width="1080" data-height="1920">
+      <div id="scene" data-composition-id="scene" data-composition-src="compositions/scene.html" data-start="0" data-duration="18.592" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <!-- No voice. Effects: CC0 (assets/sfx/CREDITS.md) and ElevenLabs sound effects. -->
+      <audio id="a0" class="clip" src="assets/audio/impact.wav" data-start="5.491" data-duration="3.000" data-volume="0.45" data-track-index="17"></audio>
+      <audio id="a1" class="clip" src="assets/sfx/misc_cineboom.wav" data-start="0.000" data-duration="3.000" data-volume="0.35" data-track-index="8" data-media-start="1.4" data-fade-out="1.2"></audio>
+      <audio id="a2" class="clip" src="assets/sfx/perc_swoosh.wav" data-start="1.570" data-duration="0.619" data-volume="0.35" data-track-index="12"></audio>
+      <audio id="a3" class="clip" src="assets/sfx/perc_swoosh.wav" data-start="2.415" data-duration="0.619" data-volume="0.35" data-track-index="12"></audio>
+      <audio id="a4" class="clip" src="assets/sfx/perc_swoosh.wav" data-start="3.260" data-duration="0.619" data-volume="0.35" data-track-index="12"></audio>
+      <audio id="a5" class="clip" src="assets/sfx/perc_swoosh.wav" data-start="4.105" data-duration="0.619" data-volume="0.35" data-track-index="12"></audio>
+      <audio id="a6" class="clip" src="assets/sfx/perc_bell2.wav" data-start="5.070" data-duration="0.700" data-volume="0.35" data-track-index="13" data-fade-out="0.4"></audio>
+      <audio id="a7" class="clip" src="assets/sfx/perc_bell2.wav" data-start="5.493" data-duration="0.700" data-volume="0.35" data-track-index="23" data-fade-out="0.4"></audio>
+      <audio id="a8" class="clip" src="assets/sfx/perc_bell2.wav" data-start="5.915" data-duration="0.700" data-volume="0.35" data-track-index="33" data-fade-out="0.4"></audio>
+      <audio id="a9" class="clip" src="assets/sfx/perc_bell.wav" data-start="7.111" data-duration="3.000" data-volume="0.8" data-track-index="19" data-fade-out="1.2"></audio>
+      <audio id="a10" class="clip" src="assets/sfx/perc_bell.wav" data-start="10.491" data-duration="3.000" data-volume="0.8" data-track-index="19" data-fade-out="1.2"></audio>
+      <audio id="a11" class="clip" src="assets/sfx/perc_bell.wav" data-start="13.871" data-duration="3.000" data-volume="0.8" data-track-index="19" data-fade-out="1.2"></audio>
+      <audio id="a12" class="clip" src="assets/sfx/ambi_choir.wav" data-start="7.161" data-duration="1.572" data-volume="0.45" data-track-index="20"></audio>
+      <audio id="a13" class="clip" src="assets/sfx/perc_bell.wav" data-start="16.901" data-duration="1.691" data-volume="0.6" data-track-index="19" data-fade-out="0.8"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
