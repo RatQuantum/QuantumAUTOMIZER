@@ -1,0 +1,1 @@
+Sonic Pi built-in samples (CC0): elec_tick, elec_pop, elec_plip, elec_twip, elec_ping, elec_blip, elec_blip2, ambi_glass_rub, ambi_drone, ambi_soft_buzz, guit_em9, ambi_piano. github.com/sonic-pi-net/sonic-pi/tree/dev/etc/samples

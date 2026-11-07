@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ta" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      /* Day 12 (Tamil) · Chat with Kanna at 3 a.m., 19.0s. Night blue and gold. */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0b1020;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="19.0" data-width="1080" data-height="1920">
+      <div id="scene" data-composition-id="scene" data-composition-src="compositions/scene.html" data-start="0" data-duration="19.0" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <!-- No voice. Effects: CC0 Sonic Pi samples (assets/sfx/CREDITS.md). -->
+      <audio id="a0" class="clip" src="assets/sfx/ambi_drone.wav" data-start="0.00" data-duration="4.400" data-volume="0.22" data-track-index="2" data-fade-in="0.2" data-fade-out="1.5"></audio>
+      <audio id="a1" class="clip" src="assets/sfx/elec_plip.wav" data-start="1.50" data-duration="0.199" data-volume="0.55" data-track-index="11"></audio>
+      <audio id="a2" class="clip" src="assets/sfx/elec_blip.wav" data-start="2.90" data-duration="0.158" data-volume="0.55" data-track-index="12"></audio>
+      <audio id="a3" class="clip" src="assets/sfx/elec_twip.wav" data-start="6.00" data-duration="0.101" data-volume="0.55" data-track-index="13"></audio>
+      <audio id="a4" class="clip" src="assets/sfx/elec_ping.wav" data-start="8.30" data-duration="0.212" data-volume="0.55" data-track-index="14"></audio>
+      <audio id="a5" class="clip" src="assets/sfx/elec_blip2.wav" data-start="10.70" data-duration="0.184" data-volume="0.55" data-track-index="15"></audio>
+      <audio id="a6" class="clip" src="assets/sfx/elec_pop.wav" data-start="12.90" data-duration="0.087" data-volume="0.55" data-track-index="16"></audio>
+      <audio id="a7" class="clip" src="assets/sfx/elec_twip.wav" data-start="14.60" data-duration="0.101" data-volume="0.55" data-track-index="17"></audio>
+      <audio id="a8" class="clip" src="assets/sfx/elec_tick.wav" data-start="1.00" data-duration="0.019" data-volume="0.35" data-track-index="40"></audio>
+      <audio id="a9" class="clip" src="assets/sfx/elec_tick.wav" data-start="1.15" data-duration="0.019" data-volume="0.35" data-track-index="41"></audio>
+      <audio id="a10" class="clip" src="assets/sfx/elec_tick.wav" data-start="1.30" data-duration="0.019" data-volume="0.35" data-track-index="43"></audio>
+      <audio id="a11" class="clip" src="assets/sfx/elec_tick.wav" data-start="2.40" data-duration="0.019" data-volume="0.35" data-track-index="54"></audio>
+      <audio id="a12" class="clip" src="assets/sfx/elec_tick.wav" data-start="2.55" data-duration="0.019" data-volume="0.35" data-track-index="55"></audio>
+      <audio id="a13" class="clip" src="assets/sfx/elec_tick.wav" data-start="2.70" data-duration="0.019" data-volume="0.35" data-track-index="57"></audio>
+      <audio id="a14" class="clip" src="assets/sfx/elec_tick.wav" data-start="12.40" data-duration="0.019" data-volume="0.35" data-track-index="154"></audio>
+      <audio id="a15" class="clip" src="assets/sfx/elec_tick.wav" data-start="12.55" data-duration="0.019" data-volume="0.35" data-track-index="155"></audio>
+      <audio id="a16" class="clip" src="assets/sfx/elec_tick.wav" data-start="12.70" data-duration="0.019" data-volume="0.35" data-track-index="157"></audio>
+      <audio id="a17" class="clip" src="assets/sfx/guit_em9.wav" data-start="6.00" data-duration="9.500" data-volume="0.22" data-track-index="3" data-fade-in="1.5" data-fade-out="2.5"></audio>
+      <audio id="a18" class="clip" src="assets/sfx/ambi_glass_rub.wav" data-start="14.60" data-duration="3.149" data-volume="0.45" data-track-index="4" data-fade-out="1.2"></audio>
+      <audio id="a19" class="clip" src="assets/sfx/ambi_piano.wav" data-start="15.90" data-duration="2.812" data-volume="0.4" data-track-index="5" data-fade-out="1.0"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

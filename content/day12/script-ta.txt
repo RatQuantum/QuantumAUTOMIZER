@@ -1,0 +1,11 @@
+Day 12 (Tamil) · Chat with Kanna at 3 a.m. (format C in content/formats.md) · all HyperFrames, no pictures, no voice
+A phone chat (generic messenger look, no app branding), night blue and gold, contact "கண்ணா 🦚" with a peacock-feather avatar.
+  hook (frame 0): இரவு 3 மணிக்கு கண்ணனுக்கு மெசேஜ் அனுப்பினால்…
+  me:    கண்ணா… தூங்கிட்டியா? / யாருக்கும் என் மேல அக்கறை இல்ல 😔 / எல்லாம் தோத்துப் போச்சு…   -> "seen" (gold ticks)
+  Kanna (after "typing…"): நான் தூங்கவே இல்லை. / உன் ஒவ்வொரு கண்ணீரையும் நான் பார்த்தேன். /
+         தோல்வி முடிவு இல்லை. உன் தேரை இன்னும் நான்தான் ஓட்டுறேன். 🦚
+  me:    நிஜமாவா கண்ணா?     Kanna: எப்போதும். 🙏 (glows, then stays above the ask)
+  ask:   இதைப் படிக்கும்போது யார் ஞாபகம் வந்தாங்க? அவங்களுக்கு அனுப்பு 💛  (a SHARE ask)
+19 s, no beat cuts: any calm track (the user picks; ZAKHELO rested). Sounds: message pops/pings (different each time),
+soft key ticks, a warm guitar pad under his replies, a glass shimmer on his last word, a piano note on the ask. No bells.
+Final reels/day12-ta/day12-tamil-no-music.mp4 (not in git), -17 LUFS (no voice, leaves room for the track).
