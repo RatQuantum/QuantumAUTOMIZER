@@ -1,5 +1,7 @@
 # Reel rules (checklist before every reel is handed to the user)
 
+**From 7 Nov the reels are in ENGLISH (voice and on-screen text), replacing the earlier Tamil-only rule.**
+
 Learned from the grid on 4 Nov 2026: Day 5 = 7,422 views, Day 6 = 160. Real temple footage reel = 33.4K.
 Every reel is checked against all of these. If one fails, fix it before rendering.
 
@@ -70,7 +72,8 @@ Every reel is checked against all of these. If one fails, fix it before renderin
     **ENGLISH voice from 7 Nov** (the user: "Use English voice, the most popular and widely used English voices"):
     roles narrator_en (default en-US-ChristopherNeural; also GuyNeural, en-GB-RyanNeural, en-IN-PrabhatNeural) and
     krishna_en (default en-US-AndrewMultilingualNeural; also BrianMultilingualNeural). Samples:
-    content/free-voice-samples-english.mp3. On-screen text language: ask the user (English, Tamil or both).
+    content/free-voice-samples-english.mp3. **On-screen text: ENGLISH** (the user, 7 Nov). Defaults until the
+    user picks: narrator en-US-ChristopherNeural, Krishna en-US-AndrewMultilingualNeural. Captions may add one Tamil line.
 11. Real-looking AI video with faces (MiniMax H3 / Veo), never stills with zoom.
 12. Check every figure: Krishna wears the Vaishnava namam (white U with a red centre line), never Shaiva
     horizontal lines; correct dress for every character; no extra fingers; same Krishna face as earlier reels

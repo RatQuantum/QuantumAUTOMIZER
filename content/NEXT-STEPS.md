@@ -1,5 +1,8 @@
 # Next steps (handover for the next Claude session)
 
+**7 Nov: reels are now ENGLISH (voice + on-screen text), with FREE voices (tools/free_voice.sh narrator_en /
+krishna_en; no ElevenLabs). Rotate formats (content/formats.md). Never rushed, no beat shakes, no repeated bells.**
+
 **6-10 Nov: the user is away. A daily scheduled task ("Day 9 daily autopilot", 13:37 IST) continues Day 9 alone with
 free Hugging Face GPU (tools/hf_zimage.py, tools/hf_h3.py; python venv: python3 -m venv /home/user/gc-venv &&
 /home/user/gc-venv/bin/pip install gradio_client pillow faster-whisper). The HF network secret was re-entered on 6 Nov
