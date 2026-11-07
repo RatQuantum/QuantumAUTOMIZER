@@ -12,3 +12,7 @@ narrator en-US-ChristopherNeural, Krishna en-US-AndrewMultilingualNeural.
  28.8  narrator: Save this, for the day you need it.   (SAVE ask)
 No beat cuts: any calm track. Effects: deep tabla tones per phrase, a swash for the leaf, glass hum, parchment hiss, pads.
 Final reels/day13-ta/day13-english-no-music.mp4 (not in git), -15.5 LUFS, Whisper = script.
+
+RE-VOICED (7 Nov): Krishna's four lines in the calm "divine" style (tools/free_voice.sh krishna_divine_en, Andrew, long
+pauses). Re-timed to 41 s: phrases at 8.0 / 13.6 / 19.2 / 24.8 (5.4 s each), takeaway 30.6, save 35.6. Line 3 now
+"None of them… will last." Whisper = script, -15.5 LUFS.

@@ -10,7 +10,7 @@ import random
 import subprocess
 
 W, H = 1080, 1920
-TOTAL = 34.0
+TOTAL = 41.0   # re-timed 7 Nov for the slower "divine" Krishna voice
 
 
 def dur(f):
@@ -23,13 +23,13 @@ HOOK_T = 0.4
 LEAF_T = 5.0
 # (voice file, start, on-screen English, end of the on-screen line, Sanskrit phrase span id to light up)
 PHRASES = [
-    ("k1.wav", 8.0, "Heat and cold.<br><b>Pleasure and pain.</b>", 11.9, "p1"),
-    ("k2.wav", 12.2, "They come…<br>and they <b>go.</b>", 15.4, "p2"),
-    ("k3.wav", 15.7, "None of them<br><b>last.</b>", 18.8, "p3"),
-    ("k4.wav", 19.1, "So bear them…<br>with <b>patience.</b>", 22.9, "p4"),
+    ("k1.wav", 8.0, "Heat and cold.<br><b>Pleasure and pain.</b>", 13.3, "p1"),
+    ("k2.wav", 13.6, "They come…<br>and they <b>go.</b>", 18.9, "p2"),
+    ("k3.wav", 19.2, "None of them<br><b>will last.</b>", 24.5, "p3"),
+    ("k4.wav", 24.8, "So bear them…<br>with <b>patience.</b>", 30.2, "p4"),
 ]
-TAKE_T, TAKE_END = 23.6, 28.3
-CTA_T = 28.6
+TAKE_T, TAKE_END = 30.6, 35.3
+CTA_T = 35.6
 
 SFX = "assets/sfx/"
 AUDIO = [
@@ -40,9 +40,11 @@ AUDIO = [
     # beds: a glass hum and a faint parchment hiss, two each; soft pads under the takeaway and the save
     (SFX + "tabla_ghe5.wav", 0.0, 0.45, 10, {"fout": 1.5}),
     (SFX + "ambi_glass_hum.wav", LEAF_T - 0.2, 0.22, 11, {"fin": 1.0, "fout": 2.0}),
-    (SFX + "ambi_glass_hum.wav", 17.0, 0.22, 12, {"fin": 2.0, "fout": 2.5}),
+    (SFX + "ambi_glass_hum.wav", 15.0, 0.22, 12, {"fin": 2.0, "fout": 2.5}),
+    (SFX + "ambi_glass_hum.wav", 25.0, 0.2, 23, {"fin": 2.0, "fout": 3.0}),
     (SFX + "vinyl_hiss.wav", LEAF_T, 0.12, 13, {"fin": 0.8, "fout": 1.5}),
-    (SFX + "vinyl_hiss.wav", 20.5, 0.12, 14, {"fin": 1.5, "fout": 1.5}),
+    (SFX + "vinyl_hiss.wav", 13.0, 0.12, 14, {"fin": 1.5, "fout": 1.5}),
+    (SFX + "vinyl_hiss.wav", 21.0, 0.1, 24, {"fin": 1.5, "fout": 1.5}),
     (SFX + "perc_swash.wav", LEAF_T - 0.1, 0.45, 15, {}),
     # a different deep tabla tone as each Sanskrit phrase lights up
     *[(SFX + s, t - 0.05, 0.4, 16 + k, {"fout": 1.0}) for k, ((_, t, _, _, _), s) in
@@ -226,7 +228,7 @@ def scene():
              f'<div id="sk1" class="sk" style="top: 62px;">{SANSKRIT_1}</div>'
              f'<div id="sk2" class="sk" style="top: 196px;">{SANSKRIT_2}</div></div>\n')
     js += f'    tl.fromTo("#leaf", {{ opacity: 0, y: 60, rotation: -2 }}, {{ opacity: 1, y: 0, rotation: 0, duration: 0.9, ease: "power2.out" }}, {LEAF_T - 0.1:.2f});\n'
-    js += f'    tl.to("#leaf", {{ y: -8, duration: 3.0, yoyo: true, repeat: 7, ease: "sine.inOut" }}, {LEAF_T + 0.8:.2f});\n'
+    js += f'    tl.to("#leaf", {{ y: -8, duration: 3.0, yoyo: true, repeat: 11, ease: "sine.inOut" }}, {LEAF_T + 0.8:.2f});\n'
     js += f'    tl.fromTo("#sk1", {{ clipPath: "inset(0% 100% 0% 0%)" }}, {{ clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: "none" }}, {LEAF_T + 0.6:.2f});\n'
     js += f'    tl.fromTo("#sk2", {{ clipPath: "inset(0% 100% 0% 0%)" }}, {{ clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: "none" }}, {LEAF_T + 1.9:.2f});\n'
     html += (f'    <div id="translit" class="clip" data-start="{LEAF_T + 2.6:.2f}" data-duration="{TOTAL - LEAF_T - 2.6:.2f}" '
@@ -297,7 +299,7 @@ def index():
     <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="{W}" data-height="{H}">
       <div id="scene" data-composition-id="scene" data-composition-src="compositions/scene.html" data-start="0" data-duration="{TOTAL}" data-track-index="1" data-track-kind="graphics" data-width="{W}" data-height="{H}"></div>
 
-      <!-- Free voices (Microsoft Edge neural): narrator en-US-ChristopherNeural, Krishna en-US-AndrewMultilingualNeural. Effects: CC0 Sonic Pi. -->
+      <!-- Free voices (Microsoft Edge neural): narrator en-US-ChristopherNeural, Krishna en-US-AndrewMultilingualNeural in the calm "divine" style. Effects: CC0 Sonic Pi. -->
 {audio}    </div>
     <script>
       window.__timelines = window.__timelines || {{}};
