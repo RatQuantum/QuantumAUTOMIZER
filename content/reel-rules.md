@@ -60,10 +60,13 @@ Every reel is checked against all of these. If one fails, fix it before renderin
    cannot be filmed.
 
 ## Quality
-10. Voices: ElevenLabs eleven_v4, Bharadwaj (narrator) and Ramaa (Krishna). Never the free Edge TTS voice
-    (the user rejected it on Day 6). The user cannot top up ElevenLabs: when credits run out, write the line from
-    words already recorded in earlier takes (reels/day5-ta, day6-ta audio) and cut them out with Whisper word
-    timings, as Day 7 did with "நீ தனியாக இல்லை… கவலைப்படாதே".
+10. **Voices are FREE from now on** (the user, 7 Nov: "Use free voice instead of ElevenLabs"). Use tools/free_voice.sh:
+    Microsoft Edge neural Tamil voices (edge-tts) with a polish chain (slightly deeper, warm EQ, compression, a small
+    hall/room) so they are not flat like Day 6's raw take. Roles: narrator (ta-IN-ValluvarNeural or ta-LK-KumarNeural),
+    Krishna (ta-MY-SuryaNeural or ta-SG-AnbuNeural); the user picks from content/free-voice-samples.mp3. Many formats
+    need no voice at all. Better free option later: IndicF5 (AI4Bharat, open demo Space ai4bharat/IndicF5 works without a
+    login) speaks any Tamil text in the voice of a reference recording; it needs a MALE Tamil reference we have the
+    right to use (for example the user's own recording). Never clone a real person's voice without their consent.
 11. Real-looking AI video with faces (MiniMax H3 / Veo), never stills with zoom.
 12. Check every figure: Krishna wears the Vaishnava namam (white U with a red centre line), never Shaiva
     horizontal lines; correct dress for every character; no extra fingers; same Krishna face as earlier reels
