@@ -6,6 +6,6 @@ A phone chat (generic messenger look, no app branding), night blue and gold, con
          தோல்வி முடிவு இல்லை. உன் தேரை இன்னும் நான்தான் ஓட்டுறேன். 🦚
   me:    நிஜமாவா கண்ணா?     Kanna: எப்போதும். 🙏 (glows, then stays above the ask)
   ask:   இதைப் படிக்கும்போது யார் ஞாபகம் வந்தாங்க? அவங்களுக்கு அனுப்பு 💛  (a SHARE ask)
-19 s, no beat cuts: any calm track (the user picks; ZAKHELO rested). Sounds: message pops/pings (different each time),
+27.5 s (re-timed 7 Nov so every message can be read), no beat cuts: any calm track (the user picks; ZAKHELO rested). Sounds: message pops/pings (different each time),
 soft key ticks, a warm guitar pad under his replies, a glass shimmer on his last word, a piano note on the ask. No bells.
 Final reels/day12-ta/day12-tamil-no-music.mp4 (not in git), -17 LUFS (no voice, leaves room for the track).

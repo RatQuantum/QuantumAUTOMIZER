@@ -8,7 +8,7 @@ import random
 import subprocess
 
 W, H = 1080, 1920
-TOTAL = 19.0
+TOTAL = 27.5   # re-timed 7 Nov: every message gets time to be read (rule 7g)
 TOP = 290          # first message y
 GAP = 26           # space between bubbles
 LINE = 74          # line height of bubble text (54 px font)
@@ -17,17 +17,17 @@ PAD = 44           # vertical padding inside a bubble
 # who, text (lines split by <br>), appear time. "me" is the viewer, "k" is Kanna.
 MSGS = [
     ("me", "கண்ணா… தூங்கிட்டியா?", 0.0),
-    ("me", "யாருக்கும் என் மேல<br>அக்கறை இல்ல 😔", 1.5),
-    ("me", "எல்லாம் தோத்துப் போச்சு…", 2.9),
-    ("k", "நான் தூங்கவே இல்லை.", 6.0),
-    ("k", "உன் ஒவ்வொரு கண்ணீரையும்<br>நான் பார்த்தேன்.", 8.3),
-    ("k", "தோல்வி முடிவு இல்லை.<br>உன் தேரை இன்னும்<br>நான்தான் ஓட்டுறேன். 🦚", 10.7),
-    ("me", "நிஜமாவா கண்ணா?", 12.9),
-    ("k", "எப்போதும். 🙏", 14.6),
+    ("me", "யாருக்கும் என் மேல<br>அக்கறை இல்ல 😔", 2.2),
+    ("me", "எல்லாம் தோத்துப் போச்சு…", 4.4),
+    ("k", "நான் தூங்கவே இல்லை.", 7.8),
+    ("k", "உன் ஒவ்வொரு கண்ணீரையும்<br>நான் பார்த்தேன்.", 10.8),
+    ("k", "தோல்வி முடிவு இல்லை.<br>உன் தேரை இன்னும்<br>நான்தான் ஓட்டுறேன். 🦚", 14.6),
+    ("me", "நிஜமாவா கண்ணா?", 18.8),
+    ("k", "எப்போதும். 🙏", 21.0),
 ]
-SEEN = 4.1                                     # the viewer's messages turn "seen"
-TYPING = [(4.5, 6.0), (7.0, 8.3), (9.3, 10.7), (13.7, 14.6)]   # "typing…" before each reply
-CTA = 15.9
+SEEN = 5.9                                     # the viewer's messages turn "seen"
+TYPING = [(6.3, 7.8), (9.6, 10.8), (13.2, 14.6), (20.0, 21.0)]   # "typing…" before each reply
+CTA = 23.6
 
 FEATHER = ('<svg viewBox="0 0 90 220" width="{w}" height="{h}"><path d="M45 218 L45 40" stroke="#e6c46a" stroke-width="3"/>'
            '<path d="M45 20 C10 50 8 120 45 200 C82 120 80 50 45 20 Z" fill="#1f6b4f"/>'
@@ -51,10 +51,10 @@ def audio_plan():
             plan.append((SFX + RECV[ri], t, 0.55, 10 + k, {}))
             ri += 1
     # soft keyboard ticks while the viewer is "typing" between their own messages
-    for t in (1.0, 1.15, 1.3, 2.4, 2.55, 2.7, 12.4, 12.55, 12.7):
+    for t in (1.6, 1.75, 1.9, 3.8, 3.95, 4.1, 18.2, 18.35, 18.5):
         plan.append((SFX + "elec_tick.wav", t, 0.35, 30 + int(t * 10), {}))
-    plan.append((SFX + "guit_em9.wav", 6.0, 0.22, 3, {"dur": 9.5, "fin": 1.5, "fout": 2.5}))   # a warm pad under his replies
-    plan.append((SFX + "ambi_glass_rub.wav", 14.6, 0.45, 4, {"fout": 1.2}))                     # his last word glows
+    plan.append((SFX + "guit_em9.wav", 7.8, 0.22, 3, {"dur": 9.9, "fin": 1.5, "fout": 2.5}))   # a warm pad under his replies
+    plan.append((SFX + "ambi_glass_rub.wav", 21.0, 0.45, 4, {"fout": 1.2}))                     # his last word glows
     plan.append((SFX + "ambi_piano.wav", CTA, 0.4, 5, {"fout": 1.0}))
     return plan
 
@@ -290,7 +290,7 @@ def scene():
     for k in range(40):
         x, y = rnd.randint(0, 1075), rnd.randint(240, 1900)
         html += f'      <div id="s{k}" class="star" style="left: {x}px; top: {y}px;"></div>\n'
-        js += f'    tl.fromTo("#s{k}", {{ opacity: 0.15 }}, {{ opacity: 0.7, duration: {rnd.uniform(1.2, 2.6):.2f}, yoyo: true, repeat: 5, ease: "sine.inOut" }}, {rnd.uniform(0, 2):.2f});\n'
+        js += f'    tl.fromTo("#s{k}", {{ opacity: 0.15 }}, {{ opacity: 0.7, duration: {rnd.uniform(1.2, 2.6):.2f}, yoyo: true, repeat: 9, ease: "sine.inOut" }}, {rnd.uniform(0, 2):.2f});\n'
     html += '    </div>\n'
 
     # status bar and chat header
@@ -344,9 +344,9 @@ def scene():
     js += f'    tl.fromTo("#glow", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.6, yoyo: true, repeat: 1, ease: "sine.inOut" }}, {MSGS[-1][2] + 0.2:.2f});\n'
 
     # hook (frame 0, the thumbnail) and the share ask
-    html += (f'    <div id="hook" class="clip" data-start="0" data-duration="4.0" data-track-index="8">'
+    html += (f'    <div id="hook" class="clip" data-start="0" data-duration="5.6" data-track-index="8">'
              f'<span style="white-space: nowrap">இரவு 3 மணிக்கு <b>கண்ணனுக்கு</b><br>மெசேஜ் அனுப்பினால்…</span></div>\n')
-    js += '    tl.to("#hook", { opacity: 0, duration: 0.4 }, 3.6);\n'
+    js += '    tl.to("#hook", { opacity: 0, duration: 0.4 }, 5.2);\n'
     html += (f'    <div id="cta" class="clip" data-start="{CTA}" data-duration="{TOTAL - CTA:.2f}" data-track-index="9">'
              f'<div class="t">இதைப் படிக்கும்போது<br><b>யார்</b> ஞாபகம் வந்தாங்க?<br>அவங்களுக்கு அனுப்பு 💛</div>'
              f'<div class="h">@lordsrikrishnatemple</div></div>\n')
