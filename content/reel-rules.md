@@ -67,6 +67,10 @@ Every reel is checked against all of these. If one fails, fix it before renderin
     need no voice at all. Better free option later: IndicF5 (AI4Bharat, open demo Space ai4bharat/IndicF5 works without a
     login) speaks any Tamil text in the voice of a reference recording; it needs a MALE Tamil reference we have the
     right to use (for example the user's own recording). Never clone a real person's voice without their consent.
+    **ENGLISH voice from 7 Nov** (the user: "Use English voice, the most popular and widely used English voices"):
+    roles narrator_en (default en-US-ChristopherNeural; also GuyNeural, en-GB-RyanNeural, en-IN-PrabhatNeural) and
+    krishna_en (default en-US-AndrewMultilingualNeural; also BrianMultilingualNeural). Samples:
+    content/free-voice-samples-english.mp3. On-screen text language: ask the user (English, Tamil or both).
 11. Real-looking AI video with faces (MiniMax H3 / Veo), never stills with zoom.
 12. Check every figure: Krishna wears the Vaishnava namam (white U with a red centre line), never Shaiva
     horizontal lines; correct dress for every character; no extra fingers; same Krishna face as earlier reels

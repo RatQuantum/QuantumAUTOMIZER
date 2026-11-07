@@ -4,6 +4,7 @@
 #   tools/free_voice.sh ROLE "TEXT" OUT.wav [VOICE]
 #   ROLE narrator: deep storyteller (default voice ta-IN-ValluvarNeural), a slightly deeper tone, warm low end, a hall.
 #   ROLE krishna:  warm and close (default voice ta-MY-SuryaNeural), a softer, shorter room.
+#   ROLE narrator_en / krishna_en: the same in English (defaults en-US-ChristopherNeural / en-US-AndrewMultilingualNeural).
 # Male Tamil voices: ta-IN-ValluvarNeural, ta-LK-KumarNeural, ta-MY-SuryaNeural, ta-SG-AnbuNeural.
 # Needs: python3 -m venv /home/user/gc-venv && /home/user/gc-venv/bin/pip install edge-tts
 # edge-tts ignores the proxy environment, so the proxy is passed explicitly.
@@ -14,7 +15,12 @@ case $ROLE in
             FX="highpass=f=70,equalizer=f=130:t=q:w=1:g=3.5,equalizer=f=3200:t=q:w=1.2:g=2,equalizer=f=7500:t=q:w=1:g=-3,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2,aecho=0.85:0.55:70|140:0.22|0.12" ;;
   krishna)  VOICE=${4:-ta-MY-SuryaNeural}; RATE=-15%; PITCH=-6Hz; SHIFT=0.97
             FX="highpass=f=80,equalizer=f=220:t=q:w=1:g=2.5,equalizer=f=2800:t=q:w=1.2:g=1.5,equalizer=f=7000:t=q:w=1:g=-4,acompressor=threshold=-22dB:ratio=2.5:attack=10:release=150:makeup=2,aecho=0.8:0.4:40|90:0.18|0.08" ;;
-  *) echo "ROLE must be narrator or krishna"; exit 1 ;;
+  # English (the user, 7 Nov: "Use English voice, the most popular and widely used English voices")
+  narrator_en) VOICE=${4:-en-US-ChristopherNeural}; RATE=-10%; PITCH=-6Hz; SHIFT=0.96
+            FX="highpass=f=70,equalizer=f=130:t=q:w=1:g=3,equalizer=f=3200:t=q:w=1.2:g=1.5,equalizer=f=7500:t=q:w=1:g=-3,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2,aecho=0.85:0.5:70|140:0.2|0.1" ;;
+  krishna_en) VOICE=${4:-en-US-AndrewMultilingualNeural}; RATE=-12%; PITCH=-4Hz; SHIFT=0.98
+            FX="highpass=f=80,equalizer=f=220:t=q:w=1:g=2,equalizer=f=2800:t=q:w=1.2:g=1.5,equalizer=f=7000:t=q:w=1:g=-4,acompressor=threshold=-22dB:ratio=2.5:attack=10:release=150:makeup=2,aecho=0.8:0.4:40|90:0.16|0.07" ;;
+  *) echo "ROLE must be narrator, krishna, narrator_en or krishna_en"; exit 1 ;;
 esac
 TMP=$(mktemp --suffix=.mp3)
 SSL_CERT_FILE=/root/.ccr/ca-bundle.crt /home/user/gc-venv/bin/edge-tts --proxy "$HTTPS_PROXY" --voice "$VOICE" \
