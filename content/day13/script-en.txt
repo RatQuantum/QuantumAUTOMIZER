@@ -1,0 +1,14 @@
+Day 13 (English) · One verse: Bhagavad Gita 2.14 (format D in content/formats.md)
+Palm-leaf manuscript look (olai chuvadi): candlelit dark wood, the Sanskrit written onto a palm leaf, transliteration below,
+each Sanskrit phrase lights up gold while Krishna speaks its meaning. 34 s, calm (rule 7g). Free voices (tools/free_voice.sh):
+narrator en-US-ChristopherNeural, Krishna en-US-AndrewMultilingualNeural.
+  0.4  narrator: On your worst day… remember what Krishna said.          (hook on screen at frame 0)
+  5.0  the leaf slides in; the verse is written (मात्रास्पर्शास्तु कौन्तेय शीतोष्णसुखदुःखदाः । आगमापायिनोऽनित्यास्तांस्तितिक्षस्व भारत ॥)
+  8.0  Krishna: Heat and cold. Pleasure and pain.      (शीतोष्णसुखदुःखदाः lights up)
+ 12.2  Krishna: They come… and they go.                (आगमापायिनो)
+ 15.7  Krishna: None of them last.                     (ऽनित्यास्)
+ 19.1  Krishna: So bear them… with patience.           (तांस्तितिक्षस्व)   BHAGAVAD GITA 2.14
+ 23.6  narrator: Your hardest day… is not your whole life.
+ 28.8  narrator: Save this, for the day you need it.   (SAVE ask)
+No beat cuts: any calm track. Effects: deep tabla tones per phrase, a swash for the leaf, glass hum, parchment hiss, pads.
+Final reels/day13-ta/day13-english-no-music.mp4 (not in git), -15.5 LUFS, Whisper = script.

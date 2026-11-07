@@ -28,3 +28,4 @@ Tracks: ask the user for a new track (and its BPM and drop) every 2-3 reels; the
 | 10 | A story (flute, moon) | same line (repeat: mistake) | கிருஷ்ணா | ZAKHELO (Slowed) | gold silhouette |
 | 11 | B pick a card | none | comment your number | ZAKHELO (Slowed) (new track welcome) | maroon and gold cards, serif |
 | 12 | C chat with Kanna (3 a.m.) | none | send it to someone | any calm track (ZAKHELO rested) | night blue and gold phone chat |
+| 13 | D one verse (Gita 2.14) | free EN: Christopher + Andrew | save it | any calm track | palm leaf, candlelight, Cormorant |

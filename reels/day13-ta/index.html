@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      /* Day 13 (English) · One verse: Bhagavad Gita 2.14 on a palm leaf, 34.0s. Candlelight and gold. */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0d0704;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="34.0" data-width="1080" data-height="1920">
+      <div id="scene" data-composition-id="scene" data-composition-src="compositions/scene.html" data-start="0" data-duration="34.0" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <!-- Free voices (Microsoft Edge neural): narrator en-US-ChristopherNeural, Krishna en-US-AndrewMultilingualNeural. Effects: CC0 Sonic Pi. -->
+      <audio id="a0" class="clip" src="assets/audio/n1-hook.wav" data-start="0.40" data-duration="4.343" data-volume="1.0" data-track-index="1"></audio>
+      <audio id="a1" class="clip" src="assets/audio/k1.wav" data-start="8.00" data-duration="3.356" data-volume="1.0" data-track-index="2"></audio>
+      <audio id="a2" class="clip" src="assets/audio/k2.wav" data-start="12.20" data-duration="2.084" data-volume="1.0" data-track-index="2"></audio>
+      <audio id="a3" class="clip" src="assets/audio/k3.wav" data-start="15.70" data-duration="1.977" data-volume="1.0" data-track-index="2"></audio>
+      <audio id="a4" class="clip" src="assets/audio/k4.wav" data-start="19.10" data-duration="2.947" data-volume="1.0" data-track-index="2"></audio>
+      <audio id="a5" class="clip" src="assets/audio/n2-takeaway.wav" data-start="23.60" data-duration="4.198" data-volume="1.0" data-track-index="1"></audio>
+      <audio id="a6" class="clip" src="assets/audio/n3-save.wav" data-start="28.80" data-duration="3.551" data-volume="1.0" data-track-index="1"></audio>
+      <audio id="a7" class="clip" src="assets/sfx/tabla_ghe5.wav" data-start="0.00" data-duration="3.560" data-volume="0.45" data-track-index="10" data-fade-out="1.5"></audio>
+      <audio id="a8" class="clip" src="assets/sfx/ambi_glass_hum.wav" data-start="4.80" data-duration="10.000" data-volume="0.22" data-track-index="11" data-fade-in="1.0" data-fade-out="2.0"></audio>
+      <audio id="a9" class="clip" src="assets/sfx/ambi_glass_hum.wav" data-start="17.00" data-duration="10.000" data-volume="0.22" data-track-index="12" data-fade-in="2.0" data-fade-out="2.5"></audio>
+      <audio id="a10" class="clip" src="assets/sfx/vinyl_hiss.wav" data-start="5.00" data-duration="8.000" data-volume="0.12" data-track-index="13" data-fade-in="0.8" data-fade-out="1.5"></audio>
+      <audio id="a11" class="clip" src="assets/sfx/vinyl_hiss.wav" data-start="20.50" data-duration="8.000" data-volume="0.12" data-track-index="14" data-fade-in="1.5" data-fade-out="1.5"></audio>
+      <audio id="a12" class="clip" src="assets/sfx/perc_swash.wav" data-start="4.90" data-duration="0.320" data-volume="0.45" data-track-index="15"></audio>
+      <audio id="a13" class="clip" src="assets/sfx/tabla_tun1.wav" data-start="7.95" data-duration="2.339" data-volume="0.4" data-track-index="16" data-fade-out="1.0"></audio>
+      <audio id="a14" class="clip" src="assets/sfx/tabla_tun2.wav" data-start="12.15" data-duration="2.694" data-volume="0.4" data-track-index="17" data-fade-out="1.0"></audio>
+      <audio id="a15" class="clip" src="assets/sfx/tabla_tun3.wav" data-start="15.65" data-duration="2.096" data-volume="0.4" data-track-index="18" data-fade-out="1.0"></audio>
+      <audio id="a16" class="clip" src="assets/sfx/tabla_na_o.wav" data-start="19.05" data-duration="1.489" data-volume="0.4" data-track-index="19" data-fade-out="1.0"></audio>
+      <audio id="a17" class="clip" src="assets/sfx/tbd_pad_2.wav" data-start="23.40" data-duration="3.203" data-volume="0.3" data-track-index="21" data-fade-in="0.5" data-fade-out="1.2"></audio>
+      <audio id="a18" class="clip" src="assets/sfx/tbd_pad_3.wav" data-start="28.60" data-duration="2.983" data-volume="0.3" data-track-index="22" data-fade-in="0.4" data-fade-out="1.2"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
