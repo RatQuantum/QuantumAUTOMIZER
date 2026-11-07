@@ -8,3 +8,8 @@ all three face-up and the ask: "உனக்கு எந்த அட்டை?
 18.6 s, 71 BPM grid of "ZAKHELO (Slowed)" (start it at 0:08.2 in Instagram), or any track: the user can send a new one.
 Final reels/day11-ta/day11-tamil-no-music.mp4 (not in git). Caption content/captions/day11-ta.txt (no AI-art label:
 nothing in it is AI-made).
+
+SLOWER (7 Nov, the user: "the 3-2-1 countdown was so quick people didn't have time to choose"): 29.6 s now. Shuffle on
+beats 2-5, "✋ நிறுத்து. ஒரு அட்டையைத் தேர்ந்தெடு" from beat 6, countdown 3-2-1 on beats 10/12/14 (1.7 s each), reveals on
+beats 16/21/26 (4.2 s to read each card), the ask on beat 31. In Instagram start ZAKHELO (Slowed) at 0:01.5 so its drop
+lands on the first reveal (0:13.5).

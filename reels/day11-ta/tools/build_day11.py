@@ -17,14 +17,17 @@ def B(n):
     return round(n * BEAT, 3)
 
 
-TOTAL = B(22)          # 18.59 s
+TOTAL = B(35)          # 29.58 s: slower, so people can choose and read (the user, 7 Nov)
 W, H = 1080, 1920
 CW, CH = 300, 460      # card size, small
 SLOT_X = [60, 390, 720]
 CARD_Y = 640
 BIG = 2.35             # scale of a revealed card (705 x 1081)
-REVEAL = [B(8), B(12), B(16)]
-CTA = B(20)
+# choose (beats 6-10, 4.2 s), count 3-2-1 one number every 2 beats (1.7 s each), reveal on beat 16,
+# 5 beats (4.2 s) to read each card. In Instagram, start ZAKHELO (Slowed) at 0:01.5 so its drop lands on the first reveal.
+COUNT = [(10, "3"), (12, "2"), (14, "1")]
+REVEAL = [B(16), B(21), B(26)]
+CTA = B(31)
 
 # The three promises (Tamil renderings of the verses; keep them faithful to the Gita, never invented)
 CARDS = [
@@ -43,13 +46,13 @@ FEATHER = ('<svg viewBox="0 0 90 220" width="{w}" height="{h}"><path d="M45 218 
 
 SFX = "assets/sfx/"
 AUDIO = [
-    ("assets/audio/impact.wav", B(8) - 1.27, 0.45, 17, {}),           # its boom peaks on the drop
+    ("assets/audio/impact.wav", REVEAL[0] - 1.27, 0.45, 17, {}),           # its boom peaks on the drop
     (SFX + "ambi_drone.wav", 0.0, 0.3, 8, {"dur": 4.4, "fin": 0.2, "fout": 1.2}),
     *[(SFX + snd, t, 0.55, 12 + 10 * k, {}) for k, ((t, _, _), snd) in enumerate(zip(SWAPS, ["perc_snap.wav", "tabla_te1.wav", "perc_snap2.wav", "tabla_te2.wav"]))],
-    *[(SFX + snd, B(n), 0.7, 13 + k * 10, {}) for k, (n, snd) in enumerate([(6, "tabla_dhec.wav"), (6.5, "tabla_na_s.wav"), (7, "tabla_ghe1.wav")])],
+    *[(SFX + snd, B(n), 0.7, 13 + k * 10, {}) for k, (n, snd) in enumerate([(10, "tabla_dhec.wav"), (12, "tabla_na_s.wav"), (14, "tabla_ghe1.wav")])],
     *[(SFX + swish, t + 0.3, 0.5, 18 + 10 * k, {}) for k, (t, swish) in enumerate(zip(REVEAL, ["perc_swash.wav", "perc_swoosh.wav", "perc_swash.wav"]))],
     *[(SFX + snd, t + 0.55, vol, 19 + 10 * k, {"dur": 3.0, "fout": 1.2}) for k, (t, snd, vol) in enumerate(zip(REVEAL, ["ambi_glass_rub.wav", "guit_harmonics.wav", "elec_chime.wav"], [0.6, 0.5, 0.35]))],
-    (SFX + "ambi_choir.wav", B(8) + 0.4, 0.45, 20, {}),
+    (SFX + "ambi_choir.wav", REVEAL[0] + 0.4, 0.45, 20, {}),
     (SFX + "tabla_ghe3.wav", CTA, 0.7, 49, {"fout": 0.6}),
 ]
 
@@ -156,7 +159,8 @@ def scene():
     }
     .front {
       transform: rotateY(180deg);
-      background: linear-gradient(170deg, #fff8e8 0%, #f3e2bd 100%);
+      background-color: #f8ecd0;
+      background-image: linear-gradient(170deg, #fff8e8 0%, #f3e2bd 100%);
       border: 5px solid #c99a3a;
       box-shadow: 0 0 40px 10px rgba(255, 200, 100, 0.55);
     }
@@ -282,10 +286,11 @@ def scene():
             js += f'    tl.to("#c{card}", {{ y: {up}, duration: 0.18, ease: "power2.out", yoyo: true, repeat: 1 }}, {t:.3f});\n'
 
     # countdown before the drop
-    for k, (n, label) in enumerate([(6, "3"), (6.5, "2"), (7, "1")]):
+    for k, (n, label) in enumerate(COUNT):
         t = B(n)
-        html += f'    <div id="cd{k}" class="clip count" data-start="{t:.3f}" data-duration="0.45" data-track-index="7">{label}</div>\n'
-        js += f'    tl.fromTo("#cd{k}", {{ opacity: 1, scale: 1.6 }}, {{ opacity: 0, scale: 0.8, duration: 0.42, ease: "power2.in" }}, {t:.3f});\n'
+        html += f'    <div id="cd{k}" class="clip count" data-start="{t:.3f}" data-duration="{2 * BEAT - 0.05:.3f}" data-track-index="7">{label}</div>\n'
+        js += f'    tl.fromTo("#cd{k}", {{ opacity: 0, scale: 1.5 }}, {{ opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }}, {t:.3f});\n'
+        js += f'    tl.to("#cd{k}", {{ opacity: 0, duration: 0.3, ease: "power1.in" }}, {t + 2 * BEAT - 0.35:.3f});\n'
 
     # reveals: the card rises to the centre, the others dim, it flips on the beat
     cx_left, cy_top = (W - CW) / 2, 640
@@ -314,7 +319,7 @@ def scene():
     texts = [
         ("t0", '<span style="white-space: nowrap">கண்ணன் இன்று உனக்கு<br>ஒரு <b>செய்தி</b> வைத்திருக்கிறான்</span>', 0.0, B(6) - 0.05, 230, 56),
         ("t1", 'ஒரு அட்டையைத் தேர்ந்தெடு 👇', 0.0, B(6) - 0.05, 1200, 50),
-        ("t2", '✋ இப்போதே <b>நிறுத்து</b>', B(6), B(8) - 0.05, 300, 62),
+        ("t2", '✋ <b>நிறுத்து.</b><br>ஒரு அட்டையைத் தேர்ந்தெடு', B(6), B(16) - 0.05, 260, 58),
         ("t3", 'உனக்கு எந்த அட்டை?<br>கமெண்ட்டில் <b>1, 2 அல்லது 3</b> 👇', CTA + 0.1, TOTAL, 230, 56),
     ]
     for tid, txt, a, b, top, size in texts:

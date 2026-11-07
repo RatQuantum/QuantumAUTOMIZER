@@ -47,6 +47,12 @@ Every reel is checked against all of these. If one fails, fix it before renderin
     ambi_drone, ambi_lunar_land (huge rising rumble), perc_impact1/2, perc_snap/snap2, perc_swash, perc_swoosh,
     elec_chime (sparingly), ambi_choir (sparingly), misc_cineboom.
 
+7g. **Never rushed** (the user, 7 Nov, on Day 11: "the 3-2-1 countdown was so quick people didn't have time to choose").
+    Give every beat of the idea the time a person needs: at least 3-4 s to make a choice, at least 1-1.5 s per countdown
+    number, reading time of about 1 s plus 0.3 s per word for every line on screen (never under 2.5 s), and let the
+    payoff breathe for 2+ s before the next thing. A longer reel that people can follow beats a short one they cannot.
+    The beat grid serves the pacing, not the other way round (use 2 or more beats per step when needed).
+
 ## What NOT to copy
 8. The curtain/door reveal only works with REAL darshan footage (the 33.4K reel). With AI art there is nothing
    the viewer is waiting to see. Do not use reveal-of-a-place hooks with AI.
