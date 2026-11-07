@@ -74,6 +74,10 @@ Every reel is checked against all of these. If one fails, fix it before renderin
     krishna_en (default en-US-AndrewMultilingualNeural; also BrianMultilingualNeural). Samples:
     content/free-voice-samples-english.mp3. **On-screen text: ENGLISH** (the user, 7 Nov). Defaults until the
     user picks: narrator en-US-ChristopherNeural, Krishna en-US-AndrewMultilingualNeural. Captions may add one Tamil line.
+    "Divine" Krishna style (7 Nov): roles krishna_divine (Tamil) / krishna_divine_en: slower, deeper, soft, a faint
+    chorus and a spacious reverb, with long pauses between "|"-separated phrases. It is an ORIGINAL style: never clone or
+    imitate a specific actor or dubbing artist (the user asked for the Vijay TV Mahabharatham Krishna voice; declined).
+    Samples: content/krishna-divine-voice-samples.mp3.
 11. Real-looking AI video with faces (MiniMax H3 / Veo), never stills with zoom.
 12. Check every figure: Krishna wears the Vaishnava namam (white U with a red centre line), never Shaiva
     horizontal lines; correct dress for every character; no extra fingers; same Krishna face as earlier reels
