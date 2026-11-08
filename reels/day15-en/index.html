@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <script src="assets/springs.js"></script>
+    <style>
+      /* Day 15 (English) · He came. Every time. A saga montage cut on the bars of ZAKHELO (Slowed), 29.98s. */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #050302;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="29.98" data-width="1080" data-height="1920">
+      <div id="scene" data-composition-id="scene" data-composition-src="compositions/scene.html" data-start="0" data-duration="29.98" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <!-- No voice: music-led (the user adds ZAKHELO (Slowed) in Instagram from 0:09.0). Effects: CC0 Sonic Pi. -->
+      <audio id="a0" class="clip" src="assets/sfx/ambi_drone.wav" data-start="0.000" data-duration="4.408" data-volume="0.25" data-track-index="10" data-fade-in="0.4" data-fade-out="1.2"></audio>
+      <audio id="a1" class="clip" src="assets/sfx/ambi_glass_rub.wav" data-start="0.200" data-duration="3.149" data-volume="0.3" data-track-index="11" data-fade-out="1.0"></audio>
+      <audio id="a2" class="clip" src="assets/sfx/ambi_dark_woosh.wav" data-start="4.730" data-duration="3.702" data-volume="0.4" data-track-index="12"></audio>
+      <audio id="a3" class="clip" src="assets/sfx/perc_impact1.wav" data-start="6.000" data-duration="1.120" data-volume="0.6" data-track-index="13"></audio>
+      <audio id="a4" class="clip" src="assets/sfx/ambi_lunar_land.wav" data-start="16.192" data-duration="7.394" data-volume="0.25" data-track-index="14" data-fade-in="0.5" data-fade-out="1.0"></audio>
+      <audio id="a5" class="clip" src="assets/sfx/misc_cineboom.wav" data-start="19.590" data-duration="7.923" data-volume="0.4" data-track-index="15" data-fade-out="1.5"></audio>
+      <audio id="a6" class="clip" src="assets/sfx/tabla_ghe3.wav" data-start="26.384" data-duration="2.391" data-volume="0.5" data-track-index="16" data-fade-out="0.6"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

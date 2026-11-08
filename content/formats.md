@@ -32,3 +32,4 @@ Tracks: ask the user for a new track (and its BPM and drop) every 2-3 reels; the
 | 13 | D one verse (Gita 2.14) | free EN: Christopher + Andrew | save it | any calm track | palm leaf, candlelight, Cormorant |
 | 14 | J animated skit: Krishna cameo (new) | free EN: Christopher + Andrew divine | send to someone | any calm track | flat SVG cartoon, night to morning |
 | Deepavali | J festival special: Krishna lights the first lamp | free EN: Christopher + Andrew calm | send to someone | a festive or calm track | new-moon courtyard, gopuram, kolam of diyas, fireworks |
+| 15 | K saga montage: "He came. Every time." (new) | none (song only) | comment 🙏 | ZAKHELO (Slowed), start 0:09.0 | our AI shots, beat-cut on downbeats, peacock-feather bookends |

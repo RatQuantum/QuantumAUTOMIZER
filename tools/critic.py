@@ -114,7 +114,11 @@ def main():
         if run == int(4 * fps):
             flags.append(f"DEAD: nothing changes on screen for 4+ s around {(k - run + 1) / fps:.1f}-{(k + 1) / fps:.1f} s")
     # frantic: many sharp spikes per second over a 3 s window (the beat-shake problem)
-    spikes = (diff[1:-1] > diff[:-2]) & (diff[1:-1] > diff[2:]) & (diff[1:-1] > max(4.0, np.percentile(diff, 90)))
+    # a spike = a local peak well above the motion of the surrounding second (steady fast motion such as swirling
+    # cloth is not a spike; a punch-in or flash on every beat is)
+    k = int(fps)
+    local = np.array([np.median(diff[max(0, i - k):i + k + 1]) for i in range(len(diff))])
+    spikes = ((diff[1:-1] > diff[:-2]) & (diff[1:-1] > diff[2:]) & (diff[1:-1] > np.maximum(4.0, 1.8 * local[1:-1])))
     st = np.where(spikes)[0] / fps
     for t in np.arange(0, dur, 1.0):
         if ((st >= t) & (st < t + 3)).sum() >= 6:
