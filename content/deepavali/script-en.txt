@@ -1,0 +1,15 @@
+Deepavali special (English), 8 Nov 2026 · "One lamp is all it takes" · 24 s · all drawn in SVG / HyperFrames
+Naraka Chaturdashi as celebrated in Tamil Nadu: the night Krishna ended Narakasura's darkness. A NEW-MOON night (no moon),
+a temple courtyard with a South Indian gopuram (tiers, niches), a white kolam ringed by 43 unlit diyas (3 rings).
+Krishna = the same ORIGINAL character as Day 14's cameo (the "Krishna's cameo" series continues).
+  0.4  narrator: One lamp… is all it takes.        Krishna walks in holding a lit diya.
+  3.1  a spark leaps from his lamp to the centre diya; it ignites (synth "fwoomp"), the courtyard starts to glow.
+  4.1  narrator: On this night, long ago, Krishna ended the darkness of Narakasura…
+ 10.1  the rings light up one after another around the kolam (festive tabla loop). narrator: …and the world lit up with lamps.
+ 12.4  the gopuram's string lights and a warm glow behind it.
+ 12.9  five fireworks over the gopuram (three synthesized firework sounds).
+ 13.3  Krishna (calm voice): Be the light… for someone in the dark.
+ 17.1  Krishna waves; HAPPY DEEPAVALI (Cinzel, gold) + இனிய தீபாவளி நல்வாழ்த்துக்கள் 🪔; he winks.
+ 17.6  narrator: Happy Deepavali. Send this light to someone you love.  (SHARE ask)
+Whisper: every line correct (it spells Narakasura right once given the name). -15.5 LUFS. No bells, no beat shakes.
+Final reels/deepavali-en/deepavali-english-no-music.mp4 (not in git).

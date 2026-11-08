@@ -1,0 +1,610 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    @font-face {
+      font-family: "Nunito";
+      src: url("assets/fonts/Nunito.ttf");
+    }
+    @font-face {
+      font-family: "Cormorant";
+      font-style: italic;
+      src: url("assets/fonts/Cormorant-Italic.ttf");
+    }
+    @font-face {
+      font-family: "Cinzel";
+      src: url("assets/fonts/Cinzel.ttf");
+    }
+    @font-face {
+      font-family: "Noto Sans Tamil";
+      src: url("assets/fonts/NotoSansTamil.ttf");
+    }
+    @font-face {
+      font-family: "Noto Color Emoji";
+      src: url("assets/fonts/NotoColorEmoji.ttf");
+    }
+    #cam {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    .p {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      opacity: 0;
+    }
+    .cap {
+      position: absolute;
+      left: 60px;
+      width: 960px;
+      top: 170px;
+      text-align: center;
+      font-family: "Nunito", sans-serif;
+      font-weight: 800;
+      font-size: 58px;
+      line-height: 1.28;
+      color: #ffffff;
+      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.9);
+    }
+    .cap b {
+      color: #ffcf5a;
+    }
+    .cap.k {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 72px;
+      color: #ffd77a;
+    }
+    #title {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      top: 150px;
+      text-align: center;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: 104px;
+      line-height: 1.05;
+      color: #ffd56a;
+      text-shadow: 0 0 30px rgba(255, 170, 60, 0.85), 0 6px 18px rgba(0, 0, 0, 0.9);
+    }
+    #tamil {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      top: 400px;
+      text-align: center;
+      font-family: "Noto Sans Tamil", sans-serif;
+      font-weight: 700;
+      font-size: 46px;
+      color: #fff1d0;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
+    }
+    #cta {
+      position: absolute;
+      left: 40px;
+      width: 1000px;
+      top: 1755px;
+      text-align: center;
+      font-family: "Nunito", "Noto Color Emoji", sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      color: #ffffff;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.95);
+    }
+    #cta b {
+      color: #ffcf5a;
+    }
+  </style>
+  <div id="root" data-composition-id="scene" data-width="1080" data-height="1920">
+    <div id="cam" class="clip" data-start="0" data-duration="23.98" data-track-index="0"><svg viewBox="0 0 1080 1920" width="1080" height="1920" style="position:absolute;left:0;top:0">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05071a"/><stop offset="0.6" stop-color="#141038"/><stop offset="1" stop-color="#3a1d4a"/></linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1a14"/><stop offset="1" stop-color="#0f0907"/></linearGradient>
+    <linearGradient id="clay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c0612b"/><stop offset="1" stop-color="#7a3416"/></linearGradient>
+    <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff5a1f"/><stop offset="0.5" stop-color="#ffb020"/><stop offset="1" stop-color="#fff2a8"/></linearGradient>
+    <radialGradient id="flameglow"><stop offset="0" stop-color="rgba(255,200,90,0.85)"/><stop offset="1" stop-color="rgba(255,160,40,0)"/></radialGradient>
+    <radialGradient id="courtglow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="rgba(255,170,60,0.55)"/><stop offset="1" stop-color="rgba(255,140,30,0)"/></radialGradient>
+  </defs>
+  <rect width="1080" height="1135" fill="url(#sky)"/>
+  <g id="stars"><circle class="st" cx="267" cy="732" r="1.2" fill="#fff6e0"/><circle class="st" cx="788" cy="745" r="1.6" fill="#fff6e0"/><circle class="st" cx="774" cy="200" r="1.2" fill="#fff6e0"/><circle class="st" cx="613" cy="219" r="1.2" fill="#fff6e0"/><circle class="st" cx="413" cy="728" r="1.6" fill="#fff6e0"/><circle class="st" cx="390" cy="114" r="1.2" fill="#fff6e0"/><circle class="st" cx="173" cy="950" r="2.2" fill="#fff6e0"/><circle class="st" cx="864" cy="104" r="2.2" fill="#fff6e0"/><circle class="st" cx="661" cy="674" r="1.6" fill="#fff6e0"/><circle class="st" cx="436" cy="642" r="2.2" fill="#fff6e0"/><circle class="st" cx="113" cy="763" r="2.2" fill="#fff6e0"/><circle class="st" cx="917" cy="34" r="1.6" fill="#fff6e0"/><circle class="st" cx="679" cy="665" r="1.2" fill="#fff6e0"/><circle class="st" cx="412" cy="523" r="1.6" fill="#fff6e0"/><circle class="st" cx="437" cy="23" r="1.2" fill="#fff6e0"/><circle class="st" cx="991" cy="939" r="2.2" fill="#fff6e0"/><circle class="st" cx="228" cy="415" r="1.2" fill="#fff6e0"/><circle class="st" cx="694" cy="240" r="2.2" fill="#fff6e0"/><circle class="st" cx="898" cy="750" r="2.2" fill="#fff6e0"/><circle class="st" cx="21" cy="361" r="1.2" fill="#fff6e0"/><circle class="st" cx="466" cy="612" r="1.6" fill="#fff6e0"/><circle class="st" cx="366" cy="27" r="1.2" fill="#fff6e0"/><circle class="st" cx="988" cy="872" r="1.6" fill="#fff6e0"/><circle class="st" cx="390" cy="110" r="2.2" fill="#fff6e0"/><circle class="st" cx="308" cy="60" r="2.2" fill="#fff6e0"/><circle class="st" cx="370" cy="912" r="2.2" fill="#fff6e0"/><circle class="st" cx="279" cy="348" r="1.6" fill="#fff6e0"/><circle class="st" cx="63" cy="73" r="2.2" fill="#fff6e0"/><circle class="st" cx="654" cy="144" r="1.6" fill="#fff6e0"/><circle class="st" cx="92" cy="456" r="2.2" fill="#fff6e0"/><circle class="st" cx="823" cy="321" r="1.6" fill="#fff6e0"/><circle class="st" cx="992" cy="71" r="1.6" fill="#fff6e0"/><circle class="st" cx="1025" cy="396" r="1.2" fill="#fff6e0"/><circle class="st" cx="795" cy="479" r="1.2" fill="#fff6e0"/><circle class="st" cx="377" cy="176" r="1.2" fill="#fff6e0"/><circle class="st" cx="314" cy="413" r="1.2" fill="#fff6e0"/><circle class="st" cx="61" cy="829" r="1.6" fill="#fff6e0"/><circle class="st" cx="153" cy="301" r="2.2" fill="#fff6e0"/><circle class="st" cx="770" cy="113" r="1.6" fill="#fff6e0"/><circle class="st" cx="144" cy="566" r="1.2" fill="#fff6e0"/><circle class="st" cx="313" cy="645" r="2.2" fill="#fff6e0"/><circle class="st" cx="68" cy="104" r="2.2" fill="#fff6e0"/><circle class="st" cx="1026" cy="878" r="1.2" fill="#fff6e0"/><circle class="st" cx="136" cy="842" r="1.6" fill="#fff6e0"/><circle class="st" cx="947" cy="437" r="1.6" fill="#fff6e0"/><circle class="st" cx="769" cy="657" r="1.6" fill="#fff6e0"/><circle class="st" cx="207" cy="822" r="2.2" fill="#fff6e0"/><circle class="st" cx="331" cy="830" r="2.2" fill="#fff6e0"/><circle class="st" cx="888" cy="21" r="2.2" fill="#fff6e0"/><circle class="st" cx="969" cy="154" r="2.2" fill="#fff6e0"/><circle class="st" cx="851" cy="619" r="1.2" fill="#fff6e0"/><circle class="st" cx="981" cy="980" r="2.2" fill="#fff6e0"/><circle class="st" cx="188" cy="86" r="2.2" fill="#fff6e0"/><circle class="st" cx="1008" cy="729" r="1.2" fill="#fff6e0"/><circle class="st" cx="154" cy="420" r="1.6" fill="#fff6e0"/><circle class="st" cx="242" cy="414" r="2.2" fill="#fff6e0"/><circle class="st" cx="842" cy="563" r="1.2" fill="#fff6e0"/><circle class="st" cx="1030" cy="462" r="2.2" fill="#fff6e0"/><circle class="st" cx="229" cy="162" r="1.2" fill="#fff6e0"/><circle class="st" cx="778" cy="723" r="1.2" fill="#fff6e0"/><circle class="st" cx="83" cy="573" r="1.2" fill="#fff6e0"/><circle class="st" cx="777" cy="835" r="1.2" fill="#fff6e0"/><circle class="st" cx="122" cy="679" r="1.2" fill="#fff6e0"/><circle class="st" cx="568" cy="8" r="2.2" fill="#fff6e0"/><circle class="st" cx="103" cy="603" r="1.6" fill="#fff6e0"/><circle class="st" cx="782" cy="56" r="2.2" fill="#fff6e0"/><circle class="st" cx="458" cy="462" r="1.2" fill="#fff6e0"/><circle class="st" cx="521" cy="913" r="1.6" fill="#fff6e0"/><circle class="st" cx="404" cy="258" r="1.2" fill="#fff6e0"/><circle class="st" cx="454" cy="408" r="1.6" fill="#fff6e0"/><circle class="st" cx="839" cy="342" r="1.6" fill="#fff6e0"/><circle class="st" cx="1047" cy="40" r="2.2" fill="#fff6e0"/><circle class="st" cx="364" cy="611" r="1.2" fill="#fff6e0"/><circle class="st" cx="290" cy="358" r="1.2" fill="#fff6e0"/><circle class="st" cx="14" cy="578" r="1.2" fill="#fff6e0"/><circle class="st" cx="846" cy="900" r="1.6" fill="#fff6e0"/><circle class="st" cx="917" cy="878" r="2.2" fill="#fff6e0"/><circle class="st" cx="995" cy="520" r="1.6" fill="#fff6e0"/><circle class="st" cx="350" cy="979" r="1.6" fill="#fff6e0"/><circle class="st" cx="638" cy="340" r="1.2" fill="#fff6e0"/><circle class="st" cx="264" cy="952" r="1.6" fill="#fff6e0"/><circle class="st" cx="427" cy="124" r="1.6" fill="#fff6e0"/><circle class="st" cx="734" cy="501" r="1.6" fill="#fff6e0"/><circle class="st" cx="590" cy="899" r="1.2" fill="#fff6e0"/><circle class="st" cx="847" cy="746" r="2.2" fill="#fff6e0"/><circle class="st" cx="448" cy="878" r="1.2" fill="#fff6e0"/><circle class="st" cx="663" cy="640" r="1.6" fill="#fff6e0"/><circle class="st" cx="724" cy="51" r="2.2" fill="#fff6e0"/><circle class="st" cx="395" cy="461" r="2.2" fill="#fff6e0"/><circle class="st" cx="298" cy="423" r="1.6" fill="#fff6e0"/></g>
+  <g id="fwlayer"></g>
+  <ellipse id="gglow" cx="540" cy="1000" rx="420" ry="420" fill="url(#courtglow)" opacity="0"/>
+  <rect x="0" y="1060" width="1080" height="80" fill="#0f0b1c"/>
+  <path d="M340 1135 L740 1135 L714 1047 L366 1047 Z" fill="#120d22" stroke="#2a1f45" stroke-width="3"/><rect x="356" y="1042" width="368" height="10" rx="3" fill="#2b2148"/><path d="M369 1123 L369 1091 Q380 1075 391 1091 L391 1123 Z" fill="#1d1638"/><path d="M449 1123 L449 1091 Q460 1075 471 1091 L471 1123 Z" fill="#1d1638"/><path d="M529 1123 L529 1091 Q540 1075 551 1091 L551 1123 Z" fill="#1d1638"/><path d="M609 1123 L609 1091 Q620 1075 631 1091 L631 1123 Z" fill="#1d1638"/><path d="M689 1123 L689 1091 Q700 1075 711 1091 L711 1123 Z" fill="#1d1638"/><path d="M366 1047 L714 1047 L688 959 L392 959 Z" fill="#120d22" stroke="#2a1f45" stroke-width="3"/><rect x="382" y="954" width="316" height="10" rx="3" fill="#2b2148"/><path d="M390 1035 L390 1003 Q401 987 412 1003 L412 1035 Z" fill="#1d1638"/><path d="M459 1035 L459 1003 Q470 987 481 1003 L481 1035 Z" fill="#1d1638"/><path d="M529 1035 L529 1003 Q540 987 551 1003 L551 1035 Z" fill="#1d1638"/><path d="M599 1035 L599 1003 Q610 987 621 1003 L621 1035 Z" fill="#1d1638"/><path d="M668 1035 L668 1003 Q679 987 690 1003 L690 1035 Z" fill="#1d1638"/><path d="M392 959 L688 959 L662 871 L418 871 Z" fill="#120d22" stroke="#2a1f45" stroke-width="3"/><rect x="408" y="866" width="264" height="10" rx="3" fill="#2b2148"/><path d="M418 947 L418 915 Q429 899 440 915 L440 947 Z" fill="#1d1638"/><path d="M492 947 L492 915 Q503 899 514 915 L514 947 Z" fill="#1d1638"/><path d="M566 947 L566 915 Q577 899 588 915 L588 947 Z" fill="#1d1638"/><path d="M640 947 L640 915 Q651 899 662 915 L662 947 Z" fill="#1d1638"/><path d="M418 871 L662 871 L636 783 L444 783 Z" fill="#120d22" stroke="#2a1f45" stroke-width="3"/><rect x="434" y="778" width="212" height="10" rx="3" fill="#2b2148"/><path d="M438 859 L438 827 Q448 811 460 827 L460 859 Z" fill="#1d1638"/><path d="M498 859 L498 827 Q510 811 520 827 L520 859 Z" fill="#1d1638"/><path d="M560 859 L560 827 Q570 811 582 827 L582 859 Z" fill="#1d1638"/><path d="M620 859 L620 827 Q632 811 642 827 L642 859 Z" fill="#1d1638"/><path d="M444 783 L636 783 L610 695 L470 695 Z" fill="#120d22" stroke="#2a1f45" stroke-width="3"/><rect x="460" y="690" width="160" height="10" rx="3" fill="#2b2148"/><path d="M465 771 L465 739 Q476 723 487 739 L487 771 Z" fill="#1d1638"/><path d="M529 771 L529 739 Q540 723 551 739 L551 771 Z" fill="#1d1638"/><path d="M593 771 L593 739 Q604 723 615 739 L615 771 Z" fill="#1d1638"/><path d="M470 695 L610 695 L584 607 L496 607 Z" fill="#120d22" stroke="#2a1f45" stroke-width="3"/><rect x="486" y="602" width="108" height="10" rx="3" fill="#2b2148"/><path d="M482 683 L482 651 Q493 635 504 651 L504 683 Z" fill="#1d1638"/><path d="M529 683 L529 651 Q540 635 551 651 L551 683 Z" fill="#1d1638"/><path d="M576 683 L576 651 Q587 635 598 651 L598 683 Z" fill="#1d1638"/><path d="M480 607 Q540 537 600 607 Z" fill="#120d22" stroke="#2a1f45" stroke-width="3"/><circle cx="510" cy="555" r="9" fill="#2a1f45"/><circle cx="540" cy="545" r="9" fill="#2a1f45"/><circle cx="570" cy="555" r="9" fill="#2a1f45"/>
+  <g id="glights" opacity="0"><circle class="gl" cx="385" cy="1051" r="5" fill="#ffd77a"/><circle class="gl" cx="424" cy="1051" r="5" fill="#ffd77a"/><circle class="gl" cx="463" cy="1051" r="5" fill="#ffd77a"/><circle class="gl" cx="501" cy="1051" r="5" fill="#ffd77a"/><circle class="gl" cx="540" cy="1051" r="5" fill="#ffd77a"/><circle class="gl" cx="579" cy="1051" r="5" fill="#ffd77a"/><circle class="gl" cx="617" cy="1051" r="5" fill="#ffd77a"/><circle class="gl" cx="656" cy="1051" r="5" fill="#ffd77a"/><circle class="gl" cx="695" cy="1051" r="5" fill="#ffd77a"/><circle class="gl" cx="410" cy="963" r="5" fill="#ffd77a"/><circle class="gl" cx="448" cy="963" r="5" fill="#ffd77a"/><circle class="gl" cx="484" cy="963" r="5" fill="#ffd77a"/><circle class="gl" cx="522" cy="963" r="5" fill="#ffd77a"/><circle class="gl" cx="558" cy="963" r="5" fill="#ffd77a"/><circle class="gl" cx="596" cy="963" r="5" fill="#ffd77a"/><circle class="gl" cx="632" cy="963" r="5" fill="#ffd77a"/><circle class="gl" cx="670" cy="963" r="5" fill="#ffd77a"/><circle class="gl" cx="435" cy="875" r="5" fill="#ffd77a"/><circle class="gl" cx="470" cy="875" r="5" fill="#ffd77a"/><circle class="gl" cx="505" cy="875" r="5" fill="#ffd77a"/><circle class="gl" cx="540" cy="875" r="5" fill="#ffd77a"/><circle class="gl" cx="575" cy="875" r="5" fill="#ffd77a"/><circle class="gl" cx="610" cy="875" r="5" fill="#ffd77a"/><circle class="gl" cx="645" cy="875" r="5" fill="#ffd77a"/><circle class="gl" cx="460" cy="787" r="5" fill="#ffd77a"/><circle class="gl" cx="492" cy="787" r="5" fill="#ffd77a"/><circle class="gl" cx="524" cy="787" r="5" fill="#ffd77a"/><circle class="gl" cx="556" cy="787" r="5" fill="#ffd77a"/><circle class="gl" cx="588" cy="787" r="5" fill="#ffd77a"/><circle class="gl" cx="620" cy="787" r="5" fill="#ffd77a"/><circle class="gl" cx="484" cy="699" r="5" fill="#ffd77a"/><circle class="gl" cx="512" cy="699" r="5" fill="#ffd77a"/><circle class="gl" cx="540" cy="699" r="5" fill="#ffd77a"/><circle class="gl" cx="568" cy="699" r="5" fill="#ffd77a"/><circle class="gl" cx="596" cy="699" r="5" fill="#ffd77a"/><circle class="gl" cx="507" cy="611" r="5" fill="#ffd77a"/><circle class="gl" cx="529" cy="611" r="5" fill="#ffd77a"/><circle class="gl" cx="551" cy="611" r="5" fill="#ffd77a"/><circle class="gl" cx="573" cy="611" r="5" fill="#ffd77a"/></g>
+  <rect x="0" y="1135" width="1080" height="785" fill="url(#ground)"/>
+  <ellipse id="courtglow" cx="540" cy="1520" rx="620" ry="330" fill="url(#courtglow)" opacity="0"/>
+  <g id="kolam" opacity="0.55"><ellipse cx="540" cy="1520" rx="70" ry="30" fill="none" stroke="#f4efe6" stroke-width="5"/><ellipse cx="540" cy="1520" rx="500" ry="210" fill="none" stroke="#f4efe6" stroke-width="4" stroke-dasharray="14 12"/><ellipse cx="540" cy="1472" rx="22" ry="52" fill="none" stroke="#f4efe6" stroke-width="5" transform="rotate(0 540 1520) scale(1 0.42) translate(0 2099.0)"/><ellipse cx="540" cy="1472" rx="22" ry="52" fill="none" stroke="#f4efe6" stroke-width="5" transform="rotate(45 540 1520) scale(1 0.42) translate(0 2099.0)"/><ellipse cx="540" cy="1472" rx="22" ry="52" fill="none" stroke="#f4efe6" stroke-width="5" transform="rotate(90 540 1520) scale(1 0.42) translate(0 2099.0)"/><ellipse cx="540" cy="1472" rx="22" ry="52" fill="none" stroke="#f4efe6" stroke-width="5" transform="rotate(135 540 1520) scale(1 0.42) translate(0 2099.0)"/><ellipse cx="540" cy="1472" rx="22" ry="52" fill="none" stroke="#f4efe6" stroke-width="5" transform="rotate(180 540 1520) scale(1 0.42) translate(0 2099.0)"/><ellipse cx="540" cy="1472" rx="22" ry="52" fill="none" stroke="#f4efe6" stroke-width="5" transform="rotate(225 540 1520) scale(1 0.42) translate(0 2099.0)"/><ellipse cx="540" cy="1472" rx="22" ry="52" fill="none" stroke="#f4efe6" stroke-width="5" transform="rotate(270 540 1520) scale(1 0.42) translate(0 2099.0)"/><ellipse cx="540" cy="1472" rx="22" ry="52" fill="none" stroke="#f4efe6" stroke-width="5" transform="rotate(315 540 1520) scale(1 0.42) translate(0 2099.0)"/><circle cx="750" cy="1520" r="5" fill="#f4efe6"/><circle cx="737" cy="1550" r="5" fill="#f4efe6"/><circle cx="701" cy="1577" r="5" fill="#f4efe6"/><circle cx="645" cy="1596" r="5" fill="#f4efe6"/><circle cx="576" cy="1607" r="5" fill="#f4efe6"/><circle cx="504" cy="1607" r="5" fill="#f4efe6"/><circle cx="435" cy="1596" r="5" fill="#f4efe6"/><circle cx="379" cy="1577" r="5" fill="#f4efe6"/><circle cx="343" cy="1550" r="5" fill="#f4efe6"/><circle cx="330" cy="1520" r="5" fill="#f4efe6"/><circle cx="343" cy="1490" r="5" fill="#f4efe6"/><circle cx="379" cy="1463" r="5" fill="#f4efe6"/><circle cx="435" cy="1444" r="5" fill="#f4efe6"/><circle cx="504" cy="1433" r="5" fill="#f4efe6"/><circle cx="576" cy="1433" r="5" fill="#f4efe6"/><circle cx="645" cy="1444" r="5" fill="#f4efe6"/><circle cx="701" cy="1463" r="5" fill="#f4efe6"/><circle cx="737" cy="1490" r="5" fill="#f4efe6"/><circle cx="910" cy="1520" r="5" fill="#f4efe6"/><circle cx="888" cy="1573" r="5" fill="#f4efe6"/><circle cx="823" cy="1620" r="5" fill="#f4efe6"/><circle cx="725" cy="1655" r="5" fill="#f4efe6"/><circle cx="604" cy="1673" r="5" fill="#f4efe6"/><circle cx="476" cy="1673" r="5" fill="#f4efe6"/><circle cx="355" cy="1655" r="5" fill="#f4efe6"/><circle cx="257" cy="1620" r="5" fill="#f4efe6"/><circle cx="192" cy="1573" r="5" fill="#f4efe6"/><circle cx="170" cy="1520" r="5" fill="#f4efe6"/><circle cx="192" cy="1467" r="5" fill="#f4efe6"/><circle cx="257" cy="1420" r="5" fill="#f4efe6"/><circle cx="355" cy="1385" r="5" fill="#f4efe6"/><circle cx="476" cy="1367" r="5" fill="#f4efe6"/><circle cx="604" cy="1367" r="5" fill="#f4efe6"/><circle cx="725" cy="1385" r="5" fill="#f4efe6"/><circle cx="823" cy="1420" r="5" fill="#f4efe6"/><circle cx="888" cy="1467" r="5" fill="#f4efe6"/></g>
+  <g id="dc" transform="translate(540 1514) scale(1.25)"><circle id="dcg" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="dcf" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d0_0" transform="translate(540 1458) scale(0.72)"><circle id="d0_0g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d0_0f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d0_1" transform="translate(646 1476) scale(0.75)"><circle id="d0_1g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d0_1f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d0_2" transform="translate(690 1520) scale(0.83)"><circle id="d0_2g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d0_2f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d0_3" transform="translate(646 1564) scale(0.90)"><circle id="d0_3g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d0_3f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d0_4" transform="translate(540 1582) scale(0.94)"><circle id="d0_4g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d0_4f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d0_5" transform="translate(434 1564) scale(0.90)"><circle id="d0_5g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d0_5f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d0_6" transform="translate(390 1520) scale(0.83)"><circle id="d0_6g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d0_6f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d0_7" transform="translate(434 1476) scale(0.75)"><circle id="d0_7g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d0_7f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_0" transform="translate(540 1400) scale(0.81)"><circle id="d1_0g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_0f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_1" transform="translate(666 1412) scale(0.82)"><circle id="d1_1g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_1f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_2" transform="translate(767 1445) scale(0.85)"><circle id="d1_2g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_2f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_3" transform="translate(823 1493) scale(0.90)"><circle id="d1_3g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_3f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_4" transform="translate(823 1547) scale(0.95)"><circle id="d1_4g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_4f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_5" transform="translate(767 1595) scale(1.00)"><circle id="d1_5g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_5f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_6" transform="translate(666 1628) scale(1.03)"><circle id="d1_6g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_6f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_7" transform="translate(540 1640) scale(1.04)"><circle id="d1_7g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_7f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_8" transform="translate(414 1628) scale(1.03)"><circle id="d1_8g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_8f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_9" transform="translate(313 1595) scale(1.00)"><circle id="d1_9g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_9f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_10" transform="translate(257 1547) scale(0.95)"><circle id="d1_10g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_10f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_11" transform="translate(257 1493) scale(0.90)"><circle id="d1_11g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_11f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_12" transform="translate(313 1445) scale(0.85)"><circle id="d1_12g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_12f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d1_13" transform="translate(414 1412) scale(0.82)"><circle id="d1_13g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d1_13f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_0" transform="translate(540 1342) scale(0.89)"><circle id="d2_0g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_0f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_1" transform="translate(673 1351) scale(0.90)"><circle id="d2_1g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_1f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_2" transform="translate(793 1376) scale(0.92)"><circle id="d2_2g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_2f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_3" transform="translate(888 1415) scale(0.95)"><circle id="d2_3g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_3f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_4" transform="translate(949 1465) scale(0.98)"><circle id="d2_4g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_4f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_5" transform="translate(970 1520) scale(1.02)"><circle id="d2_5g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_5f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_6" transform="translate(949 1575) scale(1.06)"><circle id="d2_6g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_6f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_7" transform="translate(888 1625) scale(1.10)"><circle id="d2_7g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_7f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_8" transform="translate(793 1664) scale(1.13)"><circle id="d2_8g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_8f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_9" transform="translate(673 1689) scale(1.15)"><circle id="d2_9g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_9f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_10" transform="translate(540 1698) scale(1.16)"><circle id="d2_10g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_10f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_11" transform="translate(407 1689) scale(1.15)"><circle id="d2_11g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_11f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_12" transform="translate(287 1664) scale(1.13)"><circle id="d2_12g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_12f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_13" transform="translate(192 1625) scale(1.10)"><circle id="d2_13g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_13f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_14" transform="translate(131 1575) scale(1.06)"><circle id="d2_14g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_14f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_15" transform="translate(110 1520) scale(1.02)"><circle id="d2_15g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_15f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_16" transform="translate(131 1465) scale(0.98)"><circle id="d2_16g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_16f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_17" transform="translate(192 1415) scale(0.95)"><circle id="d2_17g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_17f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_18" transform="translate(287 1376) scale(0.92)"><circle id="d2_18g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_18f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g><g id="d2_19" transform="translate(407 1351) scale(0.90)"><circle id="d2_19g" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="0"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="d2_19f" transform="translate(26 -14) scale(0)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g>
+  <g id="kwrap" transform="translate(230 1390) scale(1.15)"><g id="krishna">
+      <g id="kbody">
+        <!-- feet and dhoti -->
+        <ellipse cx="-22" cy="0" rx="20" ry="9" fill="#4f7fc9"/><ellipse cx="22" cy="0" rx="20" ry="9" fill="#4f7fc9"/>
+        <path d="M-52 -150 L52 -150 L60 -6 L-60 -6 Z" fill="#f2c230"/>
+        <path d="M-6 -140 L6 -140 L10 -10 L-10 -10 Z" fill="#e3a91f"/>
+        <!-- upper body, shawl, garland -->
+        <path d="M-50 -232 Q-55 -160 -52 -150 L52 -150 Q55 -160 50 -232 Q0 -246 -50 -232 Z" fill="#4f7fc9"/>
+        <path d="M-50 -232 Q0 -150 50 -232" fill="none" stroke="#f7f3ea" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="-38" cy="-212" r="6" fill="#e0475b"/><circle cx="0" cy="-176" r="7" fill="#e0475b"/><circle cx="38" cy="-212" r="6" fill="#e0475b"/>
+        <path d="M-58 -232 Q-70 -190 -56 -150" fill="none" stroke="#f2c230" stroke-width="12" stroke-linecap="round"/>
+        <!-- left arm forward, holding the lamp -->
+        <path d="M44 -222 Q86 -196 92 -160" fill="none" stroke="#4f7fc9" stroke-width="20" stroke-linecap="round"/>
+      </g>
+      <!-- right arm (waves at the end) -->
+      <g id="karm"><path d="M-44 -222 Q-70 -190 -66 -150" fill="none" stroke="#4f7fc9" stroke-width="20" stroke-linecap="round"/></g>
+      <!-- head -->
+      <g id="khead">
+        <circle cx="0" cy="-290" r="52" fill="#4f7fc9"/>
+        <path d="M-52 -285 Q-48 -342 0 -346 Q48 -342 52 -285 Q40 -318 0 -320 Q-40 -318 -52 -285 Z" fill="#1d1d2b"/>
+        <circle cx="-48" cy="-276" r="12" fill="#1d1d2b"/><circle cx="48" cy="-276" r="12" fill="#1d1d2b"/>
+        <path d="M-40 -330 L-34 -362 L-17 -348 L0 -374 L17 -348 L34 -362 L40 -330 Z" fill="#e6b53a" stroke="#b9862a" stroke-width="3"/>
+        <circle cx="0" cy="-343" r="5" fill="#2b6fd6"/>
+        <g transform="rotate(18 30 -362)"><path d="M30 -358 Q19 -400 30 -426 Q41 -400 30 -358 Z" fill="#1f7a4f"/>
+          <ellipse cx="30" cy="-413" rx="8" ry="10" fill="#d4a017"/><ellipse cx="30" cy="-411" rx="4.5" ry="6" fill="#1e5aa8"/></g>
+        <path d="M-6 -324 Q0 -306 6 -324" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+        <line x1="0" y1="-324" x2="0" y2="-311" stroke="#e0352b" stroke-width="3" stroke-linecap="round"/>
+        <path d="M-24 -290 Q-16 -298 -8 -290" fill="none" stroke="#141420" stroke-width="4.5" stroke-linecap="round"/>
+        <path id="kreye" d="M8 -290 Q16 -298 24 -290" fill="none" stroke="#141420" stroke-width="4.5" stroke-linecap="round"/>
+        <path id="krwink" d="M8 -292 L24 -292" fill="none" stroke="#141420" stroke-width="4.5" stroke-linecap="round" opacity="0"/>
+        <circle cx="-28" cy="-272" r="8" fill="#e98aa0" opacity="0.6"/><circle cx="28" cy="-272" r="8" fill="#e98aa0" opacity="0.6"/>
+        <path d="M-14 -266 Q0 -252 14 -266" fill="none" stroke="#141420" stroke-width="4.5" stroke-linecap="round"/>
+      </g>
+      <!-- his lamp -->
+      <g id="kd" transform="translate(96 -152) scale(0.90)"><circle id="kdg" cx="0" cy="-26" r="46" fill="url(#flameglow)" opacity="1"/><path d="M-30 -4 Q0 26 30 -4 Q0 4 -30 -4 Z" fill="url(#clay)"/><ellipse cx="0" cy="-4" rx="30" ry="7" fill="#7a3a1c"/><ellipse cx="0" cy="-5" rx="24" ry="4.5" fill="#c9862e"/><path d="M18 -6 Q26 -12 30 -8" stroke="#7a3a1c" stroke-width="4" fill="none"/><line x1="22" y1="-8" x2="26" y2="-14" stroke="#2a1a10" stroke-width="2.5"/><g id="kdf" transform="translate(26 -14) scale(1)"><path d="M0 0 C-9 -8 -7 -22 0 -34 C7 -22 9 -8 0 0 Z" fill="url(#flame)"/><path d="M0 -2 C-4 -7 -3 -14 0 -20 C3 -14 4 -7 0 -2 Z" fill="#fffbe6"/></g></g>
+    </g></g>
+  <circle id="spark" cx="0" cy="0" r="9" fill="#fff6c8" opacity="0"/>
+</svg>
+    </div>
+    <div id="tr0" class="clip p" style="left: 257px; top: 1060px; background: #ffd166; box-shadow: 0 0 10px 3px #ffd166;" data-start="12.47" data-duration="0.5" data-track-index="2"></div>
+    <div id="p0_0" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_1" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_2" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_3" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_4" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_5" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_6" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_7" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_8" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_9" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_10" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_11" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_12" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_13" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_14" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_15" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_16" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_17" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_18" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_19" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_20" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_21" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_22" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_23" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_24" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="p0_25" class="clip p" style="left: 257px; top: 557px; background: #ffd166; box-shadow: 0 0 12px 3px #ffd166;" data-start="12.92" data-duration="1.8" data-track-index="3"></div>
+    <div id="tr1" class="clip p" style="left: 817px; top: 1060px; background: #ff5fa2; box-shadow: 0 0 10px 3px #ff5fa2;" data-start="13.02" data-duration="0.5" data-track-index="2"></div>
+    <div id="p1_0" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_1" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_2" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_3" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_4" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_5" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_6" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_7" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_8" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_9" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_10" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_11" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_12" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_13" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_14" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_15" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_16" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_17" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_18" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_19" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_20" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_21" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_22" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_23" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_24" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="p1_25" class="clip p" style="left: 817px; top: 497px; background: #ff5fa2; box-shadow: 0 0 12px 3px #ff5fa2;" data-start="13.47" data-duration="1.8" data-track-index="4"></div>
+    <div id="tr2" class="clip p" style="left: 537px; top: 1060px; background: #7ae7ff; box-shadow: 0 0 10px 3px #7ae7ff;" data-start="13.62" data-duration="0.5" data-track-index="2"></div>
+    <div id="p2_0" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_1" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_2" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_3" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_4" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_5" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_6" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_7" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_8" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_9" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_10" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_11" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_12" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_13" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_14" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_15" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_16" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_17" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_18" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_19" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_20" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_21" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_22" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_23" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_24" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="p2_25" class="clip p" style="left: 537px; top: 417px; background: #7ae7ff; box-shadow: 0 0 12px 3px #7ae7ff;" data-start="14.07" data-duration="1.8" data-track-index="5"></div>
+    <div id="tr3" class="clip p" style="left: 857px; top: 1060px; background: #9dff7a; box-shadow: 0 0 10px 3px #9dff7a;" data-start="14.27" data-duration="0.5" data-track-index="2"></div>
+    <div id="p3_0" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_1" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_2" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_3" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_4" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_5" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_6" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_7" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_8" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_9" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_10" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_11" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_12" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_13" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_14" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_15" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_16" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_17" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_18" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_19" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_20" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_21" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_22" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_23" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_24" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="p3_25" class="clip p" style="left: 857px; top: 697px; background: #9dff7a; box-shadow: 0 0 12px 3px #9dff7a;" data-start="14.72" data-duration="1.8" data-track-index="6"></div>
+    <div id="tr4" class="clip p" style="left: 197px; top: 1060px; background: #ffb347; box-shadow: 0 0 10px 3px #ffb347;" data-start="14.87" data-duration="0.5" data-track-index="2"></div>
+    <div id="p4_0" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_1" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_2" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_3" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_4" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_5" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_6" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_7" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_8" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_9" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_10" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_11" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_12" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_13" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_14" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_15" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_16" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_17" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_18" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_19" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_20" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_21" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_22" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_23" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_24" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="p4_25" class="clip p" style="left: 197px; top: 757px; background: #ffb347; box-shadow: 0 0 12px 3px #ffb347;" data-start="15.32" data-duration="1.8" data-track-index="7"></div>
+    <div id="c0" class="clip cap n" data-start="0.00" data-duration="3.54" data-track-index="10">One lamp… is all it takes.</div>
+    <div id="c1" class="clip cap n" data-start="4.14" data-duration="5.98" data-track-index="11">On this night, long ago,<br>Krishna ended the darkness<br>of <b>Narakasura</b>…</div>
+    <div id="c2" class="clip cap n" data-start="10.22" data-duration="2.70" data-track-index="10">…and the world lit up<br>with <b>lamps.</b></div>
+    <div id="c3" class="clip cap k" data-start="13.32" data-duration="3.99" data-track-index="11">“Be the light…<br>for someone in the dark.”</div>
+    <div id="title" class="clip" data-start="17.31" data-duration="6.67" data-track-index="12">Happy<br>Deepavali</div>
+    <div id="tamil" class="clip" data-start="17.71" data-duration="6.27" data-track-index="13">இனிய தீபாவளி நல்வாழ்த்துக்கள் 🪔</div>
+    <div id="cta" class="clip" data-start="18.81" data-duration="5.17" data-track-index="14">Send this <b>light</b> to someone you love 🪔<br><span style="font-size: 30px; font-weight: 600; color: #f3dcae">@lordsrikrishnatemple</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#cam", { transformOrigin: "540px 1300px", scale: 1.06 }, 0);
+    tl.to("#cam", { scale: 1.0, duration: 23.98, ease: "none" }, 0);
+    tl.fromTo("#stars", { opacity: 0.6 }, { opacity: 1, duration: 1.8, yoyo: true, repeat: 13, ease: "sine.inOut" }, 0);
+    tl.fromTo("#krishna", { x: -380 }, { x: 0, duration: 1.8, ease: "power2.out" }, 0.6);
+    tl.fromTo("#kbody", { y: 0 }, { y: -8, duration: 0.3, yoyo: true, repeat: 5, ease: "sine.inOut" }, 0.6);
+    tl.fromTo("#kdf", { scaleY: 0.92 }, { scaleY: 1.08, duration: 0.35, yoyo: true, repeat: 68, ease: "sine.inOut" }, 0);
+    tl.set("#spark", { attr: { cx: 367, cy: 1178 }, opacity: 0 }, 0);
+    tl.to("#spark", { opacity: 1, duration: 0.1 }, 3.14);
+    tl.to("#spark", { keyframes: [{ attr: { cx: 470, cy: 1018 }, duration: 0.35, ease: "sine.out" }, { attr: { cx: 572, cy: 1476 }, duration: 0.35, ease: "sine.in" }] }, 3.14);
+    tl.to("#spark", { opacity: 0, duration: 0.15 }, 3.84);
+    tl.to("#dcf", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 3.84);
+    tl.to("#dcg", { opacity: 1, duration: 0.4 }, 3.84);
+    tl.to("#dcf", { scaleY: 1.1, scaleX: 0.92, duration: 0.40, yoyo: true, repeat: 50, ease: "sine.inOut" }, 4.09);
+    tl.to("#courtglow", { opacity: 0.35, duration: 0.8 }, 3.84);
+    tl.to("#d0_0f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.12);
+    tl.to("#d0_0g", { opacity: 1, duration: 0.4 }, 10.12);
+    tl.to("#d0_0f", { scaleY: 1.1, scaleX: 0.92, duration: 0.30, yoyo: true, repeat: 46, ease: "sine.inOut" }, 10.37);
+    tl.to("#d0_1f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.18);
+    tl.to("#d0_1g", { opacity: 1, duration: 0.4 }, 10.18);
+    tl.to("#d0_1f", { scaleY: 1.1, scaleX: 0.92, duration: 0.33, yoyo: true, repeat: 41, ease: "sine.inOut" }, 10.43);
+    tl.to("#d0_2f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.24);
+    tl.to("#d0_2g", { opacity: 1, duration: 0.4 }, 10.24);
+    tl.to("#d0_2f", { scaleY: 1.1, scaleX: 0.92, duration: 0.36, yoyo: true, repeat: 38, ease: "sine.inOut" }, 10.49);
+    tl.to("#d0_3f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.31);
+    tl.to("#d0_3g", { opacity: 1, duration: 0.4 }, 10.31);
+    tl.to("#d0_3f", { scaleY: 1.1, scaleX: 0.92, duration: 0.39, yoyo: true, repeat: 35, ease: "sine.inOut" }, 10.56);
+    tl.to("#d0_4f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.37);
+    tl.to("#d0_4g", { opacity: 1, duration: 0.4 }, 10.37);
+    tl.to("#d0_4f", { scaleY: 1.1, scaleX: 0.92, duration: 0.42, yoyo: true, repeat: 32, ease: "sine.inOut" }, 10.62);
+    tl.to("#d0_5f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.43);
+    tl.to("#d0_5g", { opacity: 1, duration: 0.4 }, 10.43);
+    tl.to("#d0_5f", { scaleY: 1.1, scaleX: 0.92, duration: 0.45, yoyo: true, repeat: 30, ease: "sine.inOut" }, 10.68);
+    tl.to("#d0_6f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.49);
+    tl.to("#d0_6g", { opacity: 1, duration: 0.4 }, 10.49);
+    tl.to("#d0_6f", { scaleY: 1.1, scaleX: 0.92, duration: 0.30, yoyo: true, repeat: 44, ease: "sine.inOut" }, 10.74);
+    tl.to("#d0_7f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.56);
+    tl.to("#d0_7g", { opacity: 1, duration: 0.4 }, 10.56);
+    tl.to("#d0_7f", { scaleY: 1.1, scaleX: 0.92, duration: 0.33, yoyo: true, repeat: 40, ease: "sine.inOut" }, 10.81);
+    tl.to("#d1_0f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.72);
+    tl.to("#d1_0g", { opacity: 1, duration: 0.4 }, 10.72);
+    tl.to("#d1_0f", { scaleY: 1.1, scaleX: 0.92, duration: 0.33, yoyo: true, repeat: 40, ease: "sine.inOut" }, 10.97);
+    tl.to("#d1_1f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.77);
+    tl.to("#d1_1g", { opacity: 1, duration: 0.4 }, 10.77);
+    tl.to("#d1_1f", { scaleY: 1.1, scaleX: 0.92, duration: 0.36, yoyo: true, repeat: 36, ease: "sine.inOut" }, 11.02);
+    tl.to("#d1_2f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.81);
+    tl.to("#d1_2g", { opacity: 1, duration: 0.4 }, 10.81);
+    tl.to("#d1_2f", { scaleY: 1.1, scaleX: 0.92, duration: 0.39, yoyo: true, repeat: 33, ease: "sine.inOut" }, 11.06);
+    tl.to("#d1_3f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.86);
+    tl.to("#d1_3g", { opacity: 1, duration: 0.4 }, 10.86);
+    tl.to("#d1_3f", { scaleY: 1.1, scaleX: 0.92, duration: 0.42, yoyo: true, repeat: 31, ease: "sine.inOut" }, 11.11);
+    tl.to("#d1_4f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.91);
+    tl.to("#d1_4g", { opacity: 1, duration: 0.4 }, 10.91);
+    tl.to("#d1_4f", { scaleY: 1.1, scaleX: 0.92, duration: 0.45, yoyo: true, repeat: 29, ease: "sine.inOut" }, 11.16);
+    tl.to("#d1_5f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 10.95);
+    tl.to("#d1_5g", { opacity: 1, duration: 0.4 }, 10.95);
+    tl.to("#d1_5f", { scaleY: 1.1, scaleX: 0.92, duration: 0.30, yoyo: true, repeat: 43, ease: "sine.inOut" }, 11.20);
+    tl.to("#d1_6f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.00);
+    tl.to("#d1_6g", { opacity: 1, duration: 0.4 }, 11.00);
+    tl.to("#d1_6f", { scaleY: 1.1, scaleX: 0.92, duration: 0.33, yoyo: true, repeat: 39, ease: "sine.inOut" }, 11.25);
+    tl.to("#d1_7f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.04);
+    tl.to("#d1_7g", { opacity: 1, duration: 0.4 }, 11.04);
+    tl.to("#d1_7f", { scaleY: 1.1, scaleX: 0.92, duration: 0.36, yoyo: true, repeat: 35, ease: "sine.inOut" }, 11.29);
+    tl.to("#d1_8f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.09);
+    tl.to("#d1_8g", { opacity: 1, duration: 0.4 }, 11.09);
+    tl.to("#d1_8f", { scaleY: 1.1, scaleX: 0.92, duration: 0.39, yoyo: true, repeat: 33, ease: "sine.inOut" }, 11.34);
+    tl.to("#d1_9f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.14);
+    tl.to("#d1_9g", { opacity: 1, duration: 0.4 }, 11.14);
+    tl.to("#d1_9f", { scaleY: 1.1, scaleX: 0.92, duration: 0.42, yoyo: true, repeat: 30, ease: "sine.inOut" }, 11.39);
+    tl.to("#d1_10f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.18);
+    tl.to("#d1_10g", { opacity: 1, duration: 0.4 }, 11.18);
+    tl.to("#d1_10f", { scaleY: 1.1, scaleX: 0.92, duration: 0.45, yoyo: true, repeat: 28, ease: "sine.inOut" }, 11.43);
+    tl.to("#d1_11f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.23);
+    tl.to("#d1_11g", { opacity: 1, duration: 0.4 }, 11.23);
+    tl.to("#d1_11f", { scaleY: 1.1, scaleX: 0.92, duration: 0.30, yoyo: true, repeat: 42, ease: "sine.inOut" }, 11.48);
+    tl.to("#d1_12f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.28);
+    tl.to("#d1_12g", { opacity: 1, duration: 0.4 }, 11.28);
+    tl.to("#d1_12f", { scaleY: 1.1, scaleX: 0.92, duration: 0.33, yoyo: true, repeat: 38, ease: "sine.inOut" }, 11.53);
+    tl.to("#d1_13f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.32);
+    tl.to("#d1_13g", { opacity: 1, duration: 0.4 }, 11.32);
+    tl.to("#d1_13f", { scaleY: 1.1, scaleX: 0.92, duration: 0.36, yoyo: true, repeat: 35, ease: "sine.inOut" }, 11.57);
+    tl.to("#d2_0f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.42);
+    tl.to("#d2_0g", { opacity: 1, duration: 0.4 }, 11.42);
+    tl.to("#d2_0f", { scaleY: 1.1, scaleX: 0.92, duration: 0.36, yoyo: true, repeat: 34, ease: "sine.inOut" }, 11.67);
+    tl.to("#d2_1f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.46);
+    tl.to("#d2_1g", { opacity: 1, duration: 0.4 }, 11.46);
+    tl.to("#d2_1f", { scaleY: 1.1, scaleX: 0.92, duration: 0.39, yoyo: true, repeat: 32, ease: "sine.inOut" }, 11.71);
+    tl.to("#d2_2f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.50);
+    tl.to("#d2_2g", { opacity: 1, duration: 0.4 }, 11.50);
+    tl.to("#d2_2f", { scaleY: 1.1, scaleX: 0.92, duration: 0.42, yoyo: true, repeat: 29, ease: "sine.inOut" }, 11.75);
+    tl.to("#d2_3f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.54);
+    tl.to("#d2_3g", { opacity: 1, duration: 0.4 }, 11.54);
+    tl.to("#d2_3f", { scaleY: 1.1, scaleX: 0.92, duration: 0.45, yoyo: true, repeat: 27, ease: "sine.inOut" }, 11.79);
+    tl.to("#d2_4f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.58);
+    tl.to("#d2_4g", { opacity: 1, duration: 0.4 }, 11.58);
+    tl.to("#d2_4f", { scaleY: 1.1, scaleX: 0.92, duration: 0.30, yoyo: true, repeat: 41, ease: "sine.inOut" }, 11.83);
+    tl.to("#d2_5f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.62);
+    tl.to("#d2_5g", { opacity: 1, duration: 0.4 }, 11.62);
+    tl.to("#d2_5f", { scaleY: 1.1, scaleX: 0.92, duration: 0.33, yoyo: true, repeat: 37, ease: "sine.inOut" }, 11.87);
+    tl.to("#d2_6f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.66);
+    tl.to("#d2_6g", { opacity: 1, duration: 0.4 }, 11.66);
+    tl.to("#d2_6f", { scaleY: 1.1, scaleX: 0.92, duration: 0.36, yoyo: true, repeat: 34, ease: "sine.inOut" }, 11.91);
+    tl.to("#d2_7f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.70);
+    tl.to("#d2_7g", { opacity: 1, duration: 0.4 }, 11.70);
+    tl.to("#d2_7f", { scaleY: 1.1, scaleX: 0.92, duration: 0.39, yoyo: true, repeat: 31, ease: "sine.inOut" }, 11.95);
+    tl.to("#d2_8f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.74);
+    tl.to("#d2_8g", { opacity: 1, duration: 0.4 }, 11.74);
+    tl.to("#d2_8f", { scaleY: 1.1, scaleX: 0.92, duration: 0.42, yoyo: true, repeat: 29, ease: "sine.inOut" }, 11.99);
+    tl.to("#d2_9f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.78);
+    tl.to("#d2_9g", { opacity: 1, duration: 0.4 }, 11.78);
+    tl.to("#d2_9f", { scaleY: 1.1, scaleX: 0.92, duration: 0.45, yoyo: true, repeat: 27, ease: "sine.inOut" }, 12.03);
+    tl.to("#d2_10f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.82);
+    tl.to("#d2_10g", { opacity: 1, duration: 0.4 }, 11.82);
+    tl.to("#d2_10f", { scaleY: 1.1, scaleX: 0.92, duration: 0.30, yoyo: true, repeat: 40, ease: "sine.inOut" }, 12.07);
+    tl.to("#d2_11f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.86);
+    tl.to("#d2_11g", { opacity: 1, duration: 0.4 }, 11.86);
+    tl.to("#d2_11f", { scaleY: 1.1, scaleX: 0.92, duration: 0.33, yoyo: true, repeat: 36, ease: "sine.inOut" }, 12.11);
+    tl.to("#d2_12f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.90);
+    tl.to("#d2_12g", { opacity: 1, duration: 0.4 }, 11.90);
+    tl.to("#d2_12f", { scaleY: 1.1, scaleX: 0.92, duration: 0.36, yoyo: true, repeat: 33, ease: "sine.inOut" }, 12.15);
+    tl.to("#d2_13f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.94);
+    tl.to("#d2_13g", { opacity: 1, duration: 0.4 }, 11.94);
+    tl.to("#d2_13f", { scaleY: 1.1, scaleX: 0.92, duration: 0.39, yoyo: true, repeat: 30, ease: "sine.inOut" }, 12.19);
+    tl.to("#d2_14f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.98);
+    tl.to("#d2_14g", { opacity: 1, duration: 0.4 }, 11.98);
+    tl.to("#d2_14f", { scaleY: 1.1, scaleX: 0.92, duration: 0.42, yoyo: true, repeat: 28, ease: "sine.inOut" }, 12.23);
+    tl.to("#d2_15f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 12.02);
+    tl.to("#d2_15g", { opacity: 1, duration: 0.4 }, 12.02);
+    tl.to("#d2_15f", { scaleY: 1.1, scaleX: 0.92, duration: 0.45, yoyo: true, repeat: 26, ease: "sine.inOut" }, 12.27);
+    tl.to("#d2_16f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 12.06);
+    tl.to("#d2_16g", { opacity: 1, duration: 0.4 }, 12.06);
+    tl.to("#d2_16f", { scaleY: 1.1, scaleX: 0.92, duration: 0.30, yoyo: true, repeat: 39, ease: "sine.inOut" }, 12.31);
+    tl.to("#d2_17f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 12.10);
+    tl.to("#d2_17g", { opacity: 1, duration: 0.4 }, 12.10);
+    tl.to("#d2_17f", { scaleY: 1.1, scaleX: 0.92, duration: 0.33, yoyo: true, repeat: 36, ease: "sine.inOut" }, 12.35);
+    tl.to("#d2_18f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 12.14);
+    tl.to("#d2_18g", { opacity: 1, duration: 0.4 }, 12.14);
+    tl.to("#d2_18f", { scaleY: 1.1, scaleX: 0.92, duration: 0.36, yoyo: true, repeat: 32, ease: "sine.inOut" }, 12.39);
+    tl.to("#d2_19f", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 12.18);
+    tl.to("#d2_19g", { opacity: 1, duration: 0.4 }, 12.18);
+    tl.to("#d2_19f", { scaleY: 1.1, scaleX: 0.92, duration: 0.39, yoyo: true, repeat: 30, ease: "sine.inOut" }, 12.43);
+    tl.to("#courtglow", { opacity: 1, duration: 2.0 }, 10.12);
+    tl.to("#kolam", { opacity: 0.95, duration: 2.0 }, 10.12);
+    tl.to("#glights", { opacity: 1, duration: 0.8 }, 12.42);
+    tl.to("#gglow", { opacity: 0.8, duration: 1.2 }, 12.42);
+    tl.fromTo(".gl", { opacity: 0.6 }, { opacity: 1, duration: 0.5, yoyo: true, repeat: 12, stagger: 0.03, ease: "sine.inOut" }, 13.22);
+    tl.fromTo("#tr0", { opacity: 1, y: 0 }, { opacity: 0.4, y: -500, duration: 0.45, ease: "power2.out" }, 12.47);
+    tl.fromTo("#p0_0", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 192, y: 7, duration: 0.7, ease: "power3.out" }, { y: 77, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_1", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 202, y: 46, duration: 0.7, ease: "power3.out" }, { y: 116, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_2", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 179, y: 113, duration: 0.7, ease: "power3.out" }, { y: 183, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_3", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 133, y: 109, duration: 0.7, ease: "power3.out" }, { y: 179, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_4", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 96, y: 156, duration: 0.7, ease: "power3.out" }, { y: 226, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_5", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 63, y: 190, duration: 0.7, ease: "power3.out" }, { y: 260, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_6", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 19, y: 158, duration: 0.7, ease: "power3.out" }, { y: 228, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_7", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -25, y: 154, duration: 0.7, ease: "power3.out" }, { y: 224, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_8", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -59, y: 208, duration: 0.7, ease: "power3.out" }, { y: 278, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_9", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -120, y: 158, duration: 0.7, ease: "power3.out" }, { y: 228, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_10", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -160, y: 139, duration: 0.7, ease: "power3.out" }, { y: 209, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_11", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -207, y: 94, duration: 0.7, ease: "power3.out" }, { y: 164, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_12", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -220, y: 58, duration: 0.7, ease: "power3.out" }, { y: 128, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_13", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -214, y: 14, duration: 0.7, ease: "power3.out" }, { y: 84, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_14", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -196, y: -46, duration: 0.7, ease: "power3.out" }, { y: 24, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_15", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -141, y: -61, duration: 0.7, ease: "power3.out" }, { y: 9, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_16", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -124, y: -111, duration: 0.7, ease: "power3.out" }, { y: -41, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_17", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -109, y: -170, duration: 0.7, ease: "power3.out" }, { y: -100, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_18", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -58, y: -177, duration: 0.7, ease: "power3.out" }, { y: -107, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_19", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -30, y: -176, duration: 0.7, ease: "power3.out" }, { y: -106, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_20", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 35, y: -225, duration: 0.7, ease: "power3.out" }, { y: -155, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_21", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 90, y: -196, duration: 0.7, ease: "power3.out" }, { y: -126, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_22", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 81, y: -132, duration: 0.7, ease: "power3.out" }, { y: -62, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_23", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 116, y: -106, duration: 0.7, ease: "power3.out" }, { y: -36, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_24", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 148, y: -87, duration: 0.7, ease: "power3.out" }, { y: -17, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#p0_25", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 206, y: -47, duration: 0.7, ease: "power3.out" }, { y: 23, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 12.92);
+    tl.fromTo("#tr1", { opacity: 1, y: 0 }, { opacity: 0.4, y: -560, duration: 0.45, ease: "power2.out" }, 13.02);
+    tl.fromTo("#p1_0", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 188, y: 5, duration: 0.7, ease: "power3.out" }, { y: 75, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_1", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 193, y: 38, duration: 0.7, ease: "power3.out" }, { y: 108, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_2", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 183, y: 100, duration: 0.7, ease: "power3.out" }, { y: 170, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_3", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 137, y: 132, duration: 0.7, ease: "power3.out" }, { y: 202, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_4", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 90, y: 143, duration: 0.7, ease: "power3.out" }, { y: 213, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_5", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 47, y: 151, duration: 0.7, ease: "power3.out" }, { y: 221, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_6", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 20, y: 158, duration: 0.7, ease: "power3.out" }, { y: 228, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_7", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -17, y: 207, duration: 0.7, ease: "power3.out" }, { y: 277, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_8", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -47, y: 148, duration: 0.7, ease: "power3.out" }, { y: 218, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_9", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -128, y: 184, duration: 0.7, ease: "power3.out" }, { y: 254, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_10", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -109, y: 108, duration: 0.7, ease: "power3.out" }, { y: 178, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_11", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -187, y: 105, duration: 0.7, ease: "power3.out" }, { y: 175, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_12", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -154, y: 39, duration: 0.7, ease: "power3.out" }, { y: 109, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_13", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -180, y: -13, duration: 0.7, ease: "power3.out" }, { y: 57, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_14", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -161, y: -51, duration: 0.7, ease: "power3.out" }, { y: 19, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_15", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -168, y: -100, duration: 0.7, ease: "power3.out" }, { y: -30, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_16", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -138, y: -121, duration: 0.7, ease: "power3.out" }, { y: -51, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_17", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -96, y: -131, duration: 0.7, ease: "power3.out" }, { y: -61, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_18", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -88, y: -198, duration: 0.7, ease: "power3.out" }, { y: -128, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_19", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -20, y: -191, duration: 0.7, ease: "power3.out" }, { y: -121, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_20", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 37, y: -204, duration: 0.7, ease: "power3.out" }, { y: -134, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_21", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 79, y: -213, duration: 0.7, ease: "power3.out" }, { y: -143, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_22", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 91, y: -147, duration: 0.7, ease: "power3.out" }, { y: -77, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_23", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 157, y: -144, duration: 0.7, ease: "power3.out" }, { y: -74, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_24", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 145, y: -91, duration: 0.7, ease: "power3.out" }, { y: -21, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#p1_25", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 175, y: -28, duration: 0.7, ease: "power3.out" }, { y: 42, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 13.47);
+    tl.fromTo("#tr2", { opacity: 1, y: 0 }, { opacity: 0.4, y: -640, duration: 0.45, ease: "power2.out" }, 13.62);
+    tl.fromTo("#p2_0", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 154, y: -1, duration: 0.7, ease: "power3.out" }, { y: 69, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_1", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 192, y: 44, duration: 0.7, ease: "power3.out" }, { y: 114, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_2", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 200, y: 105, duration: 0.7, ease: "power3.out" }, { y: 175, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_3", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 125, y: 129, duration: 0.7, ease: "power3.out" }, { y: 199, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_4", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 86, y: 144, duration: 0.7, ease: "power3.out" }, { y: 214, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_5", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 82, y: 209, duration: 0.7, ease: "power3.out" }, { y: 279, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_6", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 10, y: 202, duration: 0.7, ease: "power3.out" }, { y: 272, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_7", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -14, y: 161, duration: 0.7, ease: "power3.out" }, { y: 231, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_8", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -81, y: 208, duration: 0.7, ease: "power3.out" }, { y: 278, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_9", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -132, y: 171, duration: 0.7, ease: "power3.out" }, { y: 241, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_10", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -146, y: 121, duration: 0.7, ease: "power3.out" }, { y: 191, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_11", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -165, y: 83, duration: 0.7, ease: "power3.out" }, { y: 153, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_12", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -174, y: 27, duration: 0.7, ease: "power3.out" }, { y: 97, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_13", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -220, y: 11, duration: 0.7, ease: "power3.out" }, { y: 81, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_14", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -217, y: -39, duration: 0.7, ease: "power3.out" }, { y: 31, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_15", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -153, y: -94, duration: 0.7, ease: "power3.out" }, { y: -24, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_16", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -116, y: -117, duration: 0.7, ease: "power3.out" }, { y: -47, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_17", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -99, y: -170, duration: 0.7, ease: "power3.out" }, { y: -100, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_18", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -85, y: -183, duration: 0.7, ease: "power3.out" }, { y: -113, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_19", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -23, y: -193, duration: 0.7, ease: "power3.out" }, { y: -123, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_20", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 37, y: -206, duration: 0.7, ease: "power3.out" }, { y: -136, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_21", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 67, y: -150, duration: 0.7, ease: "power3.out" }, { y: -80, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_22", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 98, y: -147, duration: 0.7, ease: "power3.out" }, { y: -77, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_23", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 140, y: -109, duration: 0.7, ease: "power3.out" }, { y: -39, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_24", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 178, y: -93, duration: 0.7, ease: "power3.out" }, { y: -23, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#p2_25", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 162, y: -33, duration: 0.7, ease: "power3.out" }, { y: 37, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.07);
+    tl.fromTo("#tr3", { opacity: 1, y: 0 }, { opacity: 0.4, y: -360, duration: 0.45, ease: "power2.out" }, 14.27);
+    tl.fromTo("#p3_0", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 212, y: -13, duration: 0.7, ease: "power3.out" }, { y: 57, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_1", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 182, y: 38, duration: 0.7, ease: "power3.out" }, { y: 108, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_2", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 187, y: 86, duration: 0.7, ease: "power3.out" }, { y: 156, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_3", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 143, y: 120, duration: 0.7, ease: "power3.out" }, { y: 190, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_4", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 104, y: 165, duration: 0.7, ease: "power3.out" }, { y: 235, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_5", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 46, y: 152, duration: 0.7, ease: "power3.out" }, { y: 222, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_6", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 21, y: 192, duration: 0.7, ease: "power3.out" }, { y: 262, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_7", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -14, y: 218, duration: 0.7, ease: "power3.out" }, { y: 288, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_8", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -72, y: 214, duration: 0.7, ease: "power3.out" }, { y: 284, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_9", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -118, y: 148, duration: 0.7, ease: "power3.out" }, { y: 218, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_10", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -138, y: 110, duration: 0.7, ease: "power3.out" }, { y: 180, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_11", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -169, y: 91, duration: 0.7, ease: "power3.out" }, { y: 161, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_12", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -216, y: 74, duration: 0.7, ease: "power3.out" }, { y: 144, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_13", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -155, y: -10, duration: 0.7, ease: "power3.out" }, { y: 60, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_14", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -165, y: -45, duration: 0.7, ease: "power3.out" }, { y: 25, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_15", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -142, y: -82, duration: 0.7, ease: "power3.out" }, { y: -12, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_16", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -178, y: -133, duration: 0.7, ease: "power3.out" }, { y: -63, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_17", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -125, y: -183, duration: 0.7, ease: "power3.out" }, { y: -113, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_18", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -65, y: -146, duration: 0.7, ease: "power3.out" }, { y: -76, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_19", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -15, y: -160, duration: 0.7, ease: "power3.out" }, { y: -90, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_20", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 18, y: -170, duration: 0.7, ease: "power3.out" }, { y: -100, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_21", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 78, y: -174, duration: 0.7, ease: "power3.out" }, { y: -104, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_22", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 109, y: -184, duration: 0.7, ease: "power3.out" }, { y: -114, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_23", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 120, y: -107, duration: 0.7, ease: "power3.out" }, { y: -37, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_24", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 151, y: -65, duration: 0.7, ease: "power3.out" }, { y: 5, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#p3_25", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 201, y: -37, duration: 0.7, ease: "power3.out" }, { y: 33, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 14.72);
+    tl.fromTo("#tr4", { opacity: 1, y: 0 }, { opacity: 0.4, y: -300, duration: 0.45, ease: "power2.out" }, 14.87);
+    tl.fromTo("#p4_0", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 228, y: -11, duration: 0.7, ease: "power3.out" }, { y: 59, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_1", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 188, y: 32, duration: 0.7, ease: "power3.out" }, { y: 102, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_2", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 153, y: 80, duration: 0.7, ease: "power3.out" }, { y: 150, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_3", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 154, y: 127, duration: 0.7, ease: "power3.out" }, { y: 197, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_4", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 93, y: 161, duration: 0.7, ease: "power3.out" }, { y: 231, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_5", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 70, y: 164, duration: 0.7, ease: "power3.out" }, { y: 234, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_6", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 17, y: 169, duration: 0.7, ease: "power3.out" }, { y: 239, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_7", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -35, y: 168, duration: 0.7, ease: "power3.out" }, { y: 238, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_8", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -61, y: 173, duration: 0.7, ease: "power3.out" }, { y: 243, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_9", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -134, y: 185, duration: 0.7, ease: "power3.out" }, { y: 255, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_10", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -164, y: 161, duration: 0.7, ease: "power3.out" }, { y: 231, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_11", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -200, y: 105, duration: 0.7, ease: "power3.out" }, { y: 175, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_12", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -155, y: 50, duration: 0.7, ease: "power3.out" }, { y: 120, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_13", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -200, y: 2, duration: 0.7, ease: "power3.out" }, { y: 72, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_14", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -160, y: -35, duration: 0.7, ease: "power3.out" }, { y: 35, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_15", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -193, y: -104, duration: 0.7, ease: "power3.out" }, { y: -34, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_16", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -122, y: -110, duration: 0.7, ease: "power3.out" }, { y: -40, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_17", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -84, y: -129, duration: 0.7, ease: "power3.out" }, { y: -59, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_18", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -63, y: -188, duration: 0.7, ease: "power3.out" }, { y: -118, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_19", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: -30, y: -215, duration: 0.7, ease: "power3.out" }, { y: -145, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_20", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 26, y: -216, duration: 0.7, ease: "power3.out" }, { y: -146, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_21", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 50, y: -150, duration: 0.7, ease: "power3.out" }, { y: -80, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_22", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 117, y: -194, duration: 0.7, ease: "power3.out" }, { y: -124, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_23", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 159, y: -161, duration: 0.7, ease: "power3.out" }, { y: -91, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_24", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 159, y: -73, duration: 0.7, ease: "power3.out" }, { y: -3, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.fromTo("#p4_25", { opacity: 1, x: 0, y: 0, scale: 1.2 }, { keyframes: [{ x: 167, y: -38, duration: 0.7, ease: "power3.out" }, { y: 32, opacity: 0, scale: 0.6, duration: 1.0, ease: "sine.in" }] }, 15.32);
+    tl.to("#karm", { rotation: -120, svgOrigin: "-44 -222", duration: 0.35, ease: "power2.out" }, 17.11);
+    tl.to("#karm", { rotation: -95, svgOrigin: "-44 -222", duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, 17.46);
+    tl.set("#kreye", { opacity: 0 }, 17.91);
+    tl.set("#krwink", { opacity: 1 }, 17.91);
+    tl.set("#kreye", { opacity: 1 }, 18.41);
+    tl.set("#krwink", { opacity: 0 }, 18.41);
+    tl.to("#c0", { opacity: 0, duration: 0.25 }, 3.29);
+    tl.fromTo("#c1", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 4.14);
+    tl.to("#c1", { opacity: 0, duration: 0.25 }, 9.87);
+    tl.fromTo("#c2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 10.22);
+    tl.to("#c2", { opacity: 0, duration: 0.25 }, 12.67);
+    tl.fromTo("#c3", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 13.32);
+    tl.to("#c3", { opacity: 0, duration: 0.25 }, 17.06);
+    tl.fromTo("#title", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power3.out" }, 17.31);
+    tl.fromTo("#tamil", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 17.71);
+    tl.fromTo("#cta", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, 18.81);
+    window.__timelines["scene"] = tl;
+  </script>
+</template>

@@ -31,3 +31,4 @@ Tracks: ask the user for a new track (and its BPM and drop) every 2-3 reels; the
 | 12 | C chat with Kanna (3 a.m.) | none | send it to someone | any calm track (ZAKHELO rested) | night blue and gold phone chat |
 | 13 | D one verse (Gita 2.14) | free EN: Christopher + Andrew | save it | any calm track | palm leaf, candlelight, Cormorant |
 | 14 | J animated skit: Krishna cameo (new) | free EN: Christopher + Andrew divine | send to someone | any calm track | flat SVG cartoon, night to morning |
+| Deepavali | J festival special: Krishna lights the first lamp | free EN: Christopher + Andrew calm | send to someone | a festive or calm track | new-moon courtyard, gopuram, kolam of diyas, fireworks |
