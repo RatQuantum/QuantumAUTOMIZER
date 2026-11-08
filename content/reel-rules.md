@@ -55,6 +55,12 @@ Every reel is checked against all of these. If one fails, fix it before renderin
     payoff breathe for 2+ s before the next thing. A longer reel that people can follow beats a short one they cannot.
     The beat grid serves the pacing, not the other way round (use 2 or more beats per step when needed).
 
+7h. **The right pace: neither rushed nor slow** (the user, 8 Nov: "first it was super fast, now it is super slow").
+    Voices at natural speed (narrator -3%, Krishna -8% with 0.3 s inner pauses; tools/free_voice.sh trims the ~1 s of
+    silence the TTS adds at both ends). Lines follow each other after ~0.35 s; a caption stays while it is spoken plus
+    ~0.4 s; story beats get only the time they need (an appearance ~1 s, a reaction ~0.8 s). Compute the schedule from the
+    real voice lengths, never from fixed guesses. Most voiced reels land at 22-30 s. Choices (cards) still get 3-4 s.
+
 ## What NOT to copy
 8. The curtain/door reveal only works with REAL darshan footage (the 33.4K reel). With AI art there is nothing
    the viewer is waiting to see. Do not use reveal-of-a-place hooks with AI.

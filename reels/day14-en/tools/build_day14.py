@@ -9,18 +9,43 @@ import random
 import subprocess
 
 W, H = 1080, 1920
-TOTAL = 41.0
 A, SFX = "assets/audio/", "assets/sfx/"
 
-# timeline (seconds)
-T = dict(n1=0.5, buzz=6.0, n2=6.6, headdown=11.6, glow=12.8, kin=13.2, blow=14.4, feather=14.6, k1=17.6,
-         lampoff=23.0, wink=23.6, kout=24.4, morning=25.2, n3=27.2, headup=27.4, smile=29.6, n4=33.6, cta=33.4)
+
+def dur(f):
+    return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f],
+                                capture_output=True, text=True, check=True).stdout)
+
+
+# PACE (8 Nov, the user: "first super fast, now super slow"): natural-speed voices; each story beat gets just the time it
+# needs; the schedule is computed from the real voice lengths.
+D = {k: dur(A + k + ".wav") for k in ("n1", "n2", "k1", "n3", "n4")}
+T = {"n1": 0.4}
+T["buzz"] = T["n1"] + D["n1"] + 0.25
+T["n2"] = T["buzz"] + 0.4
+T["headdown"] = T["n2"] + D["n2"]
+T["glow"] = T["headdown"] + 0.8
+T["kin"] = T["glow"] + 0.3
+T["blow"] = T["kin"] + 1.0
+T["feather"] = T["blow"] + 0.2
+T["k1"] = T["feather"] + 1.4
+T["lampoff"] = T["k1"] + D["k1"] + 0.3
+T["wink"] = T["lampoff"] + 0.5
+T["kout"] = T["wink"] + 0.7
+T["morning"] = T["kout"] + 0.6
+T["n3"] = T["morning"] + 1.2
+T["headup"] = T["n3"] + 0.2
+T["smile"] = T["n3"] + 2.2
+T["n4"] = T["n3"] + D["n3"] + 0.35
+T["cta"] = T["n4"] - 0.2
+T = {k: round(v, 2) for k, v in T.items()}
+TOTAL = round(T["n4"] + D["n4"] + 1.4, 2)
 
 LINES = [  # caption, start, end, style
-    ("Two A.M.… Everything is falling apart.", 0.5, 6.0, "n"),
-    ("Another no. Another closed door.", 6.6, 12.2, "n"),
-    ("“Rest now… Tomorrow, we try again.”", 17.6, 23.0, "k"),
-    ("He never leaves the room.<br>You just don't always see Him.", 27.2, 33.2, "n"),
+    ("Two A.M.… Everything is falling apart.", T["n1"], T["buzz"] + 0.1, "n"),
+    ("Another no. Another closed door.", T["n2"], T["headdown"] + 0.5, "n"),
+    ("“Rest now… Tomorrow, we try again.”", T["k1"], T["lampoff"], "k"),
+    ("He never leaves the room.<br>You just don't always see Him.", T["n3"], T["n4"] - 0.1, "n"),
 ]
 
 AUDIO = [
@@ -306,7 +331,7 @@ def scene():
     # a slow camera: close on the person, push into the window for the cameo, follow the feather down, wider while
     # Krishna speaks, a quick push in for the wink, back to the person for the morning
     js = '    tl.set("#cam", { transformOrigin: "620px 1050px", scale: 1.25, x: 0, y: 0 }, 0);\n'
-    js += '    tl.to("#cam", { scale: 1.32, duration: 11, ease: "none" }, 0.2);\n'
+    js += f'    tl.to("#cam", {{ scale: 1.32, duration: {T["glow"] - 0.5:.2f}, ease: "none" }}, 0.2);\n'
     js += f'    tl.to("#cam", {{ transformOrigin: "800px 620px", scale: 1.75, duration: 1.4, ease: "power2.inOut" }}, {T["glow"] - 0.2:.2f});\n'
     js += f'    tl.to("#cam", {{ transformOrigin: "700px 980px", scale: 1.25, duration: 2.6, ease: "power1.inOut" }}, {T["feather"] + 0.4:.2f});\n'
     js += f'    tl.to("#cam", {{ transformOrigin: "700px 900px", scale: 1.15, duration: 1.2, ease: "power1.inOut" }}, {T["k1"] - 0.6:.2f});\n'
@@ -327,7 +352,7 @@ def scene():
     # --- the window glows; Krishna peeks in, smiling
     js += f'    tl.to("#winglow", {{ opacity: 1, duration: 1.0, ease: "power1.out" }}, {T["glow"]});\n'
     js += f'    tl.fromTo("#krishna", {{ opacity: 0, y: 120 }}, {{ opacity: 1, y: 0, duration: 1.0, ease: "power2.out" }}, {T["kin"]});\n'
-    js += f'    tl.to("#krishna", {{ y: -6, duration: 1.4, yoyo: true, repeat: 5, ease: "sine.inOut" }}, {T["kin"] + 1.0:.2f});\n'
+    js += f'    tl.to("#krishna", {{ y: -6, duration: 1.2, yoyo: true, repeat: 3, ease: "sine.inOut" }}, {T["kin"] + 1.0:.2f});\n'
     # he blows: the mouth becomes small for a moment
     js += f'    tl.to("#kmouth", {{ scaleX: 0.4, svgOrigin: "800 662", duration: 0.25 }}, {T["blow"]});\n'
     js += f'    tl.to("#kmouth", {{ scaleX: 1, svgOrigin: "800 662", duration: 0.3 }}, {T["blow"] + 0.9:.2f});\n'
@@ -375,11 +400,6 @@ def scene():
     html += f'    <div id="handle" class="clip" data-start="{T["cta"] + 0.4:.2f}" data-duration="{TOTAL - T["cta"] - 0.4:.2f}" data-track-index="8">@lordsrikrishnatemple</div>\n'
     js += f'    tl.fromTo("#handle", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.5 }}, {T["cta"] + 0.4:.2f});\n'
     return wrap("scene", css, html, js)
-
-
-def dur(f):
-    return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f],
-                                capture_output=True, text=True, check=True).stdout)
 
 
 def index():

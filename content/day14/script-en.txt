@@ -15,3 +15,5 @@ peacock feather, white U tilak with a red line, yellow silk, garland, flute). No
  33.6   narrator: Send this to someone… who needs a sign today.  (SHARE ask)
 41 s, any calm track. Sounds: clock ticks, a synthesized phone buzz, glass shimmer, guitar harmonics, swash, lamp click,
 a warm pad, one piano note, a tabla "na". No bells. Final reels/day14-en/day14-english-no-music.mp4 (not in git).
+
+RE-PACED (8 Nov, "first super fast, now super slow"): natural-speed voices, silences trimmed, schedule computed from the voice lengths. Now about 28.5 s (was 41 s).

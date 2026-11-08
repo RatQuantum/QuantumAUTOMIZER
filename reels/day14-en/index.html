@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="assets/gsap.min.js"></script>
     <style>
-      /* Day 14 (English) · Krishna's cameo: an animated skit with original SVG characters, 41.0s. */
+      /* Day 14 (English) · Krishna's cameo: an animated skit with original SVG characters, 28.7s. */
       * {
         margin: 0;
         padding: 0;
@@ -26,29 +26,29 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="41.0" data-width="1080" data-height="1920">
-      <div id="scene" data-composition-id="scene" data-composition-src="compositions/scene.html" data-start="0" data-duration="41.0" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="28.7" data-width="1080" data-height="1920">
+      <div id="scene" data-composition-id="scene" data-composition-src="compositions/scene.html" data-start="0" data-duration="28.7" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
 
       <!-- Free voices (Microsoft Edge neural): narrator en-US-ChristopherNeural, Krishna en-US-AndrewMultilingualNeural (calm style). Effects: CC0 Sonic Pi + a synthesized phone buzz. -->
-      <audio id="a0" class="clip" src="assets/audio/n1.wav" data-start="0.50" data-duration="5.245" data-volume="1.0" data-track-index="1"></audio>
-      <audio id="a1" class="clip" src="assets/audio/n2.wav" data-start="6.60" data-duration="4.956" data-volume="1.0" data-track-index="1"></audio>
-      <audio id="a2" class="clip" src="assets/audio/k1.wav" data-start="17.60" data-duration="4.937" data-volume="1.0" data-track-index="2"></audio>
-      <audio id="a3" class="clip" src="assets/audio/n3.wav" data-start="27.20" data-duration="5.916" data-volume="1.0" data-track-index="1"></audio>
-      <audio id="a4" class="clip" src="assets/audio/n4.wav" data-start="33.60" data-duration="5.484" data-volume="1.0" data-track-index="1"></audio>
+      <audio id="a0" class="clip" src="assets/audio/n1.wav" data-start="0.40" data-duration="3.633" data-volume="1.0" data-track-index="1"></audio>
+      <audio id="a1" class="clip" src="assets/audio/n2.wav" data-start="4.68" data-duration="3.888" data-volume="1.0" data-track-index="1"></audio>
+      <audio id="a2" class="clip" src="assets/audio/k1.wav" data-start="12.27" data-duration="4.020" data-volume="1.0" data-track-index="2"></audio>
+      <audio id="a3" class="clip" src="assets/audio/n3.wav" data-start="19.59" data-duration="4.703" data-volume="1.0" data-track-index="1"></audio>
+      <audio id="a4" class="clip" src="assets/audio/n4.wav" data-start="24.64" data-duration="2.658" data-volume="1.0" data-track-index="1"></audio>
       <audio id="a5" class="clip" src="assets/sfx/vinyl_hiss.wav" data-start="0.00" data-duration="8.000" data-volume="0.1" data-track-index="10" data-fade-in="0.5" data-fade-out="1.0"></audio>
       <audio id="a6" class="clip" src="assets/sfx/elec_tick.wav" data-start="0.60" data-duration="0.019" data-volume="0.3" data-track-index="30"></audio>
       <audio id="a7" class="clip" src="assets/sfx/elec_tick.wav" data-start="1.60" data-duration="0.019" data-volume="0.3" data-track-index="31"></audio>
       <audio id="a8" class="clip" src="assets/sfx/elec_tick.wav" data-start="2.60" data-duration="0.019" data-volume="0.3" data-track-index="32"></audio>
       <audio id="a9" class="clip" src="assets/sfx/elec_tick.wav" data-start="3.60" data-duration="0.019" data-volume="0.3" data-track-index="33"></audio>
       <audio id="a10" class="clip" src="assets/sfx/elec_tick.wav" data-start="4.60" data-duration="0.019" data-volume="0.3" data-track-index="34"></audio>
-      <audio id="a11" class="clip" src="assets/sfx/phone_buzz.wav" data-start="6.00" data-duration="0.762" data-volume="0.5" data-track-index="11"></audio>
-      <audio id="a12" class="clip" src="assets/sfx/ambi_glass_rub.wav" data-start="12.80" data-duration="3.149" data-volume="0.45" data-track-index="12" data-fade-out="1.0"></audio>
-      <audio id="a13" class="clip" src="assets/sfx/guit_harmonics.wav" data-start="13.40" data-duration="3.532" data-volume="0.35" data-track-index="13" data-fade-out="1.2"></audio>
-      <audio id="a14" class="clip" src="assets/sfx/perc_swash.wav" data-start="14.40" data-duration="0.320" data-volume="0.4" data-track-index="14"></audio>
-      <audio id="a15" class="clip" src="assets/sfx/perc_snap2.wav" data-start="23.00" data-duration="0.174" data-volume="0.5" data-track-index="15"></audio>
-      <audio id="a16" class="clip" src="assets/sfx/tbd_pad_2.wav" data-start="25.20" data-duration="3.203" data-volume="0.3" data-track-index="16" data-fade-in="0.8" data-fade-out="1.5"></audio>
-      <audio id="a17" class="clip" src="assets/sfx/ambi_piano.wav" data-start="29.60" data-duration="2.812" data-volume="0.35" data-track-index="17" data-fade-out="1.0"></audio>
-      <audio id="a18" class="clip" src="assets/sfx/tabla_na.wav" data-start="33.50" data-duration="0.720" data-volume="0.6" data-track-index="18"></audio>
+      <audio id="a11" class="clip" src="assets/sfx/phone_buzz.wav" data-start="4.28" data-duration="0.762" data-volume="0.5" data-track-index="11"></audio>
+      <audio id="a12" class="clip" src="assets/sfx/ambi_glass_rub.wav" data-start="9.37" data-duration="3.149" data-volume="0.45" data-track-index="12" data-fade-out="1.0"></audio>
+      <audio id="a13" class="clip" src="assets/sfx/guit_harmonics.wav" data-start="9.87" data-duration="3.532" data-volume="0.35" data-track-index="13" data-fade-out="1.2"></audio>
+      <audio id="a14" class="clip" src="assets/sfx/perc_swash.wav" data-start="10.67" data-duration="0.320" data-volume="0.4" data-track-index="14"></audio>
+      <audio id="a15" class="clip" src="assets/sfx/perc_snap2.wav" data-start="16.59" data-duration="0.174" data-volume="0.5" data-track-index="15"></audio>
+      <audio id="a16" class="clip" src="assets/sfx/tbd_pad_2.wav" data-start="18.39" data-duration="3.203" data-volume="0.3" data-track-index="16" data-fade-in="0.8" data-fade-out="1.5"></audio>
+      <audio id="a17" class="clip" src="assets/sfx/ambi_piano.wav" data-start="21.79" data-duration="2.812" data-volume="0.35" data-track-index="17" data-fade-out="1.0"></audio>
+      <audio id="a18" class="clip" src="assets/sfx/tabla_na.wav" data-start="24.54" data-duration="0.720" data-volume="0.6" data-track-index="18"></audio>
     </div>
     <script>
       window.__timelines = window.__timelines || {};

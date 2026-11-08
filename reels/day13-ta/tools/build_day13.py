@@ -10,7 +10,7 @@ import random
 import subprocess
 
 W, H = 1080, 1920
-TOTAL = 41.0   # re-timed 7 Nov for the slower "divine" Krishna voice
+TOTAL = 0  # set below from the voice lengths
 
 
 def dur(f):
@@ -19,17 +19,26 @@ def dur(f):
 
 
 A = "assets/audio/"
-HOOK_T = 0.4
-LEAF_T = 5.0
-# (voice file, start, on-screen English, end of the on-screen line, Sanskrit phrase span id to light up)
-PHRASES = [
-    ("k1.wav", 8.0, "Heat and cold.<br><b>Pleasure and pain.</b>", 13.3, "p1"),
-    ("k2.wav", 13.6, "They come…<br>and they <b>go.</b>", 18.9, "p2"),
-    ("k3.wav", 19.2, "None of them<br><b>will last.</b>", 24.5, "p3"),
-    ("k4.wav", 24.8, "So bear them…<br>with <b>patience.</b>", 30.2, "p4"),
-]
-TAKE_T, TAKE_END = 30.6, 35.3
-CTA_T = 35.6
+# PACE (8 Nov, the user: "first super fast, now super slow"): natural-speed voices, 0.35 s between lines, every caption
+# on screen while it is spoken plus ~0.4 s. The schedule is computed from the real voice lengths.
+GAPL = 0.35
+HOOK_T = 0.3
+LEAF_T = HOOK_T + dur(A + "n1-hook.wav") + 0.2
+_texts = [("k1.wav", "Heat and cold.<br><b>Pleasure and pain.</b>", "p1"),
+          ("k2.wav", "They come…<br>and they <b>go.</b>", "p2"),
+          ("k3.wav", "None of them<br><b>will last.</b>", "p3"),
+          ("k4.wav", "So bear them…<br>with <b>patience.</b>", "p4")]
+PHRASES, _t = [], LEAF_T + 2.2
+for _f, _txt, _pid in _texts:
+    PHRASES.append([_f, round(_t, 2), _txt, 0, _pid])
+    _t += dur(A + _f) + GAPL
+for _k in range(len(PHRASES)):
+    PHRASES[_k][3] = round(PHRASES[_k + 1][1] - 0.05, 2) if _k + 1 < len(PHRASES) else round(_t + 0.1, 2)
+PHRASES = [tuple(x) for x in PHRASES]
+TAKE_T = round(_t + 0.1, 2)
+TAKE_END = round(TAKE_T + dur(A + "n2-takeaway.wav") + 0.4, 2)
+CTA_T = round(TAKE_END + 0.1, 2)
+TOTAL = round(CTA_T + 0.15 + dur(A + "n3-save.wav") + 1.3, 2)
 
 SFX = "assets/sfx/"
 AUDIO = [
@@ -40,11 +49,9 @@ AUDIO = [
     # beds: a glass hum and a faint parchment hiss, two each; soft pads under the takeaway and the save
     (SFX + "tabla_ghe5.wav", 0.0, 0.45, 10, {"fout": 1.5}),
     (SFX + "ambi_glass_hum.wav", LEAF_T - 0.2, 0.22, 11, {"fin": 1.0, "fout": 2.0}),
-    (SFX + "ambi_glass_hum.wav", 15.0, 0.22, 12, {"fin": 2.0, "fout": 2.5}),
-    (SFX + "ambi_glass_hum.wav", 25.0, 0.2, 23, {"fin": 2.0, "fout": 3.0}),
+    (SFX + "ambi_glass_hum.wav", LEAF_T + 9.0, 0.22, 12, {"fin": 2.0, "fout": 2.5}),
     (SFX + "vinyl_hiss.wav", LEAF_T, 0.12, 13, {"fin": 0.8, "fout": 1.5}),
-    (SFX + "vinyl_hiss.wav", 13.0, 0.12, 14, {"fin": 1.5, "fout": 1.5}),
-    (SFX + "vinyl_hiss.wav", 21.0, 0.1, 24, {"fin": 1.5, "fout": 1.5}),
+    (SFX + "vinyl_hiss.wav", LEAF_T + 7.5, 0.12, 14, {"fin": 1.5, "fout": 1.5}),
     (SFX + "perc_swash.wav", LEAF_T - 0.1, 0.45, 15, {}),
     # a different deep tabla tone as each Sanskrit phrase lights up
     *[(SFX + s, t - 0.05, 0.4, 16 + k, {"fout": 1.0}) for k, ((_, t, _, _, _), s) in
@@ -229,11 +236,11 @@ def scene():
              f'<div id="sk2" class="sk" style="top: 196px;">{SANSKRIT_2}</div></div>\n')
     js += f'    tl.fromTo("#leaf", {{ opacity: 0, y: 60, rotation: -2 }}, {{ opacity: 1, y: 0, rotation: 0, duration: 0.9, ease: "power2.out" }}, {LEAF_T - 0.1:.2f});\n'
     js += f'    tl.to("#leaf", {{ y: -8, duration: 3.0, yoyo: true, repeat: 11, ease: "sine.inOut" }}, {LEAF_T + 0.8:.2f});\n'
-    js += f'    tl.fromTo("#sk1", {{ clipPath: "inset(0% 100% 0% 0%)" }}, {{ clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: "none" }}, {LEAF_T + 0.6:.2f});\n'
-    js += f'    tl.fromTo("#sk2", {{ clipPath: "inset(0% 100% 0% 0%)" }}, {{ clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: "none" }}, {LEAF_T + 1.9:.2f});\n'
-    html += (f'    <div id="translit" class="clip" data-start="{LEAF_T + 2.6:.2f}" data-duration="{TOTAL - LEAF_T - 2.6:.2f}" '
+    js += f'    tl.fromTo("#sk1", {{ clipPath: "inset(0% 100% 0% 0%)" }}, {{ clipPath: "inset(0% 0% 0% 0%)", duration: 0.9, ease: "none" }}, {LEAF_T + 0.4:.2f});\n'
+    js += f'    tl.fromTo("#sk2", {{ clipPath: "inset(0% 100% 0% 0%)" }}, {{ clipPath: "inset(0% 0% 0% 0%)", duration: 0.9, ease: "none" }}, {LEAF_T + 1.2:.2f});\n'
+    html += (f'    <div id="translit" class="clip" data-start="{LEAF_T + 1.6:.2f}" data-duration="{TOTAL - LEAF_T - 1.6:.2f}" '
              f'data-track-index="5">{TRANSLIT}</div>\n')
-    js += f'    tl.fromTo("#translit", {{ opacity: 0 }}, {{ opacity: 0.9, duration: 0.8 }}, {LEAF_T + 2.6:.2f});\n'
+    js += f'    tl.fromTo("#translit", {{ opacity: 0 }}, {{ opacity: 0.9, duration: 0.6 }}, {LEAF_T + 1.6:.2f});\n'
 
     # each phrase: the Sanskrit lights up gold while Krishna speaks the English meaning
     for k, (_, t, text, end, pid) in enumerate(PHRASES):

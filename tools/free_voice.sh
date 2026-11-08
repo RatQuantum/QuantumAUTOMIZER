@@ -16,7 +16,7 @@ case $ROLE in
   krishna)  VOICE=${4:-ta-MY-SuryaNeural}; RATE=-15%; PITCH=-6Hz; SHIFT=0.97
             FX="highpass=f=80,equalizer=f=220:t=q:w=1:g=2.5,equalizer=f=2800:t=q:w=1.2:g=1.5,equalizer=f=7000:t=q:w=1:g=-4,acompressor=threshold=-22dB:ratio=2.5:attack=10:release=150:makeup=2,aecho=0.8:0.4:40|90:0.18|0.08" ;;
   # English (the user, 7 Nov: "Use English voice, the most popular and widely used English voices")
-  narrator_en) VOICE=${4:-en-US-ChristopherNeural}; RATE=-10%; PITCH=-6Hz; SHIFT=0.96
+  narrator_en) VOICE=${4:-en-US-ChristopherNeural}; RATE=-3%; PITCH=-5Hz; SHIFT=0.97
             FX="highpass=f=70,equalizer=f=130:t=q:w=1:g=3,equalizer=f=3200:t=q:w=1.2:g=1.5,equalizer=f=7500:t=q:w=1:g=-3,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2,aecho=0.85:0.5:70|140:0.2|0.1" ;;
   krishna_en) VOICE=${4:-en-US-AndrewMultilingualNeural}; RATE=-12%; PITCH=-4Hz; SHIFT=0.98
             FX="highpass=f=80,equalizer=f=220:t=q:w=1:g=2,equalizer=f=2800:t=q:w=1.2:g=1.5,equalizer=f=7000:t=q:w=1:g=-4,acompressor=threshold=-22dB:ratio=2.5:attack=10:release=150:makeup=2,aecho=0.8:0.4:40|90:0.16|0.07" ;;
@@ -24,7 +24,7 @@ case $ROLE in
   # Split phrases with "|" to get long, deliberate pauses between them.
   krishna_divine)    VOICE=${4:-ta-MY-SuryaNeural}; RATE=-26%; PITCH=-9Hz; SHIFT=0.95; GAP=0.75
             FX="highpass=f=75,equalizer=f=180:t=q:w=1:g=3,equalizer=f=2600:t=q:w=1.2:g=1,equalizer=f=6500:t=q:w=1:g=-5,acompressor=threshold=-24dB:ratio=2.2:attack=15:release=200:makeup=2,chorus=0.6:0.9:45:0.25:0.25:2,aecho=0.8:0.55:90|180|300:0.25|0.15|0.08" ;;
-  krishna_divine_en) VOICE=${4:-en-US-AndrewMultilingualNeural}; RATE=-20%; PITCH=-7Hz; SHIFT=0.96; GAP=0.7
+  krishna_divine_en) VOICE=${4:-en-US-AndrewMultilingualNeural}; RATE=-8%; PITCH=-6Hz; SHIFT=0.97; GAP=0.3
             FX="highpass=f=75,equalizer=f=180:t=q:w=1:g=3,equalizer=f=2600:t=q:w=1.2:g=1,equalizer=f=6500:t=q:w=1:g=-5,acompressor=threshold=-24dB:ratio=2.2:attack=15:release=200:makeup=2,chorus=0.6:0.9:45:0.25:0.25:2,aecho=0.8:0.55:90|180|300:0.25|0.15|0.08" ;;
   *) echo "ROLE must be narrator, krishna, narrator_en, krishna_en, krishna_divine or krishna_divine_en"; exit 1 ;;
 esac
@@ -48,6 +48,9 @@ ffmpeg -v error -y "${ARGS[@]}" -filter_complex "${FC}${CAT}concat=n=$m:v=0:a=1"
 rm -f "${PARTS[@]}" "$SIL"
 # deepen slightly (resample trick, length kept with atempo), then the polish chain, then -16 LUFS mono 44.1 kHz
 ffmpeg -v error -y -i "$TMP" -af "aresample=44100,asetrate=44100*$SHIFT,aresample=44100,atempo=1/$SHIFT,$FX,loudnorm=I=-16:TP=-1.5:LRA=7" \
-  -ac 1 -ar 44100 "$OUT"
+  -ac 1 -ar 44100 "$OUT.full.wav"
+# trim leading silence and all but a 0.25 s tail (the TTS pads ~1 s at both ends; it made reels drag)
+ffmpeg -v error -y -i "$OUT.full.wav" -af "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,areverse,silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.25,areverse" -ar 44100 "$OUT"
+rm -f "$OUT.full.wav"
 rm -f "$TMP"
 ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUT"
