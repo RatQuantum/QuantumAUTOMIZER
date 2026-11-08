@@ -22,18 +22,22 @@
       font-family: "Noto Color Emoji";
       src: url("assets/fonts/NotoColorEmoji.ttf");
     }
-    #bg {
+    #skyw {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 45%, #3a0a16 0%, #1a040a 55%, #070103 100%);
+      background: #12030a;
+    }
+    #sky {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
     }
     .dust {
       position: absolute;
-      width: 6px;
-      height: 6px;
       border-radius: 50%;
-      background: #ffd27a;
-      box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6);
+      background: #ffe2a0;
     }
     #wheel {
       position: absolute;
@@ -41,103 +45,135 @@
     }
     .hook {
       position: absolute;
-      left: 60px;
-      width: 960px;
+      left: 50px;
+      width: 980px;
       text-align: center;
       font-family: "Cinzel", serif;
       font-weight: 700;
       color: #fff1d6;
-      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95);
+      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 0, 0, 0.6);
     }
     #h1 {
       top: 110px;
-      font-size: 60px;
+      font-size: 62px;
       line-height: 1.2;
     }
     #h1 b {
-      color: #e8b84a;
+      color: #efc15a;
+      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.95), 0 0 26px rgba(255, 190, 80, 0.55);
     }
     #head {
-      top: 200px;
+      top: 210px;
       font-size: 44px;
-      letter-spacing: 6px;
-      color: #e8b84a;
+      letter-spacing: 8px;
+      color: #efc15a;
     }
     .card {
       position: absolute;
       left: 60px;
       width: 960px;
       height: 340px;
-      border-radius: 26px;
-      background: linear-gradient(135deg, #4a0b18 0%, #2a0610 100%);
-      border: 6px solid #e8b84a;
-      box-shadow: inset 0 0 0 10px #2a0610, inset 0 0 0 13px rgba(232, 184, 74, 0.7), 0 18px 40px rgba(0, 0, 0, 0.7);
+      border-radius: 28px;
+      border: 7px solid #efc15a;
+      background: #2a0610;
+      box-shadow: 0 0 0 3px #9a6b12, 0 22px 50px rgba(0, 0, 0, 0.75), 0 0 60px rgba(255, 190, 90, 0.18);
+    }
+    .inner {
+      position: absolute;
+      inset: 0;
+      border-radius: 21px;
+      overflow: hidden;
+      background-color: #3a0815;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23efc15a' stroke-width='1.4' opacity='0.16'><path d='M40 10 Q50 25 40 40 Q30 25 40 10Z'/><path d='M40 40 Q55 45 70 40 Q55 35 40 40Z'/><path d='M40 40 Q25 45 10 40 Q25 35 40 40Z'/><path d='M40 40 Q50 55 40 70 Q30 55 40 70Z'/><circle cx='40' cy='40' r='4'/><circle cx='0' cy='0' r='3'/><circle cx='80' cy='0' r='3'/><circle cx='0' cy='80' r='3'/><circle cx='80' cy='80' r='3'/></g></svg>"), radial-gradient(ellipse at 30% 20%, #6a1226 0%, #3a0815 55%, #22040c 100%);
+    }
+    .sheen {
+      position: absolute;
+      top: -120px;
+      left: 0;
+      width: 240px;
+      height: 600px;
+      background: linear-gradient(90deg, rgba(255, 233, 168, 0) 0%, rgba(255, 233, 168, 0.3) 50%, rgba(255, 233, 168, 0) 100%);
+      opacity: 0;
+    }
+    .beads {
+      position: absolute;
+      inset: 12px;
+      border-radius: 18px;
+      border: 3px dotted #efc15a;
+      opacity: 0.8;
     }
     .gem {
       position: absolute;
-      width: 26px;
-      height: 26px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      border: 4px solid #e8b84a;
-      background: #b3122e;
+      border: 5px solid #efc15a;
+      background: radial-gradient(circle at 35% 30%, #ffffff 0 9%, #ff8a9a 16%, #c0142f 42%, #4a0010 100%);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
     }
     .g1 {
-      left: -16px;
-      top: -16px;
+      left: -21px;
+      top: -21px;
     }
     .g2 {
-      right: -16px;
-      top: -16px;
-      background: #0f7a5a;
+      right: -21px;
+      top: -21px;
+      background: radial-gradient(circle at 35% 30%, #ffffff 0 9%, #8affd2 16%, #0f8a63 42%, #003a26 100%);
     }
     .g3 {
-      left: -16px;
-      bottom: -16px;
-      background: #0f7a5a;
+      left: -21px;
+      bottom: -21px;
+      background: radial-gradient(circle at 35% 30%, #ffffff 0 9%, #8affd2 16%, #0f8a63 42%, #003a26 100%);
     }
     .g4 {
-      right: -16px;
-      bottom: -16px;
+      right: -21px;
+      bottom: -21px;
     }
-    .badge {
+    .medal {
       position: absolute;
-      left: 44px;
-      top: 90px;
-      width: 160px;
-      height: 160px;
+      left: 40px;
+      top: 70px;
+      width: 186px;
+      height: 186px;
       border-radius: 50%;
-      background: radial-gradient(circle at 40% 35%, #ffe08a 0%, #e8b84a 55%, #9a6b12 100%);
-      color: #3a0610;
-      font-family: "Cinzel", serif;
-      font-weight: 700;
-      font-size: 48px;
-      line-height: 160px;
-      text-align: center;
+      background: radial-gradient(circle at 38% 30%, #ffe9a8 0%, #efc15a 45%, #9a6b12 100%);
+      box-shadow: inset 0 -6px 12px rgba(80, 40, 0, 0.55), inset 0 6px 10px rgba(255, 250, 220, 0.6), 0 0 0 5px #2a0610, 0 0 0 9px #efc15a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .txt {
       position: absolute;
-      left: 240px;
+      left: 262px;
       top: 0;
-      width: 680px;
+      width: 670px;
       height: 340px;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
+    .mo {
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 7px;
+      color: #f6d9a8;
+    }
     .nm {
       font-family: "Cinzel", serif;
       font-weight: 700;
-      font-size: 82px;
-      color: #e8b84a;
+      font-size: 84px;
+      color: #efc15a;
       line-height: 1.05;
+      text-shadow: 0 3px 0 #5a2a00, 0 0 22px rgba(255, 200, 90, 0.35);
     }
     .mn {
       font-family: "Cormorant", serif;
       font-style: italic;
-      font-size: 56px;
+      font-size: 54px;
       color: #fff1d6;
       line-height: 1.1;
-      margin-top: 8px;
+      margin-top: 4px;
     }
     #grid {
       position: absolute;
@@ -146,205 +182,271 @@
     .tile {
       position: absolute;
       width: 316px;
-      height: 260px;
+      height: 270px;
       border-radius: 20px;
-      background: linear-gradient(135deg, #4a0b18 0%, #2a0610 100%);
-      border: 4px solid #e8b84a;
+      border: 5px solid #efc15a;
+      box-shadow: 0 0 0 2px #9a6b12, 0 12px 30px rgba(0, 0, 0, 0.7);
+      background-color: #3a0815;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23efc15a' stroke-width='1.4' opacity='0.16'><path d='M40 10 Q50 25 40 40 Q30 25 40 10Z'/><path d='M40 40 Q55 45 70 40 Q55 35 40 40Z'/><path d='M40 40 Q25 45 10 40 Q25 35 40 40Z'/><path d='M40 40 Q50 55 40 70 Q30 55 40 70Z'/><circle cx='40' cy='40' r='4'/><circle cx='0' cy='0' r='3'/><circle cx='80' cy='0' r='3'/><circle cx='0' cy='80' r='3'/><circle cx='80' cy='80' r='3'/></g></svg>"), radial-gradient(ellipse at 30% 20%, #6a1226 0%, #3a0815 60%, #22040c 100%);
       text-align: center;
     }
+    .ti {
+      margin: 18px auto 0;
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 38% 30%, #ffe9a8 0%, #efc15a 45%, #9a6b12 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .tm {
-      margin-top: 44px;
+      margin-top: 12px;
       font-family: "Cinzel", serif;
       font-weight: 700;
-      font-size: 38px;
-      color: #fff1d6;
+      font-size: 30px;
+      color: #f6d9a8;
       letter-spacing: 4px;
     }
     .tn {
-      margin-top: 22px;
+      margin-top: 6px;
       font-family: "Cinzel", serif;
       font-weight: 700;
       font-size: 40px;
-      color: #e8b84a;
+      color: #efc15a;
+      text-shadow: 0 2px 0 #5a2a00;
     }
     #cta {
       position: absolute;
       left: 40px;
       width: 1000px;
-      top: 1570px;
+      top: 1560px;
       text-align: center;
       font-family: "Nunito", "Noto Color Emoji", sans-serif;
       font-weight: 800;
-      font-size: 64px;
+      font-size: 66px;
       line-height: 1.25;
       color: #ffffff;
       text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95);
     }
     #cta b {
-      color: #e8b84a;
+      color: #efc15a;
     }
   </style>
   <div id="root" data-composition-id="scene" data-width="1080" data-height="1920">
-    <div id="bg" class="clip" data-start="0" data-duration="29.88" data-track-index="0"></div>
+    <div id="skyw" class="clip" data-start="0" data-duration="29.88" data-track-index="0"><canvas id="sky" width="540" height="960"></canvas></div>
     <div id="dustL" class="clip" data-start="0" data-duration="29.88" data-track-index="1" data-layout-ignore>
-      <div id="d0" class="dust" style="left: 740px; top: 1260px; opacity: 0;"></div>
-      <div id="d1" class="dust" style="left: 838px; top: 1646px; opacity: 0;"></div>
-      <div id="d2" class="dust" style="left: 607px; top: 918px; opacity: 0;"></div>
-      <div id="d3" class="dust" style="left: 635px; top: 345px; opacity: 0;"></div>
-      <div id="d4" class="dust" style="left: 315px; top: 1541px; opacity: 0;"></div>
-      <div id="d5" class="dust" style="left: 606px; top: 759px; opacity: 0;"></div>
-      <div id="d6" class="dust" style="left: 176px; top: 1012px; opacity: 0;"></div>
-      <div id="d7" class="dust" style="left: 600px; top: 1485px; opacity: 0;"></div>
-      <div id="d8" class="dust" style="left: 12px; top: 1371px; opacity: 0;"></div>
-      <div id="d9" class="dust" style="left: 648px; top: 1243px; opacity: 0;"></div>
-      <div id="d10" class="dust" style="left: 26px; top: 1211px; opacity: 0;"></div>
-      <div id="d11" class="dust" style="left: 972px; top: 1731px; opacity: 0;"></div>
-      <div id="d12" class="dust" style="left: 1022px; top: 1640px; opacity: 0;"></div>
-      <div id="d13" class="dust" style="left: 756px; top: 367px; opacity: 0;"></div>
-      <div id="d14" class="dust" style="left: 654px; top: 1277px; opacity: 0;"></div>
-      <div id="d15" class="dust" style="left: 145px; top: 766px; opacity: 0;"></div>
-      <div id="d16" class="dust" style="left: 497px; top: 318px; opacity: 0;"></div>
-      <div id="d17" class="dust" style="left: 98px; top: 1867px; opacity: 0;"></div>
-      <div id="d18" class="dust" style="left: 490px; top: 664px; opacity: 0;"></div>
-      <div id="d19" class="dust" style="left: 237px; top: 513px; opacity: 0;"></div>
-      <div id="d20" class="dust" style="left: 829px; top: 1251px; opacity: 0;"></div>
-      <div id="d21" class="dust" style="left: 121px; top: 362px; opacity: 0;"></div>
-      <div id="d22" class="dust" style="left: 1029px; top: 1086px; opacity: 0;"></div>
-      <div id="d23" class="dust" style="left: 221px; top: 881px; opacity: 0;"></div>
-      <div id="d24" class="dust" style="left: 486px; top: 557px; opacity: 0;"></div>
-      <div id="d25" class="dust" style="left: 460px; top: 1110px; opacity: 0;"></div>
-      <div id="d26" class="dust" style="left: 835px; top: 727px; opacity: 0;"></div>
-      <div id="d27" class="dust" style="left: 604px; top: 553px; opacity: 0;"></div>
-      <div id="d28" class="dust" style="left: 1021px; top: 794px; opacity: 0;"></div>
-      <div id="d29" class="dust" style="left: 1029px; top: 573px; opacity: 0;"></div>
-      <div id="d30" class="dust" style="left: 219px; top: 1782px; opacity: 0;"></div>
-      <div id="d31" class="dust" style="left: 1016px; top: 1790px; opacity: 0;"></div>
-      <div id="d32" class="dust" style="left: 204px; top: 1756px; opacity: 0;"></div>
-      <div id="d33" class="dust" style="left: 390px; top: 1230px; opacity: 0;"></div>
-      <div id="d34" class="dust" style="left: 682px; top: 1109px; opacity: 0;"></div>
-      <div id="d35" class="dust" style="left: 46px; top: 1091px; opacity: 0;"></div>
+      <div id="d0" class="dust" style="left: 740px; top: 1260px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d1" class="dust" style="left: 838px; top: 1646px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d2" class="dust" style="left: 607px; top: 918px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d3" class="dust" style="left: 635px; top: 345px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d4" class="dust" style="left: 315px; top: 1541px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d5" class="dust" style="left: 606px; top: 759px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d6" class="dust" style="left: 176px; top: 1012px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d7" class="dust" style="left: 600px; top: 1485px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d8" class="dust" style="left: 12px; top: 1371px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d9" class="dust" style="left: 648px; top: 1243px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d10" class="dust" style="left: 26px; top: 1211px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d11" class="dust" style="left: 972px; top: 1731px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d12" class="dust" style="left: 1022px; top: 1640px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d13" class="dust" style="left: 831px; top: 1056px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d14" class="dust" style="left: 654px; top: 1277px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d15" class="dust" style="left: 145px; top: 766px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d16" class="dust" style="left: 497px; top: 318px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d17" class="dust" style="left: 98px; top: 1867px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d18" class="dust" style="left: 490px; top: 664px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d19" class="dust" style="left: 237px; top: 513px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d20" class="dust" style="left: 829px; top: 1251px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d21" class="dust" style="left: 121px; top: 362px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d22" class="dust" style="left: 1029px; top: 1086px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d23" class="dust" style="left: 221px; top: 881px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d24" class="dust" style="left: 486px; top: 557px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d25" class="dust" style="left: 460px; top: 1110px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d26" class="dust" style="left: 835px; top: 727px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d27" class="dust" style="left: 604px; top: 553px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d28" class="dust" style="left: 1021px; top: 794px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d29" class="dust" style="left: 1029px; top: 573px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d30" class="dust" style="left: 219px; top: 1782px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d31" class="dust" style="left: 1016px; top: 1790px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d32" class="dust" style="left: 204px; top: 1756px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d33" class="dust" style="left: 390px; top: 1230px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d34" class="dust" style="left: 682px; top: 1109px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d35" class="dust" style="left: 46px; top: 1091px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d36" class="dust" style="left: 455px; top: 723px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d37" class="dust" style="left: 548px; top: 1352px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d38" class="dust" style="left: 447px; top: 1265px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d39" class="dust" style="left: 353px; top: 522px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d40" class="dust" style="left: 587px; top: 1638px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d41" class="dust" style="left: 380px; top: 1555px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d42" class="dust" style="left: 470px; top: 1005px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d43" class="dust" style="left: 183px; top: 1245px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d44" class="dust" style="left: 323px; top: 1882px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d45" class="dust" style="left: 825px; top: 1139px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d46" class="dust" style="left: 724px; top: 1821px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d47" class="dust" style="left: 164px; top: 735px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d48" class="dust" style="left: 433px; top: 1144px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d49" class="dust" style="left: 1057px; top: 1131px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d50" class="dust" style="left: 659px; top: 641px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d51" class="dust" style="left: 916px; top: 1634px; width: 3px; height: 3px; box-shadow: 0 0 4px 1px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d52" class="dust" style="left: 343px; top: 1807px; width: 7px; height: 7px; box-shadow: 0 0 10px 3px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
+      <div id="d53" class="dust" style="left: 843px; top: 353px; width: 14px; height: 14px; box-shadow: 0 0 22px 7px rgba(255, 190, 90, 0.6); opacity: 0;"></div>
     </div>
-    <div id="wheel" class="clip" data-start="0" data-duration="5.17" data-track-index="2"><svg viewBox="0 -120 1080 1920" width="1080" height="1920" style="position:absolute;left:0;top:0;overflow:visible">
+    <div id="wheel" class="clip" data-start="0" data-duration="5.17" data-track-index="2"><svg viewBox="0 0 1080 1920" width="1080" height="1920" style="position:absolute;left:0;top:0;overflow:visible">
   <defs>
-    <radialGradient id="petal" cx="0.5" cy="0.5" r="0.7"><stop offset="0" stop-color="#5a0d1c"/><stop offset="1" stop-color="#2a0610"/></radialGradient>
-    <radialGradient id="halo"><stop offset="0" stop-color="rgba(255,190,90,0.6)"/><stop offset="0.6" stop-color="rgba(232,140,40,0.18)"/><stop offset="1" stop-color="rgba(255,150,40,0)"/></radialGradient>
-    <radialGradient id="eye"><stop offset="0" stop-color="#0b1f4d"/><stop offset="0.55" stop-color="#1e5aa8"/><stop offset="0.75" stop-color="#16805a"/><stop offset="0.9" stop-color="#d4a017"/><stop offset="1" stop-color="#7a5a12"/></radialGradient>
+    <radialGradient id="petal" cx="0.5" cy="0.6" r="0.75"><stop offset="0" stop-color="#7a1428"/><stop offset="0.7" stop-color="#3e0815"/><stop offset="1" stop-color="#22040c"/></radialGradient>
+    <linearGradient id="goldEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe9a8"/><stop offset="0.5" stop-color="#efc15a"/><stop offset="1" stop-color="#9a6b12"/></linearGradient>
+    <radialGradient id="ruby" cx="0.35" cy="0.3"><stop offset="0" stop-color="#ff8a9a"/><stop offset="0.35" stop-color="#c0142f"/><stop offset="1" stop-color="#4a0010"/></radialGradient>
+    <radialGradient id="emer" cx="0.35" cy="0.3"><stop offset="0" stop-color="#8affd2"/><stop offset="0.35" stop-color="#0f8a63"/><stop offset="1" stop-color="#003a26"/></radialGradient>
+    <radialGradient id="eye"><stop offset="0" stop-color="#06143a"/><stop offset="0.5" stop-color="#1e5aa8"/><stop offset="0.66" stop-color="#2fb3c8"/><stop offset="0.78" stop-color="#16805a"/><stop offset="0.9" stop-color="#e3b02a"/><stop offset="1" stop-color="#6a4a0c"/></radialGradient>
+    <radialGradient id="hub" cx="0.5" cy="0.45"><stop offset="0" stop-color="#3a0a16"/><stop offset="1" stop-color="#12030a"/></radialGradient>
   </defs>
-  <circle cx="540" cy="960" r="760" fill="url(#halo)"/>
-  <circle cx="540" cy="960" r="560" fill="none" stroke="#e8b84a" stroke-width="5"/>
-  <circle cx="540" cy="960" r="590" fill="none" stroke="#e8b84a" stroke-width="2" stroke-dasharray="4 14"/>
-  <path d="M540 730 Q434 502 540 450 Q646 502 540 730Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="540" y="597" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(0 540 585)">JAN</text><circle cx="685" cy="419" r="13" fill="#0f7a5a" stroke="#e8b84a" stroke-width="4"/><path d="M655 761 Q677 511 795 518 Q861 616 655 761Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="728" y="647" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(30 728 635)">FEB</text><circle cx="936" cy="564" r="13" fill="#b3122e" stroke="#e8b84a" stroke-width="4"/><path d="M739 845 Q884 639 982 705 Q989 823 739 845Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="865" y="784" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(60 865 772)">MAR</text><circle cx="1081" cy="815" r="13" fill="#0f7a5a" stroke="#e8b84a" stroke-width="4"/><path d="M770 960 Q998 854 1050 960 Q998 1066 770 960Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="915" y="972" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(90 915 960)">APR</text><circle cx="1081" cy="1105" r="13" fill="#b3122e" stroke="#e8b84a" stroke-width="4"/><path d="M739 1075 Q989 1097 982 1215 Q884 1281 739 1075Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="865" y="1160" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(120 865 1148)">MAY</text><circle cx="936" cy="1356" r="13" fill="#0f7a5a" stroke="#e8b84a" stroke-width="4"/><path d="M655 1159 Q861 1304 795 1402 Q677 1409 655 1159Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="728" y="1297" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(150 728 1285)">JUN</text><circle cx="685" cy="1501" r="13" fill="#b3122e" stroke="#e8b84a" stroke-width="4"/><path d="M540 1190 Q646 1418 540 1470 Q434 1418 540 1190Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="540" y="1347" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(180 540 1335)">JUL</text><circle cx="395" cy="1501" r="13" fill="#0f7a5a" stroke="#e8b84a" stroke-width="4"/><path d="M425 1159 Q403 1409 285 1402 Q219 1304 425 1159Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="353" y="1297" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(210 353 1285)">AUG</text><circle cx="144" cy="1356" r="13" fill="#b3122e" stroke="#e8b84a" stroke-width="4"/><path d="M341 1075 Q196 1281 98 1215 Q91 1097 341 1075Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="215" y="1160" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(240 215 1148)">SEP</text><circle cx="-1" cy="1105" r="13" fill="#0f7a5a" stroke="#e8b84a" stroke-width="4"/><path d="M310 960 Q82 1066 30 960 Q82 854 310 960Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="165" y="972" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(270 165 960)">OCT</text><circle cx="-1" cy="815" r="13" fill="#b3122e" stroke="#e8b84a" stroke-width="4"/><path d="M341 845 Q91 823 98 705 Q196 639 341 845Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="215" y="784" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(300 215 772)">NOV</text><circle cx="144" cy="564" r="13" fill="#0f7a5a" stroke="#e8b84a" stroke-width="4"/><path d="M425 761 Q219 616 285 518 Q403 511 425 761Z" fill="url(#petal)" stroke="#e8b84a" stroke-width="3"/><text x="352" y="647" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(330 352 635)">DEC</text><circle cx="395" cy="419" r="13" fill="#b3122e" stroke="#e8b84a" stroke-width="4"/>
-  <circle cx="540" cy="960" r="215" fill="#1a050b" stroke="#e8b84a" stroke-width="6"/>
-  <ellipse cx="540" cy="960" rx="120" ry="150" fill="#1f6b4f"/>
-  <ellipse cx="540" cy="972" rx="94" ry="118" fill="url(#eye)"/>
-  <ellipse cx="540" cy="992" rx="40" ry="54" fill="#0b1f4d"/>
-  <ellipse cx="548" cy="980" rx="11" ry="14" fill="rgba(255,255,255,0.35)"/>
+  <circle cx="540" cy="1080" r="568" fill="rgba(20,3,9,0.55)" stroke="url(#goldEdge)" stroke-width="8"/>
+  <circle cx="540" cy="1080" r="540" fill="none" stroke="#efc15a" stroke-width="2" stroke-dasharray="2 10"/>
+  <circle cx="1150.0" cy="1080.0" r="6" fill="#ffe9a8"/><circle cx="1147.7" cy="1133.2" r="3.5" fill="#efc15a"/><circle cx="1140.7" cy="1185.9" r="3.5" fill="#efc15a"/><circle cx="1129.2" cy="1237.9" r="3.5" fill="#efc15a"/><circle cx="1113.2" cy="1288.6" r="3.5" fill="#efc15a"/><circle cx="1092.8" cy="1337.8" r="3.5" fill="#efc15a"/><circle cx="1068.3" cy="1385.0" r="6" fill="#ffe9a8"/><circle cx="1039.7" cy="1429.9" r="3.5" fill="#efc15a"/><circle cx="1007.3" cy="1472.1" r="3.5" fill="#efc15a"/><circle cx="971.3" cy="1511.3" r="3.5" fill="#efc15a"/><circle cx="932.1" cy="1547.3" r="3.5" fill="#efc15a"/><circle cx="889.9" cy="1579.7" r="3.5" fill="#efc15a"/><circle cx="845.0" cy="1608.3" r="6" fill="#ffe9a8"/><circle cx="797.8" cy="1632.8" r="3.5" fill="#efc15a"/><circle cx="748.6" cy="1653.2" r="3.5" fill="#efc15a"/><circle cx="697.9" cy="1669.2" r="3.5" fill="#efc15a"/><circle cx="645.9" cy="1680.7" r="3.5" fill="#efc15a"/><circle cx="593.2" cy="1687.7" r="3.5" fill="#efc15a"/><circle cx="540.0" cy="1690.0" r="6" fill="#ffe9a8"/><circle cx="486.8" cy="1687.7" r="3.5" fill="#efc15a"/><circle cx="434.1" cy="1680.7" r="3.5" fill="#efc15a"/><circle cx="382.1" cy="1669.2" r="3.5" fill="#efc15a"/><circle cx="331.4" cy="1653.2" r="3.5" fill="#efc15a"/><circle cx="282.2" cy="1632.8" r="3.5" fill="#efc15a"/><circle cx="235.0" cy="1608.3" r="6" fill="#ffe9a8"/><circle cx="190.1" cy="1579.7" r="3.5" fill="#efc15a"/><circle cx="147.9" cy="1547.3" r="3.5" fill="#efc15a"/><circle cx="108.7" cy="1511.3" r="3.5" fill="#efc15a"/><circle cx="72.7" cy="1472.1" r="3.5" fill="#efc15a"/><circle cx="40.3" cy="1429.9" r="3.5" fill="#efc15a"/><circle cx="11.7" cy="1385.0" r="6" fill="#ffe9a8"/><circle cx="-12.8" cy="1337.8" r="3.5" fill="#efc15a"/><circle cx="-33.2" cy="1288.6" r="3.5" fill="#efc15a"/><circle cx="-49.2" cy="1237.9" r="3.5" fill="#efc15a"/><circle cx="-60.7" cy="1185.9" r="3.5" fill="#efc15a"/><circle cx="-67.7" cy="1133.2" r="3.5" fill="#efc15a"/><circle cx="-70.0" cy="1080.0" r="6" fill="#ffe9a8"/><circle cx="-67.7" cy="1026.8" r="3.5" fill="#efc15a"/><circle cx="-60.7" cy="974.1" r="3.5" fill="#efc15a"/><circle cx="-49.2" cy="922.1" r="3.5" fill="#efc15a"/><circle cx="-33.2" cy="871.4" r="3.5" fill="#efc15a"/><circle cx="-12.8" cy="822.2" r="3.5" fill="#efc15a"/><circle cx="11.7" cy="775.0" r="6" fill="#ffe9a8"/><circle cx="40.3" cy="730.1" r="3.5" fill="#efc15a"/><circle cx="72.7" cy="687.9" r="3.5" fill="#efc15a"/><circle cx="108.7" cy="648.7" r="3.5" fill="#efc15a"/><circle cx="147.9" cy="612.7" r="3.5" fill="#efc15a"/><circle cx="190.1" cy="580.3" r="3.5" fill="#efc15a"/><circle cx="235.0" cy="551.7" r="6" fill="#ffe9a8"/><circle cx="282.2" cy="527.2" r="3.5" fill="#efc15a"/><circle cx="331.4" cy="506.8" r="3.5" fill="#efc15a"/><circle cx="382.1" cy="490.8" r="3.5" fill="#efc15a"/><circle cx="434.1" cy="479.3" r="3.5" fill="#efc15a"/><circle cx="486.8" cy="472.3" r="3.5" fill="#efc15a"/><circle cx="540.0" cy="470.0" r="6" fill="#ffe9a8"/><circle cx="593.2" cy="472.3" r="3.5" fill="#efc15a"/><circle cx="645.9" cy="479.3" r="3.5" fill="#efc15a"/><circle cx="697.9" cy="490.8" r="3.5" fill="#efc15a"/><circle cx="748.6" cy="506.8" r="3.5" fill="#efc15a"/><circle cx="797.8" cy="527.2" r="3.5" fill="#efc15a"/><circle cx="845.0" cy="551.7" r="6" fill="#ffe9a8"/><circle cx="889.9" cy="580.3" r="3.5" fill="#efc15a"/><circle cx="932.1" cy="612.7" r="3.5" fill="#efc15a"/><circle cx="971.3" cy="648.7" r="3.5" fill="#efc15a"/><circle cx="1007.3" cy="687.9" r="3.5" fill="#efc15a"/><circle cx="1039.7" cy="730.1" r="3.5" fill="#efc15a"/><circle cx="1068.3" cy="775.0" r="6" fill="#ffe9a8"/><circle cx="1092.8" cy="822.2" r="3.5" fill="#efc15a"/><circle cx="1113.2" cy="871.4" r="3.5" fill="#efc15a"/><circle cx="1129.2" cy="922.1" r="3.5" fill="#efc15a"/><circle cx="1140.7" cy="974.1" r="3.5" fill="#efc15a"/><circle cx="1147.7" cy="1026.8" r="3.5" fill="#efc15a"/><path d="M1100 1080 Q1127 1157 1081 1225" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M1081 1225 Q1087 1307 1025 1360" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M1025 1360 Q1010 1440 936 1476" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M936 1476 Q900 1550 820 1565" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M820 1565 Q767 1627 685 1621" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M685 1621 Q617 1667 540 1640" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M540 1640 Q463 1667 395 1621" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M395 1621 Q313 1627 260 1565" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M260 1565 Q180 1550 144 1476" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M144 1476 Q70 1440 55 1360" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M55 1360 Q-7 1307 -1 1225" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M-1 1225 Q-47 1157 -20 1080" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M-20 1080 Q-47 1003 -1 935" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M-1 935 Q-7 853 55 800" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M55 800 Q70 720 144 684" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M144 684 Q180 610 260 595" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M260 595 Q313 533 395 539" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M395 539 Q463 493 540 520" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M540 520 Q617 493 685 539" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M685 539 Q767 533 820 595" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M820 595 Q900 610 936 684" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M936 684 Q1010 720 1025 800" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M1025 800 Q1087 853 1081 935" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M1081 935 Q1127 1003 1100 1080" stroke="#efc15a" stroke-width="3" fill="none"/><path d="M540 845 Q433 617 540 560 Q647 617 540 845Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M540 820 Q511 751 514 781" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M540 820 Q540 750 540 765" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M540 820 Q569 751 566 781" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="540" y="697" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(0 540 685)">JAN</text><circle cx="678" cy="563" r="17" fill="#efc15a"/><circle cx="678" cy="563" r="12" fill="url(#emer)"/><circle cx="674" cy="559" r="3.5" fill="#fff" opacity="0.85"/><path d="M658 876 Q679 626 800 630 Q864 733 658 876Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M670 855 Q679 781 667 808" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M670 855 Q705 794 698 807" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M670 855 Q729 810 712 834" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="738" y="750" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(30 738 738)">FEB</text><circle cx="918" cy="702" r="17" fill="#efc15a"/><circle cx="918" cy="702" r="12" fill="url(#ruby)"/><circle cx="914" cy="698" r="3.5" fill="#fff" opacity="0.85"/><path d="M744 962 Q887 756 990 820 Q994 941 744 962Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M765 950 Q810 891 786 908" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M765 950 Q826 915 813 922" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M765 950 Q839 941 812 953" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="882" y="894" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(60 882 882)">MAR</text><circle cx="1057" cy="942" r="17" fill="#efc15a"/><circle cx="1057" cy="942" r="12" fill="url(#emer)"/><circle cx="1053" cy="938" r="3.5" fill="#fff" opacity="0.85"/><path d="M775 1080 Q1003 973 1060 1080 Q1003 1187 775 1080Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M800 1080 Q869 1051 839 1054" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M800 1080 Q870 1080 855 1080" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M800 1080 Q869 1109 839 1106" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="935" y="1092" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(90 935 1080)">APR</text><circle cx="1057" cy="1218" r="17" fill="#efc15a"/><circle cx="1057" cy="1218" r="12" fill="url(#ruby)"/><circle cx="1053" cy="1214" r="3.5" fill="#fff" opacity="0.85"/><path d="M744 1198 Q994 1219 990 1340 Q887 1404 744 1198Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M765 1210 Q839 1219 812 1207" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M765 1210 Q826 1245 813 1238" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M765 1210 Q810 1269 786 1252" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="882" y="1290" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(120 882 1278)">MAY</text><circle cx="918" cy="1458" r="17" fill="#efc15a"/><circle cx="918" cy="1458" r="12" fill="url(#emer)"/><circle cx="914" cy="1454" r="3.5" fill="#fff" opacity="0.85"/><path d="M658 1284 Q864 1427 800 1530 Q679 1534 658 1284Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M670 1305 Q729 1350 712 1326" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M670 1305 Q705 1366 698 1353" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M670 1305 Q679 1379 667 1352" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="738" y="1434" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(150 738 1422)">JUN</text><circle cx="678" cy="1597" r="17" fill="#efc15a"/><circle cx="678" cy="1597" r="12" fill="url(#ruby)"/><circle cx="674" cy="1593" r="3.5" fill="#fff" opacity="0.85"/><path d="M540 1315 Q647 1543 540 1600 Q433 1543 540 1315Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M540 1340 Q569 1409 566 1379" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M540 1340 Q540 1410 540 1395" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M540 1340 Q511 1409 514 1379" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="540" y="1487" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(180 540 1475)">JUL</text><circle cx="402" cy="1597" r="17" fill="#efc15a"/><circle cx="402" cy="1597" r="12" fill="url(#emer)"/><circle cx="398" cy="1593" r="3.5" fill="#fff" opacity="0.85"/><path d="M423 1284 Q401 1534 280 1530 Q216 1427 423 1284Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M410 1305 Q401 1379 413 1352" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M410 1305 Q375 1366 383 1353" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M410 1305 Q351 1350 368 1326" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="343" y="1434" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(210 343 1422)">AUG</text><circle cx="162" cy="1458" r="17" fill="#efc15a"/><circle cx="162" cy="1458" r="12" fill="url(#ruby)"/><circle cx="158" cy="1454" r="3.5" fill="#fff" opacity="0.85"/><path d="M336 1198 Q193 1404 90 1340 Q86 1219 336 1198Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M315 1210 Q270 1269 294 1252" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M315 1210 Q254 1245 267 1238" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M315 1210 Q241 1219 268 1207" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="198" y="1290" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(240 198 1278)">SEP</text><circle cx="23" cy="1218" r="17" fill="#efc15a"/><circle cx="23" cy="1218" r="12" fill="url(#emer)"/><circle cx="19" cy="1214" r="3.5" fill="#fff" opacity="0.85"/><path d="M305 1080 Q77 1187 20 1080 Q77 973 305 1080Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M280 1080 Q211 1109 241 1106" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M280 1080 Q210 1080 225 1080" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M280 1080 Q211 1051 241 1054" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="145" y="1092" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(270 145 1080)">OCT</text><circle cx="23" cy="942" r="17" fill="#efc15a"/><circle cx="23" cy="942" r="12" fill="url(#ruby)"/><circle cx="19" cy="938" r="3.5" fill="#fff" opacity="0.85"/><path d="M336 962 Q86 941 90 820 Q193 756 336 962Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M315 950 Q241 941 268 953" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M315 950 Q254 915 267 922" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M315 950 Q270 891 294 908" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="198" y="894" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(300 198 882)">NOV</text><circle cx="162" cy="702" r="17" fill="#efc15a"/><circle cx="162" cy="702" r="12" fill="url(#emer)"/><circle cx="158" cy="698" r="3.5" fill="#fff" opacity="0.85"/><path d="M422 876 Q216 733 280 630 Q401 626 422 876Z" fill="url(#petal)" stroke="url(#goldEdge)" stroke-width="5"/><path d="M410 855 Q351 810 368 834" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M410 855 Q375 794 382 807" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><path d="M410 855 Q401 781 413 808" stroke="#efc15a" stroke-width="2" opacity="0.55" fill="none"/><text x="342" y="750" text-anchor="middle" font-family="Cinzel" font-size="34" font-weight="700" fill="#fff1d6" transform="rotate(330 342 738)">DEC</text><circle cx="402" cy="563" r="17" fill="#efc15a"/><circle cx="402" cy="563" r="12" fill="url(#ruby)"/><circle cx="398" cy="559" r="3.5" fill="#fff" opacity="0.85"/>
+  <g id="sunring"><path d="M762.0 1080.0 L739.5 1066.0 L739.5 1094.0Z" fill="#efc15a"/><path d="M758.6 1118.5 L738.9 1100.9 L734.1 1128.4Z" fill="#efc15a"/><path d="M748.6 1155.9 L732.3 1135.1 L722.7 1161.3Z" fill="#efc15a"/><path d="M732.3 1191.0 L719.8 1167.7 L705.8 1191.8Z" fill="#efc15a"/><path d="M710.1 1222.7 L701.8 1197.6 L683.9 1218.9Z" fill="#efc15a"/><path d="M682.7 1250.1 L678.9 1223.9 L657.6 1241.8Z" fill="#efc15a"/><path d="M651.0 1272.3 L651.8 1245.8 L627.7 1259.8Z" fill="#efc15a"/><path d="M615.9 1288.6 L621.3 1262.7 L595.1 1272.3Z" fill="#efc15a"/><path d="M578.5 1298.6 L588.4 1274.1 L560.9 1278.9Z" fill="#efc15a"/><path d="M540.0 1302.0 L554.0 1279.5 L526.0 1279.5Z" fill="#efc15a"/><path d="M501.5 1298.6 L519.1 1278.9 L491.6 1274.1Z" fill="#efc15a"/><path d="M464.1 1288.6 L484.9 1272.3 L458.7 1262.7Z" fill="#efc15a"/><path d="M429.0 1272.3 L452.3 1259.8 L428.2 1245.8Z" fill="#efc15a"/><path d="M397.3 1250.1 L422.4 1241.8 L401.1 1223.9Z" fill="#efc15a"/><path d="M369.9 1222.7 L396.1 1218.9 L378.2 1197.6Z" fill="#efc15a"/><path d="M347.7 1191.0 L374.2 1191.8 L360.2 1167.7Z" fill="#efc15a"/><path d="M331.4 1155.9 L357.3 1161.3 L347.7 1135.1Z" fill="#efc15a"/><path d="M321.4 1118.5 L345.9 1128.4 L341.1 1100.9Z" fill="#efc15a"/><path d="M318.0 1080.0 L340.5 1094.0 L340.5 1066.0Z" fill="#efc15a"/><path d="M321.4 1041.5 L341.1 1059.1 L345.9 1031.6Z" fill="#efc15a"/><path d="M331.4 1004.1 L347.7 1024.9 L357.3 998.7Z" fill="#efc15a"/><path d="M347.7 969.0 L360.2 992.3 L374.2 968.2Z" fill="#efc15a"/><path d="M369.9 937.3 L378.2 962.4 L396.1 941.1Z" fill="#efc15a"/><path d="M397.3 909.9 L401.1 936.1 L422.4 918.2Z" fill="#efc15a"/><path d="M429.0 887.7 L428.2 914.2 L452.3 900.2Z" fill="#efc15a"/><path d="M464.1 871.4 L458.7 897.3 L484.9 887.7Z" fill="#efc15a"/><path d="M501.5 861.4 L491.6 885.9 L519.1 881.1Z" fill="#efc15a"/><path d="M540.0 858.0 L526.0 880.5 L554.0 880.5Z" fill="#efc15a"/><path d="M578.5 861.4 L560.9 881.1 L588.4 885.9Z" fill="#efc15a"/><path d="M615.9 871.4 L595.1 887.7 L621.3 897.3Z" fill="#efc15a"/><path d="M651.0 887.7 L627.7 900.2 L651.8 914.2Z" fill="#efc15a"/><path d="M682.7 909.9 L657.6 918.2 L678.9 936.1Z" fill="#efc15a"/><path d="M710.1 937.3 L683.9 941.1 L701.8 962.4Z" fill="#efc15a"/><path d="M732.3 969.0 L705.8 968.2 L719.8 992.3Z" fill="#efc15a"/><path d="M748.6 1004.1 L722.7 998.7 L732.3 1024.9Z" fill="#efc15a"/><path d="M758.6 1041.5 L734.1 1031.6 L738.9 1059.1Z" fill="#efc15a"/></g>
+  <circle cx="540" cy="1080" r="200" fill="url(#hub)" stroke="url(#goldEdge)" stroke-width="8"/>
+  <circle cx="540" cy="1080" r="184" fill="none" stroke="#efc15a" stroke-width="2" stroke-dasharray="3 7"/>
+  <ellipse cx="540" cy="1080" rx="118" ry="148" fill="#1f6b4f" stroke="#efc15a" stroke-width="3"/>
+  <ellipse cx="540" cy="1092" rx="94" ry="118" fill="url(#eye)"/>
+  <ellipse cx="540" cy="1112" rx="38" ry="52" fill="#06143a"/>
+  <ellipse cx="550" cy="1094" rx="12" ry="16" fill="#fff" opacity="0.5"/>
 </svg></div>
     <div id="h1" class="clip hook" data-start="0" data-duration="4.67" data-track-index="3">Your birth month already<br>chose one of <b>His names.</b></div>
     <div id="head" class="clip hook" data-start="4.77" data-duration="17.20" data-track-index="4">FIND YOUR MONTH</div>
     <div id="p0" class="clip" data-start="4.67" data-duration="4.40" data-track-index="5">
-      <div id="c0" class="card" style="top: 400px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">JAN</div><div class="txt"><div class="nm">Govinda</div><div class="mn">the one who gives joy to all</div></div></div>
-      <div id="c1" class="card" style="top: 800px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">FEB</div><div class="txt"><div class="nm">Madhava</div><div class="mn">sweet as honey</div></div></div>
-      <div id="c2" class="card" style="top: 1200px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">MAR</div><div class="txt"><div class="nm">Keshava</div><div class="mn">the one with beautiful hair</div></div></div>
+      <div id="c0" class="card" style="top: 380px;"><div class="inner"><div id="sh0" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><g transform="rotate(-32 50 50)"><rect x="8" y="44" width="84" height="12" rx="6" fill="#3a0610"/><circle cx="30" cy="50" r="2.6" fill="#ffe9a8"/><circle cx="39" cy="50" r="2.6" fill="#ffe9a8"/><circle cx="48" cy="50" r="2.6" fill="#ffe9a8"/><circle cx="57" cy="50" r="2.6" fill="#ffe9a8"/><circle cx="66" cy="50" r="2.6" fill="#ffe9a8"/><rect x="20" y="43" width="4" height="14" fill="#c0142f"/><rect x="76" y="43" width="4" height="14" fill="#c0142f"/></g><path d="M22 70 q-2 10 3 18 M22 70 q4 9 0 18" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="22" cy="68" r="4" fill="#c0142f"/></svg></div><div class="txt"><div class="mo">JANUARY</div><div class="nm">Govinda</div><div class="mn">the one who gives joy to all</div></div></div>
+      <div id="c1" class="card" style="top: 790px;"><div class="inner"><div id="sh1" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><ellipse cx="50" cy="52" rx="10" ry="26" transform="rotate(-64 50 78)" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="52" rx="10" ry="26" transform="rotate(-32 50 78)" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="52" rx="10" ry="26" transform="rotate(0 50 78)" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="52" rx="10" ry="26" transform="rotate(32 50 78)" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="52" rx="10" ry="26" transform="rotate(64 50 78)" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 80 Q50 92 80 80" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="50" cy="66" r="4" fill="#ffe9a8"/></svg></div><div class="txt"><div class="mo">FEBRUARY</div><div class="nm">Madhava</div><div class="mn">sweet as honey</div></div></div>
+      <div id="c2" class="card" style="top: 1200px;"><div class="inner"><div id="sh2" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><path d="M50 30 q-14 6 -20 4 M50 30 q14 6 20 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 36 q-15 6 -21 4 M50 36 q15 6 21 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 42 q-16 6 -22 4 M50 42 q16 6 22 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 48 q-17 6 -23 4 M50 48 q17 6 23 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 54 q-18 6 -24 4 M50 54 q18 6 24 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 60 q-19 6 -25 4 M50 60 q19 6 25 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 66 q-20 6 -26 4 M50 66 q20 6 26 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 72 q-21 6 -27 4 M50 72 q21 6 27 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><ellipse cx="50" cy="32" rx="15" ry="19" fill="#0f8a63" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="34" rx="9" ry="12" fill="#1e5aa8"/><ellipse cx="50" cy="36" rx="4" ry="6" fill="#3a0610"/><path d="M50 50 L50 94" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="txt"><div class="mo">MARCH</div><div class="nm">Keshava</div><div class="mn">the one with beautiful hair</div></div></div>
     </div>
     <div id="p1" class="clip" data-start="8.97" data-duration="4.40" data-track-index="6">
-      <div id="c3" class="card" style="top: 400px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">APR</div><div class="txt"><div class="nm">Gopala</div><div class="mn">protector of the cows</div></div></div>
-      <div id="c4" class="card" style="top: 800px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">MAY</div><div class="txt"><div class="nm">Mukunda</div><div class="mn">the giver of liberation</div></div></div>
-      <div id="c5" class="card" style="top: 1200px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">JUN</div><div class="txt"><div class="nm">Damodara</div><div class="mn">bound by a mother's love</div></div></div>
+      <div id="c3" class="card" style="top: 380px;"><div class="inner"><div id="sh3" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><path d="M36 18 q14 -10 28 0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M34 30 h32 l8 44 h-48z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="30" y="26" width="40" height="7" rx="3" fill="#c0142f"/><circle cx="50" cy="80" r="6" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 40 l-3 26" stroke="#ffe9a8" stroke-width="3" stroke-linecap="round"/></svg></div><div class="txt"><div class="mo">APRIL</div><div class="nm">Gopala</div><div class="mn">protector of the cows</div></div></div>
+      <div id="c4" class="card" style="top: 790px;"><div class="inner"><div id="sh4" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><path d="M50 14 Q64 36 50 52 Q36 36 50 14Z" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 28 Q56 40 50 48 Q44 40 50 28Z" fill="#ffe9a8"/><path d="M14 58 Q50 96 86 58 Z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 64 Q50 84 76 64" stroke="#ffe9a8" stroke-width="2.5" fill="none"/></svg></div><div class="txt"><div class="mo">MAY</div><div class="nm">Mukunda</div><div class="mn">the giver of liberation</div></div></div>
+      <div id="c5" class="card" style="top: 1200px;"><div class="inner"><div id="sh5" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><circle cx="50" cy="62" r="25" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="38" y="26" width="24" height="14" rx="3" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="26" rx="15" ry="5" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 50 L72 74 M72 50 L28 74" stroke="#ffe9a8" stroke-width="3"/><path d="M40 22 q10 -12 22 -2" stroke="#fff6e0" stroke-width="5" stroke-linecap="round" fill="none"/></svg></div><div class="txt"><div class="mo">JUNE</div><div class="nm">Damodara</div><div class="mn">bound by a mother's love</div></div></div>
     </div>
     <div id="p2" class="clip" data-start="13.27" data-duration="4.40" data-track-index="5">
-      <div id="c6" class="card" style="top: 400px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">JUL</div><div class="txt"><div class="nm">Shyam</div><div class="mn">the dark, beautiful one</div></div></div>
-      <div id="c7" class="card" style="top: 800px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">AUG</div><div class="txt"><div class="nm">Vasudeva</div><div class="mn">He who dwells in all</div></div></div>
-      <div id="c8" class="card" style="top: 1200px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">SEP</div><div class="txt"><div class="nm">Achyuta</div><div class="mn">the one who never falls</div></div></div>
+      <div id="c6" class="card" style="top: 380px;"><div class="inner"><div id="sh6" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><path d="M24 62 a14 14 0 0 1 6 -27 a18 18 0 0 1 34 -4 a14 14 0 0 1 12 31 z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 40 l-8 12 h8 l-6 12" stroke="#ffe9a8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M30 72 l-3 9" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="M44 78 l-3 9" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="M58 72 l-3 9" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="M72 78 l-3 9" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></svg></div><div class="txt"><div class="mo">JULY</div><div class="nm">Shyam</div><div class="mn">the dark, beautiful one</div></div></div>
+      <div id="c7" class="card" style="top: 790px;"><div class="inner"><div id="sh7" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><path d="M74.0 50.0 L90.0 50.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M70.8 62.0 L84.6 70.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M62.0 70.8 L70.0 84.6" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M50.0 74.0 L50.0 90.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M38.0 70.8 L30.0 84.6" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M29.2 62.0 L15.4 70.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.0 50.0 L10.0 50.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M29.2 38.0 L15.4 30.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M38.0 29.2 L30.0 15.4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M50.0 26.0 L50.0 10.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M62.0 29.2 L70.0 15.4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M70.8 38.0 L84.6 30.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="50" r="17" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="50" r="7" fill="#ffe9a8"/></svg></div><div class="txt"><div class="mo">AUGUST</div><div class="nm">Vasudeva</div><div class="mn">He who dwells in all</div></div></div>
+      <div id="c8" class="card" style="top: 1200px;"><div class="inner"><div id="sh8" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><path d="M8 84 L38 36 L52 54 L64 40 L92 84Z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 36 L44 46 L34 50" stroke="#ffe9a8" stroke-width="3" fill="none"/><path d="M20 30 Q50 6 80 30" stroke="#c0142f" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="50" cy="16" r="4" fill="#c0142f"/></svg></div><div class="txt"><div class="mo">SEPTEMBER</div><div class="nm">Achyuta</div><div class="mn">the one who never falls</div></div></div>
     </div>
     <div id="p3" class="clip" data-start="17.57" data-duration="4.40" data-track-index="6">
-      <div id="c9" class="card" style="top: 400px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">OCT</div><div class="txt"><div class="nm">Hari</div><div class="mn">He who takes away sorrow</div></div></div>
-      <div id="c10" class="card" style="top: 800px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">NOV</div><div class="txt"><div class="nm">Mohana</div><div class="mn">the one who enchants all</div></div></div>
-      <div id="c11" class="card" style="top: 1200px;"><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="badge">DEC</div><div class="txt"><div class="nm">Janardana</div><div class="mn">protector of the people</div></div></div>
+      <div id="c9" class="card" style="top: 380px;"><div class="inner"><div id="sh9" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><path d="M79.7 45.8 L92.0 50.0 L79.7 54.2Z" fill="#c0142f"/><path d="M77.8 61.2 L86.4 71.0 L73.6 68.5Z" fill="#c0142f"/><path d="M68.5 73.6 L71.0 86.4 L61.2 77.8Z" fill="#c0142f"/><path d="M54.2 79.7 L50.0 92.0 L45.8 79.7Z" fill="#c0142f"/><path d="M38.8 77.8 L29.0 86.4 L31.5 73.6Z" fill="#c0142f"/><path d="M26.4 68.5 L13.6 71.0 L22.2 61.2Z" fill="#c0142f"/><path d="M20.3 54.2 L8.0 50.0 L20.3 45.8Z" fill="#c0142f"/><path d="M22.2 38.8 L13.6 29.0 L26.4 31.5Z" fill="#c0142f"/><path d="M31.5 26.4 L29.0 13.6 L38.8 22.2Z" fill="#c0142f"/><path d="M45.8 20.3 L50.0 8.0 L54.2 20.3Z" fill="#c0142f"/><path d="M61.2 22.2 L71.0 13.6 L68.5 26.4Z" fill="#c0142f"/><path d="M73.6 31.5 L86.4 29.0 L77.8 38.8Z" fill="#c0142f"/><circle cx="50" cy="50" r="30" fill="none" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 50 L74.0 50.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L70.8 62.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L62.0 70.8" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L50.0 74.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L38.0 70.8" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L29.2 62.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L26.0 50.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L29.2 38.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L38.0 29.2" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L50.0 26.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L62.0 29.2" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L70.8 38.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><circle cx="50" cy="50" r="8" fill="#3a0610"/></svg></div><div class="txt"><div class="mo">OCTOBER</div><div class="nm">Hari</div><div class="mn">He who takes away sorrow</div></div></div>
+      <div id="c10" class="card" style="top: 790px;"><div class="inner"><div id="sh10" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><path d="M18 80 L14 40 L32 56 L50 30 L68 56 L86 40 L82 80Z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="18" y="76" width="64" height="10" rx="3" fill="#c0142f"/><circle cx="50" cy="62" r="6" fill="#c0142f"/><circle cx="32" cy="66" r="4" fill="#0f8a63"/><circle cx="68" cy="66" r="4" fill="#0f8a63"/><path d="M50 30 Q60 14 56 4" stroke="#0f8a63" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="57" cy="8" rx="5" ry="6" fill="#1e5aa8"/></svg></div><div class="txt"><div class="mo">NOVEMBER</div><div class="nm">Mohana</div><div class="mn">the one who enchants all</div></div></div>
+      <div id="c11" class="card" style="top: 1200px;"><div class="inner"><div id="sh11" class="sheen"></div></div><div class="beads"></div><div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div><div class="gem g4"></div><div class="medal"><svg viewBox="0 0 100 100" width="124" height="124"><path d="M30 78 Q12 50 34 28 Q52 12 70 26 Q86 40 76 60 Q66 80 44 84 Z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 36 Q48 36 48 46 Q48 56 58 56 Q66 56 66 48 Q66 42 60 42 Q55 42 55 47" stroke="#ffe9a8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M30 78 L22 90 L40 84" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="txt"><div class="mo">DECEMBER</div><div class="nm">Janardana</div><div class="mn">protector of the people</div></div></div>
     </div>
     <div id="grid" class="clip" data-start="21.97" data-duration="7.91" data-track-index="7">
-      <div id="t0" class="tile" style="left: 60px; top: 330px;"><div class="tm">JAN</div><div class="tn">Govinda</div></div>
-      <div id="t1" class="tile" style="left: 392px; top: 330px;"><div class="tm">FEB</div><div class="tn">Madhava</div></div>
-      <div id="t2" class="tile" style="left: 724px; top: 330px;"><div class="tm">MAR</div><div class="tn">Keshava</div></div>
-      <div id="t3" class="tile" style="left: 60px; top: 620px;"><div class="tm">APR</div><div class="tn">Gopala</div></div>
-      <div id="t4" class="tile" style="left: 392px; top: 620px;"><div class="tm">MAY</div><div class="tn">Mukunda</div></div>
-      <div id="t5" class="tile" style="left: 724px; top: 620px;"><div class="tm">JUN</div><div class="tn">Damodara</div></div>
-      <div id="t6" class="tile" style="left: 60px; top: 910px;"><div class="tm">JUL</div><div class="tn">Shyam</div></div>
-      <div id="t7" class="tile" style="left: 392px; top: 910px;"><div class="tm">AUG</div><div class="tn">Vasudeva</div></div>
-      <div id="t8" class="tile" style="left: 724px; top: 910px;"><div class="tm">SEP</div><div class="tn">Achyuta</div></div>
-      <div id="t9" class="tile" style="left: 60px; top: 1200px;"><div class="tm">OCT</div><div class="tn">Hari</div></div>
-      <div id="t10" class="tile" style="left: 392px; top: 1200px;"><div class="tm">NOV</div><div class="tn">Mohana</div></div>
-      <div id="t11" class="tile" style="left: 724px; top: 1200px;"><div class="tm">DEC</div><div class="tn">Janardana</div></div>
+      <div id="t0" class="tile" style="left: 60px; top: 300px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><g transform="rotate(-32 50 50)"><rect x="8" y="44" width="84" height="12" rx="6" fill="#3a0610"/><circle cx="30" cy="50" r="2.6" fill="#ffe9a8"/><circle cx="39" cy="50" r="2.6" fill="#ffe9a8"/><circle cx="48" cy="50" r="2.6" fill="#ffe9a8"/><circle cx="57" cy="50" r="2.6" fill="#ffe9a8"/><circle cx="66" cy="50" r="2.6" fill="#ffe9a8"/><rect x="20" y="43" width="4" height="14" fill="#c0142f"/><rect x="76" y="43" width="4" height="14" fill="#c0142f"/></g><path d="M22 70 q-2 10 3 18 M22 70 q4 9 0 18" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="22" cy="68" r="4" fill="#c0142f"/></svg></div><div class="tm">JAN</div><div class="tn">Govinda</div></div>
+      <div id="t1" class="tile" style="left: 392px; top: 300px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><ellipse cx="50" cy="52" rx="10" ry="26" transform="rotate(-64 50 78)" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="52" rx="10" ry="26" transform="rotate(-32 50 78)" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="52" rx="10" ry="26" transform="rotate(0 50 78)" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="52" rx="10" ry="26" transform="rotate(32 50 78)" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="52" rx="10" ry="26" transform="rotate(64 50 78)" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 80 Q50 92 80 80" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="50" cy="66" r="4" fill="#ffe9a8"/></svg></div><div class="tm">FEB</div><div class="tn">Madhava</div></div>
+      <div id="t2" class="tile" style="left: 724px; top: 300px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><path d="M50 30 q-14 6 -20 4 M50 30 q14 6 20 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 36 q-15 6 -21 4 M50 36 q15 6 21 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 42 q-16 6 -22 4 M50 42 q16 6 22 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 48 q-17 6 -23 4 M50 48 q17 6 23 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 54 q-18 6 -24 4 M50 54 q18 6 24 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 60 q-19 6 -25 4 M50 60 q19 6 25 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 66 q-20 6 -26 4 M50 66 q20 6 26 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><path d="M50 72 q-21 6 -27 4 M50 72 q21 6 27 4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/><ellipse cx="50" cy="32" rx="15" ry="19" fill="#0f8a63" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="34" rx="9" ry="12" fill="#1e5aa8"/><ellipse cx="50" cy="36" rx="4" ry="6" fill="#3a0610"/><path d="M50 50 L50 94" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tm">MAR</div><div class="tn">Keshava</div></div>
+      <div id="t3" class="tile" style="left: 60px; top: 590px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><path d="M36 18 q14 -10 28 0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M34 30 h32 l8 44 h-48z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="30" y="26" width="40" height="7" rx="3" fill="#c0142f"/><circle cx="50" cy="80" r="6" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 40 l-3 26" stroke="#ffe9a8" stroke-width="3" stroke-linecap="round"/></svg></div><div class="tm">APR</div><div class="tn">Gopala</div></div>
+      <div id="t4" class="tile" style="left: 392px; top: 590px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><path d="M50 14 Q64 36 50 52 Q36 36 50 14Z" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 28 Q56 40 50 48 Q44 40 50 28Z" fill="#ffe9a8"/><path d="M14 58 Q50 96 86 58 Z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 64 Q50 84 76 64" stroke="#ffe9a8" stroke-width="2.5" fill="none"/></svg></div><div class="tm">MAY</div><div class="tn">Mukunda</div></div>
+      <div id="t5" class="tile" style="left: 724px; top: 590px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><circle cx="50" cy="62" r="25" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="38" y="26" width="24" height="14" rx="3" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="26" rx="15" ry="5" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 50 L72 74 M72 50 L28 74" stroke="#ffe9a8" stroke-width="3"/><path d="M40 22 q10 -12 22 -2" stroke="#fff6e0" stroke-width="5" stroke-linecap="round" fill="none"/></svg></div><div class="tm">JUN</div><div class="tn">Damodara</div></div>
+      <div id="t6" class="tile" style="left: 60px; top: 880px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><path d="M24 62 a14 14 0 0 1 6 -27 a18 18 0 0 1 34 -4 a14 14 0 0 1 12 31 z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 40 l-8 12 h8 l-6 12" stroke="#ffe9a8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M30 72 l-3 9" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="M44 78 l-3 9" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="M58 72 l-3 9" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="M72 78 l-3 9" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></svg></div><div class="tm">JUL</div><div class="tn">Shyam</div></div>
+      <div id="t7" class="tile" style="left: 392px; top: 880px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><path d="M74.0 50.0 L90.0 50.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M70.8 62.0 L84.6 70.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M62.0 70.8 L70.0 84.6" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M50.0 74.0 L50.0 90.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M38.0 70.8 L30.0 84.6" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M29.2 62.0 L15.4 70.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.0 50.0 L10.0 50.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M29.2 38.0 L15.4 30.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M38.0 29.2 L30.0 15.4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M50.0 26.0 L50.0 10.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M62.0 29.2 L70.0 15.4" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M70.8 38.0 L84.6 30.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="50" r="17" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="50" r="7" fill="#ffe9a8"/></svg></div><div class="tm">AUG</div><div class="tn">Vasudeva</div></div>
+      <div id="t8" class="tile" style="left: 724px; top: 880px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><path d="M8 84 L38 36 L52 54 L64 40 L92 84Z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 36 L44 46 L34 50" stroke="#ffe9a8" stroke-width="3" fill="none"/><path d="M20 30 Q50 6 80 30" stroke="#c0142f" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="50" cy="16" r="4" fill="#c0142f"/></svg></div><div class="tm">SEP</div><div class="tn">Achyuta</div></div>
+      <div id="t9" class="tile" style="left: 60px; top: 1170px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><path d="M79.7 45.8 L92.0 50.0 L79.7 54.2Z" fill="#c0142f"/><path d="M77.8 61.2 L86.4 71.0 L73.6 68.5Z" fill="#c0142f"/><path d="M68.5 73.6 L71.0 86.4 L61.2 77.8Z" fill="#c0142f"/><path d="M54.2 79.7 L50.0 92.0 L45.8 79.7Z" fill="#c0142f"/><path d="M38.8 77.8 L29.0 86.4 L31.5 73.6Z" fill="#c0142f"/><path d="M26.4 68.5 L13.6 71.0 L22.2 61.2Z" fill="#c0142f"/><path d="M20.3 54.2 L8.0 50.0 L20.3 45.8Z" fill="#c0142f"/><path d="M22.2 38.8 L13.6 29.0 L26.4 31.5Z" fill="#c0142f"/><path d="M31.5 26.4 L29.0 13.6 L38.8 22.2Z" fill="#c0142f"/><path d="M45.8 20.3 L50.0 8.0 L54.2 20.3Z" fill="#c0142f"/><path d="M61.2 22.2 L71.0 13.6 L68.5 26.4Z" fill="#c0142f"/><path d="M73.6 31.5 L86.4 29.0 L77.8 38.8Z" fill="#c0142f"/><circle cx="50" cy="50" r="30" fill="none" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 50 L74.0 50.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L70.8 62.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L62.0 70.8" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L50.0 74.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L38.0 70.8" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L29.2 62.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L26.0 50.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L29.2 38.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L38.0 29.2" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L50.0 26.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L62.0 29.2" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><path d="M50 50 L70.8 38.0" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/><circle cx="50" cy="50" r="8" fill="#3a0610"/></svg></div><div class="tm">OCT</div><div class="tn">Hari</div></div>
+      <div id="t10" class="tile" style="left: 392px; top: 1170px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><path d="M18 80 L14 40 L32 56 L50 30 L68 56 L86 40 L82 80Z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="18" y="76" width="64" height="10" rx="3" fill="#c0142f"/><circle cx="50" cy="62" r="6" fill="#c0142f"/><circle cx="32" cy="66" r="4" fill="#0f8a63"/><circle cx="68" cy="66" r="4" fill="#0f8a63"/><path d="M50 30 Q60 14 56 4" stroke="#0f8a63" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="57" cy="8" rx="5" ry="6" fill="#1e5aa8"/></svg></div><div class="tm">NOV</div><div class="tn">Mohana</div></div>
+      <div id="t11" class="tile" style="left: 724px; top: 1170px;"><div class="ti"><svg viewBox="0 0 100 100" width="62" height="62"><path d="M30 78 Q12 50 34 28 Q52 12 70 26 Q86 40 76 60 Q66 80 44 84 Z" fill="#3a0610" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 36 Q48 36 48 46 Q48 56 58 56 Q66 56 66 48 Q66 42 60 42 Q55 42 55 47" stroke="#ffe9a8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M30 78 L22 90 L40 84" fill="#c0142f" stroke="#3a0610" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tm">DEC</div><div class="tn">Janardana</div></div>
     </div>
-    <div id="pause" class="clip hook" data-start="21.97" data-duration="7.91" data-track-index="8" style="top: 160px; font-size: 58px; color: #e8b84a;">Pause. Find yours.</div>
+    <div id="pause" class="clip hook" data-start="21.97" data-duration="7.91" data-track-index="8" style="top: 170px; font-size: 60px; color: #efc15a;">Pause. Find yours.</div>
     <div id="cta" class="clip" data-start="25.56" data-duration="4.32" data-track-index="9">Comment <b>your name</b> 👇<br><span style="font-size: 40px; font-weight: 700; color: #f3dcae">@lordsrikrishnatemple</span></div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#d0", { x: 0, y: 0, opacity: 0.8 }, { x: 1, y: -395, opacity: 0, duration: 7.67, repeat: 3, ease: "none" }, 1.79);
-    tl.fromTo("#d1", { x: 0, y: 0, opacity: 0.8 }, { x: 31, y: -382, opacity: 0, duration: 6.95, repeat: 3, ease: "none" }, 0.89);
-    tl.fromTo("#d2", { x: 0, y: 0, opacity: 0.8 }, { x: 44, y: -421, opacity: 0, duration: 8.67, repeat: 3, ease: "none" }, 3.81);
-    tl.fromTo("#d3", { x: 0, y: 0, opacity: 0.8 }, { x: 41, y: -362, opacity: 0, duration: 9.82, repeat: 3, ease: "none" }, 1.01);
-    tl.fromTo("#d4", { x: 0, y: 0, opacity: 0.8 }, { x: 25, y: -573, opacity: 0, duration: 6.11, repeat: 3, ease: "none" }, 1.83);
-    tl.fromTo("#d5", { x: 0, y: 0, opacity: 0.8 }, { x: 40, y: -408, opacity: 0, duration: 7.45, repeat: 3, ease: "none" }, 1.68);
-    tl.fromTo("#d6", { x: 0, y: 0, opacity: 0.8 }, { x: 3, y: -466, opacity: 0, duration: 8.07, repeat: 3, ease: "none" }, 0.69);
-    tl.fromTo("#d7", { x: 0, y: 0, opacity: 0.8 }, { x: -55, y: -394, opacity: 0, duration: 9.90, repeat: 3, ease: "none" }, 3.33);
-    tl.fromTo("#d8", { x: 0, y: 0, opacity: 0.8 }, { x: -13, y: -370, opacity: 0, duration: 7.96, repeat: 3, ease: "none" }, 1.24);
-    tl.fromTo("#d9", { x: 0, y: 0, opacity: 0.8 }, { x: -2, y: -283, opacity: 0, duration: 6.66, repeat: 3, ease: "none" }, 1.93);
-    tl.fromTo("#d10", { x: 0, y: 0, opacity: 0.8 }, { x: 47, y: -692, opacity: 0, duration: 7.97, repeat: 3, ease: "none" }, 3.68);
-    tl.fromTo("#d11", { x: 0, y: 0, opacity: 0.8 }, { x: 41, y: -312, opacity: 0, duration: 7.82, repeat: 3, ease: "none" }, 2.45);
-    tl.fromTo("#d12", { x: 0, y: 0, opacity: 0.8 }, { x: -58, y: -323, opacity: 0, duration: 8.83, repeat: 3, ease: "none" }, 3.68);
-    tl.fromTo("#d13", { x: 0, y: 0, opacity: 0.8 }, { x: 9, y: -272, opacity: 0, duration: 8.64, repeat: 3, ease: "none" }, 1.60);
-    tl.fromTo("#d14", { x: 0, y: 0, opacity: 0.8 }, { x: 5, y: -592, opacity: 0, duration: 9.81, repeat: 3, ease: "none" }, 3.13);
-    tl.fromTo("#d15", { x: 0, y: 0, opacity: 0.8 }, { x: -20, y: -301, opacity: 0, duration: 8.83, repeat: 3, ease: "none" }, 2.17);
-    tl.fromTo("#d16", { x: 0, y: 0, opacity: 0.8 }, { x: -10, y: -570, opacity: 0, duration: 6.19, repeat: 3, ease: "none" }, 3.37);
-    tl.fromTo("#d17", { x: 0, y: 0, opacity: 0.8 }, { x: -10, y: -328, opacity: 0, duration: 9.60, repeat: 3, ease: "none" }, 2.77);
-    tl.fromTo("#d18", { x: 0, y: 0, opacity: 0.8 }, { x: 14, y: -255, opacity: 0, duration: 6.96, repeat: 3, ease: "none" }, 0.98);
-    tl.fromTo("#d19", { x: 0, y: 0, opacity: 0.8 }, { x: 22, y: -325, opacity: 0, duration: 7.07, repeat: 3, ease: "none" }, 1.63);
-    tl.fromTo("#d20", { x: 0, y: 0, opacity: 0.8 }, { x: 53, y: -623, opacity: 0, duration: 7.87, repeat: 3, ease: "none" }, 1.04);
-    tl.fromTo("#d21", { x: 0, y: 0, opacity: 0.8 }, { x: 30, y: -351, opacity: 0, duration: 7.71, repeat: 3, ease: "none" }, 1.02);
-    tl.fromTo("#d22", { x: 0, y: 0, opacity: 0.8 }, { x: -47, y: -665, opacity: 0, duration: 6.86, repeat: 3, ease: "none" }, 1.66);
-    tl.fromTo("#d23", { x: 0, y: 0, opacity: 0.8 }, { x: -46, y: -483, opacity: 0, duration: 7.74, repeat: 3, ease: "none" }, 3.36);
-    tl.fromTo("#d24", { x: 0, y: 0, opacity: 0.8 }, { x: 53, y: -317, opacity: 0, duration: 9.50, repeat: 3, ease: "none" }, 1.73);
-    tl.fromTo("#d25", { x: 0, y: 0, opacity: 0.8 }, { x: -37, y: -435, opacity: 0, duration: 8.67, repeat: 3, ease: "none" }, 3.30);
-    tl.fromTo("#d26", { x: 0, y: 0, opacity: 0.8 }, { x: 24, y: -468, opacity: 0, duration: 9.39, repeat: 3, ease: "none" }, 1.95);
-    tl.fromTo("#d27", { x: 0, y: 0, opacity: 0.8 }, { x: 48, y: -289, opacity: 0, duration: 9.01, repeat: 3, ease: "none" }, 3.15);
-    tl.fromTo("#d28", { x: 0, y: 0, opacity: 0.8 }, { x: 8, y: -579, opacity: 0, duration: 7.89, repeat: 3, ease: "none" }, 2.36);
-    tl.fromTo("#d29", { x: 0, y: 0, opacity: 0.8 }, { x: 2, y: -533, opacity: 0, duration: 6.32, repeat: 3, ease: "none" }, 2.53);
-    tl.fromTo("#d30", { x: 0, y: 0, opacity: 0.8 }, { x: 24, y: -410, opacity: 0, duration: 6.23, repeat: 3, ease: "none" }, 0.32);
-    tl.fromTo("#d31", { x: 0, y: 0, opacity: 0.8 }, { x: 36, y: -276, opacity: 0, duration: 8.05, repeat: 3, ease: "none" }, 2.13);
-    tl.fromTo("#d32", { x: 0, y: 0, opacity: 0.8 }, { x: -14, y: -456, opacity: 0, duration: 7.13, repeat: 3, ease: "none" }, 0.26);
-    tl.fromTo("#d33", { x: 0, y: 0, opacity: 0.8 }, { x: -34, y: -617, opacity: 0, duration: 6.05, repeat: 3, ease: "none" }, 0.00);
-    tl.fromTo("#d34", { x: 0, y: 0, opacity: 0.8 }, { x: 17, y: -569, opacity: 0, duration: 6.81, repeat: 3, ease: "none" }, 1.08);
-    tl.fromTo("#d35", { x: 0, y: 0, opacity: 0.8 }, { x: 20, y: -279, opacity: 0, duration: 6.59, repeat: 3, ease: "none" }, 3.83);
-    tl.fromTo("#wheel", { rotation: -20, scale: 1.08, transformOrigin: "540px 1080px" }, { rotation: 10, scale: 1.0, duration: 4.27, ease: "spring-glide" }, 0);
-    tl.to("#wheel", { scale: 3.2, opacity: 0, duration: 0.9, ease: "power2.in" }, 4.27);
+    tl.fromTo("#d0", { x: 0, y: 0, opacity: 0.9 }, { x: 1, y: -173, opacity: 0, duration: 7.67, repeat: 3, ease: "none" }, 1.79);
+    tl.fromTo("#d1", { x: 0, y: 0, opacity: 0.7 }, { x: 31, y: -332, opacity: 0, duration: 6.95, repeat: 3, ease: "none" }, 0.89);
+    tl.fromTo("#d2", { x: 0, y: 0, opacity: 0.35 }, { x: 44, y: -557, opacity: 0, duration: 8.67, repeat: 3, ease: "none" }, 3.81);
+    tl.fromTo("#d3", { x: 0, y: 0, opacity: 0.9 }, { x: 41, y: -156, opacity: 0, duration: 9.82, repeat: 3, ease: "none" }, 1.01);
+    tl.fromTo("#d4", { x: 0, y: 0, opacity: 0.7 }, { x: 25, y: -523, opacity: 0, duration: 6.11, repeat: 3, ease: "none" }, 1.83);
+    tl.fromTo("#d5", { x: 0, y: 0, opacity: 0.35 }, { x: 40, y: -537, opacity: 0, duration: 7.45, repeat: 3, ease: "none" }, 1.68);
+    tl.fromTo("#d6", { x: 0, y: 0, opacity: 0.9 }, { x: 3, y: -208, opacity: 0, duration: 8.07, repeat: 3, ease: "none" }, 0.69);
+    tl.fromTo("#d7", { x: 0, y: 0, opacity: 0.7 }, { x: -55, y: -344, opacity: 0, duration: 9.90, repeat: 3, ease: "none" }, 3.33);
+    tl.fromTo("#d8", { x: 0, y: 0, opacity: 0.35 }, { x: -13, y: -480, opacity: 0, duration: 7.96, repeat: 3, ease: "none" }, 1.24);
+    tl.fromTo("#d9", { x: 0, y: 0, opacity: 0.9 }, { x: -2, y: -117, opacity: 0, duration: 6.66, repeat: 3, ease: "none" }, 1.93);
+    tl.fromTo("#d10", { x: 0, y: 0, opacity: 0.7 }, { x: 47, y: -642, opacity: 0, duration: 7.97, repeat: 3, ease: "none" }, 3.68);
+    tl.fromTo("#d11", { x: 0, y: 0, opacity: 0.35 }, { x: 41, y: -393, opacity: 0, duration: 7.82, repeat: 3, ease: "none" }, 2.45);
+    tl.fromTo("#d12", { x: 0, y: 0, opacity: 0.9 }, { x: -58, y: -348, opacity: 0, duration: 6.58, repeat: 3, ease: "none" }, 0.93);
+    tl.fromTo("#d13", { x: 0, y: 0, opacity: 0.7 }, { x: -56, y: -476, opacity: 0, duration: 6.17, repeat: 3, ease: "none" }, 2.60);
+    tl.fromTo("#d14", { x: 0, y: 0, opacity: 0.35 }, { x: 5, y: -813, opacity: 0, duration: 9.81, repeat: 3, ease: "none" }, 3.13);
+    tl.fromTo("#d15", { x: 0, y: 0, opacity: 0.9 }, { x: -20, y: -126, opacity: 0, duration: 8.83, repeat: 3, ease: "none" }, 2.17);
+    tl.fromTo("#d16", { x: 0, y: 0, opacity: 0.7 }, { x: -10, y: -520, opacity: 0, duration: 6.19, repeat: 3, ease: "none" }, 3.37);
+    tl.fromTo("#d17", { x: 0, y: 0, opacity: 0.35 }, { x: -10, y: -417, opacity: 0, duration: 9.60, repeat: 3, ease: "none" }, 2.77);
+    tl.fromTo("#d18", { x: 0, y: 0, opacity: 0.9 }, { x: 14, y: -103, opacity: 0, duration: 6.96, repeat: 3, ease: "none" }, 0.98);
+    tl.fromTo("#d19", { x: 0, y: 0, opacity: 0.7 }, { x: 22, y: -275, opacity: 0, duration: 7.07, repeat: 3, ease: "none" }, 1.63);
+    tl.fromTo("#d20", { x: 0, y: 0, opacity: 0.35 }, { x: 53, y: -860, opacity: 0, duration: 7.87, repeat: 3, ease: "none" }, 1.04);
+    tl.fromTo("#d21", { x: 0, y: 0, opacity: 0.9 }, { x: 30, y: -151, opacity: 0, duration: 7.71, repeat: 3, ease: "none" }, 1.02);
+    tl.fromTo("#d22", { x: 0, y: 0, opacity: 0.7 }, { x: -47, y: -615, opacity: 0, duration: 6.86, repeat: 3, ease: "none" }, 1.66);
+    tl.fromTo("#d23", { x: 0, y: 0, opacity: 0.35 }, { x: -46, y: -650, opacity: 0, duration: 7.74, repeat: 3, ease: "none" }, 3.36);
+    tl.fromTo("#d24", { x: 0, y: 0, opacity: 0.9 }, { x: 53, y: -134, opacity: 0, duration: 9.50, repeat: 3, ease: "none" }, 1.73);
+    tl.fromTo("#d25", { x: 0, y: 0, opacity: 0.7 }, { x: -37, y: -385, opacity: 0, duration: 8.67, repeat: 3, ease: "none" }, 3.30);
+    tl.fromTo("#d26", { x: 0, y: 0, opacity: 0.35 }, { x: 24, y: -627, opacity: 0, duration: 9.39, repeat: 3, ease: "none" }, 1.95);
+    tl.fromTo("#d27", { x: 0, y: 0, opacity: 0.9 }, { x: 48, y: -120, opacity: 0, duration: 9.01, repeat: 3, ease: "none" }, 3.15);
+    tl.fromTo("#d28", { x: 0, y: 0, opacity: 0.7 }, { x: 8, y: -529, opacity: 0, duration: 7.89, repeat: 3, ease: "none" }, 2.36);
+    tl.fromTo("#d29", { x: 0, y: 0, opacity: 0.35 }, { x: 2, y: -725, opacity: 0, duration: 6.32, repeat: 3, ease: "none" }, 2.53);
+    tl.fromTo("#d30", { x: 0, y: 0, opacity: 0.9 }, { x: 24, y: -180, opacity: 0, duration: 6.23, repeat: 3, ease: "none" }, 0.32);
+    tl.fromTo("#d31", { x: 0, y: 0, opacity: 0.7 }, { x: 36, y: -226, opacity: 0, duration: 8.05, repeat: 3, ease: "none" }, 2.13);
+    tl.fromTo("#d32", { x: 0, y: 0, opacity: 0.35 }, { x: -14, y: -609, opacity: 0, duration: 7.13, repeat: 3, ease: "none" }, 0.26);
+    tl.fromTo("#d33", { x: 0, y: 0, opacity: 0.9 }, { x: -34, y: -284, opacity: 0, duration: 6.05, repeat: 3, ease: "none" }, 0.00);
+    tl.fromTo("#d34", { x: 0, y: 0, opacity: 0.7 }, { x: 17, y: -519, opacity: 0, duration: 6.81, repeat: 3, ease: "none" }, 1.08);
+    tl.fromTo("#d35", { x: 0, y: 0, opacity: 0.35 }, { x: 20, y: -344, opacity: 0, duration: 6.59, repeat: 3, ease: "none" }, 3.83);
+    tl.fromTo("#d36", { x: 0, y: 0, opacity: 0.9 }, { x: 4, y: -302, opacity: 0, duration: 9.38, repeat: 3, ease: "none" }, 3.42);
+    tl.fromTo("#d37", { x: 0, y: 0, opacity: 0.7 }, { x: -57, y: -514, opacity: 0, duration: 8.45, repeat: 3, ease: "none" }, 3.22);
+    tl.fromTo("#d38", { x: 0, y: 0, opacity: 0.35 }, { x: 14, y: -669, opacity: 0, duration: 7.40, repeat: 3, ease: "none" }, 2.86);
+    tl.fromTo("#d39", { x: 0, y: 0, opacity: 0.9 }, { x: -36, y: -106, opacity: 0, duration: 6.37, repeat: 3, ease: "none" }, 1.50);
+    tl.fromTo("#d40", { x: 0, y: 0, opacity: 0.7 }, { x: 44, y: -529, opacity: 0, duration: 9.81, repeat: 3, ease: "none" }, 0.62);
+    tl.fromTo("#d41", { x: 0, y: 0, opacity: 0.35 }, { x: 28, y: -882, opacity: 0, duration: 8.76, repeat: 3, ease: "none" }, 2.88);
+    tl.fromTo("#d42", { x: 0, y: 0, opacity: 0.9 }, { x: -34, y: -245, opacity: 0, duration: 7.75, repeat: 3, ease: "none" }, 0.73);
+    tl.fromTo("#d43", { x: 0, y: 0, opacity: 0.7 }, { x: -50, y: -652, opacity: 0, duration: 6.13, repeat: 3, ease: "none" }, 0.60);
+    tl.fromTo("#d44", { x: 0, y: 0, opacity: 0.35 }, { x: -34, y: -620, opacity: 0, duration: 6.17, repeat: 3, ease: "none" }, 1.42);
+    tl.fromTo("#d45", { x: 0, y: 0, opacity: 0.9 }, { x: -27, y: -131, opacity: 0, duration: 8.44, repeat: 3, ease: "none" }, 2.38);
+    tl.fromTo("#d46", { x: 0, y: 0, opacity: 0.7 }, { x: -4, y: -391, opacity: 0, duration: 7.73, repeat: 3, ease: "none" }, 1.38);
+    tl.fromTo("#d47", { x: 0, y: 0, opacity: 0.35 }, { x: -11, y: -615, opacity: 0, duration: 9.54, repeat: 3, ease: "none" }, 0.22);
+    tl.fromTo("#d48", { x: 0, y: 0, opacity: 0.9 }, { x: 38, y: -287, opacity: 0, duration: 8.67, repeat: 3, ease: "none" }, 1.37);
+    tl.fromTo("#d49", { x: 0, y: 0, opacity: 0.7 }, { x: -16, y: -210, opacity: 0, duration: 8.61, repeat: 3, ease: "none" }, 1.67);
+    tl.fromTo("#d50", { x: 0, y: 0, opacity: 0.35 }, { x: -9, y: -342, opacity: 0, duration: 7.50, repeat: 3, ease: "none" }, 3.47);
+    tl.fromTo("#d51", { x: 0, y: 0, opacity: 0.9 }, { x: 59, y: -109, opacity: 0, duration: 6.57, repeat: 3, ease: "none" }, 3.86);
+    tl.fromTo("#d52", { x: 0, y: 0, opacity: 0.7 }, { x: 53, y: -299, opacity: 0, duration: 8.66, repeat: 3, ease: "none" }, 1.18);
+    tl.fromTo("#d53", { x: 0, y: 0, opacity: 0.35 }, { x: -54, y: -390, opacity: 0, duration: 9.60, repeat: 3, ease: "none" }, 2.07);
+    tl.fromTo("#wheel", { rotation: -18, scale: 1.1, transformOrigin: "540px 1080px" }, { rotation: 8, scale: 1.0, duration: 4.27, ease: "spring-glide" }, 0);
+    tl.fromTo("#sunring", { rotation: 0, svgOrigin: "540 1080" }, { rotation: -60, duration: 5.17, ease: "none" }, 0);
+    tl.to("#wheel", { scale: 3.6, opacity: 0, duration: 0.9, ease: "power2.in" }, 4.27);
     tl.to("#h1", { opacity: 0, y: -30, duration: 0.35, ease: "power1.in" }, 4.27);
     tl.fromTo("#head", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "sine.out" }, 4.77);
     tl.to("#head", { opacity: 0, duration: 0.3, ease: "power1.in" }, 21.62);
-    tl.fromTo("#c0", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 4.72);
+    tl.fromTo("#c0", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 4.72);
+    tl.fromTo("#sh0", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 5.07);
     tl.to("#c0", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 8.77);
-    tl.fromTo("#c1", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 5.17);
+    tl.fromTo("#c1", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 5.17);
+    tl.fromTo("#sh1", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 5.52);
     tl.to("#c1", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 8.80);
-    tl.fromTo("#c2", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 5.62);
+    tl.fromTo("#c2", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 5.62);
+    tl.fromTo("#sh2", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 5.97);
     tl.to("#c2", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 8.83);
-    tl.fromTo("#c3", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 9.02);
+    tl.fromTo("#c3", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 9.02);
+    tl.fromTo("#sh3", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 9.37);
     tl.to("#c3", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 13.07);
-    tl.fromTo("#c4", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 9.47);
+    tl.fromTo("#c4", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 9.47);
+    tl.fromTo("#sh4", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 9.82);
     tl.to("#c4", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 13.10);
-    tl.fromTo("#c5", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 9.92);
+    tl.fromTo("#c5", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 9.92);
+    tl.fromTo("#sh5", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 10.27);
     tl.to("#c5", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 13.13);
-    tl.fromTo("#c6", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 13.32);
+    tl.fromTo("#c6", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 13.32);
+    tl.fromTo("#sh6", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 13.67);
     tl.to("#c6", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 17.37);
-    tl.fromTo("#c7", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 13.77);
+    tl.fromTo("#c7", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 13.77);
+    tl.fromTo("#sh7", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 14.12);
     tl.to("#c7", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 17.40);
-    tl.fromTo("#c8", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 14.22);
+    tl.fromTo("#c8", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 14.22);
+    tl.fromTo("#sh8", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 14.57);
     tl.to("#c8", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 17.43);
-    tl.fromTo("#c9", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 17.62);
+    tl.fromTo("#c9", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 17.62);
+    tl.fromTo("#sh9", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 17.97);
     tl.to("#c9", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 21.67);
-    tl.fromTo("#c10", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 18.07);
+    tl.fromTo("#c10", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 18.07);
+    tl.fromTo("#sh10", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 18.42);
     tl.to("#c10", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 21.70);
-    tl.fromTo("#c11", { opacity: 0, x: 220, rotationY: -35, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.7, ease: "spring-settle" }, 18.52);
+    tl.fromTo("#c11", { opacity: 0, x: 240, rotationY: -38, transformPerspective: 1400 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.75, ease: "spring-settle" }, 18.52);
+    tl.fromTo("#sh11", { x: -320, rotation: 16, opacity: 1 }, { x: 1040, rotation: 16, opacity: 1, duration: 1.1, ease: "power2.inOut" }, 18.87);
     tl.to("#c11", { opacity: 0, x: -160, duration: 0.3, ease: "power1.in" }, 21.73);
     tl.fromTo("#t0", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.55, ease: "spring-snap" }, 21.97);
     tl.fromTo("#t1", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.55, ease: "spring-snap" }, 22.03);
@@ -361,5 +463,46 @@
     tl.fromTo("#pause", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "spring-land" }, 22.27);
     tl.fromTo("#cta", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "spring-settle" }, 25.56);
     window.__timelines["scene"] = tl;
+  </script>
+  <script>
+    (function () {
+      const KEYS = [{"t": 0.0, "a": [0.07058823529411765, 0.011764705882352941, 0.0392156862745098], "b": [0.35294117647058826, 0.058823529411764705, 0.16470588235294117], "c": [1.0, 0.7490196078431373, 0.35294117647058826], "l": [0.0, -0.06], "r": 1.0, "s": 0.6}, {"t": 4.569999999999999, "a": [0.027450980392156862, 0.0392156862745098, 0.1411764705882353], "b": [0.25098039215686274, 0.18823529411764706, 0.47843137254901963], "c": [1.0, 0.7803921568627451, 0.6274509803921569], "l": [-0.15, 0.55], "r": 0.8, "s": 0.3}, {"t": 8.870000000000001, "a": [0.10196078431372549, 0.027450980392156862, 0.011764705882352941], "b": [0.5411764705882353, 0.16470588235294117, 0.047058823529411764], "c": [1.0, 0.7019607843137254, 0.25098039215686274], "l": [0.18, 0.55], "r": 0.9, "s": 0.3}, {"t": 13.17, "a": [0.00784313725490196, 0.07058823529411765, 0.10196078431372549], "b": [0.050980392156862744, 0.35294117647058826, 0.3686274509803922], "c": [0.7490196078431373, 0.9607843137254902, 0.9019607843137255], "l": [-0.12, 0.6], "r": 0.7, "s": 0.5}, {"t": 17.470000000000002, "a": [0.058823529411764705, 0.01568627450980392, 0.12549019607843137], "b": [0.35294117647058826, 0.10196078431372549, 0.43137254901960786], "c": [1.0, 0.8274509803921568, 0.41568627450980394], "l": [0.1, 0.55], "r": 0.9, "s": 0.4}, {"t": 21.77, "a": [0.08627450980392157, 0.011764705882352941, 0.03137254901960784], "b": [0.41568627450980394, 0.058823529411764705, 0.1411764705882353], "c": [1.0, 0.8117647058823529, 0.41568627450980394], "l": [0.0, 0.62], "r": 0.8, "s": 0.3}];
+      const PUSH = 4.27, BLEND = 0.9;
+      const cv = document.getElementById("sky");
+      const gl = cv.getContext("webgl", { preserveDrawingBuffer: true, antialias: false });
+      const vs = "attribute vec2 p; void main() { gl_Position = vec4(p, 0.0, 1.0); }";
+      const fs = "\nprecision highp float;\nuniform vec2 uRes;\nuniform float uT;\nuniform vec3 uA, uB, uC;\nuniform vec2 uLight;\nuniform float uRays, uWarp, uSwirl;\nfloat hash(vec2 p) { p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }\nfloat noise(vec2 p) {\n  vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);\n  return mix(mix(hash(i), hash(i + vec2(1, 0)), u.x), mix(hash(i + vec2(0, 1)), hash(i + vec2(1, 1)), u.x), u.y);\n}\nfloat fbm(vec2 p) {\n  float v = 0.0, a = 0.5; mat2 m = mat2(1.6, 1.2, -1.2, 1.6);\n  for (int i = 0; i < 5; i++) { v += a * noise(p); p = m * p; a *= 0.5; }\n  return v;\n}\nvoid main() {\n  vec2 uv = (gl_FragCoord.xy - 0.5 * uRes) / uRes.y;\n  vec2 p = uv - uLight;\n  float r = length(p);\n  float ang = atan(p.y, p.x);\n  // the dive: everything rushes out of the light\n  vec2 z = uLight + p / (1.0 + uWarp * 2.2);\n  vec2 q = z * 1.7 + vec2(0.0, uT * 0.035);\n  vec2 w = vec2(fbm(q + vec2(0.0, uT * 0.05)), fbm(q + vec2(5.2, 1.3) - uT * 0.04));\n  float n = fbm(q + 1.9 * w + uSwirl * vec2(sin(ang * 2.0 + uT * 0.12), cos(r * 3.0 - uT * 0.1)));\n  vec3 col = mix(uA, uB, smoothstep(0.25, 0.85, n));\n  col = mix(col, uC, pow(smoothstep(0.5, 0.95, n * (0.6 + w.x)), 2.0) * 0.75);\n  col *= 0.35 + 1.0 * n * n;\n  // god rays from the light\n  float rays = pow(noise(vec2(ang * 5.0, uT * 0.12)) * 0.6 + noise(vec2(ang * 15.0, -uT * 0.09)) * 0.4, 3.0);\n  col += uC * rays * exp(-r * 1.5) * uRays * 1.5;\n  col += uC * exp(-r * r * 12.0) * 0.5 * uRays;\n  // warp streaks\n  float st = pow(noise(vec2(ang * 38.0, 3.0)), 5.0) * smoothstep(0.04, 0.7, r);\n  col += mix(uC, vec3(1.0), 0.4) * st * uWarp * 2.2;\n  // stars, twinkling slowly (never on a beat)\n  vec2 sg = uv * 220.0; vec2 id = floor(sg); float h = hash(id);\n  float d = length(fract(sg) - 0.5);\n  float star = step(0.985, h) * smoothstep(0.32, 0.0, d) * (0.55 + 0.45 * sin(uT * 1.3 + h * 90.0));\n  col += vec3(1.0, 0.95, 0.85) * star * 0.9 * (1.0 - uWarp);\n  // vignette and a little grain\n  col *= 1.0 - 0.6 * smoothstep(0.35, 1.05, length(uv * vec2(1.25, 0.85)));\n  col += (hash(gl_FragCoord.xy + uT) - 0.5) * 0.025;\n  gl_FragColor = vec4(max(col, 0.0), 1.0);\n}\n";
+      function sh(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
+      const pr = gl.createProgram();
+      gl.attachShader(pr, sh(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(pr); gl.useProgram(pr);
+      const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
+      const loc = gl.getAttribLocation(pr, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+      const U = {}; ["uRes", "uT", "uA", "uB", "uC", "uLight", "uRays", "uWarp", "uSwirl"].forEach((n) => (U[n] = gl.getUniformLocation(pr, n)));
+      const sm = (x) => x * x * (3 - 2 * x);
+      const mix = (a, b, k) => a.map((v, i) => v + (b[i] - v) * k);
+      function state(t) {
+        let i = 0; while (i < KEYS.length - 1 && t >= KEYS[i + 1].t) i++;
+        const a = KEYS[i], b = KEYS[Math.min(i + 1, KEYS.length - 1)];
+        let k = 0; if (i > 0) k = 0; // a key holds until the next key's time
+        const prev = KEYS[Math.max(i - 1, 0)];
+        let m = Math.min(Math.max((t - a.t) / BLEND, 0), 1); m = sm(m);
+        const from = i > 0 ? prev : a;
+        return { a: mix(from.a, a.a, m), b: mix(from.b, a.b, m), c: mix(from.c, a.c, m), l: mix(from.l, a.l, m),
+                  r: from.r + (a.r - from.r) * m, s: from.s + (a.s - from.s) * m };
+      }
+      function renderAt(t) {
+        const s = state(t);
+        const warp = Math.exp(-Math.pow((t - PUSH - 0.4) / 0.32, 2));
+        gl.viewport(0, 0, cv.width, cv.height);
+        gl.uniform2f(U.uRes, cv.width, cv.height); gl.uniform1f(U.uT, t);
+        gl.uniform3fv(U.uA, s.a); gl.uniform3fv(U.uB, s.b); gl.uniform3fv(U.uC, s.c);
+        gl.uniform2fv(U.uLight, s.l); gl.uniform1f(U.uRays, s.r); gl.uniform1f(U.uWarp, warp); gl.uniform1f(U.uSwirl, s.s);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+      }
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      renderAt(0);
+    })();
   </script>
 </template>
