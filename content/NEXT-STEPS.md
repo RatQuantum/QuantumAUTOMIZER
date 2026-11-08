@@ -54,7 +54,13 @@ render with and without music, loudnorm -15 LUFS, Whisper check.
 ## Toolbox (installed 4 Nov 2026 at the user's request)
 
 Skills in the repo (load automatically): remotion-* (13, from remotion-dev/skills), impeccable (pbakaus/impeccable),
-hyperframes, media-use, ig-*. MCP servers in .mcp.json: chrome-devtools (headless Chromium) and blender
+hyperframes, media-use, ig-*. Added 8 Nov (the user: "Install"): director-skill (wuwangzhang1216/DirectorSKILL: shot list +
+keyframe prompts from a script), short-drama-* (12, zenstory-ai/drama-skills: episodes, character sheets, storyboards; Chinese),
+seedance-storyboard-generator (liangdabiao/Seedance2-Storyboard-Generator; Chinese), elevenlabs-* (12, elevenlabs/skills;
+needs ELEVENLABS_API_KEY with credits, which we are out of). Plugins declared in .claude/settings.json (auto-install from GitHub
+each session): pixelfx (patch-gg, 244 pixel effects), shader-skills (gokayfem, GLSL/SDF/water/clouds), webgpu-threejs-tsl
+(dgreenheck), bitwize-music (Suno album pipeline + its MCP server), comfy (artokun/comfyui-mcp: MCP + 42 ComfyUI skills;
+needs ComfyUI running, CPU only here). MCP servers in .mcp.json: chrome-devtools (headless Chromium) and blender
 (MCP for Blender). Everything else is rebuilt with `bash tools/setup-tools.sh` (~20-30 min): yt-dlp, faster-whisper,
 GSAP, three.js, Remotion, Blender 4.0.2 (apt; download.blender.org is blocked), ComfyUI (CPU), Chatterbox.
 Blender MCP needs Blender running on a virtual screen: `xvfb-run -a blender --python tools/blender_mcp_headless.py &`

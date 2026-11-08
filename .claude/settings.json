@@ -9,5 +9,44 @@
       "Bash(curl -sSfLO https://huggingface.co/leejet/Z-Image-Turbo-GGUF/resolve/main/z_image_turbo-Q4_K.gguf)",
       "Bash(/home/user/lp-venv/bin/python /home/user/LivePortrait/inference.py:*)"
     ]
+  },
+  "enabledPlugins": {
+    "pixelfx@pixelfx": true,
+    "shader-skills@shader-skills": true,
+    "webgpu-threejs-tsl@webgpu-threejs-tsl": true,
+    "bitwize-music@bitwize-music": true,
+    "comfy@comfyui-mcp": true
+  },
+  "extraKnownMarketplaces": {
+    "pixelfx": {
+      "source": {
+        "source": "github",
+        "repo": "patch-gg/pixelfx"
+      }
+    },
+    "shader-skills": {
+      "source": {
+        "source": "github",
+        "repo": "gokayfem/shader-skills"
+      }
+    },
+    "webgpu-threejs-tsl": {
+      "source": {
+        "source": "github",
+        "repo": "dgreenheck/webgpu-claude-skill"
+      }
+    },
+    "bitwize-music": {
+      "source": {
+        "source": "github",
+        "repo": "bitwize-music-studio/claude-ai-music-skills"
+      }
+    },
+    "comfyui-mcp": {
+      "source": {
+        "source": "github",
+        "repo": "artokun/comfyui-mcp"
+      }
+    }
   }
 }
