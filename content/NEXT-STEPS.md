@@ -1,5 +1,10 @@
 # Next steps (handover for the next Claude session)
 
+**8 Nov: the reel pipeline is a skill: `/krishna-reel` (.claude/skills/krishna-reel/SKILL.md). Tools: tools/beats.py (real
+beat grid + drop + Instagram start), tools/critic.py (contact sheet, phone test, strip, automatic flags, scoring;
+fix the worst 3 until every score is 8+), tools/style_ref.py (reference -> style guide), tools/reel-kit/springs.js
+(spring easings), tools/reel-kit/new_reel.sh (scaffold + brief/shot-list templates).**
+
 **7 Nov: reels are now ENGLISH (voice + on-screen text), with FREE voices (tools/free_voice.sh narrator_en /
 krishna_en; no ElevenLabs). Rotate formats (content/formats.md). Never rushed, no beat shakes, no repeated bells.**
 

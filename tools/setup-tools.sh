@@ -9,7 +9,7 @@ set -x
 
 # Python tools: yt-dlp, faster-whisper (Whisper checks), gradio_client (free Hugging Face Spaces)
 python3 -m venv /home/user/gc-venv
-/home/user/gc-venv/bin/pip -q install -U yt-dlp faster-whisper gradio_client pillow edge-tts
+/home/user/gc-venv/bin/pip -q install -U yt-dlp faster-whisper gradio_client pillow edge-tts librosa soundfile
 
 # JavaScript libraries: GSAP, three.js, Remotion (CLI + renderer), Chrome DevTools MCP
 mkdir -p /home/user/js-libs && cd /home/user/js-libs && npm init -y >/dev/null && \
