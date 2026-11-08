@@ -95,3 +95,13 @@ Every reel is checked against all of these. If one fails, fix it before renderin
 16. **No face needed** (the user, 6 Nov: "You don't need my face. Use any art style necessary"). Krishna can be any art
     style: silhouette, painting, gold line art, Tanjore style, AI art. The user's own face is optional, and their photos and
     face clips are NEVER committed (this repo is public).
+
+## Learned 8 Nov (Days 14-17 views "super low"; the user: "Need characters and better audio")
+17. **Characters on screen, real-looking.** Code-drawn reels (Days 16-17: cards, a kolam) looked rich but had no person
+    to feel for. Every reel needs a CHARACTER in a moment of need (Day 5's pattern): realistic AI clips (Flow / Veo on the
+    user's phone, or Wan 2.2 on Hugging Face with PRO quota). Graphics may decorate, never replace, the characters.
+18. **Better voices: Chatterbox, not raw edge-tts.** ResembleAI/Chatterbox (Hugging Face Space, via gradio_client from
+    the container) gives natural, expressive delivery. Its base timbre comes from our OWN edge-tts reference clips in
+    voices/ (no real person's voice). Settings: narrator exaggeration 0.6, cfg 0.45; Krishna 0.5 / 0.35; a whisper 0.75 /
+    0.3; then a light polish (EQ, compressor, small room) and loudnorm -16. Whisper-check every line; regenerate with a
+    new seed when a word is misheard. Free ZeroGPU quota is about 9 lines a day; HF PRO gives 40 min a day.
