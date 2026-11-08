@@ -1,0 +1,300 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    @font-face {
+      font-family: "Cormorant";
+      src: url("assets/fonts/Cormorant.ttf");
+    }
+    @font-face {
+      font-family: "Cormorant";
+      font-style: italic;
+      src: url("assets/fonts/Cormorant-Italic.ttf");
+    }
+    @font-face {
+      font-family: "Nunito";
+      src: url("assets/fonts/Nunito.ttf");
+    }
+    @font-face {
+      font-family: "Noto Color Emoji";
+      src: url("assets/fonts/NotoColorEmoji.ttf");
+    }
+    svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    #cam, #roomwrap, #personwrap {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    #night {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 8, 25, 0.0);
+      pointer-events: none;
+    }
+    #warm {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 190, 120, 0.22), rgba(255, 160, 90, 0.10));
+      opacity: 0;
+    }
+    #hookband {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 360px;
+      background: linear-gradient(180deg, rgba(8, 10, 28, 0.92) 0%, rgba(8, 10, 28, 0.75) 60%, rgba(8, 10, 28, 0) 100%);
+    }
+    #hook {
+      position: absolute;
+      left: 50px;
+      width: 980px;
+      top: 120px;
+      text-align: center;
+      font-family: "Nunito", sans-serif;
+      font-weight: 800;
+      font-size: 58px;
+      line-height: 1.25;
+      color: #ffffff;
+      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.8);
+    }
+    #hook b {
+      color: #ffcf5a;
+    }
+    .cap {
+      position: absolute;
+      left: 60px;
+      width: 960px;
+      top: 1520px;
+      text-align: center;
+      font-family: "Nunito", sans-serif;
+      font-weight: 700;
+      font-size: 54px;
+      line-height: 1.3;
+      color: #ffffff;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9);
+    }
+    .cap.k {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 66px;
+      color: #ffd77a;
+    }
+    #cta {
+      position: absolute;
+      left: 60px;
+      width: 960px;
+      top: 1500px;
+      text-align: center;
+      font-family: "Nunito", "Noto Color Emoji", sans-serif;
+      font-weight: 800;
+      font-size: 58px;
+      line-height: 1.3;
+      color: #ffffff;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9);
+    }
+    #cta b {
+      color: #ffcf5a;
+    }
+    #handle {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      top: 1790px;
+      text-align: center;
+      font-family: "Nunito", sans-serif;
+      font-size: 30px;
+      color: #f3dcae;
+    }
+  </style>
+  <div id="root" data-composition-id="scene" data-width="1080" data-height="1920">
+    <div id="cam" class="clip" data-start="0" data-duration="41.0" data-track-index="0">
+      <div id="roomwrap"><svg id="room" viewBox="0 0 1080 1920" width="1080" height="1920">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2246"/><stop offset="1" stop-color="#2a2f55"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1233"/><stop offset="1" stop-color="#1d2a5e"/></linearGradient>
+    <linearGradient id="dawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb2e6"/><stop offset="0.6" stop-color="#f7c58a"/><stop offset="1" stop-color="#ffb37a"/></linearGradient>
+    <radialGradient id="lampglow" cx="0.5" cy="0" r="0.9"><stop offset="0" stop-color="rgba(255,214,140,0.55)"/><stop offset="1" stop-color="rgba(255,214,140,0)"/></radialGradient>
+    <radialGradient id="divine" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="rgba(255,226,150,0.95)"/><stop offset="1" stop-color="rgba(255,190,90,0)"/></radialGradient>
+    <clipPath id="winclip"><rect x="629" y="339" width="342" height="462" rx="6"/></clipPath>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#wall)"/>
+  <!-- shelf with books -->
+  <rect x="80" y="560" width="320" height="16" rx="4" fill="#3b2a22"/>
+  <rect x="100" y="470" width="34" height="90" rx="4" fill="#8f3b3b"/><rect x="138" y="485" width="28" height="75" rx="4" fill="#3b6b8f"/>
+  <rect x="170" y="462" width="38" height="98" rx="4" fill="#c99a3a"/><rect x="212" y="490" width="30" height="70" rx="4" fill="#4f7a4a"/>
+  <!-- wall clock showing 2:00 -->
+  <circle cx="300" cy="330" r="62" fill="#efe6d2" stroke="#3b2a22" stroke-width="8"/>
+  <line x1="300" y1="330" x2="300" y2="285" stroke="#222" stroke-width="6" stroke-linecap="round"/>
+  <line x1="300" y1="330" x2="326" y2="315" stroke="#222" stroke-width="8" stroke-linecap="round"/>
+  <!-- window: night sky, moon, stars; the dawn sky fades in later -->
+  <g clip-path="url(#winclip)">
+    <rect x="629" y="339" width="342" height="462" fill="url(#sky)"/>
+    <rect id="dawnsky" x="629" y="339" width="342" height="462" fill="url(#dawn)" opacity="0"/>
+    <g id="stars"><circle cx="694" cy="665" r="2.5" fill="#fff6d8"/><circle cx="909" cy="476" r="2" fill="#fff6d8"/><circle cx="770" cy="499" r="2.5" fill="#fff6d8"/><circle cx="677" cy="687" r="2" fill="#fff6d8"/><circle cx="795" cy="588" r="2.5" fill="#fff6d8"/><circle cx="843" cy="551" r="1.5" fill="#fff6d8"/><circle cx="774" cy="464" r="2" fill="#fff6d8"/><circle cx="823" cy="763" r="2" fill="#fff6d8"/><circle cx="824" cy="761" r="2.5" fill="#fff6d8"/><circle cx="904" cy="426" r="1.5" fill="#fff6d8"/><circle cx="922" cy="690" r="2.5" fill="#fff6d8"/><circle cx="780" cy="434" r="1.5" fill="#fff6d8"/><circle cx="675" cy="412" r="2.5" fill="#fff6d8"/><circle cx="812" cy="364" r="1.5" fill="#fff6d8"/></g>
+    <circle id="moon" cx="880" cy="430" r="46" fill="#fff3c4"/>
+    <circle id="winglow" cx="800" cy="600" r="260" fill="url(#divine)" opacity="0"/>
+    <g id="krishna" opacity="0">
+      <!-- body / yellow silk -->
+      <path d="M700 805 Q705 715 760 700 L840 700 Q895 715 900 805 Z" fill="#f2c230"/>
+      <path d="M735 715 Q800 800 865 715" fill="none" stroke="#f7f3ea" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="745" cy="728" r="7" fill="#e0475b"/><circle cx="800" cy="760" r="8" fill="#e0475b"/><circle cx="855" cy="728" r="7" fill="#e0475b"/>
+      <!-- folded arms on the sill -->
+      <rect x="712" y="770" width="176" height="36" rx="18" fill="#4f7fc9"/>
+      <!-- flute -->
+      <rect x="690" y="760" width="230" height="10" rx="5" fill="#8a5a2b" transform="rotate(-8 805 765)"/>
+      <!-- head -->
+      <circle cx="800" cy="630" r="62" fill="#4f7fc9"/>
+      <path d="M738 625 Q742 560 800 556 Q858 560 862 625 Q850 590 800 588 Q750 590 738 625 Z" fill="#1d1d2b"/>
+      <circle cx="742" cy="640" r="14" fill="#1d1d2b"/><circle cx="858" cy="640" r="14" fill="#1d1d2b"/>
+      <!-- crown with a peacock feather -->
+      <path d="M752 580 L760 545 L780 562 L800 532 L820 562 L840 545 L848 580 Z" fill="#e6b53a" stroke="#b9862a" stroke-width="3"/>
+      <circle cx="800" cy="566" r="6" fill="#2b6fd6"/>
+      <g transform="rotate(18 835 545)"><path d="M835 548 Q822 500 835 470 Q848 500 835 548 Z" fill="#1f7a4f"/>
+        <ellipse cx="835" cy="485" rx="9" ry="12" fill="#d4a017"/><ellipse cx="835" cy="487" rx="5" ry="7" fill="#1e5aa8"/></g>
+      <!-- tilak: white U with a red centre line -->
+      <path d="M792 588 Q800 612 808 588" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="800" y1="588" x2="800" y2="604" stroke="#e0352b" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- eyes: happy arcs; the right one becomes a wink -->
+      <path d="M772 628 Q781 619 790 628" fill="none" stroke="#141420" stroke-width="5" stroke-linecap="round"/>
+      <path id="keye" d="M810 628 Q819 619 828 628" fill="none" stroke="#141420" stroke-width="5" stroke-linecap="round"/>
+      <path id="kwink" d="M810 625 L828 625" fill="none" stroke="#141420" stroke-width="5" stroke-linecap="round" opacity="0"/>
+      <circle cx="768" cy="648" r="9" fill="#e98aa0" opacity="0.6"/><circle cx="832" cy="648" r="9" fill="#e98aa0" opacity="0.6"/>
+      <path id="kmouth" d="M783 655 Q800 672 817 655" fill="none" stroke="#141420" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="738" cy="660" r="6" fill="#e6b53a"/><circle cx="862" cy="660" r="6" fill="#e6b53a"/>
+    </g>
+  </g>
+  <rect x="620" y="330" width="360" height="480" rx="12" fill="none" stroke="#3a4170" stroke-width="18"/>
+  <line x1="800" y1="335" x2="800" y2="805" stroke="#3a4170" stroke-width="10"/>
+  <line x1="625" y1="560" x2="975" y2="560" stroke="#3a4170" stroke-width="10"/>
+  <rect x="600" y="805" width="400" height="26" rx="6" fill="#4b3a5e"/>
+  <path d="M560 320 Q600 560 575 850 L610 850 Q640 560 620 320 Z" fill="#6a4078"/>
+  <!-- lamp -->
+  <polygon id="lampcone" points="150,980 330,980 470,1335 20,1335" fill="url(#lampglow)"/>
+  <rect x="170" y="1300" width="90" height="32" rx="10" fill="#2a2a2a"/>
+  <line x1="215" y1="1300" x2="250" y2="1060" stroke="#2a2a2a" stroke-width="12" stroke-linecap="round"/>
+  <polygon points="160,980 330,980 290,1060 200,1060" fill="#e8b04a" transform="rotate(-8 245 1020)"/>
+</svg></div>
+      <div id="personwrap"><svg id="person" viewBox="0 0 1080 1920" width="1080" height="1920">
+  <!-- body / hoodie -->
+  <path d="M480 1335 Q470 1175 560 1150 L720 1150 Q810 1175 800 1335 Z" fill="#b8473f"/>
+  <path d="M590 1150 Q640 1205 690 1150" fill="none" stroke="#8f332d" stroke-width="10" stroke-linecap="round"/>
+  <!-- head group (droops, goes down, comes back up) -->
+  <g id="head">
+    <path d="M555 1010 Q545 900 640 890 Q735 900 725 1010 Q715 960 640 958 Q565 960 555 1010 Z" fill="#b8473f"/>
+    <circle cx="640" cy="1030" r="100" fill="#c98a5e"/>
+    <path d="M540 1015 Q545 920 640 918 Q735 920 740 1015 Q720 965 680 960 Q660 985 610 975 Q565 975 540 1015 Z" fill="#231a16"/>
+    <g id="eyes-open"><ellipse cx="605" cy="1040" rx="8" ry="10" fill="#1b1410"/><ellipse cx="675" cy="1040" rx="8" ry="10" fill="#1b1410"/></g>
+    <g id="eyes-closed" opacity="0"><path d="M595 1042 Q605 1050 615 1042" fill="none" stroke="#1b1410" stroke-width="5" stroke-linecap="round"/>
+      <path d="M665 1042 Q675 1050 685 1042" fill="none" stroke="#1b1410" stroke-width="5" stroke-linecap="round"/></g>
+    <path d="M590 1018 L620 1024 M660 1024 L690 1018" stroke="#231a16" stroke-width="6" stroke-linecap="round"/>
+    <path id="frown" d="M618 1085 Q640 1072 662 1085" fill="none" stroke="#5a2e22" stroke-width="5" stroke-linecap="round"/>
+    <path id="smile" d="M615 1076 Q640 1098 665 1076" fill="none" stroke="#5a2e22" stroke-width="5" stroke-linecap="round" opacity="0"/>
+  </g>
+  <!-- arms on the desk -->
+  <rect x="470" y="1285" width="160" height="50" rx="25" fill="#a63e37"/>
+  <rect x="650" y="1285" width="160" height="50" rx="25" fill="#a63e37"/>
+  <!-- desk -->
+  <rect x="0" y="1330" width="1080" height="38" fill="#7a5434"/>
+  <rect x="0" y="1368" width="1080" height="560" fill="#4a3220"/>
+  <!-- laptop (we see the back of the lid) with a blue glow -->
+  <ellipse cx="400" cy="1250" rx="200" ry="120" fill="rgba(110,160,255,0.18)"/>
+  <rect x="290" y="1150" width="220" height="180" rx="12" fill="#c3c9d4"/>
+  <circle cx="400" cy="1240" r="12" fill="#9aa2b0"/>
+  <!-- phone on a stand -->
+  <g id="phone">
+    <rect x="850" y="1170" width="96" height="164" rx="16" fill="#151515"/>
+    <rect x="858" y="1182" width="80" height="136" rx="10" fill="#22305e"/>
+    <text x="898" y="1240" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="15" fill="#ff9a9a">Not</text>
+    <text x="898" y="1260" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="15" fill="#ff9a9a">selected</text>
+    <text x="898" y="1292" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="26" fill="#ff9a9a">✕</text>
+  </g>
+  <!-- the peacock feather that lands on the desk -->
+  <g id="feather" opacity="0">
+    <path d="M0 0 Q-16 -55 0 -95 Q16 -55 0 0 Z" fill="#1f7a4f"/>
+    <line x1="0" y1="0" x2="0" y2="22" stroke="#d9b25a" stroke-width="3"/>
+    <ellipse cx="0" cy="-72" rx="12" ry="15" fill="#d4a017"/><ellipse cx="0" cy="-70" rx="7" ry="9" fill="#1e5aa8"/><ellipse cx="0" cy="-69" rx="3" ry="4" fill="#0b1f4d"/>
+  </g>
+</svg></div>
+    </div>
+    <div id="night" class="clip" data-start="0" data-duration="41.0" data-track-index="2"></div>
+    <div id="warm" class="clip" data-start="0" data-duration="41.0" data-track-index="3"></div>
+    <div id="hookband" class="clip" data-start="0" data-duration="5.70" data-track-index="4"></div>
+    <div id="hook" class="clip" data-start="0" data-duration="5.70" data-track-index="4">POV: it's <b>2 A.M.</b><br>and you're about to give up</div>
+    <div id="c0" class="clip cap n" data-start="0.50" data-duration="5.50" data-track-index="5">Two A.M.… Everything is falling apart.</div>
+    <div id="c1" class="clip cap n" data-start="6.60" data-duration="5.60" data-track-index="6">Another no. Another closed door.</div>
+    <div id="c2" class="clip cap k" data-start="17.60" data-duration="5.40" data-track-index="5">“Rest now… Tomorrow, we try again.”</div>
+    <div id="c3" class="clip cap n" data-start="27.20" data-duration="6.00" data-track-index="6">He never leaves the room.<br>You just don't always see Him.</div>
+    <div id="cta" class="clip" data-start="33.40" data-duration="7.60" data-track-index="7">Send this to someone<br>who needs a <b>sign</b> today 🦚</div>
+    <div id="handle" class="clip" data-start="33.80" data-duration="7.20" data-track-index="8">@lordsrikrishnatemple</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#cam", { transformOrigin: "620px 1050px", scale: 1.25, x: 0, y: 0 }, 0);
+    tl.to("#cam", { scale: 1.32, duration: 11, ease: "none" }, 0.2);
+    tl.to("#cam", { transformOrigin: "800px 620px", scale: 1.75, duration: 1.4, ease: "power2.inOut" }, 12.60);
+    tl.to("#cam", { transformOrigin: "700px 980px", scale: 1.25, duration: 2.6, ease: "power1.inOut" }, 15.00);
+    tl.to("#cam", { transformOrigin: "700px 900px", scale: 1.15, duration: 1.2, ease: "power1.inOut" }, 17.00);
+    tl.to("#cam", { transformOrigin: "800px 640px", scale: 1.7, duration: 0.7, ease: "power2.inOut" }, 22.85);
+    tl.to("#cam", { transformOrigin: "620px 1050px", scale: 1.25, duration: 1.6, ease: "power2.inOut" }, 25.00);
+    tl.to("#cam", { scale: 1.35, duration: 14.20, ease: "none" }, 26.70);
+    tl.set("#head", { svgOrigin: "640 1130", rotation: 0, y: 0 }, 0);
+    tl.to("#head", { rotation: -4, duration: 2.8, yoyo: true, repeat: 1, ease: "sine.inOut" }, 0.3);
+    tl.fromTo("#lampcone", { opacity: 0.85 }, { opacity: 1, duration: 1.6, yoyo: true, repeat: 6, ease: "sine.inOut" }, 0);
+    tl.fromTo("#phone", { x: -6 }, { x: 6, duration: 0.06, yoyo: true, repeat: 11, ease: "none" }, 6.0);
+    tl.set("#phone", { x: 0 }, 6.75);
+    tl.to("#head", { rotation: 8, y: 190, duration: 1.0, ease: "power2.inOut" }, 11.6);
+    tl.set("#eyes-open", { opacity: 0 }, 12.1);
+    tl.set("#eyes-closed", { opacity: 1 }, 12.1);
+    tl.to("#winglow", { opacity: 1, duration: 1.0, ease: "power1.out" }, 12.8);
+    tl.fromTo("#krishna", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" }, 13.2);
+    tl.to("#krishna", { y: -6, duration: 1.4, yoyo: true, repeat: 5, ease: "sine.inOut" }, 14.20);
+    tl.to("#kmouth", { scaleX: 0.4, svgOrigin: "800 662", duration: 0.25 }, 14.4);
+    tl.to("#kmouth", { scaleX: 1, svgOrigin: "800 662", duration: 0.3 }, 15.30);
+    tl.set("#feather", { x: 800, y: 760, rotation: -40, opacity: 0 }, 0);
+    tl.to("#feather", { opacity: 1, duration: 0.3 }, 14.6);
+    tl.to("#feather", { keyframes: [{ x: 700, y: 900, rotation: 20, duration: 0.9 }, { x: 820, y: 1060, rotation: -25, duration: 0.9 }, { x: 760, y: 1225, rotation: 70, duration: 0.8 }], ease: "sine.inOut" }, 14.6);
+    tl.to("#lampcone", { opacity: 0, duration: 0.2 }, 23.0);
+    tl.to("#night", { backgroundColor: "rgba(5, 8, 25, 0.35)", duration: 0.3 }, 23.0);
+    tl.set("#keye", { opacity: 0 }, 23.6);
+    tl.set("#kwink", { opacity: 1 }, 23.6);
+    tl.set("#keye", { opacity: 1 }, 24.10);
+    tl.set("#kwink", { opacity: 0 }, 24.10);
+    tl.to("#krishna", { opacity: 0, y: -20, duration: 0.8, ease: "power1.in" }, 24.4);
+    tl.to("#winglow", { opacity: 0, duration: 0.8 }, 24.4);
+    tl.to("#dawnsky", { opacity: 1, duration: 1.8, ease: "sine.inOut" }, 25.2);
+    tl.to(["#moon", "#stars"], { opacity: 0, duration: 1.4 }, 25.2);
+    tl.to("#night", { backgroundColor: "rgba(5, 8, 25, 0)", duration: 1.8 }, 25.2);
+    tl.to("#warm", { opacity: 1, duration: 1.8 }, 25.2);
+    tl.to("#head", { rotation: 0, y: 0, duration: 1.0, ease: "power2.inOut" }, 27.4);
+    tl.set("#eyes-closed", { opacity: 0 }, 28.00);
+    tl.set("#eyes-open", { opacity: 1 }, 28.00);
+    tl.to("#head", { rotation: 6, duration: 0.8, ease: "sine.inOut" }, 28.70);
+    tl.to("#frown", { opacity: 0, duration: 0.4 }, 29.6);
+    tl.to("#smile", { opacity: 1, duration: 0.4 }, 29.6);
+    tl.to("#feather", { filter: "drop-shadow(0 0 14px rgba(255,214,120,0.95))", duration: 0.8, yoyo: true, repeat: 3 }, 29.6);
+    tl.to("#hookband", { opacity: 0, duration: 0.4 }, 5.30);
+    tl.to("#hook", { opacity: 0, duration: 0.4 }, 5.30);
+    tl.fromTo("#c0", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.50);
+    tl.to("#c0", { opacity: 0, duration: 0.3 }, 5.70);
+    tl.fromTo("#c1", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 6.60);
+    tl.to("#c1", { opacity: 0, duration: 0.3 }, 11.90);
+    tl.fromTo("#c2", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 17.60);
+    tl.to("#c2", { opacity: 0, duration: 0.3 }, 22.70);
+    tl.fromTo("#c3", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 27.20);
+    tl.to("#c3", { opacity: 0, duration: 0.3 }, 32.90);
+    tl.fromTo("#cta", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5 }, 33.40);
+    tl.fromTo("#handle", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 33.80);
+    window.__timelines["scene"] = tl;
+  </script>
+</template>

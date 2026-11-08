@@ -15,6 +15,7 @@ format at most once in 5 reels. Log each reel's choices in the table at the bott
 | F | Kolam / line-drawing | Krishna's feet, a peacock feather or a flute drawn live in gold line art, then the meaning | ASMR, satisfying watch time | SVG paths |
 | G | This or that / quiz | "Which of Krishna's names is yours?" by birth month / a 3-question quiz | comments | nothing but HyperFrames |
 | H | Real darshan reveal | the 33.4K format: real footage, the reveal on the drop | the page's best reel ever | real footage from the temple |
+| J | **Animated skit with a Krishna cameo** (Day 14) | original SVG characters in a modern scene; Krishna appears, helps, winks | relatable, shareable, a recurring "cameo" series | nothing but HyperFrames |
 | I | Countdown / 108 names | rapid names on every beat, a stop on one with its meaning | rewatches | the names list |
 
 Voice lines: never reuse the same recorded sentence in consecutive reels. Many formats need no voice at all.
@@ -29,3 +30,4 @@ Tracks: ask the user for a new track (and its BPM and drop) every 2-3 reels; the
 | 11 | B pick a card | none | comment your number | ZAKHELO (Slowed) (new track welcome) | maroon and gold cards, serif |
 | 12 | C chat with Kanna (3 a.m.) | none | send it to someone | any calm track (ZAKHELO rested) | night blue and gold phone chat |
 | 13 | D one verse (Gita 2.14) | free EN: Christopher + Andrew | save it | any calm track | palm leaf, candlelight, Cormorant |
+| 14 | J animated skit: Krishna cameo (new) | free EN: Christopher + Andrew divine | send to someone | any calm track | flat SVG cartoon, night to morning |
