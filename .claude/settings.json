@@ -15,7 +15,10 @@
     "shader-skills@shader-skills": true,
     "webgpu-threejs-tsl@webgpu-threejs-tsl": true,
     "bitwize-music@bitwize-music": true,
-    "comfy@comfyui-mcp": true
+    "comfy@comfyui-mcp": true,
+    "animate@animate": true,
+    "lemo-opuscar@lemolab": true,
+    "motion-prompt@motion-prompt": true
   },
   "extraKnownMarketplaces": {
     "pixelfx": {
@@ -46,6 +49,24 @@
       "source": {
         "source": "github",
         "repo": "artokun/comfyui-mcp"
+      }
+    },
+    "animate": {
+      "source": {
+        "source": "github",
+        "repo": "cth9191/animate"
+      }
+    },
+    "lemolab": {
+      "source": {
+        "source": "github",
+        "repo": "lemomo-ai/lemo-opuscar"
+      }
+    },
+    "motion-prompt": {
+      "source": {
+        "source": "github",
+        "repo": "showheyohtaki/motion-prompt"
       }
     }
   }

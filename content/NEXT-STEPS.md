@@ -60,7 +60,13 @@ seedance-storyboard-generator (liangdabiao/Seedance2-Storyboard-Generator; Chine
 needs ELEVENLABS_API_KEY with credits, which we are out of). Plugins declared in .claude/settings.json (auto-install from GitHub
 each session): pixelfx (patch-gg, 244 pixel effects), shader-skills (gokayfem, GLSL/SDF/water/clouds), webgpu-threejs-tsl
 (dgreenheck), bitwize-music (Suno album pipeline + its MCP server), comfy (artokun/comfyui-mcp: MCP + 42 ComfyUI skills;
-needs ComfyUI running, CPU only here). MCP servers in .mcp.json: chrome-devtools (headless Chromium) and blender
+needs ComfyUI running, CPU only here). Added 9 Nov: what-if-animation (kelano86, a skill: 2D stick-figure "What If"
+episodes with a hero drawn in code, so he stays the same in every shot; expects ElevenLabs, so use Chatterbox instead) and project
+plugins animate (cth9191: canvas story animations in cut paper / ink / riso / sketchbook / pixel styles, with story, look and
+storyboard check-ins), lemo-opuscar (lemomo-ai: 66 code-rendered film styles with narration and score; first run downloads over 1 GB;
+30-60 min per film) and motion-prompt (showheyohtaki: 120 named motion moves with specs and Canvas code). Free b-roll and audio:
+archive.org's public API (https://archive.org/developers/, no key: Prelinger films, 78 rpm records). Theoxmotion's 3 studios
+(whatif-3d, story-video, explainer-reel) could not be installed: that GitHub account does not exist. MCP servers in .mcp.json: chrome-devtools (headless Chromium) and blender
 (MCP for Blender). Everything else is rebuilt with `bash tools/setup-tools.sh` (~20-30 min): yt-dlp, faster-whisper,
 GSAP, three.js, Remotion, Blender 4.0.2 (apt; download.blender.org is blocked), ComfyUI (CPU), Chatterbox.
 Blender MCP needs Blender running on a virtual screen: `xvfb-run -a blender --python tools/blender_mcp_headless.py &`
