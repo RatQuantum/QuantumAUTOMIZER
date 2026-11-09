@@ -39,40 +39,30 @@ function VW(id, word, n = 1) {
   return L.t0;
 }
 const fr = (t) => Math.round(t * FPS) / FPS;   // snap to a whole frame
-const T = {
-  hut: fr(VL('n1').t1 + 0.25),               // the empty pot
-  pray: fr(VL('n2').t1 + 0.25),              // her prayer
-  came: fr(VL('d1').t1 + 0.45),              // THE PAYOFF: in the silence after her prayer, before "He came"
-  leaf: fr(VW('n3', 'one')),                 // the one leaf (close-up)
-  full: fr(VW('n3', 'and') - 0.05),          // every sage feels full
-  gita: fr(VL('k1').t0 - 0.25),              // His promise (Gita 9.26)
-  end: fr(VL('n4').t0 - 0.2),                // the end is the start, changed
-};
-const ERA_LIST = [
-  [0, T.hut, () => sceneHook()],
-  [T.hut, T.pray, () => sceneEmptyPot()],
-  [T.pray, T.came, () => scenePrayer()],
-  [T.came, T.leaf, () => sceneHeCame()],
-  [T.leaf, T.full, () => sceneLeaf()],
-  [T.full, T.gita, () => sceneFull()],
-  [T.gita, T.end, () => scenePromise()],
-  [T.end, DURATION, () => sceneEnd()],
+// HOOK variants (strategy 7: test hooks, keep the body and CTA): A = the warning line over the dusk march (control),
+// B = story-first (opens on the empty pot), C = emotion-first cold open (her whispered prayer, then the pot)
+const HOOK = VOICE.hook || 'A';
+const PRE = HOOK === 'C' ? VL('n2') : VL('d1');            // the line right before the silence and the payoff
+const T = { came: fr(PRE.t1 + 0.45), leaf: fr(VW('n3', 'one')), full: fr(VW('n3', 'and') - 0.05), gita: fr(VL('k1').t0 - 0.25), end: fr(VL('n4').t0 - 0.2) };
+let OPEN;
+if (HOOK === 'A') { T.hut = fr(VL('n1').t1 + 0.25); T.pray = fr(VL('n2').t1 + 0.25); OPEN = [[0, T.hut, 'hook', () => sceneHook()], [T.hut, T.pray, 'pot', () => sceneEmptyPot()], [T.pray, T.came, 'pray', () => scenePrayer()]]; }
+else if (HOOK === 'B') { T.hut = 0; T.pray = fr(VL('n2').t1 + 0.25); OPEN = [[0, T.pray, 'pot', () => sceneEmptyPot()], [T.pray, T.came, 'pray', () => scenePrayer()]]; }
+else { T.pray = 0; T.hut = fr(VL('d1').t1 + 0.3); OPEN = [[0, T.hut, 'pray', () => scenePrayer()], [T.hut, T.came, 'pot', () => sceneEmptyPot()]]; }
+const ERAS = [...OPEN,
+  [T.came, T.leaf, 'came', () => sceneHeCame()],
+  [T.leaf, T.full, 'leaf', () => sceneLeaf()],
+  [T.full, T.gita, 'full', () => sceneFull()],
+  [T.gita, T.end, 'gita', () => scenePromise()],
+  [T.end, DURATION, 'end', () => sceneEnd()],
 ];
-const SHOTS = [
-  ['hook', 0, 0, T.hut, 'monks march on one small hut at dusk'],
-  ['pot', 1, T.hut, T.pray, 'her pot is empty; the crowd at the window'],
-  ['pray', 2, T.pray, T.came, 'she prays; the lamp gutters'],
-  ['came', 3, T.came, T.leaf, 'the door bursts with light: Krishna'],
-  ['leaf', 4, T.leaf, T.full, 'one leaf, lifted from the rim (extreme close-up)'],
-  ['full', 5, T.full, T.gita, 'the sages in the river, suddenly full'],
-  ['gita', 6, T.gita, T.end, 'a leaf, a flower, a fruit, water: Gita 9.26'],
-  ['end', 7, T.end, DURATION, 'the hut again, now warm; comment Krishna'],
-];
+const ERA_LIST = ERAS.map(([a, b, , f]) => [a, b, f]);
+const ERA_KEYS = ERAS.map(([, , k]) => k);
+const SHOTS = ERAS.map(([a, b, k], i) => [k, i, a, b, k]);
 const TIMELINE = {
   width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
   format: 'journey',
   shots: SHOTS.map(([key, era, t0, t1, title], i) => ({ id: i + 1, key, era, t0, t1, title })),
-  cuts: [T.hut, T.pray, T.came, T.leaf, T.full, T.gita, T.end],
+  cuts: ERAS.slice(1).map(([a]) => a),
   morphs: [],
   cues: {
     sages: VW('n2', 'ten'), door: VW('n2', 'door'), please: VW('d1', 'please'), came: T.came,
@@ -81,23 +71,13 @@ const TIMELINE = {
     enough: VW('n4', 'enough'), comment: VW('n5', 'comment'),
   },
   acts: [
-    { name: '1 Nothing left', role: 'build', t0: 0, t1: T.pray },
-    { name: '2 The prayer', role: 'peak', t0: T.pray, t1: VL('d1').t1 },
-    { name: '3 Silence', role: 'silence', t0: VL('d1').t1, t1: T.came },
-    { name: '4 He came', role: 'gift', t0: T.came, t1: T.gita },
-    { name: '5 The promise', role: 'journey', t0: T.gita, t1: T.end },
-    { name: '6 Enough', role: 'goodbye', t0: T.end, t1: DURATION },
+    { name: '1 Nothing left', role: 'build', t0: 0, t1: PRE.t1 },
+    { name: '2 Silence', role: 'silence', t0: PRE.t1, t1: T.came },
+    { name: '3 He came', role: 'gift', t0: T.came, t1: T.gita },
+    { name: '4 The promise', role: 'journey', t0: T.gita, t1: T.end },
+    { name: '5 Enough', role: 'goodbye', t0: T.end, t1: DURATION },
   ],
-  board: [
-    { t: 1.6, title: 'HOOK: one hut, ten thousand coming', sound: 'low drone, wind', next: 'cut inside' },
-    { t: T.hut + 3.2, title: 'the empty pot', sound: 'drone, a single low pluck', next: 'cut to her prayer' },
-    { t: T.pray + 1.6, title: 'she prays', sound: 'drone thins to silence', next: 'SLAM: the door of light' },
-    { t: T.came + 0.7, title: 'He came', sound: 'the loudest stab + sub', next: 'cut to the rim' },
-    { t: T.leaf + 1.8, title: 'one leaf', sound: 'flute motif (rising fifth)', next: 'cut to the river' },
-    { t: T.full + 1.2, title: 'every sage full', sound: 'warm chord, a laugh of plucks', next: 'cut to Him' },
-    { t: T.gita + 4.2, title: 'Gita 9.26', sound: 'a pluck on each gift', next: 'cut to the hut' },
-    { t: T.end + 4.5, title: 'enough', sound: 'the pad resolves', next: 'end' },
-  ],
+  board: ERAS.map(([a0, b0, k]) => ({ t: (a0 + b0) / 2, title: k, sound: '', next: '' })),
   narration: VOICE.lines.map((l) => ({ t0: l.t0, t1: l.t1, text: l.text })),
   gridOffset: 0,
 };

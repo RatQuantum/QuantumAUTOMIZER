@@ -1,0 +1,39 @@
+{
+ "name": "day18-hook-C",
+ "title": "One leaf was enough",
+ "format": {
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "bpm": 120,
+  "duration": 33.4583,
+  "frames": 803
+ },
+ "storyFormat": "F5 fixed-hero journey",
+ "style": "cut-paper",
+ "voice": {
+  "file": "voice/voice.wav",
+  "music": -14
+ },
+ "review": {
+  "safe": {
+   "top": 240,
+   "bottom": 420,
+   "right": 140
+  },
+  "refs": {}
+ },
+ "build": [
+  "../../day18-paper/src/head.html",
+  "kit/core.js",
+  "style",
+  "../../day18-paper/src/cast.js",
+  "../../day18-paper/src/scenes.js",
+  "../../day18-paper/src/bridges.js",
+  "kit/morph.js",
+  "kit/board.js",
+  "kit/score-head.js",
+  "../../day18-paper/src/score.js",
+  "kit/score-tail.js"
+ ]
+}

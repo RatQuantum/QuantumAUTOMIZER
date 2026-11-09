@@ -41,40 +41,30 @@ function VW(id, word, n = 1) {
   return L.t0;
 }
 const fr = (t) => Math.round(t * FPS) / FPS;   // snap to a whole frame
-const T = {
-  hut: fr(VL('n1').t1 + 0.25),               // the empty pot
-  pray: fr(VL('n2').t1 + 0.25),              // her prayer
-  came: fr(VL('d1').t1 + 0.45),              // THE PAYOFF: in the silence after her prayer, before "He came"
-  leaf: fr(VW('n3', 'one')),                 // the one leaf (close-up)
-  full: fr(VW('n3', 'and') - 0.05),          // every sage feels full
-  gita: fr(VL('k1').t0 - 0.25),              // His promise (Gita 9.26)
-  end: fr(VL('n4').t0 - 0.2),                // the end is the start, changed
-};
-const ERA_LIST = [
-  [0, T.hut, () => sceneHook()],
-  [T.hut, T.pray, () => sceneEmptyPot()],
-  [T.pray, T.came, () => scenePrayer()],
-  [T.came, T.leaf, () => sceneHeCame()],
-  [T.leaf, T.full, () => sceneLeaf()],
-  [T.full, T.gita, () => sceneFull()],
-  [T.gita, T.end, () => scenePromise()],
-  [T.end, DURATION, () => sceneEnd()],
+// HOOK variants (strategy 7: test hooks, keep the body and CTA): A = the warning line over the dusk march (control),
+// B = story-first (opens on the empty pot), C = emotion-first cold open (her whispered prayer, then the pot)
+const HOOK = VOICE.hook || 'A';
+const PRE = HOOK === 'C' ? VL('n2') : VL('d1');            // the line right before the silence and the payoff
+const T = { came: fr(PRE.t1 + 0.45), leaf: fr(VW('n3', 'one')), full: fr(VW('n3', 'and') - 0.05), gita: fr(VL('k1').t0 - 0.25), end: fr(VL('n4').t0 - 0.2) };
+let OPEN;
+if (HOOK === 'A') { T.hut = fr(VL('n1').t1 + 0.25); T.pray = fr(VL('n2').t1 + 0.25); OPEN = [[0, T.hut, 'hook', () => sceneHook()], [T.hut, T.pray, 'pot', () => sceneEmptyPot()], [T.pray, T.came, 'pray', () => scenePrayer()]]; }
+else if (HOOK === 'B') { T.hut = 0; T.pray = fr(VL('n2').t1 + 0.25); OPEN = [[0, T.pray, 'pot', () => sceneEmptyPot()], [T.pray, T.came, 'pray', () => scenePrayer()]]; }
+else { T.pray = 0; T.hut = fr(VL('d1').t1 + 0.3); OPEN = [[0, T.hut, 'pray', () => scenePrayer()], [T.hut, T.came, 'pot', () => sceneEmptyPot()]]; }
+const ERAS = [...OPEN,
+  [T.came, T.leaf, 'came', () => sceneHeCame()],
+  [T.leaf, T.full, 'leaf', () => sceneLeaf()],
+  [T.full, T.gita, 'full', () => sceneFull()],
+  [T.gita, T.end, 'gita', () => scenePromise()],
+  [T.end, DURATION, 'end', () => sceneEnd()],
 ];
-const SHOTS = [
-  ['hook', 0, 0, T.hut, 'monks march on one small hut at dusk'],
-  ['pot', 1, T.hut, T.pray, 'her pot is empty; the crowd at the window'],
-  ['pray', 2, T.pray, T.came, 'she prays; the lamp gutters'],
-  ['came', 3, T.came, T.leaf, 'the door bursts with light: Krishna'],
-  ['leaf', 4, T.leaf, T.full, 'one leaf, lifted from the rim (extreme close-up)'],
-  ['full', 5, T.full, T.gita, 'the sages in the river, suddenly full'],
-  ['gita', 6, T.gita, T.end, 'a leaf, a flower, a fruit, water: Gita 9.26'],
-  ['end', 7, T.end, DURATION, 'the hut again, now warm; comment Krishna'],
-];
+const ERA_LIST = ERAS.map(([a, b, , f]) => [a, b, f]);
+const ERA_KEYS = ERAS.map(([, , k]) => k);
+const SHOTS = ERAS.map(([a, b, k], i) => [k, i, a, b, k]);
 const TIMELINE = {
   width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
   format: 'journey',
   shots: SHOTS.map(([key, era, t0, t1, title], i) => ({ id: i + 1, key, era, t0, t1, title })),
-  cuts: [T.hut, T.pray, T.came, T.leaf, T.full, T.gita, T.end],
+  cuts: ERAS.slice(1).map(([a]) => a),
   morphs: [],
   cues: {
     sages: VW('n2', 'ten'), door: VW('n2', 'door'), please: VW('d1', 'please'), came: T.came,
@@ -83,23 +73,13 @@ const TIMELINE = {
     enough: VW('n4', 'enough'), comment: VW('n5', 'comment'),
   },
   acts: [
-    { name: '1 Nothing left', role: 'build', t0: 0, t1: T.pray },
-    { name: '2 The prayer', role: 'peak', t0: T.pray, t1: VL('d1').t1 },
-    { name: '3 Silence', role: 'silence', t0: VL('d1').t1, t1: T.came },
-    { name: '4 He came', role: 'gift', t0: T.came, t1: T.gita },
-    { name: '5 The promise', role: 'journey', t0: T.gita, t1: T.end },
-    { name: '6 Enough', role: 'goodbye', t0: T.end, t1: DURATION },
+    { name: '1 Nothing left', role: 'build', t0: 0, t1: PRE.t1 },
+    { name: '2 Silence', role: 'silence', t0: PRE.t1, t1: T.came },
+    { name: '3 He came', role: 'gift', t0: T.came, t1: T.gita },
+    { name: '4 The promise', role: 'journey', t0: T.gita, t1: T.end },
+    { name: '5 Enough', role: 'goodbye', t0: T.end, t1: DURATION },
   ],
-  board: [
-    { t: 1.6, title: 'HOOK: one hut, ten thousand coming', sound: 'low drone, wind', next: 'cut inside' },
-    { t: T.hut + 3.2, title: 'the empty pot', sound: 'drone, a single low pluck', next: 'cut to her prayer' },
-    { t: T.pray + 1.6, title: 'she prays', sound: 'drone thins to silence', next: 'SLAM: the door of light' },
-    { t: T.came + 0.7, title: 'He came', sound: 'the loudest stab + sub', next: 'cut to the rim' },
-    { t: T.leaf + 1.8, title: 'one leaf', sound: 'flute motif (rising fifth)', next: 'cut to the river' },
-    { t: T.full + 1.2, title: 'every sage full', sound: 'warm chord, a laugh of plucks', next: 'cut to Him' },
-    { t: T.gita + 4.2, title: 'Gita 9.26', sound: 'a pluck on each gift', next: 'cut to the hut' },
-    { t: T.end + 4.5, title: 'enough', sound: 'the pad resolves', next: 'end' },
-  ],
+  board: ERAS.map(([a0, b0, k]) => ({ t: (a0 + b0) / 2, title: k, sound: '', next: '' })),
   narration: VOICE.lines.map((l) => ({ t0: l.t0, t1: l.t1, text: l.text })),
   gridOffset: 0,
 };
@@ -977,8 +957,9 @@ function sky(bands, key) {   // full-bleed horizontal paper bands, top to bottom
   bands.forEach(([y0, c], i) => { const y1 = i + 1 < bands.length ? bands[i + 1][0] + 30 : H + 40; cut(rect(-40, y0 - 10, W + 80, y1 - y0 + 10, 0), c, { key: key + i, shadow: i > 0, sy: -4, sb: 10, tear: i ? 1.6 : 0, shade: false }); });
 }
 function birds(x, y, n, key) { for (let i = 0; i < n; i++) { const xx = x + i * 46 + mod(TT * 40, 600) - 100, yy = y + Math.sin(i * 1.7) * 22, f = (B + i) % 6 < 3 ? 10 : 2; ink([[xx - 16, yy], [xx - 6, yy - f], [xx, yy], [xx + 6, yy - f], [xx + 16, yy]], { w: 3.5, color: '#3a2030', amt: 0.3, key: key + i }); } }
+function capOpen(str) { if (E0 === 0) capNow(str, 50); else capStrip(str); }   // the first shot is the thumbnail: its caption is finished on frame 0
 function capNow(str, size = 54) { const f = () => tag(str, CX, H - SAFE.bottom - 60, size, { rot: 0.012, tape: false }); if (DEFER) DEFER.push(f); else f(); }   // a caption drawn finished (short shots)
-function topTag(str, t0, size = 64) { const f = () => tag(str, 70 + (handW(str, size) + size) / 2, SAFE.top + 90, size, { rot: -0.04, s: popS(t0) }); if (DEFER) DEFER.push(f); else f(); }
+function topTag(str, t0, size = 64) { const f = () => tag(str, 70 + (handW(str, size) + size) / 2, SAFE.top + 90, size, { rot: -0.04, s: E0 === 0 ? 1 : popS(t0) }); if (DEFER) DEFER.push(f); else f(); }
 
 // 1 · HOOK: dusk, a river, one small hut, a long line of monks coming
 function sceneHook() {
@@ -994,7 +975,7 @@ function sceneHook() {
   birds(380, 560, 4, 'bh');
   for (let i = 0; i < 6; i++) firefly(140 + i * 150, 1420 + Math.sin(i * 2 + TT) * 30, i);
   topTag('The forest exile', 0.15);
-  capStrip("One day... nothing left to give");
+  capOpen("One day... nothing left to give");
 }
 // 2 · THE EMPTY POT: inside the hut, the crowd fills the window
 function sceneEmptyPot() {
@@ -1006,12 +987,12 @@ function sceneEmptyPot() {
   cut(rect(90, 640, 250, 22, 4), PAL.wood, { key: 'shelf' }); diya(160, 636, 0.7, 'd2'); mug(270, 560, 0.7, '#9a4a22', 'cup2', false);
   for (let i = 0; i < 4; i++) cut(rot(ellipsePts(140 + i * 50, 420, 12, 40, 0, 12), 140 + i * 50, 390, Math.sin(TT * 2 + i) * 0.08), PAL.greenD, { key: 'herb' + i, sb: 4 });   // drying herbs
   ink([[100, 380], [340, 380]], { w: 3, color: PAL.ink, amt: 0.4, key: 'herbline' });
-  draupadi(400, 1060, 1.05, { key: 'dr2', mood: TT < cu.sages ? 'smile' : 'wow' });
+  draupadi(400, 1060, 1.05, { key: 'dr2', mood: 'wow' });
   pot(690, 1330, 1.0, { key: 'pot2' });
   cat(900, 1420, 0.6, '#5a4a40', 'cat2');
   if (TT >= cu.sages) { const f = () => tag('10,000 hungry sages', 740, 760, 46, { rot: 0.05, s: popS(cu.sages), fill: '#fff4d6' }); DEFER.push(f); }
   topTag('Her pot: empty', E0 + 0.1);
-  capStrip('...and they were at her door');
+  capOpen(E0 === 0 ? '10,000 sages... one empty pot' : '...and they were at her door');
 }
 // 3 · THE PRAYER: close, the lamp gutters
 function scenePrayer() {
@@ -1022,7 +1003,7 @@ function scenePrayer() {
   draupadi(560, 1180, 1.55, { key: 'dr3', mood: 'focus', pray: true, tear: cu.please });
   for (let i = 0; i < 5; i++) sparkle(700 + i * 50, 560 + Math.sin(TT * 2 + i) * 30, 6 + (B + i) % 3 * 2, 'rgba(255,230,170,0.7)');   // dust in the lamp light
   topTag('She called one name', E0 + 0.1, 58);
-  capStrip('"Krishna... please."');
+  capOpen('"Krishna... please."');
 }
 // 4 · HE CAME: the door bursts with light (the payoff; a short shot, drawn finished)
 function sceneHeCame() {
@@ -1102,10 +1083,11 @@ function sceneEnd() {
 const ERA_BG = ['#8e3355', '#c48a55', '#6e4530', '#ffe7a6', '#b9773f', '#f2a84a', '#2f4f8a', '#4a2456'];
 function pieceCam(era, t) {
   const [a, b] = ERA_LIST[era];
-  if (era === 0) return push(t, a, b + 0.4, { z: 1.12, p: [700, 1150], to: [640, 1080] });          // drift toward the hut
-  if (era === 2) return push(t, a, b + 0.3, { z: 1.12, p: [560, 960], to: [540, 900] });            // close in on her prayer
-  if (era === 6) return push(t, a, b + 0.6, { z: 1.08, p: [540, 1000], to: [540, 980] });           // slow push on Him
-  if (era === 7) return push(t, a, b, { z: 1.0001, p: [540, 960], to: [540, 960] });
+  const k = ERA_KEYS[era];
+  if (k === 'hook') return push(t, a, b + 0.4, { z: 1.12, p: [700, 1150], to: [640, 1080] });          // drift toward the hut
+  if (k === 'pray') return push(t, a, b + 0.3, { z: 1.12, p: [560, 960], to: [540, 900] });            // close in on her prayer
+  if (k === 'gita') return push(t, a, b + 0.6, { z: 1.08, p: [540, 1000], to: [540, 980] });           // slow push on Him
+  if (k === 'end') return push(t, a, b, { z: 1.0001, p: [540, 960], to: [540, 960] });
   return null;
 }
 const BRIDGES = [];
@@ -1440,12 +1422,12 @@ async function buildScore(sampleRate = 48000, part = 'mix', normIn = null) {
   //  SCORE — thin and low while the pot is empty, near-silence after her prayer, the loudest hit on "He came",
   //  a rising-fifth flute motif for the leaf, a pluck on each gift, the pad resolving at the end.
   // =====================================================================
-  const TL = TIMELINE, c = TL.cues, TM = { hut: ERA_LIST[1][0], pray: ERA_LIST[2][0], came: ERA_LIST[3][0], leaf: ERA_LIST[4][0], full: ERA_LIST[5][0], gita: ERA_LIST[6][0], end: ERA_LIST[7][0] };
+  const TL = TIMELINE, c = TL.cues, TM = T;
   to = 'm';
-  drone(0.0, TM.pray + 1.2, nz('D2'), 0.05);
-  pad(0.0, TM.pray, ['D3', 'A3', 'F4'], 0.03, { type: 'triangle', cut: 700, att: 0.6, rel: 0.4 });
-  [0.4, TM.hut, c.sages, c.door].forEach((t, i) => pluck(t, nz(['D3', 'F3', 'A3', 'C4'][i]), 0.12, 0, 0.9, 1400, 0.3));
-  pad(TM.pray, TM.came - 0.55, ['D3', 'F3', 'A3'], 0.022, { cut: 600, att: 0.2, rel: 0.15 });           // thins, then stops before the slam
+  drone(0.0, TM.came - 0.6, nz('D2'), 0.05);
+  pad(0.0, PRE.t0, ['D3', 'A3', 'F4'], 0.03, { type: 'triangle', cut: 700, att: 0.6, rel: 0.4 });
+  [0.4, Math.max(TM.hut, 0.9), c.sages, c.door].forEach((t, i) => pluck(t, nz(['D3', 'F3', 'A3', 'C4'][i]), 0.12, 0, 0.9, 1400, 0.3));
+  pad(PRE.t0, TM.came - 0.55, ['D3', 'F3', 'A3'], 0.022, { cut: 600, att: 0.2, rel: 0.15 });           // thins, then stops before the slam
   // the payoff: a short stab + sub, then a flat warm chord
   pluck(TM.came, nz('D4'), 0.5, -0.2, 0.4, 3200, 0.2); pluck(TM.came, nz('A4'), 0.45, 0.2, 0.4, 3200, 0.2); pluck(TM.came, nz('Fs4'), 0.4, 0, 0.4, 3200, 0.2);
   sub(TM.came, 0.9);

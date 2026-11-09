@@ -1,0 +1,42 @@
+{
+ "lead": 0.35,
+ "tail": 1.8,
+ "lines": [
+  {
+   "id": "n2",
+   "text": "Draupadi's pot was empty. And ten thousand hungry sages... were at her door.",
+   "file": "n2.wav",
+   "after": 0.5
+  },
+  {
+   "id": "d1",
+   "text": "Krishna... please. I have no one else.",
+   "file": "d1.wav",
+   "after": 1.0
+  },
+  {
+   "id": "n3",
+   "text": "He came. One leaf was stuck to the pot. He ate it... and every sage felt full.",
+   "file": "n3.wav",
+   "after": 0.7
+  },
+  {
+   "id": "k1",
+   "text": "Offer Me a leaf... a flower... a fruit... a little water... with love. I accept it.",
+   "file": "k1.wav",
+   "after": 0.6
+  },
+  {
+   "id": "n4",
+   "text": "Whatever little you have today... is enough for Him.",
+   "file": "n4.wav",
+   "after": 0.45
+  },
+  {
+   "id": "n5",
+   "text": "Comment Krishna... if you need Him today.",
+   "file": "n5.wav",
+   "after": 0.3
+  }
+ ]
+}

@@ -2,12 +2,12 @@
   //  SCORE — thin and low while the pot is empty, near-silence after her prayer, the loudest hit on "He came",
   //  a rising-fifth flute motif for the leaf, a pluck on each gift, the pad resolving at the end.
   // =====================================================================
-  const TL = TIMELINE, c = TL.cues, TM = { hut: ERA_LIST[1][0], pray: ERA_LIST[2][0], came: ERA_LIST[3][0], leaf: ERA_LIST[4][0], full: ERA_LIST[5][0], gita: ERA_LIST[6][0], end: ERA_LIST[7][0] };
+  const TL = TIMELINE, c = TL.cues, TM = T;
   to = 'm';
-  drone(0.0, TM.pray + 1.2, nz('D2'), 0.05);
-  pad(0.0, TM.pray, ['D3', 'A3', 'F4'], 0.03, { type: 'triangle', cut: 700, att: 0.6, rel: 0.4 });
-  [0.4, TM.hut, c.sages, c.door].forEach((t, i) => pluck(t, nz(['D3', 'F3', 'A3', 'C4'][i]), 0.12, 0, 0.9, 1400, 0.3));
-  pad(TM.pray, TM.came - 0.55, ['D3', 'F3', 'A3'], 0.022, { cut: 600, att: 0.2, rel: 0.15 });           // thins, then stops before the slam
+  drone(0.0, TM.came - 0.6, nz('D2'), 0.05);
+  pad(0.0, PRE.t0, ['D3', 'A3', 'F4'], 0.03, { type: 'triangle', cut: 700, att: 0.6, rel: 0.4 });
+  [0.4, Math.max(TM.hut, 0.9), c.sages, c.door].forEach((t, i) => pluck(t, nz(['D3', 'F3', 'A3', 'C4'][i]), 0.12, 0, 0.9, 1400, 0.3));
+  pad(PRE.t0, TM.came - 0.55, ['D3', 'F3', 'A3'], 0.022, { cut: 600, att: 0.2, rel: 0.15 });           // thins, then stops before the slam
   // the payoff: a short stab + sub, then a flat warm chord
   pluck(TM.came, nz('D4'), 0.5, -0.2, 0.4, 3200, 0.2); pluck(TM.came, nz('A4'), 0.45, 0.2, 0.4, 3200, 0.2); pluck(TM.came, nz('Fs4'), 0.4, 0, 0.4, 3200, 0.2);
   sub(TM.came, 0.9);

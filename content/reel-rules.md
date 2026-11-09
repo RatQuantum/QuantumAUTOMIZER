@@ -105,3 +105,7 @@ Every reel is checked against all of these. If one fails, fix it before renderin
     voices/ (no real person's voice). Settings: narrator exaggeration 0.6, cfg 0.45; Krishna 0.5 / 0.35; a whisper 0.75 /
     0.3; then a light polish (EQ, compressor, small room) and loudnorm -16. Whisper-check every line; regenerate with a
     new seed when a word is misheard. Free ZeroGPU quota is about 9 lines a day; HF PRO gives 40 min a day.
+19. **Strategy 7: test hooks, don't guess** (the user, 9 Nov, from a reference reel: hooks x middles x CTAs, keep the
+    winners, beat the control). Every story ships with 2-3 HOOK versions (same body, same CTA): the control posted
+    normally, the others as Instagram Trial reels; after 48 h the lowest skip rate wins and its pattern becomes the next
+    default. Full method, hook patterns and the results log: content/strategy-7-hook-testing.md.

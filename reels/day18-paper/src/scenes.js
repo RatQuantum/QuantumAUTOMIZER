@@ -6,8 +6,9 @@ function sky(bands, key) {   // full-bleed horizontal paper bands, top to bottom
   bands.forEach(([y0, c], i) => { const y1 = i + 1 < bands.length ? bands[i + 1][0] + 30 : H + 40; cut(rect(-40, y0 - 10, W + 80, y1 - y0 + 10, 0), c, { key: key + i, shadow: i > 0, sy: -4, sb: 10, tear: i ? 1.6 : 0, shade: false }); });
 }
 function birds(x, y, n, key) { for (let i = 0; i < n; i++) { const xx = x + i * 46 + mod(TT * 40, 600) - 100, yy = y + Math.sin(i * 1.7) * 22, f = (B + i) % 6 < 3 ? 10 : 2; ink([[xx - 16, yy], [xx - 6, yy - f], [xx, yy], [xx + 6, yy - f], [xx + 16, yy]], { w: 3.5, color: '#3a2030', amt: 0.3, key: key + i }); } }
+function capOpen(str) { if (E0 === 0) capNow(str, 50); else capStrip(str); }   // the first shot is the thumbnail: its caption is finished on frame 0
 function capNow(str, size = 54) { const f = () => tag(str, CX, H - SAFE.bottom - 60, size, { rot: 0.012, tape: false }); if (DEFER) DEFER.push(f); else f(); }   // a caption drawn finished (short shots)
-function topTag(str, t0, size = 64) { const f = () => tag(str, 70 + (handW(str, size) + size) / 2, SAFE.top + 90, size, { rot: -0.04, s: popS(t0) }); if (DEFER) DEFER.push(f); else f(); }
+function topTag(str, t0, size = 64) { const f = () => tag(str, 70 + (handW(str, size) + size) / 2, SAFE.top + 90, size, { rot: -0.04, s: E0 === 0 ? 1 : popS(t0) }); if (DEFER) DEFER.push(f); else f(); }
 
 // 1 · HOOK: dusk, a river, one small hut, a long line of monks coming
 function sceneHook() {
@@ -23,7 +24,7 @@ function sceneHook() {
   birds(380, 560, 4, 'bh');
   for (let i = 0; i < 6; i++) firefly(140 + i * 150, 1420 + Math.sin(i * 2 + TT) * 30, i);
   topTag('The forest exile', 0.15);
-  capStrip("One day... nothing left to give");
+  capOpen("One day... nothing left to give");
 }
 // 2 · THE EMPTY POT: inside the hut, the crowd fills the window
 function sceneEmptyPot() {
@@ -35,12 +36,12 @@ function sceneEmptyPot() {
   cut(rect(90, 640, 250, 22, 4), PAL.wood, { key: 'shelf' }); diya(160, 636, 0.7, 'd2'); mug(270, 560, 0.7, '#9a4a22', 'cup2', false);
   for (let i = 0; i < 4; i++) cut(rot(ellipsePts(140 + i * 50, 420, 12, 40, 0, 12), 140 + i * 50, 390, Math.sin(TT * 2 + i) * 0.08), PAL.greenD, { key: 'herb' + i, sb: 4 });   // drying herbs
   ink([[100, 380], [340, 380]], { w: 3, color: PAL.ink, amt: 0.4, key: 'herbline' });
-  draupadi(400, 1060, 1.05, { key: 'dr2', mood: TT < cu.sages ? 'smile' : 'wow' });
+  draupadi(400, 1060, 1.05, { key: 'dr2', mood: 'wow' });
   pot(690, 1330, 1.0, { key: 'pot2' });
   cat(900, 1420, 0.6, '#5a4a40', 'cat2');
   if (TT >= cu.sages) { const f = () => tag('10,000 hungry sages', 740, 760, 46, { rot: 0.05, s: popS(cu.sages), fill: '#fff4d6' }); DEFER.push(f); }
   topTag('Her pot: empty', E0 + 0.1);
-  capStrip('...and they were at her door');
+  capOpen(E0 === 0 ? '10,000 sages... one empty pot' : '...and they were at her door');
 }
 // 3 · THE PRAYER: close, the lamp gutters
 function scenePrayer() {
@@ -51,7 +52,7 @@ function scenePrayer() {
   draupadi(560, 1180, 1.55, { key: 'dr3', mood: 'focus', pray: true, tear: cu.please });
   for (let i = 0; i < 5; i++) sparkle(700 + i * 50, 560 + Math.sin(TT * 2 + i) * 30, 6 + (B + i) % 3 * 2, 'rgba(255,230,170,0.7)');   // dust in the lamp light
   topTag('She called one name', E0 + 0.1, 58);
-  capStrip('"Krishna... please."');
+  capOpen('"Krishna... please."');
 }
 // 4 · HE CAME: the door bursts with light (the payoff; a short shot, drawn finished)
 function sceneHeCame() {
