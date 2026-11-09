@@ -58,3 +58,6 @@ reels/*/review/
 reels/*/look*.png
 reels/*/audio*.wav
 reels/*/stem-*.wav
+reels/**/renders/
+reels/**/frames/
+reels/**/review/
