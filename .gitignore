@@ -53,3 +53,8 @@ reels/day9-ta/assets/video/*cosmic*.mp4
 reels/day9-ta/assets/video/raw/*
 reels/day9-ta/assets/img/*krishna-face*
 reels/*/renders/
+reels/*/frames/
+reels/*/review/
+reels/*/look*.png
+reels/*/audio*.wav
+reels/*/stem-*.wav

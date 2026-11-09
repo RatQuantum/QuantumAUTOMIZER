@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One leaf was enough</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #1b1714; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: min(100vh, calc(100vw * 16 / 9)); width: auto; aspect-ratio: 9 / 16; display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// =====================================================================
+//  ONE LEAF WAS ENOUGH — Day 18 (cut paper) for @lordsrikrishnatemple. 9:16, voice-led (Chatterbox), 24fps.
+//  Draupadi's akshaya patra (Mahabharata, Vana Parva): her pot is empty, Durvasa's ten thousand disciples are coming,
+//  she calls Krishna, He eats one leaf stuck to the pot and every sage at the river feels full. Gita 9.26.
+//  Format F5 (fixed-hero journey): Draupadi is the constant; hard cuts on the voice; the payoff (He came) lands in the
+//  silence after her prayer. Reserved colour: the leaf's bright green (#7cc544) means "the little that is enough".
+// =====================================================================
+const FPS = 24, W = 1080, H = 1920;
+const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;
+const DURATION = Math.round(VOICE.duration * FPS) / FPS;
+const NFRAMES = Math.round(DURATION * FPS);
+const LOOP_T = NFRAMES / FPS;
+const SAFE = { top: 240, bottom: 420, right: 140 };
+const HAND = '"Kalam", "Ink Free", "Segoe Print", "Bradley Hand", "Chalkboard SE", "Comic Sans MS", cursive';
+const CX = 500;
+const LEAF = '#7cc544', LEAFD = '#4f8f2a';
+
+// voice cues: a line's start/end, and when a word starts (first match, n-th occurrence)
+const VL = (id) => VOICE.lines.find((l) => l.id === id);
+function VW(id, word, n = 1) {
+  const L = VL(id); let k = 0;
+  for (const w of L.words) if (w.w.toLowerCase().replace(/[^a-z']/g, '').startsWith(word.toLowerCase()) && ++k === n) return w.t0;
+  return L.t0;
+}
+const fr = (t) => Math.round(t * FPS) / FPS;   // snap to a whole frame
+const T = {
+  hut: fr(VL('n1').t1 + 0.25),               // the empty pot
+  pray: fr(VL('n2').t1 + 0.25),              // her prayer
+  came: fr(VL('d1').t1 + 0.45),              // THE PAYOFF: in the silence after her prayer, before "He came"
+  leaf: fr(VW('n3', 'one')),                 // the one leaf (close-up)
+  full: fr(VW('n3', 'and') - 0.05),          // every sage feels full
+  gita: fr(VL('k1').t0 - 0.25),              // His promise (Gita 9.26)
+  end: fr(VL('n4').t0 - 0.2),                // the end is the start, changed
+};
+const ERA_LIST = [
+  [0, T.hut, () => sceneHook()],
+  [T.hut, T.pray, () => sceneEmptyPot()],
+  [T.pray, T.came, () => scenePrayer()],
+  [T.came, T.leaf, () => sceneHeCame()],
+  [T.leaf, T.full, () => sceneLeaf()],
+  [T.full, T.gita, () => sceneFull()],
+  [T.gita, T.end, () => scenePromise()],
+  [T.end, DURATION, () => sceneEnd()],
+];
+const SHOTS = [
+  ['hook', 0, 0, T.hut, 'monks march on one small hut at dusk'],
+  ['pot', 1, T.hut, T.pray, 'her pot is empty; the crowd at the window'],
+  ['pray', 2, T.pray, T.came, 'she prays; the lamp gutters'],
+  ['came', 3, T.came, T.leaf, 'the door bursts with light: Krishna'],
+  ['leaf', 4, T.leaf, T.full, 'one leaf, lifted from the rim (extreme close-up)'],
+  ['full', 5, T.full, T.gita, 'the sages in the river, suddenly full'],
+  ['gita', 6, T.gita, T.end, 'a leaf, a flower, a fruit, water: Gita 9.26'],
+  ['end', 7, T.end, DURATION, 'the hut again, now warm; comment Krishna'],
+];
+const TIMELINE = {
+  width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
+  format: 'journey',
+  shots: SHOTS.map(([key, era, t0, t1, title], i) => ({ id: i + 1, key, era, t0, t1, title })),
+  cuts: [T.hut, T.pray, T.came, T.leaf, T.full, T.gita, T.end],
+  morphs: [],
+  cues: {
+    sages: VW('n2', 'ten'), door: VW('n2', 'door'), please: VW('d1', 'please'), came: T.came,
+    ate: VW('n3', 'ate'), full: VW('n3', 'full'),
+    leaf: VW('k1', 'leaf'), flower: VW('k1', 'flower'), fruit: VW('k1', 'fruit'), water: VW('k1', 'water'), love: VW('k1', 'love'),
+    enough: VW('n4', 'enough'), comment: VW('n5', 'comment'),
+  },
+  acts: [
+    { name: '1 Nothing left', role: 'build', t0: 0, t1: T.pray },
+    { name: '2 The prayer', role: 'peak', t0: T.pray, t1: VL('d1').t1 },
+    { name: '3 Silence', role: 'silence', t0: VL('d1').t1, t1: T.came },
+    { name: '4 He came', role: 'gift', t0: T.came, t1: T.gita },
+    { name: '5 The promise', role: 'journey', t0: T.gita, t1: T.end },
+    { name: '6 Enough', role: 'goodbye', t0: T.end, t1: DURATION },
+  ],
+  board: [
+    { t: 1.6, title: 'HOOK: one hut, ten thousand coming', sound: 'low drone, wind', next: 'cut inside' },
+    { t: T.hut + 3.2, title: 'the empty pot', sound: 'drone, a single low pluck', next: 'cut to her prayer' },
+    { t: T.pray + 1.6, title: 'she prays', sound: 'drone thins to silence', next: 'SLAM: the door of light' },
+    { t: T.came + 0.7, title: 'He came', sound: 'the loudest stab + sub', next: 'cut to the rim' },
+    { t: T.leaf + 1.8, title: 'one leaf', sound: 'flute motif (rising fifth)', next: 'cut to the river' },
+    { t: T.full + 1.2, title: 'every sage full', sound: 'warm chord, a laugh of plucks', next: 'cut to Him' },
+    { t: T.gita + 4.2, title: 'Gita 9.26', sound: 'a pluck on each gift', next: 'cut to the hut' },
+    { t: T.end + 4.5, title: 'enough', sound: 'the pad resolves', next: 'end' },
+  ],
+  narration: VOICE.lines.map((l) => ({ t0: l.t0, t1: l.t1, text: l.text })),
+  gridOffset: 0,
+};
+window.TIMELINE = TIMELINE;
