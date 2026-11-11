@@ -109,3 +109,22 @@ Every reel is checked against all of these. If one fails, fix it before renderin
     winners, beat the control). Every story ships with 2-3 HOOK versions (same body, same CTA): the control posted
     normally, the others as Instagram Trial reels; after 48 h the lowest skip rate wins and its pattern becomes the next
     default. Full method, hook patterns and the results log: content/strategy-7-hook-testing.md.
+
+## Learned 11 Nov from a reference in our niche ("Why exactly 56 dishes?", a 3D cartoon explainer; studied, not copied)
+The user: "This is so well made and this is our niche. But our videos are not good. Why?" Measured: 59.5 s, 24 shots
+(one every 2.5 s), loudness -14.2 LUFS with a 1.4 LU range (a constant bed), bright saturated daylight (brightness 0.49,
+saturation 0.54, 1% dark). What it does that ours didn't:
+20. **Hook = a WHY question about something people see every day + a paradox line.** Big title on screen ("WHY EXACTLY 56
+    DISHES?") and a first line that makes no sense yet ("A boy held up a mountain for seven days, and all his mother could
+    think about was his lunch."). The ending answers the question. Not a sad warning, not a verse.
+21. **Explain a living tradition through the story** (a series: one tradition per episode). People save and share what
+    they learned; they scroll past scripture they already know.
+22. **Fast and funny.** A new shot every 2-3 s; a quick, warm narrator with modern asides ("Ever come home after a week
+    away and your mom cooks everything you missed? Same love."). Reverence comes from the payoff, not from slowness.
+23. **Bright daylight 3D world + flat cute characters** (low-poly hills, palms, palaces; pill-bodied stick figures with
+    big eyes). Never dark, never dim.
+24. **Karaoke captions**: 2-3 bold white words with a thick black outline at ~73% of the height, the key word in yellow,
+    changing with every phrase. Big title card for the first ~4 s.
+25. **A constant sound bed**: playful music under the whole voice plus a sound for every action (clinks, boings, a record
+    scratch on the twist). Target -14 LUFS, small loudness range.
+Our implementation: reels/day19-en (three.js world + canvas-drawn cast in HyperFrames; tools/make_audio.py for the bed).
