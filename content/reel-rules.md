@@ -128,3 +128,6 @@ saturation 0.54, 1% dark). What it does that ours didn't:
 25. **A constant sound bed**: playful music under the whole voice plus a sound for every action (clinks, boings, a record
     scratch on the twist). Target -14 LUFS, small loudness range.
 Our implementation: reels/day19-en (three.js world + canvas-drawn cast in HyperFrames; tools/make_audio.py for the bed).
+26. **Voice fallback when Chatterbox's free quota is gone: Kokoro** (kokoro-onnx, Apache 2.0, local CPU, no quota; the user
+    approved the install 11 Nov). Model files in /home/user/kokoro; reels/day20-en/tools/kokoro_tts.py; default voice
+    am_michael at speed 1.08. Keep ONE voice per reel (never mix Chatterbox and Kokoro lines).
