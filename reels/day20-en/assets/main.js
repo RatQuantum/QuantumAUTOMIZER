@@ -2,6 +2,7 @@
 import * as THREE from './three.module.js';
 import { buildWorld, makeCast, pose, sm, seg, lerp, clamp } from './world.js';
 import { WORDS, DURATION } from './data.js';
+import { addOutlines, addLife, makeConfetti, shake } from './plus.js';
 
 const canvas = document.getElementById('gl');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
@@ -15,8 +16,12 @@ const W = buildWorld(scene);
 const GOV = [5, 4, 3, 2, 1];
 const castList = [['krishna', 'kidKrishna'], ['k1', 'kid1'], ['k2', 'kid2'], ['k3', 'kid3'], ['k4', 'kid4'], ['g1', 'gopi1'], ['g2', 'gopi2'], ['g3', 'gopi3'], ['yashoda', 'yashoda']];
 GOV.forEach((n, tier) => { for (let i = 0; i < n; i++) castList.push([`gv${tier}_${i}`, 'govinda']); });
-for (let i = 0; i < 8; i++) castList.push([`cr${i}`, i % 3 === 0 ? 'gopi1' : i % 3 === 1 ? 'crowd' : 'govinda']);
+for (let i = 0; i < 4; i++) castList.push([`v${i}`, ['gopi2', 'crowd', 'gopi3', 'crowd'][i]]);
+for (let i = 0; i < 14; i++) castList.push([`cr${i}`, i % 3 === 0 ? 'gopi1' : i % 3 === 1 ? 'crowd' : 'govinda']);
 const C = makeCast(scene, castList);
+addOutlines(scene);
+const life = addLife(scene, [{ x: 0, z: 0, r0: 7.5, r1: 13 }]);
+const confetti = makeConfetti(scene, 120);
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 // a word's start time (n-th occurrence)
 function WT(word, n = 1) { let k = 0; for (const w of WORDS) if (w[2].toLowerCase().replace(/[^a-z'-]/g, '').startsWith(word) && ++k === n) return w[0]; throw new Error('no word ' + word); }
@@ -71,6 +76,7 @@ function gokul(s, t) {
     const vis = s >= E.women - 0.1 && s < E.looks + 0.2;
     pose(C[g], camera, { visible: vis, x: lerp(x, x + ex * 0.4 + (i === 1 ? -6 : 0), gw), z, mood: s < E.plan ? 'smug' : s < E.problem ? 'smug' : 'happy', arm: s < E.plan ? 'hips' : i === 1 && s < E.hang + 1.8 ? 'up' : 'down', step: gw > 0 && gw < 1 ? s * 3 : 0 });
   });
+  [[-2.7, 3.7], [2.8, 4.0], [-2.9, -2.7], [2.9, -3.0]].forEach(([x, z], i) => pose(C['v' + i], camera, { visible: s >= E.problem && s < E.mother + 1.5 || i > 1, x, z, flip: x > 0, mood: buttered ? 'happy' : s >= E.one ? 'wow' : 'normal', arm: buttered && i < 2 ? 'up' : 'down' }));
   // Yashoda
   const yk = seg(s, E.mother, E.mother + 1.0);
   pose(C.yashoda, camera, { visible: s >= E.mother, x: lerp(0.9, 1.6, yk), z: lerp(6.5, 1.1, yk), step: yk > 0 && yk < 1 ? s * 3 : 0, mood: s < E.hands ? 'normal' : s < E.she ? 'smug' : 'happy', arm: s >= E.hands && s < E.she + 0.6 ? 'hips' : 'down' });
@@ -82,7 +88,8 @@ function mumbai(m, t) {
   W.mString.position.set(0, 8.1, -2); W.mString.visible = W.mPot.visible;
   W.mShards.set(crackM, m, V(40, 7.3, -2)); W.spray.set(Math.floor(t / 1.6) * 1.6, t, V(43, 1.5, 2));
   GOV.forEach((n, tier) => { for (let i = 0; i < n; i++) { const x = (i - (n - 1) / 2) * 0.62, y = tier * 1.18; const top = tier === 4; pose(C[`gv${tier}_${i}`], camera, { x: MO.x + x, y, z: MO.z + tier * 0.03, h: 1.6, arm: top && m > crackM - 0.9 ? 'up' : 'down', mood: m > crackM ? 'happy' : top ? 'wow' : 'normal' }); } });
-  for (let i = 0; i < 8; i++) { const a = -2.6 + i * 0.75; pose(C[`cr${i}`], camera, { x: 40 + a + (i % 2) * 0.2, y: Math.abs(Math.sin(t * 4 + i)) * 0.12 * (m > crackM ? 1 : 0.3), z: 1.8 + (i % 3) * 0.5, h: 1.6, mood: m > crackM ? 'happy' : 'wow', arm: m > crackM ? 'up' : 'down', flip: i % 2 === 0 }); }
+  confetti(crackM, m, V(40, 7.3, -2));
+  for (let i = 0; i < 14; i++) { const a = (i < 8 ? -2.6 + i * 0.75 : -2.9 + (i - 8) * 1.15); pose(C[`cr${i}`], camera, { x: 40 + a + (i % 2) * 0.2, y: Math.abs(Math.sin(t * 4 + i)) * 0.12 * (m > crackM ? 1 : 0.3), z: (i < 8 ? 1.8 : 3.4) + (i % 3) * 0.5, h: 1.6, mood: m > crackM ? 'happy' : 'wow', arm: m > crackM ? 'up' : 'down', flip: i % 2 === 0 }); }
   W.lights.forEach((l, i) => l.material.color.setHSL(((i * 0.13 + t * 0.2) % 1), 0.9, 0.62));
 }
 
@@ -134,14 +141,21 @@ function captions(t) {
   let html = '';
   if (ci >= 0) { const ch = CHUNKS[ci], next = CHUNKS[ci + 1], lastEnd = WORDS[ch[ch.length - 1]][1]; if (t < (next ? WORDS[next[0]][0] : lastEnd + 0.6)) html = ch.map((i) => { const w = WORDS[i], clean = w[2].replace(/[^A-Za-z'-]/g, '').toLowerCase(); const on = t >= w[0] - 0.03 && KEY.has(clean); return `<span class="${on ? 'y' : ''}">${w[2].replace(/[.,]$/, '')}</span>`; }).join(' '); }
   if (html !== lastCap) { capEl.innerHTML = html; lastCap = html; }
+  if (ci >= 0) capEl.style.transform = `scale(${1 + 0.16 * Math.exp(-Math.max(0, t - WORDS[CHUNKS[ci][0]][0]) * 13)})`;
   titleEl.style.opacity = t < E.why - 0.1 ? 1 : 0;
   qEl.style.opacity = t >= E.wait && t < E.because ? 1 : 0;
   qEl.style.transform = `translateY(${Math.sin(t * 4) * 8}px) rotate(${Math.sin(t * 3) * 6}deg)`;
   ctaEl.style.opacity = t >= E.comment ? 1 : 0;
   ctaEl.style.transform = `scale(${t >= E.comment ? 1 + 0.08 * Math.exp(-(t - E.comment) * 6) : 0.9})`;
 }
+const locEl = document.getElementById('loc');
 function renderAt(t) {
+  window.__T = t;
   const [s, m] = camAt(t);
+  shake(camera, t, E.smash + 0.6); shake(camera, t, E.crack + 0.15); shake(camera, t, E.comment + 2.0);
+  life(t);
+  const lt = t >= E.gokul && t < E.so ? '📍 GOKUL · LONG AGO' : t >= E.today && t < E.wall ? 'EVEN TODAY' : '';
+  if (locEl.textContent !== lt) locEl.textContent = lt; locEl.style.opacity = lt ? 1 : 0;
   gokul(s, t); mumbai(m, t);
   W.clouds.forEach((c, i) => { c.position.x = -60 + i * 15 + ((t * 0.6 + i * 3) % 12); });
   W.cows.forEach((c, i) => { c.rotation.y += 0; c.position.y = 0; c.children[1].rotation.z = Math.sin(t * 1.5 + i) * 0.15; });

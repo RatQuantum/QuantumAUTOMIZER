@@ -3,6 +3,7 @@
 import * as THREE from './three.module.js';
 import { buildWorld, makeCast, pose, sm, seg, lerp, clamp } from './world.js';
 import { WORDS, DURATION } from './data.js';
+import { addOutlines, addLife, makeConfetti, shake } from './plus.js';
 
 const canvas = document.getElementById('gl');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true, alpha: false });
@@ -15,6 +16,9 @@ const camera = new THREE.PerspectiveCamera(50, 1080 / 1920, 0.1, 400);
 { const g = new THREE.SphereGeometry(300, 24, 12); const col = []; const p = g.attributes.position; const top = new THREE.Color(0x4a8fe0), hor = new THREE.Color(0xcfe9ff); for (let i = 0; i < p.count; i++) { const k = clamp(p.getY(i) / 160); const c = hor.clone().lerp(top, Math.pow(k, 0.7)); col.push(c.r, c.g, c.b); } g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); scene.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide, fog: false }))); }
 const W = buildWorld(scene);
 const C = makeCast(scene);
+addOutlines(scene);
+const life = addLife(scene, [{ x: 0, z: 2, r0: 7, r1: 14 }, { x: -40, z: 0, r0: 9.5, r1: 14 }]);
+const confetti = makeConfetti(scene);
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 
 // ---- the story clock (s): world state
@@ -53,6 +57,11 @@ function state(s, t) {
   const rw = walk(s, 33.25, 35.4, [-8, 0, -2.5], [1.55, 0, 1.0]);
   pose(C.rukmini, camera, { visible: s >= 33.2, x: rw.x, z: rw.z, step: rw.step, mood: s >= 35.4 && s < 41 ? 'closed' : 'happy', arm: s >= 38.2 && s < 39.4 ? 'offer' : 'down', leaf: s < 38.5 });
   pose(C.courtier, camera, { x: -5.2, z: 2.6, mood: s > 26.6 && s < 31 ? 'wow' : 'normal' });
+  [[-6.3, 3.4], [-4.4, 4.5], [5.7, 3.6], [6.7, 1.5], [-7.0, 0.8], [4.7, 4.8]].forEach(([x, z], i) => pose(C['ex' + i], camera, { x, z, flip: x > 0, mood: s > 40.3 ? 'happy' : s > 22.7 ? 'wow' : 'normal', arm: s > 40.5 ? 'up' : 'down', y: s > 40.5 ? Math.abs(Math.sin(t * 5 + i)) * 0.12 : 0 }));
+  pose(C.idol, camera, { x: 40, y: 0.92, z: -0.95, h: 1.9, mood: 'normal' });
+  [[-42.0, 3.0], [-38.1, 3.2], [-41.3, 4.3], [-38.8, 4.5]].forEach(([x, z], i) => pose(C['gd' + i], camera, { x, z, flip: x > -40, mood: 'happy', arm: i === 1 ? 'up' : 'down' }));
+  W.elephant.children[2].rotation.z = Math.sin(t * 1.4) * 0.05;
+  confetti(40.35, s, worldOf(W.scale.panR).add(V(0, 1.2, 0)));
   pose(C.guard, camera, { x: -1.9, z: -8.6, h: 1.8 });
   pose(C.guard2, camera, { x: 1.9, z: -8.6, h: 1.8, flip: true });
   // Guruvayur: a devotee on the scale, balanced against bananas
@@ -84,14 +93,14 @@ const SHOTS = [
   [25.5, 26.65, S, [[0.2, 4.2, 9.6], [0.4, 2.2, 0]], [[0.2, 4.0, 9.0], [0.4, 2.2, 0]]],
   [26.65, 28.5, S, [[3.4, 1.9, 7.4], [1.2, 2.2, 0.2]], [[3.3, 1.85, 6.8], [1.3, 2.1, 0.4]]],
   [28.5, 29.8, S, [[-4.65, 1.6, 4.7], [-5.2, 1.45, 2.6]], [[-4.7, 1.6, 4.5], [-5.2, 1.45, 2.6]]],
-  [29.8, 33.2, S, [[40.0, 3.9, 2.9], [40.0, 0.95, 0.1]], [[40.0, 3.4, 2.4], [40.0, 0.95, 0.1]]],
+  [29.8, 33.2, S, [[40.0, 2.7, 5.4], [40.0, 1.6, -0.3]], [[40.0, 2.3, 4.3], [40.0, 1.5, -0.3]]],
   [33.2, 35.2, S, [[-2.4, 2.2, 9.0], [-2.6, 1.2, 0]], [[-2.0, 2.1, 8.6], [-1.6, 1.2, 0.4]]],
   [35.2, 37.9, S, [[1.0, 1.55, 3.4], [1.55, 1.35, 1.0]], [[1.05, 1.55, 3.1], [1.55, 1.35, 1.0]]],
   [37.9, 40.1, S, [[3.3, 3.0, 3.2], [1.9, 1.9, -0.2]], [[3.1, 2.9, 2.8], [2.0, 1.9, -0.4]]],
   [40.1, 41.5, S, [[0, 3.0, 9.2], [0, 2.4, 0]], [[0, 3.0, 8.6], [0, 2.4, 0]]],
   [41.5, 44.8, S, [[-1.2, 3.25, 3.2], [-2.0, 3.0, -0.4]], [[-1.3, 3.2, 2.9], [-2.0, 3.0, -0.4]]],
-  [44.8, 49.1, S, [[41.6, 2.6, 3.4], [40.0, 1.0, 0.1]], [[40.9, 2.1, 2.4], [39.6, 1.1, 0.2]]],
-  [49.1, 53.9, S, [[-40, 3.0, 8.5], [-40, 1.8, -0.6]], [[-39.7, 2.5, 5.6], [-40.3, 1.6, -0.6]]],
+  [44.8, 49.1, S, [[41.5, 2.5, 4.6], [40.0, 1.5, -0.2]], [[40.5, 1.9, 2.5], [39.6, 1.15, 0.2]]],
+  [49.1, 53.9, S, [[-40, 3.6, 14], [-40, 2.3, -1.5]], [[-40, 3.1, 11.2], [-40, 2.1, -1.2]]],
   [53.9, DURATION + 0.1, (t) => 46 + (t - 53.9) * 0.2, [[0.5, 3.5, 12], [0.3, 2.6, 0]], [[0.4, 3.3, 10.2], [0.3, 2.6, 0]]],
 ];
 window.SHOT_CUTS = SHOTS.map((s) => s[0]);
@@ -114,6 +123,7 @@ function captions(t) {
   let html = '';
   if (ci >= 0) { const ch = CHUNKS[ci], lastEnd = WORDS[ch[ch.length - 1]][1]; const next = CHUNKS[ci + 1]; if (t < (next ? WORDS[next[0]][0] : lastEnd + 0.6)) html = ch.map((i) => { const w = WORDS[i], clean = w[2].replace(/[^A-Za-z']/g, '').toLowerCase(); const on = t >= w[0] - 0.03 && (KEY.has(clean) || clean.length > 6); return `<span class="${on ? 'y' : ''}">${w[2].replace(/[.,]$/, '')}</span>`; }).join(' '); }
   if (html !== lastCap) { capEl.innerHTML = html; lastCap = html; }
+  if (ci >= 0) capEl.style.transform = `scale(${1 + 0.16 * Math.exp(-Math.max(0, t - WORDS[CHUNKS[ci][0]][0]) * 13)})`;
   titleEl.style.opacity = t < 4.45 ? 1 : 0;
   qEl.style.opacity = (t >= 28.55 && t < 33.2) ? 1 : 0;
   qEl.style.transform = `translateY(${Math.sin(t * 4) * 8}px) rotate(${Math.sin(t * 3) * 6}deg)`;
@@ -121,8 +131,14 @@ function captions(t) {
   ctaEl.style.transform = `scale(${t >= 56.2 ? 1 + 0.08 * Math.exp(-(t - 56.2) * 6) : 0.9})`;
 }
 
+const locEl = document.getElementById('loc');
 function renderAt(t) {
+  window.__T = t;
   const s = camAt(t);
+  shake(camera, t, 3.33); shake(camera, t, 40.3);
+  life(t);
+  const lt = t >= 4.55 && t < 8.4 ? '📍 DWARKA' : t >= 44.8 && t < 49.1 ? 'EVEN TODAY' : t >= 49.1 && t < 53.9 ? '📍 GURUVAYUR, KERALA' : '';
+  if (locEl.textContent !== lt) locEl.textContent = lt; locEl.style.opacity = lt ? 1 : 0;
   state(s, t);
   renderer.render(scene, camera);
   captions(t);

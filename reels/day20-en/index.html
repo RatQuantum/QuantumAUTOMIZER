@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="assets/gsap.min.js"></script>
     <style>
-      /* Day 20 (English) · Why hang a pot so high? A 3D low-poly world with flat characters, karaoke captions, 58.21s. */
+      /* Day 20 (English) · Why hang a pot so high? A 3D low-poly world with flat characters, karaoke captions, 62.78s. */
       @font-face {
         font-family: "Nunito";
         src: url("assets/fonts/Nunito.ttf");
@@ -65,6 +65,22 @@
       #cap .y {
         color: #ffd23a;
       }
+      #vig {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1080px;
+        height: 1920px;
+        background: radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0) 55%, rgba(10, 5, 30, 0.38) 100%);
+      }
+      #loc {
+        top: 250px;
+        left: 60px;
+        width: 560px;
+        text-align: left;
+        font-size: 44px;
+        -webkit-text-stroke: 8px #16121c;
+      }
       #q {
         top: 360px;
         left: 640px;
@@ -81,17 +97,19 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="58.21" data-width="1080" data-height="1920">
-      <div id="stage" class="clip" data-start="0" data-duration="58.21" data-track-index="0" data-layout-ignore>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="62.78" data-width="1080" data-height="1920">
+      <div id="stage" class="clip" data-start="0" data-duration="62.78" data-track-index="0" data-layout-ignore>
         <canvas id="gl" width="1080" height="1920"></canvas>
+        <div id="vig"></div>
+        <div id="loc" class="ov" style="opacity: 0"></div>
         <div id="title" class="ov">WHY HANG A POT<br>SO HIGH?</div>
         <div id="q" class="ov" style="opacity: 0">?</div>
         <div id="cap" class="ov"></div>
         <div id="cta" class="ov" style="opacity: 0">Comment<br>“GOVINDA” 🙌</div>
       </div>
       <div id="series" class="clip ov" data-start="0" data-duration="6.4" data-track-index="1">WHY WE DO WHAT WE DO · #2</div>
-      <audio id="vo" class="clip" src="assets/audio/voice.wav" data-start="0" data-duration="57.605125" data-volume="1" data-track-index="2"></audio>
-      <audio id="bed" class="clip" src="assets/audio/bed.wav" data-start="0" data-duration="58.21" data-volume="1" data-track-index="3"></audio>
+      <audio id="vo" class="clip" src="assets/audio/voice.wav" data-start="0" data-duration="62.18" data-volume="1" data-track-index="2"></audio>
+      <audio id="bed" class="clip" src="assets/audio/bed.wav" data-start="0" data-duration="62.78" data-volume="1" data-track-index="3"></audio>
     </div>
     <script>
       window.__hf = window.__hf || {};

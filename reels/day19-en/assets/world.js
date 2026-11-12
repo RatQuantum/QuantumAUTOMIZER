@@ -91,6 +91,21 @@ export function buildWorld(scene) {
   W.bananas = new THREE.Group(); W.scale2.panR.add(W.bananas);
   const bm = mat(0xffd23a);
   for (let i = 0; i < 26; i++) { const b = mesh(new THREE.TorusGeometry(0.2, 0.055, 5, 8, Math.PI * 0.7), bm, 0, 0, 0, W.bananas); const ring = i % 7, layer = Math.floor(i / 7); b.position.set(Math.cos(ring) * 0.42 * (1 - layer * 0.2), 0.1 + layer * 0.12, Math.sin(ring) * 0.42 * (1 - layer * 0.2)); b.rotation.set(R() * 3, R() * 3, R() * 3); }
+
+  // tulsi in its pedestal (a tulsi vrindavan), at the palace, the altar and Guruvayur
+  const tulsi = (parent, x, z) => { mesh(new THREE.BoxGeometry(0.9, 0.9, 0.9), mat(0xf3e2b8), x, 0.45, z, parent); mesh(new THREE.BoxGeometry(1.1, 0.14, 1.1), mat(0xd8573a), x, 0.95, z, parent); for (let i = 0; i < 5; i++) mesh(new THREE.IcosahedronGeometry(0.26 + R() * 0.1, 0), mat([0x3fa83a, 0x4fc04a, 0x2f8a2a][i % 3]), x + (R() - 0.5) * 0.4, 1.3 + i * 0.16, z + (R() - 0.5) * 0.4, parent); };
+  tulsi(scene, -6.4, -1.2); tulsi(T, -3.0, 0.6); tulsi(G, -6.5, 2.5);
+  // the altar: a canopy, marigold strings and a second lamp (the idol is a billboard posed in main.js)
+  mesh(new THREE.BoxGeometry(3.4, 0.3, 1.2), mat(0xffd23a, { m: 0.5, r: 0.4 }), 0, 4.4, -1.5, T);
+  for (let i = 0; i < 16; i++) mesh(new THREE.SphereGeometry(0.11, 6, 4), mat(i % 2 ? 0xf6a531 : 0xffd23a), -1.5 + i * 0.2, 4.1 - Math.sin(i / 15 * Math.PI) * 0.5, -1.4, T);
+  lamp(T, -1.9, 0.9, 0.0);
+  // an elephant with a gold forehead ornament at Guruvayur
+  { const e = new THREE.Group(); e.position.set(3.4, 0, -5.2); e.rotation.y = -1.25; e.scale.setScalar(0.8); G.add(e); const grey = mat(0x8f8f9a), gold = mat(0xffd23a, { m: 0.6, r: 0.35 });
+    mesh(new THREE.BoxGeometry(2.6, 1.9, 1.6), grey, 0, 2.0, 0, e); mesh(new THREE.BoxGeometry(1.3, 1.4, 1.3), grey, 1.7, 2.5, 0, e);
+    for (let i = 0; i < 4; i++) mesh(new THREE.BoxGeometry(0.34 - i * 0.03, 0.55, 0.34 - i * 0.03), grey, 2.35 + i * 0.07, 1.75 - i * 0.5, 0, e);
+    for (const dz of [-0.8, 0.8]) { const ear = mesh(new THREE.BoxGeometry(0.12, 1.1, 0.9), grey, 1.5, 2.6, dz * 1.05, e); ear.rotation.x = dz * 0.25; mesh(new THREE.ConeGeometry(0.07, 0.6, 5), mat(0xfff6dc), 2.3, 1.9, dz * 0.4, e).rotation.z = -1.9; }
+    for (const [dx, dz] of [[-0.9, -0.5], [-0.9, 0.5], [0.8, -0.5], [0.8, 0.5]]) mesh(new THREE.BoxGeometry(0.5, 1.2, 0.5), grey, dx, 0.6, dz, e);
+    mesh(new THREE.BoxGeometry(0.1, 1.1, 0.8), gold, 2.38, 2.7, 0, e); mesh(new THREE.BoxGeometry(2.0, 0.1, 1.7), mat(0xd8263a), 0, 2.98, 0, e); mesh(new THREE.BoxGeometry(2.1, 0.06, 1.8), gold, 0, 2.92, 0, e); W.elephant = e; }
   return W;
 }
 
@@ -158,24 +173,26 @@ function makeScale(parent, x, z, k) {
 // ---- characters as billboards
 export function makeCast(scene) {
   const C = {};
-  for (const name of ['krishna', 'satyabhama', 'rukmini', 'narada', 'courtier', 'guard', 'guard2', 'devotee']) {
+  for (const name of ['krishna', 'satyabhama', 'rukmini', 'narada', 'courtier', 'guard', 'guard2', 'devotee', 'idol', 'ex0', 'ex1', 'ex2', 'ex3', 'ex4', 'ex5', 'gd0', 'gd1', 'gd2', 'gd3']) {
     const cv = document.createElement('canvas'); cv.width = 256; cv.height = 512;
     const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
     const geo = new THREE.PlaneGeometry(0.85, 1.7); geo.translate(0, 0.85, 0);
     const m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.3, side: THREE.DoubleSide }));
     const sh = new THREE.Mesh(new THREE.CircleGeometry(0.32, 16).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.22 }));
     scene.add(m); scene.add(sh);
-    C[name] = { m, sh, cv, tex, key: '', spec: CAST[name === 'guard2' ? 'guard' : name] };
+    C[name] = { m, sh, cv, tex, key: '', spec: CAST[name === 'guard2' ? 'guard' : name === 'idol' ? 'krishna' : name.startsWith('ex') ? ['courtier', 'guard', 'devotee'][+name[2] % 3] : name.startsWith('gd') ? (+name[2] % 2 ? 'courtier' : 'devotee') : name] };
   }
   return C;
 }
 export function pose(ch, cam, p) {   // p: { x, y, z, h, mood, arm, step, visible, sitting, leaf, flip }
   ch.m.visible = ch.sh.visible = p.visible !== false;
   if (!ch.m.visible) return;
-  const key = [p.mood, p.arm, Math.round((p.step || 0) * 4) / 4, p.sitting, p.leaf].join('|');
+  const T = window.__T || 0; if (ch.ph === undefined) ch.ph = (ch.m.id * 0.731) % 3.1;
+  p.blink = ((T + ch.ph) % 3.3) < 0.12;
+  const key = [p.blink, p.mood, p.arm, Math.round((p.step || 0) * 4) / 4, p.sitting, p.leaf].join('|');
   if (key !== ch.key) { drawChar(ch.cv.getContext('2d'), ch.spec, p); ch.tex.needsUpdate = true; ch.key = key; }
   const h = p.h ?? 1.7, bob = p.step ? Math.abs(Math.sin(p.step * Math.PI)) * 0.06 : 0;
-  ch.m.position.set(p.x, (p.y ?? 0) + bob, p.z); ch.m.scale.set((p.flip ? -1 : 1) * h / 1.7, h / 1.7, 1);
+  ch.m.position.set(p.x, (p.y ?? 0) + bob, p.z); ch.m.scale.set((p.flip ? -1 : 1) * h / 1.7, h / 1.7 * (1 + 0.013 * Math.sin(T * 2.3 + ch.ph * 2)), 1);
   ch.m.quaternion.copy(cam.quaternion);
   ch.sh.position.set(p.x, (p.y ?? 0) + 0.13, p.z); ch.sh.scale.setScalar(h / 1.7); ch.sh.visible = !p.sitting && ch.m.visible;
 }

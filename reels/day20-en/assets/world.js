@@ -53,7 +53,7 @@ function roundTree(parent, x, z, R, k = 1) {
 // shards + butter: precomputed flights, shown for 2 s after t0 (in story time)
 function burst(scene, n, geo, m, R, spread, up) {
   const items = [];
-  for (let i = 0; i < n; i++) { const o = mesh(geo, m, 0, 0, 0, scene); o.visible = false; o.userData = { v: new THREE.Vector3((R() - 0.5) * spread, up * (0.3 + R()), (R() - 0.5) * spread * 0.6), r: R() * 6 }; items.push(o); }
+  for (let i = 0; i < n; i++) { const o = mesh(geo, m, 0, 0, 0, scene); o.visible = false; o.userData = { noOutline: true, v: new THREE.Vector3((R() - 0.5) * spread, up * (0.3 + R()), (R() - 0.5) * spread * 0.6), r: R() * 6 }; items.push(o); }
   return {
     set(t0, s, origin, ground = 0.05) {
       const tau = s - t0;
@@ -85,6 +85,12 @@ export function buildWorld(scene) {
   W.cows = [cow(scene, -7.5, -9.5, 0.4, R), cow(scene, 7.2, -10, 2.6, R)];
   for (let i = 0; i < 30; i++) { const a = R() * Math.PI * 2, r = 7 + R() * 7; mesh(new THREE.IcosahedronGeometry(0.2 + R() * 0.2, 0), mat([0xe8462c, 0xffd23a, 0xffffff, 0xf5a6c0][i % 4]), Math.cos(a) * r, 0.18, Math.sin(a) * r, scene); }
   for (let i = 0; i < 10; i++) { const a = R() * Math.PI * 2, r = 12 + R() * 6; mesh(new THREE.DodecahedronGeometry(0.4 + R() * 0.5, 0), mat(0x9a96b0), Math.cos(a) * r, 0.2, Math.sin(a) * r, scene); }
+  // a well, a butter churn, a calf and more trees
+  mesh(new THREE.CylinderGeometry(0.8, 0.8, 0.7, 10), mat(0x9a96b0), -6.6, 0.35, 3.6, scene); mesh(new THREE.CylinderGeometry(0.62, 0.62, 0.72, 10), mat(0x2f6fa8), -6.6, 0.36, 3.6, scene);
+  for (const dx of [-0.75, 0.75]) mesh(new THREE.CylinderGeometry(0.06, 0.06, 1.8, 5), mat(0x8a5a2a), -6.6 + dx, 0.9, 3.6, scene); mesh(new THREE.BoxGeometry(1.8, 0.1, 0.5), mat(0xd9b25a), -6.6, 1.85, 3.6, scene);
+  clayPot(scene, 6.4, 0.5, 4.2, 0.9); mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.6, 5), mat(0x8a5a2a), 6.4, 1.3, 4.2, scene);
+  { const c = cow(scene, -6.2, -7.6, 1.2, R); c.scale.setScalar(0.55); W.cows.push(c); W.cows.push(cow(scene, 8.6, -4.5, 3.4, R)); }
+  roundTree(scene, 8.5, 1.5, R, 1.2); roundTree(scene, -8.8, 1.0, R, 1.1); roundTree(scene, 0.5, -10.5, R, 1.3);
   // the rope across the lane between two posts, and the pot that hangs from it
   for (const x of [-2.9, 2.9]) mesh(new THREE.CylinderGeometry(0.12, 0.14, 4.6, 6), mat(0x8a5a2a), x, 2.3, -1, scene);
   W.rope = mesh(new THREE.CylinderGeometry(0.035, 0.035, 5.8, 5), mat(0xd9b25a), 0, 4.45, -1, scene); W.rope.rotation.z = Math.PI / 2;
@@ -132,10 +138,12 @@ export function makeCast(scene, list) {
 export function pose(ch, cam, p) {
   ch.m.visible = ch.sh.visible = p.visible !== false;
   if (!ch.m.visible) return;
-  const key = [p.mood, p.arm, Math.round((p.step || 0) * 4) / 4, p.sitting, p.pot, p.butter].join('|');
+  const T = window.__T || 0; if (ch.ph === undefined) ch.ph = (ch.m.id * 0.731) % 3.1;
+  p.blink = ((T + ch.ph) % 3.3) < 0.12;
+  const key = [p.blink, p.mood, p.arm, Math.round((p.step || 0) * 4) / 4, p.sitting, p.pot, p.butter].join('|');
   if (key !== ch.key) { drawChar(ch.cv.getContext('2d'), ch.spec, p); ch.tex.needsUpdate = true; ch.key = key; }
   const h = p.h ?? 1.7, bob = p.step ? Math.abs(Math.sin(p.step * Math.PI)) * 0.06 : 0;
-  ch.m.position.set(p.x, (p.y ?? 0) + bob, p.z); ch.m.scale.set((p.flip ? -1 : 1) * h / 1.7, h / 1.7, 1);
+  ch.m.position.set(p.x, (p.y ?? 0) + bob, p.z); ch.m.scale.set((p.flip ? -1 : 1) * h / 1.7, h / 1.7 * (1 + 0.013 * Math.sin(T * 2.3 + ch.ph * 2)), 1);
   ch.m.quaternion.copy(cam.quaternion);
   ch.sh.position.set(p.x, (p.y ?? 0) + 0.13, p.z); ch.sh.scale.setScalar(h / 1.7); ch.sh.visible = (p.y ?? 0) < 0.05;
 }

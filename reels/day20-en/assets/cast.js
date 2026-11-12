@@ -8,9 +8,10 @@ function circ(c, x, y, r) { c.beginPath(); c.arc(x, y, r, 0, Math.PI * 2); }
 function line(c, pts, w = 7, col = OUT) { c.beginPath(); c.moveTo(pts[0][0], pts[0][1]); for (const p of pts.slice(1)) c.lineTo(p[0], p[1]); c.lineWidth = w; c.strokeStyle = col; c.lineCap = 'round'; c.lineJoin = 'round'; c.stroke(); }
 
 // eyes: normal | smug (half-lidded) | wow (big) | happy (closed arcs) | closed (devotion) | sad | wink
-function face(c, x, y, mood, skin) {
+function face(c, x, y, mood, skin, blink) {
   const ex = 24, ey = y;
   const eye = (cx, open = 1) => {
+    if (blink && mood !== 'happy' && mood !== 'closed') { line(c, [[cx - 12, ey + 2], [cx + 12, ey + 2]], 6); return; }
     if (mood === 'happy' || mood === 'closed') { c.beginPath(); c.arc(cx, ey + (mood === 'happy' ? 6 : 2), 10, Math.PI * (mood === 'happy' ? 1.1 : 0.1), Math.PI * (mood === 'happy' ? 1.9 : 0.9)); c.lineWidth = 6; c.strokeStyle = OUT; c.lineCap = 'round'; c.stroke(); return; }
     const r = mood === 'wow' ? 17 : 13;
     circ(c, cx, ey, r); c.fillStyle = '#fff'; c.fill(); c.lineWidth = 4; c.strokeStyle = OUT; c.stroke();
@@ -55,7 +56,7 @@ export function drawChar(c, s, pose) {
   if (s.hairBack) s.hairBack(c, cx, hy, hr);
   circ(c, cx, hy, hr); fillStroke(c, s.skin);
   if (s.hair) s.hair(c, cx, hy, hr);
-  face(c, cx, hy + 6, mood, s.skin);
+  face(c, cx, hy + 6, mood, s.skin, pose.blink);
   if (s.top) s.top(c, cx, hy, hr, pose);
   if (s.prop) s.prop(c, cx, bodyTop, bodyW, bodyH, pose);
   if (pose.pot) { c.beginPath(); c.ellipse(cx, bodyTop + 70, 56, 48, 0, 0, Math.PI * 2); fillStroke(c, '#c8643a', 6); rr(c, cx - 30, bodyTop + 10, 60, 22, 8); fillStroke(c, '#b4552f', 5); c.beginPath(); c.ellipse(cx, bodyTop + 14, 26, 9, 0, 0, Math.PI * 2); c.fillStyle = '#fffbe8'; c.fill(); }
