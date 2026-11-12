@@ -158,8 +158,41 @@
     }
   },
   "checks": {
-    "latest": null,
-    "revisions": {},
+    "latest": {
+      "revision": "49136c3b-d448-420a-907d-0508f8deacc6",
+      "id": "95fb4b97-be00-4400-82f4-dd4ec78a6acc"
+    },
+    "revisions": {
+      "49136c3b-d448-420a-907d-0508f8deacc6": [
+        {
+          "id": "95fb4b97-be00-4400-82f4-dd4ec78a6acc",
+          "scope": "project",
+          "report": "/home/user/QuantumAUTOMIZER/reels/day25-en/.hyperframes/artifacts/checks/95fb4b97-be00-4400-82f4-dd4ec78a6acc.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1794511968800,
+          "contentHash": "5d664f0c7320dfbf7e9497bc3bd2af5fb487fbac27cab90d360caa545f7ce888",
+          "revision": "49136c3b-d448-420a-907d-0508f8deacc6",
+          "inputFingerprint": "3bd178c707c2be9775162853599e4112d16eec41d545a7edcd6a51f94c83af3f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
     "unversioned": []
   },
   "snapshots": {
