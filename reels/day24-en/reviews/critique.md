@@ -1,7 +1,7 @@
 # Critique: day24-english.mp4
 
 - duration **56.1 s**, loudness **-14.6 LUFS**, peak **-1.9 dBFS**
-- fastest motion at **31.9 s** (strip.jpg), mean motion 9.09, frame-0 brightness 94/255
+- fastest motion at **6.8 s** (strip.jpg), mean motion 8.92, frame-0 brightness 94/255
 - sound effects: none found
 
 ## Automatic flags
