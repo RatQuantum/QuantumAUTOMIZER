@@ -1,7 +1,7 @@
 # Critique: day19-english.mp4
 
 - duration **59.2 s**, loudness **-14.5 LUFS**, peak **-1.7 dBFS**
-- fastest motion at **49.1 s** (strip.jpg), mean motion 5.65, frame-0 brightness 172/255
+- fastest motion at **33.2 s** (strip.jpg), mean motion 7.44, frame-0 brightness 156/255
 - sound effects: none found
 
 ## Automatic flags

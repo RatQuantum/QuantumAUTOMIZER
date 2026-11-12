@@ -1,7 +1,7 @@
 # Critique: day20-english.mp4
 
-- duration **58.2 s**, loudness **-14.5 LUFS**, peak **-1.6 dBFS**
-- fastest motion at **6.5 s** (strip.jpg), mean motion 5.37, frame-0 brightness 145/255
+- duration **62.8 s**, loudness **-14.5 LUFS**, peak **-2.0 dBFS**
+- fastest motion at **6.3 s** (strip.jpg), mean motion 6.04, frame-0 brightness 137/255
 - sound effects: none found
 
 ## Automatic flags
