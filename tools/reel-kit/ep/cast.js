@@ -65,6 +65,7 @@ export function drawChar(c, s, pose) {
   if (pose.bleed) { const hx = cx + bodyW / 2 + 14, hy = bodyTop + 140; c.beginPath(); c.ellipse(hx + 2, hy + 18, 5, 8, 0, 0, Math.PI * 2); c.fillStyle = '#d0213a'; c.fill(); }
   if (pose.rakhi) { const hx = cx + bodyW / 2 + 12, hy = bodyTop + 128; c.lineWidth = 6; c.strokeStyle = '#e8462c'; c.beginPath(); c.moveTo(hx - 14, hy); c.lineTo(hx + 14, hy + 4); c.stroke(); circ(c, hx, hy + 2, 11); fillStroke(c, '#ffd23a', 3); circ(c, hx, hy + 2, 4); c.fillStyle = '#e8462c'; c.fill(); }
   if (pose.bundle) { const hx = cx + bodyW / 2 + 14, hy = bodyTop + 150; c.beginPath(); c.ellipse(hx, hy, 24, 20, 0, 0, Math.PI * 2); fillStroke(c, '#c9b48a', 5); line(c, [[hx - 10, hy - 18], [hx + 2, hy - 30], [hx + 12, hy - 18]], 4, '#8a6a3a'); circ(c, hx - 6, hy + 4, 3); c.fillStyle = '#f6efe0'; c.fill(); }
+  if (pose.bow) { const bx = cx - bodyW / 2 - 18, by = bodyTop + 110; c.beginPath(); c.arc(bx + 60, by, 90, Math.PI * 0.72, Math.PI * 1.28); c.lineWidth = 9; c.strokeStyle = '#8a4b20'; c.stroke(); line(c, [[bx + 60 + 90 * Math.cos(Math.PI * 0.72), by + 90 * Math.sin(Math.PI * 0.72)], [bx + 60 + 90 * Math.cos(Math.PI * 1.28), by + 90 * Math.sin(Math.PI * 1.28)]], 2.5, '#f2f2f2'); }
   if (pose.butter) { const B = [[cx - 30, 120, 22], [cx + 34, 170, 18], [cx - 10, 88, 16], [cx + 40, 110, 12], [cx - 46, 300, 26], [cx + 30, 340, 20], [cx, 250, 16]]; for (const [x, y, r] of B) { c.beginPath(); c.ellipse(x, y, r, r * 0.8, 0.3, 0, Math.PI * 2); c.fillStyle = '#fffbea'; c.fill(); c.lineWidth = 3; c.strokeStyle = 'rgba(29,26,36,0.5)'; c.stroke(); } }
 }
 
@@ -169,6 +170,24 @@ export const CAST = {
     hair: (c, cx, hy, hr) => { c.beginPath(); c.arc(cx, hy, hr, Math.PI * 1.1, Math.PI * 1.9); c.lineWidth = 10; c.strokeStyle = '#f2f2f2'; c.stroke(); },
     top: (c, cx, hy) => { c.beginPath(); c.moveTo(cx - 50, hy + 30); c.quadraticCurveTo(cx, hy + 130, cx + 50, hy + 30); c.quadraticCurveTo(cx, hy + 60, cx - 50, hy + 30); fillStroke(c, '#f2f2f2', 5); },
     prop: (c, cx, y) => { line(c, [[cx + 84, y + 120], [cx + 84, y + 170]], 10, '#8a5a2a'); line(c, [[cx + 84, y + 120], [cx + 84, y + 90]], 6, '#c9ccd4'); } },
+  arjuna: { skin: '#c98a5e', body: '#f4f1ea', bodyW: 126, bodyH: 205, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#d9a441'; c.fillRect(cx - w / 2, y + 30, w, 16); c.fillRect(cx - w / 2, y + h * 0.55, w, 14); }, hair: hairCap('#1d1a24'), top: (c, cx, hy, hr) => { rr(c, cx - 40, hy - hr - 18, 80, 30, 8); fillStroke(c, '#ffd23a', 5); for (const dx of [-26, 0, 26]) { c.beginPath(); c.moveTo(cx + dx - 10, hy - hr - 16); c.lineTo(cx + dx, hy - hr - 44); c.lineTo(cx + dx + 10, hy - hr - 16); c.closePath(); fillStroke(c, '#ffd23a', 4); } } },
+  duryodhana: { skin: '#b07a52', body: '#8a1a2a', bodyW: 140, bodyH: 210, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#ffd23a'; c.fillRect(cx - w / 2, y + h * 0.5, w, 14); goldDots(c, cx, y + 8, 9, 7, '#ffd23a'); }, hair: hairCap('#1d1a24'),
+    top: (c, cx, hy, hr) => { ((c, cx, hy, hr) => { rr(c, cx - 40, hy - hr - 18, 80, 30, 8); fillStroke(c, '#ffd23a', 5); for (const dx of [-26, 0, 26]) { c.beginPath(); c.moveTo(cx + dx - 10, hy - hr - 16); c.lineTo(cx + dx, hy - hr - 44); c.lineTo(cx + dx + 10, hy - hr - 16); c.closePath(); fillStroke(c, '#ffd23a', 4); } })(c, cx, hy, hr); line(c, [[cx - 30, hy + 30], [cx - 6, hy + 22]], 6); line(c, [[cx + 30, hy + 30], [cx + 6, hy + 22]], 6); },
+    prop: (c, cx, y) => { line(c, [[cx + 90, y + 40], [cx + 90, y + 200]], 9, '#8a6a2a'); circ(c, cx + 90, y + 30, 26); fillStroke(c, '#ffd23a', 5); } },
+  kalayavana: { skin: '#7a6a8a', body: '#2a2a3a', bodyW: 150, bodyH: 215, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#c0213a'; c.fillRect(cx - w / 2, y + h * 0.45, w, 16); c.fillStyle = '#5a5a6a'; c.fillRect(cx - 40, y + 20, 80, 50); },
+    hair: (c, cx, hy, hr) => { c.beginPath(); c.arc(cx, hy, hr + 4, Math.PI, Math.PI * 2); fillStroke(c, '#5a5a6a', 5); for (const sd of [-1, 1]) { c.beginPath(); c.moveTo(cx + sd * (hr - 8), hy - hr + 20); c.quadraticCurveTo(cx + sd * (hr + 30), hy - hr - 10, cx + sd * (hr + 20), hy - hr - 50); c.lineTo(cx + sd * (hr - 4), hy - hr + 4); c.closePath(); fillStroke(c, '#e8e4dc', 4); } },
+    top: (c, cx, hy) => { line(c, [[cx - 34, hy + 32], [cx - 4, hy + 22]], 7); line(c, [[cx + 34, hy + 32], [cx + 4, hy + 22]], 7); } },
+  muchukunda: { skin: '#c98a5e', body: '#2f6fa8', bodyW: 130, bodyH: 205, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#ffd23a'; c.fillRect(cx - w / 2, y + h * 0.5, w, 12); },
+    hair: (c, cx, hy, hr) => { c.beginPath(); c.arc(cx, hy, hr, Math.PI * 1.1, Math.PI * 1.9); c.lineWidth = 10; c.strokeStyle = '#f2f2f2'; c.stroke(); },
+    top: (c, cx, hy, hr) => { ((c, cx, hy, hr) => { rr(c, cx - 40, hy - hr - 18, 80, 30, 8); fillStroke(c, '#ffd23a', 5); for (const dx of [-26, 0, 26]) { c.beginPath(); c.moveTo(cx + dx - 10, hy - hr - 16); c.lineTo(cx + dx, hy - hr - 44); c.lineTo(cx + dx + 10, hy - hr - 16); c.closePath(); fillStroke(c, '#ffd23a', 4); } })(c, cx, hy, hr); c.beginPath(); c.moveTo(cx - 50, hy + 30); c.quadraticCurveTo(cx, hy + 140, cx + 50, hy + 30); c.quadraticCurveTo(cx, hy + 60, cx - 50, hy + 30); fillStroke(c, '#f2f2f2', 5); } },
+  naraka: { skin: '#4a8a5a', body: '#4a1a2a', bodyW: 160, bodyH: 220, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#c9a227'; c.fillRect(cx - w / 2, y + h * 0.45, w, 16); },
+    hair: (c, cx, hy, hr) => { hairCap('#1d1a24')(c, cx, hy, hr); for (const sd of [-1, 1]) { c.beginPath(); c.moveTo(cx + sd * 30, hy - hr + 6); c.lineTo(cx + sd * 52, hy - hr - 46); c.lineTo(cx + sd * 50, hy - hr + 12); c.closePath(); fillStroke(c, '#f2efe6', 4); } },
+    top: (c, cx, hy) => { for (const sd of [-1, 1]) { c.beginPath(); c.moveTo(cx + sd * 14, hy + 34); c.lineTo(cx + sd * 10, hy + 50); c.lineTo(cx + sd * 6, hy + 34); c.closePath(); fillStroke(c, '#ffffff', 3); } line(c, [[cx - 36, hy - 26], [cx - 10, hy - 16]], 6); line(c, [[cx + 36, hy - 26], [cx + 10, hy - 16]], 6); } },
   devotee: {
     skin: '#a8714c', body: '#f6f1e2', bodyW: 150, bodyH: 190,
     bodyDeco: (c, cx, y, w) => { c.fillStyle = '#d9a441'; c.fillRect(cx - w / 2, y + 150, w, 12); },

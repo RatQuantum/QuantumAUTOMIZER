@@ -117,7 +117,7 @@ export function pose(ch, cam, p) {
   if (!ch.m.visible) return;
   const T = window.__T || 0; if (ch.ph === undefined) ch.ph = (ch.m.id * 0.731) % 3.1;
   p.blink = ((T + ch.ph) % 3.3) < 0.12;
-  const key = [p.blink, p.nofeather, p.flute, p.bandage, p.bleed, p.rakhi, p.mood, p.arm, Math.round((p.step || 0) * 4) / 4, p.sitting, p.pot, p.butter, p.bundle].join('|');
+  const key = [p.blink, p.nofeather, p.flute, p.bandage, p.bleed, p.rakhi, p.mood, p.arm, Math.round((p.step || 0) * 4) / 4, p.sitting, p.pot, p.butter, p.bundle, p.bow].join('|');
   if (key !== ch.key) { drawChar(ch.cv.getContext('2d'), ch.spec, p); ch.tex.needsUpdate = true; ch.key = key; }
   const h = p.h ?? 1.7, bob = p.step ? Math.abs(Math.sin(p.step * Math.PI)) * 0.06 : 0;
   ch.m.position.set(p.x, (p.y ?? 0) + bob, p.z); ch.m.scale.set((p.flip ? -1 : 1) * h / 1.7, h / 1.7 * (1 + 0.013 * Math.sin(T * 2.3 + ch.ph * 2)), 1);
