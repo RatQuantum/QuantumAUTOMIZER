@@ -172,7 +172,6 @@
         {
           "scope": "full",
           "id": "7ffb1461-bf17-4a1f-af93-0c2d2786bdc9-0",
-          "image": "/home/user/QuantumAUTOMIZER/reels/day32-en/.hyperframes/artifacts/snapshots/2d44f311-ea78-4f3e-b36f-2b5d1c49cf83/frame-00-at-1s.png",
           "time": 1,
           "metadata": {
             "width": 1080,
@@ -187,12 +186,13 @@
           "revision": "209b4b88-600d-47f6-97f8-71768691cb06",
           "inputFingerprint": "08175728e99d544b3ddf11ce2424a1bafbca40e7714d63ae20e4c5db998a5806",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "db8d834a-28c8-4097-8d2f-8e369bb5a23d"
         },
         {
           "scope": "full",
           "id": "7ffb1461-bf17-4a1f-af93-0c2d2786bdc9-1",
-          "image": "/home/user/QuantumAUTOMIZER/reels/day32-en/.hyperframes/artifacts/snapshots/2d44f311-ea78-4f3e-b36f-2b5d1c49cf83/frame-01-at-20s.png",
           "time": 20,
           "metadata": {
             "width": 1080,
@@ -207,12 +207,13 @@
           "revision": "209b4b88-600d-47f6-97f8-71768691cb06",
           "inputFingerprint": "08175728e99d544b3ddf11ce2424a1bafbca40e7714d63ae20e4c5db998a5806",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "db8d834a-28c8-4097-8d2f-8e369bb5a23d"
         },
         {
           "scope": "full",
           "id": "7ffb1461-bf17-4a1f-af93-0c2d2786bdc9-2",
-          "image": "/home/user/QuantumAUTOMIZER/reels/day32-en/.hyperframes/artifacts/snapshots/2d44f311-ea78-4f3e-b36f-2b5d1c49cf83/frame-02-at-43s.png",
           "time": 43,
           "metadata": {
             "width": 1080,
@@ -227,12 +228,13 @@
           "revision": "209b4b88-600d-47f6-97f8-71768691cb06",
           "inputFingerprint": "08175728e99d544b3ddf11ce2424a1bafbca40e7714d63ae20e4c5db998a5806",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "db8d834a-28c8-4097-8d2f-8e369bb5a23d"
         },
         {
           "scope": "full",
           "id": "7ffb1461-bf17-4a1f-af93-0c2d2786bdc9-3",
-          "image": "/home/user/QuantumAUTOMIZER/reels/day32-en/.hyperframes/artifacts/snapshots/2d44f311-ea78-4f3e-b36f-2b5d1c49cf83/frame-03-at-46.5s.png",
           "time": 46.5,
           "metadata": {
             "width": 1080,
@@ -247,12 +249,13 @@
           "revision": "209b4b88-600d-47f6-97f8-71768691cb06",
           "inputFingerprint": "08175728e99d544b3ddf11ce2424a1bafbca40e7714d63ae20e4c5db998a5806",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "db8d834a-28c8-4097-8d2f-8e369bb5a23d"
         },
         {
           "scope": "full",
           "id": "7ffb1461-bf17-4a1f-af93-0c2d2786bdc9-4",
-          "image": "/home/user/QuantumAUTOMIZER/reels/day32-en/.hyperframes/artifacts/snapshots/2d44f311-ea78-4f3e-b36f-2b5d1c49cf83/frame-04-at-47.54s.png",
           "time": 47.54,
           "metadata": {
             "width": 1080,
@@ -267,7 +270,9 @@
           "revision": "209b4b88-600d-47f6-97f8-71768691cb06",
           "inputFingerprint": "08175728e99d544b3ddf11ce2424a1bafbca40e7714d63ae20e4c5db998a5806",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "db8d834a-28c8-4097-8d2f-8e369bb5a23d"
         }
       ],
       "ce316c4a-d27f-4c5e-adcc-44bdf878c06d": [
@@ -718,15 +723,15 @@
   },
   "renders": {
     "latest": {
-      "id": "34b94730-ec53-4a11-ba22-9142f9b9cd17",
-      "completedAt": 1794584072692,
-      "output": "/home/user/QuantumAUTOMIZER/reels/day30-en/renders/day30-en_2026-11-13_15-12-41.mp4",
+      "id": "db8d834a-28c8-4097-8d2f-8e369bb5a23d",
+      "completedAt": 1794634634622,
+      "output": "/home/user/QuantumAUTOMIZER/reels/day32-en/renders/day32-en_2026-11-14_05-21-46.mp4",
       "status": "completed",
-      "revision": "f19b6b6d-14b2-4228-af15-2c51c70da670"
+      "revision": "ce316c4a-d27f-4c5e-adcc-44bdf878c06d"
     },
     "retainedRevisions": [
-      "f19b6b6d-14b2-4228-af15-2c51c70da670",
-      "49136c3b-d448-420a-907d-0508f8deacc6"
+      "ce316c4a-d27f-4c5e-adcc-44bdf878c06d",
+      "f19b6b6d-14b2-4228-af15-2c51c70da670"
     ]
   },
   "pendingArtifactCleanup": []
