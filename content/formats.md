@@ -58,3 +58,8 @@ Tracks: ask the user for a new track (and its BPM and drop) every 2-3 reels; the
 | 38 | L #20: Why did Krishna eat banana peels? (Vidura) | Kokoro am_michael | comment "VIDURA" | original bed + boings | Duryodhana's feast hall, Vidura's home, bananas thrown, peels eaten, hearts |
 | 39 | L #21: Why forgive 100 insults? (Shishupala) | Kokoro am_michael | comment "100" | original bed (minor) + counting clinks | nursery with third-eyed baby, court with insult bubbles, live counter to 101, Sudarshan Chakra |
 | 40 | L #22: Why 16,000 wives? (princesses' honor) | Kokoro am_michael | comment "DWARKADHISH" | original bed + conch | broken fortress with 220 instanced princesses, shut gate and whisperers, Dwarka wedding pavilion, palaces lighting up |
+| 41 | L #23 (Strategy 8): Why Holi colors? (Krishna cries about Radha) | Kokoro TIGHT | comment "HOLI" + tag | original bed + splats, tabla | opens on crying Krishna; tracker; pinned CTA; village turns to colour |
+| 42 | L #24 (S8): Why is Vrindavan's dust sacred? | Kokoro TIGHT | comment "RADHE" | original bed (minor) | opens on Krishna in pain; queens refuse; gopis give dust |
+| 43 | L #25 (S8 + S9 camera): Who is Khatu Shyam? (Barbarik) | Kokoro TIGHT | comment "HAARE KA SAHARA" | original bed (minor) | dolly-zoom open, pull-back armies, crane up the hill, land on shrine |
+| 44 | L #26 (S8 + S9): Why Rath Yatra? | Kokoro TIGHT | comment "JAI JAGANNATH" | original bed + conch, crowd | three chariots, 520 instanced pullers, king's golden broom; dolly, crane, pull, land |
+| 45 | L #27 (S8 + S9): Why did Krishna stop playing the flute? | Kokoro TIGHT | comment "RADHE KRISHNA" | original bed (minor) + flute | opens on the broken flute; chariot leaves; Radha by the river (crane); altar today (land) |
