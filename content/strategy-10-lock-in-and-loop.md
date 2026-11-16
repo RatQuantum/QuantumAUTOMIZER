@@ -39,6 +39,10 @@ Hook → **lock-in zone** → body 1 → **re-hook 1** → body 2 → **re-hook 
 
 Also: a cover image per reel (the hook frame + 3-4 words), since thumbnails of calm, standing Krishna don't stop the scroll.
 
+## Length
+
+The owner is fine with 45-50 s reels. Scripts can run ~140-160 words when the story needs it (an extra body block or a fuller payoff), as long as every beat above still lands on time: hook ≤ 2 s, lock-in by 5 s, re-hooks every 8-10 s.
+
 ## Measure (72 h after posting 51-55)
 
 3-second hold, hold at 5 s, average watch time, shares, follows per reel. If it's worse than checkpoint-1, roll back.
