@@ -34,7 +34,7 @@ function face(c, x, y, mood, skin, blink) {
 // one character on a 256x512 canvas; feet at y=500, head centre around y=150
 export function drawChar(c, s, pose) {
   const W = 256, cx = W / 2, mood = pose.mood || 'normal', step = pose.step || 0, arm = pose.arm || 'down';
-  c.clearRect(0, 0, W, 512);
+  c.clearRect(0, 0, W, 512); c.save(); if (pose.bent) { c.translate(cx, 470); c.rotate(pose.bent); c.translate(-cx, -470); }
   const bodyTop = 220, bodyH = s.bodyH || 200, bodyW = s.bodyW || 130, legTop = bodyTop + bodyH - 20;
   // legs (a walking step swings them)
   if (!pose.sitting) {
@@ -69,6 +69,7 @@ export function drawChar(c, s, pose) {
   if (pose.paint) { const cols = pose.paint.split(','); c.save(); c.globalAlpha = 0.85; const spots = [[-38, 166, 22], [40, 170, 20], [-20, 118, 14], [26, 300, 30], [-30, 360, 26], [10, 250, 22], [44, 400, 18], [-46, 270, 16]];
     spots.forEach(([dx, y, r], i) => { c.beginPath(); c.arc(cx + dx, y, r, 0, 7); c.fillStyle = cols[i % cols.length]; c.fill(); }); c.restore(); }
   if (pose.butter) { const B = [[cx - 30, 120, 22], [cx + 34, 170, 18], [cx - 10, 88, 16], [cx + 40, 110, 12], [cx - 46, 300, 26], [cx + 30, 340, 20], [cx, 250, 16]]; for (const [x, y, r] of B) { c.beginPath(); c.ellipse(x, y, r, r * 0.8, 0.3, 0, Math.PI * 2); c.fillStyle = '#fffbea'; c.fill(); c.lineWidth = 3; c.strokeStyle = 'rgba(29,26,36,0.5)'; c.stroke(); } }
+  c.restore();
 }
 
 // ---- the people
@@ -202,6 +203,32 @@ export const CAST = {
   shishupala: { skin: '#c98a5e', body: '#b0312a', bodyW: 136, bodyH: 205, handsSkin: true,
     bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#1d1a24'; c.fillRect(cx - w / 2, y + h * 0.5, w, 14); goldDots(c, cx, y + 6, 9, 7, '#ffd23a'); }, hair: hairCap('#1d1a24'),
     top: (c, cx, hy, hr) => { rr(c, cx - 42, hy - hr - 16, 84, 28, 8); fillStroke(c, '#c9a227', 5); c.beginPath(); c.moveTo(cx - 20, hy - hr - 14); c.lineTo(cx, hy - hr - 50); c.lineTo(cx + 20, hy - hr - 14); c.closePath(); fillStroke(c, '#c9a227', 4); line(c, [[cx - 34, hy + 30], [cx - 6, hy + 20]], 7); line(c, [[cx + 34, hy + 30], [cx + 6, hy + 20]], 7); } },
+  prahlad: kid('#e0a57c', '#f6a531', '#1d1a24', { top: (c, cx, hy) => { line(c, [[cx - 8, hy - 50], [cx - 6, hy - 30], [cx, hy - 26], [cx + 6, hy - 30], [cx + 8, hy - 50]], 4, '#ffffff'); line(c, [[cx, hy - 48], [cx, hy - 30]], 3, '#e0213a'); }, bodyDeco: (c, cx, y, w) => { for (let i = 0; i < 5; i++) { circ(c, cx - 26 + i * 13, y + 18 + Math.sin(i / 4 * Math.PI) * 10, 5); c.fillStyle = '#6b3b20'; c.fill(); } } }),
+  hiranya: { skin: '#8a5a3a', body: '#3a1a1a', bodyW: 160, bodyH: 220, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#c9a227'; c.fillRect(cx - w / 2, y + h * 0.45, w, 18); goldDots(c, cx, y + 8, 11, 8, '#ffd23a'); },
+    hair: hairCap('#1d1a24'),
+    top: (c, cx, hy, hr) => { c.beginPath(); c.moveTo(cx - 54, hy - hr + 10); for (let k = 0; k <= 6; k++) c.lineTo(cx - 54 + k * 18, hy - hr - (k % 2 ? 56 : 20)); c.lineTo(cx + 54, hy - hr + 10); c.closePath(); fillStroke(c, '#c9a227', 5); line(c, [[cx - 36, hy + 30], [cx - 6, hy + 20]], 7); line(c, [[cx + 36, hy + 30], [cx + 6, hy + 20]], 7); line(c, [[cx - 38, hy - 26], [cx - 10, hy - 14]], 6); line(c, [[cx + 38, hy - 26], [cx + 10, hy - 14]], 6); } },
+  holika: { skin: '#b07a5a', body: '#5a1a3a', bodyW: 140, bodyH: 215, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { if (c.__shawl === false) return; c.fillStyle = '#e8a020'; c.beginPath(); c.moveTo(cx - w / 2, y); c.lineTo(cx + w / 2, y); c.lineTo(cx + w / 2, y + h * 0.6); c.lineTo(cx - w / 2, y + h * 0.8); c.closePath(); c.fill(); },
+    hairBack: (c, cx, hy, hr) => { rr(c, cx - hr - 4, hy - 10, hr * 2 + 8, 150, 36); fillStroke(c, '#1d1a24', 5); }, hair: hairCap('#1d1a24'),
+    top: (c, cx, hy) => { line(c, [[cx - 34, hy - 26], [cx - 8, hy - 16]], 6); line(c, [[cx + 34, hy - 26], [cx + 8, hy - 16]], 6); } },
+  meera: { skin: '#e0a57c', body: '#f6f1e2', bodyW: 124, bodyH: 210, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#e8b020'; c.fillRect(cx - w / 2, y + h - 26, w, 12); c.save(); c.translate(cx, y + h * 0.4); c.rotate(-0.6); c.fillRect(-w, -8, w * 2, 14); c.restore(); },
+    hairBack: (c, cx, hy, hr) => { rr(c, cx - hr - 6, hy - 20, hr * 2 + 12, 190, 40); fillStroke(c, '#f6f1e2', 5); }, hair: hairCap('#1d1a24'),
+    top: (c, cx, hy) => { line(c, [[cx - 6, hy - 50], [cx - 4, hy - 32], [cx, hy - 28], [cx + 4, hy - 32], [cx + 6, hy - 50]], 4, '#ffffff'); },
+    prop: (c, cx, y, w, h, pose) => { if (!pose.tanpura) return; c.beginPath(); c.ellipse(cx - 70, y + 170, 30, 34, 0, 0, Math.PI * 2); fillStroke(c, '#a0602a', 5); line(c, [[cx - 70, y + 140], [cx - 52, y - 150]], 10, '#8a4b20'); line(c, [[cx - 72, y + 150], [cx - 54, y - 140]], 1.5, '#f2f2f2'); } },
+  kubja: { skin: '#b07a52', body: '#7a6a4a', bodyW: 128, bodyH: 205, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h, pose) => { c.fillStyle = '#a89060'; c.fillRect(cx - w / 2, y + h * 0.5, w, 12); },
+    hairBack: (c, cx, hy, hr) => { circ(c, cx + hr - 10, hy - 10, 26); fillStroke(c, '#5a5a5a', 5); }, hair: hairCap('#4a4a4a'),
+    prop: (c, cx, y, w, h, pose) => { if (!pose.bowl) return; c.beginPath(); c.ellipse(cx + 96, y + 52, 30, 12, 0, 0, Math.PI); fillStroke(c, '#c9a227', 4); c.beginPath(); c.ellipse(cx + 96, y + 50, 26, 8, 0, 0, Math.PI * 2); c.fillStyle = '#f2c38a'; c.fill(); } },
+  kubjaFair: { skin: '#e0a57c', body: '#f06aa0', bodyW: 124, bodyH: 210, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { goldDots(c, cx, y + 6, 11, 7, '#ffd23a'); c.fillStyle = '#ffd23a'; c.fillRect(cx - w / 2, y + h - 26, w, 12); },
+    hairBack: (c, cx, hy, hr) => { rr(c, cx + hr - 30, hy, 26, 170, 13); fillStroke(c, '#1d1a24', 5); }, hair: hairCap('#1d1a24'),
+    top: (c, cx, hy) => { circ(c, cx, hy - 40, 6); c.fillStyle = '#d8263a'; c.fill(); } },
+  fruitSeller: { skin: '#a8714c', body: '#3f8f5a', bodyW: 132, bodyH: 200, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#e8a020'; c.fillRect(cx - w / 2, y + h * 0.55, w, 12); },
+    hairBack: (c, cx, hy, hr) => { circ(c, cx, hy - hr + 6, 30); fillStroke(c, '#d0d0d0', 5); }, hair: hairCap('#c8c8c8'),
+    top: (c, cx, hy) => { circ(c, cx, hy - 40, 5); c.fillStyle = '#d8263a'; c.fill(); line(c, [[cx - 30, hy + 36], [cx - 14, hy + 30]], 3, '#8a5a3a'); line(c, [[cx + 30, hy + 36], [cx + 14, hy + 30]], 3, '#8a5a3a'); } },
   devotee: {
     skin: '#a8714c', body: '#f6f1e2', bodyW: 150, bodyH: 190,
     bodyDeco: (c, cx, y, w) => { c.fillStyle = '#d9a441'; c.fillRect(cx - w / 2, y + 150, w, 12); },
