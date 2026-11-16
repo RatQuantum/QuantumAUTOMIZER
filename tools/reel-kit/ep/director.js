@@ -61,6 +61,7 @@ export function direct(cfg) {
     const lt = cfg.loc ? cfg.loc(t) : '';
     if (locEl.textContent !== lt) locEl.textContent = lt; locEl.style.opacity = lt ? 1 : 0;
     if (progEls) { const [a, b] = cfg.prog, ends = [0, a, b, cfg.cta]; progEls.forEach((el, i) => { el.style.width = (clamp((t - ends[i]) / (ends[i + 1] - ends[i])) * 100).toFixed(1) + '%'; }); progBox.style.opacity = t < cfg.title ? 0 : 1; }
+    const followEl = document.getElementById('follow'); if (followEl) { const on = t >= cfg.cta + 0.3; followEl.style.opacity = on ? 1 : 0; followEl.style.transform = `translateY(${on ? 40 * Math.exp(-(t - cfg.cta - 0.3) * 8) : 40}px)`; }
     if (pinEl) { const on = t >= cfg.pin && t < cfg.cta; pinEl.style.opacity = on ? 1 : 0; pinEl.style.transform = `scale(${on ? 1 + 0.06 * Math.exp(-(t - cfg.pin) * 6) : 0.9})`; }
   }
   function renderAt(t) {

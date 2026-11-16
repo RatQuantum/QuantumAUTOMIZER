@@ -2,6 +2,7 @@
 import sys, re
 reel, title, num, cta, emo, desc = sys.argv[1:7]
 pin = sys.argv[7] if len(sys.argv) > 7 else None
+follow = sys.argv[8] if len(sys.argv) > 8 else None
 data = open(f"{reel}/assets/data.js").read()
 D = re.search(r"DURATION = ([\d.]+)", data).group(1); VD = re.search(r"VOICE_DUR = ([\d.]+)", data).group(1)
 t1, t2 = title.split("|")
@@ -24,5 +25,8 @@ if pin:
 """
     tpl = tpl.replace("    </style>", css + "    </style>", 1)
     html = '        <div id="prog">' + "".join(f'<div class="seg">{n}<div class="bar"><i></i></div></div>' for n in ("STORY", "WHY", "TODAY")) + '</div>\n        <div id="pin" style="opacity: 0">' + pin + '</div>\n'
+    if follow:
+        tpl = tpl.replace("    </style>", '      #follow { position: absolute; top: 1580px; left: 90px; width: 900px; padding: 16px 10px; border-radius: 36px; background: #ffd23a; text-align: center; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 38px; color: #16121c; letter-spacing: 1px; }\n    </style>', 1)
+        html += '        <div id="follow" style="opacity: 0">' + follow + '</div>\n'
     tpl = tpl.replace('        <div id="cta"', html + '        <div id="cta"', 1)
 open(f"{reel}/index.html", "w").write(tpl); print("index", reel, D)
