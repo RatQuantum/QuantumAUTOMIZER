@@ -1,6 +1,6 @@
-# Rat Neon overlay (Streamlabs Desktop)
+# Rat Fire overlay (Streamlabs Desktop)
 
-Magenta → violet → cyan animated gradient. Two layouts:
+Gold → orange → red slow-moving gradient, hard black "sticker" shadows, Bungee headings. Two layouts:
 
 | File | Canvas | Gameplay slot |
 |---|---|---|
@@ -19,7 +19,7 @@ Set `SHOW_GUIDES = true` in `shared.js` while lining up sources, then set it bac
 
 ## 3. Source order (top of the list = in front)
 1. Chat Box, Subscription Goal, Rat mascot image  ← sit inside their boxes
-2. Rat Neon overlay (browser source)
+2. Rat Fire overlay (browser source)
 3. Game capture  ← sits in the gameplay slot
 
 The QR code library (`qrcode.js`, MIT, Kazuhiko Arase) is included, so the overlay works offline.

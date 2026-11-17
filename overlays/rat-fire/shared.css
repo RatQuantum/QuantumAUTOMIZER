@@ -1,0 +1,32 @@
+/* Rat overlay — shared styles. Colours: gold -> orange -> red, hard sticker shadows */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@600;800&display=swap');
+:root{
+  --c1:#FFD23F; --c2:#FF7A00; --c3:#FF2E4D;
+  --grad:linear-gradient(110deg,var(--c1) 0%,var(--c2) 40%,var(--c3) 75%,var(--c1) 100%);
+  --panel:rgba(20,15,11,.86); --text:#FFF6E8; --muted:#E9D8C0; --bw:5px; --r:10px;
+  --hard:6px 6px 0 #000;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;background:transparent;overflow:hidden;font-family:Inter,system-ui,sans-serif;color:var(--text)}
+.stage{position:absolute;inset:0}
+.box{position:absolute;border-radius:var(--r);padding:var(--bw);background:var(--grad);background-size:200% 200%;animation:flow 14s ease-in-out infinite;box-shadow:var(--hard)}
+.box>.in{width:100%;height:100%;border-radius:calc(var(--r) - var(--bw));background:var(--panel);position:relative;overflow:hidden}
+.frame{position:absolute;border-radius:var(--r);background:var(--grad);background-size:200% 200%;animation:flow 14s ease-in-out infinite;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;padding:var(--bw)}
+@keyframes flow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.tag{position:absolute;top:-2px;left:18px;transform:translateY(-55%) rotate(-2deg);padding:7px 14px;border-radius:6px;background:var(--c1);
+  border:3px solid #000;box-shadow:3px 3px 0 #000;font:15px/1 'Bungee',sans-serif;letter-spacing:.04em;color:#000;white-space:nowrap;z-index:2}
+.title{font-family:'Bungee',sans-serif;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(4px 4px 0 #000)}
+.live{display:inline-flex;align-items:center;gap:10px;font:800 22px/1 Inter;letter-spacing:.1em}
+.live i{width:14px;height:14px;border-radius:50%;background:var(--c3);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.pay{display:flex;align-items:center;gap:18px;height:100%;padding:14px 18px}
+.qr{background:#fff;border-radius:6px;padding:6px;flex:none}
+.qr svg{display:block}
+.payTxt b{display:block;font:20px/1.1 'Bungee',sans-serif}
+.payTxt span{display:block;margin-top:6px;font:700 17px/1.2 Inter;color:var(--muted);word-break:break-all}
+.payTxt em{display:block;margin-top:8px;font:800 15px/1 Inter;font-style:normal;color:var(--c1)}
+.guide{display:none;position:absolute;inset:0;align-items:center;justify-content:center;text-align:center;font:800 22px/1.3 Inter;color:rgba(255,246,232,.75);
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 14px,transparent 14px 28px)}
+.guides .guide{display:flex}
