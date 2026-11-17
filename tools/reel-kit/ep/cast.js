@@ -266,6 +266,28 @@ export const CAST = {
     top: (c, cx, hy, hr) => { rr(c, cx - 42, hy - hr - 22, 84, 34, 10); fillStroke(c, '#ffd23a', 5); circ(c, cx, hy - hr - 5, 8); c.fillStyle = '#e0213a'; c.fill(); line(c, [[cx - 8, hy - 50], [cx, hy - 30], [cx + 8, hy - 50]], 4, '#d8263a'); } },
   ishan: kid('#c98a5e', '#e8a020', '#1d1a24', { bodyH: 175, top: (c, cx, hy, hr) => { c.beginPath(); c.ellipse(cx, hy - hr + 14, hr * 0.95, 34, 0, Math.PI, 0); c.closePath(); fillStroke(c, '#f6f1e2', 5); line(c, [[cx - hr * 0.8, hy - hr + 6], [cx + hr * 0.8, hy - hr + 6]], 4, '#e0213a'); circ(c, cx + 30, hy - hr - 6, 9); fillStroke(c, '#e0213a', 3); },
     bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#f6f1e2'; c.fillRect(cx - w / 2, y + h * 0.62, w, h); c.fillStyle = '#8a5a2a'; c.fillRect(cx - w / 2, y + h * 0.58, w, 10); } }),
+  ganesha: { skin: '#f0a070', body: '#f0a070', bodyW: 170, bodyH: 210, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#e8b020'; c.fillRect(cx - w / 2, y + h * 0.62, w, h); c.fillStyle = '#d8263a'; c.fillRect(cx - w / 2, y + h * 0.6, w, 10); goldDots(c, cx, y + 6, 10, 7, '#ffd23a'); },
+    hairBack: (c, cx, hy, hr) => { for (const sd of [-1, 1]) { c.beginPath(); c.ellipse(cx + sd * (hr + 12), hy + 6, 44, 60, sd * 0.2, 0, Math.PI * 2); fillStroke(c, '#f0a070', 5); c.beginPath(); c.ellipse(cx + sd * (hr + 12), hy + 6, 26, 40, sd * 0.2, 0, Math.PI * 2); c.fillStyle = '#f6c0a0'; c.fill(); } },
+    top: (c, cx, hy, hr) => { c.beginPath(); c.moveTo(cx - 14, hy + 20); c.quadraticCurveTo(cx - 20, hy + 110, cx + 30, hy + 120); c.quadraticCurveTo(cx + 40, hy + 112, cx + 30, hy + 104); c.quadraticCurveTo(cx + 6, hy + 96, cx + 14, hy + 20); c.closePath(); fillStroke(c, '#f0a070', 5);
+      line(c, [[cx - 22, hy + 30], [cx - 40, hy + 54]], 7, '#faf5ea'); c.beginPath(); c.moveTo(cx - 44, hy - hr + 10); c.lineTo(cx - 30, hy - hr - 50); c.lineTo(cx, hy - hr - 70); c.lineTo(cx + 30, hy - hr - 50); c.lineTo(cx + 44, hy - hr + 10); c.closePath(); fillStroke(c, '#ffd23a', 5); circ(c, cx, hy - hr - 20, 9); c.fillStyle = '#d8263a'; c.fill();
+      line(c, [[cx - 8, hy - 40], [cx, hy - 30], [cx + 8, hy - 40]], 4, '#d8263a'); } },
+  jambavan: { skin: '#8a5a3a', body: '#6a4028', bodyW: 180, bodyH: 230, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#b08a6a'; c.beginPath(); c.ellipse(cx, y + h * 0.5, w * 0.32, h * 0.38, 0, 0, Math.PI * 2); c.fill(); },
+    hairBack: (c, cx, hy, hr) => { for (const sd of [-1, 1]) { circ(c, cx + sd * (hr - 10), hy - hr + 14, 24); fillStroke(c, '#6a4028', 5); } },
+    top: (c, cx, hy, hr) => { c.beginPath(); c.ellipse(cx, hy + 30, 34, 26, 0, 0, Math.PI * 2); c.fillStyle = '#c8a888'; c.fill(); circ(c, cx, hy + 20, 9); c.fillStyle = '#1d1a24'; c.fill(); beard(c, cx, hy + 10, hr * 0.8, '#ececec', 40); rr(c, cx - 36, hy - hr - 6, 72, 22, 8); fillStroke(c, '#ffd23a', 5); } },
+  abhimanyu: { skin: '#d99a72', body: '#f4f1ea', bodyW: 118, bodyH: 190, handsSkin: true, headR: 76,
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#3f8fe0'; c.fillRect(cx - w / 2, y + 30, w, 14); c.fillRect(cx - w / 2, y + h * 0.55, w, 14); }, hair: hairCap('#1d1a24'),
+    top: (c, cx, hy, hr) => { rr(c, cx - 34, hy - hr - 14, 68, 26, 8); fillStroke(c, '#ffd23a', 5); circ(c, cx, hy - hr - 1, 7); c.fillStyle = '#3f8fe0'; c.fill(); } },
+  ashwatthama: { skin: '#b07a52', body: '#5a3a6a', bodyW: 140, bodyH: 215, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h, pose) => { c.fillStyle = '#8a8a90'; c.fillRect(cx - w / 2, y + h * 0.5, w, 12); },
+    hairBack: (c, cx, hy, hr) => { rr(c, cx - hr - 4, hy - 20, hr * 2 + 8, 110, 30); fillStroke(c, '#2a2a2a', 5); }, hair: hairCap('#2a2a2a'),
+    top: (c, cx, hy, hr, pose) => { if (pose && pose.wound) { c.beginPath(); c.ellipse(cx, hy - 34, 12, 9, 0, 0, Math.PI * 2); c.fillStyle = '#b0213a'; c.fill(); } else { c.beginPath(); c.moveTo(cx, hy - 50); c.lineTo(cx + 12, hy - 36); c.lineTo(cx, hy - 22); c.lineTo(cx - 12, hy - 36); c.closePath(); fillStroke(c, '#7fe8ff', 3); }
+      line(c, [[cx - 34, hy - 24], [cx - 8, hy - 12]], 6); line(c, [[cx + 34, hy - 24], [cx + 8, hy - 12]], 6); } },
+  uttara: { skin: '#e0a57c', body: '#f06aa0', bodyW: 140, bodyH: 210, handsSkin: true,
+    hairBack: (c, cx, hy, hr) => { rr(c, cx + hr - 30, hy, 26, 170, 13); fillStroke(c, '#1d1a24', 5); }, hair: hairCap('#1d1a24'),
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#ffd23a'; c.fillRect(cx - w / 2, y + h - 24, w, 12); c.beginPath(); c.ellipse(cx + 6, y + h * 0.55, w * 0.42, h * 0.3, 0, 0, Math.PI * 2); c.fillStyle = '#f48ab4'; c.fill(); },
+    top: (c, cx, hy) => { circ(c, cx, hy - 40, 6); c.fillStyle = '#d8263a'; c.fill(); } },
   devotee: {
     skin: '#a8714c', body: '#f6f1e2', bodyW: 150, bodyH: 190,
     bodyDeco: (c, cx, y, w) => { c.fillStyle = '#d9a441'; c.fillRect(cx - w / 2, y + 150, w, 12); },
