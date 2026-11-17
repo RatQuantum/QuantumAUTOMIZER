@@ -6,7 +6,7 @@ description: Make the next @lordsrikrishnatemple Instagram reel end to end with 
 # /krishna-reel
 
 The decisions live in files, not in the chat, so every reel starts where the last one ended.
-Read first: `content/reel-rules.md` (house rules, every one learned from the user's feedback), `content/formats.md`
+Read first: `content/knowledge-base.md` (every lesson from the owner's reference videos and our own Insights, with the pre-reel checklist), `content/reel-rules.md` (house rules, every one learned from the user's feedback), `content/formats.md`
 (rotate formats; log each reel), `content/NEXT-STEPS.md` (state of the project).
 
 ## The pipeline
