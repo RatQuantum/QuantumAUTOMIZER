@@ -61,4 +61,4 @@ reels/*/stem-*.wav
 reels/**/renders/
 reels/**/frames/
 reels/**/review/
-reels/*/day*-cover.jpg
+reels/*/*-cover.jpg

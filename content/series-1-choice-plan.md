@@ -1,6 +1,6 @@
 # Series 1 plan: a multi-part Krishna story where the comments choose
 
-Status: proposal, waiting on the owner's go-ahead. Nothing is built yet.
+Status: **approved: "Arjuna's Charioteer"**, posting on Instagram and TikTok. Part 1 built.
 
 ## What the reference does (Blockframe-style "town monster" series, millions of views)
 
@@ -60,3 +60,20 @@ Status: proposal, waiting on the owner's go-ahead. Nothing is built yet.
 Alternatives considered:
 - "The Night He Was Born": Vasudeva's escape through the storm (3-4 parts).
 - "Arjuna's Charioteer": the viewer is a young soldier at Kurukshetra (5 parts).
+
+## Chosen: "Arjuna's Charioteer" (season 1)
+
+**Hook line every part:** "On this battlefield, there was one chariot no arrow could stop, because God Himself was driving it."
+**Narrator:** Ishan, 12, keeper of the chariot's four white horses (an original character; voice: Kokoro am_puck).
+**Rule:** the Mahabharata's events and Krishna's words stay as scripture tells them. Votes only decide what Ishan does and sees.
+
+| Part | Canon event | Choice at the end |
+|---|---|---|
+| 1 | Day 1: the chariot drives between the armies; Arjuna drops his bow and weeps | A: run and pick up his bow · B: stay still and listen to Krishna |
+| 2 | Krishna begins the Gita; then He shows His universal form (Vishvarupa) | A: look at the form · B: shut my eyes |
+| 3 | Day 14: Jayadratha must fall before sunset; Krishna hides the sun with His chakra | A: tell Arjuna the sun is still up · B: keep the secret |
+| 4 | Day 17: Karna's serpent arrow; Krishna presses the chariot into the earth and the arrow only takes Arjuna's crown | A: warn Arjuna · B: hold the horses steady |
+| 5 | The last night: Krishna tells Arjuna to step down first, then the chariot bursts into flames | Finale: no choice; "Season 2?" vote |
+
+Each part: 55-75 s, title "ARJUNA'S CHARIOTEER · PART N · YOU DECIDE", A/B cards in the last 8 s, "FOLLOW · PART N+1 TOMORROW".
+Part N+1 opens with a 2-second recap: "You chose A…".
