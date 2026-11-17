@@ -79,3 +79,23 @@ Tracks: ask the user for a new track (and its BPM and drop) every 2-3 reels; the
 | 58 | L #40 (S10 + KB): Why pray to Krishna and Rukmini for a partner? (the letter) | Kokoro TIGHT | comment "RUKMINI" + share | original bed (major) | letter tied with a peacock feather; road to Dwarka; Ambika temple; golden chariot |
 | 59 | L #41 (S10 + KB): Why a small daily prayer matters (Narada and the farmer) | Kokoro TIGHT | comment "NARAYANA" + share | original bed (major) | chant counter vs "3 ×"; vision ring; oil pot test; farmer's namaste |
 | 60 | L #42 (S10 + KB): Why anger should never choose (Ashwatthama) | Kokoro TIGHT | comment "KRISHNA" + share | original bed (minor) | foggy forest wanderer with a glowing wound; Brahmastra vs Krishna's shield; gem taken; calm corner today |
+| 61 | L #43 (S10, storykit bulk): Why Tulsi Vivah: Vrinda and the Shaligram | Kokoro TIGHT | comment "TULSI" + share | auto bed | spec-driven scenes (storykit) |
+| 62 | L #44 (S10, storykit bulk): Why we offer makhan mishri: the butter thief | Kokoro TIGHT | comment "MAKHAN" + share | auto bed | spec-driven scenes (storykit) |
+| 63 | L #45 (S10, storykit bulk): Why God lives in every being: Brahma and the calves | Kokoro TIGHT | comment "GOPALA" + share | auto bed | spec-driven scenes (storykit) |
+| 64 | L #46 (S10, storykit bulk): Why we show children the pole star: Dhruva | Kokoro TIGHT | comment "DHRUVA" + share | auto bed | spec-driven scenes (storykit) |
+| 65 | L #47 (S10, storykit bulk): Why Onam welcomes King Bali: Vamana's three steps | Kokoro TIGHT | comment "VAMANA" + share | auto bed | spec-driven scenes (storykit) |
+| 66 | L #48 (S10, storykit bulk): Why Narasimha came out of a pillar | Kokoro TIGHT | comment "NARASIMHA" + share | auto bed | spec-driven scenes (storykit) |
+| 67 | L #49 (S10, storykit bulk): Why we name our children after God: Ajamila | Kokoro TIGHT | comment "NARAYANA" + share | auto bed | spec-driven scenes (storykit) |
+| 68 | L #50 (S10, storykit bulk): Why Sharad Purnima kheer and raas | Kokoro TIGHT | comment "RAAS" + share | auto bed | spec-driven scenes (storykit) |
+| 69 | L #51 (S10, storykit bulk): Why Jhulan Yatra: Radha and Krishna's swing | Kokoro TIGHT | comment "JHULAN" + share | auto bed | spec-driven scenes (storykit) |
+| 70 | L #52 (S10, storykit bulk): Why love is greater than knowledge: Uddhava and the gopis | Kokoro TIGHT | comment "RADHE" + share | auto bed | spec-driven scenes (storykit) |
+| 71 | L #53 (S10, storykit bulk): Why the hard times bring God closest: Kunti's prayer | Kokoro TIGHT | comment "KUNTI" + share | auto bed | spec-driven scenes (storykit) |
+| 72 | L #54 (S10, storykit bulk): Why we chant the Vishnu Sahasranama: Bhishma's arrow bed | Kokoro TIGHT | comment "BHISHMA" + share | auto bed | spec-driven scenes (storykit) |
+| 73 | L #55 (S10, storykit bulk): Why the Bhagavat Saptah lasts seven days: King Parikshit | Kokoro TIGHT | comment "BHAGAVATAM" + share | auto bed | spec-driven scenes (storykit) |
+| 74 | L #56 (S10, storykit bulk): Why God tastes the love, not the food: Shabari | Kokoro TIGHT | comment "SHABARI" + share | auto bed | spec-driven scenes (storykit) |
+| 75 | L #57 (S10, storykit bulk): Why prasadam is about love, not rules: the yajna wives | Kokoro TIGHT | comment "PRASADAM" + share | auto bed | spec-driven scenes (storykit) |
+| 76 | L #58 (S10, storykit bulk): Why the greatest forgive: Krishna and Jara | Kokoro TIGHT | comment "KRISHNA" + share | auto bed | spec-driven scenes (storykit) |
+| 77 | L #59 (S10, storykit bulk): Why fear always loses: Krishna, Balarama and Kamsa | Kokoro TIGHT | comment "BALARAMA" + share | auto bed | spec-driven scenes (storykit) |
+| 78 | L #60 (S10, storykit bulk): Why we call His name when no one is with us: Draupadi | Kokoro TIGHT | comment "GOVINDA" + share | auto bed | spec-driven scenes (storykit) |
+| 79 | L #61 (S10, storykit bulk): Why humility opens our eyes: Hanuman humbles Garuda and Satyabhama | Kokoro TIGHT | comment "HANUMAN" + share | auto bed | spec-driven scenes (storykit) |
+| 80 | L #62 (S10, storykit bulk): Why we read one verse of the Gita every day: Gita Jayanti | Kokoro TIGHT | comment "GITA" + share | auto bed | spec-driven scenes (storykit) |
