@@ -1,7 +1,7 @@
 # Critique: day79-english.mp4
 
 - duration **43.8 s**, loudness **-14.5 LUFS**, peak **-2.1 dBFS**
-- fastest motion at **40.2 s** (strip.jpg), mean motion 4.00, frame-0 brightness 81/255
+- fastest motion at **40.2 s** (strip.jpg), mean motion 4.14, frame-0 brightness 81/255
 - sound effects: none found
 
 ## Automatic flags
