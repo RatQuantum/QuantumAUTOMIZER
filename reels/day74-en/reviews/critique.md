@@ -1,12 +1,12 @@
 # Critique: day74-english.mp4
 
 - duration **39.8 s**, loudness **-14.5 LUFS**, peak **-2.3 dBFS**
-- fastest motion at **36.5 s** (strip.jpg), mean motion 3.38, frame-0 brightness 18/255
+- fastest motion at **33.3 s** (strip.jpg), mean motion 2.67, frame-0 brightness 173/255
 - sound effects: none found
 
 ## Automatic flags
 
-- HOOK: frame 0 is very dark (mean brightness 18/255): is there something to see in the first second?
+- none
 
 ## Score from the frames (fill in; every line must reach 8 before the reel goes to the user)
 
