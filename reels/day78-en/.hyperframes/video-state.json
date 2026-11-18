@@ -150,11 +150,11 @@
   },
   "renders": {
     "latest": {
-      "id": "8170856e-0391-4571-82cd-c2b44fee34bb",
-      "completedAt": 1794874367602,
-      "output": "/home/user/QuantumAUTOMIZER/reels/day55-en/renders/day55-en_2026-11-17_00-06-37.mp4",
+      "id": "cc21dcaf-e2fe-410f-a40a-bc2d2dac2684",
+      "completedAt": 1795031439385,
+      "output": "/home/user/QuantumAUTOMIZER/reels/day78-en/renders/day78-en_2026-11-18_19-38-50.mp4",
       "status": "completed",
-      "revision": "7a70484f-a30c-4254-a144-fd5c452804e0"
+      "revision": null
     },
     "retainedRevisions": [
       "7a70484f-a30c-4254-a144-fd5c452804e0",
