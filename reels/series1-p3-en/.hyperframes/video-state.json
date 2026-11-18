@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "4a4acb70-194e-4dc5-8c45-159d7f7f406e",
-  "currentRevision": null,
+  "currentRevision": "df89adf5-d2e0-4af4-841d-5e70e33e00d5",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -69,8 +69,8 @@
       "content": "/root/.cache/hyperframes/history/4a4acb70-194e-4dc5-8c45-159d7f7f406e/blobs/a1/a14e2a4e00a2bcad61e4a785cb9d3f05e35449b5004a8a40e9d9480743c56d66"
     },
     "assets/spec.js": {
-      "hash": "2f81c0a4346d96f73e686da83431a842f7c48873e2045341c5fec792cd83aec2",
-      "content": "/root/.cache/hyperframes/history/4a4acb70-194e-4dc5-8c45-159d7f7f406e/blobs/2f/2f81c0a4346d96f73e686da83431a842f7c48873e2045341c5fec792cd83aec2"
+      "hash": "8732df84b9c5b2b7be6589ea35c5fa4eba7298e8a59faf4d5f1321fe2e492d6b",
+      "content": "/root/.cache/hyperframes/history/4a4acb70-194e-4dc5-8c45-159d7f7f406e/blobs/87/8732df84b9c5b2b7be6589ea35c5fa4eba7298e8a59faf4d5f1321fe2e492d6b"
     },
     "assets/springs.js": {
       "hash": "5302f3fd9057aea7fb8decb7f41b0974340dff1c3ab9fd33f75e7cd2cac027b3",
@@ -133,7 +133,23 @@
       "content": "/root/.cache/hyperframes/history/4a4acb70-194e-4dc5-8c45-159d7f7f406e/blobs/61/613e370f76638fdef83926642bf256dc9615684922de1ce1f63a8583e5d78578"
     }
   },
-  "revisions": {},
+  "revisions": {
+    "df89adf5-d2e0-4af4-841d-5e70e33e00d5": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795024152893,
+      "endedAt": 1795024152894,
+      "files": {
+        "assets/spec.js": {
+          "before": "/root/.cache/hyperframes/history/4a4acb70-194e-4dc5-8c45-159d7f7f406e/blobs/2f/2f81c0a4346d96f73e686da83431a842f7c48873e2045341c5fec792cd83aec2",
+          "after": "/root/.cache/hyperframes/history/4a4acb70-194e-4dc5-8c45-159d7f7f406e/blobs/87/8732df84b9c5b2b7be6589ea35c5fa4eba7298e8a59faf4d5f1321fe2e492d6b"
+        }
+      }
+    }
+  },
   "checks": {
     "latest": null,
     "revisions": {},
@@ -470,15 +486,15 @@
   },
   "renders": {
     "latest": {
-      "id": "8170856e-0391-4571-82cd-c2b44fee34bb",
-      "completedAt": 1794874367602,
-      "output": "/home/user/QuantumAUTOMIZER/reels/day55-en/renders/day55-en_2026-11-17_00-06-37.mp4",
+      "id": "f0b27b4a-52e3-4e40-b5f4-b363bc27667d",
+      "completedAt": 1795024845418,
+      "output": "/home/user/QuantumAUTOMIZER/reels/series1-p3-en/renders/series1-p3-en_2026-11-18_17-49-12.mp4",
       "status": "completed",
-      "revision": "7a70484f-a30c-4254-a144-fd5c452804e0"
+      "revision": "df89adf5-d2e0-4af4-841d-5e70e33e00d5"
     },
     "retainedRevisions": [
-      "7a70484f-a30c-4254-a144-fd5c452804e0",
-      "969a0c26-0a50-4368-bc69-ffd8916a64fe"
+      "df89adf5-d2e0-4af4-841d-5e70e33e00d5",
+      "7a70484f-a30c-4254-a144-fd5c452804e0"
     ]
   },
   "pendingArtifactCleanup": []
