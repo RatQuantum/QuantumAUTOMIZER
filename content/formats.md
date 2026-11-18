@@ -99,3 +99,4 @@ Tracks: ask the user for a new track (and its BPM and drop) every 2-3 reels; the
 | 78 | L #60 (S10, storykit bulk): Why we call His name when no one is with us: Draupadi | Kokoro TIGHT | comment "GOVINDA" + share | auto bed | spec-driven scenes (storykit) |
 | 79 | L #61 (S10, storykit bulk): Why humility opens our eyes: Hanuman humbles Garuda and Satyabhama | Kokoro TIGHT | comment "HANUMAN" + share | auto bed | spec-driven scenes (storykit) |
 | 80 | L #62 (S10, storykit bulk): Why we read one verse of the Gita every day: Gita Jayanti | Kokoro TIGHT | comment "GITA" + share | auto bed | spec-driven scenes (storykit) |
+| S1-P3 | Series 1 Part 3 (branch B): Krishna’s chakra hides the sun, Jayadratha | Kokoro am_puck (Ishan) | comment A/B (choice cards) | raga epic | storykit + chariot/sun/chakra props |

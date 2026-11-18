@@ -77,3 +77,6 @@ Alternatives considered:
 
 Each part: 55-75 s, title "ARJUNA'S CHARIOTEER · PART N · YOU DECIDE", A/B cards in the last 8 s, "FOLLOW · PART N+1 TOMORROW".
 Part N+1 opens with a 2-second recap: "You chose A…".
+
+## Part 3 (built Nov 18): the poll chose B
+Ishan shut his eyes and folded his hands. Part 3 covers day 14: Arjuna's vow over Jayadratha, and Krishna's chakra covering the sun, which only Ishan sees. The new choice is A = tell Arjuna the sun is still up, B = keep Krishna's secret. Canon is unchanged either way: Part 4 shows Krishna lifting the chakra and Arjuna's arrow.

@@ -50,6 +50,9 @@ export function run(spec, WORDS, DURATION) {
     star: () => { const g = new THREE.Group(); scene.add(g); noOut(mesh(new THREE.OctahedronGeometry(0.35), new THREE.MeshBasicMaterial({ color: 0xfff6c0, fog: false }), 0, 0, 0, g)); noOut(mesh(new THREE.SphereGeometry(0.9, 12, 8), glow(0xfff0a0, 0.25), 0, 0, 0, g)); return g; },
     moon: () => { const g = new THREE.Group(); scene.add(g); noOut(mesh(new THREE.SphereGeometry(1.2, 20, 14), new THREE.MeshBasicMaterial({ color: 0xfff6dc, fog: false }), 0, 0, 0, g)); noOut(mesh(new THREE.SphereGeometry(2.2, 20, 14), glow(0xfff0c0, 0.18), 0, 0, 0, g)); return g; },
     umbrella: () => { const g = new THREE.Group(); scene.add(g); noOut(mesh(new THREE.CylinderGeometry(0.015, 0.015, 1.2, 4), mat(0x8a5a2a), 0, 0.6, 0, g)); noOut(mesh(new THREE.ConeGeometry(0.5, 0.25, 12, 1, true), new THREE.MeshStandardMaterial({ color: 0xf6f1e2, side: THREE.DoubleSide }), 0, 1.25, 0, g)); return g; },
+    chariot: () => { const g = new THREE.Group(); scene.add(g); const gold = mat(0xffd23a, { m: 0.6, r: 0.35 }); mesh(new THREE.BoxGeometry(1.5, 0.2, 1.9), gold, 0, 0.9, 0, g); mesh(new THREE.BoxGeometry(1.5, 0.5, 0.08), gold, 0, 1.25, -0.95, g); for (const x of [-0.88, 0.88]) { const w = new THREE.Group(); w.position.set(x, 0.72, 0.3); g.add(w); mesh(new THREE.TorusGeometry(0.66, 0.06, 6, 20).rotateY(Math.PI / 2), mat(0x8a5a2a), 0, 0, 0, w); for (let i = 0; i < 6; i++) { const sp = mesh(new THREE.BoxGeometry(0.04, 1.3, 0.04), gold, 0, 0, 0, w); sp.rotation.x = i / 6 * Math.PI; } } mesh(new THREE.CylinderGeometry(0.05, 0.05, 3.2, 6), mat(0x8a5a2a), 0.6, 2.4, 0.8, g); noOut(mesh(new THREE.PlaneGeometry(0.8, 0.55), new THREE.MeshStandardMaterial({ color: 0xffa020, side: THREE.DoubleSide }), 1.0, 3.75, 0.8, g)); return g; },
+    sun: () => { const g = new THREE.Group(); scene.add(g); noOut(mesh(new THREE.SphereGeometry(1.4, 20, 14), new THREE.MeshBasicMaterial({ color: 0xffa040, fog: false }), 0, 0, 0, g)); noOut(mesh(new THREE.SphereGeometry(2.6, 20, 14), glow(0xffb060, 0.25), 0, 0, 0, g)); return g; },
+    chakra: () => { const g = new THREE.Group(); scene.add(g); noOut(mesh(new THREE.TorusGeometry(1.5, 0.18, 8, 32), mat(0xffd23a, { e: 0xffa020, ei: 0.9 }), 0, 0, 0, g)); for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2; noOut(mesh(new THREE.ConeGeometry(0.16, 0.5, 4).rotateZ(-Math.PI / 2 + a), mat(0xffd23a, { e: 0xffa020, ei: 0.9 }), Math.cos(a) * 1.85, Math.sin(a) * 1.85, 0, g)); } noOut(mesh(new THREE.CircleGeometry(1.4, 32), new THREE.MeshBasicMaterial({ color: 0x1a1a2a, fog: false }), 0, 0, -0.05, g)); return g; },
     elephant: () => { const g = new THREE.Group(); scene.add(g); const gr = mat(0x6a6a7a); mesh(new THREE.BoxGeometry(2.0, 1.2, 1.1), gr, 0, 1.6, 0, g); mesh(new THREE.BoxGeometry(0.8, 0.85, 0.85), gr, -1.25, 1.9, 0, g); for (const [x, z] of [[-0.7, -0.35], [-0.7, 0.35], [0.7, -0.35], [0.7, 0.35]]) mesh(new THREE.CylinderGeometry(0.2, 0.22, 1.1, 8), gr, x, 0.55, z, g); mesh(new THREE.CylinderGeometry(0.12, 0.17, 1.1, 8), gr, -1.65, 1.2, 0, g); return g; },
   };
   // props declared per scene: 'name@set:x,y,z[:scale]'
@@ -70,7 +73,7 @@ export function run(spec, WORDS, DURATION) {
   SC.forEach((s, i) => { if (i === 0) return; const v = at(s.at, SC[i - 1].t + 0.3); s.t = v != null ? v - 0.05 : SC[i - 1].t + 2.5; });
   const E = { wait: at(spec.wait || 'wait'), but: at(spec.but || 'but'), thats: at(spec.thats || "that's"), comment: at(spec.comment || 'comment') ?? DURATION - 3 };
   const ending = { ...SC[0], t: E.comment - 0.05, loop: true };
-  const ALL = [...SC.filter((s) => s.t < E.comment - 0.05), ending];
+  const ALL = spec.choice ? SC : [...SC.filter((s) => s.t < E.comment - 0.05), ending];
   const sceneAt = (s) => { let k = ALL[0]; for (const c of ALL) if (s >= c.t) k = c; return k; };
   const actorPos = (sc, id) => { const a = sc.actors.find((a) => a[0] === id); if (!a) return null; const o = a[3] || {}; return { x: SX[sc.set] + a[1], z: a[2], y: o.y || 0, h: o.h || (C[id].spec.bodyH < 180 ? 1.15 : 1.7) }; };
   const right = new THREE.Vector3();
@@ -87,7 +90,7 @@ export function run(spec, WORDS, DURATION) {
       pose(C[id], camera, { visible: true, x, y: p.y, z, h: p.h, mood: o.mood || 'normal', arm: o.arm || 'down', flip: !!o.flip, sitting: !!o.sitting, namaste: o.arm === 'fold', flute: !!o.flute, bow: !!o.bow, step: o.to && u < 1 ? s * 3 : o.walk ? s * 3 : 0 });
       if (o.tilt) C[id].m.rotateZ(o.tilt);
       if ((sc.fx || []).includes('glow:' + id)) { halos[id].visible = true; halos[id].position.set(x, p.y + p.h * 0.84, z - 0.05); halos[id].quaternion.copy(camera.quaternion); halos[id].scale.setScalar(p.h / 1.7); halos[id].material.opacity = 0.22 + 0.06 * Math.sin(t * 3); } });
-    props.forEach(({ g, set: ps, k, base }) => { g.visible = ps === set && !(sc.hide || []).includes(k); if (k === 'fire') g.children.forEach((f, i) => (f.scale.y = 0.8 + 0.35 * Math.sin(t * 9 + i))); if (k === 'swing') g.rotation.x = Math.sin(t * 1.6) * 0.35; if (k === 'star' || k === 'moon') g.lookAt(camera.position); });
+    props.forEach(({ g, set: ps, k, base }) => { g.visible = ps === set && !(sc.hide || []).includes(k) && (!(spec.only || {})[k] || (sc.show || []).includes(k)); if (k === 'fire') g.children.forEach((f, i) => (f.scale.y = 0.8 + 0.35 * Math.sin(t * 9 + i))); if (k === 'swing') g.rotation.x = Math.sin(t * 1.6) * 0.35; if (k === 'star' || k === 'moon' || k === 'sun' || k === 'chakra') { g.lookAt(camera.position); if (k === 'chakra') g.rotateZ(-t * 3); } });
     lamps.forEach((l, i) => (l.flame.scale.y = 1 + 0.15 * Math.sin(t * 12 + i)));
     const fx = sc.fx || [];
     petals.forEach(({ m, ph, x }) => { const w = (t * 0.22 + ph) % 1; m.visible = fx.includes('petals'); m.position.set(ox - 3 + x * 6, 4 - w * 3.8, -1 + Math.sin(ph * 7) * 1.5); m.rotation.set(t + ph * 6, t * 0.7, 0); });
@@ -105,6 +108,7 @@ export function run(spec, WORDS, DURATION) {
     if (k === 'two') { const [a, b] = (arg || ids.slice(0, 2).join(',')).split(',').map(pick); const mx = (a.x + b.x) / 2, mz = (a.z + b.z) / 2, sep = Math.hypot(a.x - b.x, a.z - b.z), hy = Math.max(a.y + a.h, b.y + b.h) * 0.62, d = Math.max(3.4, sep * 1.9 + 2.2); return [[[mx + 0.3, hy + 0.5, mz + d], [mx, hy, mz]], [[mx + 0.2, hy + 0.45, mz + d - 0.5], [mx, hy, mz]]]; }
     if (k === 'crane') { const p = pick(arg); return [[[p.x, 0.7, p.z + 4.6], [p.x, p.y + p.h * 0.7, p.z]], [[p.x + 0.3, p.y + 3.2, p.z + 6.2], [p.x, p.y + p.h * 0.6, p.z]], 50, { move: 'crane', lift: 1.0 }]; }
     if (k === 'pull') { const p = pick(arg); return [[[p.x, p.y + p.h * 0.8, p.z + 2.8], [p.x, p.y + p.h * 0.75, p.z]], [[ox, 4.5, 12], [ox, 1.0, -1]], 50, { move: 'pull' }]; }
+    if (k === 'at') { const [x, y, z] = arg.split(',').map(Number); return [[[ox + 0.4, 1.6, 5.5], [ox + x, y, z]], [[ox + 0.3, 1.5, 5.0], [ox + x, y, z]]]; }
     if (k === 'top') return [[[ox, 11, 5], [ox, 0, -0.5]], [[ox, 9.5, 4], [ox, 0, -0.5]]];
     if (k === 'sky') { const p = pick(arg); return [[[p.x, 1.2, p.z + 5.5], [p.x + (+arg2(kind) || 0), 5.5, p.z - 6]], [[p.x, 1.2, p.z + 5], [p.x, 6, p.z - 6]]]; }
     const land = k === 'land'; return [[[ox, land ? 4 : 3.0, land ? 11 : 9.0], [ox, 1.3, -1.2]], [[ox, 2.3, land ? 6.6 : 7.8], [ox, 1.3, -1.0]], 50, land ? { move: 'land' } : undefined];
@@ -112,7 +116,18 @@ export function run(spec, WORDS, DURATION) {
   const arg2 = () => 0;
   ALL.forEach((sc, i) => { const t0 = sc.t, t1 = i + 1 < ALL.length ? ALL[i + 1].t : DURATION + 0.1; const shots = sc.loop ? [sc.shots[0]] : sc.shots || ['wide']; const span = (t1 - t0) / shots.length;
     shots.forEach((kind, j) => { const [a, b, fov, opt] = framing(sc, kind); SHOTS.push([t0 + j * span, t0 + (j + 1) * span, G, a, b, fov || 50, opt]); }); });
+  // ---- choice cards (series)
+  let tickCards = () => {};
+  if (spec.choice) { const ch = spec.choice, host = document.getElementById('cta').parentElement;
+    const css = document.createElement('style'); css.textContent = `.choice{position:absolute;left:80px;width:920px;padding:26px 30px;border-radius:44px;font-family:"Nunito",sans-serif;font-weight:900;font-size:50px;line-height:1.15;color:#16121c;display:flex;align-items:center;gap:28px;box-shadow:0 12px 0 rgba(0,0,0,.35)}.choice b{flex:none;width:120px;height:120px;border-radius:60px;background:#16121c;color:#fff;font-size:84px;display:flex;align-items:center;justify-content:center}#chA{top:700px;background:#ffd23a}#chB{top:960px;background:#7fd0ff}#chHead{position:absolute;top:560px;left:0;width:1080px;text-align:center;font-family:"Nunito",sans-serif;font-weight:900;font-size:62px;color:#fff;-webkit-text-stroke:10px #16121c;paint-order:stroke fill}#chF{position:absolute;top:1240px;left:140px;width:800px;padding:16px 10px;border-radius:36px;background:#fff;text-align:center;font-family:"Nunito",sans-serif;font-weight:900;font-size:38px;color:#16121c}#recap{position:absolute;top:640px;left:90px;width:900px;padding:30px;border-radius:44px;background:#7fd0ff;text-align:center;font-family:"Nunito",sans-serif;font-weight:900;font-size:64px;color:#16121c;box-shadow:0 12px 0 rgba(0,0,0,.35)}`; document.head.appendChild(css);
+    const mk = (id, html, cls) => { const d = document.createElement('div'); d.id = id; d.innerHTML = html; d.style.opacity = 0; if (cls) d.className = cls; host.appendChild(d); return d; };
+    const head = mk('chHead', ch.head), A = mk('chA', '<b>A</b><span>' + ch.a + '</span>', 'choice'), B = mk('chB', '<b>B</b><span>' + ch.b + '</span>', 'choice'), F = mk('chF', ch.follow), RC = ch.recap ? mk('recap', ch.recap) : null;
+    const tq = at(ch.at || 'should') - 0.3, ta = at(ch.atA || ['comment', 1]) - 0.1, tb = at(ch.atB || ['comment', 2]) - 0.1, tf = at(ch.atF || 'part') - 0.1;
+    tickCards = (t) => { const pop = (el, t0) => { const u = clamp((t - t0) / 0.35); el.style.opacity = u; el.style.transform = `scale(${0.85 + 0.15 * (1 - Math.pow(1 - u, 3))})`; }; pop(head, tq); pop(A, ta); pop(B, tb); pop(F, tf);
+      const pk = (t - tf) % 1.2; A.style.outline = t > tf && pk < 0.6 ? '10px solid #fff' : 'none'; B.style.outline = t > tf && pk >= 0.6 ? '10px solid #fff' : 'none';
+      if (RC) { const u = clamp(Math.min(t / 0.25, (2.4 - t) / 0.3)); RC.style.opacity = u; RC.style.transform = `scale(${0.9 + 0.1 * u})`; } }; }
+  const upd0 = update; const updateAll = (s, t) => { upd0(s, t); tickCards(s); };
   // ---- go
-  direct({ stage, WORDS, DURATION, shots: SHOTS, update, title: 1.4, q: [E.wait, E.wait + 1.4], cta: E.comment, prog: [E.but || E.wait - 4, E.thats || E.comment - 4], pin: E.wait,
+  direct({ stage, WORDS, DURATION, shots: SHOTS, update: updateAll, title: 1.4, q: [E.wait, E.wait + 1.4], cta: spec.choice ? DURATION + 5 : E.comment, prog: [E.but || E.wait - 4, E.thats || E.comment - 4], pin: E.wait,
     key: spec.key, loc: (t) => { for (const [w, label, w2] of spec.loc || []) { const a = at(w), b = w2 ? at(w2) : a + 3; if (a != null && t >= a - 0.05 && t < b) return label; } return ''; }, shakes: (spec.shakes || []).map(at).filter((v) => v != null), tick: () => {} });
 }
