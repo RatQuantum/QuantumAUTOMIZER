@@ -6,6 +6,16 @@ Newest first. When a new lesson contradicts an old one, our own data wins over a
 
 ---
 
+## KB-8 · Production upgrade (Nov 18)
+
+- **Krishna, detailed** (`tools/reel-kit/ep/cast.js`): a jewelled tiered mukut with a pearl rim, a full peacock feather, curly locks, makara kundala earrings, gold necklaces, the Kaustubha gem, a five-colour Vaijayanti garland, a pitambar with a zari border, a red sash with tassels and a green angavastram. Every character is now drawn at double resolution (512×1024).
+- **Music** (`tools/reel-kit/ep/raga_bed.py`, replaces make_bed for new reels): a tanpura drone, a real tabla keherwa from samples, a bansuri melody generated on a raga (festive = Bhupali, devotional = Yaman-like, epic = Bhairavi-like), bell accents, a santoor shimmer, two short echoes, and **the music ducks under the narrator**. Each reel has a mood: devotional, festive or epic.
+- **Sound effects**: real-sample bell, cinematic boom and impacts; synthesized shimmer, whoosh, conch and thunder.
+- **ElevenLabs** music/SFX: wired up, but the account had only 10 credits (one music track costs about 900-1,650 credits). Top up to use it.
+- **Skills**: skills.sh and GitHub are blocked by this environment's network policy; plugins come from the claude.ai catalog (Motion Reel, animation-studio, parallax-threejs and an AI music generator were suggested to the owner).
+
+---
+
 ## KB-7 · "30 lessons from 80 billion views" (owner sent, Nov 17)
 
 A creator with 45M followers, talking to camera. On-screen numbers count up 1-30, and a caption pinned at the top says "Number 25 will make you the most money 💰". That caption is a curiosity hook that holds people to the end.

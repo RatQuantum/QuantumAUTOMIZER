@@ -80,18 +80,41 @@ const goldDots = (c, cx, y0, n, r, col = '#ffd23a') => { for (let i = 0; i < n; 
 const kid = (skin, body, hair = '#1d1a24', extra = {}) => Object.assign({ skin, body, bodyW: 116, bodyH: 160, headR: 80, handsSkin: true, hair: hairCap(hair) }, extra);
 export const CAST = {
   krishna: {
-    skin: '#4f86d9', body: '#ffcf3a', bodyW: 120, bodyH: 190, handsSkin: true,
-    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#e8462c'; c.fillRect(cx - w / 2, y + h * 0.42, w, 18); goldDots(c, cx, y + 6, 9, 7, '#ffffff'); },
-    hairBack: (c, cx, hy, hr) => { c.beginPath(); c.ellipse(cx, hy + 20, hr + 10, hr + 18, 0, 0, Math.PI * 2); fillStroke(c, '#1d1a24', 6); },
+    skin: '#4f86d9', body: '#ffcf3a', bodyW: 122, bodyH: 192, handsSkin: true,
+    bodyDeco: (c, cx, y, w, h) => {
+      c.fillStyle = '#f5b81f'; c.fillRect(cx - w / 2, y + h * 0.5, w, h);                                   // pitambar (lower dhoti, deeper gold)
+      for (let k = 0; k < 7; k++) { c.fillStyle = k % 2 ? '#e8462c' : '#ffe27a'; c.fillRect(cx - w / 2, y + h - 30 + k * 3, w, 3); }   // zari border at the hem
+      for (let i = 0; i < 6; i++) { const yy = y + h * 0.6 + i * 14; for (let x = cx - w / 2 + 8; x < cx + w / 2; x += 16) { circ(c, x + (i % 2) * 8, yy, 2.2); c.fillStyle = '#fff3b0'; c.fill(); } }   // little gold buttis
+      c.fillStyle = '#d8263a'; c.fillRect(cx - w / 2, y + h * 0.44, w, 16); c.fillStyle = '#ffd23a'; c.fillRect(cx - w / 2, y + h * 0.44 + 6, w, 3);   // red sash with a gold thread
+      for (const dx of [-14, 10]) { line(c, [[cx + dx, y + h * 0.44 + 16], [cx + dx + 2, y + h * 0.44 + 46]], 5, '#d8263a'); circ(c, cx + dx + 2, y + h * 0.44 + 50, 5); fillStroke(c, '#ffd23a', 2); }   // tassels
+      c.save(); c.translate(cx, y + h * 0.18); c.rotate(-0.62); c.fillStyle = '#2e9d5a'; c.fillRect(-w, -10, w * 2, 20); c.fillStyle = '#ffd23a'; c.fillRect(-w, -10, w * 2, 3); c.fillRect(-w, 7, w * 2, 3); c.restore();   // green angavastram across the chest
+    },
+    hairBack: (c, cx, hy, hr) => { c.beginPath(); c.ellipse(cx, hy + 20, hr + 10, hr + 20, 0, 0, Math.PI * 2); fillStroke(c, '#1d1a24', 6);
+      for (let i = 0; i < 9; i++) { const a = Math.PI * (0.15 + i / 8 * 0.7); circ(c, cx + Math.cos(a) * (hr + 12), hy + 30 + Math.sin(a) * (hr + 4), 14); fillStroke(c, '#1d1a24', 4); } },   // curly locks
     hair: hairCap('#1d1a24'),
     top: (c, cx, hy, hr, pose) => {
-      rr(c, cx - 52, hy - hr - 14, 104, 30, 10); fillStroke(c, '#ffd23a', 5); circ(c, cx, hy - hr, 8); fillStroke(c, '#e8462c', 3);   // a gold band
-      if (!(pose && pose.nofeather)) { c.save(); c.translate(cx + 28, hy - hr - 6); c.rotate(0.35);                                                                      // peacock feather
-      line(c, [[0, 0], [0, -70]], 4, '#c9a227'); c.beginPath(); c.ellipse(0, -84, 20, 28, 0, 0, Math.PI * 2); fillStroke(c, '#2e9d5a', 4);
-      c.beginPath(); c.ellipse(0, -80, 12, 16, 0, 0, Math.PI * 2); c.fillStyle = '#e3b02a'; c.fill(); c.beginPath(); c.ellipse(0, -78, 7, 10, 0, 0, Math.PI * 2); c.fillStyle = '#1e5aa8'; c.fill();
-      c.restore(); }
+      // makara kundala: fish-shaped gold earrings
+      for (const sd of [-1, 1]) { const ex = cx + sd * (hr - 4), ey = hy + 26; c.beginPath(); c.ellipse(ex, ey + 12, 9, 15, sd * 0.3, 0, Math.PI * 2); fillStroke(c, '#ffd23a', 3); circ(c, ex, ey + 12, 3.5); c.fillStyle = '#d8263a'; c.fill(); c.beginPath(); c.moveTo(ex - 6, ey + 27); c.lineTo(ex, ey + 34); c.lineTo(ex + 6, ey + 27); c.closePath(); fillStroke(c, '#ffd23a', 2); }
+      // the mukut: a tiered jewelled crown
+      c.beginPath(); c.moveTo(cx - 50, hy - hr + 16); c.lineTo(cx - 44, hy - hr - 30); c.quadraticCurveTo(cx, hy - hr - 62, cx + 44, hy - hr - 30); c.lineTo(cx + 50, hy - hr + 16); c.closePath(); fillStroke(c, '#ffd23a', 5);
+      rr(c, cx - 54, hy - hr + 2, 108, 18, 6); fillStroke(c, '#f5b81f', 4);
+      for (let i = -2; i <= 2; i++) { circ(c, cx + i * 20, hy - hr + 11, 4.5); c.fillStyle = i % 2 ? '#2e9d5a' : '#d8263a'; c.fill(); }   // gems on the band
+      for (const [dx, dy, col] of [[0, -34, '#d8263a'], [-22, -22, '#1e5aa8'], [22, -22, '#1e5aa8'], [0, -14, '#2e9d5a']]) { circ(c, cx + dx, hy - hr + dy, 6); fillStroke(c, col, 2); }
+      for (let i = 0; i < 9; i++) { const a = Math.PI * (1.12 + i / 8 * 0.76); circ(c, cx + Math.cos(a) * 46, hy - hr - 12 + Math.sin(a) * 40, 3); c.fillStyle = '#fff6c0'; c.fill(); }   // pearl rim
+      if (!(pose && pose.nofeather)) { c.save(); c.translate(cx + 36, hy - hr - 18); c.rotate(0.95); c.scale(0.85, 0.85);                                      // full peacock feather
+        line(c, [[0, 0], [0, -64]], 4, '#c9a227'); for (let i = 0; i < 9; i++) line(c, [[0, -20 - i * 6], [-16 + (i % 2) * 32, -30 - i * 6]], 2, '#3fae5a');
+        c.beginPath(); c.ellipse(0, -80, 21, 29, 0, 0, Math.PI * 2); fillStroke(c, '#2e9d5a', 4); c.beginPath(); c.ellipse(0, -78, 14, 19, 0, 0, Math.PI * 2); c.fillStyle = '#7fc84a'; c.fill();
+        c.beginPath(); c.ellipse(0, -76, 9, 12, 0, 0, Math.PI * 2); c.fillStyle = '#e3b02a'; c.fill(); c.beginPath(); c.ellipse(0, -75, 5.5, 7.5, 0, 0, Math.PI * 2); c.fillStyle = '#1e5aa8'; c.fill(); c.restore(); }
       line(c, [[cx - 9, hy - 46], [cx - 8, hy - 26], [cx, hy - 20], [cx + 8, hy - 26], [cx + 9, hy - 46]], 4, '#ffffff');               // namam: white U
       line(c, [[cx, hy - 44], [cx, hy - 26]], 3.5, '#e0213a');                                                                           // ...with a red line
+    },
+    prop: (c, cx, y, w, h) => {
+      // gold necklaces + the Kaustubha gem
+      for (const [r, lw] of [[30, 4], [42, 3]]) { c.beginPath(); c.arc(cx, y - 4, r, 0.15 * Math.PI, 0.85 * Math.PI); c.lineWidth = lw; c.strokeStyle = '#ffd23a'; c.stroke(); }
+      c.beginPath(); c.moveTo(cx, y + 30); c.lineTo(cx + 11, y + 42); c.lineTo(cx, y + 56); c.lineTo(cx - 11, y + 42); c.closePath(); fillStroke(c, '#d8263a', 3); circ(c, cx, y + 43, 4); c.fillStyle = '#7fd0ff'; c.fill();
+      // the Vaijayanti garland: a long loop of five-coloured flowers down to the knees
+      const cols = ['#f06aa0', '#ffffff', '#ffd23a', '#d8263a', '#7fc84a'];
+      for (let i = 0; i <= 22; i++) { const u = i / 22, a = Math.PI * (0.06 + u * 0.88), gx = cx + Math.cos(a) * (w * 0.46), gy = y - 2 + Math.sin(a) * (h * 0.78); circ(c, gx, gy, 7.5); fillStroke(c, cols[i % 5], 2.5); circ(c, gx, gy, 2.5); c.fillStyle = '#ffd23a'; c.fill(); }
     },
   },
   satyabhama: {
