@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      /* sci1-govardhan-en */
+      @font-face { font-family: "Nunito"; src: url("assets/fonts/Nunito.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #07070c; }
+      #root { width: 100%; height: 100%; }
+      #bg { position: absolute; inset: -80px; background:
+        radial-gradient(ellipse 700px 600px at 50% 46%, rgba(245, 184, 46, 0.16), transparent 70%),
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 60px 60px,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 60px 60px, #07070c; }
+      #vig { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.7)); }
+      #cap { position: absolute; top: 250px; left: 60px; width: 960px; text-align: center; font: 500 66px/1.15 "Nunito", sans-serif; color: #e8e8f0; }
+      #cap b { font-weight: 900; color: #fff; }
+      #stage2 { position: absolute; inset: 0; }
+      .beat { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 980px; font-family: "Nunito", sans-serif; color: #fff; text-align: center; }
+      .portrait canvas { position: absolute; left: 240px; top: 520px; width: 600px; height: 1200px; }
+      .portrait .glow { position: absolute; left: 190px; top: 560px; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(245, 184, 46, 0.35), transparent 65%); }
+      .portrait .ctr { position: absolute; left: 70px; top: 1560px; text-align: left; }
+      .ctr .cl { display: block; font: 900 30px "Nunito"; letter-spacing: 4px; color: #f5b82e; }
+      .ctr .cn { display: block; font: 900 92px "Nunito"; color: #fff; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); }
+      .tag .art { position: absolute; left: 340px; top: 700px; width: 400px; height: 400px; filter: drop-shadow(0 0 40px rgba(245, 184, 46, 0.35)); }
+      .tag .tt { position: absolute; top: 560px; width: 1080px; font: 900 110px "Nunito"; color: #ffd76a; letter-spacing: 6px; text-shadow: 0 0 40px rgba(245, 184, 46, 0.5); }
+      .ts { position: absolute; top: 1150px; width: 1080px; font: 900 34px "Nunito"; letter-spacing: 8px; color: #9a9ab0; }
+      .ts.low { top: 1330px; color: #ffd76a; }
+      .counter .big { position: absolute; top: 760px; width: 1080px; white-space: nowrap; font: 900 200px "Nunito"; color: #ffd76a; text-shadow: 0 0 60px rgba(245, 184, 46, 0.45); }
+      .counter .ts { top: 1010px; }
+      .eq { display: flex; align-items: center; justify-content: center; gap: 22px; padding-top: 900px; }
+      .eq .chip { padding: 24px 34px; border: 5px solid #f5b82e; border-radius: 22px; font: 900 56px "Nunito"; color: #ffd76a; background: rgba(245, 184, 46, 0.08); }
+      .eq .chip.hi { background: #f5b82e; color: #16121c; }
+      .eq .op { font: 900 64px "Nunito"; color: #fff; }
+      .ladder .row { position: absolute; left: 0; width: 1080px; bottom: 700px; display: flex; align-items: flex-end; justify-content: center; gap: 70px; transform-origin: 540px 100%; }
+      .ladder .it { position: relative; flex: none; }
+      .ladder .il { position: absolute; left: -30px; right: -30px; line-height: 1.2; top: 100%; margin-top: 18px; font: 900 30px "Nunito"; letter-spacing: 2px; color: #f5b82e; }
+      .ladder .ground { position: absolute; left: 0; width: 1080px; top: 1220px; height: 3px; background: linear-gradient(90deg, transparent, #44445a, transparent); }
+      .space .grid { position: absolute; left: -400px; top: 700px; width: 1880px; height: 1100px; background: linear-gradient(rgba(245, 184, 46, 0.25) 2px, transparent 2px) 0 0 / 80px 80px, linear-gradient(90deg, rgba(245, 184, 46, 0.25) 2px, transparent 2px) 0 0 / 80px 80px; transform-origin: 50% 0; }
+      .space .sp { position: absolute; left: 290px; top: 640px; width: 500px; height: 500px; filter: drop-shadow(0 0 60px rgba(245, 184, 46, 0.6)); }
+      .end .hd { position: absolute; top: 860px; left: 140px; width: 800px; padding: 26px; border: 5px solid #f5b82e; border-radius: 60px; font: 900 52px "Nunito"; color: #ffd76a; background: rgba(0, 0, 0, 0.5); }
+      .end .fo { position: absolute; top: 1030px; left: 400px; width: 280px; padding: 16px; border-radius: 40px; background: #f5b82e; color: #16121c; font: 900 40px "Nunito"; letter-spacing: 3px; }
+      .end .ts { top: 1150px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="51.18" data-width="1080" data-height="1920">
+      <div id="stage" class="clip" data-start="0" data-duration="51.18" data-track-index="0">
+        <div id="bg"></div>
+        <div id="stage2"></div>
+        <div id="vig"></div>
+        <div id="cap"></div>
+      </div>
+      <audio id="vo" class="clip" src="assets/audio/voice.wav" data-start="0" data-duration="49.98" data-volume="1" data-track-index="2"></audio>
+      <audio id="bed" class="clip" src="assets/audio/bed.wav" data-start="0" data-duration="51.18" data-volume="1" data-track-index="3"></audio>
+    </div>
+    <script>
+      window.__hf = window.__hf || {};
+      window.__hf.buildReady = window.__hf.buildReady || {};
+      window.__hf.buildReady.scene = new Promise((res) => (window.__sceneReady = res));
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+    <script type="module" src="assets/main.js"></script>
+  </body>
+</html>

@@ -8,6 +8,13 @@
       "skillPath": "skills/animation-vocabulary/SKILL.md",
       "computedHash": "e1d19134dc63dfb09379f7b42557b63b6123becdd36d15bae991d0b6ca5b2110"
     },
+    "earshot": {
+      "source": "leonxlnx/earshot",
+      "commit": "4ac3d2ac2b151e1c23376f9ce7f3047a17050013",
+      "sourceType": "github",
+      "skillPath": "skills/earshot/SKILL.md",
+      "computedHash": "07a6100d2f2110f38e33d1892d03efa614f7b35335580a60fc7d2b17d39de5ec"
+    },
     "faster-whisper": {
       "source": "theplasmak/faster-whisper",
       "commit": "1c8d6a682c56813a540640babe49d9b270ea708c",
@@ -40,6 +47,13 @@
       "skillPath": "skills/productivity/grilling/SKILL.md",
       "computedHash": ""
     },
+    "high-retention-video-script": {
+      "source": "Jamailar/high-retention-video-script",
+      "commit": "9e111f867bf69226923a543687d71485e3aee9e9",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "53f18f14e53959ee25d2d68dcaf705da4f276a819ec09dce1fdc43701a75c7da"
+    },
     "hyperframes": {
       "source": "heygen-com/hyperframes",
       "sourceType": "github",
@@ -71,6 +85,13 @@
       "sourceType": "github",
       "skillPath": "skills/motion-design/SKILL.md",
       "computedHash": "3933de8904719703e21293dbe25c50da329105802780837a07587f29ecc0f1cc"
+    },
+    "real-sound": {
+      "source": "leonxlnx/earshot",
+      "commit": "4ac3d2ac2b151e1c23376f9ce7f3047a17050013",
+      "sourceType": "github",
+      "skillPath": "skills/real-sound/SKILL.md",
+      "computedHash": "0caed483c0c11a7b3dcc7e449d2856a1845a9ea13251f2708ff0e9c4397045fb"
     },
     "review-animations": {
       "source": "emilkowalski/skills",
@@ -175,6 +196,20 @@
       "sourceType": "github",
       "skillPath": "skills/threejs-textures/SKILL.md",
       "computedHash": "c9d53239206d8d152de16bfa630760f289616c86c43b47e94599be3b19c32d05"
+    },
+    "video-retention-auditor": {
+      "source": "LuckyAnggara/lucky-me-clipper",
+      "commit": "3dd8b23fc87bb582c395eba7cae28344522a85f4",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/video-retention-auditor/SKILL.md",
+      "computedHash": "cd5e2208af8dfa6fc8f33066b9dd3d512dcc146e0e1f57f46cf361decc0c8f9a"
+    },
+    "viral-video-hooks-retention": {
+      "source": "josiahsiegel/claude-plugin-marketplace",
+      "commit": "5a1b1123b9e50aa9a66a61005ca6fe012cc7442d",
+      "sourceType": "github",
+      "skillPath": "plugins/viral-video-master/skills/viral-video-hooks-retention/SKILL.md",
+      "computedHash": "7cace7afaf8824201938d4594ac9589f557c37de2686b11a19e253ff686841e9"
     }
   }
 }

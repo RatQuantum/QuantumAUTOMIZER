@@ -66,3 +66,7 @@ clinic/reels/*/*.mp4
 clinic/reels/*/renders/
 clinic/reels/*/*-cover.jpg
 __pycache__/
+reels/*/*.brain.json
+clinic/reels/*/*.brain.json
+reels/sci*/*.mp4
+reels/sci*/*-cover.jpg

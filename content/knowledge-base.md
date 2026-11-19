@@ -6,6 +6,14 @@ Newest first. When a new lesson contradicts an old one, our own data wins over a
 
 ---
 
+## KB-13 · "Real science of a superpower" explainer (owner sent, Nov 19)
+
+58 s, gold-on-dark vector art. One shocking claim (a character turns into a black hole), then a **rising ladder of comparisons** (60 kg → car → blue whale → the Moon → Earth → a black hole), rolling counters ("922,184,710 kg"), formula chips (MASS × SPEED), and a **twist ending** that reframes the claim ("her final move wasn't a punch, it was a star"). Captions sit at the top in 2-4 word chunks with one bold key word. The narration is calm and confident; earshot hears "confident, cool" funk-electronic music with a bass groove under it (-14.2 LUFS, ~4.9 onsets/s).
+- **→ For us:** a new format on both accounts: temple *"the real numbers of Krishna's miracles"* (Govardhan first), clinic *"your body, explained"* (the heart's lifetime first). Engine: `tools/reel-kit/sci/` (`sci.js` beats: portrait · tag · counter · ladder · eq · space · end; `bed.py` = funk groove + earshot SFX bank on every beat).
+- **→ For us:** the retention brain (`tools/reel-kit/brain/retention_brain.py`) measured the reference vs our Day 70: **visual change in the first 3 s 2.56 vs 0.98, big reveals per 10 s 8.1 vs 3.8.** Our hooks are 2.6× too still and we reveal half as often. Rule: a new visual element every 1-2 s, and motion in frame 1.
+- **→ Voice:** we never clone a real narrator. earshot + MFCC picked the closest free voice (Kokoro `am_onyx`).
+- **→ Not possible here:** Meta's TRIBE brain-encoding model needs a GPU and ~3 large models; the retention brain is the CPU stand-in.
+
 ## KB-12 · The beat-sync "edit" (owner sent, Nov 19)
 
 A 14.6 s fan edit: an icon intro, then **27 cuts** (one every ~0.5 s, often 2-3 in 0.3 s) on the beats of a song, with RGB/chromatic glitch, flash frames, diagonal wipes, zoom punches and neon outline frames. No words.
