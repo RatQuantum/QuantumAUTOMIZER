@@ -80,10 +80,6 @@
       "hash": "07f8724b2183c174a6b68b6cd663e50b8b03a5b372cdfcaa55bd72dc3fc44a9f",
       "content": "/root/.cache/hyperframes/history/796fc07a-dd10-45ca-910e-7b5df9908e11/blobs/07/07f8724b2183c174a6b68b6cd663e50b8b03a5b372cdfcaa55bd72dc3fc44a9f"
     },
-    "govardhan-science.mp4": {
-      "hash": "a078b6a3b35609dc7ac58c77be73b935cce700d636abf3beb695d136e7441789",
-      "content": "/root/.cache/hyperframes/history/796fc07a-dd10-45ca-910e-7b5df9908e11/blobs/a0/a078b6a3b35609dc7ac58c77be73b935cce700d636abf3beb695d136e7441789"
-    },
     "govardhan-science-cover.jpg": {
       "hash": "19a33ea406fd780c65feb6e7e200aebb541cbddb64e79239cc3fe2902119f448",
       "content": "/root/.cache/hyperframes/history/796fc07a-dd10-45ca-910e-7b5df9908e11/blobs/19/19a33ea406fd780c65feb6e7e200aebb541cbddb64e79239cc3fe2902119f448"
@@ -91,6 +87,10 @@
     "govardhan-science.brain.json": {
       "hash": "4a85c9a3aba5f8a8915e559ec9461a7fd450584a5ada6751ca33b05352d1abde",
       "content": "/root/.cache/hyperframes/history/796fc07a-dd10-45ca-910e-7b5df9908e11/blobs/4a/4a85c9a3aba5f8a8915e559ec9461a7fd450584a5ada6751ca33b05352d1abde"
+    },
+    "govardhan-science.mp4": {
+      "hash": "a078b6a3b35609dc7ac58c77be73b935cce700d636abf3beb695d136e7441789",
+      "content": "/root/.cache/hyperframes/history/796fc07a-dd10-45ca-910e-7b5df9908e11/blobs/a0/a078b6a3b35609dc7ac58c77be73b935cce700d636abf3beb695d136e7441789"
     }
   },
   "revisions": {
@@ -751,13 +751,14 @@
   },
   "renders": {
     "latest": {
-      "id": "ab543d32-2cb0-4430-9986-c7d8b4225ed8",
-      "completedAt": 1795091122536,
-      "output": "/home/user/QuantumAUTOMIZER/reels/sci1-govardhan-en/renders/sci1-govardhan-en_2026-11-19_12-21-43.mp4",
+      "id": "0ef9693a-03b6-4f2c-a798-448ea07b6fce",
+      "completedAt": 1795092419376,
+      "output": "/home/user/QuantumAUTOMIZER/reels/sci1-govardhan-en/renders/sci1-govardhan-en_2026-11-19_12-43-41.mp4",
       "status": "completed",
-      "revision": "59d49db4-e450-4334-971b-254c1b5123d1"
+      "revision": "87e80d51-314c-4e75-84b9-5736cf60113c"
     },
     "retainedRevisions": [
+      "87e80d51-314c-4e75-84b9-5736cf60113c",
       "59d49db4-e450-4334-971b-254c1b5123d1"
     ]
   },

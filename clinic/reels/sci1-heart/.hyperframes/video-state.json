@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "4b2322a7-232f-4a3a-a023-a949d5d12999",
-  "currentRevision": "ab531930-4d20-4a70-8e0c-14745594e610",
+  "currentRevision": "b09c66dc-bf47-4d93-a3f8-1745bfaae908",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -41,8 +41,8 @@
       "content": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/34/34fa950a9d50cafe41cff22fb797a3bf4fff6ed979f2ad3fd8aee8ef49b7501d"
     },
     "assets/sci.js": {
-      "hash": "f31d469c47da96a4c629ed8b41c972b70ed58d7d5974075f7304dc4a55c568f1",
-      "content": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/f3/f31d469c47da96a4c629ed8b41c972b70ed58d7d5974075f7304dc4a55c568f1"
+      "hash": "1ff810ce07f6e76561a18ba28e087f5b5774640c3435a3fdfa95aa4293a31791",
+      "content": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/1f/1ff810ce07f6e76561a18ba28e087f5b5774640c3435a3fdfa95aa4293a31791"
     },
     "assets/spec.js": {
       "hash": "28e2f9e64eea8c778edef72720b45c8d978e26c4214edc6f73dd1885ce60be44",
@@ -61,8 +61,8 @@
       "content": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
     },
     "index.html": {
-      "hash": "7e5f22d374b07ad102d6ae9c14cd0f6f3da52b6bebb752614c85edb15658eb9e",
-      "content": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/7e/7e5f22d374b07ad102d6ae9c14cd0f6f3da52b6bebb752614c85edb15658eb9e"
+      "hash": "cf11434824f6a09a0b8cee638fbd5319983ccb009e6b55c6b286936bd433a19b",
+      "content": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/cf/cf11434824f6a09a0b8cee638fbd5319983ccb009e6b55c6b286936bd433a19b"
     },
     "meta.json": {
       "hash": "4dd007114d638caaeeddde2b775a72fefd278123fdbbe24682cbf2468c9daa21",
@@ -79,6 +79,18 @@
     "assets/audio/voice.wav": {
       "hash": "74262fc678273ed1cd2323691e1a9fa1257cad785778fb4f9ca29fa40fae0cea",
       "content": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/74/74262fc678273ed1cd2323691e1a9fa1257cad785778fb4f9ca29fa40fae0cea"
+    },
+    "heart-science.mp4": {
+      "hash": "e04e81a0bdab733bd271138e26eef19c4eabfbeb1e6a96f1421beaa4c6abdc69",
+      "content": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/e0/e04e81a0bdab733bd271138e26eef19c4eabfbeb1e6a96f1421beaa4c6abdc69"
+    },
+    "heart-science-cover.jpg": {
+      "hash": "ef50a10684f1df2451a566ff63afa27296150a645e57c126f27ff0ab1e2c6a15",
+      "content": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/ef/ef50a10684f1df2451a566ff63afa27296150a645e57c126f27ff0ab1e2c6a15"
+    },
+    "heart-science.brain.json": {
+      "hash": "63a18e2662a913947267b5fd7fda618e70813e9e0b1ba48da17adce5a2e7fabc",
+      "content": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/63/63a18e2662a913947267b5fd7fda618e70813e9e0b1ba48da17adce5a2e7fabc"
     }
   },
   "revisions": {
@@ -98,6 +110,37 @@
         "index.html": {
           "before": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/b7/b742278c5b174e824bc2d758aa2f661a433b2f4a598d9025f2bc47c2d95279c1",
           "after": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/7e/7e5f22d374b07ad102d6ae9c14cd0f6f3da52b6bebb752614c85edb15658eb9e"
+        }
+      }
+    },
+    "b09c66dc-bf47-4d93-a3f8-1745bfaae908": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795092435717,
+      "endedAt": 1795092435745,
+      "files": {
+        "assets/sci.js": {
+          "before": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/f3/f31d469c47da96a4c629ed8b41c972b70ed58d7d5974075f7304dc4a55c568f1",
+          "after": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/1f/1ff810ce07f6e76561a18ba28e087f5b5774640c3435a3fdfa95aa4293a31791"
+        },
+        "heart-science-cover.jpg": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/ef/ef50a10684f1df2451a566ff63afa27296150a645e57c126f27ff0ab1e2c6a15"
+        },
+        "heart-science.brain.json": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/63/63a18e2662a913947267b5fd7fda618e70813e9e0b1ba48da17adce5a2e7fabc"
+        },
+        "heart-science.mp4": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/e0/e04e81a0bdab733bd271138e26eef19c4eabfbeb1e6a96f1421beaa4c6abdc69"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/7e/7e5f22d374b07ad102d6ae9c14cd0f6f3da52b6bebb752614c85edb15658eb9e",
+          "after": "/root/.cache/hyperframes/history/4b2322a7-232f-4a3a-a023-a949d5d12999/blobs/cf/cf11434824f6a09a0b8cee638fbd5319983ccb009e6b55c6b286936bd433a19b"
         }
       }
     }
@@ -421,13 +464,14 @@
   },
   "renders": {
     "latest": {
-      "id": "bf54bb92-4734-4467-b6ae-b85a1b51b895",
-      "completedAt": 1795091338023,
-      "output": "/home/user/QuantumAUTOMIZER/clinic/reels/sci1-heart/renders/sci1-heart_2026-11-19_12-25-39.mp4",
+      "id": "7e54a6f1-14b2-4990-8b87-95359335a3f5",
+      "completedAt": 1795092618042,
+      "output": "/home/user/QuantumAUTOMIZER/clinic/reels/sci1-heart/renders/sci1-heart_2026-11-19_12-47-14.mp4",
       "status": "completed",
-      "revision": "ab531930-4d20-4a70-8e0c-14745594e610"
+      "revision": "b09c66dc-bf47-4d93-a3f8-1745bfaae908"
     },
     "retainedRevisions": [
+      "b09c66dc-bf47-4d93-a3f8-1745bfaae908",
       "ab531930-4d20-4a70-8e0c-14745594e610"
     ]
   },
