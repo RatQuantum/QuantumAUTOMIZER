@@ -119,5 +119,18 @@
     "latest": null,
     "revisions": {},
     "unversioned": []
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "8de31219-96e9-4f8f-96c4-c459e1e9f545",
+      "completedAt": 1795084695918,
+      "output": "/home/user/QuantumAUTOMIZER/clinic/reels/d001b/renders/d001b_2026-11-19_10-36-03.mp4",
+      "status": "completed",
+      "revision": "18ddc801-d0fa-4605-8d62-33e297889d18"
+    },
+    "retainedRevisions": [
+      "18ddc801-d0fa-4605-8d62-33e297889d18"
+    ]
+  },
+  "pendingArtifactCleanup": []
 }
