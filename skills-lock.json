@@ -47,6 +47,41 @@
       "skillPath": "skills/productivity/grilling/SKILL.md",
       "computedHash": ""
     },
+    "gsap-core": {
+      "source": "greensock/gsap-skills",
+      "commit": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-core/SKILL.md",
+      "computedHash": "dfc8ba849fa8b81c8cc60964ee2a5fa8db4b2a2611801cf549a5b267b8284fa5"
+    },
+    "gsap-performance": {
+      "source": "greensock/gsap-skills",
+      "commit": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-performance/SKILL.md",
+      "computedHash": "4dd4382cad329927a248fbe55c426901f2bf4f5c598db6ef5ec38c19861b829f"
+    },
+    "gsap-plugins": {
+      "source": "greensock/gsap-skills",
+      "commit": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-plugins/SKILL.md",
+      "computedHash": "328b52a98e9704c0349ba2cee23a6a92376c06b6b1fd3e60e5c20395b55e25e8"
+    },
+    "gsap-timeline": {
+      "source": "greensock/gsap-skills",
+      "commit": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-timeline/SKILL.md",
+      "computedHash": "622140f48b7aa6bcf2f4d4c050b8fa20effa533688a1650854f5ffc1be169a0b"
+    },
+    "gsap-utils": {
+      "source": "greensock/gsap-skills",
+      "commit": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-utils/SKILL.md",
+      "computedHash": "d05b56284eea0118d481b8c673aff27cae66199282995bfe78315785f561002d"
+    },
     "high-retention-video-script": {
       "source": "Jamailar/high-retention-video-script",
       "commit": "9e111f867bf69226923a543687d71485e3aee9e9",
@@ -203,6 +238,13 @@
       "sourceType": "github",
       "skillPath": ".agents/skills/video-retention-auditor/SKILL.md",
       "computedHash": "cd5e2208af8dfa6fc8f33066b9dd3d512dcc146e0e1f57f46cf361decc0c8f9a"
+    },
+    "video-shotcraft": {
+      "source": "vincentwei1021/video-shotcraft",
+      "commit": "075b548c2405a07b77129eb448b0b504fc60dea3",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "acc1f7772ed846e444f6ed902b5f9c01ffdacf46c641156fa55f6c1f570c065f"
     },
     "viral-video-hooks-retention": {
       "source": "josiahsiegel/claude-plugin-marketplace",
