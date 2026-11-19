@@ -1,0 +1,731 @@
+day,date,slot,subject,topic,angle
+1,2026-11-20,A,Anatomy,"Why your heart is on the left (it isn't, quite)",Myth or fact / warning sign
+1,2026-11-20,B,Ophthalmology,Squint should be treated early,How your body works
+2,2026-11-21,A,Physiology,What happens in your body when you skip breakfast,Myth or fact / warning sign
+2,2026-11-21,B,General Medicine,Fatty liver can reverse,How your body works
+3,2026-11-22,A,Biochemistry,Vitamin D: why almost everyone is low,Myth or fact / warning sign
+3,2026-11-22,B,General Surgery,Fissure vs piles,How your body works
+4,2026-11-23,A,Pathology,What your CBC report is telling you,Myth or fact / warning sign
+4,2026-11-23,B,Obstetrics & Gynaecology,Pregnancy diet myths,How your body works
+5,2026-11-24,A,Pharmacology,Antibiotics don't work on viruses,Myth or fact / warning sign
+5,2026-11-24,B,Paediatrics,Bedwetting: when it's a problem,How your body works
+6,2026-11-25,A,Microbiology,How dengue spreads and how to stop it,Myth or fact / warning sign
+6,2026-11-25,B,Orthopaedics,Arthritis myths,How your body works
+7,2026-11-26,A,Forensic Medicine,What to do in the first 5 minutes of a snake bite,Myth or fact / warning sign
+7,2026-11-26,B,Dermatology,Heat rash in summer,How your body works
+8,2026-11-27,A,Community Medicine,Why clean water saves more lives than hospitals,Myth or fact / warning sign
+8,2026-11-27,B,Psychiatry,Alcohol and depression,How your body works
+9,2026-11-28,A,ENT,Never use earbuds inside your ear,Myth or fact / warning sign
+9,2026-11-28,B,Anaesthesiology,Pain after surgery is treatable,How your body works
+10,2026-11-29,A,Ophthalmology,The 20-20-20 rule for screen eyes,Myth or fact / warning sign
+10,2026-11-29,B,Radiology,Ultrasound for gallstones,How your body works
+11,2026-11-30,A,General Medicine,Heart attack signs women miss,Myth or fact / warning sign
+11,2026-11-30,B,Anatomy,Why the left lung is smaller,How your body works
+12,2026-12-01,A,General Surgery,Appendicitis: the pain that moves,Myth or fact / warning sign
+12,2026-12-01,B,Physiology,Why you get goosebumps,How your body works
+13,2026-12-02,A,Obstetrics & Gynaecology,PCOS is more than irregular periods,Myth or fact / warning sign
+13,2026-12-02,B,Biochemistry,Calcium supplements: who needs them,How your body works
+14,2026-12-03,A,Paediatrics,Fever in babies: when to rush,Myth or fact / warning sign
+14,2026-12-03,B,Pathology,Anemia types in 30 seconds,How your body works
+15,2026-12-04,A,Orthopaedics,Back pain: rest or move?,Myth or fact / warning sign
+15,2026-12-04,B,Pharmacology,Why BP tablets are lifelong for many,How your body works
+16,2026-12-05,A,Dermatology,"Sunscreen in India: yes, you need it",Myth or fact / warning sign
+16,2026-12-05,B,Microbiology,Why vaccines don't cause the disease,How your body works
+17,2026-12-06,A,Psychiatry,Anxiety feels physical,Myth or fact / warning sign
+17,2026-12-06,B,Forensic Medicine,Road accident: how to help safely,How your body works
+18,2026-12-07,A,Anaesthesiology,Why you can't eat before surgery,Myth or fact / warning sign
+18,2026-12-07,B,Community Medicine,"Why we need sanitation, not just toilets",How your body works
+19,2026-12-08,A,Radiology,X-ray radiation: how much is safe,Myth or fact / warning sign
+19,2026-12-08,B,ENT,Mouth ulcers that won't heal,How your body works
+20,2026-12-09,A,Anatomy,The body's longest bone and why it breaks,Myth or fact / warning sign
+20,2026-12-09,B,Ophthalmology,Night blindness and vitamin A,How your body works
+21,2026-12-10,A,Physiology,Why you feel sleepy after lunch,Myth or fact / warning sign
+21,2026-12-10,B,General Medicine,Headache red flags,How your body works
+22,2026-12-11,A,Biochemistry,B12 deficiency and vegetarians,Myth or fact / warning sign
+22,2026-12-11,B,General Surgery,Ingrown toenail fixes,How your body works
+23,2026-12-12,A,Pathology,Why hemoglobin drops in women,Myth or fact / warning sign
+23,2026-12-12,B,Obstetrics & Gynaecology,Breastfeeding and the mother's diet,How your body works
+24,2026-12-13,A,Pharmacology,Why you must finish your antibiotics,Myth or fact / warning sign
+24,2026-12-13,B,Paediatrics,Choking first aid for babies,How your body works
+25,2026-12-14,A,Microbiology,Typhoid: the water connection,Myth or fact / warning sign
+25,2026-12-14,B,Orthopaedics,Sciatica: pain down the leg,How your body works
+26,2026-12-15,A,Forensic Medicine,Poisoning at home: what NOT to do,Myth or fact / warning sign
+26,2026-12-15,B,Dermatology,Nail fungus,How your body works
+27,2026-12-16,A,Community Medicine,The vaccine schedule every parent needs,Myth or fact / warning sign
+27,2026-12-16,B,Psychiatry,Postpartum blues,How your body works
+28,2026-12-17,A,ENT,Why kids get ear infections after a cold,Myth or fact / warning sign
+28,2026-12-17,B,Anaesthesiology,Sedation vs general anaesthesia,How your body works
+29,2026-12-18,A,Ophthalmology,Why kids need eye tests before school,Myth or fact / warning sign
+29,2026-12-18,B,Radiology,PET scan basics,How your body works
+30,2026-12-19,A,General Medicine,High BP has no symptoms,Myth or fact / warning sign
+30,2026-12-19,B,Anatomy,Wisdom teeth: why we have them,How your body works
+31,2026-12-20,A,General Surgery,Piles: what really helps,Myth or fact / warning sign
+31,2026-12-20,B,Physiology,How your kidneys filter 180 litres a day,How your body works
+32,2026-12-21,A,Obstetrics & Gynaecology,Normal period vs heavy bleeding,Myth or fact / warning sign
+32,2026-12-21,B,Biochemistry,What ketosis does to your body,How your body works
+33,2026-12-22,A,Paediatrics,ORS: the right way to make it,Myth or fact / warning sign
+33,2026-12-22,B,Pathology,What 'benign' and 'malignant' mean,How your body works
+34,2026-12-23,A,Orthopaedics,Knee pain at 40,Myth or fact / warning sign
+34,2026-12-23,B,Pharmacology,Sleeping pills: the dependence trap,How your body works
+35,2026-12-24,A,Dermatology,Acne: what really works,Myth or fact / warning sign
+35,2026-12-24,B,Microbiology,Malaria vs dengue: the difference,How your body works
+36,2026-12-25,A,Psychiatry,Depression is not weakness,Myth or fact / warning sign
+36,2026-12-25,B,Forensic Medicine,Your medical records are your rights,How your body works
+37,2026-12-26,A,Anaesthesiology,Is anaesthesia dangerous?,Myth or fact / warning sign
+37,2026-12-26,B,Community Medicine,Annual check-ups after 30,How your body works
+38,2026-12-27,A,Radiology,CT vs MRI,Myth or fact / warning sign
+38,2026-12-27,B,ENT,Steam inhalation: helps or harms?,How your body works
+39,2026-12-28,A,Anatomy,Your appendix: useless or not?,Myth or fact / warning sign
+39,2026-12-28,B,Ophthalmology,Eye drops without prescription,How your body works
+40,2026-12-29,A,Physiology,How your body keeps you at 37°C,Myth or fact / warning sign
+40,2026-12-29,B,General Medicine,Chest pain: never wait,How your body works
+41,2026-12-30,A,Biochemistry,Is cholesterol always bad?,Myth or fact / warning sign
+41,2026-12-30,B,General Surgery,"Abscess needs draining, not just tablets",How your body works
+42,2026-12-31,A,Pathology,What 'inflammation' really means,Myth or fact / warning sign
+42,2026-12-31,B,Obstetrics & Gynaecology,Painful periods are not always normal,How your body works
+43,2027-01-01,A,Pharmacology,Painkillers and your kidneys,Myth or fact / warning sign
+43,2027-01-01,B,Paediatrics,Diaper rash fixes,How your body works
+44,2027-01-02,A,Microbiology,Why handwashing beats sanitiser,Myth or fact / warning sign
+44,2027-01-02,B,Orthopaedics,Kids' growing pains,How your body works
+45,2027-01-03,A,Forensic Medicine,Carbon monoxide: the silent killer in closed rooms,Myth or fact / warning sign
+45,2027-01-03,B,Dermatology,Vitiligo myths,How your body works
+46,2027-01-04,A,Community Medicine,Salt: India eats double the limit,Myth or fact / warning sign
+46,2027-01-04,B,Psychiatry,ADHD in adults,How your body works
+47,2027-01-05,A,ENT,"Nosebleeds: lean forward, not back",Myth or fact / warning sign
+47,2027-01-05,B,Anaesthesiology,Kids and anaesthesia,How your body works
+48,2027-01-06,A,Ophthalmology,Diabetes can blind you silently,Myth or fact / warning sign
+48,2027-01-06,B,Radiology,Dental X-rays,How your body works
+49,2027-01-07,A,General Medicine,Diabetes: 5 early signs,Myth or fact / warning sign
+49,2027-01-07,B,Anatomy,The tiny bones that let you hear,How your body works
+50,2027-01-08,A,General Surgery,Gallstones: surgery or wait?,Myth or fact / warning sign
+50,2027-01-08,B,Physiology,Why your legs cramp at night,How your body works
+51,2027-01-09,A,Obstetrics & Gynaecology,Folic acid 3 months before pregnancy,Myth or fact / warning sign
+51,2027-01-09,B,Biochemistry,Folic acid before pregnancy,How your body works
+52,2027-01-10,A,Paediatrics,Honey is unsafe under 1 year,Myth or fact / warning sign
+52,2027-01-10,B,Pathology,Thyroid nodules: most are harmless,How your body works
+53,2027-01-11,A,Orthopaedics,Osteoporosis: the silent bone thief,Myth or fact / warning sign
+53,2027-01-11,B,Pharmacology,Why self-medication is risky,How your body works
+54,2027-01-12,A,Dermatology,Dandruff vs dry scalp,Myth or fact / warning sign
+54,2027-01-12,B,Microbiology,Probiotics: what the evidence says,How your body works
+55,2027-01-13,A,Psychiatry,Sleep and mental health,Myth or fact / warning sign
+55,2027-01-13,B,Forensic Medicine,Consent: why doctors ask you to sign,How your body works
+56,2027-01-14,A,Anaesthesiology,Spinal anaesthesia explained,Myth or fact / warning sign
+56,2027-01-14,B,Community Medicine,Iodised salt and your brain,How your body works
+57,2027-01-15,A,Radiology,Ultrasound in pregnancy is safe,Myth or fact / warning sign
+57,2027-01-15,B,ENT,Earwax is self-cleaning,How your body works
+58,2027-01-16,A,Anatomy,Why we have two kidneys,Myth or fact / warning sign
+58,2027-01-16,B,Ophthalmology,Floaters: when to worry,How your body works
+59,2027-01-17,A,Physiology,What a fever is actually doing,Myth or fact / warning sign
+59,2027-01-17,B,General Medicine,Why sugar can be high without sweets,How your body works
+60,2027-01-18,A,Biochemistry,Why iron needs vitamin C,Myth or fact / warning sign
+60,2027-01-18,B,General Surgery,Burns that need hospital,How your body works
+61,2027-01-19,A,Pathology,Fatty liver: silent but common,Myth or fact / warning sign
+61,2027-01-19,B,Obstetrics & Gynaecology,Contraception myths,How your body works
+62,2027-01-20,A,Pharmacology,Paracetamol: the safe dose limit,Myth or fact / warning sign
+62,2027-01-20,B,Paediatrics,Iron deficiency in kids,How your body works
+63,2027-01-21,A,Microbiology,Fungal infections in monsoon,Myth or fact / warning sign
+63,2027-01-21,B,Orthopaedics,Fracture healing timeline,How your body works
+64,2027-01-22,A,Forensic Medicine,Why you must not induce vomiting,Myth or fact / warning sign
+64,2027-01-22,B,Dermatology,Moles that need checking,How your body works
+65,2027-01-23,A,Community Medicine,"Walking 7,000 steps: the real number",Myth or fact / warning sign
+65,2027-01-23,B,Psychiatry,Loneliness and health,How your body works
+66,2027-01-24,A,ENT,Snoring can be a warning sign,Myth or fact / warning sign
+66,2027-01-24,B,Anaesthesiology,Shivering after surgery,How your body works
+67,2027-01-25,A,Ophthalmology,Red eye: when it's an emergency,Myth or fact / warning sign
+67,2027-01-25,B,Radiology,Echo vs ECG,How your body works
+68,2027-01-26,A,General Medicine,Is it acidity or your heart?,Myth or fact / warning sign
+68,2027-01-26,B,Anatomy,Why your feet have 26 bones,How your body works
+69,2027-01-27,A,General Surgery,Hernia won't go away on its own,Myth or fact / warning sign
+69,2027-01-27,B,Physiology,What sugar does after you eat a sweet,How your body works
+70,2027-01-28,A,Obstetrics & Gynaecology,Danger signs in pregnancy,Myth or fact / warning sign
+70,2027-01-28,B,Biochemistry,Why alcohol hits some people harder,How your body works
+71,2027-01-29,A,Paediatrics,Why not to give cough syrup to toddlers,Myth or fact / warning sign
+71,2027-01-29,B,Pathology,How plaque blocks an artery,How your body works
+72,2027-01-30,A,Orthopaedics,Neck pain from your phone,Myth or fact / warning sign
+72,2027-01-30,B,Pharmacology,Vitamins: when supplements harm,How your body works
+73,2027-01-31,A,Dermatology,Ringworm: why steroid creams make it worse,Myth or fact / warning sign
+73,2027-01-31,B,Microbiology,Why antibiotic resistance affects you,How your body works
+74,2027-02-01,A,Psychiatry,Panic attack vs heart attack,Myth or fact / warning sign
+74,2027-02-01,B,Forensic Medicine,Dog bite: wash for 15 minutes,How your body works
+75,2027-02-02,A,Anaesthesiology,Waking up during surgery: how rare,Myth or fact / warning sign
+75,2027-02-02,B,Community Medicine,Mental health is public health,How your body works
+76,2027-02-03,A,Radiology,Why MRI is so loud,Myth or fact / warning sign
+76,2027-02-03,B,ENT,Allergic rhinitis in every season,How your body works
+77,2027-02-04,A,Anatomy,"The muscle you use 20,000 times a day",Myth or fact / warning sign
+77,2027-02-04,B,Ophthalmology,Sunglasses protect more than style,How your body works
+78,2027-02-05,A,Physiology,Why you yawn,Myth or fact / warning sign
+78,2027-02-05,B,General Medicine,Dengue warning signs,How your body works
+79,2027-02-06,A,Biochemistry,What HbA1c really measures,Myth or fact / warning sign
+79,2027-02-06,B,General Surgery,Varicose veins treatment,How your body works
+80,2027-02-07,A,Pathology,How cancer actually starts,Myth or fact / warning sign
+80,2027-02-07,B,Obstetrics & Gynaecology,Gestational diabetes,How your body works
+81,2027-02-08,A,Pharmacology,Why not to take medicines with tea,Myth or fact / warning sign
+81,2027-02-08,B,Paediatrics,Why kids need sleep routines,How your body works
+82,2027-02-09,A,Microbiology,Is curd good when you have a cold?,Myth or fact / warning sign
+82,2027-02-09,B,Orthopaedics,Gym injuries,How your body works
+83,2027-02-10,A,Forensic Medicine,Drowning: the signs nobody sees,Myth or fact / warning sign
+83,2027-02-10,B,Dermatology,Scabies: the whole family needs treatment,How your body works
+84,2027-02-11,A,Community Medicine,Mosquito breeding in your own home,Myth or fact / warning sign
+84,2027-02-11,B,Psychiatry,Anger management,How your body works
+85,2027-02-12,A,ENT,Tonsils: when removal is needed,Myth or fact / warning sign
+85,2027-02-12,B,Anaesthesiology,CPR: what everyone should know,How your body works
+86,2027-02-13,A,Ophthalmology,Don't rub your eyes (here's why),Myth or fact / warning sign
+86,2027-02-13,B,Radiology,Do you really need that scan?,How your body works
+87,2027-02-14,A,General Medicine,Thyroid symptoms people ignore,Myth or fact / warning sign
+87,2027-02-14,B,Anatomy,Where hernias come from,How your body works
+88,2027-02-15,A,General Surgery,Breast lump: self-exam in 1 minute,Myth or fact / warning sign
+88,2027-02-15,B,Physiology,Why you sweat more in some places,How your body works
+89,2027-02-16,A,Obstetrics & Gynaecology,Anemia in pregnancy,Myth or fact / warning sign
+89,2027-02-16,B,Biochemistry,"Omega-3: fish, flax and facts",How your body works
+90,2027-02-17,A,Paediatrics,Growth charts explained,Myth or fact / warning sign
+90,2027-02-17,B,Pathology,Why gallstones form,How your body works
+91,2027-02-18,A,Orthopaedics,Sprain vs fracture,Myth or fact / warning sign
+91,2027-02-18,B,Pharmacology,Metformin: what it actually does,How your body works
+92,2027-02-19,A,Dermatology,Hair fall: normal vs not,Myth or fact / warning sign
+92,2027-02-19,B,Microbiology,Rabies: why every dog bite matters,How your body works
+93,2027-02-20,A,Psychiatry,Phone addiction,Myth or fact / warning sign
+93,2027-02-20,B,Forensic Medicine,Heat stroke can kill in hours,How your body works
+94,2027-02-21,A,Anaesthesiology,Local anaesthesia at the dentist,Myth or fact / warning sign
+94,2027-02-21,B,Community Medicine,Air pollution and your lungs,How your body works
+95,2027-02-22,A,Radiology,Metal and MRI,Myth or fact / warning sign
+95,2027-02-22,B,ENT,Fish bone in the throat,How your body works
+96,2027-02-23,A,Anatomy,Where your liver actually sits,Myth or fact / warning sign
+96,2027-02-23,B,Ophthalmology,Chemical in the eye: wash 15 minutes,How your body works
+97,2027-02-24,A,Physiology,How long you can go without water,Myth or fact / warning sign
+97,2027-02-24,B,General Medicine,"Swollen feet: heart, kidney or liver?",How your body works
+98,2027-02-25,A,Biochemistry,Protein: how much do you really need?,Myth or fact / warning sign
+98,2027-02-25,B,General Surgery,After-surgery walking matters,How your body works
+99,2027-02-26,A,Pathology,Why a lump should never be ignored,Myth or fact / warning sign
+99,2027-02-26,B,Obstetrics & Gynaecology,Baby movements: counting kicks,How your body works
+100,2027-02-27,A,Pharmacology,Generic vs branded: same medicine?,Myth or fact / warning sign
+100,2027-02-27,B,Paediatrics,Worm tablets every 6 months,How your body works
+101,2027-02-28,A,Microbiology,TB: still India's biggest killer,Myth or fact / warning sign
+101,2027-02-28,B,Orthopaedics,Flat feet,How your body works
+102,2027-03-01,A,Forensic Medicine,"Burns: water, not toothpaste",Myth or fact / warning sign
+102,2027-03-01,B,Dermatology,Stretch marks,How your body works
+103,2027-03-02,A,Community Medicine,Why screen time hurts kids' health,Myth or fact / warning sign
+103,2027-03-02,B,Psychiatry,Therapy myths,How your body works
+104,2027-03-03,A,ENT,Ringing in the ears (tinnitus),Myth or fact / warning sign
+104,2027-03-03,B,Anaesthesiology,Hands-only CPR in 30 seconds,How your body works
+105,2027-03-04,A,Ophthalmology,Cataract: not just for the old,Myth or fact / warning sign
+105,2027-03-04,B,Radiology,Kidney stone on CT,How your body works
+106,2027-03-05,A,General Medicine,Fever for 3 days: when to test,Myth or fact / warning sign
+106,2027-03-05,B,Anatomy,Why your shoulder dislocates easily,How your body works
+107,2027-03-06,A,General Surgery,"Diabetic foot: small cut, big danger",Myth or fact / warning sign
+107,2027-03-06,B,Physiology,How your body heals a cut,How your body works
+108,2027-03-07,A,Obstetrics & Gynaecology,Morning sickness that's too much,Myth or fact / warning sign
+108,2027-03-07,B,Biochemistry,Fasting blood sugar vs random sugar,How your body works
+109,2027-03-08,A,Paediatrics,Vaccines your child shouldn't miss,Myth or fact / warning sign
+109,2027-03-08,B,Pathology,What a urine test can reveal,How your body works
+110,2027-03-09,A,Orthopaedics,Frozen shoulder,Myth or fact / warning sign
+110,2027-03-09,B,Pharmacology,Why some drugs are taken empty stomach,How your body works
+111,2027-03-10,A,Dermatology,Dark circles causes,Myth or fact / warning sign
+111,2027-03-10,B,Microbiology,Conjunctivitis: how it spreads,How your body works
+112,2027-03-11,A,Psychiatry,Exam stress in students,Myth or fact / warning sign
+112,2027-03-11,B,Forensic Medicine,Kerosene and child safety,How your body works
+113,2027-03-12,A,Anaesthesiology,Why the anaesthetist asks so many questions,Myth or fact / warning sign
+113,2027-03-12,B,Community Medicine,Safe cooking oil reuse,How your body works
+114,2027-03-13,A,Radiology,Mammogram: who needs it,Myth or fact / warning sign
+114,2027-03-13,B,ENT,Why smell goes away with a cold,How your body works
+115,2027-03-14,A,Anatomy,Why your knee clicks,Myth or fact / warning sign
+115,2027-03-14,B,Ophthalmology,Reading in dim light: does it damage?,How your body works
+116,2027-03-15,A,Physiology,What 8 hours of sleep does to your brain,Myth or fact / warning sign
+116,2027-03-15,B,General Medicine,Sudden weight loss: get checked,How your body works
+117,2027-03-16,A,Biochemistry,Why crash diets fail (metabolism),Myth or fact / warning sign
+117,2027-03-16,B,General Surgery,Pilonidal sinus,How your body works
+118,2027-03-17,A,Pathology,What a biopsy is and why it's not scary,Myth or fact / warning sign
+118,2027-03-17,B,Obstetrics & Gynaecology,C-section vs normal delivery myths,How your body works
+119,2027-03-18,A,Pharmacology,Antacids every day: the hidden risk,Myth or fact / warning sign
+119,2027-03-18,B,Paediatrics,Jaundice in newborns,How your body works
+120,2027-03-19,A,Microbiology,How UTIs happen and how to prevent them,Myth or fact / warning sign
+120,2027-03-19,B,Orthopaedics,Tennis elbow without tennis,How your body works
+121,2027-03-20,A,Forensic Medicine,Electric shock first aid,Myth or fact / warning sign
+121,2027-03-20,B,Dermatology,Lice in school kids,How your body works
+122,2027-03-21,A,Community Medicine,Tobacco: every form is harmful,Myth or fact / warning sign
+122,2027-03-21,B,Psychiatry,Psychiatric medicines are not addictive (mostly),How your body works
+123,2027-03-22,A,ENT,Sinusitis vs a cold,Myth or fact / warning sign
+123,2027-03-22,B,Anaesthesiology,Choking adult: what to do,How your body works
+124,2027-03-23,A,Ophthalmology,Glaucoma: the silent thief of sight,Myth or fact / warning sign
+124,2027-03-23,B,Radiology,Thyroid ultrasound,How your body works
+125,2027-03-24,A,General Medicine,Why fatigue is not 'just stress',Myth or fact / warning sign
+125,2027-03-24,B,Anatomy,Your diaphragm and hiccups,How your body works
+126,2027-03-25,A,General Surgery,Why wounds get infected,Myth or fact / warning sign
+126,2027-03-25,B,Physiology,Why you get dizzy when you stand up,How your body works
+127,2027-03-26,A,Obstetrics & Gynaecology,Menopause symptoms,Myth or fact / warning sign
+127,2027-03-26,B,Biochemistry,What liver function tests show,How your body works
+128,2027-03-27,A,Paediatrics,Picky eaters: what's normal,Myth or fact / warning sign
+128,2027-03-27,B,Pathology,Pap smear: why every woman needs one,How your body works
+129,2027-03-28,A,Orthopaedics,Heel pain in the morning,Myth or fact / warning sign
+129,2027-03-28,B,Pharmacology,Antihistamines and drowsiness,How your body works
+130,2027-03-29,A,Dermatology,Eczema in children,Myth or fact / warning sign
+130,2027-03-29,B,Microbiology,Leptospirosis after floods,How your body works
+131,2027-03-30,A,Psychiatry,Grief: when to get help,Myth or fact / warning sign
+131,2027-03-30,B,Forensic Medicine,Date-rape drugs: warning signs,How your body works
+132,2027-03-31,A,Anaesthesiology,Smoking and anaesthesia risk,Myth or fact / warning sign
+132,2027-03-31,B,Community Medicine,Road safety saves more than medicine,How your body works
+133,2027-04-01,A,Radiology,Contrast dye: what it is,Myth or fact / warning sign
+133,2027-04-01,B,ENT,Swimmer's ear,How your body works
+134,2027-04-02,A,Anatomy,Spine curves and back pain,Myth or fact / warning sign
+134,2027-04-02,B,Ophthalmology,Stye vs chalazion,How your body works
+135,2027-04-03,A,Physiology,Why your heart races when you're scared,Myth or fact / warning sign
+135,2027-04-03,B,General Medicine,Cholesterol in thin people,How your body works
+136,2027-04-04,A,Biochemistry,Uric acid and gout foods,Myth or fact / warning sign
+136,2027-04-04,B,General Surgery,Stitches: when to remove,How your body works
+137,2027-04-05,A,Pathology,Platelets in dengue: when to worry,Myth or fact / warning sign
+137,2027-04-05,B,Obstetrics & Gynaecology,Postpartum depression is real,How your body works
+138,2027-04-06,A,Pharmacology,Why cough syrups can be dangerous for kids,Myth or fact / warning sign
+138,2027-04-06,B,Paediatrics,Childhood obesity,How your body works
+139,2027-04-07,A,Microbiology,Why you shouldn't squeeze a boil,Myth or fact / warning sign
+139,2027-04-07,B,Orthopaedics,Weight and knee joints,How your body works
+140,2027-04-08,A,Forensic Medicine,Medicine overdose in children,Myth or fact / warning sign
+140,2027-04-08,B,Dermatology,Cold sores,How your body works
+141,2027-04-09,A,Community Medicine,Exclusive breastfeeding for 6 months,Myth or fact / warning sign
+141,2027-04-09,B,Psychiatry,Children's mental health,How your body works
+142,2027-04-10,A,ENT,Loud music and permanent hearing loss,Myth or fact / warning sign
+142,2027-04-10,B,Anaesthesiology,Fainting first aid,How your body works
+143,2027-04-11,A,Ophthalmology,Carrots and eyesight: myth or fact,Myth or fact / warning sign
+143,2027-04-11,B,Radiology,Ultrasound for liver fat,How your body works
+144,2027-04-12,A,General Medicine,Stroke: BE FAST,Myth or fact / warning sign
+144,2027-04-12,B,Anatomy,Varicose veins: how valves fail,How your body works
+145,2027-04-13,A,General Surgery,Keyhole vs open surgery,Myth or fact / warning sign
+145,2027-04-13,B,Physiology,What hunger really is,How your body works
+146,2027-04-14,A,Obstetrics & Gynaecology,White discharge: normal or not,Myth or fact / warning sign
+146,2027-04-14,B,Biochemistry,Zinc and immunity: the truth,How your body works
+147,2027-04-15,A,Paediatrics,Febrile seizures: what to do,Myth or fact / warning sign
+147,2027-04-15,B,Pathology,What 'borderline' results mean,How your body works
+148,2027-04-16,A,Orthopaedics,Why calcium alone isn't enough,Myth or fact / warning sign
+148,2027-04-16,B,Pharmacology,Insulin myths,How your body works
+149,2027-04-17,A,Dermatology,Psoriasis is not contagious,Myth or fact / warning sign
+149,2027-04-17,B,Microbiology,Your gut bacteria and your mood,How your body works
+150,2027-04-18,A,Psychiatry,Burnout signs,Myth or fact / warning sign
+150,2027-04-18,B,Forensic Medicine,Why you need a death certificate,How your body works
+151,2027-04-19,A,Anaesthesiology,Painless delivery (epidural),Myth or fact / warning sign
+151,2027-04-19,B,Community Medicine,Noise pollution and blood pressure,How your body works
+152,2027-04-20,A,Radiology,Why your doctor asks for an X-ray,Myth or fact / warning sign
+152,2027-04-20,B,ENT,Bad breath causes,How your body works
+153,2027-04-21,A,Anatomy,The nerve that makes your elbow 'funny',Myth or fact / warning sign
+153,2027-04-21,B,Ophthalmology,Why glasses don't make eyes weaker,How your body works
+154,2027-04-22,A,Physiology,How your blood pressure is controlled,Myth or fact / warning sign
+154,2027-04-22,B,General Medicine,Chronic cough over 2 weeks,How your body works
+155,2027-04-23,A,Biochemistry,Electrolytes: when ORS beats water,Myth or fact / warning sign
+155,2027-04-23,B,General Surgery,Lipoma: a harmless lump,How your body works
+156,2027-04-24,A,Pathology,What ESR and CRP mean,Myth or fact / warning sign
+156,2027-04-24,B,Obstetrics & Gynaecology,Iron and calcium tablets in pregnancy,How your body works
+157,2027-04-25,A,Pharmacology,Steroids: life-saving and misused,Myth or fact / warning sign
+157,2027-04-25,B,Paediatrics,Speech delay signs,How your body works
+158,2027-04-26,A,Microbiology,Food poisoning: the 6-hour rule,Myth or fact / warning sign
+158,2027-04-26,B,Orthopaedics,Cracking knuckles: harmful?,How your body works
+159,2027-04-27,A,Forensic Medicine,Pesticide safety for farmers,Myth or fact / warning sign
+159,2027-04-27,B,Dermatology,Itching at night,How your body works
+160,2027-04-28,A,Community Medicine,Free health schemes you may qualify for,Myth or fact / warning sign
+160,2027-04-28,B,Psychiatry,Self-care that actually helps,How your body works
+161,2027-04-29,A,ENT,Hoarse voice for 3 weeks: get checked,Myth or fact / warning sign
+161,2027-04-29,B,Anaesthesiology,When to call an ambulance,How your body works
+162,2027-04-30,A,Ophthalmology,Contact lens mistakes,Myth or fact / warning sign
+162,2027-04-30,B,Radiology,X-ray in pregnancy,How your body works
+163,2027-05-01,A,General Medicine,Kidney damage from painkillers and BP,Myth or fact / warning sign
+163,2027-05-01,B,Anatomy,Why your nose has two sides,How your body works
+164,2027-05-02,A,General Surgery,Fasting before surgery: why,Myth or fact / warning sign
+164,2027-05-02,B,Physiology,How your stomach doesn't digest itself,How your body works
+165,2027-05-03,A,Obstetrics & Gynaecology,Why every woman needs a Pap test,Myth or fact / warning sign
+165,2027-05-03,B,Biochemistry,Why dehydration gives headaches,How your body works
+166,2027-05-04,A,Paediatrics,Teething myths,Myth or fact / warning sign
+166,2027-05-04,B,Pathology,Why ulcers aren't caused by spicy food,How your body works
+167,2027-05-05,A,Orthopaedics,Posture at a desk,Myth or fact / warning sign
+167,2027-05-05,B,Pharmacology,Storing medicines in summer heat,How your body works
+168,2027-05-06,A,Dermatology,Skin whitening creams' danger,Myth or fact / warning sign
+168,2027-05-06,B,Microbiology,Sterilisation of baby bottles,How your body works
+169,2027-05-07,A,Psychiatry,Talking about suicide saves lives,Myth or fact / warning sign
+169,2027-05-07,B,Forensic Medicine,Fake medicines: how to spot them,How your body works
+170,2027-05-08,A,Anaesthesiology,Sore throat after surgery,Myth or fact / warning sign
+170,2027-05-08,B,Community Medicine,Health insurance basics,How your body works
+171,2027-05-09,A,Radiology,Bone density scan,Myth or fact / warning sign
+171,2027-05-09,B,ENT,Sudden hearing loss is an emergency,How your body works
+172,2027-05-10,A,Anatomy,Why tongue-tie matters,Myth or fact / warning sign
+172,2027-05-10,B,Ophthalmology,Blue light: what's true,How your body works
+173,2027-05-11,A,Physiology,Why your ears pop on a plane,Myth or fact / warning sign
+173,2027-05-11,B,General Medicine,Gout is not only for the rich,How your body works
+174,2027-05-12,A,Biochemistry,Is fat or sugar the real enemy?,Myth or fact / warning sign
+174,2027-05-12,B,General Surgery,Blood in stool: never ignore,How your body works
+175,2027-05-13,A,Pathology,Kidney stones: how they form,Myth or fact / warning sign
+175,2027-05-13,B,Obstetrics & Gynaecology,Endometriosis,How your body works
+176,2027-05-14,A,Pharmacology,Expired medicines: are they poison?,Myth or fact / warning sign
+176,2027-05-14,B,Paediatrics,Dehydration signs in kids,How your body works
+177,2027-05-15,A,Microbiology,Worm infections in children,Myth or fact / warning sign
+177,2027-05-15,B,Orthopaedics,Ice or heat for pain,How your body works
+178,2027-05-16,A,Forensic Medicine,Alcohol poisoning signs,Myth or fact / warning sign
+178,2027-05-16,B,Dermatology,Pigmentation and melasma,How your body works
+179,2027-05-17,A,Community Medicine,Hand hygiene in 20 seconds,Myth or fact / warning sign
+179,2027-05-17,B,Psychiatry,How to support a friend,How your body works
+180,2027-05-18,A,ENT,Something stuck in a child's nose,Myth or fact / warning sign
+180,2027-05-18,B,Anaesthesiology,Oxygen saturation numbers,How your body works
+181,2027-05-19,A,Ophthalmology,Dry eyes and AC rooms,Myth or fact / warning sign
+181,2027-05-19,B,Radiology,Reading your scan report,How your body works
+182,2027-05-20,A,General Medicine,Asthma is not contagious,Myth or fact / warning sign
+182,2027-05-20,B,Anatomy,"Why your heart is on the left (it isn't, quite)",How your body works
+183,2027-05-21,A,General Surgery,Thyroid swelling: when to operate,Myth or fact / warning sign
+183,2027-05-21,B,Physiology,What happens in your body when you skip breakfast,How your body works
+184,2027-05-22,A,Obstetrics & Gynaecology,HPV vaccine for girls,Myth or fact / warning sign
+184,2027-05-22,B,Biochemistry,Vitamin D: why almost everyone is low,How your body works
+185,2027-05-23,A,Paediatrics,Screen time for under-5s,Myth or fact / warning sign
+185,2027-05-23,B,Pathology,What your CBC report is telling you,How your body works
+186,2027-05-24,A,Orthopaedics,Carpal tunnel from typing,Myth or fact / warning sign
+186,2027-05-24,B,Pharmacology,Antibiotics don't work on viruses,How your body works
+187,2027-05-25,A,Dermatology,Warts and how they spread,Myth or fact / warning sign
+187,2027-05-25,B,Microbiology,How dengue spreads and how to stop it,How your body works
+188,2027-05-26,A,Psychiatry,OCD is not just being neat,Myth or fact / warning sign
+188,2027-05-26,B,Forensic Medicine,What to do in the first 5 minutes of a snake bite,How your body works
+189,2027-05-27,A,Anaesthesiology,Allergy history matters,Myth or fact / warning sign
+189,2027-05-27,B,Community Medicine,Why clean water saves more lives than hospitals,How your body works
+190,2027-05-28,A,Radiology,Chest X-ray reveals,Myth or fact / warning sign
+190,2027-05-28,B,ENT,Never use earbuds inside your ear,How your body works
+191,2027-05-29,A,Anatomy,Your skin is your biggest organ,Myth or fact / warning sign
+191,2027-05-29,B,Ophthalmology,The 20-20-20 rule for screen eyes,How your body works
+192,2027-05-30,A,Physiology,What happens when you hold your breath,Myth or fact / warning sign
+192,2027-05-30,B,General Medicine,Heart attack signs women miss,How your body works
+193,2027-05-31,A,Biochemistry,Why your thyroid controls everything,Myth or fact / warning sign
+193,2027-05-31,B,General Surgery,Appendicitis: the pain that moves,How your body works
+194,2027-06-01,A,Pathology,Why blood clots form in long journeys,Myth or fact / warning sign
+194,2027-06-01,B,Obstetrics & Gynaecology,PCOS is more than irregular periods,How your body works
+195,2027-06-02,A,Pharmacology,Mixing alcohol and medicines,Myth or fact / warning sign
+195,2027-06-02,B,Paediatrics,Fever in babies: when to rush,How your body works
+196,2027-06-03,A,Microbiology,Hepatitis B: the silent virus,Myth or fact / warning sign
+196,2027-06-03,B,Orthopaedics,Back pain: rest or move?,How your body works
+197,2027-06-04,A,Forensic Medicine,"Hanging, choking and the Heimlich",Myth or fact / warning sign
+197,2027-06-04,B,Dermatology,"Sunscreen in India: yes, you need it",How your body works
+198,2027-06-05,A,Community Medicine,Obesity in children is rising,Myth or fact / warning sign
+198,2027-06-05,B,Psychiatry,Anxiety feels physical,How your body works
+199,2027-06-06,A,ENT,Vertigo: when the room spins,Myth or fact / warning sign
+199,2027-06-06,B,Anaesthesiology,Why you can't eat before surgery,How your body works
+200,2027-06-07,A,Ophthalmology,Squint should be treated early,Myth or fact / warning sign
+200,2027-06-07,B,Radiology,X-ray radiation: how much is safe,How your body works
+201,2027-06-08,A,General Medicine,Fatty liver can reverse,Myth or fact / warning sign
+201,2027-06-08,B,Anatomy,The body's longest bone and why it breaks,How your body works
+202,2027-06-09,A,General Surgery,Fissure vs piles,Myth or fact / warning sign
+202,2027-06-09,B,Physiology,Why you feel sleepy after lunch,How your body works
+203,2027-06-10,A,Obstetrics & Gynaecology,Pregnancy diet myths,Myth or fact / warning sign
+203,2027-06-10,B,Biochemistry,B12 deficiency and vegetarians,How your body works
+204,2027-06-11,A,Paediatrics,Bedwetting: when it's a problem,Myth or fact / warning sign
+204,2027-06-11,B,Pathology,Why hemoglobin drops in women,How your body works
+205,2027-06-12,A,Orthopaedics,Arthritis myths,Myth or fact / warning sign
+205,2027-06-12,B,Pharmacology,Why you must finish your antibiotics,How your body works
+206,2027-06-13,A,Dermatology,Heat rash in summer,Myth or fact / warning sign
+206,2027-06-13,B,Microbiology,Typhoid: the water connection,How your body works
+207,2027-06-14,A,Psychiatry,Alcohol and depression,Myth or fact / warning sign
+207,2027-06-14,B,Forensic Medicine,Poisoning at home: what NOT to do,How your body works
+208,2027-06-15,A,Anaesthesiology,Pain after surgery is treatable,Myth or fact / warning sign
+208,2027-06-15,B,Community Medicine,The vaccine schedule every parent needs,How your body works
+209,2027-06-16,A,Radiology,Ultrasound for gallstones,Myth or fact / warning sign
+209,2027-06-16,B,ENT,Why kids get ear infections after a cold,How your body works
+210,2027-06-17,A,Anatomy,Why the left lung is smaller,Myth or fact / warning sign
+210,2027-06-17,B,Ophthalmology,Why kids need eye tests before school,How your body works
+211,2027-06-18,A,Physiology,Why you get goosebumps,Myth or fact / warning sign
+211,2027-06-18,B,General Medicine,High BP has no symptoms,How your body works
+212,2027-06-19,A,Biochemistry,Calcium supplements: who needs them,Myth or fact / warning sign
+212,2027-06-19,B,General Surgery,Piles: what really helps,How your body works
+213,2027-06-20,A,Pathology,Anemia types in 30 seconds,Myth or fact / warning sign
+213,2027-06-20,B,Obstetrics & Gynaecology,Normal period vs heavy bleeding,How your body works
+214,2027-06-21,A,Pharmacology,Why BP tablets are lifelong for many,Myth or fact / warning sign
+214,2027-06-21,B,Paediatrics,ORS: the right way to make it,How your body works
+215,2027-06-22,A,Microbiology,Why vaccines don't cause the disease,Myth or fact / warning sign
+215,2027-06-22,B,Orthopaedics,Knee pain at 40,How your body works
+216,2027-06-23,A,Forensic Medicine,Road accident: how to help safely,Myth or fact / warning sign
+216,2027-06-23,B,Dermatology,Acne: what really works,How your body works
+217,2027-06-24,A,Community Medicine,"Why we need sanitation, not just toilets",Myth or fact / warning sign
+217,2027-06-24,B,Psychiatry,Depression is not weakness,How your body works
+218,2027-06-25,A,ENT,Mouth ulcers that won't heal,Myth or fact / warning sign
+218,2027-06-25,B,Anaesthesiology,Is anaesthesia dangerous?,How your body works
+219,2027-06-26,A,Ophthalmology,Night blindness and vitamin A,Myth or fact / warning sign
+219,2027-06-26,B,Radiology,CT vs MRI,How your body works
+220,2027-06-27,A,General Medicine,Headache red flags,Myth or fact / warning sign
+220,2027-06-27,B,Anatomy,Your appendix: useless or not?,How your body works
+221,2027-06-28,A,General Surgery,Ingrown toenail fixes,Myth or fact / warning sign
+221,2027-06-28,B,Physiology,How your body keeps you at 37°C,How your body works
+222,2027-06-29,A,Obstetrics & Gynaecology,Breastfeeding and the mother's diet,Myth or fact / warning sign
+222,2027-06-29,B,Biochemistry,Is cholesterol always bad?,How your body works
+223,2027-06-30,A,Paediatrics,Choking first aid for babies,Myth or fact / warning sign
+223,2027-06-30,B,Pathology,What 'inflammation' really means,How your body works
+224,2027-07-01,A,Orthopaedics,Sciatica: pain down the leg,Myth or fact / warning sign
+224,2027-07-01,B,Pharmacology,Painkillers and your kidneys,How your body works
+225,2027-07-02,A,Dermatology,Nail fungus,Myth or fact / warning sign
+225,2027-07-02,B,Microbiology,Why handwashing beats sanitiser,How your body works
+226,2027-07-03,A,Psychiatry,Postpartum blues,Myth or fact / warning sign
+226,2027-07-03,B,Forensic Medicine,Carbon monoxide: the silent killer in closed rooms,How your body works
+227,2027-07-04,A,Anaesthesiology,Sedation vs general anaesthesia,Myth or fact / warning sign
+227,2027-07-04,B,Community Medicine,Salt: India eats double the limit,How your body works
+228,2027-07-05,A,Radiology,PET scan basics,Myth or fact / warning sign
+228,2027-07-05,B,ENT,"Nosebleeds: lean forward, not back",How your body works
+229,2027-07-06,A,Anatomy,Wisdom teeth: why we have them,Myth or fact / warning sign
+229,2027-07-06,B,Ophthalmology,Diabetes can blind you silently,How your body works
+230,2027-07-07,A,Physiology,How your kidneys filter 180 litres a day,Myth or fact / warning sign
+230,2027-07-07,B,General Medicine,Diabetes: 5 early signs,How your body works
+231,2027-07-08,A,Biochemistry,What ketosis does to your body,Myth or fact / warning sign
+231,2027-07-08,B,General Surgery,Gallstones: surgery or wait?,How your body works
+232,2027-07-09,A,Pathology,What 'benign' and 'malignant' mean,Myth or fact / warning sign
+232,2027-07-09,B,Obstetrics & Gynaecology,Folic acid 3 months before pregnancy,How your body works
+233,2027-07-10,A,Pharmacology,Sleeping pills: the dependence trap,Myth or fact / warning sign
+233,2027-07-10,B,Paediatrics,Honey is unsafe under 1 year,How your body works
+234,2027-07-11,A,Microbiology,Malaria vs dengue: the difference,Myth or fact / warning sign
+234,2027-07-11,B,Orthopaedics,Osteoporosis: the silent bone thief,How your body works
+235,2027-07-12,A,Forensic Medicine,Your medical records are your rights,Myth or fact / warning sign
+235,2027-07-12,B,Dermatology,Dandruff vs dry scalp,How your body works
+236,2027-07-13,A,Community Medicine,Annual check-ups after 30,Myth or fact / warning sign
+236,2027-07-13,B,Psychiatry,Sleep and mental health,How your body works
+237,2027-07-14,A,ENT,Steam inhalation: helps or harms?,Myth or fact / warning sign
+237,2027-07-14,B,Anaesthesiology,Spinal anaesthesia explained,How your body works
+238,2027-07-15,A,Ophthalmology,Eye drops without prescription,Myth or fact / warning sign
+238,2027-07-15,B,Radiology,Ultrasound in pregnancy is safe,How your body works
+239,2027-07-16,A,General Medicine,Chest pain: never wait,Myth or fact / warning sign
+239,2027-07-16,B,Anatomy,Why we have two kidneys,How your body works
+240,2027-07-17,A,General Surgery,"Abscess needs draining, not just tablets",Myth or fact / warning sign
+240,2027-07-17,B,Physiology,What a fever is actually doing,How your body works
+241,2027-07-18,A,Obstetrics & Gynaecology,Painful periods are not always normal,Myth or fact / warning sign
+241,2027-07-18,B,Biochemistry,Why iron needs vitamin C,How your body works
+242,2027-07-19,A,Paediatrics,Diaper rash fixes,Myth or fact / warning sign
+242,2027-07-19,B,Pathology,Fatty liver: silent but common,How your body works
+243,2027-07-20,A,Orthopaedics,Kids' growing pains,Myth or fact / warning sign
+243,2027-07-20,B,Pharmacology,Paracetamol: the safe dose limit,How your body works
+244,2027-07-21,A,Dermatology,Vitiligo myths,Myth or fact / warning sign
+244,2027-07-21,B,Microbiology,Fungal infections in monsoon,How your body works
+245,2027-07-22,A,Psychiatry,ADHD in adults,Myth or fact / warning sign
+245,2027-07-22,B,Forensic Medicine,Why you must not induce vomiting,How your body works
+246,2027-07-23,A,Anaesthesiology,Kids and anaesthesia,Myth or fact / warning sign
+246,2027-07-23,B,Community Medicine,"Walking 7,000 steps: the real number",How your body works
+247,2027-07-24,A,Radiology,Dental X-rays,Myth or fact / warning sign
+247,2027-07-24,B,ENT,Snoring can be a warning sign,How your body works
+248,2027-07-25,A,Anatomy,The tiny bones that let you hear,Myth or fact / warning sign
+248,2027-07-25,B,Ophthalmology,Red eye: when it's an emergency,How your body works
+249,2027-07-26,A,Physiology,Why your legs cramp at night,Myth or fact / warning sign
+249,2027-07-26,B,General Medicine,Is it acidity or your heart?,How your body works
+250,2027-07-27,A,Biochemistry,Folic acid before pregnancy,Myth or fact / warning sign
+250,2027-07-27,B,General Surgery,Hernia won't go away on its own,How your body works
+251,2027-07-28,A,Pathology,Thyroid nodules: most are harmless,Myth or fact / warning sign
+251,2027-07-28,B,Obstetrics & Gynaecology,Danger signs in pregnancy,How your body works
+252,2027-07-29,A,Pharmacology,Why self-medication is risky,Myth or fact / warning sign
+252,2027-07-29,B,Paediatrics,Why not to give cough syrup to toddlers,How your body works
+253,2027-07-30,A,Microbiology,Probiotics: what the evidence says,Myth or fact / warning sign
+253,2027-07-30,B,Orthopaedics,Neck pain from your phone,How your body works
+254,2027-07-31,A,Forensic Medicine,Consent: why doctors ask you to sign,Myth or fact / warning sign
+254,2027-07-31,B,Dermatology,Ringworm: why steroid creams make it worse,How your body works
+255,2027-08-01,A,Community Medicine,Iodised salt and your brain,Myth or fact / warning sign
+255,2027-08-01,B,Psychiatry,Panic attack vs heart attack,How your body works
+256,2027-08-02,A,ENT,Earwax is self-cleaning,Myth or fact / warning sign
+256,2027-08-02,B,Anaesthesiology,Waking up during surgery: how rare,How your body works
+257,2027-08-03,A,Ophthalmology,Floaters: when to worry,Myth or fact / warning sign
+257,2027-08-03,B,Radiology,Why MRI is so loud,How your body works
+258,2027-08-04,A,General Medicine,Why sugar can be high without sweets,Myth or fact / warning sign
+258,2027-08-04,B,Anatomy,"The muscle you use 20,000 times a day",How your body works
+259,2027-08-05,A,General Surgery,Burns that need hospital,Myth or fact / warning sign
+259,2027-08-05,B,Physiology,Why you yawn,How your body works
+260,2027-08-06,A,Obstetrics & Gynaecology,Contraception myths,Myth or fact / warning sign
+260,2027-08-06,B,Biochemistry,What HbA1c really measures,How your body works
+261,2027-08-07,A,Paediatrics,Iron deficiency in kids,Myth or fact / warning sign
+261,2027-08-07,B,Pathology,How cancer actually starts,How your body works
+262,2027-08-08,A,Orthopaedics,Fracture healing timeline,Myth or fact / warning sign
+262,2027-08-08,B,Pharmacology,Why not to take medicines with tea,How your body works
+263,2027-08-09,A,Dermatology,Moles that need checking,Myth or fact / warning sign
+263,2027-08-09,B,Microbiology,Is curd good when you have a cold?,How your body works
+264,2027-08-10,A,Psychiatry,Loneliness and health,Myth or fact / warning sign
+264,2027-08-10,B,Forensic Medicine,Drowning: the signs nobody sees,How your body works
+265,2027-08-11,A,Anaesthesiology,Shivering after surgery,Myth or fact / warning sign
+265,2027-08-11,B,Community Medicine,Mosquito breeding in your own home,How your body works
+266,2027-08-12,A,Radiology,Echo vs ECG,Myth or fact / warning sign
+266,2027-08-12,B,ENT,Tonsils: when removal is needed,How your body works
+267,2027-08-13,A,Anatomy,Why your feet have 26 bones,Myth or fact / warning sign
+267,2027-08-13,B,Ophthalmology,Don't rub your eyes (here's why),How your body works
+268,2027-08-14,A,Physiology,What sugar does after you eat a sweet,Myth or fact / warning sign
+268,2027-08-14,B,General Medicine,Thyroid symptoms people ignore,How your body works
+269,2027-08-15,A,Biochemistry,Why alcohol hits some people harder,Myth or fact / warning sign
+269,2027-08-15,B,General Surgery,Breast lump: self-exam in 1 minute,How your body works
+270,2027-08-16,A,Pathology,How plaque blocks an artery,Myth or fact / warning sign
+270,2027-08-16,B,Obstetrics & Gynaecology,Anemia in pregnancy,How your body works
+271,2027-08-17,A,Pharmacology,Vitamins: when supplements harm,Myth or fact / warning sign
+271,2027-08-17,B,Paediatrics,Growth charts explained,How your body works
+272,2027-08-18,A,Microbiology,Why antibiotic resistance affects you,Myth or fact / warning sign
+272,2027-08-18,B,Orthopaedics,Sprain vs fracture,How your body works
+273,2027-08-19,A,Forensic Medicine,Dog bite: wash for 15 minutes,Myth or fact / warning sign
+273,2027-08-19,B,Dermatology,Hair fall: normal vs not,How your body works
+274,2027-08-20,A,Community Medicine,Mental health is public health,Myth or fact / warning sign
+274,2027-08-20,B,Psychiatry,Phone addiction,How your body works
+275,2027-08-21,A,ENT,Allergic rhinitis in every season,Myth or fact / warning sign
+275,2027-08-21,B,Anaesthesiology,Local anaesthesia at the dentist,How your body works
+276,2027-08-22,A,Ophthalmology,Sunglasses protect more than style,Myth or fact / warning sign
+276,2027-08-22,B,Radiology,Metal and MRI,How your body works
+277,2027-08-23,A,General Medicine,Dengue warning signs,Myth or fact / warning sign
+277,2027-08-23,B,Anatomy,Where your liver actually sits,How your body works
+278,2027-08-24,A,General Surgery,Varicose veins treatment,Myth or fact / warning sign
+278,2027-08-24,B,Physiology,How long you can go without water,How your body works
+279,2027-08-25,A,Obstetrics & Gynaecology,Gestational diabetes,Myth or fact / warning sign
+279,2027-08-25,B,Biochemistry,Protein: how much do you really need?,How your body works
+280,2027-08-26,A,Paediatrics,Why kids need sleep routines,Myth or fact / warning sign
+280,2027-08-26,B,Pathology,Why a lump should never be ignored,How your body works
+281,2027-08-27,A,Orthopaedics,Gym injuries,Myth or fact / warning sign
+281,2027-08-27,B,Pharmacology,Generic vs branded: same medicine?,How your body works
+282,2027-08-28,A,Dermatology,Scabies: the whole family needs treatment,Myth or fact / warning sign
+282,2027-08-28,B,Microbiology,TB: still India's biggest killer,How your body works
+283,2027-08-29,A,Psychiatry,Anger management,Myth or fact / warning sign
+283,2027-08-29,B,Forensic Medicine,"Burns: water, not toothpaste",How your body works
+284,2027-08-30,A,Anaesthesiology,CPR: what everyone should know,Myth or fact / warning sign
+284,2027-08-30,B,Community Medicine,Why screen time hurts kids' health,How your body works
+285,2027-08-31,A,Radiology,Do you really need that scan?,Myth or fact / warning sign
+285,2027-08-31,B,ENT,Ringing in the ears (tinnitus),How your body works
+286,2027-09-01,A,Anatomy,Where hernias come from,Myth or fact / warning sign
+286,2027-09-01,B,Ophthalmology,Cataract: not just for the old,How your body works
+287,2027-09-02,A,Physiology,Why you sweat more in some places,Myth or fact / warning sign
+287,2027-09-02,B,General Medicine,Fever for 3 days: when to test,How your body works
+288,2027-09-03,A,Biochemistry,"Omega-3: fish, flax and facts",Myth or fact / warning sign
+288,2027-09-03,B,General Surgery,"Diabetic foot: small cut, big danger",How your body works
+289,2027-09-04,A,Pathology,Why gallstones form,Myth or fact / warning sign
+289,2027-09-04,B,Obstetrics & Gynaecology,Morning sickness that's too much,How your body works
+290,2027-09-05,A,Pharmacology,Metformin: what it actually does,Myth or fact / warning sign
+290,2027-09-05,B,Paediatrics,Vaccines your child shouldn't miss,How your body works
+291,2027-09-06,A,Microbiology,Rabies: why every dog bite matters,Myth or fact / warning sign
+291,2027-09-06,B,Orthopaedics,Frozen shoulder,How your body works
+292,2027-09-07,A,Forensic Medicine,Heat stroke can kill in hours,Myth or fact / warning sign
+292,2027-09-07,B,Dermatology,Dark circles causes,How your body works
+293,2027-09-08,A,Community Medicine,Air pollution and your lungs,Myth or fact / warning sign
+293,2027-09-08,B,Psychiatry,Exam stress in students,How your body works
+294,2027-09-09,A,ENT,Fish bone in the throat,Myth or fact / warning sign
+294,2027-09-09,B,Anaesthesiology,Why the anaesthetist asks so many questions,How your body works
+295,2027-09-10,A,Ophthalmology,Chemical in the eye: wash 15 minutes,Myth or fact / warning sign
+295,2027-09-10,B,Radiology,Mammogram: who needs it,How your body works
+296,2027-09-11,A,General Medicine,"Swollen feet: heart, kidney or liver?",Myth or fact / warning sign
+296,2027-09-11,B,Anatomy,Why your knee clicks,How your body works
+297,2027-09-12,A,General Surgery,After-surgery walking matters,Myth or fact / warning sign
+297,2027-09-12,B,Physiology,What 8 hours of sleep does to your brain,How your body works
+298,2027-09-13,A,Obstetrics & Gynaecology,Baby movements: counting kicks,Myth or fact / warning sign
+298,2027-09-13,B,Biochemistry,Why crash diets fail (metabolism),How your body works
+299,2027-09-14,A,Paediatrics,Worm tablets every 6 months,Myth or fact / warning sign
+299,2027-09-14,B,Pathology,What a biopsy is and why it's not scary,How your body works
+300,2027-09-15,A,Orthopaedics,Flat feet,Myth or fact / warning sign
+300,2027-09-15,B,Pharmacology,Antacids every day: the hidden risk,How your body works
+301,2027-09-16,A,Dermatology,Stretch marks,Myth or fact / warning sign
+301,2027-09-16,B,Microbiology,How UTIs happen and how to prevent them,How your body works
+302,2027-09-17,A,Psychiatry,Therapy myths,Myth or fact / warning sign
+302,2027-09-17,B,Forensic Medicine,Electric shock first aid,How your body works
+303,2027-09-18,A,Anaesthesiology,Hands-only CPR in 30 seconds,Myth or fact / warning sign
+303,2027-09-18,B,Community Medicine,Tobacco: every form is harmful,How your body works
+304,2027-09-19,A,Radiology,Kidney stone on CT,Myth or fact / warning sign
+304,2027-09-19,B,ENT,Sinusitis vs a cold,How your body works
+305,2027-09-20,A,Anatomy,Why your shoulder dislocates easily,Myth or fact / warning sign
+305,2027-09-20,B,Ophthalmology,Glaucoma: the silent thief of sight,How your body works
+306,2027-09-21,A,Physiology,How your body heals a cut,Myth or fact / warning sign
+306,2027-09-21,B,General Medicine,Why fatigue is not 'just stress',How your body works
+307,2027-09-22,A,Biochemistry,Fasting blood sugar vs random sugar,Myth or fact / warning sign
+307,2027-09-22,B,General Surgery,Why wounds get infected,How your body works
+308,2027-09-23,A,Pathology,What a urine test can reveal,Myth or fact / warning sign
+308,2027-09-23,B,Obstetrics & Gynaecology,Menopause symptoms,How your body works
+309,2027-09-24,A,Pharmacology,Why some drugs are taken empty stomach,Myth or fact / warning sign
+309,2027-09-24,B,Paediatrics,Picky eaters: what's normal,How your body works
+310,2027-09-25,A,Microbiology,Conjunctivitis: how it spreads,Myth or fact / warning sign
+310,2027-09-25,B,Orthopaedics,Heel pain in the morning,How your body works
+311,2027-09-26,A,Forensic Medicine,Kerosene and child safety,Myth or fact / warning sign
+311,2027-09-26,B,Dermatology,Eczema in children,How your body works
+312,2027-09-27,A,Community Medicine,Safe cooking oil reuse,Myth or fact / warning sign
+312,2027-09-27,B,Psychiatry,Grief: when to get help,How your body works
+313,2027-09-28,A,ENT,Why smell goes away with a cold,Myth or fact / warning sign
+313,2027-09-28,B,Anaesthesiology,Smoking and anaesthesia risk,How your body works
+314,2027-09-29,A,Ophthalmology,Reading in dim light: does it damage?,Myth or fact / warning sign
+314,2027-09-29,B,Radiology,Contrast dye: what it is,How your body works
+315,2027-09-30,A,General Medicine,Sudden weight loss: get checked,Myth or fact / warning sign
+315,2027-09-30,B,Anatomy,Spine curves and back pain,How your body works
+316,2027-10-01,A,General Surgery,Pilonidal sinus,Myth or fact / warning sign
+316,2027-10-01,B,Physiology,Why your heart races when you're scared,How your body works
+317,2027-10-02,A,Obstetrics & Gynaecology,C-section vs normal delivery myths,Myth or fact / warning sign
+317,2027-10-02,B,Biochemistry,Uric acid and gout foods,How your body works
+318,2027-10-03,A,Paediatrics,Jaundice in newborns,Myth or fact / warning sign
+318,2027-10-03,B,Pathology,Platelets in dengue: when to worry,How your body works
+319,2027-10-04,A,Orthopaedics,Tennis elbow without tennis,Myth or fact / warning sign
+319,2027-10-04,B,Pharmacology,Why cough syrups can be dangerous for kids,How your body works
+320,2027-10-05,A,Dermatology,Lice in school kids,Myth or fact / warning sign
+320,2027-10-05,B,Microbiology,Why you shouldn't squeeze a boil,How your body works
+321,2027-10-06,A,Psychiatry,Psychiatric medicines are not addictive (mostly),Myth or fact / warning sign
+321,2027-10-06,B,Forensic Medicine,Medicine overdose in children,How your body works
+322,2027-10-07,A,Anaesthesiology,Choking adult: what to do,Myth or fact / warning sign
+322,2027-10-07,B,Community Medicine,Exclusive breastfeeding for 6 months,How your body works
+323,2027-10-08,A,Radiology,Thyroid ultrasound,Myth or fact / warning sign
+323,2027-10-08,B,ENT,Loud music and permanent hearing loss,How your body works
+324,2027-10-09,A,Anatomy,Your diaphragm and hiccups,Myth or fact / warning sign
+324,2027-10-09,B,Ophthalmology,Carrots and eyesight: myth or fact,How your body works
+325,2027-10-10,A,Physiology,Why you get dizzy when you stand up,Myth or fact / warning sign
+325,2027-10-10,B,General Medicine,Stroke: BE FAST,How your body works
+326,2027-10-11,A,Biochemistry,What liver function tests show,Myth or fact / warning sign
+326,2027-10-11,B,General Surgery,Keyhole vs open surgery,How your body works
+327,2027-10-12,A,Pathology,Pap smear: why every woman needs one,Myth or fact / warning sign
+327,2027-10-12,B,Obstetrics & Gynaecology,White discharge: normal or not,How your body works
+328,2027-10-13,A,Pharmacology,Antihistamines and drowsiness,Myth or fact / warning sign
+328,2027-10-13,B,Paediatrics,Febrile seizures: what to do,How your body works
+329,2027-10-14,A,Microbiology,Leptospirosis after floods,Myth or fact / warning sign
+329,2027-10-14,B,Orthopaedics,Why calcium alone isn't enough,How your body works
+330,2027-10-15,A,Forensic Medicine,Date-rape drugs: warning signs,Myth or fact / warning sign
+330,2027-10-15,B,Dermatology,Psoriasis is not contagious,How your body works
+331,2027-10-16,A,Community Medicine,Road safety saves more than medicine,Myth or fact / warning sign
+331,2027-10-16,B,Psychiatry,Burnout signs,How your body works
+332,2027-10-17,A,ENT,Swimmer's ear,Myth or fact / warning sign
+332,2027-10-17,B,Anaesthesiology,Painless delivery (epidural),How your body works
+333,2027-10-18,A,Ophthalmology,Stye vs chalazion,Myth or fact / warning sign
+333,2027-10-18,B,Radiology,Why your doctor asks for an X-ray,How your body works
+334,2027-10-19,A,General Medicine,Cholesterol in thin people,Myth or fact / warning sign
+334,2027-10-19,B,Anatomy,The nerve that makes your elbow 'funny',How your body works
+335,2027-10-20,A,General Surgery,Stitches: when to remove,Myth or fact / warning sign
+335,2027-10-20,B,Physiology,How your blood pressure is controlled,How your body works
+336,2027-10-21,A,Obstetrics & Gynaecology,Postpartum depression is real,Myth or fact / warning sign
+336,2027-10-21,B,Biochemistry,Electrolytes: when ORS beats water,How your body works
+337,2027-10-22,A,Paediatrics,Childhood obesity,Myth or fact / warning sign
+337,2027-10-22,B,Pathology,What ESR and CRP mean,How your body works
+338,2027-10-23,A,Orthopaedics,Weight and knee joints,Myth or fact / warning sign
+338,2027-10-23,B,Pharmacology,Steroids: life-saving and misused,How your body works
+339,2027-10-24,A,Dermatology,Cold sores,Myth or fact / warning sign
+339,2027-10-24,B,Microbiology,Food poisoning: the 6-hour rule,How your body works
+340,2027-10-25,A,Psychiatry,Children's mental health,Myth or fact / warning sign
+340,2027-10-25,B,Forensic Medicine,Pesticide safety for farmers,How your body works
+341,2027-10-26,A,Anaesthesiology,Fainting first aid,Myth or fact / warning sign
+341,2027-10-26,B,Community Medicine,Free health schemes you may qualify for,How your body works
+342,2027-10-27,A,Radiology,Ultrasound for liver fat,Myth or fact / warning sign
+342,2027-10-27,B,ENT,Hoarse voice for 3 weeks: get checked,How your body works
+343,2027-10-28,A,Anatomy,Varicose veins: how valves fail,Myth or fact / warning sign
+343,2027-10-28,B,Ophthalmology,Contact lens mistakes,How your body works
+344,2027-10-29,A,Physiology,What hunger really is,Myth or fact / warning sign
+344,2027-10-29,B,General Medicine,Kidney damage from painkillers and BP,How your body works
+345,2027-10-30,A,Biochemistry,Zinc and immunity: the truth,Myth or fact / warning sign
+345,2027-10-30,B,General Surgery,Fasting before surgery: why,How your body works
+346,2027-10-31,A,Pathology,What 'borderline' results mean,Myth or fact / warning sign
+346,2027-10-31,B,Obstetrics & Gynaecology,Why every woman needs a Pap test,How your body works
+347,2027-11-01,A,Pharmacology,Insulin myths,Myth or fact / warning sign
+347,2027-11-01,B,Paediatrics,Teething myths,How your body works
+348,2027-11-02,A,Microbiology,Your gut bacteria and your mood,Myth or fact / warning sign
+348,2027-11-02,B,Orthopaedics,Posture at a desk,How your body works
+349,2027-11-03,A,Forensic Medicine,Why you need a death certificate,Myth or fact / warning sign
+349,2027-11-03,B,Dermatology,Skin whitening creams' danger,How your body works
+350,2027-11-04,A,Community Medicine,Noise pollution and blood pressure,Myth or fact / warning sign
+350,2027-11-04,B,Psychiatry,Talking about suicide saves lives,How your body works
+351,2027-11-05,A,ENT,Bad breath causes,Myth or fact / warning sign
+351,2027-11-05,B,Anaesthesiology,Sore throat after surgery,How your body works
+352,2027-11-06,A,Ophthalmology,Why glasses don't make eyes weaker,Myth or fact / warning sign
+352,2027-11-06,B,Radiology,Bone density scan,How your body works
+353,2027-11-07,A,General Medicine,Chronic cough over 2 weeks,Myth or fact / warning sign
+353,2027-11-07,B,Anatomy,Why tongue-tie matters,How your body works
+354,2027-11-08,A,General Surgery,Lipoma: a harmless lump,Myth or fact / warning sign
+354,2027-11-08,B,Physiology,Why your ears pop on a plane,How your body works
+355,2027-11-09,A,Obstetrics & Gynaecology,Iron and calcium tablets in pregnancy,Myth or fact / warning sign
+355,2027-11-09,B,Biochemistry,Is fat or sugar the real enemy?,How your body works
+356,2027-11-10,A,Paediatrics,Speech delay signs,Myth or fact / warning sign
+356,2027-11-10,B,Pathology,Kidney stones: how they form,How your body works
+357,2027-11-11,A,Orthopaedics,Cracking knuckles: harmful?,Myth or fact / warning sign
+357,2027-11-11,B,Pharmacology,Expired medicines: are they poison?,How your body works
+358,2027-11-12,A,Dermatology,Itching at night,Myth or fact / warning sign
+358,2027-11-12,B,Microbiology,Worm infections in children,How your body works
+359,2027-11-13,A,Psychiatry,Self-care that actually helps,Myth or fact / warning sign
+359,2027-11-13,B,Forensic Medicine,Alcohol poisoning signs,How your body works
+360,2027-11-14,A,Anaesthesiology,When to call an ambulance,Myth or fact / warning sign
+360,2027-11-14,B,Community Medicine,Hand hygiene in 20 seconds,How your body works
+361,2027-11-15,A,Radiology,X-ray in pregnancy,Myth or fact / warning sign
+361,2027-11-15,B,ENT,Something stuck in a child's nose,How your body works
+362,2027-11-16,A,Anatomy,Why your nose has two sides,Myth or fact / warning sign
+362,2027-11-16,B,Ophthalmology,Dry eyes and AC rooms,How your body works
+363,2027-11-17,A,Physiology,How your stomach doesn't digest itself,Myth or fact / warning sign
+363,2027-11-17,B,General Medicine,Asthma is not contagious,How your body works
+364,2027-11-18,A,Biochemistry,Why dehydration gives headaches,Myth or fact / warning sign
+364,2027-11-18,B,General Surgery,Thyroid swelling: when to operate,How your body works
+365,2027-11-19,A,Pathology,Why ulcers aren't caused by spicy food,Myth or fact / warning sign
+365,2027-11-19,B,Obstetrics & Gynaecology,HPV vaccine for girls,How your body works
