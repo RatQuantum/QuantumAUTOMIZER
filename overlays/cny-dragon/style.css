@@ -1,14 +1,13 @@
 /* Golden Dragon bottom banner. Sizes come from CSS variables set in each HTML file. */
-:root{--red-d:#6E0A14;--red:#B3121F;--red-l:#D7262E;--gold-d:#9C6B12;--gold:#D4A017;--gold-l:#FFE08A}
+:root{--red-d:#2A0408;--red:#5A0A14;--red-l:#8E1B22;--gold-d:#8C6A2F;--gold:#C9A24E;--gold-l:#F6E6B4}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:var(--W);height:var(--H);background:transparent;overflow:hidden}
 .strip{position:absolute;left:0;right:0;bottom:0;height:var(--strip);
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60' viewBox='0 0 120 60'%3E%3Cg fill='none' stroke='%23F2C14E' stroke-width='2.2' stroke-linecap='round' opacity='.32'%3E%3Cpath d='M10 40c0-8 7-13 14-11 1-7 9-11 16-7 6-5 16-2 17 6 7 0 11 7 8 13'/%3E%3Cpath d='M30 40c0-5 5-8 9-6M50 34c4-2 8 1 8 5'/%3E%3Cpath d='M70 22c0-6 6-9 11-7 2-5 9-6 13-2 6-2 11 3 10 9'/%3E%3Cpath d='M84 22c1-3 5-4 7-2'/%3E%3C/g%3E%3C/svg%3E") repeat-x center/auto 70%,
-    linear-gradient(180deg,var(--red-l),var(--red) 45%,var(--red-d));
+    radial-gradient(120% 160% at 30% 20%,var(--red-l),var(--red) 45%,var(--red-d));
   border-top:calc(var(--strip)*.07) solid var(--gold);box-shadow:inset 0 calc(var(--strip)*.05) 0 var(--gold-l),inset 0 calc(var(--strip)*-.06) 0 var(--gold-d)}
 .strip::before{content:"";position:absolute;left:0;right:0;top:calc(var(--strip)*.14);height:2px;background:linear-gradient(90deg,transparent,var(--gold-l) 20%,var(--gold-l) 80%,transparent);opacity:.7}
-.strip::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 40%,rgba(255,232,150,.55) 50%,transparent 60%);
+.strip::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 40%,rgba(255,236,190,.10) 50%,transparent 60%);
   background-size:250% 100%;animation:sweep 7s linear infinite;mix-blend-mode:screen}
 @keyframes sweep{0%{background-position:150% 0}60%,100%{background-position:-50% 0}}
 /* lanterns at both ends */
@@ -25,3 +24,7 @@ html,body{width:var(--W);height:var(--H);background:transparent;overflow:hidden}
 .rat{position:absolute;left:24%;bottom:58%;height:calc(var(--dw)*.40);filter:drop-shadow(0 4px 4px rgba(0,0,0,.5))}
 .sparks i{position:absolute;bottom:calc(var(--strip)*.5);width:4px;height:4px;border-radius:50%;background:var(--gold-l);box-shadow:0 0 6px var(--gold);opacity:0;animation:rise 6s linear infinite}
 @keyframes rise{0%{opacity:0;transform:translateY(0)}15%{opacity:.9}100%{opacity:0;transform:translateY(calc(var(--strip)*-1.6))}}
+
+/* premium: no lanterns or sparks */
+.lantern,.sparks{display:none}
+.strip{border-top-width:2px;box-shadow:none}

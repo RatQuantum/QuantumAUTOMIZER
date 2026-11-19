@@ -1,23 +1,26 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Golden Dragon – vertical with webcam 1080x1920</title>
-<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="cam.css">
-<style>:root{--W:1080px;--H:1920px}</style></head><body>
-<!-- WEBCAM: x0 y0 1080x700 (crop your camera to fill)   GAMEPLAY: x0 y706 1080x608   BANNER: y1314-1554 -->
+<!doctype html><html><head><meta charset="utf-8"><title>Rat Premium – vertical with webcam 1080x1920</title>
+<link rel="stylesheet" href="premium.css"><style>:root{--W:1080px;--H:1920px}</style></head><body>
+<!-- WEBCAM: x0 y0 1080x700 · GAMEPLAY: x0 y700 1080x608 · BANNER: y1308-1548 · below left empty for the app UI -->
 <div class="slot" style="left:0;top:0;width:1080px;height:700px">WEBCAM 1080×700</div>
-<div class="slot" style="left:0;top:706px;width:1080px;height:608px">GAMEPLAY 1080×608</div>
-<div class="sep" style="top:700px"></div>
-<div class="sep" style="top:1314px"></div>
-<div class="banner" style="top:1320px;height:240px">
-  <div class="name" data-name style="left:34px">RAT</div>
-  <div class="pills" style="left:330px;right:auto;width:420px">
-    <div class="pill"><span class="upi">UPI</span><span data-upi></span></div>
-    <div class="pill"><i class="yt"></i><span data-yt></span></div>
+<div class="slot" style="left:0;top:700px;width:1080px;height:608px">GAMEPLAY 1080×608</div>
+<div class="banner" style="top:1308px;height:240px">
+  <svg class="ribbon" viewBox="0 0 1080 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs>
+<linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#7A5A22"/><stop offset=".3" stop-color="#E9D7A1"/><stop offset=".48" stop-color="#A47A32"/><stop offset=".7" stop-color="#F8E9B8"/><stop offset="1" stop-color="#8C6A2F"/></linearGradient>
+<linearGradient id="f" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset=".35" stop-color="#fff"/><stop offset="1" stop-color="#fff"/></linearGradient><mask id="m"><rect width="1080" height="240" fill="url(#f)"/></mask></defs>
+<g mask="url(#m)"><path d="M380 240 C560 210 700 150 820 70 C880 30 960 6 1080 0 L1080 22 C980 30 900 60 840 104 C720 190 590 232 470 240 Z" fill="url(#g)" opacity=".95"/>
+<path d="M300 240 C520 222 690 170 810 92 C890 40 980 18 1080 14" fill="none" stroke="url(#g)" stroke-width="1.4" opacity=".7"/>
+<path d="M520 240 C650 226 760 186 860 126 C930 86 1000 60 1080 52" fill="none" stroke="url(#g)" stroke-width="1" opacity=".5"/></g></svg>
+  <div class="name" data-name style="left:48px;top:62px;font-size:104px">RAT</div>
+  <div class="info" style="left:420px;top:44px;width:330px">
+    <div class="row"><small>UPI&nbsp;·&nbsp;GPay</small><span data-upi></span></div>
+    <div class="rule"></div>
+    <div class="row"><small><svg viewBox="0 0 18 13"><rect x=".6" y=".6" width="16.8" height="11.8" rx="3.2" fill="none" stroke="#E2C06A" stroke-width="1.2"/><path d="M7.2 3.8v5.4L11.8 6.5z" fill="#E2C06A"/></svg> YouTube</small><span data-yt></span></div>
   </div>
 </div>
-<div class="coil" style="--cw:290px;--rh:190px;right:6px;top:1272px">
+<div class="coil" style="--cw:280px;--rh:185px;right:10px;top:1270px">
   <div class="body"><img src="dragon-coil.png" alt=""><div class="shine"></div></div>
   <video class="rat" src="rat.webm" autoplay loop muted playsinline></video>
 </div>
-<!-- y1566-1920 left empty: YouTube/TikTok put their buttons and chat there -->
 <script src="config.js"></script>
 <script>if(/guides=1/.test(location.search))document.body.classList.add('guides')</script>
 </body></html>

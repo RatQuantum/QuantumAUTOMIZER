@@ -1,0 +1,36 @@
+/* Premium burgundy + metallic gold. Fonts: Cinzel (name), Cormorant Garamond (values), Montserrat (labels) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600&display=swap');
+:root{
+  --bordeaux:#2A0408; --mahogany:#5A0A14; --carriage:#8E1B22; --ivory:#F6E9D2;
+  --gold:linear-gradient(180deg,#FBEFC4 0%,#E2C06A 28%,#A47A32 52%,#EAD08C 72%,#B68C3C 100%);
+  --gold-h:linear-gradient(90deg,#8C6A2F,#E9D7A1 30%,#B8893B 55%,#F6E6B4 75%,#9A7432);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:var(--W);height:var(--H);background:transparent;overflow:hidden}
+.slot{display:none;position:absolute;align-items:center;justify-content:center;font:600 30px Montserrat;color:#fff8;background:repeating-linear-gradient(45deg,#ffffff10 0 16px,transparent 16px 32px)}
+.guides .slot{display:flex}
+/* banner */
+.banner{position:absolute;left:0;right:0;overflow:hidden;
+  background:
+    linear-gradient(118deg,transparent 30%,rgba(255,220,200,.07) 42%,transparent 54%),
+    radial-gradient(120% 140% at 28% 30%,var(--carriage) 0%,var(--mahogany) 42%,var(--bordeaux) 100%)}
+.banner::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--gold-h)}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 45%,rgba(255,236,190,.10) 50%,transparent 55%);background-size:260% 100%;animation:sheen 9s ease-in-out infinite}
+@keyframes sheen{0%{background-position:130% 0}55%,100%{background-position:-30% 0}}
+.ribbon{position:absolute;inset:0;width:100%;height:100%}
+.name{position:absolute;font-family:Cinzel,serif;font-weight:600;letter-spacing:.16em;line-height:1;
+  background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 2px rgba(0,0,0,.55))}
+.info{position:absolute;display:flex;flex-direction:column;gap:12px}
+.row small{display:flex;align-items:center;gap:10px;font:600 13px/1 Montserrat;letter-spacing:.34em;text-transform:uppercase;
+  background:var(--gold-h);-webkit-background-clip:text;background-clip:text;color:transparent}
+.row small svg{width:18px;height:13px;flex:none}
+.row span{display:block;margin-top:6px;font:600 31px/1.05 'Cormorant Garamond',serif;color:var(--ivory);letter-spacing:.02em;white-space:nowrap;text-shadow:0 2px 3px rgba(0,0,0,.5)}
+.rule{height:1px;width:100%;background:linear-gradient(90deg,rgba(226,192,106,.9),rgba(226,192,106,0))}
+/* coiled dragon + Rat */
+.coil{position:absolute;width:var(--cw);aspect-ratio:600/625;animation:sway 7s ease-in-out infinite;transform-origin:50% 90%}
+.coil .body{position:absolute;inset:0;filter:drop-shadow(0 0 14px rgba(232,190,100,.35)) drop-shadow(0 8px 8px rgba(0,0,0,.55))}
+.coil .body img{width:100%;height:100%;display:block}
+.coil .shine{position:absolute;inset:0;-webkit-mask:url(dragon-coil.png) center/100% 100%;mask:url(dragon-coil.png) center/100% 100%;
+  background:linear-gradient(115deg,transparent 42%,rgba(255,246,214,.55) 50%,transparent 58%);background-size:300% 100%;animation:sheen 6s ease-in-out infinite;mix-blend-mode:screen}
+.coil .rat{position:absolute;left:calc(var(--cw)*.40 - var(--rh)*.30);bottom:94%;height:var(--rh);filter:drop-shadow(0 5px 5px rgba(0,0,0,.5))}
+@keyframes sway{0%,100%{transform:rotate(-1deg) translateY(0)}50%{transform:rotate(1deg) translateY(-5px)}}
