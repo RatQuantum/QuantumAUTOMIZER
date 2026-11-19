@@ -35,3 +35,11 @@ Coiled dragon (`dragon-coil.png`): made with SDXL + SDXL-Lightning (OpenRAIL++) 
 - `coil.js`: the coiled dragon's body slithers around the ring (head and top stay still so the Rat keeps its footing).
 - The Rat plays its own loop and hops every 7 s.
 Preview videos: `preview-horizontal-cam.mp4`, `preview-vertical-cam.mp4`.
+
+## Green-screen version
+- Ready-made 20 s seamless loops (H.264, 30 fps, solid #00FF00 background):
+  `greenscreen/rat-banner-horizontal-greenscreen.mp4` (1920×1080) and `greenscreen/rat-banner-vertical-greenscreen.mp4` (1080×1920).
+  In Streamlabs: add as **Media Source** with **Loop** ticked, then **Filters → + → Chroma Key** (Key Color Type: Green).
+  Keep **Spill Reduction** low (about 30–50), or the Rat's dark green suit turns bluish.
+- Or use the live HTML pages on green: set `GREEN_SCREEN = true` in `config.js` (or add `?green=1` to the file address).
+- Every character has its own entrance, idle motion, pop-out and exit (generated in `text-anim.js`); all motion loops on 20 s.
