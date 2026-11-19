@@ -6,6 +6,12 @@ Newest first. When a new lesson contradicts an old one, our own data wins over a
 
 ---
 
+## KB-12 · The beat-sync "edit" (owner sent, Nov 19)
+
+A 14.6 s fan edit: an icon intro, then **27 cuts** (one every ~0.5 s, often 2-3 in 0.3 s) on the beats of a song, with RGB/chromatic glitch, flash frames, diagonal wipes, zoom punches and neon outline frames. No words.
+- **→ For us:** **one edit a week on each account** (temple and Krishnaa Clinic), from that week's best hero shots, re-rendered clean (no subtitles). Engine: `tools/reel-kit/edit/make_edit.py` (cuts from the song's beat grid, cuts under 0.22 s merged, six rotating effects, the handle in the last 2 s).
+- **→ For us:** the owner chose the song from their reference video. It stays in the scratchpad, never committed; if Instagram mutes it, they add the same sound in-app.
+
 ## KB-11 · Owner feedback on the clinic test + the monster video again (Nov 19)
 
 "Just text makes me want to scroll to the next reel in 1 second. It has to be more entertaining than educational." The gold-on-dark text explainer failed the owner's own scroll test.

@@ -37,3 +37,6 @@ Subjects rotate every day (no subject twice in a row) and a topic's two angles l
 
 ## Doctor review
 Every script goes to the owner first (a `script.md` in each reel folder). Only reviewed reels get rendered and posted.
+
+## Weekly edit (every Sunday, both accounts)
+A ~15 s beat-sync "edit" of the week's best hero shots (KB-12): clean re-renders without subtitles, cut on the song's beats with punch zooms, RGB glitch, flashes, neon outlines, shake and negative hits. `tools/reel-kit/edit/make_edit.py`. The song stays out of the repo; if Instagram mutes it, add the same sound from its audio library.
