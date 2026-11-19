@@ -53,16 +53,23 @@ export function direct(cfg) {
     if (ci >= 0) { const ch = CH[ci], next = CH[ci + 1], lastEnd = W[ch[ch.length - 1]][1]; if (t < (next ? W[next[0]][0] : lastEnd + 0.6)) html = ch.map((i) => { const w = W[i], clean = w[2].replace(/[^A-Za-z'-]/g, '').toLowerCase(); const on = t >= w[0] - 0.03 && KEY.has(clean); return `<span class="${on ? 'y' : ''}">${w[2].replace(/[.,:]$/, '')}</span>`; }).join(' '); }
     if (html !== lastCap) { capEl.innerHTML = html; lastCap = html; }
     if (ci >= 0) capEl.style.transform = `scale(${1 + 0.16 * Math.exp(-Math.max(0, t - W[CH[ci][0]][0]) * 13)})`;
-    titleEl.style.opacity = t < cfg.title ? 1 : 0;
-    qEl.style.opacity = t >= cfg.q[0] && t < cfg.q[1] ? 1 : 0;
-    qEl.style.transform = `translateY(${Math.sin(t * 4) * 8}px) rotate(${Math.sin(t * 3) * 6}deg)`;
-    ctaEl.style.opacity = t >= cfg.cta ? 1 : 0;
-    ctaEl.style.transform = `scale(${t >= cfg.cta ? 1 + 0.08 * Math.exp(-(t - cfg.cta) * 6) : 0.9})`;
+    // KB-10 easing per moment: hooks/CTAs rebound in (back-out), pop-ups quad-out, text leaves quad-in
+    const BO = (k) => { k = clamp(k); const c = 1.70158; return 1 + (c + 1) * Math.pow(k - 1, 3) + c * Math.pow(k - 1, 2); };
+    const QO = (k) => { k = clamp(k); return 1 - (1 - k) * (1 - k); }, QI = (k) => { k = clamp(k); return k * k; };
+    const tOut = QI((t - (cfg.title - 0.25)) / 0.25);
+    titleEl.style.opacity = t < cfg.title ? 1 - tOut : 0;
+    titleEl.style.transform = `scale(${(0.82 + 0.18 * BO(t / 0.45)) * (1 - 0.15 * tOut)})`;
+    const qa = cfg.q[0], qb = cfg.q[1], qIn = QO((t - qa) / 0.3), qOut = QI((t - (qb - 0.2)) / 0.2);
+    qEl.style.opacity = t >= qa && t < qb ? qIn * (1 - qOut) : 0;
+    qEl.style.transform = `translateY(${Math.sin(t * 4) * 8}px) rotate(${Math.sin(t * 3) * 6}deg) scale(${0.5 + 0.5 * qIn})`;
+    ctaEl.style.opacity = t >= cfg.cta ? QO((t - cfg.cta) / 0.2) : 0;
+    ctaEl.style.transform = `scale(${t >= cfg.cta ? 0.4 + 0.6 * BO((t - cfg.cta) / 0.5) : 0.4})`;
     const lt = cfg.loc ? cfg.loc(t) : '';
-    if (locEl.textContent !== lt) locEl.textContent = lt; locEl.style.opacity = lt ? 1 : 0;
+    if (locEl.textContent !== lt) locEl.textContent = lt;
+    if (lt) { let s0 = t; for (let i = 1; i <= 8 && cfg.loc(t - i * 0.05) === lt; i++) s0 = t - i * 0.05; const out = cfg.loc(t + 0.25) !== lt ? QI(1 - (() => { let e = 0; for (let i = 1; i <= 5 && cfg.loc(t + i * 0.05) === lt; i++) e = i * 0.05; return e / 0.25; })()) : 0; const k = QO((t - s0) / 0.35); locEl.style.opacity = k * (1 - out); locEl.style.transform = `translateX(${(1 - k) * -60}px)`; } else locEl.style.opacity = 0;
     if (progEls) { const [a, b] = cfg.prog, ends = [0, a, b, cfg.cta]; progEls.forEach((el, i) => { el.style.width = (clamp((t - ends[i]) / (ends[i + 1] - ends[i])) * 100).toFixed(1) + '%'; }); progBox.style.opacity = t < cfg.title ? 0 : 1; }
-    const followEl = document.getElementById('follow'); if (followEl) { const on = t >= cfg.cta + 0.3; followEl.style.opacity = on ? 1 : 0; followEl.style.transform = `translateY(${on ? 40 * Math.exp(-(t - cfg.cta - 0.3) * 8) : 40}px)`; }
-    if (pinEl) { const on = t >= cfg.pin && t < cfg.cta; pinEl.style.opacity = on ? 1 : 0; pinEl.style.transform = `scale(${on ? 1 + 0.06 * Math.exp(-(t - cfg.pin) * 6) : 0.9})`; }
+    const followEl = document.getElementById('follow'); if (followEl) { const on = t >= cfg.cta + 0.3; followEl.style.opacity = on ? QO((t - cfg.cta - 0.3) / 0.2) : 0; followEl.style.transform = `translateY(${on ? 60 * (1 - BO((t - cfg.cta - 0.3) / 0.5)) : 60}px)`; }
+    if (pinEl) { const on = t >= cfg.pin && t < cfg.cta; pinEl.style.opacity = on ? QO((t - cfg.pin) / 0.25) * (1 - QI((t - (cfg.cta - 0.2)) / 0.2)) : 0; pinEl.style.transform = `scale(${on ? 0.6 + 0.4 * BO((t - cfg.pin) / 0.5) : 0.6})`; }
   }
   function renderAt(t) {
     window.__T = t;
