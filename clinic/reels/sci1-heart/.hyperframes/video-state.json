@@ -418,5 +418,18 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "bf54bb92-4734-4467-b6ae-b85a1b51b895",
+      "completedAt": 1795091338023,
+      "output": "/home/user/QuantumAUTOMIZER/clinic/reels/sci1-heart/renders/sci1-heart_2026-11-19_12-25-39.mp4",
+      "status": "completed",
+      "revision": "ab531930-4d20-4a70-8e0c-14745594e610"
+    },
+    "retainedRevisions": [
+      "ab531930-4d20-4a70-8e0c-14745594e610"
+    ]
+  },
+  "pendingArtifactCleanup": []
 }

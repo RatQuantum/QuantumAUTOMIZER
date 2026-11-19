@@ -6,6 +6,19 @@ Newest first. When a new lesson contradicts an old one, our own data wins over a
 
 ---
 
+## KB-14 · POV disaster choice series + "the harness" (owner sent, Nov 19)
+
+**1. The format (4 videos, 31M+ views, 18.8M on one):** a first-person disaster story that ends on a choice ("boat or helicopter?"). Comments push every video; the cliffhanger makes people follow.
+- **True POV:** your two arms always visible in the bottom corners (reach, grab, point, shield); a 100° lens; head bob, panic sway, hard shakes on impact, whip pans; look up and down a lot.
+- **Cut every 1.2-2.2 s,** one action and one line per shot. Lines of 1-4 words, **shouted**; the friend's name said twice; **one planted mystery** ("Is that really Jay?").
+- **Beats:** 0-2 s mid-panic + HUD + red "YOU CHOSE X" badge · 2-12 s the plan works, then fails · 12-22 s trapped, the audio muffles, 0.5 s of silence · 22-34 s you surface, someone calls your name, a new threat, "One pass!" · 34-40 s cliffhanger, cut to black · 40-45 s a choice card for 3 s+.
+- **Text:** a HUD at top-left ("[PLACE] · [TIME]" + the series and part in yellow); captions at 72% height, one colour per speaker. End card "WHAT WOULD YOU DO?", blue and red buttons, "Comment below ↓".
+- **Audio:** 2-3 shouted voices, panting, impacts, a heartbeat while muffled; **only a tense drone** until the end-card swell.
+**→ For us:** Arjuna's Charioteer from Part 4 is POV (you are Ishan). storykit `pov: {sleeve, skin, colors}`, `pov:x,y,z,tx,ty,tz[,dx,dy,dz]` shots (100° FOV), per-scene `arms` (grip, reach, up, point, shield, down, fall), `panic`, `roll`, `noArms`; voice_build takes per-line voices `[id, line, mood, voice, speed, pause]` and writes `lines.json` for the speaker colours; `ep/pov_bed.py` makes the drone, SFX, muffle and swell.
+
+**2. "Good vs bad AI animation: the harness":** the same scene from a bad prompt vs a good one. The good one runs: a structured prompt (concept · beats · rules · assets · review) → a /motion-director skill → **house rules** (anticipation, arcs, overlap, squash and stretch, hit-stop) + tokens + rig/VFX → the renderer (deterministic, every value a function of the frame) → per-frame checks.
+**→ For us:** this is our pipeline (spec → storykit/sci → HyperFrames → snapshot + retention brain + earshot). House rules to keep adding: an anticipation pose before big actions, hit-stop (2-3 held frames) on impacts, overlap on hair and garlands.
+
 ## KB-13 · "Real science of a superpower" explainer (owner sent, Nov 19)
 
 58 s, gold-on-dark vector art. One shocking claim (a character turns into a black hole), then a **rising ladder of comparisons** (60 kg → car → blue whale → the Moon → Earth → a black hole), rolling counters ("922,184,710 kg"), formula chips (MASS × SPEED), and a **twist ending** that reframes the claim ("her final move wasn't a punch, it was a star"). Captions sit at the top in 2-4 word chunks with one bold key word. The narration is calm and confident; earshot hears "confident, cool" funk-electronic music with a bass groove under it (-14.2 LUFS, ~4.9 onsets/s).

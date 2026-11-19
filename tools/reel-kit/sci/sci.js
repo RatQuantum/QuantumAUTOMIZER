@@ -56,22 +56,26 @@ export function run(SPEC, WORDS, DURATION) {
     else if (b.kind === 'end') el.innerHTML = `<div class="hd">${b.handle}</div><div class="fo">FOLLOW</div>` + (b.sub ? `<div class="ts">${b.sub}</div>` : '');
     stage.appendChild(el); b.el = el;
   });
+  const P = []; for (let i = 0; i < 46; i++) { const d = document.createElement('i'); d.className = 'pt'; stage.parentElement.insertBefore(d, stage); P.push([d, (i * 7919 % 1000) / 1000, (i * 104729 % 1000) / 1000, 0.4 + (i % 5) * 0.25]); }
+  const FL = document.createElement('div'); FL.id = 'flash'; stage.parentElement.appendChild(FL);
   const fmt = (v) => Math.round(v).toLocaleString('en-US');
   let lastCap = '';
   function renderAt(t) {
-    document.getElementById('bg').style.transform = `scale(${1.05 + 0.04 * Math.sin(t * 0.25)}) translateY(${-t * 0.8}px)`;
+    document.getElementById('bg').style.transform = `scale(${1.08 + 0.05 * Math.sin(t * 0.6)}) translate(${Math.sin(t * 0.4) * 30}px, ${(-t * 26) % 60}px)`;
+    P.forEach(([d, x, y, sp]) => { const yy = ((y - t * 0.03 * sp) % 1 + 1) % 1; d.style.transform = `translate(${x * 1080 + Math.sin(t * sp + x * 9) * 40}px, ${yy * 1920}px)`; d.style.opacity = 0.25 + 0.5 * Math.abs(Math.sin(t * sp * 2 + y * 7)); });
+    let fl = 0; B.forEach((b) => { const k = t - b.t; if (k >= 0 && k < 0.12 && b.t > 0.1) fl = 0.35 * (1 - k / 0.12); }); FL.style.opacity = fl;
     B.forEach((b, i) => {
       const on = t >= b.t && t < b.end, k = t - b.t, out = QI((t - (b.end - 0.2)) / 0.2), el = b.el;
       if (!on) { el.style.opacity = 0; return; }
       el.style.opacity = QO(k / 0.22) * (1 - out);
-      if (b.kind === 'portrait') { el.style.transform = `scale(${(0.9 + 0.1 * BO(k / 0.5)) * (1 + 0.012 * k)})`; const n = document.getElementById('n' + i); if (n) n.textContent = fmt(b.from + (b.to - b.from) * (1 - Math.pow(1 - clamp(k / Math.max(0.6, b.end - b.t - 0.4)), 3))) + ' ' + (b.unit || ''); return; }
-      if (b.kind === 'ladder') { let shown = 0; b.items.forEach((it, j) => { const e = document.getElementById(`it${i}_${j}`), kk = t - it.t; const vis = kk >= 0; if (vis) shown = j + 1; e.style.opacity = vis ? QO(kk / 0.25) : 0; e.style.transform = `translateY(${vis ? 80 * (1 - BO(kk / 0.45)) : 80}px)`; e.style.display = vis || j === 0 ? 'block' : 'none'; });
+      if (b.kind === 'portrait') { el.style.transform = `scale(${(0.9 + 0.1 * BO(k / 0.5)) * (1 + 0.04 * k)}) translateY(${Math.sin(t * 2.4) * 14}px)`; const n = document.getElementById('n' + i); if (n) n.textContent = fmt(b.from + (b.to - b.from) * (1 - Math.pow(1 - clamp(k / Math.max(0.6, b.end - b.t - 0.4)), 3))) + ' ' + (b.unit || ''); return; }
+      if (b.kind === 'ladder') { let shown = 0; b.items.forEach((it, j) => { const e = document.getElementById(`it${i}_${j}`), kk = t - it.t; const vis = kk >= 0; if (vis) shown = j + 1; e.style.opacity = vis ? QO(kk / 0.25) : 0; e.style.transform = `translateY(${vis ? 80 * (1 - BO(kk / 0.45)) + Math.sin(t * 3 + j) * 10 : 80}px)`; e.style.display = vis || j === 0 ? 'block' : 'none'; });
         // zoom out so every visible item fits 900 px (the "camera pulls back" beat of the reference)
         const tot = b.items.slice(0, Math.max(1, shown)).reduce((s, it) => s + it.h + 70, 0), target = Math.min(2.4, 900 / tot), row = document.getElementById('row' + i);
         row.dataset.z = row.dataset.z ? +row.dataset.z + (target - +row.dataset.z) * 0.18 : target; row.style.transform = `scale(${target})`; return; }
       if (b.kind === 'space') { el.querySelector('.sp').style.transform = `scale(${0.6 + 0.4 * BO(k / 0.6) + 0.03 * k}) rotate(${k * 4}deg)`; el.querySelector('.grid').style.transform = `perspective(900px) rotateX(58deg) scale(${1.4 + 0.05 * k})`; return; }
       if (b.kind === 'eq') { [...el.children].forEach((c, j) => { const kk = QO((k - j * 0.18) / 0.3); c.style.opacity = kk; c.style.transform = `scale(${0.5 + 0.5 * BO((k - j * 0.18) / 0.45)})`; }); return; }
-      el.style.transform = `scale(${(0.55 + 0.45 * BO(k / 0.5)) * (1 + 0.015 * k)})`;
+      el.style.transform = `scale(${(0.55 + 0.45 * BO(k / 0.5)) * (1 + 0.045 * k)}) rotate(${Math.sin(t * 1.3) * 1.5}deg) translateY(${Math.sin(t * 2.2) * 12}px)`;
     });
     // top captions: 2-4 word chunks, one bold key word (reference style)
     let ci = -1; for (let i = 0; i < CH.length; i++) if (t >= W[CH[i][0]][0] - 0.05) ci = i;

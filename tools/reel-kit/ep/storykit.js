@@ -125,6 +125,7 @@ export function run(spec, WORDS, DURATION) {
     if (k === 'crane') { const p = pick(arg); return [[[p.x, 0.7, p.z + 4.6], [p.x, p.y + p.h * 0.7, p.z]], [[p.x + 0.3, p.y + 3.2, p.z + 6.2], [p.x, p.y + p.h * 0.6, p.z]], 50, { move: 'crane', lift: 1.0 }]; }
     if (k === 'pull') { const p = pick(arg); return [[[p.x, p.y + p.h * 0.8, p.z + 2.8], [p.x, p.y + p.h * 0.75, p.z]], [[ox, 4.5, 12], [ox, 1.0, -1]], 50, { move: 'pull' }]; }
     if (k === 'at') { const [x, y, z] = arg.split(',').map(Number); return [[[ox + 0.4, 1.6, 5.5], [ox + x, y, z]], [[ox + 0.3, 1.5, 5.0], [ox + x, y, z]]]; }
+    if (k === 'pov') { const v = arg.split(',').map(Number); const [x, y, z, tx, ty, tz] = v, dx = (tx - x) * 0.06, dz = (tz - z) * 0.06; return [[[ox + x, y, z], [ox + tx, ty, tz]], [[ox + x + dx, y + (v[6] || 0), z + dz], [ox + tx + (v[7] || 0), ty + (v[8] || 0), tz]], 100]; }
     if (k === 'top') return [[[ox, 11, 5], [ox, 0, -0.5]], [[ox, 9.5, 4], [ox, 0, -0.5]]];
     if (k === 'sky') { const p = pick(arg); return [[[p.x, 1.2, p.z + 5.5], [p.x + (+arg2(kind) || 0), 5.5, p.z - 6]], [[p.x, 1.2, p.z + 5], [p.x, 6, p.z - 6]]]; }
     const land = k === 'land'; return [[[ox, land ? 4 : 3.0, land ? 11 : 9.0], [ox, 1.3, -1.2]], [[ox, 2.3, land ? 6.6 : 7.8], [ox, 1.3, -1.0]], 50, land ? { move: 'land' } : undefined];
@@ -132,6 +133,16 @@ export function run(spec, WORDS, DURATION) {
   const arg2 = () => 0;
   ALL.forEach((sc, i) => { const t0 = sc.t, t1 = i + 1 < ALL.length ? ALL[i + 1].t : DURATION + 0.1; const shots = sc.loop ? [sc.shots[0]] : sc.shots || ['wide']; const span = (t1 - t0) / shots.length;
     shots.forEach((kind, j) => { const [a, b, fov, opt] = framing(sc, kind); SHOTS.push([t0 + j * span, t0 + (j + 1) * span, G, a, b, fov || 50, opt]); }); });
+  // ---- POV mode (KB-14): your own arms in the bottom corners, head bob, panic sway, per-speaker caption colours
+  let povTick = () => {};
+  if (spec.pov) { const host = document.getElementById('stage') || document.body, st = document.createElement('style');
+    st.textContent = `.arm{position:absolute;bottom:-160px;width:180px;height:620px;border-radius:90px 90px 30px 30px;background:linear-gradient(${spec.pov.sleeve || '#e8a020'} 0 0) bottom/100% 46% no-repeat,${spec.pov.skin || '#c98a5e'};border:9px solid #16121c;transform-origin:50% 100%;z-index:5}.arm i{position:absolute;left:8px;top:-56px;width:150px;height:130px;border-radius:50%;background:${spec.pov.skin || '#c98a5e'};border:9px solid #16121c}.arm b{position:absolute;left:112px;top:-30px;width:60px;height:54px;border-radius:50%;background:${spec.pov.skin || '#c98a5e'};border:8px solid #16121c}#armR b{left:-8px}#cap{z-index:9!important;position:absolute}`;
+    document.head.appendChild(st); const L = document.createElement('div'), Rr = document.createElement('div'); L.id = 'armL'; Rr.id = 'armR'; L.className = Rr.className = 'arm'; L.innerHTML = Rr.innerHTML = '<i></i><b></b>'; host.appendChild(L); host.appendChild(Rr);
+    const POSE = { grip: [[20, 1500, -14], [880, 1500, 14]], reach: [[170, 1180, 10], [730, 1180, -10]], up: [[40, 1020, 20], [860, 1020, -20]], point: [[20, 1620, -20], [700, 1260, -26]], shield: [[60, 1060, 28], [840, 1060, -28]], down: [[0, 1950, -30], [900, 1950, 30]], fall: [[-80, 1150, -55], [960, 1060, 60]] };
+    povTick = (t) => { const sc = sceneAt(t), k = clamp((t - sc.t) / 0.28), pz = POSE[sc.arms || 'grip'], prv = POSE[(ALL[ALL.indexOf(sc) - 1] || sc).arms || 'grip'], e = 1 - Math.pow(1 - k, 3), pan = sc.panic ? 1 : 0.4;
+      [[L, 0], [Rr, 1]].forEach(([el, j]) => { const a = prv[j], b = pz[j], bob = Math.sin(t * 9 + j * 2) * 14 * pan; el.style.left = (a[0] + (b[0] - a[0]) * e) + 'px'; el.style.top = (a[1] + (b[1] - a[1]) * e + bob) + 'px'; el.style.transform = `rotate(${a[2] + (b[2] - a[2]) * e + Math.sin(t * 7 + j) * 3 * pan}deg)`; el.style.display = sc.noArms ? 'none' : 'block'; });
+      camera.position.y += Math.sin(t * 8.5) * 0.03 * pan; camera.position.x += Math.sin(t * 4.1) * 0.035 * pan; camera.rotation.z += Math.sin(t * 3.3) * 0.02 * pan + (sc.roll || 0) * k;
+      if (spec.lines) { const ln = spec.lines.find((l) => t >= l[0] - 0.05 && t < l[1] + 0.25); const cap = document.getElementById('cap'); if (cap && ln) cap.style.color = (spec.pov.colors || {})[ln[3]] || '#ffffff'; } }; }
   // ---- choice cards (series)
   let tickCards = () => {};
   if (spec.choice) { const ch = spec.choice, host = document.getElementById('cta').parentElement;
@@ -145,5 +156,5 @@ export function run(spec, WORDS, DURATION) {
   const upd0 = update; const updateAll = (s, t) => { upd0(s, t); tickCards(s); };
   // ---- go
   direct({ stage, WORDS, DURATION, shots: SHOTS, update: updateAll, title: 1.4, q: [E.wait, E.wait + 1.4], cta: spec.choice ? DURATION + 5 : E.comment, prog: [E.but || E.wait - 4, E.thats || E.comment - 4], pin: E.wait,
-    key: spec.key, one: !!spec.one, red: spec.red, loc: (t) => { for (const [w, label, w2] of spec.loc || []) { const a = at(w), b = w2 ? at(w2) : a + 3; if (a != null && t >= a - 0.05 && t < b) return label; } return ''; }, shakes: (spec.shakes || []).map(at).filter((v) => v != null), tick: () => {} });
+    key: spec.key, one: !!spec.one, red: spec.red, loc: (t) => { for (const [w, label, w2] of spec.loc || []) { const a = at(w), b = w2 ? at(w2) : a + 3; if (a != null && t >= a - 0.05 && t < b) return label; } return ''; }, shakes: (spec.shakes || []).map(at).filter((v) => v != null), tick: (t) => povTick(t) });
 }
