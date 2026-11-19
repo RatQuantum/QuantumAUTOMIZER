@@ -303,5 +303,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "fe8367c5-a274-40ca-af20-b394ddd9ac9d",
+      "completedAt": 1795084523057,
+      "output": "/home/user/QuantumAUTOMIZER/clinic/reels/d001a/renders/d001a_2026-11-19_10-33-10.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }
