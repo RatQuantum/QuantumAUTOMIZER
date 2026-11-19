@@ -3,7 +3,7 @@
 (function(){
   const holder=document.querySelector('.dragon'); const img=holder.querySelector('img');
   const cv=document.createElement('canvas'); holder.appendChild(cv); img.style.visibility='hidden';
-  const ctx=cv.getContext('2d'); const rat=document.querySelector('.rat'); const SL=3;            // slice width in source pixels
+  const ctx=cv.getContext('2d'); const rat=window.RAT_FOLLOWS_WAVE===false?null:document.querySelector('.rat'); const SL=3;            // slice width in source pixels
   function start(){
     const W=img.naturalWidth, H=img.naturalHeight, pad=Math.round(H*0.08);
     cv.width=W; cv.height=H+pad*2; cv.style.cssText=`position:absolute;left:0;top:${-pad/H*100}%;width:100%;height:${(H+pad*2)/H*100}%`;

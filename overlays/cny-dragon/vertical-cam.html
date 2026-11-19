@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Golden Dragon – vertical with webcam 1080x1920</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="cam.css">
+<style>:root{--W:1080px;--H:1920px}</style></head><body>
+<!-- WEBCAM: x0 y0 1080x700 (crop your camera to fill)   GAMEPLAY: x0 y706 1080x608   BANNER: y1314-1554 -->
+<div class="slot" style="left:0;top:0;width:1080px;height:700px">WEBCAM 1080×700</div>
+<div class="slot" style="left:0;top:706px;width:1080px;height:608px">GAMEPLAY 1080×608</div>
+<div class="sep" style="top:700px"></div>
+<div class="sep" style="top:1314px"></div>
+<div class="banner" style="top:1320px;height:240px">
+  <div class="name" data-name style="left:34px">RAT</div>
+  <div class="pills" style="left:330px;right:auto;width:420px">
+    <div class="pill"><span class="upi">UPI</span><span data-upi></span></div>
+    <div class="pill"><i class="yt"></i><span data-yt></span></div>
+  </div>
+</div>
+<div class="coil" style="--cw:290px;--rh:190px;right:6px;top:1272px">
+  <div class="body"><img src="dragon-coil.png" alt=""><div class="shine"></div></div>
+  <video class="rat" src="rat.webm" autoplay loop muted playsinline></video>
+</div>
+<!-- y1566-1920 left empty: YouTube/TikTok put their buttons and chat there -->
+<script src="config.js"></script>
+<script>if(/guides=1/.test(location.search))document.body.classList.add('guides')</script>
+</body></html>
