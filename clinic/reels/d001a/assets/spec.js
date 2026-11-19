@@ -1,0 +1,17 @@
+export const SPEC = {"seed": 11, "one": true, "red": ["middle", "never"],
+ "sets": {"cl": "clinic", "bd": "body", "bd2": "body"},
+ "cast": {"dr": "doctor", "pm": "patientM", "pf": "patientF"},
+ "props": ["heart@bd:0,2.0,-0.8:1.1", "heart@bd2:1.5,2.0,-0.8:1.1", "monitor@cl:-2.4,1.6,-2.1"],
+ "scenes": [
+  {"set": "cl", "actors": [["pm", 0.6, 0.8, {"mood": "wow", "arm": "point"}], ["dr", -1.6, 0.0, {"mood": "wow"}]], "shots": ["dolly:pm", "close:dr", "close:pm"]},
+  {"at": "stay", "set": "cl", "actors": [["dr", -1.6, 0.0, {"mood": "smug", "arm": "offer"}], ["pm", 0.6, 0.8, {"mood": "sad", "arm": "point"}]], "shots": ["close:dr", "two:dr,pm"]},
+  {"at": "asked", "set": "cl", "actors": [["dr", -1.6, 0.0, {"mood": "normal", "arm": "point"}], ["pm", 0.6, 0.8, {"mood": "smug", "arm": "point"}]], "shots": ["close:dr", "close:pm", "two:dr,pm"]},
+  {"at": "showed", "set": "bd", "actors": [["dr", 2.1, 0.8, {"mood": "happy", "arm": "point", "flip": true}]], "shots": ["at:0,2.1,-0.8", "close:dr", "at:-0.3,1.6,-0.8"]},
+  {"at": "but", "set": "bd", "actors": [["pm", 2.1, 0.8, {"mood": "wow", "flip": true}]], "shots": ["close:pm", "at:-0.5,1.3,-0.8"]},
+  {"at": "wait", "set": "bd2", "actors": [["pf", -1.4, 0.8, {"mood": "wow", "arm": "up"}]], "shots": ["at:1.5,2.1,-0.8", "close:pf"], "fx": ["flash"]},
+  {"at": "his", "set": "cl", "actors": [["dr", -1.2, -0.6, {"mood": "happy", "arm": "offer"}], ["pm", 0.6, 0.8, {"mood": "happy"}]], "shots": ["at:-2.4,1.6,-2.1", "two:dr,pm"]},
+  {"at": "never", "set": "cl", "actors": [["dr", -1.2, -0.6, {"mood": "sad", "arm": "point"}]], "shots": ["dolly:dr"]},
+  {"at": "collapses", "set": "cl", "actors": [["pm", 0.4, 0.9, {"mood": "closed", "tilt": 1.5, "y": 0.2}], ["dr", -0.7, 0.9, {"mood": "sad", "arm": "offer"}]], "shots": ["two:dr,pm", "top", "close:dr"], "fx": ["flash"]}],
+ "wait": "wait", "but": "but", "thats": "that's", "comment": "follow",
+ "loc": [["showed", "📍 INSIDE YOUR CHEST"], ["wait", "1 IN 12,000"]],
+ "shakes": ["failing", "collapses"], "key": []};

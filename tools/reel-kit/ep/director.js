@@ -47,12 +47,26 @@ export function direct(cfg) {
   const capEl = document.getElementById('cap'), titleEl = document.getElementById('title'), qEl = document.getElementById('q'), ctaEl = document.getElementById('cta'), locEl = document.getElementById('loc');
   let lastCap = '';
   const progBox = document.getElementById('prog'), progEls = cfg.prog && progBox ? [...progBox.querySelectorAll('.bar i')] : null, pinEl = cfg.pin != null ? document.getElementById('pin') : null;
+  const RED = new Set((cfg.red || []).map((w) => w.toLowerCase()));
+  if (cfg.one) { const st = document.createElement('style'); st.textContent = '#cap{font-size:118px!important;color:#f4ff3a!important;letter-spacing:1px}#cap .y{color:#f4ff3a!important}#cap .r{color:#ff3b3b!important}'; document.head.appendChild(st); }
   function captions(t) {
+    if (cfg.one) { // monster-video style: one big word at a time, red on the emphasis words
+      let wi = -1; for (let i = 0; i < W.length; i++) if (t >= W[i][0] - 0.04) wi = i;
+      const w = wi >= 0 && t < Math.max(W[wi][1] + 0.35, (W[wi + 1] || [Infinity])[0]) ? W[wi] : null;
+      const clean = w ? w[2].replace(/[^A-Za-z0-9'%-]/g, '').toLowerCase() : '';
+      const html = w ? `<span class="${RED.has(clean) ? 'r' : ''}">${w[2].replace(/[.,:;!?]+$/, '')}</span>` : '';
+      if (html !== lastCap) { capEl.innerHTML = html; lastCap = html; }
+      if (w) capEl.style.transform = `scale(${0.7 + 0.3 * (1 - Math.pow(1 - clamp((t - w[0]) / 0.12), 3)) + 0.08 * Math.exp(-Math.max(0, t - w[0]) * 10)})`;
+      overlays(t); return;
+    }
     let ci = -1; for (let i = 0; i < CH.length; i++) if (t >= W[CH[i][0]][0] - 0.05) ci = i;
     let html = '';
     if (ci >= 0) { const ch = CH[ci], next = CH[ci + 1], lastEnd = W[ch[ch.length - 1]][1]; if (t < (next ? W[next[0]][0] : lastEnd + 0.6)) html = ch.map((i) => { const w = W[i], clean = w[2].replace(/[^A-Za-z'-]/g, '').toLowerCase(); const on = t >= w[0] - 0.03 && KEY.has(clean); return `<span class="${on ? 'y' : ''}">${w[2].replace(/[.,:]$/, '')}</span>`; }).join(' '); }
     if (html !== lastCap) { capEl.innerHTML = html; lastCap = html; }
     if (ci >= 0) capEl.style.transform = `scale(${1 + 0.16 * Math.exp(-Math.max(0, t - W[CH[ci][0]][0]) * 13)})`;
+    overlays(t);
+  }
+  function overlays(t) {
     // KB-10 easing per moment: hooks/CTAs rebound in (back-out), pop-ups quad-out, text leaves quad-in
     const BO = (k) => { k = clamp(k); const c = 1.70158; return 1 + (c + 1) * Math.pow(k - 1, 3) + c * Math.pow(k - 1, 2); };
     const QO = (k) => { k = clamp(k); return 1 - (1 - k) * (1 - k); }, QI = (k) => { k = clamp(k); return k * k; };

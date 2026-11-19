@@ -1,7 +1,9 @@
-[["c1", "Put your hand on the left side of your chest. That's not where your heart is.", "punch"],
- ["c2", "Stay till the end, because this changes where you press during CPR.", "warm"],
- ["c3", "Your heart sits almost in the middle of your chest, right behind the breastbone. Only about two thirds of it leans to the left."],
- ["c4", "But you feel the beat on the left, because the bottom tip of the heart, called the apex, taps the chest wall there."],
- ["c5", "Wait, there's more. About one in twelve thousand people are born with the heart pointing to the right. It's called dextrocardia.", "awe"],
- ["c6", "That's why in CPR, you press in the centre of the chest, on the lower half of the breastbone. Not on the left.", "punch"],
- ["c7", "Follow for one health fact every day, and share this with someone who should know CPR.", "warm"]]
+[["c1", "A man ran into my clinic holding the left side of his chest, shouting, Doctor, my heart is failing!", "urgent"],
+ ["c2", "Stay till the end, because what I told him could save a life one day.", "warm"],
+ ["c3", "I asked him, why are you pressing there? He said, because that's where the heart is, Doctor. Everyone knows that."],
+ ["c4", "So I showed him. Your heart actually sits almost in the middle of your chest, right behind the breastbone. Only about two thirds of it leans left.", "calm"],
+ ["c5", "But then why do we feel the beat on the left? Because the tip of the heart, the apex, taps the chest wall right there."],
+ ["c6", "Wait, it gets stranger. About one in twelve thousand people are born with their heart pointing to the right.", "awe"],
+ ["c7", "His ECG was normal. It was acidity this time. But chest pain should always be checked, never guessed.", "punch"],
+ ["c8", "And if someone collapses, push hard in the centre of the chest, not the left. That's CPR.", "urgent"],
+ ["c9", "Follow me for one health story every day, and share this with someone who should know CPR.", "warm"]]

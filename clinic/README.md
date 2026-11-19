@@ -1,7 +1,9 @@
 # Krishnaa Clinic: reels for the owner's doctor account
 
 A separate account and pipeline from the temple reels. The owner is a general physician.
-English, gold-on-dark kinetic explainers (KB-9), 2 reels a day for 365 days, covering all 19 MBBS subjects.
+English, 2 reels a day for 365 days, covering all 19 MBBS subjects.
+
+**Format (owner, Nov 19): entertaining first, educational second.** Each reel is a little *patient story* told in the first person by our original cartoon **male doctor** ("A man ran into my clinic holding the left side of his chest…"), in 3D storykit scenes (clinic, inside the body with giant organs) that cut every 1-2 s, like the owner's monster reference video. Subtitles: **one big word at a time** in yellow, with **red on 1-2 emphasis words** only. Voice: Kokoro `am_onyx` (deep male), with mood tags per line. Patients are fictional. The text-only gold explainer (`kit/explainer.js`) is retired: the owner scrolls past it in a second.
 
 ## Rules (read before every clinic reel)
 1. **The doctor reviews every script before it is posted.** Claude drafts; nothing medical goes out unreviewed.
@@ -20,4 +22,4 @@ Each topic in the bank is used once in each slot, on different days (two angles 
 ## Files
 - `plan-365.md`: the year: subject rotation, monthly health-calendar themes, formats.
 - `topics.py` → `calendar.csv`: day-by-day plan (date, slot, subject, topic, angle).
-- `kit/`: the gold-on-dark explainer template. Reels are in `reels/`.
+- Reels live in `reels/<id>/` as storykit specs (`assets/spec.js`: `one: true`, `red: [...]`; sets `clinic`, `body`, `city`; cast `doctor`, `patientM`, `patientF`, `kidP`; props `heart`, `eye`, `brain`, `monitor`, `pill`). `kit/bed.py` makes the music bed.

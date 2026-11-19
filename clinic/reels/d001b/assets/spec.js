@@ -1,0 +1,15 @@
+export const SPEC = {"seed": 12, "one": true, "red": ["off", "four"],
+ "sets": {"cl": "clinic", "br": "body"},
+ "cast": {"dr": "doctor", "pf": "patientF", "kd": "kidP"},
+ "props": ["brain@br:0,2.7,-1.2:1.3", "eye@br:-0.75,1.3,-0.3:0.55", "eye@br:0.75,1.3,-0.3:0.55"],
+ "scenes": [
+  {"set": "cl", "actors": [["pf", 1.0, 0.7, {"mood": "sad", "arm": "point"}], ["kd", 0.1, 1.0, {"mood": "normal"}], ["dr", -1.7, 0.0, {"mood": "wow"}]], "shots": ["close:pf", "close:kd", "two:dr,pf"]},
+  {"at": "stay", "set": "cl", "actors": [["dr", -1.7, 0.0, {"mood": "smug", "arm": "offer"}], ["kd", 0.1, 1.0, {"mood": "normal"}]], "shots": ["close:dr", "two:dr,kd"]},
+  {"at": "here's", "set": "br", "actors": [["dr", 2.2, 0.9, {"mood": "happy", "arm": "point", "flip": true}]], "shots": ["at:0,2.6,-1.2", "at:0,1.3,-0.3", "close:dr"]},
+  {"at": "clever", "set": "br", "actors": [["kd", 2.0, 0.9, {"mood": "closed", "flip": true}]], "shots": ["at:-0.75,1.3,-0.3", "close:kd"], "fx": ["flash"], "flashAt": [0.75, 1.3, -0.3]},
+  {"at": "but", "set": "cl", "actors": [["kd", 0.1, 1.0, {"mood": "sad"}], ["pf", 1.0, 0.7, {"mood": "wow"}]], "shots": ["close:kd", "two:kd,pf"]},
+  {"at": "wait", "set": "cl", "actors": [["dr", -1.2, 0.2, {"mood": "happy", "arm": "up"}], ["kd", 0.3, 1.0, {"mood": "happy", "arm": "wave"}], ["pf", 1.2, 0.7, {"mood": "happy"}]], "shots": ["close:dr", "two:dr,kd", "close:kd"], "fx": ["glow:kd"]},
+  {"at": "remember", "set": "cl", "actors": [["dr", -1.2, 0.2, {"mood": "normal", "arm": "point"}]], "shots": ["dolly:dr"]}],
+ "wait": "wait", "but": "but", "thats": "remember", "comment": "follow",
+ "loc": [["here's", "📍 INSIDE HIS BRAIN"], ["wait", "TREATABLE · START EARLY"]],
+ "shakes": ["off"], "key": []};

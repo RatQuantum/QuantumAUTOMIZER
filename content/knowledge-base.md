@@ -6,6 +6,13 @@ Newest first. When a new lesson contradicts an old one, our own data wins over a
 
 ---
 
+## KB-11 · Owner feedback on the clinic test + the monster video again (Nov 19)
+
+"Just text makes me want to scroll to the next reel in 1 second. It has to be more entertaining than educational." The gold-on-dark text explainer failed the owner's own scroll test.
+- **→ For us (all accounts):** never a text-only reel. Every fact is wrapped in a **character story** with real scenes, and the camera cuts every 1-2 s.
+- **→ For us:** monster-video subtitles: **one big word at a time**, bright yellow with a black stroke, and **red on 1-2 emphasis words** per reel (storykit `one: true`, `red: [...]`).
+- **→ For us:** a deep male narrator for the clinic (`am_onyx`); the doctor tells it in first person.
+
 ## KB-10 · "Which easing for which moment" (owner sent, Nov 19)
 
 A creator to camera, 18 s, with a gold curve icon for each rule ("Use this… for this"):

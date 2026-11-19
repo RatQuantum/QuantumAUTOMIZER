@@ -5,56 +5,121 @@
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="assets/gsap.min.js"></script>
     <style>
-      /* Day 1 A · Anatomy · Your heart isn't on the left */
-      @font-face { font-family: "Nunito"; src: url("assets/fonts/Nunito.ttf"); }
-      @font-face { font-family: "Emoji"; src: url("assets/fonts/NotoColorEmoji.ttf"); }
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b0906; }
-      #root { width: 100%; height: 100%; }
-      #bg { position: absolute; inset: 0; background: radial-gradient(ellipse 900px 1100px at 50% 30%, #3a2a10 0%, #1a1309 45%, #0b0906 80%); background-size: 140% 140%; }
-      #grain { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.015) 0 2px, transparent 2px 4px); }
-      #brand { position: absolute; top: 70px; left: 0; width: 1080px; text-align: center; font: 900 30px "Nunito"; letter-spacing: 6px; color: #e8b84a; }
-      #brand i { display: inline-block; width: 60px; height: 3px; background: #e8b84a; vertical-align: middle; margin: 0 18px; opacity: 0.6; }
-      #beats { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
-      .beat { position: absolute; left: 70px; width: 940px; top: 420px; text-align: center; opacity: 0; font-family: "Nunito", "Emoji", sans-serif; font-weight: 900; color: #fff; transform-origin: 50% 50%; }
-      .title .tx { font-size: 104px; line-height: 1.04; color: #fff; text-shadow: 0 6px 30px rgba(0, 0, 0, 0.6); }
-      .title .sb { margin-top: 26px; display: inline-block; padding: 10px 28px; background: #e8b84a; color: #1a1309; font-size: 44px; border-radius: 10px; }
-      .big .tx { font-size: 230px; line-height: 1; color: #f2c75c; text-shadow: 0 0 60px rgba(232, 184, 74, 0.35); }
-      .big .sb { margin: 22px auto 0; width: 70%; border-top: 6px solid #e8b84a; padding-top: 22px; font-size: 54px; color: #fff; }
-      .chip .tx { display: inline-block; padding: 22px 44px; background: linear-gradient(#f2c75c, #c8952e); color: #1a1309; font-size: 76px; border-radius: 14px; box-shadow: 0 10px 40px rgba(232, 184, 74, 0.3); }
-      .chip .sb { margin-top: 26px; font-size: 52px; color: #fff; }
-      .list { text-align: left; }
-      .li { margin: 0 0 30px; padding: 24px 30px; border: 4px solid #e8b84a; border-radius: 18px; background: rgba(232, 184, 74, 0.08); font-size: 56px; color: #fff; opacity: 0; }
-      .li .n { display: inline-block; width: 70px; height: 70px; line-height: 70px; text-align: center; margin-right: 24px; border-radius: 50%; background: #e8b84a; color: #1a1309; font-size: 44px; }
-      .icon .ic { margin: 0 auto; width: 340px; height: 340px; line-height: 340px; font-size: 200px; border: 6px solid #e8b84a; border-radius: 40px; background: rgba(232, 184, 74, 0.1); }
-      .icon .lab { margin-top: 30px; font-size: 64px; color: #fff; }
-      .warn .wt { display: inline-block; padding: 14px 30px; background: #d8483a; color: #fff; font-size: 44px; border-radius: 12px; letter-spacing: 1px; }
-      .warn .wb { margin-top: 28px; font-size: 70px; color: #fff; line-height: 1.15; }
-      .myth .mm, .myth .ff { position: relative; margin: 0 auto 40px; padding: 28px 30px; border-radius: 18px; font-size: 60px; line-height: 1.15; }
-      .myth .mm { background: rgba(216, 72, 58, 0.15); border: 4px solid #d8483a; color: #f0d0cc; }
-      .myth .ff { background: rgba(232, 184, 74, 0.12); border: 4px solid #e8b84a; color: #fff; opacity: 0; }
-      .myth .tag { display: block; font-size: 34px; letter-spacing: 6px; margin-bottom: 10px; color: #e8b84a; }
-      .myth .mm .tag { color: #ff8a7a; }
-      .myth .x { position: absolute; left: 0; top: 54%; height: 8px; width: 0; background: #d8483a; border-radius: 4px; }
-      .cta .c1 { display: inline-block; padding: 26px 40px; background: linear-gradient(#f2c75c, #c8952e); color: #1a1309; font-size: 64px; border-radius: 20px; line-height: 1.1; }
-      .cta .c2 { margin-top: 34px; font-size: 54px; color: #fff; }
-      #cap { position: absolute; top: 1330px; left: 40px; width: 1000px; text-align: center; font: 900 74px "Nunito", sans-serif; color: #fff; -webkit-text-stroke: 8px #0b0906; paint-order: stroke fill; }
-      #cap .y { color: #f2c75c; }
-      #disc { position: absolute; bottom: 70px; left: 0; width: 1080px; text-align: center; font: 700 28px "Nunito"; color: rgba(255, 255, 255, 0.6); opacity: 0; }
+      /* Krishnaa Clinic Day 1A: your heart is not on the left */
+      @font-face {
+        font-family: "Nunito";
+        src: url("assets/fonts/Nunito.ttf");
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #7fb8e8;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+      #gl {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1080px;
+        height: 1920px;
+      }
+      .ov {
+        position: absolute;
+        left: 40px;
+        width: 1000px;
+        text-align: center;
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        color: #ffffff;
+        -webkit-text-stroke: 10px #16121c;
+        paint-order: stroke fill;
+        text-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+      }
+      #title {
+        top: 150px;
+        font-size: 104px;
+        line-height: 1.02;
+        color: #ffd23a;
+      }
+      #series {
+        top: 1500px;
+        font-size: 30px;
+        letter-spacing: 3px;
+        -webkit-text-stroke: 6px #16121c;
+      }
+      #cap {
+        top: 1390px;
+        font-size: 84px;
+        line-height: 1.1;
+      }
+      #cap .y {
+        color: #ffd23a;
+      }
+      #vig {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1080px;
+        height: 1920px;
+        background: radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0) 55%, rgba(10, 5, 30, 0.38) 100%);
+      }
+      #loc {
+        top: 250px;
+        left: 60px;
+        width: 900px;
+        text-align: left;
+        font-size: 44px;
+        -webkit-text-stroke: 8px #16121c;
+      }
+      #q {
+        top: 360px;
+        left: 640px;
+        width: 300px;
+        font-size: 220px;
+        color: #ffd23a;
+      }
+      #cta {
+        top: 330px;
+        font-size: 92px;
+        line-height: 1.05;
+        color: #ffd23a;
+      }
+      #prog { position: absolute; top: 56px; left: 190px; width: 700px; display: flex; gap: 14px; }
+      #prog .seg { flex: 1; text-align: center; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 26px; letter-spacing: 3px; color: #ffffff; -webkit-text-stroke: 5px #16121c; paint-order: stroke fill; }
+      #prog .bar { height: 10px; margin-top: 6px; border-radius: 6px; background: rgba(255, 255, 255, 0.28); overflow: hidden; }
+      #prog .bar i { display: block; height: 100%; width: 0%; background: #ffd23a; border-radius: 6px; }
+      #pin { position: absolute; top: 1560px; left: 140px; width: 800px; padding: 18px 10px; border-radius: 40px; background: rgba(22, 18, 28, 0.78); border: 4px solid #ffd23a; text-align: center; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 40px; color: #ffffff; }
+      #pin b { color: #ffd23a; }
+      #follow { position: absolute; top: 1580px; left: 90px; width: 900px; padding: 16px 10px; border-radius: 36px; background: #ffd23a; text-align: center; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 38px; color: #16121c; letter-spacing: 1px; }
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="38.1" data-width="1080" data-height="1920">
-      <div id="stage" class="clip" data-start="0" data-duration="38.1" data-track-index="0">
-        <div id="bg"></div>
-        <div id="grain"></div>
-        <div id="brand"><i></i>KRISHNAA CLINIC<i></i></div>
-        <div id="beats"></div>
-        <div id="cap"></div>
-        <div id="disc">Educational only · not a substitute for a consultation</div>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="45.57" data-width="1080" data-height="1920">
+      <div id="stage" class="clip" data-start="0" data-duration="45.57" data-track-index="0" data-layout-ignore>
+        <canvas id="gl" width="1080" height="1920"></canvas>
+        <div id="vig"></div>
+        <div id="loc" class="ov" style="opacity: 0"></div>
+        <div id="title" class="ov">MY HEART IS<br>FAILING!</div>
+        <div id="q" class="ov" style="opacity: 0">?</div>
+        <div id="cap" class="ov"></div>
+        <div id="prog"><div class="seg">STORY<div class="bar"><i></i></div></div><div class="seg">FACT<div class="bar"><i></i></div></div><div class="seg">SAVE A LIFE<div class="bar"><i></i></div></div></div>
+        <div id="pin" style="opacity: 0">🔁 Share this with someone who should know <b>CPR</b></div>
+        <div id="follow" style="opacity: 0">FOLLOW FOR A HEALTH STORY EVERY DAY</div>
+        <div id="cta" class="ov" style="opacity: 0">Follow for daily<br>health stories 🩺</div>
       </div>
-      <audio id="vo" class="clip" src="assets/audio/voice.wav" data-start="0" data-duration="36.504" data-volume="1" data-track-index="2"></audio>
-      <audio id="bed" class="clip" src="assets/audio/bed.wav" data-start="0" data-duration="38.1" data-volume="1" data-track-index="3"></audio>
+      <div id="series" class="clip ov" data-start="0" data-duration="5" data-track-index="1">KRISHNAA CLINIC · DOCTOR STORIES</div>
+      <audio id="vo" class="clip" src="assets/audio/voice.wav" data-start="0" data-duration="45.172" data-volume="1" data-track-index="2"></audio>
+      <audio id="bed" class="clip" src="assets/audio/bed.wav" data-start="0" data-duration="45.57" data-volume="1" data-track-index="3"></audio>
     </div>
     <script>
       window.__hf = window.__hf || {};

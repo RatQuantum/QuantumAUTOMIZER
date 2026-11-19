@@ -311,6 +311,15 @@ export const CAST = {
     hairBack: (c, cx, hy, hr) => { rr(c, cx + hr - 30, hy, 26, 170, 13); fillStroke(c, '#1d1a24', 5); }, hair: hairCap('#1d1a24'),
     bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#ffd23a'; c.fillRect(cx - w / 2, y + h - 24, w, 12); c.beginPath(); c.ellipse(cx + 6, y + h * 0.55, w * 0.42, h * 0.3, 0, 0, Math.PI * 2); c.fillStyle = '#f48ab4'; c.fill(); },
     top: (c, cx, hy) => { circ(c, cx, hy - 40, 6); c.fillStyle = '#d8263a'; c.fill(); } },
+  // ---- Krishnaa Clinic (original designs)
+  doctor: { skin: '#c98a5e', body: '#fbfbfb', bodyW: 136, bodyH: 210, handsSkin: true, hair: hairCap('#1d1a24'),
+    bodyDeco: (c, cx, y, w, h) => { c.fillStyle = '#3f7fd0'; c.beginPath(); c.moveTo(cx - 26, y + 4); c.lineTo(cx, y + 44); c.lineTo(cx + 26, y + 4); c.fill(); line(c, [[cx - 3, y + 2], [cx - 3, y + h - 8]], 3, '#d8d8d8'); line(c, [[cx - 34, y + 10], [cx - 40, y + 70], [cx - 18, y + 104], [cx + 6, y + 112]], 5, '#3a3a44'); line(c, [[cx + 34, y + 10], [cx + 38, y + 60]], 5, '#3a3a44'); circ(c, cx + 14, y + 114, 11); fillStroke(c, '#b8bcc8', 4); c.fillStyle = '#3f7fd0'; c.fillRect(cx + 22, y + 52, 26, 30); c.fillStyle = '#fbfbfb'; c.fillRect(cx + 26, y + 56, 4, 20); },
+    top: (c, cx, hy, hr) => { c.lineWidth = 4; c.strokeStyle = '#1d1a24'; c.beginPath(); c.arc(cx - 20, hy + 6, 15, 0, Math.PI * 2); c.stroke(); c.beginPath(); c.arc(cx + 20, hy + 6, 15, 0, Math.PI * 2); c.stroke(); line(c, [[cx - 5, hy + 4], [cx + 5, hy + 4]], 4, '#1d1a24'); } },
+  patientM: { skin: '#b07a52', body: '#3a8a8a', bodyW: 140, bodyH: 205, handsSkin: true, hair: hairCap('#2a2420'),
+    bodyDeco: (c, cx, y, w) => { c.fillStyle = '#2a6a6a'; c.fillRect(cx - 4, y + 4, 8, 120); } },
+  patientF: { skin: '#d99a72', body: '#c8507a', bodyW: 128, bodyH: 205, handsSkin: true,
+    hairBack: (c, cx, hy, hr) => { rr(c, cx - hr - 6, hy - 10, hr * 2 + 12, hr + 40, 30); fillStroke(c, '#1d1a24', 5); }, hair: hairCap('#1d1a24') },
+  kidP: kid('#d99a72', '#ffb020', '#1d1a24', { bodyH: 170, headR: 74 }),
   devotee: {
     skin: '#a8714c', body: '#f6f1e2', bodyW: 150, bodyH: 190,
     bodyDeco: (c, cx, y, w) => { c.fillStyle = '#d9a441'; c.fillRect(cx - w / 2, y + 150, w, 12); },
