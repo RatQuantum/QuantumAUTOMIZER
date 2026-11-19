@@ -65,3 +65,4 @@ reels/*/*-cover.jpg
 clinic/reels/*/*.mp4
 clinic/reels/*/renders/
 clinic/reels/*/*-cover.jpg
+__pycache__/
