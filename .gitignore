@@ -62,3 +62,6 @@ reels/**/renders/
 reels/**/frames/
 reels/**/review/
 reels/*/*-cover.jpg
+clinic/reels/*/*.mp4
+clinic/reels/*/renders/
+clinic/reels/*/*-cover.jpg
