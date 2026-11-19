@@ -6,6 +6,29 @@ Newest first. When a new lesson contradicts an old one, our own data wins over a
 
 ---
 
+## KB-10 · "Which easing for which moment" (owner sent, Nov 19)
+
+A creator to camera, 18 s, with a gold curve icon for each rule ("Use this… for this"):
+
+| Moment | Easing | → For us |
+|---|---|---|
+| Hooks and intros | **cubic-out** or **rebound-out** (back-out overshoot) | Title card and the first overlay slam in with back-out, not a hard pop. |
+| Hard cuts and comedy beats | **none** (instant) | Scene cuts and "Wait…?" stay hard cuts. |
+| Image or icon pop-ups | **ease-out / quad-out** | The "?" icons, location tag and badges scale up with quad-out. |
+| Removing text | **ease-in / quad-in** | Title, location and comment pill leave fast with quad-in, never just vanish. |
+| Long clips | **linear** (a slow, constant push) | Shots held over 3 s get a slow linear push-in so nothing sits still. |
+| Animated CTAs | **rebound-out** | The comment word and follow badge bounce in with back-out. |
+
+## KB-9 · "13.5M views from AI explainers made in Claude" (owner sent, Nov 19)
+
+A creator to camera over dark/gold motion graphics: view counts (2.7M, 7.8M, 16.7M), "made with one Claude skill in 20 minutes", script + animations + captions + voice all automated. The voice is **Fish Audio Drama 3**, directed in plain English with tags like *[quiet wonder, slow build]*. The CTA is "comment EXPLAINER and I'll send the skill" (a keyword-for-gift DM).
+
+- **→ For us:** we already have that pipeline (the krishna-reel skill + storykit). The gap is **acted narration**: Kokoro reads flat. Directed emotion per line (awe, whisper, urgency) is the upgrade.
+- **→ For us:** the gold-on-dark kinetic word style ("13", "20 min", "SKILL" chips) works for list or "facts" formats.
+- **→ For us:** keyword-for-gift CTA (KB-7 #29-30) proven again; still needs DM automation first.
+
+---
+
 ## KB-8 · Production upgrade (Nov 18)
 
 - **Krishna, detailed** (`tools/reel-kit/ep/cast.js`): a jewelled tiered mukut with a pearl rim, a full peacock feather, curly locks, makara kundala earrings, gold necklaces, the Kaustubha gem, a five-colour Vaijayanti garland, a pitambar with a zari border, a red sash with tassels and a green angavastram. Every character is now drawn at double resolution (512×1024).
