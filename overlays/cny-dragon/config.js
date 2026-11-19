@@ -1,5 +1,5 @@
 // ===== EDIT THESE (Notepad is fine) =====
-const UPI_ID     = "yourname@okhdfcbank";  // your GPay UPI ID
+const UPI_ID     = "FrostRatG@upi";        // your GPay UPI ID
 const YT_HANDLE  = "@FrostRatG";           // your YouTube handle
 const BIG_NAME   = "RAT";
 // ========================================

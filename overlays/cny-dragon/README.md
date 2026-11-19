@@ -23,9 +23,15 @@ Dragon art: generated with MiniMax-H3 FlashGen, then keyed and cropped. Rat: you
 | File | Canvas | Where things go |
 |---|---|---|
 | `vertical-cam.html` | 1080×1920 | Webcam x0 y0 1080×700 · Gameplay x0 y706 1080×608 · banner below · bottom left empty for the app's buttons |
-| `horizontal-cam.html` | 1920×1080 | Gameplay full screen · webcam x1500 y170 384×216 (right side, clear of MLBB's minimap) |
+| `horizontal-cam.html` | 1920×1080 | Gameplay full screen · webcam x1500 y170 384×216, no border · premium banner y944-1080 |
 
 Edit `config.js` for your UPI ID, YouTube handle and big name. Styling lives in `premium.css` (burgundy + metallic gold, Cinzel / Cormorant Garamond / Montserrat). No border on the webcam.
 Open the page with `?guides=1` in a browser to see the slot labels while lining up sources.
 
 Coiled dragon (`dragon-coil.png`): made with SDXL + SDXL-Lightning (OpenRAIL++) on CPU and cut out with rembg.
+
+## Animation
+- `text-anim.js`: RAT letters pop in, UPI/YouTube rows slide in, the YouTube handle waves, and everything re-pops every 9 s.
+- `coil.js`: the coiled dragon's body slithers around the ring (head and top stay still so the Rat keeps its footing).
+- The Rat plays its own loop and hops every 7 s.
+Preview videos: `preview-horizontal-cam.mp4`, `preview-vertical-cam.mp4`.

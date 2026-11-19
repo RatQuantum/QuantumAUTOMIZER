@@ -34,3 +34,26 @@ html,body{width:var(--W);height:var(--H);background:transparent;overflow:hidden}
   background:linear-gradient(115deg,transparent 42%,rgba(255,246,214,.55) 50%,transparent 58%);background-size:300% 100%;animation:sheen 6s ease-in-out infinite;mix-blend-mode:screen}
 .coil .rat{position:absolute;left:calc(var(--cw)*.40 - var(--rh)*.30);bottom:94%;height:var(--rh);filter:drop-shadow(0 5px 5px rgba(0,0,0,.5))}
 @keyframes sway{0%,100%{transform:rotate(-1deg) translateY(0)}50%{transform:rotate(1deg) translateY(-5px)}}
+/* ---------- text animation ---------- */
+.name b{display:inline-block;font-weight:inherit;background:inherit;-webkit-background-clip:text;background-clip:text;color:transparent;transform-origin:50% 80%}
+.intro .name b{animation:popin .9s cubic-bezier(.2,1.6,.4,1) both;animation-delay:calc(var(--i)*.14s)}
+.repop .name b{animation:repop .8s cubic-bezier(.3,1.8,.5,1) both;animation-delay:calc(var(--i)*.1s)}
+@keyframes popin{0%{opacity:0;transform:translateY(40px) scale(.3) rotate(-8deg);filter:blur(6px)}70%{opacity:1;filter:blur(0)}100%{opacity:1;transform:none}}
+@keyframes repop{0%,100%{transform:none}40%{transform:translateY(-10px) scale(1.18)}}
+/* gold shine across the name */
+.name{position:absolute;overflow:visible}
+.name::after{content:"";position:absolute;inset:-10% -5%;background:linear-gradient(105deg,transparent 40%,rgba(255,250,225,.85) 50%,transparent 60%);background-size:300% 100%;
+  -webkit-mask:linear-gradient(#000 0 0);mix-blend-mode:overlay;animation:sheen 4.5s ease-in-out infinite;pointer-events:none}
+.intro .row{animation:slidein .9s cubic-bezier(.2,.9,.3,1) both}
+.intro .row:nth-of-type(1){animation-delay:.55s}.intro .row:last-child{animation-delay:.8s}
+.intro .rule{animation:grow .9s .7s cubic-bezier(.2,.9,.3,1) both;transform-origin:0 50%}
+@keyframes slidein{0%{opacity:0;transform:translateX(60px);filter:blur(5px)}100%{opacity:1;transform:none;filter:none}}
+@keyframes grow{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.repop .row span{animation:nudge .7s ease-out both}.repop .row:last-child span{animation-delay:.15s}
+@keyframes nudge{0%,100%{transform:none}45%{transform:scale(1.07)}}
+/* FrostRatG: letter wave + shimmer */
+.wave b{display:inline-block;font-weight:inherit;animation:wave 3.2s ease-in-out infinite;animation-delay:calc(var(--i)*.09s)}
+@keyframes wave{0%,60%,100%{transform:none;color:var(--ivory)}20%{transform:translateY(-7px);color:#F6E6B4;text-shadow:0 0 10px rgba(246,230,180,.8),0 2px 3px rgba(0,0,0,.5)}}
+/* Rat hop */
+.coil .rat{animation:hop 7s ease-in-out infinite}
+@keyframes hop{0%,82%,100%{transform:translateY(0)}86%{transform:translateY(-26px) rotate(-3deg)}90%{transform:translateY(0) scaleY(.94)}93%{transform:translateY(-8px)}96%{transform:none}}

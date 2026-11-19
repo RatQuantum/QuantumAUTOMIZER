@@ -1,14 +1,29 @@
 <!doctype html><html><head><meta charset="utf-8"><title>Rat Premium – horizontal 1920x1080</title>
 <link rel="stylesheet" href="premium.css"><style>:root{--W:1920px;--H:1080px}
-.plate{position:absolute;left:1500px;top:386px;width:384px;height:58px;overflow:hidden;display:flex;align-items:center;justify-content:space-between;padding:0 18px;
-  background:radial-gradient(140% 160% at 20% 20%,var(--carriage),var(--mahogany) 50%,var(--bordeaux))}
-.plate::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--gold-h)}
-.plate .name{position:static;font-size:30px}
-.plate span{font:600 22px 'Cormorant Garamond',serif;color:var(--ivory);letter-spacing:.03em;display:flex;align-items:center;gap:8px}
-.plate svg{width:18px;height:13px}</style></head><body>
-<!-- GAMEPLAY full screen under this · WEBCAM x1500 y170 384x216, no border · name plate sits right under it -->
+.info.h{flex-direction:row;align-items:center;gap:44px}
+.info.h .rule{width:1px;height:58px;background:linear-gradient(180deg,rgba(226,192,106,0),rgba(226,192,106,.9),rgba(226,192,106,0))}
+.info.h .row span{font-size:34px}</style></head><body>
+<!-- GAMEPLAY full screen under this · WEBCAM x1500 y170 384x216, no border · BANNER y944-1080 -->
 <div class="slot" style="left:1500px;top:170px;width:384px;height:216px;font-size:20px">WEBCAM 384×216</div>
-<div class="plate"><div class="name" data-name>RAT</div><span><svg viewBox="0 0 18 13"><rect x=".6" y=".6" width="16.8" height="11.8" rx="3.2" fill="none" stroke="#E2C06A" stroke-width="1.2"/><path d="M7.2 3.8v5.4L11.8 6.5z" fill="#E2C06A"/></svg> <b data-yt style="font-weight:600"></b></span></div>
+<div class="banner" style="top:944px;height:136px">
+  <svg class="ribbon" viewBox="0 0 1080 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs>
+<linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#7A5A22"/><stop offset=".3" stop-color="#E9D7A1"/><stop offset=".48" stop-color="#A47A32"/><stop offset=".7" stop-color="#F8E9B8"/><stop offset="1" stop-color="#8C6A2F"/></linearGradient>
+<linearGradient id="f" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset=".35" stop-color="#fff"/><stop offset="1" stop-color="#fff"/></linearGradient><mask id="m"><rect width="1080" height="240" fill="url(#f)"/></mask></defs>
+<g mask="url(#m)"><path d="M380 240 C560 210 700 150 820 70 C880 30 960 6 1080 0 L1080 22 C980 30 900 60 840 104 C720 190 590 232 470 240 Z" fill="url(#g)" opacity=".95"/>
+<path d="M300 240 C520 222 690 170 810 92 C890 40 980 18 1080 14" fill="none" stroke="url(#g)" stroke-width="1.4" opacity=".7"/>
+<path d="M520 240 C650 226 760 186 860 126 C930 86 1000 60 1080 52" fill="none" stroke="url(#g)" stroke-width="1" opacity=".5"/></g></svg>
+  <div class="name" data-name style="left:64px;top:30px;font-size:80px">RAT</div>
+  <div class="info h" style="left:420px;top:34px">
+    <div class="row"><small>UPI&nbsp;·&nbsp;GPay</small><span data-upi></span></div>
+    <div class="rule"></div>
+    <div class="row"><small><svg viewBox="0 0 18 13"><rect x=".6" y=".6" width="16.8" height="11.8" rx="3.2" fill="none" stroke="#E2C06A" stroke-width="1.2"/><path d="M7.2 3.8v5.4L11.8 6.5z" fill="#E2C06A"/></svg> YouTube</small><span data-yt></span></div>
+  </div>
+</div>
+<div class="coil" style="--cw:230px;--rh:150px;right:40px;top:868px">
+  <div class="body"><img src="dragon-coil.png" alt=""><div class="shine"></div></div>
+  <video class="rat" src="rat.webm" autoplay loop muted playsinline></video>
+</div>
 <script src="config.js"></script>
+<script src="text-anim.js"></script><script src="coil.js"></script>
 <script>if(/guides=1/.test(location.search))document.body.classList.add('guides')</script>
 </body></html>
