@@ -1,7 +1,7 @@
 # Golden Dragon bottom banner (Streamlabs Desktop)
 
 Red lacquer strip with gold trim and cloud pattern, a golden dragon in the centre with the
-animated Rat riding it. It also has a gold light sweep, swinging lanterns and rising gold sparks. No text.
+animated Rat riding it. The dragon body ripples like it is swimming (dragon.js) and the Rat rides the wave. It also has a gold light sweep, swinging lanterns and rising gold sparks. No text.
 
 | File | Canvas | Strip height |
 |---|---|---|
