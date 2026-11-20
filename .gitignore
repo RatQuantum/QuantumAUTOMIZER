@@ -70,3 +70,4 @@ reels/*/*.brain.json
 clinic/reels/*/*.brain.json
 reels/sci*/*.mp4
 reels/sci*/*-cover.jpg
+tools/reel-kit/vendor/node_modules/
