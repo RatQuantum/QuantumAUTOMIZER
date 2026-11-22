@@ -6,6 +6,18 @@ Newest first. When a new lesson contradicts an old one, our own data wins over a
 
 ---
 
+## KB-16 · Rich 3D look, free on CPU (Nov 22)
+
+Owner asked for "3D, ultra realistic" for Days 86-90 and chose "Rich 3D, free". Built in the kit, no paid tools:
+- `render3d: true` in a storykit spec swaps the toon cast for real 3D chibi characters (`ep/char3d.js`): PBR skin, sheen fabric, gold crown, textured peacock feather, 3D eyes, brows and mouth moods, curly hair, zari hem.
+- Post stack (`ep/post3d.js`, bundled from three@0.187.0): RoomEnvironment reflections, soft shadows, depth of field focused on the centre actor, light bloom.
+- Tuning that fixed the first washed-out test: env 0.28, exposure 0.92, bloom 0.16 at threshold 0.93, fog halved, less hair sheen.
+- Retention lesson from Part 5 (scored 85 vs reference 100): the brain flagged a still hook. The 2nd shot was a locked-off wide. Every shot in the first 3 s needs a dolly or push (`pov:` with dx,dy,dz) and one hit.
+
+**→ For us:** use `render3d` for special days and series finales; keep 2D toon for speed on normal days. Never leave a shot static in the first 3 s. Blender on the owner's laptop is the next step up (Days 91-95) once it is attached.
+
+---
+
 ## KB-15 · House rules from the new skills (Nov 22)
 
 From motion-design (LottieFiles), video-shotcraft, huashu-art-motion, mg-styles-15 and video-talkcraft, now in the shared kit (`ep/director.js`, `ep/storykit.js`):
