@@ -1,0 +1,15 @@
+01-flat-vector
+02-line-art
+03-isometric
+04-3d-render
+05-cel-boil
+06-collage
+07-liquid
+08-morph
+09-bauhaus
+10-synthwave
+12-aurora-glass
+18-hanazi
+19-paperclip
+20-pixel
+22-hud
