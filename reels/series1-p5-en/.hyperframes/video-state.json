@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "94fb64b8-8ccd-44f2-8b7a-1052c0c25505",
-  "currentRevision": "b3cfbcbe-7dbe-4320-8cf0-b582f44eaf71",
+  "currentRevision": "d3fb10c4-a673-4119-b8c0-85d96b8d8764",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -69,8 +69,8 @@
       "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/0b/0b44e838fc49f8d86df552367998b71c60a921d1c9840b2b8a0cf0598c353f83"
     },
     "assets/spec.js": {
-      "hash": "f16125b7835770d283d55580b9be88bfd34866203f368f2a33d871047a48ca3a",
-      "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/f1/f16125b7835770d283d55580b9be88bfd34866203f368f2a33d871047a48ca3a"
+      "hash": "9d7a937de5311da8585d3983535d3548afe11420fec23efab8b232ea460b906f",
+      "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/9d/9d7a937de5311da8585d3983535d3548afe11420fec23efab8b232ea460b906f"
     },
     "assets/storykit.js": {
       "hash": "b5c3a0f3bf3f054adfb8836d11a65d6d093784d81e069bce90aae7b596dd0863",
@@ -120,13 +120,25 @@
       "hash": "613e370f76638fdef83926642bf256dc9615684922de1ce1f63a8583e5d78578",
       "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/61/613e370f76638fdef83926642bf256dc9615684922de1ce1f63a8583e5d78578"
     },
+    "assets/audio/bed.wav": {
+      "hash": "44f432f5b98c12220bebc0ccf4a8ae5f24fc6106f5264458da7972247438a3a0",
+      "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/44/44f432f5b98c12220bebc0ccf4a8ae5f24fc6106f5264458da7972247438a3a0"
+    },
     "assets/audio/voice_dry.wav": {
       "hash": "1310bb5547a91ac4ee491d97742c3d91099ba5769446c82a84039151b5bbdfda",
       "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/13/1310bb5547a91ac4ee491d97742c3d91099ba5769446c82a84039151b5bbdfda"
     },
-    "assets/audio/bed.wav": {
-      "hash": "44f432f5b98c12220bebc0ccf4a8ae5f24fc6106f5264458da7972247438a3a0",
-      "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/44/44f432f5b98c12220bebc0ccf4a8ae5f24fc6106f5264458da7972247438a3a0"
+    "arjunas-charioteer-part5.mp4": {
+      "hash": "132ad2fdea105bc9ef22274810cbbc74c31dba72d730188d3fd7922acace8b94",
+      "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/13/132ad2fdea105bc9ef22274810cbbc74c31dba72d730188d3fd7922acace8b94"
+    },
+    "arjunas-charioteer-part5-cover.jpg": {
+      "hash": "4da06c1020160315d96d8d3f5b2fbd603089cf93d32a5287d413535a07a86db0",
+      "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/4d/4da06c1020160315d96d8d3f5b2fbd603089cf93d32a5287d413535a07a86db0"
+    },
+    "arjunas-charioteer-part5.brain.json": {
+      "hash": "bbc2c22588ee2e02e2f5c5529afcbddcbd9c1843ca55d1c379447ea503351e16",
+      "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/bb/bbc2c22588ee2e02e2f5c5529afcbddcbd9c1843ca55d1c379447ea503351e16"
     }
   },
   "revisions": {
@@ -167,6 +179,33 @@
           "after": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/e1/e102a14e5ae5603254c31577df8988f5e9c31e977ba19060e5ab02e1f5434ab7"
         }
       }
+    },
+    "d3fb10c4-a673-4119-b8c0-85d96b8d8764": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795363729112,
+      "endedAt": 1795363729120,
+      "files": {
+        "arjunas-charioteer-part5-cover.jpg": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/4d/4da06c1020160315d96d8d3f5b2fbd603089cf93d32a5287d413535a07a86db0"
+        },
+        "arjunas-charioteer-part5.brain.json": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/bb/bbc2c22588ee2e02e2f5c5529afcbddcbd9c1843ca55d1c379447ea503351e16"
+        },
+        "arjunas-charioteer-part5.mp4": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/13/132ad2fdea105bc9ef22274810cbbc74c31dba72d730188d3fd7922acace8b94"
+        },
+        "assets/spec.js": {
+          "before": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/f1/f16125b7835770d283d55580b9be88bfd34866203f368f2a33d871047a48ca3a",
+          "after": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/9d/9d7a937de5311da8585d3983535d3548afe11420fec23efab8b232ea460b906f"
+        }
+      }
     }
   },
   "checks": {
@@ -176,8 +215,8 @@
   },
   "snapshots": {
     "latest": {
-      "revision": null,
-      "id": "297dc28f-41ab-40c4-8a12-7b660895a54f-8"
+      "revision": "d3fb10c4-a673-4119-b8c0-85d96b8d8764",
+      "id": "93c09bb8-6a40-4861-b3ee-52d96e4b308d-3"
     },
     "revisions": {
       "fe27d8a8-4065-46ac-a6a9-336271d985e8": [
@@ -285,6 +324,88 @@
           "attribution": "recorded-revision",
           "status": "cleaned",
           "cleanedAfterRender": "4b9c1f1e-1f32-4235-a207-8733f10b5650"
+        }
+      ],
+      "d3fb10c4-a673-4119-b8c0-85d96b8d8764": [
+        {
+          "scope": "full",
+          "id": "93c09bb8-6a40-4861-b3ee-52d96e4b308d-0",
+          "image": "/home/user/QuantumAUTOMIZER/reels/series1-p5-en/.hyperframes/artifacts/snapshots/72de80e2-042f-4123-844d-868a8c9642d1/frame-00-at-1.3s.png",
+          "time": 1.3,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795363738845,
+          "contentHash": "7ecca50a38afa636bf92db094d8ebdcad2ba7e9a1aa9b04ef66e140af07ab17d",
+          "revision": "d3fb10c4-a673-4119-b8c0-85d96b8d8764",
+          "inputFingerprint": "4872e81207e23d6c42a2f41528d7ab8e639d90524e83f31c1e1ba2d683cb889a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "93c09bb8-6a40-4861-b3ee-52d96e4b308d-1",
+          "image": "/home/user/QuantumAUTOMIZER/reels/series1-p5-en/.hyperframes/artifacts/snapshots/72de80e2-042f-4123-844d-868a8c9642d1/frame-01-at-2s.png",
+          "time": 2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795363738845,
+          "contentHash": "5292216bc697c1b3309e19d0a37de577d648c2aa774b83c9da50ae42474592d7",
+          "revision": "d3fb10c4-a673-4119-b8c0-85d96b8d8764",
+          "inputFingerprint": "4872e81207e23d6c42a2f41528d7ab8e639d90524e83f31c1e1ba2d683cb889a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "93c09bb8-6a40-4861-b3ee-52d96e4b308d-2",
+          "image": "/home/user/QuantumAUTOMIZER/reels/series1-p5-en/.hyperframes/artifacts/snapshots/72de80e2-042f-4123-844d-868a8c9642d1/frame-02-at-2.8s.png",
+          "time": 2.8,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795363738845,
+          "contentHash": "78dcb62826f8b37a40bd3872bf65370c60a6efcb45fd8460290057c0d48daae2",
+          "revision": "d3fb10c4-a673-4119-b8c0-85d96b8d8764",
+          "inputFingerprint": "4872e81207e23d6c42a2f41528d7ab8e639d90524e83f31c1e1ba2d683cb889a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "93c09bb8-6a40-4861-b3ee-52d96e4b308d-3",
+          "image": "/home/user/QuantumAUTOMIZER/reels/series1-p5-en/.hyperframes/artifacts/snapshots/72de80e2-042f-4123-844d-868a8c9642d1/frame-03-at-41.35s.png",
+          "time": 41.35,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795363738845,
+          "contentHash": "d2ad5b298ce4454bc7dd4480496110700fd76f728aa62b7ffbee90443712be65",
+          "revision": "d3fb10c4-a673-4119-b8c0-85d96b8d8764",
+          "inputFingerprint": "4872e81207e23d6c42a2f41528d7ab8e639d90524e83f31c1e1ba2d683cb889a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
         }
       ]
     },
