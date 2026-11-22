@@ -1,10 +1,12 @@
 // storykit: a spec-driven episode. One spec (sets, cast, scenes keyed to spoken words) → sets, poses, camera, fx, captions.
 // Used for Days 61+ (bulk mode). Hand-built main.js stays the path for special reels.
 import * as THREE from './three.module.js';
-import { rng, mat, mesh, sm, seg, lerp, clamp, setupScene, makeCast, pose, lamp, hut, cow, roundTree } from './kit.js';
+import { rng, mat, mesh, sm, seg, lerp, clamp, setupScene, makeCast, pose as pose2d, lamp, hut, cow, roundTree } from './kit.js';
 import { makeStage, direct } from './director.js';
 import { addOutlines, makeConfetti } from './plus.js';
 import { CAST } from './cast.js';
+import { makeCast3d, pose3d } from './char3d.js';
+import { EffectComposer, RenderPass, UnrealBloomPass, BokehPass, OutputPass, RoomEnvironment } from './post3d.js';
 
 export function run(spec, WORDS, DURATION) {
   const stage = makeStage(), { scene, camera } = stage, V = (x, y, z) => new THREE.Vector3(x, y, z), R = rng(spec.seed || 7);
@@ -80,7 +82,10 @@ export function run(spec, WORDS, DURATION) {
   // props declared per scene: 'name@set:x,y,z[:scale]'
   const props = []; (spec.props || []).forEach((p) => { const [k, rest] = p.split('@'); const [set, xyz, sc] = rest.split(':'); const [x, y, z] = xyz.split(',').map(Number); const g = prop[k](); g.position.set(SX[set] + x, y, z); if (sc) g.scale.setScalar(+sc); props.push({ g, set, k, base: g.position.clone() }); });
   // ---- cast
-  const C = makeCast(scene, Object.entries(spec.cast).map(([id, v]) => [id, Array.isArray(v) ? v[0] : v]));
+  const R3 = !!spec.render3d;
+  const C = R3 ? makeCast3d(scene, Object.entries(spec.cast).map(([id, v]) => { const b = Array.isArray(v) ? v[0] : v; return [id, b, Object.assign({}, CAST[b], Array.isArray(v) ? v[1] : {})]; }))
+              : makeCast(scene, Object.entries(spec.cast).map(([id, v]) => [id, Array.isArray(v) ? v[0] : v]));
+  const pose = R3 ? pose3d : pose2d;
   Object.entries(spec.cast).forEach(([id, v]) => { if (Array.isArray(v) && v[1]) C[id].spec = Object.assign({}, CAST[v[0]], v[1]); });
   // ---- fx
   const halos = {}; Object.keys(spec.cast).forEach((id) => (halos[id] = noOut(mesh(new THREE.RingGeometry(0.3, 0.34, 32), glow(0xffe08a, 0), 0, 0, 0, scene))));
@@ -88,7 +93,18 @@ export function run(spec, WORDS, DURATION) {
   const rain = []; for (let i = 0; i < 60; i++) rain.push({ m: noOut(mesh(new THREE.BoxGeometry(0.012, 0.35, 0.012), new THREE.MeshBasicMaterial({ color: 0xbfd8ff, transparent: true, opacity: 0.6 }), 0, 0, 0, scene)), ph: R(), x: R(), z: R() });
   const stars = new THREE.Points(new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(Array.from({ length: 1200 }, (_, i) => (i % 3 === 1 ? 6 + R() * 30 : (R() - 0.5) * 90) + (i % 3 === 2 ? -30 : 0)), 3)), new THREE.PointsMaterial({ color: 0xffffff, size: 0.3, transparent: true, opacity: 0, fog: false })); stars.userData.noOutline = true; scene.add(stars);
   const flash = noOut(mesh(new THREE.SphereGeometry(1, 16, 10), glow(0xfff0c0, 0), 0, 0, 0, scene));
-  addOutlines(scene);
+  if (!R3) addOutlines(scene);
+  // ---- rich 3D look (KB-16): studio reflections, soft shadows, bloom, depth of field
+  let render3 = null;
+  if (R3) { const { renderer } = stage, pm = new THREE.PMREMGenerator(renderer); scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = spec.envI ?? 0.28; if (scene.fog) scene.fog.density = (scene.fog.density || 0) * 0.5;
+    renderer.toneMappingExposure = spec.exposure ?? 0.92; S.sun.shadow.radius = 6; S.sun.shadow.mapSize.set(2048, 2048);
+    scene.traverse((o) => { if (o.isMesh && o.material && o.material.flatShading) { o.material.flatShading = false; o.material.needsUpdate = true; } });
+    const comp = new EffectComposer(renderer); comp.setPixelRatio(1); comp.setSize(1080, 1920); comp.addPass(new RenderPass(scene, camera));
+    const bok = new BokehPass(scene, camera, { focus: 4, aperture: 0.0016, maxblur: 0.006 }); comp.addPass(bok);
+    comp.addPass(new UnrealBloomPass(new THREE.Vector2(540, 960), spec.bloom ?? 0.16, 0.4, 0.93)); comp.addPass(new OutputPass());
+    render3 = (t) => { const sc = sceneAt(t), ids = sc.actors.map((a) => a[0]); let best = 4; const dir = new THREE.Vector3(); camera.getWorldDirection(dir); let bd = 1e9;
+      ids.forEach((id) => { const m = C[id].m; if (!m.visible) return; const v = m.position.clone().add(new THREE.Vector3(0, m.scale.y * 0.7, 0)).sub(camera.position); const along = v.dot(dir), off = v.clone().addScaledVector(dir, -along).length(); if (along > 0 && off < bd) { bd = off; best = along; } });
+      bok.uniforms.focus.value = best; comp.render(); }; }
   const confetti = makeConfetti(scene, 50, spec.seed || 7);
   // ---- scenes: resolve times
   const SC = spec.scenes.map((s, i) => ({ ...s, t: i === 0 ? 0 : null }));
@@ -163,5 +179,5 @@ export function run(spec, WORDS, DURATION) {
   const upd0 = update; const updateAll = (s, t) => { upd0(s, t); tickCards(s); };
   // ---- go
   direct({ stage, WORDS, DURATION, shots: SHOTS, update: updateAll, title: 1.4, q: [E.wait, E.wait + 1.4], cta: spec.choice ? DURATION + 5 : E.comment, prog: [E.but || E.wait - 4, E.thats || E.comment - 4], pin: E.wait,
-    key: spec.key, one: !!spec.one, red: spec.red, speedlines: !!spec.pov, loc: (t) => { for (const [w, label, w2] of spec.loc || []) { const a = at(w), b = w2 ? at(w2) : a + 3; if (a != null && t >= a - 0.05 && t < b) return label; } return ''; }, shakes: (spec.shakes || []).map(at).filter((v) => v != null), tick: (t) => povTick(t) });
+    key: spec.key, one: !!spec.one, red: spec.red, speedlines: !!spec.pov, loc: (t) => { for (const [w, label, w2] of spec.loc || []) { const a = at(w), b = w2 ? at(w2) : a + 3; if (a != null && t >= a - 0.05 && t < b) return label; } return ''; }, shakes: (spec.shakes || []).map(at).filter((v) => v != null), tick: (t) => povTick(t), render: render3 || undefined });
 }

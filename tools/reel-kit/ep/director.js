@@ -101,7 +101,7 @@ export function direct(cfg) {
     if (cfg.mood) cfg.mood(t, story);
     cfg.update(story, t);
     if (cfg.tick) cfg.tick(t);
-    renderer.render(scene, camera);
+    if (cfg.render) cfg.render(tc); else renderer.render(scene, camera);
     captions(t);
   }
   window.addEventListener('hf-seek', (e) => renderAt(e.detail.time));
