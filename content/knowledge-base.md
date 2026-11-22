@@ -6,6 +6,16 @@ Newest first. When a new lesson contradicts an old one, our own data wins over a
 
 ---
 
+## KB-15 · House rules from the new skills (Nov 22)
+
+From motion-design (LottieFiles), video-shotcraft, huashu-art-motion, mg-styles-15 and video-talkcraft, now in the shared kit (`ep/director.js`, `ep/storykit.js`):
+- **Hit-stop:** the camera holds for 3 frames on every impact (`shakes`), so hits read as heavy.
+- **Impact frame:** 2 frames of an inverted picture on each hit (anime/shotcraft impact cut).
+- **Speed lines:** radial streaks for 0.2 s on every POV whip pan.
+- **Running POV:** arms pump with `arms: 'run'`.
+- **Every opening scene moves from frame one** (dolly + a second shot inside 2 s) so the retention brain's "first 3 s" stays high; every scene has 2 shots, a cut every 2-3 s.
+- **Next to add:** an anticipation pose before big actions, overlap on garlands and hair, and video-talkcraft's still-frame detector as a pre-render gate (the retention brain already flags dead seconds).
+
 ## KB-14 · POV disaster choice series + "the harness" (owner sent, Nov 19)
 
 **1. The format (4 videos, 31M+ views, 18.8M on one):** a first-person disaster story that ends on a choice ("boat or helicopter?"). Comments push every video; the cliffhanger makes people follow.

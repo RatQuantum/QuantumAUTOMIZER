@@ -85,9 +85,18 @@ export function direct(cfg) {
     const followEl = document.getElementById('follow'); if (followEl) { const on = t >= cfg.cta + 0.3; followEl.style.opacity = on ? QO((t - cfg.cta - 0.3) / 0.2) : 0; followEl.style.transform = `translateY(${on ? 60 * (1 - BO((t - cfg.cta - 0.3) / 0.5)) : 60}px)`; }
     if (pinEl) { const on = t >= cfg.pin && t < cfg.cta; pinEl.style.opacity = on ? QO((t - cfg.pin) / 0.25) * (1 - QI((t - (cfg.cta - 0.2)) / 0.2)) : 0; pinEl.style.transform = `scale(${on ? 0.6 + 0.4 * BO((t - cfg.pin) / 0.5) : 0.6})`; }
   }
+  // house rules (KB-15, from the motion-design / shotcraft / huashu skills): hit-stop holds the camera 3 frames on
+  // every impact, an impact frame inverts the picture for 2 frames, whip-pan speed lines on each new POV shot
+  const IMP = document.createElement('div'); IMP.style.cssText = 'position:absolute;inset:0;background:#fff;mix-blend-mode:difference;opacity:0;pointer-events:none;z-index:7';
+  const SPD = document.createElement('div'); SPD.style.cssText = 'position:absolute;inset:-200px;opacity:0;pointer-events:none;z-index:6;background:repeating-conic-gradient(from 0deg at 50% 50%,rgba(255,255,255,.55) 0deg 1.2deg,transparent 1.2deg 9deg);-webkit-mask:radial-gradient(circle at 50% 50%,transparent 32%,#000 70%);mask:radial-gradient(circle at 50% 50%,transparent 32%,#000 70%)';
+  (document.getElementById('stage') || document.body).append(IMP, SPD);
+  const HITS = (cfg.shakes || []).slice().sort((a, b) => a - b), CUTS = (cfg.shots || []).map((s) => s[0]).filter((x) => x > 0.2);
   function renderAt(t) {
     window.__T = t;
-    const story = camAt(t);
+    let tc = t; for (const h of HITS) if (t >= h && t < h + 0.1) tc = h;           // hit-stop
+    let imp = 0; for (const h of HITS) if (t >= h && t < h + 0.067) imp = 0.92; IMP.style.opacity = imp;
+    let sp = 0; if (cfg.speedlines) for (const c of CUTS) if (t >= c && t < c + 0.2) sp = 0.8 * (1 - (t - c) / 0.2); SPD.style.opacity = sp; SPD.style.transform = `rotate(${t * 40}deg)`;
+    const story = camAt(tc);
     (cfg.shakes || []).forEach((t0) => shake(camera, t, t0));
     if (cfg.mood) cfg.mood(t, story);
     cfg.update(story, t);
