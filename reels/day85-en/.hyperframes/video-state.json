@@ -215,5 +215,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "bf5c226f-9e75-461f-a45b-6622fb5df827",
+      "completedAt": 1795375360215,
+      "output": "/home/user/QuantumAUTOMIZER/reels/day85-en/renders/day85-en_2026-11-22_19-13-03.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }
