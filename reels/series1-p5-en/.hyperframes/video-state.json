@@ -128,10 +128,6 @@
       "hash": "1310bb5547a91ac4ee491d97742c3d91099ba5769446c82a84039151b5bbdfda",
       "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/13/1310bb5547a91ac4ee491d97742c3d91099ba5769446c82a84039151b5bbdfda"
     },
-    "arjunas-charioteer-part5.mp4": {
-      "hash": "132ad2fdea105bc9ef22274810cbbc74c31dba72d730188d3fd7922acace8b94",
-      "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/13/132ad2fdea105bc9ef22274810cbbc74c31dba72d730188d3fd7922acace8b94"
-    },
     "arjunas-charioteer-part5-cover.jpg": {
       "hash": "4da06c1020160315d96d8d3f5b2fbd603089cf93d32a5287d413535a07a86db0",
       "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/4d/4da06c1020160315d96d8d3f5b2fbd603089cf93d32a5287d413535a07a86db0"
@@ -139,6 +135,10 @@
     "arjunas-charioteer-part5.brain.json": {
       "hash": "bbc2c22588ee2e02e2f5c5529afcbddcbd9c1843ca55d1c379447ea503351e16",
       "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/bb/bbc2c22588ee2e02e2f5c5529afcbddcbd9c1843ca55d1c379447ea503351e16"
+    },
+    "arjunas-charioteer-part5.mp4": {
+      "hash": "132ad2fdea105bc9ef22274810cbbc74c31dba72d730188d3fd7922acace8b94",
+      "content": "/root/.cache/hyperframes/history/94fb64b8-8ccd-44f2-8b7a-1052c0c25505/blobs/13/132ad2fdea105bc9ef22274810cbbc74c31dba72d730188d3fd7922acace8b94"
     }
   },
   "revisions": {
@@ -814,13 +814,14 @@
   },
   "renders": {
     "latest": {
-      "id": "4b9c1f1e-1f32-4235-a207-8733f10b5650",
-      "completedAt": 1795357136606,
-      "output": "/home/user/QuantumAUTOMIZER/reels/series1-p5-en/renders/series1-p5-en_2026-11-22_14-07-38.mp4",
+      "id": "c074dd05-3671-42da-837e-accd0c0d31b6",
+      "completedAt": 1795384044448,
+      "output": "/home/user/QuantumAUTOMIZER/reels/series1-p5-en/renders/series1-p5-en_2026-11-22_21-39-58.mp4",
       "status": "completed",
-      "revision": "b3cfbcbe-7dbe-4320-8cf0-b582f44eaf71"
+      "revision": "d3fb10c4-a673-4119-b8c0-85d96b8d8764"
     },
     "retainedRevisions": [
+      "d3fb10c4-a673-4119-b8c0-85d96b8d8764",
       "b3cfbcbe-7dbe-4320-8cf0-b582f44eaf71"
     ]
   },
