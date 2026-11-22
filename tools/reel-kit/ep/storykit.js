@@ -20,11 +20,22 @@ export function run(spec, WORDS, DURATION) {
   const noOut = (m) => { m.userData.noOutline = true; m.castShadow = false; return m; };
   // ---- set library
   const lamps = [];
+  // KB-17 water fix: the old flat plane sat exactly on the grass disc (z-fight) and cut through the bumpy ground,
+  // which showed as blocky stair-step edges. Now: raised, polygon-offset, smooth (not flat-shaded), with sand banks
+  // that hide where water meets ground.
+  const WATER = (w, d, x, z, col, open) => {
+    const m = new THREE.MeshStandardMaterial({ color: col, roughness: 0.08, metalness: 0.15, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+    const wm = noOut(mesh(new THREE.PlaneGeometry(w, d, 1, 1).rotateX(-Math.PI / 2), m, x, 0.11, z, scene)); wm.receiveShadow = true; wm.castShadow = false;
+    const sand = mat(0xd9c08a, { r: 0.95 });
+    for (const sgn of open ? [-1] : [-1, 1]) { const b = mesh(new THREE.BoxGeometry(w, 0.16, 0.9), sand, x, 0.06, z + sgn * (d / 2 + 0.2), scene); b.castShadow = false; noOut(b); }
+    return wm;
+  };
   const BUILD = {
     village: (x) => { mesh(new THREE.CylinderGeometry(14, 14, 0.06, 28), mat(0x8ad84a), x, 0.03, 0, scene).castShadow = false; noOut(mesh(new THREE.BoxGeometry(2.4, 0.02, 14), mat(0xd9c08a), x + 2.4, 0.07, -2, scene)); [[-4.6, -3.6, 0.3], [5.2, -4.2, -0.4], [-5.6, 1.6, 0.6]].forEach(([a, b, r]) => hut(scene, x + a, b, R, r)); for (let i = 0; i < 6; i++) roundTree(scene, x + (i % 2 ? 1 : -1) * (7 + (i % 3)), -8 + i * 1.6, R, 1.1); cow(scene, x + 3.6, -2.6, 2.0, R); },
     field: (x) => { mesh(new THREE.CylinderGeometry(14, 14, 0.06, 28), mat(0x8ad84a), x, 0.03, 0, scene).castShadow = false; for (let i = 0; i < 9; i++) roundTree(scene, x + (i % 2 ? 1 : -1) * (5 + (i % 4)), -9 + i * 1.4, R, 1.2); cow(scene, x - 3, -3.2, 1.0, R); cow(scene, x + 3.4, -2.2, 2.6, R); },
+
     forest: (x) => { mesh(new THREE.CylinderGeometry(14, 14, 0.06, 28), mat(0x3f6a2a), x, 0.03, 0, scene).castShadow = false; for (let i = 0; i < 16; i++) { const a = R() * Math.PI * 2, r = 4.2 + R() * 8; roundTree(scene, x + Math.cos(a) * r, Math.sin(a) * r - 3, R, 1.3 + R() * 0.6); } },
-    river: (x) => { mesh(new THREE.CylinderGeometry(14, 14, 0.06, 28), mat(0x7ac84a), x, 0.03, 2, scene).castShadow = false; noOut(mesh(new THREE.PlaneGeometry(40, 6).rotateX(-Math.PI / 2), mat(0x3f7fc8, { r: 0.15, m: 0.2 }), x, 0.06, -3.6, scene)); roundTree(scene, x - 4.5, 2.4, R, 1.3); roundTree(scene, x + 5, 3, R, 1.1); roundTree(scene, x + 3.5, -0.4, R, 1.2); },
+    river: (x) => { mesh(new THREE.CylinderGeometry(14, 14, 0.06, 28), mat(0x7ac84a), x, 0.03, 2, scene).castShadow = false; WATER(40, 6, x, -3.6, 0x3f7fc8); roundTree(scene, x - 4.5, 2.4, R, 1.3); roundTree(scene, x + 5, 3, R, 1.1); roundTree(scene, x + 3.5, -0.4, R, 1.2); },
     palace: (x, c = [0x8a3a3a, 0x4a2030, 0xc9a227]) => { mesh(new THREE.BoxGeometry(16, 0.1, 12), mat(c[0]), x, 0.05, -2, scene).castShadow = false; mesh(new THREE.BoxGeometry(16, 7, 0.4), mat(c[1]), x, 3.5, -6, scene); for (let i = 0; i < 6; i++) { const px = x - 6.5 + i * 2.6; mesh(new THREE.CylinderGeometry(0.3, 0.34, 6, 10), mat(0xfaf5ea), px, 3, -4.6, scene); mesh(new THREE.BoxGeometry(0.8, 0.3, 0.8), mat(c[2], { m: 0.5, r: 0.4 }), px, 6.1, -4.6, scene); } mesh(new THREE.BoxGeometry(2.4, 0.6, 1.4), mat(c[2], { m: 0.5, r: 0.4 }), x, 0.3, -3, scene); mesh(new THREE.BoxGeometry(1.6, 2.4, 0.2), mat(c[2], { m: 0.5, r: 0.4 }), x, 1.8, -3.6, scene); lamps.push(lamp(scene, x - 2.4, 0.1, -2.4, 0.9), lamp(scene, x + 2.4, 0.1, -2.4, 0.9)); },
     court: (x) => BUILD.palace(x, [0x5a3a6a, 0x2a1a3a, 0xffd23a]),
     battlefield: (x) => { mesh(new THREE.CylinderGeometry(24, 24, 0.06, 28), mat(0xc9a46a), x, 0.03, 0, scene).castShadow = false; const r = rng(3), n = 260, body = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.16, 0.2, 0.7, 6), mat(0x8a1a2a), n), head = new THREE.InstancedMesh(new THREE.SphereGeometry(0.13, 8, 6), mat(0xc98a5e), n); [body, head].forEach((m) => { m.userData.noOutline = true; scene.add(m); }); const m4 = new THREE.Matrix4(); for (let i = 0; i < n; i++) { const px = x + (r() - 0.5) * 24, pz = -7 - r() * 8; m4.makeTranslation(px, 0.35, pz); body.setMatrixAt(i, m4); m4.makeTranslation(px, 0.83, pz); head.setMatrixAt(i, m4); } },
@@ -41,7 +52,7 @@ export function run(spec, WORDS, DURATION) {
     body: (x) => { noOut(mesh(new THREE.SphereGeometry(30, 24, 16), new THREE.MeshBasicMaterial({ color: 0x3a0a14, side: THREE.BackSide, fog: false }), x, 0, 0, scene)); mesh(new THREE.CylinderGeometry(19, 19, 0.06, 32), mat(0x5a1424), x, 0.07, 0, scene).castShadow = false;
       for (let i = 0; i < 40; i++) noOut(mesh(new THREE.TorusGeometry(0.18, 0.08, 6, 12), mat(0xd8283a, { e: 0x601020, ei: 0.6 }), x + (R() - 0.5) * 16, 0.6 + R() * 6, -2 - R() * 10, scene)).rotation.set(R() * 3, R() * 3, 0); },
     city: (x) => { mesh(new THREE.CylinderGeometry(16, 16, 0.06, 28), mat(0x4a4e58), x, 0.03, 0, scene).castShadow = false; noOut(mesh(new THREE.BoxGeometry(3, 0.02, 20), mat(0x2a2c32), x, 0.07, -2, scene)); for (let i = 0; i < 12; i++) { const sd = i % 2 ? 1 : -1, h = 3 + R() * 5; mesh(new THREE.BoxGeometry(2.4, h, 2.4), mat([0x6a7088, 0x8a7a6a, 0x5a6a7a][i % 3]), x + sd * (4.5 + R() * 2), h / 2, -10 + Math.floor(i / 2) * 2.8, scene); } lamps.push(lamp(scene, x - 1.8, 0.1, -1, 1.2), lamp(scene, x + 1.8, 0.1, -4, 1.2)); },
-    sea: (x) => { mesh(new THREE.BoxGeometry(14, 0.3, 16), mat(0xe8d09a), x - 8, 0, -2, scene).castShadow = false; noOut(mesh(new THREE.PlaneGeometry(40, 30).rotateX(-Math.PI / 2), mat(0x2f7ac8, { r: 0.15, m: 0.2 }), x + 9, 0.05, -2, scene)); },
+    sea: (x) => { mesh(new THREE.BoxGeometry(14, 0.3, 16), mat(0xe8d09a), x - 8, 0, -2, scene).castShadow = false; WATER(40, 30, x + 9, -2, 0x2f7ac8, true); },
   };
   names.forEach((n) => (BUILD[spec.sets[n]] || BUILD.village)(SX[n]));
   // ---- props

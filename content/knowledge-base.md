@@ -6,6 +6,15 @@ Newest first. When a new lesson contradicts an old one, our own data wins over a
 
 ---
 
+## KB-17 · Water bug fix (owner feedback, Nov 22)
+
+Owner: "the river or water is bugging" in all clips. Cause: the water was a flat plane at the exact height of the grass disc (z-fighting) and it cut through the bumpy ground, so its edges showed as blocky stair-steps.
+Fixed in `ep/storykit.js` with the `WATER()` helper (river and sea sets): water raised to 0.11 with polygon offset, a glossy smooth surface, and sand banks that hide where water meets ground.
+
+**→ For us:** never place a flat plane at the same height as another surface; any water, floor or decal goes through `WATER()` or gets its own height plus polygon offset. Check one wide frame of any water scene before rendering. Earlier reels stay as they are (owner: no remake).
+
+---
+
 ## KB-16 · Rich 3D look, free on CPU (Nov 22)
 
 Owner asked for "3D, ultra realistic" for Days 86-90 and chose "Rich 3D, free". Built in the kit, no paid tools:
@@ -182,3 +191,4 @@ Dolly zoom, crane, pull-back, landing.
 8. CTA: comment word + reason, a share line, follow for the next part.
 9. After posting: pin our comment within minutes; check the retention graph at 72 h; find the exact second of any dip and fix that beat next time.
 10. Every 90 days: repackage the top winners.
+11. **Visual QA before render** (KB-16, KB-17): every shot in the first 3 s moves; water and floors have no z-fighting or blocky edges; check one wide frame of each set.
