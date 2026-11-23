@@ -4,7 +4,9 @@ from kokoro_onnx import Kokoro
 from faster_whisper import WhisperModel
 reel, voice, speed, prompt = sys.argv[1], sys.argv[2], float(sys.argv[3]), sys.argv[4]
 A = f"{reel}/assets/audio"
-K = Kokoro("/home/user/kokoro/kokoro-v1.0.onnx", "/home/user/kokoro/voices-v1.0.bin")
+import os
+_KD = os.environ.get("KOKORO_DIR", "/home/user/kokoro")  # on the laptop: set KOKORO_DIR=D:\\QuantumReels\\models\\kokoro
+K = Kokoro(os.path.join(_KD, "kokoro-v1.0.onnx"), os.path.join(_KD, "voices-v1.0.bin"))
 TIGHT = os.environ.get("TIGHT") == "1"
 FX = "highpass=f=65,equalizer=f=140:t=q:w=1:g=2,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=6:release=120:makeup=2,aecho=0.85:0.4:40|90:0.1|0.05,silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse"
 # KB-9 acted read (free): an optional 3rd item per line sets its mood -> (speed x, pause after s, gain dB)
